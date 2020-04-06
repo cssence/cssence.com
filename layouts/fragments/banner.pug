@@ -1,0 +1,7 @@
+//- Warning: Index pages only have a subset of info stored in "banner"
+p.banner(class=banner.forHero && !banner.published && "print")
+	span.screen.visually-hidden= banner.published ? "Published on " : "Last updated on "
+	+ts(banner.published || banner.revised)
+	span.screen.visually-hidden= ". Filed under "
+	i.indicator= banner.indicator
+	span.screen.visually-hidden= "."

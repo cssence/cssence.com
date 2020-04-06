@@ -1,0 +1,10 @@
+extends article.pug
+
+block article
+	.conversation.content
+		h2#comments.screen.visually-hidden Message thread
+		include fragments/conversation-thread
+		include fragments/conversation-join
+
+block conversation
+	//- In /gossip, the conversion is the article :)

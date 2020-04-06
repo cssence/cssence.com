@@ -1,0 +1,228 @@
+* {
+	color: inherit;
+	font-style: inherit;
+	text-decoration: none;
+}
+.screen {
+	display: none !important;
+}
+@page {
+	margin: 20mm;
+}
+html {
+	color: #000;
+	font: 12pt/1.25 serif;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+body::before {
+	content: "";
+	display: block;
+	height: 7.5mm;
+}
+main {
+	display: block;
+	margin-right: 41mm;
+	padding-right: 4mm;
+	/* background: linear-gradient(0deg, #aadbf4 0%, #fff 1px) 0 2rem / 1.25rem 1.25rem repeat; */
+	border-right: 1mm dotted #ccc;
+}
+img {
+	max-width: 100%;
+}
+.hero {
+	position: relative;
+	padding-top: 10mm;
+	margin-bottom: 3.75rem;
+}
+.hero .banner {
+	display: flex;
+	flex-direction: row-reverse;
+	position: absolute;
+	top: -7.5mm;
+	right: -46mm;
+	left: 0;
+	margin-bottom: 1.25rem;
+	padding-bottom: .5mm;
+	border-bottom: 1px solid #000;
+}
+.hero .banner::after {
+	content: "cssence.com";
+	font-weight: 700;
+}
+.hero .indicator {
+	flex-grow: 1;
+}
+.hero .indicator::before {
+	content: " • ";
+	display: inline-block;
+	white-space: pre;
+}
+.hero .thumbnail,
+.card .teaser,
+.conversation-item-metadata {
+	position: absolute;
+	top: 0;
+	right: -46mm;
+	width: 40mm;
+}
+/*.card .teaser.fallback::before {
+	content: "";
+	display: block;
+	width: 100%;
+	padding-top: 75%;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}*/
+.card .teaser.fallback img {
+	display: none;
+}
+.title {
+	margin: 0;
+	font-size: 24pt;
+	line-height: 1.1;
+}
+.title-suffix {
+	margin: 0;
+	font-weight: 700;
+}
+h2,
+h3,
+.conversation-item {
+	margin: 1.25rem 0;
+	page-break-after: avoid;
+}
+h2 {
+	margin-top: 2.5rem;
+	font-size: 17pt;
+	line-height: 1.25rem;
+}
+h3 {
+	font-size: inherit;
+}
+section + section h2 {
+	page-break-before: always;
+}
+p,
+pre,
+ol,
+ul,
+blockquote {
+	margin-top: 0;
+	margin-bottom: 1.25em;
+}
+li {
+	margin-bottom: .625rem;
+}
+pre,
+tt,
+code {
+	font-size: 9pt;
+}
+pre {
+	white-space: normal;
+	line-height: 1.25rem;
+}
+blockquote,
+figure,
+pre {
+	margin-left: 4mm;
+	padding-left: 4mm;
+	border-left: .5ex solid #ccc;
+	page-break-inside: avoid;
+}
+.banner,
+.card a::before,
+.conversation-item-metadata,
+.metadata,
+.imprint {
+	font-family: sans-serif;
+	font-size: 10pt;
+	line-height: 1.25rem;
+}
+.card a::before,
+.card .banner {
+	color: #aaa;
+	font-size: 8pt;
+}
+.cards {
+	list-style: none;
+	padding-left: 0;
+}
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-height: calc(40mm * 3 / 4);
+	margin-bottom: 1.25rem;
+}
+.card a::before {
+	content: "https://cssence.com" attr(href);
+	display: block;
+	margin-top: -1px;
+	border-top: 1px dashed #ccc;
+	font-weight: 400;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.card h3,
+.card p {
+	margin: 0;
+}
+.card .banner {
+	order: -1;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+	color: #aaa;
+}
+aside.conversation::before {
+	content: "";
+	display: block;
+	height: 1.25rem;
+	border-bottom: 1px dashed #ccc;
+	box-sizing: border-box;
+}
+.conversation-item {
+	position: relative;
+}
+.conversation-item-metadata {
+	box-sizing: border-box;
+	height: 100%;
+	margin: 0;
+	border-left: 1px solid #ccc;
+	padding: 1mm 0 1mm 1mm;
+	font-size: 8pt;
+	font-weight: inherit;
+	line-height: 1.1;
+}
+.conversation-item-metadata time {
+	display: block;
+}
+.conversation-item-metadata .avatar {
+	font-weight: 700;
+}
+.metadata h2,
+.imprint h2 {
+	height: 0;
+	margin: 0 0 -1px;
+	border-bottom: 1px solid #000;
+	font-size: 0;
+}
+.metadata p,
+.imprint p {
+	margin: .625rem 0;
+}
+.metadata h2 {
+	margin-top: 12mm;
+	margin-right: -46mm;
+}
+.metadata p.print { /* permalink */
+	margin-left: 17.5mm;
+	text-indent: -17.5mm;
+}
+.copyright span {
+	float: right;
+}

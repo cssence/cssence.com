@@ -1,0 +1,21 @@
+article.screen
+	h3.subtle#add-comment= conversation ? "Join the conversation" : "Start the conversation"
+	p
+		- var commentUrl
+		- var remoteCodepen = indicator === "Code"
+		if remoteCodepen
+			- var syndicationCodepen = syndication && syndication.filter(function (item) { return item.url.indexOf("codepen") !== -1; })[0]
+			- commentUrl = syndicationCodepen.url.replace("/pen/", "/details/") + "#leave-comment"
+		else
+			- var syndicationTwitter = syndication && syndication.filter(function (item) { return item.url.indexOf("twitter") !== -1; })[0]
+			- commentUrl = "https://twitter.com/intent/tweet" + (syndicationTwitter ? "?in_reply_to=" + syndicationTwitter.url.split("/").pop() : "?text=" + encodeURIComponent("@cssence "+website.url+urlPath+" "))	
+		a(href=commentUrl) Have your say
+		= remoteCodepen ? " on CodePen" : " on Twitter"
+		if layout !== "gossip.pug"
+			= ", or simply "
+			- var titleUrlSafe = title.replace(/&nbsp;/g, " ").replace(/&amp;/g, "&")
+			a(href="https://twitter.com/intent/tweet?text="+encodeURIComponent("“"+titleUrlSafe+"” "+website.url+urlPath+" by @cssence"))= "share this "
+				= remoteCodepen ? "code example" : "article"
+			if remoteCodepen
+				= " on Twitter"
+		| .

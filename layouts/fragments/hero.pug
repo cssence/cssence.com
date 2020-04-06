@@ -1,0 +1,7 @@
+header.hero.content
+	!= titleMarkdown
+	if indicator
+		- var banner = {forHero: true, schema: schema, indicator: indicator, published: published, revised: revised}
+		include banner
+	p.thumbnail
+		img(src=thumbnail.url, alt="", aria-hidden="true")

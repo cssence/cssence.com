@@ -1,0 +1,9 @@
+mixin ts(timestamp, options)
+	- options = options || {}
+	time(datetime=timestamp.toISOString().replace(/\.[0-9]+Z/, "Z"))
+		if options.datePrefix
+			= options.datePrefix
+		= monthLong[timestamp.getMonth()] + " " + timestamp.getDate() + ", " + timestamp.getFullYear()
+		if options.timePrefix
+			= options.timePrefix
+			= timestamp.toISOString().slice(11, 16)

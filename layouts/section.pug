@@ -1,0 +1,42 @@
+extends base.pug
+
+block content
+	include fragments/hero
+
+	block intro
+		.article.content!= contents
+	block cards
+		section.posts.content
+			- var cards = articles.filter(function (article) { return article.listings.indexOf(urlPath) !== -1; })
+			- var numberOfArticlesInCategory = cards.length
+			- var latestOnly = urlPath !== "/about/about" && !urlPath.startsWith("/20") && numberOfArticlesInCategory > settings.numberOfArticles.latest
+			- if (latestOnly) cards = cards.slice(0, settings.numberOfArticles.latest)
+			- if (urlPath === "/about/about") cards.sort(function (a, b) { return b.revised - a.revised })
+			h2#overview= latestOnly ? "Latest articles" : "All articles"
+				small.visually-hidden= " (most recent first)"
+			include fragments/cards
+			.article.screen
+				//- TODO remove or replace .article
+				p
+					- var writtenForm = function (n) { return countLong[n] ? countLong[n].toLowerCase() : n }
+					if latestOnly
+						| The list above contains only the #{writtenForm(settings.numberOfArticles.latest)} most recent articles.
+						|  In this section alone, there are #{writtenForm(numberOfArticlesInCategory)} articles, and there are other sections on this site too.
+					else
+						| The list above contains #{writtenForm(numberOfArticlesInCategory)} articles, but there are a lot more in other sections on this site.
+					= " To see what else is going on, you may want to head over to the "
+					a(href="/") #[strong Home] page
+					= ", choose a section from the "
+					a(href="#navigation") navigation
+					= " below, or browse "
+					strong by year.
+				h2.visually-hidden#browse-by-year Browse by year
+				ol.browse(start=settings.years.to, reversed)
+					- var yearTag = settings.years.to + 1
+					while --yearTag >= settings.years.from
+						li
+							a(href="/"+yearTag)
+								span.visually-hidden= "Articles published in "
+								= yearTag
+
+	include fragments/metadata

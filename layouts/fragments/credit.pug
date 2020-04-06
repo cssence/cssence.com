@@ -1,0 +1,12 @@
+small.credit
+	|	— Image by 
+	if credit.author.url
+		a(href=credit.author.url)= credit.author.name
+	else
+		u= credit.author.name
+	if credit.via
+		= " via "
+		if credit.via.url
+			a(href=credit.via.url)= credit.via.name || credit.via.url
+		else
+			u= credit.via.name

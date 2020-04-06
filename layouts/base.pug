@@ -1,0 +1,20 @@
+doctype html
+html(lang="en", class=className)
+	include helpers/mixins
+
+	head#top
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width,initial-scale=1")
+		include fragments/seo
+		include fragments/styles
+		include fragments/theme
+
+	body
+		main
+			block content
+		include fragments/navigation
+		include fragments/footer 
+		block javascripts
+			script
+				include ../public/js/loadJS.min.js
+				include ../public/js/cuttingTheMustard.min.js

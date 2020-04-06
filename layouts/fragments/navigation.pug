@@ -1,0 +1,27 @@
+nav.screen
+	h2.visually-hidden#navigation-internal Where to go from here?
+	ul
+		li
+			a.visually-hidden(href="#navigation") Jump to navigation
+		li
+			a.visually-hidden(href="#content") Go back to content (top of the page)
+		if schema === "article" && layout !== "gossip.pug"
+			li
+				a.visually-hidden(href="#content") Go back to comments
+	h3.subtle.visually-hidden#navigation Navigation
+	ul.browse
+		- var sections = ["Home", "Blog", "Code", "Gossip", "More", "About"]
+		each section, index in sections
+			- var accessKey = index + 1
+			li
+				if index
+					- var sectionHref = "/" + section.toLowerCase()
+					a(class=sectionHref.replace("/", "c-"), href=sectionHref, accesskey=accessKey)= section
+				else
+					a.c-default(rel="home", href="/", accesskey=accessKey)= section
+						span.branding.mood(class=className, aria-hidden="true")
+							span.print= " of "
+							include ../../assets/img/logo-grayscale.svg
+							|	#[abbr CSS]ence.com
+							span.print= " - "
+							em.tagline The Essence of CSS

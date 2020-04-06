@@ -1,0 +1,10 @@
+ul.cards
+	each card in cards
+		li.card(class=card.className)
+			h3
+				a(href=card.urlPath)!= card.title
+			p!= card.description
+			p.teaser(class=card.thumbnail.default && "fallback", aria-hidden="true")
+				img(src=card.thumbnail.url, alt="") 
+			- var banner = card
+			include banner

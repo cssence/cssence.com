@@ -1,0 +1,13 @@
+{
+	"lang": "en",
+	"start_url": "/",
+	"short_name": "cssence.com",
+	"name": "cssence.com",
+	"icons": [
+		{"src": "/android-chrome-192.png", "type": "image/png", "sizes": "192x192"},
+		{"src": "/android-chrome-512.png", "type": "image/png", "sizes": "512x512"}
+	],
+	"display": "browser",
+	"background_color": "#202225",
+	"theme_color": "#202225"
+}

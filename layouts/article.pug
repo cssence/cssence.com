@@ -1,0 +1,11 @@
+extends base.pug
+
+block content
+	article
+		include fragments/hero
+		block article
+			.article.content!= contents
+		block conversation
+			include fragments/conversation
+		block metadata
+			include fragments/metadata

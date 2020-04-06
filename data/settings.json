@@ -1,0 +1,9 @@
+{
+	"years": { "from": 2010, "to": 2020 },
+	"numberOfArticles": { "latest": 10, "latestHome": 3	},
+	"featuredArticles": [
+		"/2019/inclusive-toggle-buttons",
+		"/2018/no-webfont-no-cry",
+		"/2018/maintaining-aspect-ratio-with-css-grid"
+	]
+}

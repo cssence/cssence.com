@@ -1,0 +1,6 @@
+{
+	"@context" : "http://schema.org",
+	"@type" : "WebSite",
+	"name" : "cssence.com",
+	"url" : "https://cssence.com"
+}
