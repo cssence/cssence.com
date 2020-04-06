@@ -42,5 +42,5 @@ Needless to say, this site is curated by me as I’m the main author. I’ve wri
 
 <div class="metadata">
 <h2 id="disambiguation" class="subtle">Disambiguation</h2>
-<p>This is about **CSSence** the website. For **@CSSence** the author, see [About Matt.](/about/matt)</p>
+<p>This is about <strong>CSSence</strong> the website. For <strong>@CSSence</strong> the author, see <a href="/about/matt">About Matt.</a></p>
 </div>
