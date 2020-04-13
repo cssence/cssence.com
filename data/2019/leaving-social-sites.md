@@ -30,6 +30,6 @@ In this particular case I thought the Medium experience was getting worse over t
 
 I’ve previously mentioned my attempt to un-Google my Android phone in [this post about web fonts](/2018/no-webfont-no-cry), an endeavor that is currently on hiatus, as I seem to be having a bad Android year. Sadly, two phones became unusable because of broken screens. Independent of that, I stopped using the Google mail service quite some time ago, so it is only a matter of time before my Google engagement will be a thing of the past.
 
-If we stretch the definition of _Social Sites_ ever further, there is an app named [WhatsApp](https://web.whatsapp.com), that is about to become ad-infested, so I am going bid farewell to them before it happens.
+If we stretch the definition of _Social Sites_ ever further, there is an app named [WhatsApp](https://web.whatsapp.com), that is about to become ad-infested, so I am going to bid farewell to them before it happens.
 
 Which leaves me with Twitter. I use it to enable comments on my site, so it is still useful to reach out to people. Time will tell for how long. Until then, [follow me](https://twitter.com/cssence) if you feel so inclined.

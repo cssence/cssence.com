@@ -267,6 +267,9 @@ code {
 	background-color: var(--color-bg-subtle);
   border-radius: var(--border-radius);
 }
+:not(pre) > code {
+	word-break: break-all;
+}
 figure code {
 	background-color: var(--color-bg); /* otherwise it would be --color-bg-subtle on --color-bg-subtle */
 }

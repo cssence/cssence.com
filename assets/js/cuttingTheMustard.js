@@ -4,11 +4,14 @@
 	try {
 		if (window.CSS.supports("--:1")) {
 			if (document.querySelectorAll("code").length) {
-				loadJS("/js/loadCSS.min.js", function () {
-					loadCSS("/css/prism.css", document.querySelector("style.page"), "screen");
-					loadJS("/js/prism.min.js", function () {
-						Prism.highlightAll();
-					});
+				var stylesheet = document.createElement("link");
+				stylesheet.setAttribute("rel", "stylesheet");
+				stylesheet.setAttribute("media", "screen");
+				stylesheet.href = "/css/prism.css";
+				var insertAfter = document.querySelector("style.page");
+				insertAfter.parentNode.insertBefore(stylesheet, insertAfter.nextSibling);
+				loadJS("/js/prism.min.js", function () {
+					Prism.highlightAll();
 				});
 			}
 		}
