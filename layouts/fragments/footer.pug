@@ -29,10 +29,10 @@ footer.imprint
 	section.internal.screen
 		h3.visually-hidden#bottom= schema === "article" ? "Thanks for reading" : "Thanks for visiting"
 		p
+			if schema === "article" && urlPath.startsWith("/2")
+				a(href="#contribute") Contribute
+				span= " "
 			a(href="#navigation", accesskey="n") Browse
 				span.header-link(aria-hidden="true")
-			span= " "
-			if urlPath.startsWith("/2")
-				a(href="#contribute") Contribute
 			span= " "
 			a(href="#top") Back to top

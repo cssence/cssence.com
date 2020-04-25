@@ -901,9 +901,6 @@ nav {
 		display: block;
 		height: .75rem;
 	}
-	.imprint section p > span + span {
-		height: 1.875rem;
-	}
 }
 @media (max-width: 39.95em) {
 	.hero .banner {
@@ -1040,7 +1037,7 @@ nav {
 	.imprint section {
 		width: 20rem;
 	}
-	.imprint section p > a + span {
+	.imprint section p > span {
 		margin-left: 1.5rem;
 	}
 }
