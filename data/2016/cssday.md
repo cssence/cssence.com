@@ -39,7 +39,7 @@ conversation:
     posted: 2016-06-17T07:59:09Z
   - url: "https://twitter.com/ZoeBijl/status/743715116340776960"
     text: "[@cssence](https://twitter.com/cssence) there is an accessibility meeting in Amsterdam tomorrow. [@LeonieWatson](https://twitter.com/LeonieWatson) is there too 😉 Info: [www.roledrinks.nl](http://www.roledrinks.nl) #roledrinks"
-    author: {id: "@ZoeBijl", name: "Zoë Bijl"}
+    author: {id: "@ZoeBijl", name: "Michiel Bijl"}
     posted: 2016-06-17T08:01:15Z
   - url: "https://twitter.com/cssence/status/743715885328666624"
     text: "[@ZoeBijl](https://twitter.com/ZoeBijl) [@LeonieWatson](https://twitter.com/LeonieWatson) Coooool! *mustCancelFlight*"

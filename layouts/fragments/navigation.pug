@@ -1,27 +1,25 @@
 nav.screen
-	h2.visually-hidden#navigation-internal Where to go from here?
-	ul
+	h2.subtle.visually-hidden#navigation Where to go from here?
+	ul.nav
 		li
-			a.visually-hidden(href="#navigation") Jump to navigation
-		li
-			a.visually-hidden(href="#content") Go back to content (top of the page)
-		if schema === "article" && layout !== "gossip.pug"
+			a.c-default(rel="home", href="/", accesskey="1") Home
+				span.branding.mood(class=className, aria-hidden="true")
+					span.print= " of "
+					include ../../assets/img/logo-grayscale.svg
+					|	#[abbr CSS]ence.com
+					span.print= " - "
+					em.tagline The Essence of CSS
+		each section, index in ["Articles", "Notes", "About"]
 			li
-				a.visually-hidden(href="#content") Go back to comments
-	h3.subtle.visually-hidden#navigation Navigation
-	ul.browse
-		- var sections = ["Home", "Blog", "Code", "Gossip", "More", "About"]
-		each section, index in sections
-			- var accessKey = index + 1
+				- var sectionHref = "/" + section.toLowerCase()
+				a(class=sectionHref.replace("/", "c-"), href=sectionHref, accesskey=index+2)= section
+	h3.visually-hidden#navigation-advanced Find popular posts, or browse by year
+	.nav-more
+		ul
 			li
-				if index
-					- var sectionHref = "/" + section.toLowerCase()
-					a(class=sectionHref.replace("/", "c-"), href=sectionHref, accesskey=accessKey)= section
-				else
-					a.c-default(rel="home", href="/", accesskey=accessKey)= section
-						span.branding.mood(class=className, aria-hidden="true")
-							span.print= " of "
-							include ../../assets/img/logo-grayscale.svg
-							|	#[abbr CSS]ence.com
-							span.print= " - "
-							em.tagline The Essence of CSS
+				a(href="/popular") Most popular
+			- var yearTitle = website.years.to + 1
+			while --yearTitle >= website.years.from
+				li
+					- var yearUrl = "/" + yearTitle
+					a(href=yearUrl)= yearTitle

@@ -10,7 +10,6 @@ var minifyCss = require("metalsmith-clean-css");
 var minifyJs = require("metalsmith-uglify");
 
 var addYears = require("./plugins/add-years.js");
-var metadata = require("./plugins/metadata.js");
 var augment = require("./plugins/augment.js");
 var crossAugment = require("./plugins/augment-x.js");
 
@@ -33,7 +32,7 @@ var minification = function (cb) {
 			"!**/*.min.js",
 		]))
 		.build(function (err) {
-			console.log(err || "Asset preparation successful.");
+			console.info(err || "Asset preparation successful.");
 			if (!err) {
 				cb();
 			}
@@ -44,19 +43,22 @@ var rendering = function () {
 	metalsmith(".")
 		.metadata({
 			countLong: ["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve"],
-			monthLong: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+			monthLong: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+			website: {
+				years: { from: 2010, to: 2020 },
+				url: "https://cssence.com"
+			}
 		})
 		.source("data")
 		.destination("public")
 		.clean(false)
-		.use(metadata())
 		.use(contentParserMarkdown({
 			useMetadata: true
 		}))
 		.use(augment())
 		.use(addYears())
 		.use(collections({
-			articles: {
+			posts: {
 				refer: false,
 				sortBy: "order",
 				reverse: true
@@ -69,7 +71,7 @@ var rendering = function () {
 			pattern: "**/*.html"
 		}))
 		.build(function (err) {
-			console.log(err || "Rendering successful.");
+			console.info(err || "Rendering successful.");
 		});
 };
 

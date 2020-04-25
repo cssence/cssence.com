@@ -2,7 +2,7 @@
 //- var partner = {"medium.com": "Medium", "twitter.com": "Twitter", "codepen.io": "CodePen"}
 footer.metadata
 	- var typeMap = {"Home": "site", "Index": "index page", "Code": "code example", "Opinion": "thread", "Bookmark": "thread", "404": "error page"}
-	h2#about-article.subtle= "About this " + (typeMap[indicator] || "article")
+	h2#about-post.subtle= "About this " + (typeMap[indicator] || "article")
 	address.print
 		p #{schema==="article"?"Written":"Curated"} by 
 			a(rel="author", href=website.url+"/about/matt") Matthias Zöchling
@@ -20,7 +20,7 @@ footer.metadata
 				else
 					= syndicated.url.split("/")[2]
 			|	on 
-			time(datetime=published.toISOString().replace(/\:[0-9]+\.[0-9]+Z/, "Z"))= monthLong[published.getMonth()] + " " + published.getDate() + ", " + published.getFullYear()
+			+ts(published)
 			| . 
 			if syndicated.published && syndicated.url.indexOf("twitter") === -1 && syndicated.url.indexOf("medium") === -1
 				| Syndicated to 
@@ -28,7 +28,7 @@ footer.metadata
 				| .
 	if revised && (!published || revised.toISOString().slice(0, 10) !== published.toISOString().slice(0, 10))
 		p Last revised on 
-			time(datetime=revised.toISOString().replace(/\:[0-9]+\.[0-9]+Z/, "Z"))= monthLong[revised.getMonth()] + " " + revised.getDate() + ", " + revised.getFullYear()
+			+ts(revised)
 			| .
 	p.print
 		| Permalink: 

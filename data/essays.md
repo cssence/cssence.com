@@ -1,8 +1,9 @@
 ---
 indicator: "Index"
 title: "Essays"
-description: "The classic CSSence weblog: Latest articles from the category “Essay”."
+description: "The classic CSSence weblog: Latest blog posts from the category “Essay”."
 thumbnail: {type: "image/jpeg"}
+latest: 10
 ---
 
 # Essays

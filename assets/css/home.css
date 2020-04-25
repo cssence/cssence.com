@@ -37,7 +37,6 @@
 .intro .page {
 	position: absolute;
 	background-color: transparent;
-	font-size: 4rem;
 }
 .intro section {
 	display: flex;
@@ -91,6 +90,23 @@
 	.title-suffix {
 		font-size: 2.5rem;
 	}
+}
+
+@keyframes attention {
+	0% { box-shadow: 0 0 0 0 rgba(211,75,108,.4); }
+	70% { box-shadow: 0 0 0 2rem rgba(211,75,108,0); }
+	100% { box-shadow: 0 0 0 0 rgba(211,75,108,0); }
+}
+.posts h2::before {
+	content: "";
+	display: inline-block;
+	top: -.3em;
+	width: 1px;
+	height: 1px;
+	margin-right: -1px;
+	border-radius: 50%;
+	vertical-align: super;
+	animation: attention 2s infinite;
 }
 
 }

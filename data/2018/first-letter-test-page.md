@@ -12,7 +12,7 @@ syndication:
 # ::first-letter Test Page
 ^ Chasing Unicode Characters
 
-I made a test page for `::first-letter` many years ago, but I couldn’t find it. Which is why I created this revised page. Needless to say, after I finished it I found the original, so this time I [put it on CodePen](https://codepen.io/cssence/pen/yqaGqB) for my Future Self and everybody else.
+I made a test page for `::first-letter` many years ago, but I couldn’t find it. Which is why I created this revised page. Needless to say, after I finished it I found the original, so this time I [put it on CodePen](https://codepen.io/cssence/pen/yqaGqB) for my future self and everybody else.
 
 My initial test page used floats to create large drop caps, but they accounted for additional problems, which is why I tried to keep things simple.
 

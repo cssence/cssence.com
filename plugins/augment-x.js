@@ -19,14 +19,16 @@ function plugin (opts) {
 		matchingFiles.forEach(function (file) {
 			var item = files[file];
 			// augment: revised
-			if (item.schema === "website") {
+			if (item.schema === "website" && !item.revised) {
 				if (item.urlPath === "/") {
-					item.revised = new Date();
+					item.revised = new Date(); // build timestamp
+				} else if (item.urlPath === "/about/about") {
+					item.revised = meta.posts[0].order; // freshest across all categories
 				} else {
-					var latestArticleInCategory = meta.articles.filter(function (child) {
+					var latestPostInCategory = meta.posts.filter(function (child) {
 						return child.listings.indexOf(item.urlPath) !== -1;
 					})[0];
-					item.revised = latestArticleInCategory.order;
+					item.revised = latestPostInCategory.order;
 				}
 			}
 		});

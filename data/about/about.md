@@ -9,4 +9,4 @@ thumbnail: {type: "image/jpeg"}
 ^ Unlisted pages
 
 How did you even get here? This place reveals all pages that are not already listed in other sections.
-That includes not just articles, but the sections themselves, itself (how recursive!), and [non-existing pages.](/404)
+That includes not just posts, but the sections themselves, itself (how recursive!), and [non-existing pages.](/404)

@@ -1,7 +1,6 @@
 extends section.pug
 
-block intro
-	.article.content!= contents
+append intro
 	.intro
 		.nice
 
@@ -17,16 +16,3 @@ block intro
 				p This site started as a weblog on Wordpress. As time went by, I&nbsp;got my own domain and turned it into a full-fledged IndieWeb hub, where all my content resides for longevity.
 				p
 					a.screen(href="/about") About CSSence.com.
-
-block cards
-	section.posts.home.content
-		- var cards = articles.filter(function (article) { return article.listings.indexOf("/about/about") === -1; }).slice(0, settings.numberOfArticles.latestHome)
-		h2#latest Latest
-			span.visually-hidden= " articles"
-			small.visually-hidden= " (most recent first)"
-		include fragments/cards
-	section.posts.home.content
-		- var cards = articles.filter(function (article) { return settings.featuredArticles.indexOf(article.urlPath) !== -1; })
-		h2#feature Featured
-			span.visually-hidden= " articles"
-		include fragments/cards

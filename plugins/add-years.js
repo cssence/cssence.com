@@ -20,7 +20,7 @@ function plugin (opts) {
 			var item = files[file];
 
 			// create year-specific files from template
-			for (var year = meta.settings.years.from; year <= meta.settings.years.to; year += 1) {
+			for (var year = meta.website.years.from; year <= meta.website.years.to; year += 1) {
 				var item = files[file];
 				var shallowClonedItem = {};
 				Object.keys(item).forEach(function (key) {

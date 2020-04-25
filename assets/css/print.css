@@ -223,6 +223,6 @@ aside.conversation::before {
 	margin-left: 17.5mm;
 	text-indent: -17.5mm;
 }
-.copyright span {
+.copyright span:first-child {
 	float: right;
 }

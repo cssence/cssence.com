@@ -1,22 +1,38 @@
 footer.imprint
 	h2.visually-hidden#bottom Additional information
-	p.copyright
-		span © #{settings.years.from}-#{new Date().getFullYear()}
-			= " "
-			a(href="/about/matt") Matthias Zöchling
-			= "."
-		br.screen
-		= "Available under the "
-		a(rel="license", href="https://creativecommons.org/licenses/by/4.0/", title="Creative Commons Attribution 4.0 International License") CC&nbsp;BY
-		= " license."
-	p.legal.screen
-		a(href="/about/privacy") Privacy Policy
-		= " "
-		a(href="/about/privacy") Legal / Ownership
-	p.external.screen
-		strong.visually-hidden= "CSSence elsewhere on the web: "
-		a(href="https://github.com/cssence") GitHub
-		= " "
-		a(href="https://codepen.io/cssence") CodePen
-		= " "
-		a(href="https://twitter.com/cssence") Twitter
+	div
+		p.copyright
+			span © #{website.years.from}-#{new Date().getFullYear()}
+				= " "
+				a(href="/about/matt") Matthias Zöchling
+				= ". "
+			br.screen
+			span
+				= "Available under the "
+				a(rel="license", href="https://creativecommons.org/licenses/by/4.0/", title="Creative Commons Attribution 4.0 International License") CC&nbsp;BY
+				= " license."
+		p.screen
+			a(href="/about/privacy") Legalese
+			span= " "
+			a(href="/help", accesskey="?") Help
+			span= " "
+			a(href="/settings", accesskey="s") Settings
+				span.header-link(aria-hidden="true")
+	section.external.screen
+		h3.visually-hidden#elsewhere CSSence elsewhere on the web
+		p
+			a(href="https://github.com/cssence") GitHub
+			span= " "
+			a(href="https://codepen.io/cssence") CodePen
+			span= " "
+			a(href="https://twitter.com/cssence") Twitter
+	section.internal.screen
+		h3.visually-hidden#bottom= schema === "article" ? "Thanks for reading" : "Thanks for visiting"
+		p
+			a(href="#navigation", accesskey="n") Browse
+				span.header-link(aria-hidden="true")
+			span= " "
+			if urlPath.startsWith("/2")
+				a(href="#contribute") Contribute
+			span= " "
+			a(href="#top") Back to top
