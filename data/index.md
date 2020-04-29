@@ -14,7 +14,7 @@ highlights:
       - "/2018/no-webfont-no-cry"
 ---
 
-# Welcome to cssence.com
+# Welcome to CSSence.com
 ^ Hello, I’m <abbr>css</abbr>ence
 
 <h2 id="introduction" class="visually-hidden">CSSence? What is that?</h2>

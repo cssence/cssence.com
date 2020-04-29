@@ -13,7 +13,7 @@ nav.screen
 			li
 				- var sectionHref = "/" + section.toLowerCase()
 				a(class=sectionHref.replace("/", "c-"), href=sectionHref, accesskey=index+2)= section
-	h3.visually-hidden#navigation-advanced Find popular posts, or browse by year
+	h3.visually-hidden#navigation-advanced Find popular posts or browse by year
 	.nav-more
 		ul
 			li
@@ -22,4 +22,5 @@ nav.screen
 			while --yearTitle >= website.years.from
 				li
 					- var yearUrl = "/" + yearTitle
-					a(href=yearUrl)= yearTitle
+					a(href=yearUrl)
+						time= yearTitle

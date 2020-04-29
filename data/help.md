@@ -16,9 +16,9 @@ Access keys are used on this site to reach specific pages or page areas with key
 - <kbd>2</kbd>: Open the “Articles” overview.
 - <kbd>3</kbd>: Open the “Notes” overview.
 - <kbd>4</kbd>: Open the “About” page.
+- <kbd>h</kbd>: Open this help page.
 - <kbd>n</kbd>: Jump to navigation<small> (on current page)</small>.
 - <kbd>s</kbd>: Open the settings page.
-- <kbd>?</kbd>: Open this help page.
 
 ## Accessibility Statement
 
