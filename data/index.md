@@ -1,8 +1,8 @@
 ---
 indicator: "Home"
-title: "cssence.com «The Essence of CSS»"
-summary: "Online portfolio and #indieweb Hub of Matthias Zöchling (@cssence). Blog included, mainly about web design, majoring in CSS."
-description: "Weblog and #IndieWeb Hub of Matthias Zöchling (@cssence)."
+title: "CSSence.com «The Essence of CSS»"
+summary: "Online portfolio and #indieweb Hub of Matthias Zöchling (@CSSence). Blog included, mainly about web design, majoring in CSS."
+description: "Weblog and #IndieWeb Hub of Matthias Zöchling (@CSSence)."
 thumbnail: {url: "/index.png"}
 latest: 3
 highlights:
@@ -15,6 +15,6 @@ highlights:
 ---
 
 # Welcome to CSSence.com
-^ Hello, I’m <abbr>css</abbr>ence
+^ Hello, I’m <span aria-label="@CSSence."><abbr>css</abbr>ence</span>
 
 <h2 id="introduction" class="visually-hidden">CSSence? What is that?</h2>
