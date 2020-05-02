@@ -2,9 +2,6 @@
 	opacity: .05;
 	text-transform: lowercase;
 }
-
-@supports (color: var(--)) {
-
 @media (max-width: 25.75em) {
 	.title {
 		font-size: inherit;
@@ -113,6 +110,4 @@
 	border-radius: 50%;
 	vertical-align: super;
 	animation: attention 2s infinite;
-}
-
 }

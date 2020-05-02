@@ -1,0 +1,77 @@
+body {
+	padding: 1em;
+	min-width: 46em;
+}
+main {
+	display: block;
+	width: 38em;
+	margin: 0 auto;
+}
+a {
+	color: #d34b6c !important;
+	text-decoration: underline !important;
+}
+.card a::before {
+	display: none;
+}
+aside.screen,
+nav.screen,
+footer .screen {
+	display: block !important;
+}
+nav {
+	margin-top: 7.5em;
+	font-family: sans-serif;
+	font-size: 10pt;
+	line-height: 1.25rem;
+}
+nav ul {
+	list-style: none;
+	padding: 0;
+}
+nav li {
+	display: inline-block;
+	margin-right: 1em;
+	margin-bottom: 0;
+}
+.branding {
+	display: none;
+}
+.imprint::before {
+	content: "";
+	display: block;
+	height: 0;
+	margin: 0 0 -1px;
+  margin-top: 0px;
+  margin-right: 0px;
+	border-bottom: 1px solid #000;
+}
+.copyright {
+	margin-bottom: 1.875em;
+}
+.external p {
+	margin-left: 35%;
+	margin-right: 35%;
+	margin-top: -2.25em;
+	text-align: center;
+}
+.internal p {
+	margin-left: 70%;
+	margin-top: -2.25em;
+	text-align: right;
+}
+.imprint p:last-child > span {
+	display: inline-block;
+	width: 1em;
+}
+.visually-hidden {
+	overflow: hidden;
+	position: absolute;
+	z-index: 1;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	clip: rect(0,0,0,0);
+	border: 0;
+	white-space: nowrap;
+}

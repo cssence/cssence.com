@@ -8,13 +8,11 @@ html(lang="en", class=className)
 		include fragments/seo
 		include fragments/styles
 		include fragments/manifest
+		script
+			include ../public/js/ctm.min.js
 
 	body
 		main
 			block content
 		include fragments/navigation
 		include fragments/footer 
-		block javascripts
-			script
-				include ../public/js/loadJS.min.js
-				include ../public/js/cuttingTheMustard.min.js
