@@ -1,6 +1,6 @@
 ---
 indicator: "Bookmark"
-title: "Image-to-HMTL Converter"
+title: "Image-to-HTML Converter"
 description: "Neil Fraser created a converter that turns images into HTML tables."
 published: 2011-04-15T17:07:13Z
 syndication:
@@ -11,4 +11,4 @@ conversation:
     posted: 2011-04-15T17:07:13Z
 ---
 
-# Image-to-HMTL Converter
+# Image-to-HTML Converter

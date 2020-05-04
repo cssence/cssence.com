@@ -1,15 +1,21 @@
+html {
+	font: 100%/1.25 "Palatino Linotype", "Palatino", "Palladio", "URW Palladio L", "Book Antiqua", "Baskerville", "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", "Garamond", "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", "Georgia", serif;
+}
 body {
-	padding: 1em;
-	min-width: 46em;
+	padding: 1em 1em 1px;
 }
 main {
 	display: block;
-	width: 38em;
-	margin: 0 auto;
+	max-width: 35.125rem;
+	margin-right: 0;
 }
 a {
 	color: #d34b6c !important;
 	text-decoration: underline !important;
+}
+.hero time::before,
+.hero time::after {
+	content: " • ";
 }
 .card a::before {
 	display: none;
@@ -37,32 +43,42 @@ nav li {
 .branding {
 	display: none;
 }
-.imprint::before {
-	content: "";
-	display: block;
-	height: 0;
-	margin: 0 0 -1px;
-  margin-top: 0px;
-  margin-right: 0px;
-	border-bottom: 1px solid #000;
+.imprint {
+	border-top: 1px solid #000;
 }
 .copyright {
-	margin-bottom: 1.875em;
-}
-.external p {
-	margin-left: 35%;
-	margin-right: 35%;
-	margin-top: -2.25em;
-	text-align: center;
-}
-.internal p {
-	margin-left: 70%;
-	margin-top: -2.25em;
-	text-align: right;
+	display: block;
 }
 .imprint p:last-child > span {
 	display: inline-block;
 	width: 1em;
+}
+@media (min-width: 37.5em) {
+	body {
+		padding: 1em 2em 1px;
+	}
+	.imprint {
+		display: grid;
+		grid-template-areas: "site www" "site page";
+		grid-template-rows: 1fr min-content;
+	}
+	.imprint div {
+		grid-area: site;
+	}
+	.external {
+		grid-area: www;
+	}
+	.internal {
+		grid-area: page;
+	}
+	.imprint section {
+		text-align: right;
+	}
+}
+@media (min-width: 60em) {
+	main {
+		margin: 0 auto;
+	}
 }
 .visually-hidden {
 	overflow: hidden;

@@ -1,7 +1,7 @@
 ---
 indicator: "Opinion"
 title: "All-in on Progressive Enhancement"
-description: "Manuel Matuzović went the extra mile. As if the content wasn’t great already, look at that teaser image."
+description: "Manuel Matuzović went the extra mile. As if his article content wasn’t great already, look at his teaser image."
 published: 2020-04-29T05:48:17Z
 syndication:
   - url: "https://twitter.com/cssence/status/1255373318645047298"

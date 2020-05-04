@@ -9,7 +9,7 @@
 			var insertAfter = document.querySelector("style.page");
 			insertAfter.parentNode.insertBefore(stylesheet, insertAfter.nextSibling);
 		};
-		if (!window.CSS.supports("--:1") || window.location.search === "?ie") {
+		if (!window.CSS.supports("--supports-var", 0) || window.location.search === "?ie") {
 			throw "No CSS custom properties.";
 		}
 		document.addEventListener("DOMContentLoaded", function() {

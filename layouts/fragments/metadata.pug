@@ -1,7 +1,7 @@
 - var syndicated = syndication ? syndication[0] : {}
 //- var partner = {"medium.com": "Medium", "twitter.com": "Twitter", "codepen.io": "CodePen"}
 footer.metadata
-	- var typeMap = {"Home": "site", "Index": "index page", "Code": "code example", "Opinion": "thread", "Bookmark": "thread", "404": "error page"}
+	- var typeMap = {"Home": "site", "Index": "index page", "Code": "code example", "Opinion": "thread", "Bookmark": "thread", "Internal": "page"}
 	h2#about-post.subtle= "About this " + (typeMap[indicator] || "article")
 	address.print
 		p #{schema==="article"?"Written":"Curated"} by 

@@ -31,6 +31,9 @@ main {
 img {
 	max-width: 100%;
 }
+del {
+	text-decoration: line-through;
+}
 .hero {
 	position: relative;
 	padding-top: 10mm;
@@ -80,7 +83,7 @@ img {
 }
 .title {
 	margin: 0;
-	font-size: 24pt;
+	font-size: 2rem;
 	line-height: 1.1;
 }
 .title-suffix {
@@ -95,7 +98,7 @@ h3,
 }
 h2 {
 	margin-top: 2.5rem;
-	font-size: 17pt;
+	font-size: 1.33333rem;
 	line-height: 1.25rem;
 }
 h3 {
@@ -118,7 +121,7 @@ li {
 pre,
 tt,
 code {
-	font-size: 9pt;
+	font-size: .75rem;
 }
 pre {
 	white-space: pre-wrap;
@@ -138,13 +141,13 @@ pre {
 .metadata,
 .imprint {
 	font-family: sans-serif;
-	font-size: 10pt;
+	font-size: .8125rem;
 	line-height: 1.25rem;
 }
 .card a::before,
 .card .banner {
 	color: #aaa;
-	font-size: 8pt;
+	font-size: .66667rem;
 }
 .cards {
 	list-style: none;
@@ -193,7 +196,7 @@ aside.conversation::before {
 	margin: 0;
 	border-left: 1px solid #ccc;
 	padding: 1mm 0 1mm 1mm;
-	font-size: 8pt;
+	font-size: .75rem;
 	font-weight: inherit;
 	line-height: 1.1;
 }
@@ -218,10 +221,8 @@ aside.conversation::before {
 	margin-top: 12mm;
 	margin-right: -46mm;
 }
-.metadata p.print { /* permalink */
-	margin-left: 17.5mm;
-	text-indent: -17.5mm;
-}
-.copyright span:first-child {
-	float: right;
+.copyright {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
