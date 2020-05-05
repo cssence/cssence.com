@@ -70,4 +70,4 @@ If you have not done the last one yet, do it now. It’s a quick win. And while 
 
 ## Updates
 
-1. <time id="update-1" class="update" datetime="2018-12-28">Dec. 28, 2018:</time> Sonarwhal is now [webhint.io](https://webhint.io/).
+1. <time id="update-1" class="update" datetime="2018-12-28">December 28, 2018:</time> Sonarwhal is now [webhint.io](https://webhint.io/).

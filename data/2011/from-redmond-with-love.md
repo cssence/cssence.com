@@ -1,6 +1,6 @@
 ---
 indicator: "Bookmark"
-title: "The Return of “From Redmond with Love”"
+title: "The Return of “From Redmond With Love”"
 description: "Another browser-shipping-based cake delivery took place."
 published: 2011-03-24T09:44:00Z
 syndication:
@@ -11,4 +11,4 @@ conversation:
     posted: 2011-03-24T09:44:00Z
 ---
 
-# The Return of “From Redmond with Love”
+# The Return of “From Redmond With Love”

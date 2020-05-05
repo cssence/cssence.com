@@ -1,6 +1,6 @@
 ---
 indicator: "Bookmark"
-title: "Awesome HTML5 dashboard"
+title: "Awesome HTML5 Dashboard"
 description: "Spoiler: The title is not a empty promise."
 published: 2011-04-04T06:21:23Z
 syndication:
@@ -11,4 +11,4 @@ conversation:
     posted: 2011-04-04T06:21:23Z
 ---
 
-# Awesome HTML5 dashboard
+# Awesome HTML5 Dashboard

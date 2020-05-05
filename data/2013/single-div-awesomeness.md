@@ -1,6 +1,6 @@
 ---
 indicator: "Bookmark"
-title: "Single Div awesomeness"
+title: "Single Div Awesomeness"
 description: "How to do amazing stuff with just one HTML element."
 published: 2013-07-29T07:11:54Z
 syndication:
@@ -11,4 +11,4 @@ conversation:
     posted: 2013-07-29T07:11:54Z
 ---
 
-# Single Div awesomeness
+# Single Div Awesomeness

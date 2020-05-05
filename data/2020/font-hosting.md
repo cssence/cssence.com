@@ -1,6 +1,6 @@
 ---
 indicator: "Opinion"
-title: "Should you self-host Google Fonts?"
+title: "Should You Self-Host Google Fonts?"
 description: "A question asked and answered by Michael Scharnagl."
 published: 2020-01-16T10:44:52Z
 syndication:
@@ -15,4 +15,4 @@ conversation:
     posted: 2020-01-16T10:44:52Z
 ---
 
-# Should you self-host Google Fonts?
+# Should You Self-Host Google Fonts

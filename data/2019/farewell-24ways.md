@@ -1,6 +1,6 @@
 ---
 indicator: "Opinion"
-title: "Final edition of @24ways"
+title: "Final Edition of @24ways"
 description: "Biding Farewell to the Advent Calendar for Web Geeks."
 published: 2019-12-24T08:21:52Z
 syndication:
@@ -12,4 +12,4 @@ conversation:
     posted: 2019-12-24T08:21:52Z
 ---
 
-# Final edition of @24ways
+# Final Edition of @24ways

@@ -1,6 +1,6 @@
 ---
 indicator: "Bookmark"
-title: "Full page backgrounds"
+title: "Full Page Backgrounds"
 description: "How to display an image as full page background while preserving its aspect ratio with CSS."
 published: 2011-02-18T11:11:21Z
 syndication:
@@ -11,4 +11,4 @@ conversation:
     posted: 2011-02-18T11:11:21Z
 ---
 
-# Full page backgrounds
+# Full Page Backgrounds

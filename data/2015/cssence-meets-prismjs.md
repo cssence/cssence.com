@@ -1,6 +1,6 @@
 ---
 indicator: "Opinion"
-title: "@cssence meets @prismjs"
+title: "@cssence Meets @prismjs"
 description: "I’ve added Syntax Highlighting to my code snippets."
 published: 2015-10-15T15:38:00Z
 revised: 2015-10-15T15:42:00Z
@@ -17,4 +17,4 @@ conversation:
     posted: 2015-10-15T15:42:00Z
 ---
 
-# @cssence meets @prismjs
+# @cssence Meets @prismjs

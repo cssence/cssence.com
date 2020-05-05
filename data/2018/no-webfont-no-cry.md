@@ -40,7 +40,7 @@ Having Firefox installed, I went through the settings, where they gave me an int
 
 One of the perks of living in Austria is the inexpensive generous data plan you’ll have on your phone, so no need for eliminating the font download, right? Not quite, I also want my websites to load fast, so I gave it a try and turned off web fonts on my mobile. To this day, they are is still off.
 
-Any designer will tell you that a site design looses its character without the particular font it is supposed to come with. And they are right. But keep in mind, the site design is just the beginning, the world wide web is a rough place. In web design, there are many ways to present content, but there are always way more ways to consume it.
+Any designer will tell you that a site design looses its character without the particular font it is supposed to come with. And they are right. But keep in mind, the site design is just the beginning, the World Wide Web is a rough place. In web design, there are many ways to present content, but there are always way more ways to consume it.
 
 Responsive Web Design is not just about screen sizes. People have different needs. If someone browses the web using a screen reader, fonts are probably not a top priority, but the site must be accessible. The same is true if someone fancies to skip web fonts: The site should still be accessible.
 

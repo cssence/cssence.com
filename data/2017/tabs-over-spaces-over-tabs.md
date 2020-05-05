@@ -1,6 +1,6 @@
 ---
 indicator: "Opinion"
-title: "Tabs over Spaces over Tabs"
+title: "Tabs Over Spaces Over Tabs"
 description: "Even though Remy Sharp’s poll allows you to vote for “Spaces” only."
 published: 2017-10-12T13:57:45Z
 syndication:
@@ -19,4 +19,4 @@ conversation:
     posted: 2017-10-12T13:57:45Z
 ---
 
-# Tabs over Spaces over Tabs
+# Tabs Over Spaces Over Tabs

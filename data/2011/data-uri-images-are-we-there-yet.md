@@ -1,6 +1,6 @@
 ---
 indicator: "Essay"
-title: "Data URI images: Are we there yet?"
+title: "Data URI Images: Are We There yet?"
 description: "A deeper look into pros and cons of data URIs."
 summary: "A deeper look into pros and cons of data URIs, especially data URI images. One size fits all, or not useful at all?"
 thumbnail: {type: "image/png"}
@@ -9,7 +9,7 @@ syndication:
   - url: "http://cssence.wordpress.com/2011/04/26/data-uri-images-are-we-there-yet/"
 ---
 
-# Data URI images: Are we there yet?
+# Data URI Images: Are We There yet?
 
 ## What are data URIs anyway?
 

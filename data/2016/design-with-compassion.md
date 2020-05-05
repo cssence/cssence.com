@@ -1,6 +1,6 @@
 ---
 indicator: "Bookmark"
-title: "Design with Compassion"
+title: "Design With Compassion"
 description: "Jeffrey Zeldman wrote about Eric Meyer’s “Stress Cases” talk."
 published: 2016-11-04T14:08:14Z
 syndication:
@@ -11,4 +11,4 @@ conversation:
     posted: 2016-11-04T14:08:14Z
 ---
 
-# Design with Compassion
+# Design With Compassion

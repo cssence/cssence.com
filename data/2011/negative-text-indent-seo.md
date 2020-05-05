@@ -1,6 +1,6 @@
 ---
 indicator: "Opinion"
-title: "Negative text-indent"
+title: "Negative Text-Indent"
 description: "Those -9999px might cause some SEO frustration."
 published: 2011-03-14T17:04:53Z
 syndication:
@@ -11,4 +11,4 @@ conversation:
     posted: 2011-03-14T17:04:53Z
 ---
 
-# Negative text-indent
+# Negative Text-Indent

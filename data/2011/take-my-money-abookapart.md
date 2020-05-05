@@ -1,6 +1,6 @@
 ---
 indicator: "Opinion"
-title: "Take my Money, @ABookApart"
+title: "Take My Money, @ABookApart"
 description: "Having read their first two books, I’m curious what comes next."
 published: 2011-02-01T21:49:52Z
 syndication:
@@ -11,4 +11,4 @@ conversation:
     posted: 2011-02-01T21:49:52Z
 ---
 
-# Take my Money, @ABookApart
+# Take My Money, @ABookApart

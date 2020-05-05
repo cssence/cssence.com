@@ -1,6 +1,6 @@
 ---
 indicator: "Opinion"
-title: "No agreed-upon minimum resolution"
+title: "No Agreed-Upon Minimum Resolution"
 description: "A short conversation with Ron Gilmour."
 thumbnail: {url: "/2015/5vw-ftw.png"}
 published: 2019-11-01T19:46:30Z
@@ -28,4 +28,4 @@ conversation:
     posted: 2019-11-02T00:55:19Z
 ---
 
-# No agreed-upon minimum resolution
+# No Agreed-Upon Minimum Resolution

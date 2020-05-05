@@ -1,6 +1,6 @@
 ---
 indicator: "Bookmark"
-title: "SVG forever"
+title: "SVG Forever"
 description: "I agree with Seren Davies that the time has come to ditch icon fonts."
 published: 2015-07-13T15:26:26Z
 deprecatedUrl: "/gossip/2015-07-13-svg-forever"
@@ -12,4 +12,4 @@ conversation:
     posted: 2015-07-13T15:26:26Z
 ---
 
-# SVG forever
+# SVG Forever

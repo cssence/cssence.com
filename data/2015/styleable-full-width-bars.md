@@ -1,6 +1,6 @@
 ---
 indicator: "Code"
-title: "Style-able full-width bars"
+title: "Style-able Full-Width Bars"
 description: "Full-width backgrounds on individual regions, without additional elements."
 thumbnail: {type: "image/png"}
 published: 2015-08-10T11:40:10Z
@@ -10,7 +10,7 @@ syndication:
   - url: "https://codepen.io/cssence/pen/oXVpWj"
 ---
 
-# Style-able full-width bars
+# Style-able Full-Width Bars
 
 There are many ways to align page text in a centered column while still being able to apply full-width backgrounds on individual regions. How about one without the need for additional elements?
 

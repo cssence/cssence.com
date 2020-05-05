@@ -1,6 +1,6 @@
 ---
 indicator: "Opinion"
-title: "Tabs over spaces"
+title: "Tabs Over Spaces"
 description: "My return to using the dedicated Unicode character for indention."
 published: 2015-12-30T16:04:00Z
 deprecatedUrl: "/gossip/2015-12-30-tabs-over-spaces"
@@ -12,4 +12,4 @@ conversation:
     posted: 2015-12-30T16:04:00Z
 ---
 
-# Tabs over spaces
+# Tabs Over Spaces

@@ -60,7 +60,7 @@ conversation:
 # The JavaScript Wars
 ^ How did we get here?
 
-Remember the building blocks of the world wide web? HTML, CSS, JavaScript. Does ring a bell, right?
+Remember the building blocks of the World Wide Web? HTML, CSS, JavaScript. Does ring a bell, right?
 
 We know what HTML does. HTML is the foundation, it delivers the content to you. Sure, RSS also does the content talk, most APIs respond with a JSON full of content, but let’s face it, HTML is the big deal. It gets you started.
 

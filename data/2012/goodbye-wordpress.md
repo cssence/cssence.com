@@ -24,4 +24,4 @@ The emptier this place gets, the closer [cssence.com](https://cssence.com/) gets
 
 ## Updating the update
 
-<time id="update-1" class="update" datetime="2015-10-02">Oct. 2, 2015:</time> You are reading this on cssence.com, hence the transition is complete. 🚀
+<time id="update-1" class="update" datetime="2015-10-02">October 2, 2015:</time> You are reading this on cssence.com, hence the transition is complete. 🚀

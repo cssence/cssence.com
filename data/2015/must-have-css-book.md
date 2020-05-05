@@ -1,6 +1,6 @@
 ---
 indicator: "Opinion"
-title: "Must-have CSS book"
+title: "Must-Have CSS Book"
 description: "Conversing with Lea Verou, author of “CSS Secrets”."
 thumbnail: {type: "image/jpeg"}
 published: 2015-11-22T17:23:00Z
@@ -50,4 +50,4 @@ conversation:
     posted: 2015-11-24T08:31:21Z
 ---
 
-# Must-have CSS book
+# Must-Have CSS Book

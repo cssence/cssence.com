@@ -1,6 +1,6 @@
 ---
 indicator: "Opinion"
-title: "Invalid valid JSON"
+title: "Invalid Valid JSON"
 description: "Sometimes an error is not where you look for it."
 published: 2011-02-20T21:08:43Z
 syndication:
@@ -11,4 +11,4 @@ conversation:
     posted: 2011-02-20T21:08:43Z
 ---
 
-# Invalid valid JSON
+# Invalid Valid JSON

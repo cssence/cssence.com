@@ -1,6 +1,6 @@
 ---
 indicator: "Opinion"
-title: "Displayable content inside document head?"
+title: "Displayable Content Inside Document Head?"
 description: "My site makes its own inline styles visible."
 published: 2020-04-08T04:46:59Z
 syndication:
@@ -15,4 +15,4 @@ conversation:
     posted: 2020-04-08T04:46:59Z
 ---
 
-# Displayable content inside document head?
+# Displayable Content Inside Document Head?

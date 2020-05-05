@@ -1,6 +1,6 @@
 ---
 indicator: "Bookmark"
-title: "Done with Apps"
+title: "Done With Apps"
 description: "Henrik Joreteg is betting on the web. As do I."
 published: 2017-09-10T19:38:32Z
 syndication:
@@ -11,4 +11,4 @@ conversation:
     posted: 2017-09-10T19:38:32Z
 ---
 
-# Done with Apps
+# Done With Apps

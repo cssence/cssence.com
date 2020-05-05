@@ -1,13 +1,13 @@
 ---
 indicator: "Editorial"
-title: "About metalsmith.io"
+title: "About Metalsmith.io"
 description: "Behind the scenes: The Static Site Generator that renders this website."
 thumbnail: {type: "image/jpeg"}
 published: 2017-07-13T18:23:00Z
 deprecatedUrl: "/about/metalsmith-io"
 ---
 
-# About metalsmith.io
+# About Metalsmith.io
 
 ## About static site generators
 

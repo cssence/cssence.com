@@ -1,6 +1,6 @@
 ---
 indicator: "Opinion"
-title: "FTP no more"
+title: "FTP No More"
 description: "Thanks to @surge_sh I can bid farewell to FTP."
 published: 2015-06-10T13:19:06Z
 revised: 2015-06-10T18:11:35Z
@@ -16,4 +16,4 @@ conversation:
     posted: 2015-06-10T18:11:35Z
 ---
 
-# FTP no more
+# FTP No More

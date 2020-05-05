@@ -1,6 +1,6 @@
 ---
 indicator: "Opinion"
-title: "Plain anchor link for Hamburger"
+title: "Plain Anchor Link for Hamburger"
 description: "I am considering to enhance my site’s navigation skip-link."
 published: 2015-10-15T20:06:00Z
 deprecatedUrl: "/gossip/2015-10-15-anchor-link-for-hamburger"
@@ -16,4 +16,4 @@ conversation:
     posted: 2015-10-15T20:06:00Z
 ---
 
-# Plain anchor link for Hamburger
+# Plain Anchor Link for Hamburger

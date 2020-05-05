@@ -1,6 +1,6 @@
 ---
 indicator: "Essay"
-title: "rem (root em), a unit introduced with CSS3"
+title: "rem (Root Em), a Unit Introduced With CSS3"
 description: "Exploring the differences between em and rem."
 summary: "Explore the differences between em and rem. The em unit has been with us for a long time, see what rem — brought to you by CSS3 — adds to the relative measurement arena."
 thumbnail: {type: "image/png"}
@@ -9,7 +9,7 @@ syndication:
   - url: "http://cssence.wordpress.com/2011/05/26/rem-root-em-a-unit-introduced-with-css3/"
 ---
 
-# rem (root em), a unit introduced with CSS3
+# rem (Root Em), a Unit Introduced With CSS3
 
 One of the most important files on my laptop at home and at the office is the handy [CSS3 cheat sheet](http://www.veign.com/reference/css3-guide.php), available for [download at veign.com](http://www.veign.com/downloads/guides/qrg0008.pdf).
 
