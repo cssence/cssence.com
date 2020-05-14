@@ -16,6 +16,10 @@ conversation:
     posted: 2016-11-07T14:08:41Z
   - url: "https://twitter.com/KyleDavidE/status/797649226557751296"
     text: "[@css](https://twitter.com/css) Unrelated but the text scaling on this website is appalling."
+    image:
+      url: "https://pbs.twimg.com/media/CxHRjXgWEAEvGNE?format=jpg&name=small"
+      alt: "Screenshot of the CSSence.com Javascript Wars article header on a large display."
+      credit: {author: {name: "Kyle Ehrlich"}, via: {url: "https://twitter.com/", name: "Twitter"}}
     author: {id: "@KyleDavidE", name: "Kyle Ehrlich"}
     posted: 2016-11-13T03:56:09Z
   - url: "https://twitter.com/cssence/status/797740191230423040"

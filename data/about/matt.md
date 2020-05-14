@@ -2,7 +2,7 @@
 title: "About Matthias&nbsp;Zöchling"
 description: "Some facts about web developer and CSS enthusiast Matthias Zöchling, a.k.a. @CSSence."
 thumbnail: {type: "image/jpeg"}
-revised: 2019-07-23T16:01:00Z
+revised: 2020-05-15T06:15:00Z
 ---
 
 # About Matthias&nbsp;Zöchling
@@ -18,6 +18,6 @@ In addition to prototyping in the browser, I focus on creating responsive sites 
 
 ## Private life
 
-I like creating all kinds of stuff. Online, that’s a given. Describing my offline hobby, I go by _Interior Design Upcycler_. I like to run. I also like to travel.
+I like creating all kinds of stuff. Online, that’s a given. Describing my offline hobby, I go by _Interior Design Upcycler_. I like to run. I used to travel, which lately clashes with my increased interest in [degrowth.](https://en.wikipedia.org/wiki/Degrowth)
 
 But the most interesting journey is fatherhood. And marriage. When I got married to my lovely wife I took her last name, so if you encounter (old) stuff about me online where my birth name _Beitl_ has been used for attribution, that’s why.

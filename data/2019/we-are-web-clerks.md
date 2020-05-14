@@ -88,7 +88,7 @@ I’ve been attending the first-ever [WeAreWebClerks Community Conference 2019](
 - “Why Every Interface Should Be Black & White” by [Heydon Pickering](https://twitter.com/heydonworks)
 - “Stakeholder-Centric Design” by [Che Harvey](https://twitter.com/chebydesign)
 - “Does It Work? Using The New CSS Layout” by [Rachel Andrew](https://twitter.com/rachelandrew)
-- “I’m Just an Old Guard Dev in a New Guard World” [Charlie Owen](https://twitter.com/sonniesedge)
+- “I’m Just an Old Guard Dev in a New Guard World” by [Charlie Owen](https://twitter.com/sonniesedge)
 - “Using a Modern Web to Recreate 1980s Horribly Slow and Loud Loading Screens” by [Remy Sharp](https://twitter.com/rem)
 - “Emotional, Memorable Design” by [Vitaly Friedman](https://twitter.com/smashingmag)
 
