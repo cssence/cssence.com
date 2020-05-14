@@ -5,7 +5,7 @@ block content
 
 	- var isHome = urlPath === "/"
 	block intro
-		.article.content!= contents
+		.article!= contents
 
 	if typeof latest !== "number" || latest
 		- var cards = posts.filter(function (post) { return post.listings.indexOf(urlPath) !== -1; })
@@ -13,7 +13,7 @@ block content
 		- var latestOnly = typeof latest === "number" && numberOfPostsInCategory > latest
 		- if (latestOnly) cards = cards.slice(0, latest)
 		- if (urlPath === "/about/about") cards.sort(function (a, b) { return b.revised - a.revised })
-		section.posts.content
+		section.posts
 			h2(id=isHome ? "latest" : "overview")= isHome ? "Latest" : (latestOnly ? "Latest posts" : "All posts")
 				small.visually-hidden= " (most recent first)"
 			include fragments/cards
@@ -34,7 +34,7 @@ block content
 						= " below."
 	if highlights
 		each highlight in highlights
-			section.posts.content
+			section.posts
 				- var placement = highlight.posts
 				- var cards = posts.filter(function (post) { return placement.indexOf(post.urlPath) !== -1; })
 				- cards.sort(function (a, b) { return placement.indexOf(a.urlPath) > placement.indexOf(b.urlPath); })

@@ -200,9 +200,7 @@ ul {
 time {
 	white-space: nowrap;
 }
-.content:not(header) img,
-.conversation-item,
-.conversation-item-content {
+:not(.thumbnail) > img {
 	border-radius: var(--border-radius);
 }
 ol, ul,

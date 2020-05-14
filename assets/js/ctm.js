@@ -13,7 +13,7 @@
 			throw "No CSS custom properties.";
 		}
 		document.addEventListener("DOMContentLoaded", function() {
-			if (document.querySelectorAll("code").length) {
+			if (document.querySelectorAll("code[class]").length) {
 				/* loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. */
 				var loadJS = function (src, cb) {
 					var ref = window.document.getElementsByTagName("script")[0];
