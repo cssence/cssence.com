@@ -7,7 +7,7 @@ published: 2020-01-24T15:23:07Z
 syndication:
   - url: "https://codepen.io/cssence/pen/wvBOGjQ"
   - url: "https://twitter.com/cssence/status/1220733127670345728"
-    posted: 2020-01-24T15:40:32Z
+    published: 2020-01-24T15:40:32Z
 conversation:
   - url: "https://twitter.com/mmatuzo/status/1220735951787347968"
     text: "[@cssence](https://twitter.com/cssence) Thanks for the shoutout! 🤗"

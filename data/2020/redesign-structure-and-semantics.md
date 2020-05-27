@@ -4,8 +4,10 @@ title: "Re: Design - Structure and Semantics"
 description: "URLs and HTML. The foundation of every website."
 thumbnail: {url: "/2020/redesign.png"}
 published: 2020-05-14T19:27:00Z
+revised: 2020-05-27T10:07:00Z
 syndication:
   - url: "https://twitter.com/cssence/status/1261184022144847872"
+    published: 2020-05-15T06:37:57Z
 ---
 
 # Structure & Semantics
@@ -68,7 +70,7 @@ Starting with the content means there is no need for skip links. I did add some,
 
 ### Solved issues
 
-Every so often, I encounter tweets that say something like <q>it is 2020 and there are still blog posts that do not show the **date of publication.**</q> Well, that was something [my 2016 redesign](/2016/redesign) didn’t properly take care of. All my pages did show when they were published and/or last updated, but the information was placed after the page content, together with other metadata. I’ve decided to duplicate the date, so I can also show it up top, where it is more common.
+Every so often, I encounter tweets that say something like <q>it is 2020 and there are still blog posts that do not show the **date of publication.**</q> [(Most prominently, Sara and Bruce told me so.)](https://twitter.com/brucel/status/1265577433199267840) Well, that was something [my 2016 redesign](/2016/redesign) didn’t properly take care of. All my pages did show when they were published and/or last updated, but the information was placed after the page content, together with other metadata. I’ve decided to duplicate the date, so I can also show it up top, where it is more common.
 
 Last but not least, I’ve added a proper heading (level 3) to each individual **comment**, a shortcoming I wasn’t even aware of, and ensured that all headings have unique IDs, so they can serve as anchor link targets.
 

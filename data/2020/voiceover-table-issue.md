@@ -8,7 +8,7 @@ revised: 2020-05-07T05:04:55Z
 syndication:
   - url: "https://codepen.io/cssence/pen/LYpQypY"
   - url: "https://twitter.com/cssence/status/1258101829222699009"
-    posted: 2020-05-06T18:30:25Z
+    published: 2020-05-06T18:30:25Z
 conversation:
   - url: "https://twitter.com/cssence/status/1258102480182837249"
     text: "Yes, that last example in my CodePen I took from an MDN article, but it looks like it came straight from [@htm_hell](https://twitter.com/htm_hell) 😈<br>[developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Row_Role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Row_Role)"
