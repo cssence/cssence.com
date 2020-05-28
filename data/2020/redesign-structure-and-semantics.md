@@ -8,6 +8,19 @@ revised: 2020-05-27T10:07:00Z
 syndication:
   - url: "https://twitter.com/cssence/status/1261184022144847872"
     published: 2020-05-15T06:37:57Z
+conversation:
+  - url: "https://twitter.com/cssence/status/1261219566266527749"
+    text: "Now that all pages on my site start right with the content, as hinted in [@vasilis](https://twitter.com/vasilis)’ thesis “Exclusive Design”, I wonder: People relying on assistive technology, did you get so used to website crap that not having to bypass a header/navigation with a lot of links seems weird? #a11y"
+    posted: 2020-05-15T08:59:11Z
+  - url: "https://twitter.com/cssence/status/1261220031054123008"
+    text: "Maybe that’s a question I should ask the expert [@LeonieWatson](https://twitter.com/LeonieWatson) directly…<br>[twitter.com/cssence/status/1261219566266527749](https://twitter.com/cssence/status/1261219566266527749)<br>#HTML #a11y"
+    posted: 2020-05-15T09:01:02Z
+  - url: "https://twitter.com/cssence/status/1261346286835511296"
+    text: "I’ve already mentioned it in the article, but to reiterate: [@netlify](https://twitter.com/netlify) redirects are *chef’s kiss*"
+    posted: 2020-05-15T17:22:44Z
+  - url: "https://twitter.com/cssence/status/1265588600885968898"
+    text: "Yes! This is the kind of tweet I wanted to link to when I wrote [this].<br>I’ve updated the article to include the Sara&Bruce™ reference.<br>[twitter.com/brucel/status/1265577433199267840](https://twitter.com/brucel/status/1265577433199267840)"
+    posted: 2020-05-27T10:20:10Z
 ---
 
 # Structure & Semantics
