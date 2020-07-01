@@ -4,7 +4,7 @@ title: "Re: Design - Structure and Semantics"
 description: "URLs and HTML. The foundation of every website."
 thumbnail: {url: "/2020/redesign.png"}
 published: 2020-05-14T19:27:00Z
-revised: 2020-05-27T10:07:00Z
+revised: 2020-07-01T21:47:00Z
 syndication:
   - url: "https://twitter.com/cssence/status/1261184022144847872"
     published: 2020-05-15T06:37:57Z
@@ -39,8 +39,8 @@ This is Part One of a <strong id="3-part-blog-series">Three Part Blog Series.</s
 
 <ol aria-labelledby="3-part-blog-series">
 <li>Structure &amp; Semantics</li>
-<li>Style &amp; Delight <small>(June ’20)</small></li>
-<li>Superfluous &amp; Advanced <small>(July ’20)</small></li>
+<li><a href="/2020/redesign-style-and-delight">Style &amp; Delight</a></li>
+<li>Superfluous &amp; Advanced <small>(8/2020)</small></li>
 </ol>
 
 The order of the three parts is not random, I wrote about the most important part first. While I did kick off the redesign of this site with a launch in late 2019, it has since turned into an ongoing incremental journey. But the structure and semantics&#8202;&mdash;&#8202;mainly URLs and HTML&#8202;&mdash;&#8202;won’t change a lot anymore, if at all.
@@ -77,7 +77,7 @@ None of them fancy _Single Page Applications (SPA)_ would exist without at least
 
 He argues that we should get our priorities straight, which I did. Now every page on this site starts right with the content, specifically with the page title.
 
-As I will show you in part 2 of this series, this is not just about placing the navigation and other things further down, only to mess with source order later, using styles to rearrange content. No. I’ll let you know how I still got something that visually looks like a classic web site header.
+As I will show you in [part 2](/2020/redesign-style-and-delight) of this series, this is not just about placing the navigation and other things further down, only to mess with source order later, using styles to rearrange content. No. I’ll let you know how I still got something that visually looks like a classic web site header.
 
 Starting with the content means there is no need for skip links. I did add some, but they might not even count. They are at the end of each page and always visible. They take you back to the top or other places on the current page.
 

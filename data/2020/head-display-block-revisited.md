@@ -11,7 +11,7 @@ conversation:
     author: {id: "@sir_pepe", name: "Peter Kröner"}
     posted: 2020-04-07T14:44:39Z
   - url: "https://twitter.com/cssence/status/1247747744661303296"
-    text: "[@sir_pepe]((https://twitter.com/sir_pepe)<br>I switched to <code>head {display:block}</code> on my personal site 5+ years ago. Still on. But I’m not sure if this qualifies as nonhumorous.<br>[cssence.com/2015/head-display-block](https://cssence.com/2015/head-display-block)"
+    text: "[@sir_pepe]((https://twitter.com/sir_pepe)<br>I switched to <code>head {display:block}</code> on my personal site 5+ years ago. Still on. But I’m not sure if this qualifies as nonhumorous.<br>[cssence.com/2015/head-display-block](/2015/head-display-block)"
     posted: 2020-04-08T04:46:59Z
 ---
 
