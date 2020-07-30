@@ -6,6 +6,7 @@ thumbnail: {type: "image/jpeg"}
 published: 2019-11-25T05:38:00Z
 syndication:
   - url: "https://twitter.com/cssence/status/1198874120596971520"
+    published: 2019-11-25T06:51:27Z
 conversation:
   - url: "https://twitter.com/cssence/status/1198856706966593536"
     text: "[@wearewebclerks](https://twitter.com/wearewebclerks)<br><code>-vienna-appearance: beautiful !important;</code><br>[cssence.com/2019/we-are-web-clerks](/2019/we-are-web-clerks)"
