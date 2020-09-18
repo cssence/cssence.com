@@ -33,7 +33,7 @@ This is Part Two of a <strong id="3-part-blog-series">Three Part Blog Series.</s
 <ol aria-labelledby="3-part-blog-series">
 <li><a href="/2020/redesign-structure-and-semantics">Structure &amp; Semantics</a></li>
 <li>Style &amp; Delight</li>
-<li>Superfluous &amp; Advanced <small>(8/2020)</small></li>
+<li>Superfluous &amp; Advanced <small>(soon)</small></li>
 </ol>
 
 The order of the three parts is not random, the most important one came first. You are reading part 2.

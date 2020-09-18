@@ -40,7 +40,7 @@ This is Part One of a <strong id="3-part-blog-series">Three Part Blog Series.</s
 <ol aria-labelledby="3-part-blog-series">
 <li>Structure &amp; Semantics</li>
 <li><a href="/2020/redesign-style-and-delight">Style &amp; Delight</a></li>
-<li>Superfluous &amp; Advanced <small>(8/2020)</small></li>
+<li>Superfluous &amp; Advanced <small>(soon)</small></li>
 </ol>
 
 The order of the three parts is not random, I wrote about the most important part first. While I did kick off the redesign of this site with a launch in late 2019, it has since turned into an ongoing incremental journey. But the structure and semantics&#8202;&mdash;&#8202;mainly URLs and HTML&#8202;&mdash;&#8202;won’t change a lot anymore, if at all.
