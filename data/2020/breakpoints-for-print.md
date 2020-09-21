@@ -7,6 +7,8 @@ published: 2020-09-17T18:32:12Z
 revised: 2020-09-18T19:05:30Z
 syndication:
   - url: "https://codepen.io/cssence/pen/ExKeZOR"
+  - url: "https://twitter.com/cssence/status/1307969397227769857"
+    published: 2020-09-21T09:06:19Z
 ---
 
 # Breakpoints for Print

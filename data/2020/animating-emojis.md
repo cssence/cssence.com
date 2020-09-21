@@ -7,7 +7,7 @@ published: 2020-06-19T06:48:27Z
 syndication:
   - url: "https://codepen.io/cssence/pen/JjGENwr"
   - url: "https://twitter.com/cssence/status/1273883482285015050"
-    posted: 2020-06-19T07:41:04Z
+    published: 2020-06-19T07:41:04Z
 ---
 
 # Animating Emojis
