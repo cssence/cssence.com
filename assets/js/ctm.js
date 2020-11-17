@@ -1,17 +1,34 @@
 /* cssence.com init script (mustard cutter, async asset loader) */
 (function(window, document) {
 	'use strict';
+	var addStyle = function (href) {
+		var stylesheet = document.createElement('link');
+		stylesheet.setAttribute('rel', 'stylesheet');
+		stylesheet.setAttribute('media', 'screen');
+		stylesheet.href = href;
+		var insertAfter = document.querySelector('style.page');
+		insertAfter.parentNode.insertBefore(stylesheet, insertAfter.nextSibling);
+	};
+	var fallback = function (reason) {
+		var styles = document.querySelector('head').querySelectorAll('link[rel="stylesheet"],style');
+		for (var i = styles.length - 1; i >= 0; --i) {
+			var style = styles[i];
+			if (style.tagName.toLowerCase() === 'link') {
+				style.parentNode.removeChild(style);
+			} else {
+				style.removeAttribute('media');
+			}
+		}
+		addStyle('/css/ie.css');
+		console.info(reason, '\nNo further progressive enhancement.');
+	};
 	try {
-		var addStyle = function (href) {
-			var stylesheet = document.createElement('link');
-			stylesheet.setAttribute('rel', 'stylesheet');
-			stylesheet.setAttribute('media', 'screen');
-			stylesheet.href = href;
-			var insertAfter = document.querySelector('style.page');
-			insertAfter.parentNode.insertBefore(stylesheet, insertAfter.nextSibling);
-		};
-		if (!window.CSS.supports('--:1') || window.location.search === '?ie') {
-			console.info('No further progressive enhancement.');
+		if (!window.CSS.supports('--:1')) {
+			fallback('Browser does not support CSS custom properties.');
+			return;
+		}
+		if (window.location.search === '?ie') {
+			fallback('Fallback requested manually.');
 			return;
 		}
 		document.addEventListener('DOMContentLoaded', function() {
@@ -35,16 +52,7 @@
 			}
 		});
 	} catch (err) {
-		console.log(err);
-		var styles = document.querySelector('head').querySelectorAll('link[rel="stylesheet"],style');
-		for (var i = styles.length - 1; i >= 0; --i) {
-			var style = styles[i];
-			if (style.tagName.toLowerCase() === 'link') {
-				style.parentNode.removeChild(style);
-			} else {
-				style.removeAttribute('media');
-			}
-		}
-		addStyle('/css/ie.css');
+		console.warn(err);
+		fallback('Error occured, switching to fallback mode.');
 	}
 }(window, document));
