@@ -13,7 +13,7 @@ deprecatedUrl: "/about/metalsmith-io"
 
 In the early days of web development, there were only static sites out there, and we had a fancy name for the static site generator; I remember it to be “author” or something similar.
 
-Static sites have become fashionable again, albeit limited to smaller projects. Nowadays, static site generators are no longer human beings but lines of code. They let the still required actual humans focus on the content while ensuring that the look and feel of each indiviual page matches the overall site.
+Static sites have become fashionable again, albeit limited to smaller projects. Nowadays, static site generators are no longer human beings but lines of code. They let the still required actual humans focus on the content while ensuring that the look and feel of each individual page matches the overall site.
 
 When I [relaunched this site in 2015](/2015/own-your-own-data) (and [again in 2016,](/2016/redesign) but this time for real), I had my own solution in place to render all the pages that make up this website. Eventually I [switched to using Metalsmith](/2017/on-using-static-site-generators) in 2017.
 

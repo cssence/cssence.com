@@ -32,7 +32,6 @@ conversation:
 .passage li::before{counter-increment:part;content:"Part " counter(part) ": ";font-variant-numeric:lining-nums tabular-nums;font-weight:600}
 .passage p{grid-area:note}
 .passage style+p{grid-area:intro}
-.passage small{position:absolute;margin-left:-1em;background-color:var(--color-accent);border-radius:.25em 75%;font-size:62.5%;white-space:nowrap;transform:rotate(9deg)}
 </style>
 
 This is Part One of a <strong id="3-part-blog-series">Three Part Blog Series.</strong> Although the focus of this Editorial series is an in-depth look at the [latest redesign of this site](/2019/just-launch), you may read these posts as letters of appreciation to the [Basics of the Web.](/2016/webdesign-basics)
@@ -40,7 +39,7 @@ This is Part One of a <strong id="3-part-blog-series">Three Part Blog Series.</s
 <ol aria-labelledby="3-part-blog-series">
 <li>Structure &amp; Semantics</li>
 <li><a href="/2020/redesign-style-and-delight">Style &amp; Delight</a></li>
-<li>Superfluous &amp; Advanced <small>(soon)</small></li>
+<li><a href="/2020/redesign-superfluous-and-advanced">Superfluous &amp; Advanced</a></li>
 </ol>
 
 The order of the three parts is not random, I wrote about the most important part first. While I did kick off the redesign of this site with a launch in late 2019, it has since turned into an ongoing incremental journey. But the structure and semantics&#8202;&mdash;&#8202;mainly URLs and HTML&#8202;&mdash;&#8202;won’t change a lot anymore, if at all.

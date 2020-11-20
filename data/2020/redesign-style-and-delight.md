@@ -9,10 +9,10 @@ syndication:
     published: 2020-07-02T05:36:05Z
 conversation:
   - url: "https://twitter.com/cssence/status/1278565469893656577"
-    text: "Wow, not only has @sarah_edo’s article on website fussiness [css-tricks.com/in-defense-of-a-fussy-website/](https://css-tricks.com/in-defense-of-a-fussy-website/) been an inspiration for my latest blog post, but then …"    
+    text: "Wow, not only has [@sarah_edo](https://twitter.com/sarah_edo)’s article on website fussiness [css-tricks.com/in-defense-of-a-fussy-website/](https://css-tricks.com/in-defense-of-a-fussy-website/) been an inspiration for my latest blog post, but then …"    
     posted: 2020-07-02T05:45:37Z
   - url: "https://twitter.com/cssence/status/1278565595366244354"
-    text: "… @mxbck took it to the next level and created “The Whimsical Web”, a collection of websites that spark joy. 😉<br>[whimsical.club](https://whimsical.club/)"
+    text: "… [@mxbck](https://twitter.com/mxbck) took it to the next level and created “The Whimsical Web”, a collection of websites that spark joy. 😉<br>[whimsical.club](https://whimsical.club/)"
     posted: 2020-07-02T05:46:07Z
 ---
 
@@ -25,7 +25,6 @@ conversation:
 .passage li::before{counter-increment:part;content:"Part " counter(part) ": ";font-variant-numeric:lining-nums tabular-nums;font-weight:600}
 .passage p{grid-area:note}
 .passage style+p{grid-area:intro}
-.passage small{position:absolute;margin-left:-1em;background-color:var(--color-accent);border-radius:.25em 75%;font-size:62.5%;white-space:nowrap;transform:rotate(9deg)}
 </style>
 
 This is Part Two of a <strong id="3-part-blog-series">Three Part Blog Series.</strong> Although the focus of this Editorial series is an in-depth look at the [latest redesign of this site](/2019/just-launch), you may read these posts as letters of appreciation to the [Basics of the Web.](/2016/webdesign-basics)
@@ -33,10 +32,10 @@ This is Part Two of a <strong id="3-part-blog-series">Three Part Blog Series.</s
 <ol aria-labelledby="3-part-blog-series">
 <li><a href="/2020/redesign-structure-and-semantics">Structure &amp; Semantics</a></li>
 <li>Style &amp; Delight</li>
-<li>Superfluous &amp; Advanced <small>(soon)</small></li>
+<li><a href="/2020/redesign-superfluous-and-advanced">Superfluous &amp; Advanced</a></li>
 </ol>
 
-The order of the three parts is not random, the most important one came first. You are reading part 2.
+The order of the three parts is not random, the most important one came first. You are reading part 2, which is all about my hobbyhorse CSS.
 
 </div>
 

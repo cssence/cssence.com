@@ -9,6 +9,14 @@ syndication:
   - url: "https://codepen.io/cssence/pen/ExKeZOR"
   - url: "https://twitter.com/cssence/status/1307969397227769857"
     published: 2020-09-21T09:06:19Z
+conversation:
+  - url: "https://twitter.com/cssence/status/1308632357365317633"
+    text: "Working on this piece reminded me of my first encounter with [@mmatuzo](https://twitter.com/mmatuzo) in 2016, a conversation on Medium, where we concluded that we share a fondness for print styles. 🖨"
+    posted: 2020-09-23T05:00:41Z
+  - url: "https://twitter.com/mmatuzo/status/1308640121214906368"
+    text: "[@cssence](https://twitter.com/cssence) Print styles 💜"
+    author: {id: "@mmatuzo", name: "Manuel Matuzović"}
+    posted: 2020-09-23T05:31:32Z
 ---
 
 # Breakpoints for Print
