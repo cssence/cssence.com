@@ -52,6 +52,8 @@ function plugin (opts) {
 			} else {
 				if (item.urlPath.startsWith("/about")) {
 					item.className = "c-about";
+				} else if (typeof item.latest === "string") { // those are index pages for series of articles
+					item.className = indicators[item.latest].category.replace("/", "c-");
 				} else if (categories[item.urlPath]) { // those are all indicator==="Index" but without /year and /about/about
 					item.className = categories[item.urlPath];
 				} else if (["/articles", "/notes"].indexOf(item.urlPath) !== -1) {

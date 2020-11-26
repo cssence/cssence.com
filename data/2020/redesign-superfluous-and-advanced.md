@@ -1,7 +1,7 @@
 ---
 indicator: "Editorial"
 title: "Re: Design - Superfluous and Advanced"
-description: "JavaScript, the optional enhancement."
+description: "JavaScript. The optional enhancement."
 thumbnail: {url: "/2020/redesign.png"}
 published: 2020-11-20T21:40:00Z
 syndication:

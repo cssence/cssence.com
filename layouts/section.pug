@@ -7,7 +7,7 @@ block content
 	block intro
 		.article!= contents
 
-	if typeof latest !== "number" || latest
+	if typeof latest === "undefined" || (typeof latest === "number" && latest > 0)
 		- var cards = posts.filter(function (post) { return post.listings.indexOf(urlPath) !== -1; })
 		- var numberOfPostsInCategory = cards.length
 		- var latestOnly = typeof latest === "number" && numberOfPostsInCategory > latest
