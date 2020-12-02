@@ -343,7 +343,6 @@ main {
 	bottom: 5rem;
 	left: 3.5625rem;
 	font-size: .75rem;
-	text-shadow: 0 -1px 0px var(--color-bg);
 	white-space: nowrap;
 	transition: bottom .5s cubic-bezier(.23,2,.4,.6);
 }
