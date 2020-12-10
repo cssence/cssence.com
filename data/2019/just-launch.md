@@ -14,7 +14,7 @@ conversation:
     text: "Redesign aside, my content migration is complete too! All tweets since 2010, my ancient blog posts, everything is available. Yay IndieWeb! 🙌<br>Looking forward to [@mxbck](https://twitter.com/mxbck)’s talk on Monday. 🙂"
     posted: 2019-11-23T19:51:21Z
   - url: "https://twitter.com/cssence/status/1198328204307681284"
-    text: "But the point is, and I’m paraphrasing “Just Write” by [@SaraSoueidan](https://twitter.com/SaraSoueidan): “Just Launch.” As long as it is accessible, you can put it out there.<br>[sarasoueidan.com/desk/just-write/](https://sarasoueidan.com/desk/just-write/)<br><br>PS. A proper long-form blog post about all the CSS trickery that went into the redesign will follow."
+    text: "But the point is, and I’m paraphrasing “Just Write” by [@SaraSoueidan](https://twitter.com/SaraSoueidan): “Just Launch.” As long as it is accessible, you can put it out there.<br>[sarasoueidan.com/desk/just-write/](https://sarasoueidan.com/desk/just-write/)<br><br>P.S. A proper long-form blog post about all the CSS trickery that went into the redesign will follow."
     posted: 2019-11-23T19:51:21Z
   - url: "https://twitter.com/mxbck/status/1198338124990074880"
     text: "[@cssence](https://twitter.com/cssence) [@wearewebclerks](https://twitter.com/wearewebclerks) Site looks awesome, congratulations!"
