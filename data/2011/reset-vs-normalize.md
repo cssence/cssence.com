@@ -19,7 +19,7 @@ So, instead of worrying about defaults, these days many web developers simply ov
 
 Over the years, reset.css has been tweaked, more directives have been added, most importantly because HTML5’s new elements and attributes [were desperate to join the party](http://html5doctor.com/html-5-reset-stylesheet/).
 
-<p><img src="/2011/reset-vs-normalize.vs.png" alt=""></p>
+<p class="blend"><img src="/2011/reset-vs-normalize.vs.png" alt=""></p>
 
 ## Normalization
 
