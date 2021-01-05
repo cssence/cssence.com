@@ -74,7 +74,9 @@ function plugin (opts) {
 				var dtName = new Date(2019, 6);
 				item.conversation.forEach(function (conversation) {
 					conversation.author = conversation.author || {id: "@CSSence", name: item.order < dtName ? "Matthias Beitl" : "Matthias Zöchling"};
-					conversation.author.url = conversation.author.url || "https://twitter.com/" + conversation.author.id.slice(1);
+					if (conversation.author.id && !conversation.author.url) {
+						conversation.author.url = "https://twitter.com/" + conversation.author.id.slice(1);
+					}
 				});
 			}
 			// augment: thumbnail

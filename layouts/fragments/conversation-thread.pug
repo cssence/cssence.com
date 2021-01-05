@@ -3,9 +3,10 @@ each message, messageIndex in conversation
 	article.conversation-item(class=!showContent&&"-unavailable")
 		h3.conversation-item-metadata(id="comment-" + (messageIndex + 1))
 			if showContent
+				- var linkOrNot = message.author.url ? "a" : "span"
 				- var showHandleOnlyOnce = message.author.name ? message.author.id : undefined
-				- var byCuratorOrElse = message.author.id === "@CSSence" ? "me author" : "author"
-				a.avatar(rel=byCuratorOrElse, data-id=showHandleOnlyOnce, href=message.author.url)= message.author.name || message.author.id
+				- var byCuratorOrElse = message.author.url ? (message.author.id === "@CSSence" ? "me author" : "author") : undefined
+				#{linkOrNot}.avatar(rel=byCuratorOrElse, data-id=showHandleOnlyOnce, href=message.author.url)= message.author.name || message.author.id
 				= " wrote on "
 				- var timestampOptions = { timePrefix: " at " }
 				if message.url && !message.url.startsWith("https://medium.com/@cssence")
