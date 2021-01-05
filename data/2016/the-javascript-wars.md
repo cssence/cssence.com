@@ -66,7 +66,7 @@ We know what HTML does. HTML is the foundation, it delivers the content to you. 
 
 Then there is CSS. It can make HTML look [and sound](https://www.w3.org/TR/css3-speech/) good, but it’s optional. Since browsers have a default way of styling certain things, you can get all the information you need by staring at the HTML with no CSS in place. If the developer took additional care, you should even be able get a gist of what those referenced images are about. All thanks to HTML. While CSS helps to make sites nice to look at, it is not mandatory. Oh the irony, the author of [cssence.com](https://cssence.com/) called CSS _optional_.
 
-Let’s move on to JavaScript. In charge of interactivity and advanced stuff. Granted, it can do amazing things, but it also breaks easily if things go awry, and unlike HTML and CSS it does not come with a fail-safe mechanism. Which is why we need JavaScript even less than CSS. That’s my opinion. An opinion that seems to be challenged more than anything else lately.
+Let’s move on to JavaScript, in charge of interactivity and advanced stuff. Granted, it can do amazing things, but it also breaks easily if things go awry, and unlike HTML and CSS it does not come with a fail-safe mechanism. Which is why we need JavaScript even less than CSS. That’s my opinion. An opinion that seems to be challenged more than anything else lately.
 
 ## The fuss about JavaScript
 

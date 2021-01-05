@@ -11,11 +11,12 @@ syndication:
   - url: "https://twitter.com/cssence/status/736240598861160448"
     published: 2016-05-27T17:00:12Z
 conversation:
-  - url: "https://twitter.com/cssence/status/737550572522373124"
-    text: "Well-fitting thoughts from [@sil](https://twitter.com/sil) [kryogenix.org/days/2016/05/24/the-importance-of-urls](https://www.kryogenix.org/days/2016/05/24/the-importance-of-urls/)"
-    posted: 2016-05-31T07:45:34Z
+  - url: "https://adactio.com/links/10735"
+    text: "Matthias Beitl takes a stab at trying to tackle the tricky UI problem of exposing the URLs of Progressive Web Apps. [This stuff is hard](http://www.brucelawson.co.uk/2016/on-urls-in-progressive-web-apps/)."
+    author: {id: "@adactio", name: "Jeremy Keith"}
+    posted: 2016-05-30T12:37:24Z
   - url: "https://twitter.com/Lucid00/status/737301910043144192"
-    text: "[@cssence](https://twitter.com/cssence) [@adactio](https://twitter.com/adactio) I think on Android a quiet persistent notification is the best way to go today<br>Where you just tap and it displays the URL"
+    text: "[@cssence](https://twitter.com/cssence) [@adactio](https://twitter.com/adactio) I think on Android a quiet persistent notification is the best way to go today.<br>Where you just tap and it displays the URL"
     author: {id: "@Lucid00", name: "Hugh Isaacs II"}
     posted: 2016-05-30T15:17:28Z
   - url: "https://twitter.com/Lucid00/status/737302965904498690"
@@ -43,6 +44,9 @@ conversation:
   - url: "https://twitter.com/cssence/status/737656335563644928"
     text: "[@julianmartinez](https://twitter.com/julianmartinez) [@adactio](https://twitter.com/adactio) So do I. Unless we mess it up, PWA will become the norm. Same way responsive web design is today."
     posted: 2016-05-31T14:45:50Z
+  - url: "https://twitter.com/cssence/status/737550572522373124"
+    text: "Well-fitting thoughts from [@sil](https://twitter.com/sil) [kryogenix.org/days/2016/05/24/the-importance-of-urls](https://www.kryogenix.org/days/2016/05/24/the-importance-of-urls/)"
+    posted: 2016-05-31T07:45:34Z
   - url: "https://twitter.com/cssence/status/737880399884525568"
     text: "And that is that. [twitter.com/jaffathecake/status/737774402436255744](https://twitter.com/jaffathecake/status/737774402436255744)"
     posted: 2016-06-01T05:36:11Z

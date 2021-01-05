@@ -17,7 +17,7 @@ conversation:
 # Ask the User
 ^ When it comes to one versus the other, there might be a third option
 
-On Twitter, I rarely vote when a poll shows up in my timeline. But I did participate when [Remy Sharp](https://twitter.com/rem) asked if we should do [Syntax Highlighting on the client or server side.](https://mobile.twitter.com/rem/status/1112821258259922950) Client, sure thing. It’s what I do on my blog. Otherwise I would have to teach [my static site generator](/2017/on-using-static-site-generators) to prepare everything upfront.
+On Twitter, I rarely vote when a poll shows up in my timeline. But I did participate when [Remy Sharp](https://twitter.com/rem) asked if we should do [Syntax Highlighting on the client or server side.](https://twitter.com/rem/status/1112821258259922950) Client, sure thing. It’s what I do on my blog. Otherwise I would have to teach [my static site generator](/2017/on-using-static-site-generators) to prepare everything upfront.
 
 It got even more interesting when [Remy wrote a follow-up blog post](https://remysharp.com/2019/04/09/code-highlighting-server-or-client) on the subject, where instead of relying on gut feeling he went trough the trouble of creating tests for both cases. Concluding that pre-rendering pages, i.e. adding Syntax Highlighting on the server, is the way to go these days. Initially he too thought otherwise, but the tests revealed this wasn’t the case. At least not anymore, back in the day the client was the only option. Alas, time changes everything. My situation is not so different, I’ve also been doing this thing [for a long time.](/2017/being-online-for-20-years) We should challenge old assumptions every once in a while.
 

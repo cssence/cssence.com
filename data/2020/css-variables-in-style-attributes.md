@@ -34,7 +34,7 @@ Even this site uses style attributes. [Articles filed under Code](/code) (includ
 
 ## Setting CSS variables directly in the style attribute
 
-[“Weird but cool,”](https://mobile.twitter.com/css/status/1194673806264152064) CSS-Tricks wrote when they featured [this article about setting CSS variables inline](https://ishadeed.com/article/css-variables-inline-styles/) by [Ahmad Shadeed.](https://twitter.com/shadeed9)
+[“Weird but cool,”](https://twitter.com/css/status/1194673806264152064) CSS-Tricks wrote when they featured [this article about setting CSS variables inline](https://ishadeed.com/article/css-variables-inline-styles/) by [Ahmad Shadeed.](https://twitter.com/shadeed9)
 
 I assume you already know how my thumbnail image handling has changed. Let’s apply the knowledge from the aforementioned article and replace the inline `background-image` directive with a custom property.
 

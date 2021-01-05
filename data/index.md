@@ -9,8 +9,8 @@ highlights:
   - id: "featured"
     name: "Featured"
     posts:
+      - "/2020/css-variables-in-style-attributes"
       - "/2019/inclusive-toggle-buttons"
-      - "/2019/we-are-web-clerks"
       - "/2018/no-webfont-no-cry"
 ---
 

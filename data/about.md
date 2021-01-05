@@ -26,7 +26,7 @@ Guess what happened. One article per month. That even worked for a little while,
 
 Anyway, since the beginning I’ve been blogging about web design and development, and I continued to do so [after I got my own domain](https://web.archive.org/web/20130831100511/http://www.cssence.com/). With the 2015 relaunch, the site evolved to serve as my personal hub, as you can tell by looking at the home page. Paired with the [fresh look](/2016/redesign) it received in 2016 you’ll end up with what you are looking at today.
 
-<figure class="portrait"><img src="/about/logo.png" alt="Logo of CSSence.com, an amalgam of the lowercase letters ‘c’ and ‘e’."><figcaption>Off-center logo with the color `#d34b6c` for the 45°&nbsp;bar. The color became the default when switching to a flat design in 2014.</figcaption></figure>
+<figure class="portrait"><img src="/about/logo.png" alt="Logo of CSSence.com, an amalgam of the lowercase letters ‘c’ and ‘e’."><figcaption>Off-center logo with the color <code>#d34b6c</code> for the 45°&nbsp;bar. The color became the default when switching to a flat design in 2014.</figcaption></figure>
 
 Give it some time and it will evolve again because I would like to bring home all the content I published elsewhere. I want to help to keep the decentralized web alive. You too should [own your own data](/2015/own-your-own-data).
 
