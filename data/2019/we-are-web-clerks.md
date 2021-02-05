@@ -81,7 +81,7 @@ conversation:
 
 I’ve been attending the first-ever [WeAreWebClerks Community Conference 2019](https://webclerks.at/) in Vienna. Glad to see one of the most livable cities finally has a down-to-earth (read: not ReactJS-and-the-likes) web developer conference.
 
-## Talks
+<h2 id="talks">Talks &amp; Speakers</h2>
 
 - “Building” by [Jeremy Keith](https://twitter.com/adactio)
 - “Dark UX patterns” by [Lisa Gringl](https://twitter.com/kringal)

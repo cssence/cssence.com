@@ -67,7 +67,7 @@ After last year’s first-ever [WeAreWebClerks Community Conference](/2019/we-ar
 
 But let’s face it, with such amazing talks it felt like an actual conference. Or, as [Max Böck put it,](https://twitter.com/mxbck/status/1288034544805871616) <q>This is not your grandma’s meetup.</q>
 
-## Talks
+<h2 id="talks">Talks &amp; Speakers</h2>
 
 - [“Making the web more whimsical with SVG”](https://twitter.com/cassiecodes/status/1288538565438246915) by [Cassie Evans](https://twitter.com/cassiecodes)
 - [“Zig-Zag Gradient Lab”](https://twitter.com/wearewebclerks/status/1288537432435163137) by [Michelle Barker](https://twitter.com/MicheBarks)
