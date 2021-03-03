@@ -23,7 +23,7 @@
     "metalsmith-metadata": "0.0.4",
     "metalsmith-uglify": "^2.3.4",
     "multimatch": "^2.1.0",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "uglify-js": "^3.0.24"
   },
   "browserslist": [
