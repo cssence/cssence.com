@@ -17,7 +17,7 @@ This question probably needs to be answered before we explore the pros and cons 
 
 ## The simplest of all images
 
-<figure class="portrait"><img src="/2011/data-uri-images-are-we-there-yet.bbc-homepage-may-2000-with-clearpixel.png" alt="“X-ray” of the BBC homepage, May 5th, 2000. Transparent images have been highlighted."><figcaption>Exposing transparent pixels on an old version of the BBC homepage (May 2000, via <a href="http://web.archive.org">WebArchive</a>.</figcaption></figure>
+<figure class="portrait"><img src="/2011/data-uri-images-are-we-there-yet.bbc-homepage-may-2000-with-clearpixel.png" alt="“X-ray” of the BBC homepage, May 5th, 2000. Transparent images have been highlighted."><figcaption>Exposing transparent pixels on an old version of the BBC homepage (May 2000, via <a href="http://web.archive.org">WebArchive</a>).</figcaption></figure>
 
 I’ve been making websites for more than a decade now. In the beginning, when it was all Netscape Navigator and no CSS, you needed tables and images, and&thinsp;—&thinsp;pardon my French&thinsp;—&thinsp;you needed a shitload of them. But almost all these image tags referred to the same GIF file. The file contained not more than one transparent pixel, and that pixel would get stretched to whatever width and/or height was needed. As is had been transparent, it never got distorted. Its sole purpose was to make sure that the surrounding table cells expanded to whatever size the image had been stretched to. Did I already mention that back then we stretched the hell out of this poor pixel?
 

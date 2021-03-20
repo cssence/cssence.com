@@ -6,7 +6,7 @@ revised: 2020-04-25T03:55:00Z
 ---
 
 # Help
-^ I need somebody
+^ I need somebody.
 
 ## Access Keys
 

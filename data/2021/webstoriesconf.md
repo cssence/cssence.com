@@ -80,7 +80,7 @@ Even I asked quite a few things, but writing down answers as fast as people give
 * To Stéphanie Walter: <q>[Not a question:] Thanks so much, Stéphanie! I wish all my fellow designer co-workers were here today to see/hear your great talk.</q>
 * To Jen Looper: <q>A question beyond Storytelling: Could this lead to an input mode superior (as in: less _Carpal Tunnel_-ly) to mouse/keyboard? At least for certain tasks?</q>
 * To Cassidy Williams: <q>Tools can help you scale. Do you think our industry is also good in keeping itself busy by spending too much time in the choosing process, and by the migration work required to change tooling?</q>
-* To Eric Meyer: <q>It’s one thing to look (back) at the final meyerweb.com, but what was your line of thinking at the start the redesign journey?</q>
+* To Eric Meyer: <q>It’s one thing to look (back) at the final meyerweb.com, but what was your approach at the start of the redesign journey? Tinker as you go?</q>
 
 Though _I do remember_ parts of the answer to the first question from the list above, where I asked none other than the author of [_A Dao of Web Design._](https://alistapart.com/article/dao/) John answered by flipping the question around, concluding:
 
