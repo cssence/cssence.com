@@ -19,7 +19,7 @@ conversation:
     author: {id: "@css", name: "CSS-Tricks"}
     posted: 2016-11-13T01:26:23Z
   - url: "https://twitter.com/cssence/status/797740191230423040"
-    text: "<a href=\"/2016/viewport-unit-zoom-issue\" aria-label=\"First part of this comment.\">[…]</a> [@css](https://twitter.com/css) thanks for sharing"
+    text: "<p><a href=\"/2016/viewport-unit-zoom-issue\" aria-label=\"First part of this comment.\">[…]</a> [@css](https://twitter.com/css) thanks for sharing</p>"
     posted: 2016-11-13T09:57:37Z
   - url: "https://twitter.com/k0deh4mst3r/status/797840749169639424"
     text: "[@css](https://twitter.com/css) Hi there! That’s an amazing article really, informative, bitterly truthful &amp; awakening! In this scenario what one should do?!"

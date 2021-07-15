@@ -18,8 +18,12 @@ each message, messageIndex in conversation
 				|	Comment ##{messageIndex + 1} is unavailable
 		.conversation-item-content
 			if showContent
-				p
-					!= message.text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "<a href=\"$2\">$1</a>")
+				- var text = message.text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "<a href=\"$2\">$1</a>")
+				if message.text.startsWith('<')
+					!= text
+				else
+					p
+						!= text
 				if message.image
 					p
 						img(src=message.image.url, alt=message.image.alt)

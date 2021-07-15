@@ -18,7 +18,7 @@ conversation:
     author: {id: "@austriacodes", name: "ViennaHTML"}
     posted: 2016-11-28T14:00:00Z # %%WRONGTIMESTAMP tweet unavailable
   - url: "https://twitter.com/DerVonDenBergen/status/804779492858363909"
-    text: "<span lang=\"de\">bist du auch noch für </span>[@dotJS](https://twitter.com/dotJS)<span lang=\"de\"> da</span> fellow Vienna.html<span lang=\"de\">  Mitglied?</span> 😁"
+    text: "<p><span lang=\"de\">bist du auch noch für </span>[@dotJS](https://twitter.com/dotJS)<span lang=\"de\"> da</span> fellow Vienna.html<span lang=\"de\">  Mitglied?</span> 😁</p>"
     author: {id: "@DerVonDenBergen", name: "Felix De Montis"}
     posted: 2016-12-02T20:09:17Z
   - url: "https://twitter.com/cssence/status/804805438789320704"
