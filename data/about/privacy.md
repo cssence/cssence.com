@@ -12,9 +12,15 @@ This site values [your privacy](/2018/data-protection-rules).
 
 ### Tracking
 
-No cookies 🍪 are used and no data is being collected while visiting this website, hence there is no reason to opt out of tracking.
+No cookies 🍪 are used and no data is being collected while visiting this website, hence no reason to opt out of tracking.
 
 If you still believe that your rights with respect to your privacy have been violated, you can file a complaint at the Austrian data protection agency <em lang="de">(“Datenschutzbehörde”)</em>.
+
+## License
+
+Unless stated otherwise, all content and code by Matthias Zöchling, available as [open source on GitHub](https://github.com/cssence/cssence.com).
+
+Content under [creative commons (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) and code under [MIT license (MIT)](https://cssence.mit-license.org/2010).
 
 ## Legal Notice
 
