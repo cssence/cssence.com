@@ -1,7 +1,7 @@
 {
   "name": "cssence.com",
   "homepage": "https://cssence.com/",
-  "version": "3.9.0",
+  "version": "3.9.1",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
@@ -16,6 +16,9 @@
     "build": "npm run build:assets && npm run build:minifycss && npm run build:minifyjs && npm run build:html",
     "start:server": "http-server public",
     "start": "npm run build && npm run start:server"
+  },
+  "engines": {
+    "node": ">=14"
   },
   "devDependencies": {
     "copyfiles": "^2.4.1",
