@@ -1,4 +1,5 @@
 ---
+indicator: "Internal"
 title: "About Matthias&nbsp;Zöchling"
 description: "Some facts about web developer and CSS enthusiast Matthias Zöchling, a.k.a. @CSSence."
 thumbnail: {type: "image/jpeg"}

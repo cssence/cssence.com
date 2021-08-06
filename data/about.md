@@ -1,4 +1,5 @@
 ---
+indicator: "Internal"
 title: "About"
 description: "CSSence dot com started as a weblog and is now the IndieWeb hub of Matthias Zöchling."
 thumbnail: {type: "image/jpeg"}

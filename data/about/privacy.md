@@ -1,4 +1,5 @@
 ---
+indicator: "Internal"
 title: "Privacy"
 description: "This page contains the Privacy Policy and a Legal Notice. You have been warned."
 revised: 2018-12-30T09:50:00Z

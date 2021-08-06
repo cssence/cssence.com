@@ -46,7 +46,7 @@
 					return script;
 				};
 				addStyle('/css/prism.css');
-				loadJS('/js/prism.min.js', function () {
+				loadJS('/js/prism.js', function () {
 					Prism.highlightAll();
 				});
 			}

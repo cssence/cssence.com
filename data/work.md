@@ -1,4 +1,5 @@
 ---
+indicator: "Internal"
 title: "Portfolio"
 description: "My online portfolio is not even a work in progress yet."
 thumbnail: {type: "image/jpeg"}

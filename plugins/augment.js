@@ -38,8 +38,6 @@ function plugin (opts) {
 			var item = files[file];
 			// assign: urlPath
 			item.urlPath = `/${file.startsWith("index") ? "" : file.slice(0, -".html".length)}`;
-			// augment: indicator
-			item.indicator = item.indicator || "Internal";
 			// assign: layout
 			if (indicators[item.indicator].layout) {
 				item.layout = indicators[item.indicator].layout;
