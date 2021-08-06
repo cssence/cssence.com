@@ -1,7 +1,7 @@
 {
   "name": "cssence.com",
   "homepage": "https://cssence.com/",
-  "version": "3.9.2",
+  "version": "3.10.0",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
   "scripts": {
     "prebuild": "rimraf public",
     "build:assets": "copyfiles -u 1 assets/* assets/img/* assets/css/* assets/js/* public",
-    "build:minifycss": "minify assets/css/screen.css > public/css/screen.min.css && minify assets/css/print.css > public/css/print.min.css && minify assets/css/home.css > public/css/home.min.css && minify assets/css/ie.css > public/css/ie.min.css && minify assets/css/codepen.css > public/css/codepen.min.css && minify assets/css/prism.css > public/css/prism.min.css",
+    "build:minifycss": "minify assets/css/screen.css > public/css/screen.min.css && minify assets/css/print.css > public/css/print.min.css && minify assets/css/home.css > public/css/home.min.css && minify assets/css/ie.css > public/css/ie.min.css && minify assets/css/prism.css > public/css/prism.min.css",
     "build:minifyjs": "minify assets/js/ctm.js > public/js/ctm.min.js && minify assets/js/codepen.js > public/js/codepen.min.js && minify assets/js/prism.js > public/js/prism.min.js",
     "build:html": "node render.js",
     "build": "npm run build:assets && npm run build:minifycss && npm run build:minifyjs && npm run build:html",
