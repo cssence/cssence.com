@@ -10,7 +10,7 @@
 	}
 	var style = document.createElement('link');
 	style.rel = 'stylesheet';
-	style.href = 'https://cssence.com/css/codepen.css';
+	style.href = 'https://cssence.com/css/codepen.min.css';
 	document.head.appendChild(style);
 	var anchor = document.createElement('a');
 	anchor.rel = 'help';

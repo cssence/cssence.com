@@ -19,7 +19,7 @@
 				style.removeAttribute('media');
 			}
 		}
-		addStyle('/css/ie.css');
+		addStyle('/css/ie.min.css');
 		console.info(reason, '\nNo further progressive enhancement.');
 	};
 	try {
@@ -45,8 +45,8 @@
 					}
 					return script;
 				};
-				addStyle('/css/prism.css');
-				loadJS('/js/prism.js', function () {
+				addStyle('/css/prism.min.css');
+				loadJS('/js/prism.min.js', function () {
 					Prism.highlightAll();
 				});
 			}
