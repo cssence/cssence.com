@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Boot2Gecko"
 description: "Mozilla attempts to build an “operating system for the open web”."
 published: 2011-09-16T11:40:54Z

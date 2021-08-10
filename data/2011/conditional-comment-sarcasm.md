@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Conditional Comment Sarcasm"
 description: "80% of web development is about making sites work in IE."
 published: 2011-04-12T09:09:04Z

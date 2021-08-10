@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "@ViennaHTML Meetup #4"
 description: "The forth iteration of our local developer meetup in Vienna."
 thumbnail: {type: "image/png"}

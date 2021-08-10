@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Markup by Mozilla"
 description: "I’ve just made my mark at markup.mozilla.org."
 published: 2011-06-15T06:21:50Z

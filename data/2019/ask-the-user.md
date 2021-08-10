@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "Ask the User"
 description: "You could make assumptions about what your users want. Or you could just ask them."
 thumbnail: {type: "image/png"}

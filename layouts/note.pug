@@ -1,10 +1,7 @@
-extends article.pug
+extends internal.pug
 
 block article
 	.conversation
 		h2#comments.screen.visually-hidden Message thread
 		include fragments/conversation-thread
 		include fragments/conversation-join
-
-block conversation
-	//- In /notes, the conversion is the article :)

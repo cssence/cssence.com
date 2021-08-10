@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Just Another Apple Event"
 description: "According to Dan Lyons, “Apple’s iPhone launches no longer excite”."
 published: 2012-09-13T06:26:21Z

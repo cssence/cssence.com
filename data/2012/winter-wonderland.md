@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Winter Wonderland"
 description: "I took some frosty inspiration from Veerle Pieters."
 published: 2012-12-25T21:11:26Z

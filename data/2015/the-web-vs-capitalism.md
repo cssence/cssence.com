@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "The Web vs. Capitalism"
 description: "“Web! What is it good for?” Another must-read from Jeremy Keith."
 published: 2015-05-30T06:03:39Z

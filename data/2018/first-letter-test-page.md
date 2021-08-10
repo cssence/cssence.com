@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "::first-letter Test Page"
 description: "You think it’s easy to determine the first letter of a sentence? Think again!"
 thumbnail: {type: "image/png"}

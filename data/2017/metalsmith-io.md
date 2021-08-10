@@ -1,5 +1,6 @@
 ---
-indicator: "Editorial"
+layout: "article.pug"
+group: "editorial"
 title: "About Metalsmith.io"
 description: "Behind the scenes: The Static Site Generator that renders this website."
 thumbnail: {type: "image/jpeg"}

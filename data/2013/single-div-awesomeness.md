@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Single Div Awesomeness"
 description: "How to do amazing stuff with just one HTML element."
 published: 2013-07-29T07:11:54Z

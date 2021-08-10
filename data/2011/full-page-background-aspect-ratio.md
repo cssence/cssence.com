@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Full Page Backgrounds"
 description: "How to display an image as full page background while preserving its aspect ratio with CSS."
 published: 2011-02-18T11:11:21Z

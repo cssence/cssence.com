@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Go Dark For IE"
 description: "A Plan to “get websites to go dark” for users of IE&nbsp;&lt;&nbsp;9."
 published: 2012-08-23T20:16:21Z

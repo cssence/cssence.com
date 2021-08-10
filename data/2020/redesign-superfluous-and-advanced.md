@@ -1,5 +1,6 @@
 ---
-indicator: "Editorial"
+layout: "article.pug"
+group: "editorial"
 title: "Re: Design - Superfluous and Advanced"
 description: "JavaScript. The optional enhancement."
 thumbnail: {url: "/2020/redesign.png"}

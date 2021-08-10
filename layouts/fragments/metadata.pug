@@ -1,35 +1,34 @@
-- var syndicated = syndication ? syndication[0] : {}
-//- var partner = {"medium.com": "Medium", "twitter.com": "Twitter", "codepen.io": "CodePen"}
+- const syndicated = syndication ? syndication[0] : {}
 footer.metadata
-	- var typeMap = {"Home": "site", "Index": "index page", "Code": "code example", "Opinion": "thread", "Bookmark": "thread", "Internal": "page"}
-	h2#about-post.subtle= "About this " + (typeMap[indicator] || "article")
+	- const pageTypeMap = {'index.pug': 'index page', 'note.pug': 'thread', 'internal.pug': 'page', code: 'code example'}
+	h2#about-post.subtle= `About this ${urlPath === '/' ? 'site' : (pageTypeMap[layout] || pageTypeMap[group] || 'article')}`
 	address.print
-		p #{schema==="article"?"Written":"Curated"} by 
-			a(rel="author", href=website.url+"/about/matt") Matthias Zöchling
-			if conversation && conversation.map(function (item) { return item.author.id; }).reduce(function (unique, item) { if (unique.indexOf(item) === -1) { unique.push(item) }; return unique; }, []).length > 1
-				= " et al"
-			| .
+		p
+			= layout === 'index.pug' ? 'Curated' : 'Written'
+			= ' by '
+			a(rel="author", href=`${website.url}/about/matt`) Matthias Zöchling
+			= (conversation && conversation.filter((item) => item.author).length) ? ' et al.' : '.'
 	if published
 		p
 			if syndicated.published || !syndicated.url
-				| Published
+				= 'Published'
 			else
-				| Originally #{conversation&&conversation[0].author.id!=="@CSSence"?"responded":"published"} on 
-				if syndicated.url.indexOf("medium") === -1 && syndicated.url.indexOf("wordpress") === -1
-					a(href=syndicated.url)= syndicated.url.split("/")[2]
+				= `Originally ${conversation && conversation[0].author ? 'responded' : 'published'} on `
+				if !syndicated.url.includes('medium') && !syndicated.url.includes('wordpress')
+					a(href=syndicated.url)= syndicated.url.split('/')[2]
 				else
-					= syndicated.url.split("/")[2]
-			|	on 
+					= syndicated.url.split('/')[2]
+			= ' on '
 			+ts(published)
-			| . 
-			if syndicated.published && syndicated.url.indexOf("twitter") === -1 && syndicated.url.indexOf("medium") === -1
-				| Syndicated to 
-				a(href=syndicated.url)= syndicated.url.split("/")[2]
-				| .
+			= '.'
+			if syndicated.published && !syndicated.url.includes('twitter') && !syndicated.url.includes('medium')
+				= ' Syndicated to '
+				a(href=syndicated.url)= syndicated.url.split('/')[2]
+				= '.'
 	if revised && (!published || revised.toISOString().slice(0, 10) !== published.toISOString().slice(0, 10))
-		p Last revised on 
+		p= 'Last revised on '
 			+ts(revised)
-			| .
+			= '.'
 	p.print
-		| Permalink: 
-		a(href=website.url+urlPath)= website.url+urlPath
+		= 'Permalink: '
+		a(href=permalink)= permalink

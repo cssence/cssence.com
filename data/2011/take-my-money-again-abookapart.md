@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Take My Money (Again), @ABookApart"
 description: "I just bought two more books from them."
 published: 2011-06-12T13:14:29Z

@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Icon Font Unicode Range"
 description: "If you use icon fonts, do it in an accessible way."
 published: 2013-01-18T17:03:23Z

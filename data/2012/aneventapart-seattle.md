@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "An Event Apart 2012"
 description: "Attending my first ever web conference."
 thumbnail: {type: "image/jpeg"}
@@ -22,7 +23,7 @@ conversation:
     text: "Thanks [@mediatemple](https://twitter.com/mediatemple) for sponsoring the [@AnEventApart](https://twitter.com/aneventapart) opening night party #AEA"
     posted: 2012-04-02T21:02:00Z
   - url: "https://twitter.com/cssence/status/187203142260244481"
-    text: "2nd day of [@AnEventApart](https://twitter.com/aneventapart) and my mind is still blown from day 1 (i’m talking sessions, although the party was great too) #AEA"
+    text: "2nd day of [@AnEventApart](https://twitter.com/aneventapart) and my mind is still blown from day 1 (I’m talking sessions, although the party was great too) #AEA"
     posted: 2012-04-03T15:41:21Z
   - url: "https://twitter.com/cssence/status/187568255236456450"
     text: "Full day workshop with [@lukew](https://twitter.com/lukew) - it’s going to be #bada55! #AEASea"

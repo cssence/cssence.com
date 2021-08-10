@@ -1,5 +1,6 @@
 ---
-indicator: "Home"
+layout: "index.pug"
+group: "default"
 title: "CSSence.com «The Essence of CSS»"
 summary: "Online portfolio and #indieweb Hub of Matthias Zöchling (@CSSence). Blog included, mainly about web design, majoring in CSS."
 description: "Weblog and #IndieWeb Hub of Matthias Zöchling (@CSSence)."

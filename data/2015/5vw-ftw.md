@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "5vw FTW"
 description: "The fastest way to cater for designs that do not scale well below 320px."
 thumbnail: {type: "image/png"}

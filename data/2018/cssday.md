@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "CSS Day 2018"
 description: "@CSSDayConf 2018 Day #2, enjoying eight great talks in Amsterdam."
 thumbnail: {type: "image/jpeg"}
@@ -14,18 +15,18 @@ conversation:
     posted: 2018-06-15T06:20:01Z
   - url: "https://twitter.com/SaraSoueidan/status/1007510984871825409"
     text: "#CSSDay attendees heads up: my talk will be right before lunch, so I know your inner fuel will already be getting depleted by then, so plz make sure you grab a quick coffee or so in the short break before my talk because my talk will be fast-paced and very technical."
-    author: {id: "@SaraSoueidan", name: "Sara Soueidan"}
+    author: {url: "https://twitter.com/SaraSoueidan", name: "Sara Soueidan"}
     posted: 2018-06-15T06:31:52Z
   - url: "https://twitter.com/SaraSoueidan/status/1007512161407635456"
     text: "😃 [@ppk](https://twitter.com/ppk) said that he’s blaming me for any brain-damaged attendees after my workshop, so I don’t wanna be blamed for any more today after my talk 🤣<br><br>(Totally joking btw but u know what i mean) #CSSDay"
-    author: {id: "@SaraSoueidan", name: "Sara Soueidan"}
+    author: {url: "https://twitter.com/SaraSoueidan", name: "Sara Soueidan"}
     posted: 2018-06-15T06:36:32Z
   - url: "https://twitter.com/cssence/status/1007516077994184704"
     text: "This is the kind of brain damage I am actually looking forward to. #CSSDay #WhatDidIJustType"
     posted: 2018-06-15T06:52:06Z
   - url: "https://twitter.com/SaraSoueidan/status/1007517056907038721"
     text: "Hahaha that hashtag! Well, that’s very good to hear 😄"
-    author: {id: "@SaraSoueidan", name: "Sara Soueidan"}
+    author: {url: "https://twitter.com/SaraSoueidan", name: "Sara Soueidan"}
     posted: 2018-06-15T06:55:59Z
   - url: "https://twitter.com/cssence/status/1007529364324569088"
     text: "[@CSSDayConf](https://twitter.com/cssdayconf) Question for [@meyerweb](https://twitter.com/meyerweb): What happened to <code>box-sizing: padding-box</code>?"

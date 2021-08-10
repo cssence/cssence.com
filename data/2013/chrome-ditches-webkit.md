@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Chrome Ditches WebKit"
 description: "Wired reports that “Google Chrome breaks up with Apple’s WebKit”."
 published: 2013-04-04T06:18:54Z

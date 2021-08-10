@@ -1,5 +1,6 @@
 ---
-indicator: "Editorial"
+layout: "article.pug"
+group: "editorial"
 title: "Goodbye Wordpress"
 description: "To achieve full ownership, I’m moving my weblog to my own domain."
 thumbnail: {type: "image/png"}

@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "Data Protection Rules!"
 description: "Turning regulations into something positive."
 thumbnail: {type: "image/jpeg"}

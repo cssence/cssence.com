@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "Breakpoints for Print"
 description: "A media query test page for web browsers."
 thumbnail: {type: "image/png"}
@@ -15,7 +16,7 @@ conversation:
     posted: 2020-09-23T05:00:41Z
   - url: "https://twitter.com/mmatuzo/status/1308640121214906368"
     text: "[@cssence](https://twitter.com/cssence) Print styles 💜"
-    author: {id: "@mmatuzo", name: "Manuel Matuzović"}
+    author: {url: "https://twitter.com/mmatuzo", name: "Manuel Matuzović"}
     posted: 2020-09-23T05:31:32Z
 ---
 

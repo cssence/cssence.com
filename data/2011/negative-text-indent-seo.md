@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Negative Text-Indent"
 description: "Those -9999px might cause some SEO frustration."
 published: 2011-03-14T17:04:53Z

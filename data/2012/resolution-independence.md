@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Resolution Independence"
 description: "Mark Hurrell would like to specify the “font-size relatively”."
 published: 2012-01-04T20:12:26Z

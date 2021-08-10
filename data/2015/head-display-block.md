@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "head {display:block}"
 description: "Content inside &lt;head&gt; is usually hidden, but it doesn’t need to be."
 thumbnail: {type: "image/jpeg"}

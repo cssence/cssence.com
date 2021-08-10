@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Lots of Purple Avatars"
 description: "People (myself included) try to get #663399Becca trending on Twitter."
 published: 2014-06-12T08:27:42Z

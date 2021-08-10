@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "SVG currentColor"
 description: "A potential issue while transitioning to currentColor used in SVG fill."
 thumbnail: {type: "image/png"}

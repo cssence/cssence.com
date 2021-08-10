@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "The Return of “From Redmond With Love”"
 description: "Another browser-shipping-based cake delivery took place."
 published: 2011-03-24T09:44:00Z

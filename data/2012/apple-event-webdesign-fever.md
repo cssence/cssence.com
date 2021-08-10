@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Apple Event WebDesign Fever"
 description: "Another Apple event, another touch icon size we need to provide."
 published: 2012-03-08T06:57:21Z

@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Minimum Unicode Knowledge"
 description: "Joel Spolsky on “what every developer must know about Unicode”."
 published: 2010-10-31T10:35:23Z

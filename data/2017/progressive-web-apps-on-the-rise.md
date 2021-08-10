@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Progressive Web Apps on the Rise"
 description: "My appreciation for fewer app installs on mobile."
 thumbnail: {type: "image/png"}

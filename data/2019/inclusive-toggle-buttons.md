@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "Inclusive Toggle Buttons"
 description: "Tweaking the ones from “Inclusive Components” by Heydon Pickering."
 thumbnail: {type: "image/png"}
@@ -14,7 +15,7 @@ conversation:
     posted: 2020-01-03T13:29:22Z
   - url: "https://twitter.com/aardrian/status/1213290511047569410"
     text: "[@cssence](https://twitter.com/cssence) [@mmatuzo](https://twitter.com/mmatuzo) [@paciellogroup](https://twitter.com/paciellogroup)<br>Much more context needed. Are you trying to apply <code>&lt;label&gt;</code> to a <code>&lt;button&gt;</code> element? What is “auxiliary labeling”?"
-    author: {id: "@aardrian", name: "Adrian Roselli"}
+    author: {url: "https://twitter.com/aardrian", name: "Adrian Roselli"}
     posted: 2020-01-04T02:46:14Z
   - url: "https://twitter.com/cssence/status/1213372003085889537"
     text: "[@aardrian](https://twitter.com/aardrian) [@mmatuzo](https://twitter.com/mmatuzo) [@paciellogroup](https://twitter.com/paciellogroup)<br>Exactly. Based on what [@heydonworks](https://twitter.com/heydonworks) did in the new “Inclusive Components” book, where he uses <code>aria-labelledby</code> to add a description to Toggle Buttons, I tried the same but used a label for the button, as shown under [cssence.com/2019/inclusive-toggle-buttons](https://cssence.com/2019/inclusive-toggle-buttons)"
@@ -24,7 +25,7 @@ conversation:
     posted: 2020-01-04T08:54:22Z
   - url: "https://twitter.com/aardrian/status/1213452010114179073"
     text: "[@cssence](https://twitter.com/cssence) [@mmatuzo](https://twitter.com/mmatuzo) [@paciellogroup](https://twitter.com/paciellogroup)<br>If you do not know which provides the accessible name then you will have to test.<br><br>Check what is exposed in the browser so you know which wins in which UA.<br><br>TalkBack and VoiceOver warrant a test as well.<br><br>Also, validate the page, just to be confirm it is cool."
-    author: {id: "@aardrian", name: "Adrian Roselli"}
+    author: {url: "https://twitter.com/aardrian", name: "Adrian Roselli"}
     posted: 2020-01-04T13:27:58Z
 ---
 

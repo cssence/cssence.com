@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "Beyond Progressive Web&nbsp;Apps"
 description: "My personal thoughts in response to “Regressive Web Apps” by Jeremy Keith."
 thumbnail: {type: "image/png"}
@@ -13,33 +14,33 @@ syndication:
 conversation:
   - url: "https://adactio.com/links/10735"
     text: "Matthias Beitl takes a stab at trying to tackle the tricky UI problem of exposing the URLs of Progressive Web Apps. [This stuff is hard](http://www.brucelawson.co.uk/2016/on-urls-in-progressive-web-apps/)."
-    author: {id: "@adactio", name: "Jeremy Keith"}
+    author: {url: "https://adactio.com/about/", name: "Jeremy Keith"}
     posted: 2016-05-30T12:37:24Z
   - url: "https://twitter.com/Lucid00/status/737301910043144192"
     text: "[@cssence](https://twitter.com/cssence) [@adactio](https://twitter.com/adactio) I think on Android a quiet persistent notification is the best way to go today.<br>Where you just tap and it displays the URL"
-    author: {id: "@Lucid00", name: "Hugh Isaacs II"}
+    author: {url: "https://twitter.com/Lucid00", name: "Hugh Isaacs II"}
     posted: 2016-05-30T15:17:28Z
   - url: "https://twitter.com/Lucid00/status/737302965904498690"
     text: "[@cssence](https://twitter.com/cssence) [@adactio](https://twitter.com/adactio) like how The Physical Web works in Chrome today<br>Except the notification only shows up for a standalone progressive web app"
-    author: {id: "@Lucid00", name: "Hugh Isaacs II"}
+    author: {url: "https://twitter.com/Lucid00", name: "Hugh Isaacs II"}
     posted: 2016-05-30T15:21:40Z
   - url: "https://twitter.com/cssence/status/737543328816734208"
     text: "[@Lucid00](https://twitter.com/Lucid00) [@adactio](https://twitter.com/adactio) I hear you. As long as those URLs remain URLs, as opposed to acting more like Android intents."
     posted: 2016-05-31T07:16:47Z
   - url: "https://twitter.com/Lucid00/status/737612848486965250"
     text: "[@cssence](https://twitter.com/cssence) [@adactio](https://twitter.com/adactio) my thought is it’d be a “chat heads”-like experience. Where a floating URL input box pops up on press of that notification"
-    author: {id: "@Lucid00", name: "Hugh Isaacs II"}
+    author: {url: "https://twitter.com/Lucid00", name: "Hugh Isaacs II"}
     posted: 2016-05-31T11:53:01Z
   - url: "https://twitter.com/cssence/status/737660086173175809"
     text: "[@Lucid00](https://twitter.com/Lucid00) Oh, so this was about revealing the URL. I thought you were talking about getting to the app/site in the first place."
     posted: 2016-05-31T15:00:44Z
   - url: "https://twitter.com/Lucid00/status/737666344489979905"
     text: "[@cssence](https://twitter.com/cssence) oh nah. Sorry, I thought the context was obvious<br>But yeah, I think a quiet notification that shows when a PWA is open is the answer"
-    author: {id: "@Lucid00", name: "Hugh Isaacs II"}
+    author: {url: "https://twitter.com/Lucid00", name: "Hugh Isaacs II"}
     posted: 2016-05-31T15:25:36Z
   - url: "https://twitter.com/julianmartinez/status/737586258235400192"
     text: "[@cssence](https://twitter.com/cssence) [@adactio](https://twitter.com/adactio) we managed to make our app [selio.com](https://selio.com/) be as responsive as the native app. So we do believe in PWA"
-    author: {id: "@julianmartinez", name: "Julian Martinez"}
+    author: {url: "https://twitter.com/julianmartinez", name: "Julian Martinez"}
     posted: 2016-05-31T10:07:22Z
   - url: "https://twitter.com/cssence/status/737656335563644928"
     text: "[@julianmartinez](https://twitter.com/julianmartinez) [@adactio](https://twitter.com/adactio) So do I. Unless we mess it up, PWA will become the norm. Same way responsive web design is today."

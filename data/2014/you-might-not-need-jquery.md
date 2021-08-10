@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "You Might Not Need jQuery"
 description: "A quick way to get the vanilla JS equivalent of a jQuery function."
 published: 2014-01-31T10:24:12Z

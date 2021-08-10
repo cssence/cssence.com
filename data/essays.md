@@ -1,5 +1,6 @@
 ---
-indicator: "Index"
+layout: "index.pug"
+group: "essay"
 title: "Essays"
 description: "The classic CSSence weblog: Latest blog posts from the category “Essay”."
 thumbnail: {type: "image/jpeg"}

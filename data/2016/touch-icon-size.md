@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "iOS Touch Icon Size"
 description: "Interesting fact from “Going Responsive” by Karen McGrane."
 published: 2016-02-18T18:13:56Z

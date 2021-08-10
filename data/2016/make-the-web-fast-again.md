@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Make the Web Fast Again"
 description: "Satisfied with and thankful for the performance of my website."
 thumbnail: {type: "image/png"}

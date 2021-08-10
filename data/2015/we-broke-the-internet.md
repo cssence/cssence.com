@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "We broke the Internet"
 description: "It became hard to see the actual content on a web page these days."
 published: 2015-08-06T07:20:38Z

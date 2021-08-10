@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Happy Birthday Safari"
 description: "Apple’s Safari web browser just turned 10."
 published: 2013-01-07T15:59:50Z

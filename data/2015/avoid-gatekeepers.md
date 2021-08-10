@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Avoid Gatekeepers"
 description: "You should not need a particular browser or app to view content."
 thumbnail: {type: "image/png"}

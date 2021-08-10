@@ -1,5 +1,6 @@
 ---
-indicator: "Index"
+layout: "index.pug"
+group: "editorial"
 title: "Editorials"
 description: "Behind the scenes: Latest blog posts from the category “Editorials”."
 thumbnail: {type: "image/jpeg"}

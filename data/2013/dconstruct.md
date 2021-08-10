@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "dConstruct 2013"
 description: "Attending dConstruct, we will be “communicating with machines”."
 thumbnail: {type: "image/jpeg"}
@@ -11,7 +12,7 @@ syndication:
 conversation:
   - url: "https://twitter.com/adactio/status/375876717929168897"
     text: "Today’s the big day: @dConstruct 2013: “Communicating With Machines”.<br><br>I am filled with nervous excitement."
-    author: {id: "@adactio", name: "Jeremy Keith"}
+    author: {url: "https://twitter.com/adactio", name: "Jeremy Keith"}
     posted: 2013-09-06T07:02:47Z
   - url: "https://twitter.com/cssence/status/375883591215243264"
     text: "[@adactio](https://twitter.com/adactio) [@dConstruct](https://twitter.com/dconstruct) Amazing speaker line-up! Can’t wait, cu soon - PS: Brighton rocks."

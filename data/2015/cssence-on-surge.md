@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "@cssence on @surge_sh"
 description: "I have transferred my website to a new host."
 published: 2015-10-20T15:07:00Z
@@ -13,7 +14,7 @@ conversation:
     posted: 2015-10-20T15:07:00Z
   - url: "https://twitter.com/surge_sh/status/656537507174047744"
     text: "[@cssence](https://twitter.com/cssence) Thanks, and great work on your site! Really nice. Let us know if you have any other questions about moving other projects over."
-    author: {id: "@surge_sh", name: "Surge"}
+    author: {url: "https://twitter.com/surge_sh", name: "Surge"}
     posted: 2015-10-20T18:28:00Z
 ---
 

@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "The Three Tools"
 description: "Paraphrasing Jeremy Keith, I cannot work without HTML and CSS."
 published: 2016-05-03T10:15:30Z

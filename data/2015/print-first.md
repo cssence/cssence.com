@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "Print First"
 description: "Forget Mobile First. Providing Styles for Print should be your first media query."
 thumbnail: {type: "image/jpeg"}

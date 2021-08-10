@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "UX London 2013"
 description: "To cover a greater range of topics, I’m at a conference about User Experience."
 thumbnail: {type: "image/jpeg"}

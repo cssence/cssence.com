@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Just Launch!"
 description: "Indicating my latest redesign."
 thumbnail: {type: "image/jpeg"}
@@ -18,18 +19,18 @@ conversation:
     posted: 2019-11-23T19:51:21Z
   - url: "https://twitter.com/mxbck/status/1198338124990074880"
     text: "[@cssence](https://twitter.com/cssence) [@wearewebclerks](https://twitter.com/wearewebclerks) Site looks awesome, congratulations!"
-    author: {id: "@mxbck", name: "Max Böck"}
+    author: {url: "https://twitter.com/mxbck", name: "Max Böck"}
     posted: 2019-11-23T20:30:47Z
   - url: "https://twitter.com/SaraSoueidan/status/1198458566144868359"
     text: "[@cssence](https://twitter.com/cssence) I LOVE the site! Congratulations! And I look forward to the blog post (esp the part where you host your tweet history on it!<br><br>It looks really really good 👏🏻"
-    author: {id: "@SaraSoueidan", name: "Sara Soueidan"}
+    author: {url: "https://twitter.com/SaraSoueidan", name: "Sara Soueidan"}
     posted: 2019-11-24T04:29:23Z
   - url: "https://twitter.com/cssence/status/1198488151276294146"
     text: "[@SaraSoueidan](https://twitter.com/SaraSoueidan) Aww, thank you Sara. 😊<br>The pressure is on now… Must. Write. Post."
     posted: 2019-11-24T06:26:56Z
   - url: "https://twitter.com/SaraSoueidan/status/1198493820834463744"
     text: "[@cssence](https://twitter.com/cssence) Just do it 😁 (no pressure, really)"
-    author: {id: "@SaraSoueidan", name: "Sara Soueidan"}
+    author: {url: "https://twitter.com/SaraSoueidan", name: "Sara Soueidan"}
     posted: 2019-11-24T06:49:28Z
 ---
 

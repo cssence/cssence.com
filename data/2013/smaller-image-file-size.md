@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Smaller Image File Size"
 description: "According to Netvlies, “smaller file size and better quality is possible”."
 published: 2013-01-12T14:16:00Z

@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "On the Lookout for SSL"
 description: "Found an affordable (read: free) way to secure my websites."
 published: 2017-01-19T19:38:50Z

@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "We Are Web Clerks 2020 #ViennaCalling"
 description: "Attending a meetup/conference hybrid, completely remote."
 thumbnail: {type: "image/jpeg"}
@@ -14,37 +15,37 @@ conversation:
     posted: 2020-07-29T17:31:13Z
   - url: "https://twitter.com/g16n/status/1288526930090885121"
     text: "What’s the point of setting transition-duration to a very small time value with <code>@⁠media (prefers-reduced-motion: reduce)</code> instead of removing the transition altogether?<br>[@cassiecodes](https://twitter.com/cassiecodes) #ViennaCalling"
-    author: {id: "@g16n", name: "Gunnar Bittersmann"}
+    author: {url: "https://twitter.com/g16n", name: "Gunnar Bittersmann"}
     posted: 2020-07-29T17:28:54Z
   - url: "https://twitter.com/cssence/status/1288528523884462088"
     text: "[@g16n](https://twitter.com/g16n) [@cassiecodes](https://twitter.com/cassiecodes)<br>You’ll end up at the desired end state of the transition, so your page will look like the animations ran (because they did), i.e. no difference to running the transition at “regular” speed."
     posted: 2020-07-29T17:35:14Z
   - url: "https://twitter.com/g16n/status/1288532535262183424"
     text: "[@cssence](https://twitter.com/cssence) [@cassiecodes](https://twitter.com/cassiecodes)<br>Hm, with or without transitions, don’t you end up in the end state anyway? (I’m not talking about animations here.)"
-    author: {id: "@g16n", name: "Gunnar Bittersmann"}
+    author: {url: "https://twitter.com/g16n", name: "Gunnar Bittersmann"}
     posted: 2020-07-29T17:51:10Z
   - url: "https://twitter.com/g16n/status/1288533504599490561"
     text: "I see the difference in transition* events which won’t fire with transitions switched off, but apart from that?"
-    author: {id: "@g16n", name: "Gunnar Bittersmann"}
+    author: {url: "https://twitter.com/g16n", name: "Gunnar Bittersmann"}
     posted: 2020-07-29T17:55:01Z
   - url: "https://twitter.com/cassiecodes/status/1288534637938171905"
     text: "[@g16n](https://twitter.com/g16n) [@cssence](https://twitter.com/cssence)<br>Keeping the transition duration makes sure that any functionality tied to a transition e.g. a menu sliding in will still work."
-    author: {id: "@cassiecodes", name: "Cassie Evans"}
+    author: {url: "https://twitter.com/cassiecodes", name: "Cassie Evans"}
     posted: 2020-07-29T17:59:32Z
   - url: "https://twitter.com/cssence/status/1288535842588426247"
     text: "[@cassiecodes](https://twitter.com/cassiecodes) [@g16n](https://twitter.com/g16n)<br>Thanks, I’ve been struggling to come up with a meaningful example. Menus are a great one, them sliding in might affect a huge part of the viewport, so that kind of transition might be a trigger."
     posted: 2020-07-29T18:04:19Z
   - url: "https://twitter.com/g16n/status/1288567561337163777"
     text: "[@cssence](https://twitter.com/cssence) [@cassiecodes](https://twitter.com/cassiecodes)<br>My menu solution works without tiny transition duration (but uses a class set on transitionrun and removed on transitionend).<br>[codepen.io/gunnarbittersmann/pen/abdMLKJ](https://codepen.io/gunnarbittersmann/pen/abdMLKJ)<br>I add the transition with MQ rather than taking it away. (Better no transition than a transition for all users in older browsers.)"
-    author: {id: "@g16n", name: "Gunnar Bittersmann"}
+    author: {url: "https://twitter.com/g16n", name: "Gunnar Bittersmann"}
     posted: 2020-07-29T20:10:21Z
   - url: "https://twitter.com/g16n/status/1288568166365507587"
     text: "This is still work in progress. To do: focus management, focus trap. Comments welcome."
-    author: {id: "@g16n", name: "Gunnar Bittersmann"}
+    author: {url: "https://twitter.com/g16n", name: "Gunnar Bittersmann"}
     posted: 2020-07-29T20:12:45Z
   - url: "https://twitter.com/cassiecodes/status/1288575901345746945"
     text: "[@g16n](https://twitter.com/g16n) [@cssence](https://twitter.com/cssence)<br>Sure… Seems like more effort to do the same thing, but to each their own."
-    author: {id: "@cassiecodes", name: "Cassie Evans"}
+    author: {url: "https://twitter.com/cassiecodes", name: "Cassie Evans"}
     posted: 2020-07-29T20:43:30Z
   - url: "https://twitter.com/cssence/status/1288719934017560577"
     text: "[@g16n](https://twitter.com/g16n) [@cassiecodes](https://twitter.com/cassiecodes)<br>👍 Doing it this way around is closer to progressive enhancement. But on animation-heavy sites you might still be better off using the star selector and set all durations to a tiny value at once, as shown here: [css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/](https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/)<br><br>Don’t we all love how versatile CSS is? 🙂"

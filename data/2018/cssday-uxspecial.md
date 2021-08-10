@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "CSS&nbsp;Day 2018 UX&nbsp;Special"
 description: "@CSSDayConf 2018 Day #1, all eyes are on User Experience."
 thumbnail: {type: "image/jpeg"}
@@ -15,11 +16,11 @@ conversation:
     posted: 2018-06-14T06:47:17Z
   - url: "https://twitter.com/cssdayconf/status/1007152853171998720"
     text: "Hah, only to the badges with a public Twitter account! 🙂"
-    author: {id: "@CSSDayConf", name: "CSS Day conference"}
+    author: {url: "https://twitter.com/CSSDayConf", name: "CSS Day conference"}
     posted: 2018-06-14T06:48:46Z
   - url: "https://twitter.com/Jarno/status/1007153361496559616"
     text: "Nice touch, can’t wait to get mine tomorrow."
-    author: {id: "@Jarno", name: "Jarno de Wit"}
+    author: {url: "https://twitter.com/Jarno", name: "Jarno de Wit"}
     posted: 2018-06-14T06:50:48Z
 ---
 

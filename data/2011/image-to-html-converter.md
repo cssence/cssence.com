@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Image-to-HTML Converter"
 description: "Neil Fraser created a converter that turns images into HTML tables."
 published: 2011-04-15T17:07:13Z

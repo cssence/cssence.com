@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Internet Does Not Never Forget"
 description: "Jeremy Keith on link rot and other online amnesia."
 published: 2015-04-13T19:56:14Z

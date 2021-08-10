@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "We Are Web Clerks 2019"
 description: "Attending the first-ever @WeAreWebClerks in Vienna, Austria. Yes, on home turf!"
 thumbnail: {type: "image/jpeg"}

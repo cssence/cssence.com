@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "XmlHttpRequest Timeouts"
 description: "How about testing your site on a slow connection?"
 published: 2014-05-21T16:59:00Z

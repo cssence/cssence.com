@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "WebStories Lille 2021"
 description: "@webstoriesconf 2021, from Lille (France) straight to my home."
 thumbnail: {type: "image/jpeg"}
@@ -35,7 +36,7 @@ conversation:
     posted: 2021-02-05T13:32:54Z
   - url: "https://twitter.com/webrocker/status/1357684426000465920"
     text: "[@cssence](https://twitter.com/cssence)<br>[@adactio](https://twitter.com/adactio)’s talk left quite an impression on me, because this layer/pace model felt so apt."
-    author: {id: "@webrocker", name: "Tom Arnold"}
+    author: {url: "https://twitter.com/webrocker", name: "Tom Arnold"}
     posted: 2021-02-05T13:36:06Z
   - url: "https://twitter.com/cssence/status/1357731446983655424"
     text: "“CSS is hacking my brain.”<br>— [@meyerweb](https://twitter.com/meyerweb)<br>@webstoriesconf"
@@ -48,7 +49,7 @@ conversation:
     posted: 2021-02-05T17:02:13Z
   - url: "https://twitter.com/gericci/status/1357754062737915906"
     text: "[@cssence](https://twitter.com/cssence) Happy to hear it! Thanks!"
-    author: {id: "@gericci", name: "Angela Ricci"}
+    author: {url: "https://twitter.com/gericci", name: "Angela Ricci"}
     posted: 2021-02-05T18:12:49Z
 ---
 

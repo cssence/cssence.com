@@ -1,5 +1,6 @@
 ---
-indicator: "Index"
+layout: "index.pug"
+group: "default"
 title: "Popular Posts"
 description: "Popularity contest: Most read, most controversial, or simply handpicked by the author."
 thumbnail: {type: "image/jpeg"}

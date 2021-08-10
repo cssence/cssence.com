@@ -1,7 +1,8 @@
-//- Warning: Index pages only have a subset of info stored in "banner"
-p.banner(class=banner.forHero && !banner.published && "print")
-	span.screen.visually-hidden= banner.published ? "Published on " : "Last updated on "
+//- Warning: Index pages only have a subset of info stored in 'banner'
+p.banner(class=banner.forHero && !banner.published && 'print')
+	span.screen.visually-hidden= banner.published ? 'Published on ' : 'Last updated on '
 	+ts(banner.published || banner.revised)
-	span.screen.visually-hidden= ". Filed under "
-	i.indicator= banner.indicator
-	span.screen.visually-hidden= "."
+	span.screen.visually-hidden= '. Filed under '
+	- const indicatorMap = {'index.pug': 'Index', 'internal.pug': 'Internal', bookmark: 'Bookmark', code: 'Code', editorial: 'Editorial', essay: 'Essay', event: 'Event', opinion: 'Opinion'}
+	i.indicator(class=getClassName(banner.group))= banner.urlPath === '/' ? 'Home' : (indicatorMap[banner.layout] || indicatorMap[banner.group])
+	span.screen.visually-hidden= '.'

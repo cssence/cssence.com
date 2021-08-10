@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "Animating Emojis"
 description: "Is it just me or did you too see that smiley face blink?"
 thumbnail: {type: "image/png"}

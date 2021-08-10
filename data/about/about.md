@@ -1,5 +1,6 @@
 ---
-indicator: "Index"
+layout: "index.pug"
+group: "about"
 title: "About About"
 description: "This is the “Inception page” of CSSence.com. Kind of."
 thumbnail: {type: "image/jpeg"}

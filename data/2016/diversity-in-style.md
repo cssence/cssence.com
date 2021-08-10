@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "Diversity in Style"
 description: "Looking for the transcript of my @dotCSS talk? Here you go."
 thumbnail: {type: "image/jpeg"}

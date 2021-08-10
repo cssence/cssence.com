@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Cross-Browser CSS"
 description: "Rachel Andrew bids farewell to CSS frameworks."
 published: 2018-11-10T08:55:40Z

@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "WikiLeaCSS"
 description: "Andy Clarke on separation of Content and Style."
 published: 2011-01-31T22:24:42Z

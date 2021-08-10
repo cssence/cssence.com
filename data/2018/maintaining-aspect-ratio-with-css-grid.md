@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "Maintaining Aspect Ratio with CSS&nbsp;Grid"
 description: "Turns out there are multiple ways to maintain aspect ratio nowadays."
 thumbnail: {type: "image/png"}
@@ -13,7 +14,7 @@ conversation:
     posted: 2018-01-21T16:45:47Z
   - url: "https://medium.com/@realnoam/glad-to-see-the-idea-generate-more-creative-stuff-44508994a399"
     text: "Glad to see the idea generate more creative stuff!"
-    author: {id: "@realnoam", name: "Noam Rosenthal", url: "https://medium.com/@realnoam"}
+    author: {url: "https://medium.com/@realnoam", name: "Noam Rosenthal"}
     posted: 2018-01-21T21:01:00Z # %% WRONG TIMESTAMP
   - unavailable: "technical"
   - url: "https://medium.com/@cssence/you-are-right-it-does-matter-in-the-sense-that-it-the-whole-thing-is-somehow-constrained-5e250a5d6179"

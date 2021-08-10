@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Five Minute Fork"
 description: "Remy Sharp allows us to create short-lived live URLs for GitHub repos."
 published: 2015-07-01T06:37:45Z

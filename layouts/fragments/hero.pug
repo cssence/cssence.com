@@ -1,7 +1,6 @@
 header.hero
 	!= titleMarkdown
-	if indicator
-		- var banner = {forHero: true, schema: schema, indicator: indicator, published: published, revised: revised}
-		include banner
+	- const banner = {forHero: true, urlPath: urlPath, layout: layout, group: group, published: published, revised: revised}
+	include banner
 	p.thumbnail.blend
 		img(src=thumbnail.url, alt="", aria-hidden="true")

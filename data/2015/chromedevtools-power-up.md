@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "ChromeDevTools Power-Up"
 description: "Some devices in the Device Emulation now have additional options."
 thumbnail: {type: "image/png"}

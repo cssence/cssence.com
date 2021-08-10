@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Make the Future Awesome"
 description: "Mischa Andrews on innovation that comes from accessibility."
 published: 2018-09-27T05:49:11Z
@@ -11,7 +12,7 @@ conversation:
     posted: 2018-09-27T05:49:11Z
   - url: "https://twitter.com/MischaAndrews/status/1045342496627273728"
     text: "[@cssence](https://twitter.com/cssence) Thanks so much for sharing! Let’s get excited about accessibility ✨"
-    author: {id: "@MischaAndrews", name: "Mischa Andrews"}
+    author: {url: "https://twitter.com/MischaAndrews", name: "Mischa Andrews"}
     posted: 2018-09-27T16:00:47Z
 ---
 

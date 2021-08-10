@@ -1,5 +1,6 @@
 ---
-indicator: "Index"
+layout: "index.pug"
+group: "code"
 title: "Code Snippets"
 description: "The web development playground: Latest blog posts from the category “Code”."
 thumbnail: {type: "image/jpeg"}

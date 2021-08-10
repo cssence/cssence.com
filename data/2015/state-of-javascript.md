@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "State of JavaScript in 2015"
 description: "“Is this pace of change sustainable?”, asks Jimmy Breck-McKye, rightly so."
 published: 2015-03-28T08:24:05Z

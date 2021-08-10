@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Media Queries for Device Classes"
 description: "Reflecting on media query requirements with Obinwanne Hill."
 published: 2014-05-08T05:15:05Z
@@ -18,14 +19,14 @@ conversation:
     posted: 2014-05-08T05:15:05Z
   - url: "https://twitter.com/ObiHill/status/464393932869468160"
     text: "[@cssence](https://twitter.com/cssence) Fair point, though I don’t reckon device classes could be a thing. I think we can have both though, I’m not sure it’s an either-or."
-    author: {id: "@ObiHill", name: "Obinwanne Hill"}
+    author: {url: "https://twitter.com/ObiHill", name: "Obinwanne Hill"}
     posted: 2014-05-08T13:18:36Z
   - url: "https://twitter.com/cssence/status/464425007498940416"
     text: "[@ObiHill](https://twitter.com/ObiHill) Agreed. In addition I’m interested to see how your/this particular [@polarpolls](https://twitter.com/polarpolls) will turn out."
     posted: 2014-05-08T15:22:05Z
   - url: "https://twitter.com/ObiHill/status/464429263387910144"
     text: "[@cssence](https://twitter.com/cssence) The Ayes seem to have it so far, but only with a small majority. We’ll see."
-    author: {id: "@ObiHill", name: "Obinwanne Hill"}
+    author: {url: "https://twitter.com/ObiHill", name: "Obinwanne Hill"}
     posted: 2014-05-08T15:38:59Z
 ---
 

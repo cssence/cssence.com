@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "YouTube Play/Pause Animation"
 description: "Using a simple border #hack to achieve what Youtube recently did. Kind of."
 thumbnail: {type: "image/png"}

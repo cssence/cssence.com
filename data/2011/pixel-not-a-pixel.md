@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Device Pixels"
 description: "Peter-Paul Koch took a closer look on pixels."
 published: 2011-02-12T09:53:07Z

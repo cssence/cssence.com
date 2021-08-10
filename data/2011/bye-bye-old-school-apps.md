@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Bye Bye, Old-School Apps"
 description: "A refreshing take on apps by Mozilla Labs."
 published: 2011-03-04T13:35:08Z

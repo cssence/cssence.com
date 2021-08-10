@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "20&nbsp;Things About Browsers &amp;&nbsp;The Web"
 description: "Google released an illustrated online guidebook."
 published: 2010-11-19T15:09:22Z

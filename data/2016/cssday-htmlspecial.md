@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "CSS Day 2016 HTML Special"
 description: "@CSSDayConf 2016 Day #1, where I’ll meet some of my favorite HTML elements."
 thumbnail: {type: "image/jpeg"}
@@ -22,7 +23,7 @@ conversation:
       url: "https://pbs.twimg.com/media/ClDpRcPVEAIM5w2.jpg"
       credit: {author: {name: "Tim Malabuyo"}}
       alt: "Ruben Bos interviewing Jeremy Keith."
-    author: {id: "@malabooboo", name: "Tim Malabuyo"}
+    author: {url: "https://twitter.com/malabooboo", name: "Tim Malabuyo"}
     posted: 2016-06-16T07:52:08Z
   - url: "https://twitter.com/cssence/status/743353872509374464"
     text: "[@malabooboo](https://twitter.com/malabooboo) [@adactio](https://twitter.com/adactio) Always great to learn something old #CSSDay"
@@ -35,18 +36,18 @@ conversation:
     posted: 2016-06-16T08:24:11Z
   - url: "https://twitter.com/789789789_h/status/743359783302926337"
     text: "[@cssence](https://twitter.com/cssence) [@yoavweiss](https://twitter.com/yoavweiss) you cannot hold a script responsible for putting orange text on a gray background."
-    author: {id: "@789789789_h"}
+    author: {url: "https://twitter.com/789789789_h", name: "@789789789_h"}
     posted: 2016-06-16T08:29:17Z
   - url: "https://twitter.com/yoavweiss/status/743372636013551616"
     text: "[@789789789_h](https://twitter.com/789789789_h) sorry about that 😕"
-    author: {id: "@yoavweiss", name: "Yoav Weiss"}
+    author: {url: "https://twitter.com/yoavweiss", name: "Yoav Weiss"}
     posted: 2016-06-16T09:20:22Z
   - url: "https://twitter.com/cssence/status/743358499044761602"
     text: "Listening to [@yoavweiss](https://twitter.com/yoavweiss) at #CSSDay I wonder if using loadJS &amp; loadCSS on [cssence.com](https://cssence.com) has a negative <abbr title=\"performance\">perf</abbr> impact"
     posted: 2016-06-16T08:12:44Z
   - url: "https://twitter.com/yoavweiss/status/743372113071898624"
     text: "[@cssence](https://twitter.com/cssence) They have some negative impact, but they can be reimplemented using preload. [@scottjehl](https://twitter.com/scottjehl) already has prototypes implementing it"
-    author: {id: "@yoavweiss", name: "Yoav Weiss"}
+    author: {url: "https://twitter.com/yoavweiss", name: "Yoav Weiss"}
     posted: 2016-06-16T09:18:17Z
   - url: "https://twitter.com/cssence/status/743372938066333696"
     text: "[@yoavweiss](https://twitter.com/yoavweiss) [@scottjehl](https://twitter.com/scottjehl) Awesome, thanks. I will look into this. But now back to [@ppk](https://twitter.com/pkk) #CSSDay"

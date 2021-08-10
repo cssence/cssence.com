@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "The ‹u› in Group"
 description: "A proposal to give the &lt;u&gt; element an additional purpose."
 thumbnail: {type: "image/jpeg"}

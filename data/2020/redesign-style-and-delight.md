@@ -1,5 +1,6 @@
 ---
-indicator: "Editorial"
+layout: "article.pug"
+group: "editorial"
 title: "Re: Design - Style and Delight"
 description: "Stylesheets. To make HTML pleasing to the eye."
 thumbnail: {url: "/2020/redesign.png"}

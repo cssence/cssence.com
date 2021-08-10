@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Take My Money, @ABookApart"
 description: "Having read their first two books, I’m curious what comes next."
 published: 2011-02-01T21:49:52Z

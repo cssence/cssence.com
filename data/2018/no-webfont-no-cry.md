@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "No Web Font, No&nbsp;Cry"
 description: "I’ve turned off font loading six month ago. This is what I learned."
 thumbnail: {type: "image/png"}
@@ -16,7 +17,7 @@ conversation:
     posted: 2018-05-21T14:52:30Z
   - url: "https://twitter.com/zachleat/status/998578607013310467"
     text: "Nice! [@malchata](https://twitter.com/malchata) has done great font loading posts around Save-Data that are worth a read: [css-tricks.com/help-users-save-data](https://css-tricks.com/help-users-save-data/)"
-    author: {id: "@zachleat", name: "Zach Leatherman"}
+    author: {url: "https://twitter.com/zachleat", name: "Zach Leatherman"}
     posted: 2018-05-21T14:57:47Z
 ---
 

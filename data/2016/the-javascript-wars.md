@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "The JavaScript Wars"
 description: "In one corner, we have die-hard NoScripters. And then there are “The Others”."
 thumbnail: {type: "image/jpeg"}
@@ -16,41 +17,41 @@ conversation:
     posted: 2016-11-04T22:33:26Z
   - url: "https://twitter.com/css/status/797611536919515136"
     text: "“There is another building block for the web, one more important than HTML, CSS &amp; JS combined … URLs.”<br>[cssence.com/blog/2016-11-the-javascript-wars](https://cssence.com/2016/the-javascript-wars)"
-    author: {id: "@css", name: "CSS-Tricks"}
+    author: {url: "https://twitter.com/css", name: "CSS-Tricks"}
     posted: 2016-11-13T01:26:23Z
   - url: "https://twitter.com/cssence/status/797740191230423040"
     text: "<p><a href=\"/2016/viewport-unit-zoom-issue\" aria-label=\"First part of this comment.\">[…]</a> [@css](https://twitter.com/css) thanks for sharing</p>"
     posted: 2016-11-13T09:57:37Z
   - url: "https://twitter.com/k0deh4mst3r/status/797840749169639424"
     text: "[@css](https://twitter.com/css) Hi there! That’s an amazing article really, informative, bitterly truthful &amp; awakening! In this scenario what one should do?!"
-    author: {id: "@k0deh4mst3r"}
+    author: {url: "https://twitter.com/k0deh4mst3r"}
     posted: 2016-11-13T16:37:12Z
   - url: "https://medium.com/@alpha_hydrae/the-thing-is-the-web-is-competing-with-native-mobile-apps-now-b0b5de56c656"
     text: "The thing is, the web is competing with native mobile apps now. It’s in the interest of web developers that the web isn’t falling behind and is instead growing. The competition with rich native apps and the growing expectations from users is why the javascript ecosystem is exploding."
-    author: {id: "@alpha_hydrae", url: "https://medium.com/@alpha_hydrae"}
+    author: {url: "https://medium.com/@alpha_hydrae", name: "@alpha_hydrae"}
     posted: 2016-11-13T21:54:06Z
   - url: "https://twitter.com/RonaldDiemicke/status/797620962363637760"
     text: "[@cssence](https://twitter.com/cssence) data/content is the starting point, which is JSON’s appeal. It’s raw data that can be formatted in any way. HTML is structure."
-    author: {id: "@RonaldDiemicke", name: "Ronald Diemicke"}
+    author: {url: "https://twitter.com/RonaldDiemicke", name: "Ronald Diemicke"}
     posted: 2016-11-13T02:03:51Z
   - url: "https://twitter.com/RonaldDiemicke/status/797621570856435712"
     text: "[@cssence](https://twitter.com/cssence) we almost need a way to map urls to HTML (structure) and to data (json) so browsers decide what to use in a PWA fashion"
-    author: {id: "@RonaldDiemicke", name: "Ronald Diemicke"}
+    author: {url: "https://twitter.com/RonaldDiemicke", name: "Ronald Diemicke"}
     posted: 2016-11-13T02:06:16Z
   - url: "https://twitter.com/RonaldDiemicke/status/797621708203159552"
     text: "[@cssence](https://twitter.com/cssence) is your entry point to the app gives you the structure and initial data and subsequent hits only return the raw data"
-    author: {id: "@RonaldDiemicke", name: "Ronald Diemicke"}
+    author: {url: "https://twitter.com/RonaldDiemicke", name: "Ronald Diemicke"}
     posted: 2016-11-13T02:06:48Z
   - url: "https://twitter.com/RonaldDiemicke/status/797621933588312064"
     text: "[@cssence](https://twitter.com/cssence) In theory, if you did that, and you turn JS off, you should still be able to use the whole thing."
-    author: {id: "@RonaldDiemicke", name: "Ronald Diemicke"}
+    author: {url: "https://twitter.com/RonaldDiemicke", name: "Ronald Diemicke"}
     posted: 2016-11-13T02:07:42Z
   - url: "https://twitter.com/cssence/status/798037864059699200"
     text: "[@RonaldDiemicke](https://twitter.com/RonaldDiemicke) That would be efficient. Until browsers can do that HTML=base. Will be interesting to see where PWAs take us."
     posted: 2016-11-14T05:40:28Z
   - url: "https://twitter.com/robalexclark/status/798521376357289985"
     text: "[@cssence](https://twitter.com/cssence) If every day a new framework appears shows how poor JS is as a productive language.We need to start again. WebAssembly?"
-    author: {id: "@robalexclark"}
+    author: {url: "https://twitter.com/robalexclark", name: "@robalexclark"}
     posted: 2016-11-15T13:41:46Z
   - url: "https://twitter.com/cssence/status/798535266323599360"
     text: "[@robalexclark](https://twitter.com/robalexclark) Or it shows how exiting JS is. I use it in a productive manner, but right now JS is all over the place #FindTheBalance"

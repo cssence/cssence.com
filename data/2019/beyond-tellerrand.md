@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "beyond tellerrand Dusseldorf 2019"
 description: "@btconf 2019, spending two days in Dusseldorf thinking outside the box."
 thumbnail: {type: "image/jpeg"}
@@ -9,7 +10,7 @@ deprecatedUrl: "/about/2019-05-beyond-tellerrand"
 conversation:
   - url: "https://beyondtellerrand.com/blog/wrap-up-dusseldorf-2019"
     text: "It was the first time for [Matthias Beitl](https://twitter.com/cssence) to attend beyond tellerrand and he has written me a lovely email with nice feedback and pointed to his <a href=\"/2019/beyond-tellerrand\">blog post […]</a>. He has written about his favourite talks, but also about the Break Sessions of trivago, Microsoft and Mozilla. Nice to hear, that they are relevant to people. Thanks for the time to write this, Matthias!"
-    author: {id: "@marcthiele", name: "Marc Thiele"}
+    author: {url: "https://twitter.com/marcthiele", name: "Marc Thiele"}
     posted: 2019-06-19T17:40:00Z
 ---
 

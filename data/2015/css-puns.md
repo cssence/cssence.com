@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "CSS Puns"
 description: "Knowing some CSS helps to understand these jokes."
 published: 2015-02-13T20:09:51Z

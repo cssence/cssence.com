@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "Changing CSS with CSS?"
 description: "tl;dr pseudo styles are not really a thing."
 thumbnail: {type: "image/png"}

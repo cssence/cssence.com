@@ -1,5 +1,6 @@
 ---
-indicator: "Editorial"
+layout: "article.pug"
+group: "editorial"
 title: "Leaving Social Sites"
 description: "Past the point of no return; I’ve once again simplified my online life."
 thumbnail: {type: "image/jpeg"}

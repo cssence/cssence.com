@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Ubuntu for Android"
 description: "Ubuntu might be coming to an Android Phone near you."
 published: 2012-02-23T11:36:47Z

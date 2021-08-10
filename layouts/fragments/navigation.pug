@@ -3,24 +3,25 @@ nav.screen
 	ul.nav
 		li
 			a.c-default(rel="home", href="/", accesskey="1") Home
-				span.branding.mood(class=className, aria-hidden="true")
-					span.print= " of "
+				span.branding.mood(class=getClassName(group), aria-hidden="true")
+					span.print= ' of '
 					include ../../assets/img/logo-grayscale.svg
-					|	#[abbr CSS]ence.com
-					span.print= " - "
+					| #[abbr CSS]ence.com
+					span.print= ' - '
 					em.tagline The Essence of CSS
-		each section, index in ["Articles", "Notes", "About"]
+		each section, index in ['Articles', 'Notes', 'About']
 			li
-				- var sectionHref = "/" + section.toLowerCase()
-				a(class=sectionHref.replace("/", "c-"), href=sectionHref, accesskey=index+2)= section
+				- const sectionHref = `/${section.toLowerCase()}`
+				- const sectionClassName = sectionHref.slice(0, sectionHref.endsWith('s') ? -1 : sectionHref.length).replace('/', 'c-')
+				a(class=sectionClassName, href=sectionHref, accesskey=index+2)= section
 	h3.visually-hidden#navigation-advanced Find popular posts or browse by year
 	.nav-more
 		ul
 			li
 				a(href="/popular") Most popular
-			- var yearTitle = website.years.to + 1
+			- let yearTitle = website.years.to + 1
 			while --yearTitle >= website.years.from
 				li
-					- var yearUrl = "/" + yearTitle
+					- const yearUrl = `/${yearTitle}`
 					a(href=yearUrl)
 						time= yearTitle

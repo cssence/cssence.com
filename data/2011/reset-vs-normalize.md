@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "Reset vs. Normalize"
 description: "How normalize.css differs from the traditional CSS reset."
 thumbnail: {type: "image/png"}

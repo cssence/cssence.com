@@ -1,5 +1,6 @@
 ---
-indicator: "Index"
+layout: "index.pug"
+group: "event"
 title: "Events"
 description: "Around the world: Latest blog posts from the category “Events”."
 thumbnail: {type: "image/jpeg"}

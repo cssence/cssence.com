@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "CSS3 is Dead"
 description: "Designing for the lowest common denominator is no longer the way to go."
 summary: "»CSS3 is dead!« is a call for action. In 2011, designing for the lowest common denominator is no longer the way to go. In addition, it explains why CSS3 doesn’t want to be called CSS3 anymore. That way the title makes sense. Sort of."

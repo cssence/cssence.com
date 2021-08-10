@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Pure CSS Page Flip"
 description: "Román Cortés puts some shiny CSS3 stuff into action."
 published: 2011-03-27T13:12:42Z

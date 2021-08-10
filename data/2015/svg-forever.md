@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "SVG Forever"
 description: "I agree with Seren Davies that the time has come to ditch icon fonts."
 published: 2015-07-13T15:26:26Z

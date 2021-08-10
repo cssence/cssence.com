@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Awesome HTML5 Dashboard"
 description: "Spoiler: The title is not a empty promise."
 published: 2011-04-04T06:21:23Z

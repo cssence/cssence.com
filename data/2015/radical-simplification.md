@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "The Web’s Answer to Apps"
 description: "According to Peter-Paul Koch, it’s “Radical simplification, not more tools”."
 published: 2015-06-15T14:02:02Z

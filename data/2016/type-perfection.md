@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Type Perfection"
 description: "Eleanor Ratliff wrote about accessible typefaces."
 published: 2016-12-06T16:26:30Z

@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "CSS Day 2016"
 description: "@CSSDayConf 2016 Day #2. @cssence at CSS Day, makes kinda sense."
 thumbnail: {type: "image/jpeg"}
@@ -18,7 +19,7 @@ conversation:
     posted: 2016-06-17T06:08:25Z
   - url: "https://twitter.com/rvanderelst/status/743690478525124608"
     text: "[@cssence](https://twitter.com/cssence) [@CSSDayConf](https://twitter.com/cssdayconf) #nocoincidence #slightlyparanoid 😄"
-    author: {id: "@rvanderelst", name: "Robert van der Elst"}
+    author: {url: "https://twitter.com/rvanderelst", name: "Robert van der Elst"}
     posted: 2016-06-17T06:23:21Z
   - url: "https://twitter.com/jmulfiw/status/743702470958841856"
     text: "Kicking off 2. day of #CSSDay with [@csswizardry](https://twitter.com/csswizardry) and just 116 slides! 😳"
@@ -26,7 +27,7 @@ conversation:
       url: "https://pbs.twimg.com/media/ClIpcfNUkAADZYl.jpg"
       credit: {author: {name: "Ulf Walter-Laufs"}}
       alt: "The audience is waiting for Harry Roberts to start his talk."
-    author: {id: "@jmulfiw", name: "Ulf Walter-Laufs"}
+    author: {url: "https://twitter.com/jmulfiw", name: "Ulf Walter-Laufs"}
     posted: 2016-06-17T07:11:01Z
   - url: "https://twitter.com/cssence/status/743712922585567232"
     text: "[@jmulfiw](https://twitter.com/jmulfiw) [@csswizardry](https://twitter.com/csswizardry) Turned out to be 116 amazing slides #CSSDay"
@@ -39,7 +40,7 @@ conversation:
     posted: 2016-06-17T07:59:09Z
   - url: "https://twitter.com/ZoeBijl/status/743715116340776960"
     text: "[@cssence](https://twitter.com/cssence) there is an accessibility meeting in Amsterdam tomorrow. [@LeonieWatson](https://twitter.com/LeonieWatson) is there too 😉 Info: [www.roledrinks.nl](http://www.roledrinks.nl) #roledrinks"
-    author: {id: "@ZoeBijl", name: "Michiel Bijl"}
+    author: {url: "https://twitter.com/ZoeBijl", name: "Michiel Bijl"}
     posted: 2016-06-17T08:01:15Z
   - url: "https://twitter.com/cssence/status/743715885328666624"
     text: "[@ZoeBijl](https://twitter.com/ZoeBijl) [@LeonieWatson](https://twitter.com/LeonieWatson) Coooool! *mustCancelFlight*"
@@ -64,18 +65,18 @@ conversation:
     posted: 2016-06-17T13:18:30Z
   - url: "https://twitter.com/svgeesus/status/743810711864942592"
     text: "[@cssence](https://twitter.com/cssence) [@CSSDayConf](https://twitter.com/cssdayconf) we went back and forth on how to do fallback. In SVG 1 the fallback was first; people find it confusing"
-    author: {id: "@svgeesus", name: "Chris Lilley"}
+    author: {url: "https://twitter.com/svgeesus", name: "Chris Lilley"}
     posted: 2016-06-17T14:21:07Z
   - url: "https://twitter.com/svgeesus/status/743811316612202496"
     text: "[@cssence](https://twitter.com/cssence) [@CSSDayConf](https://twitter.com/cssdayconf) We wanted to have fallback color specifiable in the same rule, but you could do that."
-    author: {id: "@svgeesus", name: "Chris Lilley"}
+    author: {url: "https://twitter.com/svgeesus", name: "Chris Lilley"}
     posted: 2016-06-17T14:23:31Z
   - url: "https://twitter.com/cssence/status/743813966904823808"
     text: "[@svgeesus](https://twitter.com/svgeesus) [@CSSDayConf](https://twitter.com/cssdayconf) Thx! And both ways would behave identically in case the color profile has not been loaded yet?"
     posted: 2016-06-17T14:34:03Z
   - url: "https://twitter.com/svgeesus/status/743815532957274112"
     text: "[@cssence](https://twitter.com/cssence) [@CSSDayConf](https://twitter.com/cssdayconf) if it has not loaded you would get the fallback color."
-    author: {id: "@svgeesus", name: "Chris Lilley"}
+    author: {url: "https://twitter.com/svgeesus", name: "Chris Lilley"}
     posted: 2016-06-17T14:40:17Z
 ---
 

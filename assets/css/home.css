@@ -72,12 +72,13 @@
 	flex-grow: 1;
 }
 .intro .avatar::after {
+	position: absolute;
 	top: 1.625rem;
 	right: -27px;
-	left: auto;
 	width: 52px;
 	height: 52px;
-	border-width: 2px;
+	border: 2px solid var(--color-bg);
+	background-image: url(/about/photo.jpg);
 }
 @media (max-width: 39.95em) {
 	.intro {

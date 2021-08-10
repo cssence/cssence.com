@@ -1,5 +1,6 @@
 ---
-indicator: "Editorial"
+layout: "article.pug"
+group: "editorial"
 title: "Online for Twenty Years"
 description: "I have written a “Thank You” letter to the World Wide Web."
 thumbnail: {type: "image/png"}

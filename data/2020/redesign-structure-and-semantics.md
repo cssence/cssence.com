@@ -1,5 +1,6 @@
 ---
-indicator: "Editorial"
+layout: "article.pug"
+group: "editorial"
 title: "Re: Design - Structure and Semantics"
 description: "URLs and HTML. The foundation of every website."
 thumbnail: {url: "/2020/redesign.png"}

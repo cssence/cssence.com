@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Tabs Over Spaces"
 description: "My return to using the dedicated Unicode character for indention."
 published: 2015-12-30T16:04:00Z

@@ -1,14 +1,13 @@
-title!= title + (urlPath === "/" ? "" : " • CSSence.com")
+title!= `${title}${urlPath === '/' ? '' : ' • CSSence.com'}`
 meta(name="description", content!=description)
-meta(property="og:type", content=schema === "article" ? "article" : "website")
-meta(property="og:url", content=website.url + urlPath)
+meta(property="og:type", content=(layout === 'index.pug' ? 'website' : 'article'))
+meta(property="og:url", content=permalink)
 meta(name="twitter:card", content="summary")
 meta(name="twitter:creator", content="@cssence")
 meta(name="twitter:title", property="og:title", content=title)
 meta(name="twitter:description", property="og:description", content!=description)
 if thumbnail
-	meta(name="twitter:image", property="og:image", content=(thumbnail.url.startsWith("/") ? website.url : "") + thumbnail.url)
+	meta(name="twitter:image", property="og:image", content=`${website.url}${thumbnail.url}`)
 meta(name="author", content="Matthias Zöchling")
-link(rel="canonical", href=website.url + urlPath)
-- var noindex = urlPath === "/404" || urlPath === "/about/about"
-meta(name="robots", content=noindex?"noindex,follow":"index,follow")
+link(rel="canonical", href=permalink)
+meta(name="robots", content=`${urlPath === '/404' || urlPath === '/about/about' ? 'no' : ''}index,follow`)

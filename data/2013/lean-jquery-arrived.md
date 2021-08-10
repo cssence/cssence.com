@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Lean jQuery Arrived"
 description: "jQuery 2.0 comes with much smaller file size."
 published: 2013-04-19T05:34:07Z

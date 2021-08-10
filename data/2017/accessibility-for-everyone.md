@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "Accessibility for Everyone"
 description: "When it comes to accessibility, webhint.io can help you walk the walk."
 thumbnail: {type: "image/jpeg"}

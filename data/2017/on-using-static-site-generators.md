@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "On Using Static Site Generators"
 description: "I wrote about static site generators, but went down the Vanilla-or-not rabbit hole."
 thumbnail: {type: "image/jpeg"}

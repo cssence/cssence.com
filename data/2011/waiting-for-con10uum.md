@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Waiting for Con10uum"
 description: "Great concept for a “10 Finger Multitouch User Interface”."
 published: 2011-11-07T07:14:20Z

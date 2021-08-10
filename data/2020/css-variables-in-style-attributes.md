@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "CSS Variables in Style Attributes"
 description: "HTML for content, CSS for styling. What about the HTML style attribute?"
 thumbnail: {type: "image/png"}
@@ -11,11 +12,11 @@ syndication:
 conversation:
   - url: "https://twitter.com/mmatuzo/status/1220735951787347968"
     text: "[@cssence](https://twitter.com/cssence) Thanks for the shoutout! 🤗"
-    author: {id: "@mmatuzo", name: "Manuel Matuzović"}
+    author: {url: "https://twitter.com/mmatuzo", name: "Manuel Matuzović"}
     posted: 2020-01-24T15:51:45Z
   - url: "https://twitter.com/shadeed9/status/1220738538230157313"
     text: "[@cssence](https://twitter.com/cssence) Thanks for the link!"
-    author: {id: "@shadeed9", name: "Ahmad Shadeed"}
+    author: {url: "https://twitter.com/shadeed9", name: "Ahmad Shadeed"}
     posted: 2020-01-24T16:02:02Z
 ---
 

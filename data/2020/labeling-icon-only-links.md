@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Labeling Icon-Only Links"
 description: "My response to “Accessible SVG Icons” on CSS-Tricks."
 published: 2020-12-29T19:00:19Z
@@ -12,7 +13,6 @@ conversation:
     posted: 2020-12-29T09:21:40Z
   - url: "https://css-tricks.com/accessible-svg-icons/#comment-1766761"
     text: "In theory they are the same, see [html5accessibility.com/stuff/2020/11/07/not-so-short-note-on-aria-label-usage-big-table-edition/,](https://html5accessibility.com/stuff/2020/11/07/not-so-short-note-on-aria-label-usage-big-table-edition/) but …<br><br>… the second form is more verbose in VoiceOver, because SVG with aria-label is announced as a group, so rather go with aria-label on the link."
-    author: {id: "@CSSence", name: "Matthias Zöchling"}
     posted: 2020-12-29T19:00:19Z
 ---
 

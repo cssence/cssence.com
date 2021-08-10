@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "rem (Root Em), a Unit Introduced With CSS3"
 description: "Exploring the differences between em and rem."
 summary: "Explore the differences between em and rem. The em unit has been with us for a long time, see what rem — brought to you by CSS3 — adds to the relative measurement arena."

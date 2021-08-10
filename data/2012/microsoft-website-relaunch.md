@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Microsoft’s Incremental Relaunch"
 description: "Their latest site update looks promising."
 published: 2012-10-26T03:00:59Z

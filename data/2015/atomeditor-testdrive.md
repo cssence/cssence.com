@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "AtomEditor TestDrive"
 description: "I am willing to switch from Brackets to Atom."
 published: 2015-07-01T11:24:26Z

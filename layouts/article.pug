@@ -1,11 +1,8 @@
-extends base.pug
+extends internal.pug
 
-block content
-	article
-		include fragments/hero
-		block article
-			.article!= contents
-		block conversation
-			include fragments/conversation
-		block metadata
-			include fragments/metadata
+append article
+	if group === 'code'
+		include fragments/codepen
+
+block conversation
+	include fragments/conversation

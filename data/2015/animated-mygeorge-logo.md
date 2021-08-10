@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "Animated @myGeorge_at Logo"
 description: "My very first CodePen, influenced by a project I’m currently working on."
 published: 2015-06-09T10:47:15Z

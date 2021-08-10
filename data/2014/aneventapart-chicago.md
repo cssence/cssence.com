@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "An Event Apart 2014"
 description: "It is now three years in a row, I’ve returned for another An Event Apart conference."
 thumbnail: {type: "image/jpeg"}

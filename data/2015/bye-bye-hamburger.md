@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Bye Bye Hamburger"
 description: "James Archer on why the three horizontal lines are bad idea."
 published: 2015-08-17T08:59:40Z

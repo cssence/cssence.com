@@ -1,5 +1,6 @@
 ---
-indicator: "Index"
+layout: "index.pug"
+group: "default"
 title: "{year} Archive"
 description: "The CSSence Archive: All blog posts from the year {year}."
 ---

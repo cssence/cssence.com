@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "My Twitter Anniversary"
 description: "I joined ten years ago. I’m still here. Reluctantly."
 published: 2020-07-24T09:44:15Z

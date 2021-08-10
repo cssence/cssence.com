@@ -1,20 +1,12 @@
 article.screen
-	h3.subtle#contribute= conversation ? "Join the conversation" : "Start the conversation"
+	h3.subtle#contribute= conversation ? 'Join the conversation' : 'Start the conversation'
 	p
-		- var commentUrl
-		- var remoteCodepen = indicator === "Code"
-		if remoteCodepen
-			- var syndicationCodepen = syndication && syndication.filter(function (item) { return item.url.includes("codepen") !== -1; })[0]
-			- commentUrl = syndicationCodepen.url.replace("/pen/", "/details/") + "#leave-comment"
-		else
-			- var syndicationTwitter = syndication && syndication.filter(function (item) { return item.url.indexOf("twitter") !== -1; })[0]
-			- commentUrl = "https://twitter.com/intent/tweet" + (syndicationTwitter ? "?in_reply_to=" + syndicationTwitter.url.split("/").pop() : "?text=" + encodeURIComponent("@cssence "+website.url+urlPath+" "))	
-		a(href=commentUrl) Have your say
-		= remoteCodepen ? " on CodePen" : " on Twitter"
-		= ", or simply "
-		- var titleUrlSafe = title.replace(/&nbsp;/g, " ").replace(/&amp;/g, "&")
-		a(href="https://twitter.com/intent/tweet?text="+encodeURIComponent("“"+titleUrlSafe+"” "+website.url+urlPath+" by @cssence"))= "share this "
-			= remoteCodepen ? "code example" : "article"
-		if remoteCodepen
-			= " on Twitter"
-		| .
+		- const syndicationTwitter = syndication && syndication.filter((item) => item.url.includes('twitter'))[0]
+		- const commentUrlValue = syndicationTwitter ? syndicationTwitter.url.split('/').pop() : encodeURIComponent(`@cssence ${permalink} `)
+		a(href=`https://twitter.com/intent/tweet${syndicationTwitter ? '?in_reply_to=' : '?text='}${commentUrlValue}`) Have your say
+		= ' on Twitter, or simply '
+		- const titleUrlSafe = title.replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&')
+		- const shareUrlValue = encodeURIComponent(`“${titleUrlSafe}” ${permalink} by @cssence`)
+		- const sharePostTypeMap = {bookmark: 'thread', opinion: 'thread', code: 'code example'}
+		a(href=`https://twitter.com/intent/tweet?text=${shareUrlValue}`)= `share this ${sharePostTypeMap[group] || 'article'}`
+		= '.'

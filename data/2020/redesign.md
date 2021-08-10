@@ -1,5 +1,6 @@
 ---
-indicator: "Index"
+layout: "index.pug"
+group: "editorial"
 title: "Re: Design - A Series"
 description: "Letters of appreciation to the basics of the web."
 thumbnail: {url: "/2020/redesign.png"}

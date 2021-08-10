@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Angular, 2nd Edition"
 description: "It has little to do with its predecessor. And that makes sense."
 published: 2015-01-29T18:52:05Z

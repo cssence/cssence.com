@@ -1,5 +1,6 @@
 ---
-indicator: "Internal"
+layout: "internal.pug"
+group: "about"
 title: "About"
 description: "CSSence dot com started as a weblog and is now the IndieWeb hub of Matthias Zöchling."
 thumbnail: {type: "image/jpeg"}

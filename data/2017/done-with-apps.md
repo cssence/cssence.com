@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Done With Apps"
 description: "Henrik Joreteg is betting on the web. As do I."
 published: 2017-09-10T19:38:32Z

@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "IndieWeb Notes"
 description: "Looks like Manuel Matuzović is playing “the neverending own site structure game”."
 published: 2021-07-06T17:27:18Z
@@ -8,7 +9,7 @@ syndication:
 conversation:
   - url: "https://twitter.com/mmatuzo/status/1412409826047627270"
     text: "Question for my #indieWeb friends: How do you deal with tweet-like posts on your website? Do you have a dedicated “notes” page or do you just mix it with your blog posts?"
-    author: {id: "@mmatuzo", name: "Manuel Matuzović"}
+    author: {url: "https://twitter.com/mmatuzo", name: "Manuel Matuzović"}
     posted: 2021-07-06T13:55:18Z
   - url: "https://twitter.com/cssence/status/1412463178404057105"
     text: "[@mmatuzo](https://twitter.com/mmatuzo)<br>All of the above. 🙂<br>Chronological listings (e.g. entries shown under “Most recent” on the home page) have them included, but I also have a dedicated “Articles” section, where I list long-form blog post types, so basically everything except “Notes”.<br>[cssence.com/articles](/articles)"

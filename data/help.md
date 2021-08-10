@@ -1,5 +1,6 @@
 ---
-indicator: "Internal"
+layout: "internal.pug"
+group: "default"
 title: "Help"
 description: "Do you need some help navigating your way around this site?"
 thumbnail: {type: "image/png"}

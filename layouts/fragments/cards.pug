@@ -1,10 +1,10 @@
-#{orderedCards ? "ol" : "ul"}.cards
+#{orderedCards ? 'ol' : 'ul'}.cards
 	each card in cards
-		li.card(class=card.className)
+		li.card(class=getClassName(card.group))
 			h3
 				a(href=card.urlPath)!= card.title
 			p!= card.description
-			p.teaser(class=card.thumbnail.default && "fallback", aria-hidden="true")
+			p.teaser(class=card.thumbnail.default && 'fallback', aria-hidden="true")
 				img(src=card.thumbnail.url, alt="") 
-			- var banner = card
+			- const banner = card
 			include banner

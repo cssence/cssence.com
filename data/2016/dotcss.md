@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "dotCSS 2016"
 description: "@dotCSS 2016 in Paris, I’m both attending and speaking."
 thumbnail: {type: "image/jpeg"}

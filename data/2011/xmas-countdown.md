@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "XMAS Countdown"
 description: "Another edition of “the advent calendar for web geeks”."
 published: 2011-12-02T07:29:50Z

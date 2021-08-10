@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "Farewell CSS Hacks"
 description: "It is time to remove all CSS hacks that target Internet Explorer."
 thumbnail: {type: "image/png"}

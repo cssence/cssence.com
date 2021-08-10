@@ -1,5 +1,6 @@
 ---
-indicator: "Editorial"
+layout: "article.pug"
+group: "editorial"
 title: "Redesigning the Relaunch"
 description: "Version 2.1 of cssence.com went live not long after the last major change."
 thumbnail: {type: "image/jpeg"}

@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "HTML5 Turntables"
 description: "Scott Schiller created a DJ App that is not based on Flash."
 published: 2011-06-27T20:21:41Z

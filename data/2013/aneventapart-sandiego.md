@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "An Event Apart 2013"
 description: "After Seattle 2012, I’m at another An Event Apart, but this time in San Diego."
 thumbnail: {type: "image/jpeg"}

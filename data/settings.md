@@ -1,5 +1,6 @@
 ---
-indicator: "Internal"
+layout: "internal.pug"
+group: "default"
 title: "Settings"
 description: "If you prefer something other than the defaults, you may customize this site."
 thumbnail: {type: "image/png"}

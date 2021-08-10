@@ -1,6 +1,6 @@
 module.exports = plugin;
-var path = require("path");
-var multimatch = require("multimatch");
+const path = require('path');
+const multimatch = require('multimatch');
 
 /**
  * Metalsmith plugin for taking rewritting one date.md to many yyyy.md files.
@@ -11,33 +11,30 @@ var multimatch = require("multimatch");
 
 function plugin (opts) {
 	opts = opts || {};
-	opts.files = ["year.html"];
+	opts.files = ['year.html'];
 
-	return function (files, metalsmith, done) {
-		var meta = metalsmith.metadata();
-		var matchingFiles = multimatch(Object.keys(files), opts.files);
-		matchingFiles.forEach(function (file) {
-			var item = files[file];
+	return (files, metalsmith, done) => {
+		const meta = metalsmith.metadata();
+		multimatch(Object.keys(files), opts.files).forEach((file) => {
+			const item = files[file];
 
 			// create year-specific files from template
-			for (var year = meta.website.years.from; year <= meta.website.years.to; year += 1) {
-				var item = files[file];
-				var shallowClonedItem = {};
-				Object.keys(item).forEach(function (key) {
-					shallowClonedItem[key] = item[key];
-				});
+			for (let year = meta.website.years.from; year <= meta.website.years.to; year += 1) {
+				const item = files[file];
+				const shallowClonedItem = {};
+				Object.keys(item).forEach((key) => { shallowClonedItem[key] = item[key]; });
 				// augment: [yaml]
-				["title", "titleMarkdown", "description"].forEach(function (key) {
+				['title', 'titleMarkdown', 'description'].forEach((key) => {
 					shallowClonedItem[key] = shallowClonedItem[key].replace(/{year}/g, year);
 				});
 				// override: urlPath
-				var urlPath = "/" + year;
+				const urlPath = '/' + year;
 				shallowClonedItem.urlPath = urlPath;
 				// augment: contents
-				var content = shallowClonedItem.contents.toString();
+				let content = shallowClonedItem.contents.toString();
 				content = content.replace(/{year}/g, year);
 				shallowClonedItem.contents = Buffer.from(content);
-				files[year + ".html"] = shallowClonedItem;
+				files[year + '.html'] = shallowClonedItem;
 			}
 			// remove template file
 			delete files[file];

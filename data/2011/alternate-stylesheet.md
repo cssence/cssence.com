@@ -1,5 +1,6 @@
 ---
-indicator: "Essay"
+layout: "article.pug"
+group: "essay"
 title: "Say »Hello« to Device Fragmentation"
 description: "How to show your alternate designs."
 summary: "Learn how alternate stylesheets (that have been with us for many years now) are put to good use today. Websites no longer have just one design, they come with additional designs created for special purposes, such as mobiles phones. Why hide them?"

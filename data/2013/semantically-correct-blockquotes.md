@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "Semantically Correct Blockquotes"
 description: "Tim Murtaugh has “more Thoughts About Blockquotes”."
 published: 2013-02-03T09:18:06Z

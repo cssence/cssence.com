@@ -1,5 +1,6 @@
 ---
-indicator: "Bookmark"
+layout: "note.pug"
+group: "bookmark"
 title: "PWA Questions"
 description: "Jeremy Keith answers four Progressive Web App questions."
 published: 2017-03-31T18:55:51Z

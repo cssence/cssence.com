@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "Loading Spinner"
 description: "Single color variant of popular alternate version."
 thumbnail: {type: "image/png"}

@@ -1,5 +1,6 @@
 ---
-indicator: "Editorial"
+layout: "article.pug"
+group: "editorial"
 title: "Own Your Own Data"
 description: "Your data belongs to you, so it should be on your own domain."
 thumbnail: {type: "image/png"}

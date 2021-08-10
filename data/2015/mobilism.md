@@ -1,5 +1,6 @@
 ---
-indicator: "Event"
+layout: "article.pug"
+group: "event"
 title: "Mobilism 2015"
 description: "The last @MobilismConf happens to be my first."
 thumbnail: {type: "image/jpeg"}

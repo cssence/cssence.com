@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "mix-blend-mode Overflow Issue"
 description: "Chrome won’t repaint the overflow area after scrolling, so you end up with cut-off text."
 thumbnail: {type: "image/png"}

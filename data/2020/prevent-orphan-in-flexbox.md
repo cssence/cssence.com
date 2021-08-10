@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "Preventing Orphans in Flexbox"
 description: "No single element in last row, thanks to <code>:nth-last-child</code>."
 thumbnail: {type: "image/png"}
@@ -9,7 +10,7 @@ syndication:
   - url: "https://twitter.com/cssence/status/1337401552093515776"
     published: 2020-12-11T14:19:12Z
 conversation:
-  # - url: "https://codepen.io/cssence/pen/KKggLrW"
+  # - url: "https://twitter.com/cssence/status/1337401552093515776"
   #   text: "Ending the year with some :nth-last-child shenanigans.<br>[cssence.com/2020/prevent-orphan-in-flexbox](/2020/prevent-orphan-in-flexbox)"
   #   posted: 2020-12-11T14:19:12Z
   - url: "https://twitter.com/cssence/status/1337402784782688256"
@@ -18,9 +19,9 @@ conversation:
   - url: "https://twitter.com/cssence/status/1337403048633700353"
     text: "And it’s been a pleasure writing alt text for those images. The article clocks as a 4-5 minutes read, but if you swap the images for their alt text, the whole thing doubles(!) in length. 😊 #a11y"
     posted: 2020-12-11T14:25:09Z
-  - url: "https://mobile.twitter.com/shadeed9/status/1337440191313829890"
+  - url: "https://twitter.com/shadeed9/status/1337440191313829890"
     text: "Thanks a lot, Matthias. Looks interesting!"
-    author: {id: "@shadeed9", name: "Ahmad Shadeed"}
+    author: {url: "https://twitter.com/shadeed9", name: "Ahmad Shadeed"}
     posted: 2020-12-11T16:52:44Z
 ---
 

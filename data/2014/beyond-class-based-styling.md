@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Beyond Class-Based Styling"
 description: "Glen Maddern introduces Attribute Modules for CSS."
 published: 2014-09-10T09:03:49Z

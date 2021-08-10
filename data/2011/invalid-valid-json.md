@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "Invalid Valid JSON"
 description: "Sometimes an error is not where you look for it."
 published: 2011-02-20T21:08:43Z

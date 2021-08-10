@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "VoiceOver Table Issues"
 description: "Do not feed an HTML table without display:table to VoiceOver (Mac)."
 thumbnail: {type: "image/png"}
@@ -15,7 +16,7 @@ conversation:
     posted: 2020-05-06T18:33:00Z
   - url: "https://twitter.com/mmatuzo/status/1258112810476875776"
     text: "[@cssence](https://twitter.com/cssence) Yes 🙂<br>[adrianroselli.com/2018/02/tables-css-display-properties-and-aria.html](https://adrianroselli.com/2018/02/tables-css-display-properties-and-aria.html)"
-    author: {id: "@mmatuzo", name: "Manuel Matuzović"}
+    author: {url: "https://twitter.com/mmatuzo", name: "Manuel Matuzović"}
     posted: 2020-05-06T19:14:03Z
   - url: "https://twitter.com/cssence/status/1258114393453273088"
     text: "[@mmatuzo](https://twitter.com/mmatuzo) Thanks so much, Manuel. 🙌<br>Should have asked earlier. 😁"

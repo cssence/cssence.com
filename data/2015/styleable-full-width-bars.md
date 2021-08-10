@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "Style-able Full-Width Bars"
 description: "Full-width backgrounds on individual regions, without additional elements."
 thumbnail: {type: "image/png"}

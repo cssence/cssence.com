@@ -1,5 +1,6 @@
 ---
-indicator: "Code"
+layout: "article.pug"
+group: "code"
 title: "Animating Emojis"
 description: "It happened again, with the 2020 Monkey Edition."
 thumbnail: {type: "image/png"}

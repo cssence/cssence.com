@@ -1,5 +1,6 @@
 ---
-indicator: "Opinion"
+layout: "note.pug"
+group: "opinion"
 title: "The Human API"
 description: "Recommending “Conversational Design” by Erika Hall in times of Google Duplex."
 thumbnail: {type: "image/png"}
@@ -18,7 +19,7 @@ conversation:
     posted: 2018-06-25T18:31:49Z
   - url: "https://twitter.com/juanshishido/status/1011334643235188738"
     text: "cc [@BerkeleyISchool](https://twitter.com/BerkeleyISchool)"
-    author: {id: "@juanshishido", name: "Juan Shishido"}
+    author: {url: "https://twitter.com/juanshishido", name: "Juan Shishido"}
     posted: 2018-06-25T19:45:43Z
 ---
 

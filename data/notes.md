@@ -1,5 +1,6 @@
 ---
-indicator: "Index"
+layout: "index.pug"
+group: "note"
 title: "Notes"
 description: "Opinions and Links, sometimes even conversations: Latest thoughts, i.e. message threads."
 thumbnail: {type: "image/jpeg"}

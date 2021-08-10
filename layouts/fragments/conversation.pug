@@ -1,11 +1,9 @@
-if urlPath.startsWith("/2")
-	//- ^ "date URLs" can have conversation
-	aside.conversation
-		h2.subtle#comments Comments
-			if conversation
-				|  (#{conversation.length})
+aside.conversation
+	h2.subtle#comments Comments
 		if conversation
-			include conversation-thread
-		else
-			p No comments have been added so far.
-		include conversation-join
+			= ` (${conversation.length})`
+	if conversation
+		include conversation-thread
+	else
+		p No comments have been added so far.
+	include conversation-join
