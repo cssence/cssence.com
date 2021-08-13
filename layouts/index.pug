@@ -16,7 +16,7 @@ block content
 		- if (latestOnly) cards = cards.slice(0, latest)
 		- if (urlPath === '/about/about') cards.sort((a, b) => b.revised - a.revised)
 		section.posts
-			h2(id=isHome ? 'latest' : 'overview')= isHome ? 'Latest' : (latestOnly ? 'Latest posts' : 'All posts')
+			h2(id=isHome ? 'latest' : 'overview')= (isHome || latestOnly) ? 'Latest posts' : 'All posts'
 				small.visually-hidden= ' (most recent first)'
 			include fragments/cards
 			if !isHome
@@ -39,9 +39,8 @@ block content
 			section.posts
 				- const placement = highlight.posts
 				- const cards = posts.filter((post) => placement.includes(post.urlPath))
-				- cards.sort((a, b) => placement.indexOf(a.urlPath) > placement.indexOf(b.urlPath))
+				- cards.sort((a, b) => placement.indexOf(a.urlPath) - placement.indexOf(b.urlPath))
 				h2(id=highlight.id)= highlight.name
-					span.visually-hidden= ' posts'
 				- const orderedCards = highlight.id !== 'featured'
 				include fragments/cards
 

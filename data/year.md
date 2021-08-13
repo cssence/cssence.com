@@ -1,11 +1,11 @@
 ---
 layout: "index.pug"
 group: "default"
-title: "{year} Archive"
-description: "The CSSence Archive: All blog posts from the year {year}."
+title: "{{year}} Archive"
+description: "The CSSence Archive: All blog posts from the year {{year}}."
 ---
 
-# The Year {year}
+# The Year {{year}}
 ^ … on CSSence.com
 
 Dear visitors, i.e. search engines and _you_: This is an archive page.

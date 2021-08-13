@@ -1,19 +1,19 @@
 {
   "name": "cssence.com",
   "homepage": "https://cssence.com/",
-  "version": "3.12.0",
+  "version": "3.12.1",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/cssence/cssence.com.git"
   },
   "scripts": {
-    "prebuild": "rimraf public",
+    "build:clean": "rimraf public",
     "build:assets": "copyfiles -u 1 assets/* assets/img/* assets/css/* assets/js/* public",
     "build:minifycss": "minify assets/css/screen.css > public/css/screen.min.css && minify assets/css/print.css > public/css/print.min.css && minify assets/css/home.css > public/css/home.min.css && minify assets/css/ie.css > public/css/ie.min.css && minify assets/css/prism.css > public/css/prism.min.css",
     "build:minifyjs": "minify assets/js/ctm.js > public/js/ctm.min.js && minify assets/js/codepen.js > public/js/codepen.min.js && minify assets/js/prism.js > public/js/prism.min.js",
     "build:html": "node render.js",
-    "build": "npm run build:assets && npm run build:minifycss && npm run build:minifyjs && npm run build:html",
+    "build": "npm run build:clean && npm run build:assets && npm run build:minifycss && npm run build:minifyjs && npm run build:html",
     "start:server": "http-server public",
     "start": "npm run build && npm run start:server"
   },
@@ -28,7 +28,6 @@
     "metalsmith-markdown": "^1.3.0",
     "metalsmith-metadata": "0.0.4",
     "minify": "^7.0.2",
-    "multimatch": "^2.1.0",
     "pug": "^3.0.2",
     "rimraf": "^3.0.2"
   },

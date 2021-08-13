@@ -8,7 +8,7 @@ thumbnail: {url: "/index.png"}
 latest: 3
 highlights:
   - id: "featured"
-    name: "Featured"
+    name: "Featured posts"
     posts:
       - "/2020/css-variables-in-style-attributes"
       - "/2019/inclusive-toggle-buttons"

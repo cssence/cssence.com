@@ -1,17 +1,10 @@
-module.exports = plugin;
-const path = require('path');
-const multimatch = require('multimatch');
+module.exports = (opts) => (files, metalsmith, done) => {
+	Object.keys(files).forEach((file) => {
+		if (!file.endsWith('.html')) return;
 
-function plugin (opts) {
-	opts = opts || {};
-	opts.files = opts.files || ['**/*.html'];
-
-	return (files, metalsmith, done) => {
-		multimatch(Object.keys(files), opts.files).forEach((file) => {
-			const item = files[file];
-			const content = item.contents.toString().replace(/></g, '>\n<');
-			item.contents = Buffer.from(content);
-		});
-		done();
-	};
-}
+		const item = files[file];
+		const content = item.contents.toString().replace(/></g, '>\n<');
+		item.contents = Buffer.from(content);
+	});
+	done();
+};
