@@ -15,7 +15,7 @@ module.exports = (opts) => (files, metalsmith, done) => {
 		if (item.layout === 'index.pug' && !item.revised) {
 			if (item.urlPath === '/') {
 				item.revised = new Date(); // build timestamp
-			} else if (item.urlPath === '/about/about') {
+			} else if (item.urlPath === '/about/about/') {
 				item.revised = meta.posts[0].order; // freshest across all categories
 			} else {
 				const latestPostInCategory = meta.getFilteredPosts(meta.posts, item.urlPath)[0];

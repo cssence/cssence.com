@@ -6,12 +6,12 @@
  */
 
  const indexMap = {
-	'bookmark': '/bookmarks',
-	'opinion': '/opinions',
-	'code': '/code',
-	'editorial': '/editorials',
-	'event': '/events',
-	'essay': '/essays',
+	'bookmark': '/bookmarks/',
+	'opinion': '/opinions/',
+	'code': '/code/',
+	'editorial': '/editorials/',
+	'event': '/events/',
+	'essay': '/essays/',
 };
 
 module.exports = (opts) => (files, metalsmith, done) => {
@@ -20,28 +20,28 @@ module.exports = (opts) => (files, metalsmith, done) => {
 
 		const item = files[file];
 		// assign: urlPath
-		item.urlPath = `/${file.startsWith('index') ? '' : file.slice(0, -'.html'.length)}`;
+		item.urlPath = file === 'index.html' ? '/' : `/${file.split('/').slice(0, -1).join('/')}/`;
 		// assign: order
 		item.order = item.published || item.revised;
 		// assign: listings
 		if (['article.pug', 'note.pug'].includes(item.layout)) {
-			item.listings = [indexMap[item.group], `/${item.layout.split('.')[0]}s`, '/', `/${item.order.toISOString().split('-')[0]}`];
+			item.listings = [indexMap[item.group], `/${item.layout.split('.')[0]}s/`, '/', `/${item.order.toISOString().split('-')[0]}/`];
 		} else {
-			item.listings = ['/about/about'];
+			item.listings = ['/about/about/'];
 		}
 		// augment: thumbnail
 		if (item.thumbnail) {
 			if (item.thumbnail.type) {
 				const mimeTypeMap = {'image/jpeg': '.jpg', 'image/png': '.png'};
-				item.thumbnail.url = `${item.urlPath}${mimeTypeMap[item.thumbnail.type]}`;
+				item.thumbnail.url = `${item.urlPath}index${mimeTypeMap[item.thumbnail.type]}`;
 				delete item.thumbnail.type;
 			}
 		} else {
-			let fallbackThumbnailPath = item.listings[0];
+			let fallbackThumbnailPath = `${item.listings[0]}index`;
 			if (item.group === 'default') {
 				fallbackThumbnailPath = '/default'
 			} else if (item.layout === 'note.pug') {
-				fallbackThumbnailPath = '/notes';
+				fallbackThumbnailPath = '/notes/index';
 			}
 			item.thumbnail = {url: `${fallbackThumbnailPath}.jpg`, default: true};
 		}

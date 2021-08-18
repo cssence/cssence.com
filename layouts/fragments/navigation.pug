@@ -11,17 +11,17 @@ nav.screen
 					em.tagline The Essence of CSS
 		each section, index in ['Articles', 'Notes', 'About']
 			li
-				- const sectionHref = `/${section.toLowerCase()}`
-				- const sectionClassName = sectionHref.slice(0, sectionHref.endsWith('s') ? -1 : sectionHref.length).replace('/', 'c-')
+				- const sectionHref = `/${section.toLowerCase()}/`
+				- const sectionClassName = sectionHref.slice(0, sectionHref.endsWith('s/') ? -2 : -1).replace('/', 'c-')
 				a(class=sectionClassName, href=sectionHref, accesskey=index+2)= section
 	h3.visually-hidden#navigation-advanced Find popular posts or browse by year
 	.nav-more
 		ul
 			li
-				a(href="/popular") Most popular
+				a(href="/popular/") Most popular
 			- let yearTitle = website.years.to + 1
 			while --yearTitle >= website.years.from
 				li
-					- const yearUrl = `/${yearTitle}`
+					- const yearUrl = `/${yearTitle}/`
 					a(href=yearUrl)
 						time= yearTitle

@@ -6,7 +6,7 @@ footer.metadata
 		p
 			= layout === 'index.pug' ? 'Curated' : 'Written'
 			= ' by '
-			a(rel="author", href=`${website.url}/about/matt`) Matthias Zöchling
+			a(rel="author", href=`${website.url}/about/matt/`) Matthias Zöchling
 			= (conversation && conversation.filter((item) => item.author).length) ? ' et al.' : '.'
 	if published
 		p

@@ -14,7 +14,7 @@ block content
 		- const numberOfPostsInCategory = cards.length
 		- const latestOnly = typeof latest === 'number' && numberOfPostsInCategory > latest
 		- if (latestOnly) cards = cards.slice(0, latest)
-		- if (urlPath === '/about/about') cards.sort((a, b) => b.revised - a.revised)
+		- if (urlPath === '/about/about/') cards.sort((a, b) => b.revised - a.revised)
 		section.posts
 			h2(id=isHome ? 'latest' : 'overview')= (isHome || latestOnly) ? 'Latest posts' : 'All posts'
 				small.visually-hidden= ' (most recent first)'

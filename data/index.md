@@ -10,9 +10,9 @@ highlights:
   - id: "featured"
     name: "Featured posts"
     posts:
-      - "/2020/css-variables-in-style-attributes"
-      - "/2019/inclusive-toggle-buttons"
-      - "/2018/no-webfont-no-cry"
+      - "/2020/css-variables-in-style-attributes/"
+      - "/2019/inclusive-toggle-buttons/"
+      - "/2018/no-webfont-no-cry/"
 ---
 
 # Welcome to CSSence.com

@@ -16,7 +16,7 @@
 	document.head.appendChild(style);
 	const anchor = document.createElement('a');
 	anchor.rel = 'help';
-	anchor.href = 'https://cssence.com' + helpUrl;
+	anchor.href = `https://cssence.com${helpUrl}`;
 	anchor.target = '_blank';
 	anchor.textContent = 'Learn more';
 	document.body.appendChild(anchor);

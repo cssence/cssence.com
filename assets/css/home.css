@@ -78,7 +78,7 @@
 	width: 52px;
 	height: 52px;
 	border: 2px solid var(--color-bg);
-	background-image: url(/about/photo.jpg);
+	background-image: url(/about/matt/photo.jpg);
 }
 @media (max-width: 39.95em) {
 	.intro {

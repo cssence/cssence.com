@@ -3,7 +3,6 @@ const collections = require('metalsmith-collections');
 const contentParserMarkdown = require('metalsmith-markdown');
 const layouts = require('metalsmith-layouts');
 
-const addYears = require('./plugins/add-years.js');
 const augment = require('./plugins/augment.js');
 const crossAugment = require('./plugins/augment-x.js');
 
@@ -34,7 +33,6 @@ metalsmith('.')
 		useMetadata: true
 	}))
 	.use(augment())
-	.use(addYears())
 	.use(collections({
 		posts: {
 			pattern: '**/*.html',
