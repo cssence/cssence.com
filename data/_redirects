@@ -164,7 +164,6 @@
 /2021/changing-css-with-css.prismjs.png  /2021/changing-css-with-css/prismjs.png
 /2021/webstoriesconf.jpg  /2021/webstoriesconf/index.jpg
 /about.jpg  /about/index.jpg
-/about/fusion.jpg  /about/fusion/index.jpg
 /about/logo.png  /about/logo/index.png
 /about/matt.jpg  /about/matt/index.jpg
 /about/photo.jpg  /about/matt/photo.jpg
@@ -176,10 +175,9 @@
 /essays.jpg  /essays/index.jpg
 /events.jpg  /events/index.jpg
 /help.png  /help/index.png
-/index.png  /index/index.png
 /notes.jpg  /notes/index.jpg
 /popular.jpg  /popular/index.jpg
 /settings.png  /settings/index.png
 /work.jpg  /work/index.jpg
 /404.png  /404/index.png
-/*  /404/
+/*  /404/  404
