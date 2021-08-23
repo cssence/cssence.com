@@ -1,13 +1,13 @@
 ---
-layout: "article.pug"
-group: "code"
+layout: article.pug
+type: c-code
 title: "Loading Spinner"
 description: "Single color variant of popular alternate version."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2016-04-06T05:39:00Z
-deprecatedUrl: "/code/2016-04-06-loading-spinner-currentcolor"
+deprecatedUrl: /code/2016-04-06-loading-spinner-currentcolor
 syndication:
-  - url: "https://codepen.io/cssence/pen/bpYQqv"
+  - url: https://codepen.io/cssence/pen/bpYQqv
 ---
 
 # Loading Spinner

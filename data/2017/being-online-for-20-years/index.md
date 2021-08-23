@@ -1,13 +1,13 @@
 ---
-layout: "article.pug"
-group: "editorial"
+layout: article.pug
+type: c-editorial
 title: "Online for Twenty Years"
 description: "I have written a “Thank You” letter to the World Wide Web."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2017-09-23T08:59:00Z
-deprecatedUrl: "/about/being-online-for-20-years"
+deprecatedUrl: /about/being-online-for-20-years
 syndication:
-  - url: "https://twitter.com/cssence/status/1190232417271009281"
+  - url: https://twitter.com/cssence/status/1190232417271009281
     published: 2019-11-01T11:41:36Z
 ---
 

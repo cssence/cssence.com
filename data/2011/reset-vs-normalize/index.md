@@ -1,12 +1,12 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "Reset vs. Normalize"
 description: "How normalize.css differs from the traditional CSS reset."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2011-07-17T21:55:12Z
 syndication:
-  - url: "http://cssence.wordpress.com/2011/07/17/reset-vs-normalize/?draft"
+  - url: http://cssence.wordpress.com/2011/07/17/reset-vs-normalize/?draft
 ---
 
 # Reset vs. Normalize

@@ -1,55 +1,55 @@
 ---
-layout: "article.pug"
-group: "event"
+layout: article.pug
+type: c-event
 title: "WebStories Lille 2021"
 description: "@webstoriesconf 2021, from Lille (France) straight to my home."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2021-02-05T07:38:00Z
 syndication:
-  - url: "https://twitter.com/cssence/status/1357599337786834944"
+  - url: https://twitter.com/cssence/status/1357599337786834944
     published: 2021-02-05T07:57:59Z
 conversation:
-  - url: "https://twitter.com/cssence/status/1357599337786834944"
+  - url: https://twitter.com/cssence/status/1357599337786834944
     text: "I wouldn’t have made it to Lille, France. But thanks to [@webstoriesconf](https://twitter.com/webstoriesconf)
  being an online event this year, it’s “Lights On!” soon. I’m ready to go.<br>[cssence.com/2021/webstoriesconf](/2021/webstoriesconf/)"
     posted: 2021-02-05T07:57:59Z
-  - url: "https://twitter.com/cssence/status/1357612676311089157"
+  - url: https://twitter.com/cssence/status/1357612676311089157
     text: "“All of engineering is misusing technology.”<br>– [@johnallsopp](https://twitter.com/johnallsopp)<br>@webstoriesconf"
     posted: 2021-02-05T08:50:59Z
-  - url: "https://twitter.com/cssence/status/1357617413655826432"
+  - url: https://twitter.com/cssence/status/1357617413655826432
     text: "“Never blame the user. It is always the system that has a problem.”<br>— [@WalterStephanie](https://twitter.com/WalterStephanie)<br>@webstoriesconf"
     posted: 2021-02-05T09:09:49Z
-  - url: "https://twitter.com/cssence/status/1357632282341818369"
+  - url: https://twitter.com/cssence/status/1357632282341818369
     text: "“We know that 60% of the time people spend on the PC is within the web browser.”<br>— [@kennethrohde](https://twitter.com/kennethrohde)<br>@webstoriesconf"
     posted: 2021-02-05T10:08:54Z
-  - url: "https://twitter.com/cssence/status/1357636259754221571"
+  - url: https://twitter.com/cssence/status/1357636259754221571
     text: "Yay Progressive Web Apps!<br>The Fugu API Tracker [@kennethrohde](https://twitter.com/kennethrohde) mentioned: [fugu-tracker.web.app](https://fugu-tracker.web.app)<br>@webstoriesconf"
     posted: 2021-02-05T10:24:42Z
-  - url: "https://twitter.com/cssence/status/1357670595228557313"
+  - url: https://twitter.com/cssence/status/1357670595228557313
     text: "Yes to “CSS speech module”! As a developer who’s work involves listening to screenreaders for a bigger part of the week, I want to enhance websites in the way [@LeonieWatson](https://twitter.com/LeonieWatson) showcased with Speech Synthesis Markup Language (SSML) today at [@webstoriesconf](https://twitter.com/webstoriesconf)."
     posted: 2021-02-05T12:41:08Z
-  - url: "https://twitter.com/cssence/status/1357682892512583680"
+  - url: https://twitter.com/cssence/status/1357682892512583680
     text: "“Fast gets all our attention, but Slow gets all our power.”<br>“Fast learns, Slow remembers.”<br>— [@adactio](https://twitter.com/adactio)<br>@webstoriesconf"
     posted: 2021-02-05T13:30:00Z
-  - url: "https://twitter.com/cssence/status/1357683621222580226"
+  - url: https://twitter.com/cssence/status/1357683621222580226
     text: "Nice work [@webrocker](https://twitter.com/webrocker) 👏<br>[www.webrocker.de/2019/11/15/the-layers-of-the-web/](https://www.webrocker.de/2019/11/15/the-layers-of-the-web/)"
     posted: 2021-02-05T13:32:54Z
-  - url: "https://twitter.com/webrocker/status/1357684426000465920"
+  - url: https://twitter.com/webrocker/status/1357684426000465920
     text: "[@cssence](https://twitter.com/cssence)<br>[@adactio](https://twitter.com/adactio)’s talk left quite an impression on me, because this layer/pace model felt so apt."
-    author: {url: "https://twitter.com/webrocker", name: "Tom Arnold"}
+    author: {url: https://twitter.com/webrocker, name: "Tom Arnold"}
     posted: 2021-02-05T13:36:06Z
-  - url: "https://twitter.com/cssence/status/1357731446983655424"
+  - url: https://twitter.com/cssence/status/1357731446983655424
     text: "“CSS is hacking my brain.”<br>— [@meyerweb](https://twitter.com/meyerweb)<br>@webstoriesconf"
     posted: 2021-02-05T16:42:57Z
-  - url: "https://twitter.com/cssence/status/1357735897794564099"
+  - url: https://twitter.com/cssence/status/1357735897794564099
     text: "[@meyerweb](https://twitter.com/meyerweb) giving praise to [@lynnandtonic](https://twitter.com/lynnandtonic)’s [a.singlediv.com](https://a.singlediv.com) at [@webstoriesconf](https://twitter.com/webstoriesconf) is the CSS icing on the cake."
     posted: 2021-02-05T17:00:38Z
-  - url: "https://twitter.com/cssence/status/1357736295901122560"
+  - url: https://twitter.com/cssence/status/1357736295901122560
     text: "Thank you [@webstoriesconf](https://twitter.com/webstoriesconf) & all the speakers for an awesome virtual conference. In addition to all the inspiration I got, it made me appreciate the benefits of online-only events."
     posted: 2021-02-05T17:02:13Z
-  - url: "https://twitter.com/gericci/status/1357754062737915906"
+  - url: https://twitter.com/gericci/status/1357754062737915906
     text: "[@cssence](https://twitter.com/cssence) Happy to hear it! Thanks!"
-    author: {url: "https://twitter.com/gericci", name: "Angela Ricci"}
+    author: {url: https://twitter.com/gericci, name: "Angela Ricci"}
     posted: 2021-02-05T18:12:49Z
 ---
 

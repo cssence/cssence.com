@@ -1,13 +1,13 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "Data URI Images: Are We There yet?"
 description: "A deeper look into pros and cons of data URIs."
 summary: "A deeper look into pros and cons of data URIs, especially data URI images. One size fits all, or not useful at all?"
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2011-04-11T06:41:24Z
 syndication:
-  - url: "http://cssence.wordpress.com/2011/04/26/data-uri-images-are-we-there-yet/"
+  - url: http://cssence.wordpress.com/2011/04/26/data-uri-images-are-we-there-yet/
 ---
 
 # Data URI Images: Are We There yet?

@@ -1,9 +1,9 @@
 ---
-layout: "index.pug"
-group: "essay"
+layout: index.pug
+type: c-essay
 title: "Essays"
 description: "The classic CSSence weblog: Latest blog posts from the category “Essay”."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 latest: 10
 ---
 

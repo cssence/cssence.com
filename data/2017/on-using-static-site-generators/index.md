@@ -1,15 +1,15 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "On Using Static Site Generators"
 description: "I wrote about static site generators, but went down the Vanilla-or-not rabbit hole."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2017-07-22T16:50:00Z
-deprecatedUrl: "/blog/2017-07-on-using-static-site-generators"
+deprecatedUrl: /blog/2017-07-on-using-static-site-generators
 syndication:
-  - url: "https://medium.com/@cssence/on-using-static-site-generators-57879d215746"
+  - url: https://medium.com/@cssence/on-using-static-site-generators-57879d215746
     published: 2017-07-25T08:40:50Z
-  - url: "https://twitter.com/cssence/status/889489356314091520"
+  - url: https://twitter.com/cssence/status/889489356314091520
     published: 2017-07-24T14:16:03Z
 ---
 

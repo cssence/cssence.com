@@ -1,13 +1,13 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "rem (Root Em), a Unit Introduced With CSS3"
 description: "Exploring the differences between em and rem."
 summary: "Explore the differences between em and rem. The em unit has been with us for a long time, see what rem — brought to you by CSS3 — adds to the relative measurement arena."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2011-05-26T13:05:39Z
 syndication:
-  - url: "http://cssence.wordpress.com/2011/05/26/rem-root-em-a-unit-introduced-with-css3/"
+  - url: http://cssence.wordpress.com/2011/05/26/rem-root-em-a-unit-introduced-with-css3/
 ---
 
 # rem (Root Em), a Unit Introduced With CSS3

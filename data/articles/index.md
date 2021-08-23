@@ -1,9 +1,9 @@
 ---
-layout: "index.pug"
-group: "article"
+layout: index.pug
+type: c-article
 title: "Articles"
 description: "Everything beyond short notes: Essays, Editorials, Events and Code."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 latest: 10
 ---
 

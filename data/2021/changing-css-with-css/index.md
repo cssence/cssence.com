@@ -1,19 +1,19 @@
 ---
-layout: "article.pug"
-group: "code"
+layout: article.pug
+type: c-code
 title: "Changing CSS with CSS?"
 description: "tl;dr pseudo styles are not really a thing."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2021-01-27T07:52:13Z
 syndication:
-  - url: "https://codepen.io/cssence/pen/MWjNZaj"
-  - url: "https://twitter.com/cssence/status/1354542417282801665"
+  - url: https://codepen.io/cssence/pen/MWjNZaj
+  - url: https://twitter.com/cssence/status/1354542417282801665
     published: 2021-01-27T21:30:53Z
 conversation:
-  - url: "https://twitter.com/cssence/status/1354547160977702915"
+  - url: https://twitter.com/cssence/status/1354547160977702915
     text: "I’m using ol’ trusty [@prismjs](https://twitter.com/prismjs) for syntax highlighting on my blog, and even it has troubles with my questionable early morning ideas."
     image:
-      url: "/2021/changing-css-with-css/prismjs.png"
+      url: /2021/changing-css-with-css/prismjs.png
       alt: "Putting valid CSS code in the CSS content property will trick even the best syntax highlighter into thinking the text within quotes is code."
     posted: 2021-01-27T21:49:44Z
 ---

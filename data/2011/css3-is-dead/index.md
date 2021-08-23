@@ -1,14 +1,14 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "CSS3 is Dead"
 description: "Designing for the lowest common denominator is no longer the way to go."
 summary: "»CSS3 is dead!« is a call for action. In 2011, designing for the lowest common denominator is no longer the way to go. In addition, it explains why CSS3 doesn’t want to be called CSS3 anymore. That way the title makes sense. Sort of."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2011-01-26T19:23:37Z
 syndication:
-  - url: "http://cssence.wordpress.com/2011/01/26/css3-is-dead/"
-  - url: "https://twitter.com/cssence/status/32197793019863040"
+  - url: http://cssence.wordpress.com/2011/01/26/css3-is-dead/
+  - url: https://twitter.com/cssence/status/32197793019863040
     published: 2011-01-31T22:05:26Z
 ---
 

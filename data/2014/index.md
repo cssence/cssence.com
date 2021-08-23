@@ -1,6 +1,6 @@
 ---
-layout: "index.pug"
-group: "default"
+layout: index.pug
+type: c-default
 title: "2014 Archive"
 description: "The CSSence Archive: All blog posts from the year 2014."
 ---

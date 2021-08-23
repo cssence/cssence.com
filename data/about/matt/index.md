@@ -1,9 +1,9 @@
 ---
-layout: "internal.pug"
-group: "about"
+layout: internal.pug
+type: c-about
 title: "About Matthias&nbsp;Zöchling"
 description: "Some facts about web developer and CSS enthusiast Matthias Zöchling, a.k.a. @CSSence."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 revised: 2020-05-15T06:15:00Z
 ---
 

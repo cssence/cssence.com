@@ -1,9 +1,9 @@
 ---
-layout: "internal.pug"
-group: "default"
+layout: internal.pug
+type: c-default
 title: "Help"
 description: "Do you need some help navigating your way around this site?"
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 revised: 2020-04-25T03:55:00Z
 ---
 

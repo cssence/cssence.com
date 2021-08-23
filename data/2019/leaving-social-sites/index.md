@@ -1,11 +1,11 @@
 ---
-layout: "article.pug"
-group: "editorial"
+layout: article.pug
+type: c-editorial
 title: "Leaving Social Sites"
 description: "Past the point of no return; I’ve once again simplified my online life."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2019-08-21T05:23:00Z
-deprecatedUrl: "/about/2019-08-leaving-social-sites"
+deprecatedUrl: /about/2019-08-leaving-social-sites
 ---
 
 # Leaving Social Sites

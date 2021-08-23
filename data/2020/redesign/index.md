@@ -1,18 +1,18 @@
 ---
-layout: "index.pug"
-group: "editorial"
+layout: index.pug
+type: c-editorial
 title: "Re: Design - A Series"
 description: "Letters of appreciation to the basics of the web."
-thumbnail: {url: "/2020/redesign/index.png"}
+thumbnail: {url: /2020/redesign/index.png}
 revised: 2020-11-21T10:29:00Z
 latest: "Editorial"
 highlights:
-  - id: "series"
+  - id: series
     name: "Posts in this series"
     posts:
-      - "/2020/redesign-structure-and-semantics/"
-      - "/2020/redesign-style-and-delight/"
-      - "/2020/redesign-superfluous-and-advanced/"
+      - /2020/redesign-structure-and-semantics/
+      - /2020/redesign-style-and-delight/
+      - /2020/redesign-superfluous-and-advanced/
 ---
 
 # Re: Design

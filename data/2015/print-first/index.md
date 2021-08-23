@@ -1,14 +1,14 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "Print First"
 description: "Forget Mobile First. Providing Styles for Print should be your first media query."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2015-09-16T06:43:00Z
-deprecatedUrl: "/blog/2015-09-print-first"
+deprecatedUrl: /blog/2015-09-print-first
 syndication:
-  - url: "https://medium.com/@cssence/print-first-ef5806ba9989"
-  - url: "https://twitter.com/cssence/status/654399313011937280"
+  - url: https://medium.com/@cssence/print-first-ef5806ba9989
+  - url: https://twitter.com/cssence/status/654399313011937280
     published: 2015-10-14T20:52:09Z
 ---
 

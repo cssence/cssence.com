@@ -1,14 +1,14 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "head {display:block}"
 description: "Content inside &lt;head&gt; is usually hidden, but it doesn’t need to be."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2015-10-02T06:27:00Z
-deprecatedUrl: "/blog/2015-10-head-display-block"
+deprecatedUrl: /blog/2015-10-head-display-block
 syndication:
-  - url: "https://medium.com/@cssence/head-display-block-da4cd2ff71cf"
-  - url: "https://twitter.com/cssence/status/657455868473155584"
+  - url: https://medium.com/@cssence/head-display-block-da4cd2ff71cf
+  - url: https://twitter.com/cssence/status/657455868473155584
     published: 2015-10-23T07:17:48Z
 ---
 

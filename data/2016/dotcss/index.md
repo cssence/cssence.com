@@ -1,12 +1,12 @@
 ---
-layout: "article.pug"
-group: "event"
+layout: article.pug
+type: c-event
 title: "dotCSS 2016"
 description: "@dotCSS 2016 in Paris, I’m both attending and speaking."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2016-12-02T22:15:00Z
 revised: 2017-05-01T08:25:00Z
-deprecatedUrl: "/about/2016-12-dotcss"
+deprecatedUrl: /about/2016-12-dotcss
 ---
 
 # dotCSS

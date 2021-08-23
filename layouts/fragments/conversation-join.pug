@@ -7,6 +7,6 @@ article.screen
 		= ' on Twitter, or simply '
 		- const titleUrlSafe = title.replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&')
 		- const shareUrlValue = encodeURIComponent(`“${titleUrlSafe}” ${permalink} by @cssence`)
-		- const sharePostTypeMap = {bookmark: 'thread', opinion: 'thread', code: 'code example'}
-		a(href=`https://twitter.com/intent/tweet?text=${shareUrlValue}`)= `share this ${sharePostTypeMap[group] || 'article'}`
+		- const sharePostTypeMap = {'c-bookmark': 'thread', 'c-opinion': 'thread', 'c-code': 'code example'}
+		a(href=`https://twitter.com/intent/tweet?text=${shareUrlValue}`)= `share this ${sharePostTypeMap[type] || 'article'}`
 		= '.'

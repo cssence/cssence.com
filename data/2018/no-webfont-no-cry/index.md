@@ -1,23 +1,23 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "No Web Font, No&nbsp;Cry"
 description: "I’ve turned off font loading six month ago. This is what I learned."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2018-05-18T05:51:00Z
-deprecatedUrl: "/blog/2018-05-no-webfont-no-cry"
+deprecatedUrl: /blog/2018-05-no-webfont-no-cry
 syndication:
-  - url: "https://medium.com/@cssence/no-web-font-no-cry-14c5c61da0e6"
+  - url: https://medium.com/@cssence/no-web-font-no-cry-14c5c61da0e6
     published: 2018-05-20T04:02:23Z
-  - url: "https://twitter.com/cssence/status/997900619619893248"
+  - url: https://twitter.com/cssence/status/997900619619893248
     published: 2018-05-19T18:03:42Z
 conversation:
-  - url: "https://twitter.com/cssence/status/998577280145293313"
+  - url: https://twitter.com/cssence/status/998577280145293313
     text: "When it comes to font loading, let’s not forget the mandatory shoutout to [@zachleat](https://twitter.com/zachleat) 🙂 - even though my article focuses more on the user’s choice."
     posted: 2018-05-21T14:52:30Z
-  - url: "https://twitter.com/zachleat/status/998578607013310467"
+  - url: https://twitter.com/zachleat/status/998578607013310467
     text: "Nice! [@malchata](https://twitter.com/malchata) has done great font loading posts around Save-Data that are worth a read: [css-tricks.com/help-users-save-data](https://css-tricks.com/help-users-save-data/)"
-    author: {url: "https://twitter.com/zachleat", name: "Zach Leatherman"}
+    author: {url: https://twitter.com/zachleat, name: "Zach Leatherman"}
     posted: 2018-05-21T14:57:47Z
 ---
 
@@ -39,7 +39,7 @@ Having Firefox installed, I went through the settings, where they gave me an int
 
 <p class="blend"><img src="/2018/no-webfont-no-cry/firefox-settings.png" alt="On Firefox for Android the ability to turn off loading web fonts is found under Advanced Settings."></p>
 
-One of the perks of living in Austria is the inexpensive generous data plan you’ll have on your phone, so no need for eliminating the font download, right? Not quite, I also want my websites to load fast, so I gave it a try and turned off web fonts on my mobile. To this day, they are is still off.
+One of the perks of living in Austria is the inexpensive generous data plan you’ll have on your phone, so no need for eliminating the font download, right? Not quite, I also want my websites to load fast, so I gave it a try and turned off web fonts on my mobile. To this day, they are still off.
 
 Any designer will tell you that a site design looses its character without the particular font it is supposed to come with. And they are right. But keep in mind, the site design is just the beginning, the World Wide Web is a rough place. In web design, there are many ways to present content, but there are always way more ways to consume it.
 

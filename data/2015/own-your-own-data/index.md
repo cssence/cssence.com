@@ -1,12 +1,12 @@
 ---
-layout: "article.pug"
-group: "editorial"
+layout: article.pug
+type: c-editorial
 title: "Own Your Own Data"
 description: "Your data belongs to you, so it should be on your own domain."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2015-09-24T16:57:00Z
 revised: 2019-11-23T19:55:00Z
-deprecatedUrl: "/about/own-your-own-data"
+deprecatedUrl: /about/own-your-own-data
 ---
 
 # Own Your Own Data

@@ -1,13 +1,13 @@
 ---
-layout: "article.pug"
-group: "code"
+layout: article.pug
+type: c-code
 title: "YouTube Play/Pause Animation"
 description: "Using a simple border #hack to achieve what Youtube recently did. Kind of."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2016-03-17T08:42:00Z
-deprecatedUrl: "/code/2016-03-17-youtube-play-pause-animation"
+deprecatedUrl: /code/2016-03-17-youtube-play-pause-animation
 syndication:
-  - url: "https://codepen.io/cssence/pen/bpgqjm"
+  - url: https://codepen.io/cssence/pen/bpgqjm
 ---
 
 # YouTube Play/Pause Animation

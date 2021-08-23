@@ -6,12 +6,12 @@
  */
 
  const indexMap = {
-	'bookmark': '/bookmarks/',
-	'opinion': '/opinions/',
-	'code': '/code/',
-	'editorial': '/editorials/',
-	'event': '/events/',
-	'essay': '/essays/',
+	'c-bookmark': '/bookmarks/',
+	'c-opinion': '/opinions/',
+	'c-code': '/code/',
+	'c-editorial': '/editorials/',
+	'c-event': '/events/',
+	'c-essay': '/essays/',
 };
 
 module.exports = (opts) => (files, metalsmith, done) => {
@@ -25,7 +25,7 @@ module.exports = (opts) => (files, metalsmith, done) => {
 		item.order = item.published || item.revised;
 		// assign: listings
 		if (['article.pug', 'note.pug'].includes(item.layout)) {
-			item.listings = [indexMap[item.group], `/${item.layout.split('.')[0]}s/`, '/', `/${item.order.toISOString().split('-')[0]}/`];
+			item.listings = [indexMap[item.type], `/${item.layout.split('.')[0]}s/`, '/', `/${item.order.toISOString().split('-')[0]}/`];
 		} else {
 			item.listings = ['/about/about/'];
 		}
@@ -38,7 +38,7 @@ module.exports = (opts) => (files, metalsmith, done) => {
 			}
 		} else {
 			let fallbackThumbnailPath = `${item.listings[0]}index`;
-			if (item.group === 'default') {
+			if (item.type === 'c-groupdefault') {
 				fallbackThumbnailPath = '/default'
 			} else if (item.layout === 'note.pug') {
 				fallbackThumbnailPath = '/notes/index';

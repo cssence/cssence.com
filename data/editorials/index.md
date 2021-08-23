@@ -1,9 +1,9 @@
 ---
-layout: "index.pug"
-group: "editorial"
+layout: index.pug
+type: c-editorial
 title: "Editorials"
 description: "Behind the scenes: Latest blog posts from the category “Editorials”."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 latest: 10
 ---
 

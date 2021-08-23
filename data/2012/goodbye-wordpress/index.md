@@ -1,13 +1,13 @@
 ---
-layout: "article.pug"
-group: "editorial"
+layout: article.pug
+type: c-editorial
 title: "Goodbye Wordpress"
 description: "To achieve full ownership, I’m moving my weblog to my own domain."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2012-03-03T19:42:29Z
 revised: 2015-10-02T06:27:00Z
 syndication:
-  - url: "http://cssence.wordpress.com/"
+  - url: http://cssence.wordpress.com/
 ---
 
 # Goodbye Wordpress

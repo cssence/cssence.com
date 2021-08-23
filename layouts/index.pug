@@ -5,9 +5,14 @@ block content
 
 	- const isHome = urlPath === '/'
 	block intro
-		.article!= contents
-		if isHome
-			include fragments/home
+		.article
+			if isHome
+				.intro
+					style.page(media="screen", aria-hidden="true")
+						include ../public/css/home.min.css
+					!= contents
+			else
+				!= contents
 
 	if typeof latest === 'undefined' || (typeof latest === 'number' && latest > 0)
 		- let cards = getFilteredPosts(posts, urlPath)

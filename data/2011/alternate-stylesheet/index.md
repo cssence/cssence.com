@@ -1,14 +1,14 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "Say »Hello« to Device Fragmentation"
 description: "How to show your alternate designs."
 summary: "Learn how alternate stylesheets (that have been with us for many years now) are put to good use today. Websites no longer have just one design, they come with additional designs created for special purposes, such as mobiles phones. Why hide them?"
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2011-02-26T21:18:05Z
 syndication:
-  - url: "http://cssence.wordpress.com/2011/02/26/alternate-stylesheet/"
-  - url: "https://twitter.com/cssence/status/42351635766317056"
+  - url: http://cssence.wordpress.com/2011/02/26/alternate-stylesheet/
+  - url: https://twitter.com/cssence/status/42351635766317056
     published: 2011-02-28T22:33:11Z
 ---
 

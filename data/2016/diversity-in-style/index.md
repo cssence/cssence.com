@@ -1,14 +1,14 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "Diversity in Style"
 description: "Looking for the transcript of my @dotCSS talk? Here you go."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2016-12-19T07:55:00Z
 revised: 2016-12-30T15:45:00Z
-deprecatedUrl: "/blog/2016-12-diversity-in-style"
+deprecatedUrl: /blog/2016-12-diversity-in-style
 syndication:
-  - url: "https://twitter.com/cssence/status/814863792249180161"
+  - url: https://twitter.com/cssence/status/814863792249180161
     published: 2016-12-30T16:00:42Z
 ---
 

@@ -3,6 +3,6 @@ p.banner(class=banner.forHero && !banner.published && 'print')
 	span.screen.visually-hidden= banner.published ? 'Published on ' : 'Last updated on '
 	+ts(banner.published || banner.revised)
 	span.screen.visually-hidden= '. Filed under '
-	- const indicatorMap = {'index.pug': 'Index', 'internal.pug': 'Internal', bookmark: 'Bookmark', code: 'Code', editorial: 'Editorial', essay: 'Essay', event: 'Event', opinion: 'Opinion'}
-	i.indicator(class=getClassName(banner.group))= banner.urlPath === '/' ? 'Home' : (indicatorMap[banner.layout] || indicatorMap[banner.group])
+	- const indicatorMap = {'index.pug': 'Index', 'internal.pug': 'Internal', 'c-bookmark': 'Bookmark', 'c-code': 'Code', 'c-editorial': 'Editorial', 'c-essay': 'Essay', 'c-event': 'Event', 'c-opinion': 'Opinion'}
+	i.indicator(class=banner.type)= banner.urlPath === '/' ? 'Home' : (indicatorMap[banner.layout] || indicatorMap[banner.type])
 	span.screen.visually-hidden= '.'

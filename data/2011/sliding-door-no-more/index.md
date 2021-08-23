@@ -1,14 +1,14 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "Sliding Door, No More"
 description: "Replacing the “Sliding Doors” technique with border-image."
 summary: "There are many browsers out there that support a whole lot of the new CSS3 features. So there is a good chance that some of us are still using CSS techniques that are no longer state of the art. What about sliding doors? Obsolete?"
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2011-03-26T21:05:39Z
 syndication:
-  - url: "http://cssence.wordpress.com/2011/03/26/sliding-door-no-more/"
-  - url: "https://twitter.com/cssence/status/57332403454230528"
+  - url: http://cssence.wordpress.com/2011/03/26/sliding-door-no-more/
+  - url: https://twitter.com/cssence/status/57332403454230528
     published: 2011-04-11T06:41:24Z
 ---
 

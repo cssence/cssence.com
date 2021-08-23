@@ -1,16 +1,16 @@
 ---
-layout: "article.pug"
-group: "event"
+layout: article.pug
+type: c-event
 title: "Mobilism 2015"
 description: "The last @MobilismConf happens to be my first."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2015-03-27T17:54:40Z
 revised: 2015-04-30T22:10:10Z
 syndication:
-  - url: "https://twitter.com/cssence/status/581514689382899712"
+  - url: https://twitter.com/cssence/status/581514689382899712
     published: 2015-03-27T17:54:40Z
 conversation:
-  - url: "https://twitter.com/cssence/status/581514689382899712"
+  - url: https://twitter.com/cssence/status/581514689382899712
     text: "Thank you [@ppk](https://twitter.com/ppk) and all the other speakers for a delightful - but sadly last - [@MobilismConf](https://twitter.com/mobilismconf)"
     posted: 2015-03-27T17:54:40Z
 ---

@@ -1,7 +1,7 @@
 - const syndicated = syndication ? syndication[0] : {}
 footer.metadata
-	- const pageTypeMap = {'index.pug': 'index page', 'note.pug': 'thread', 'internal.pug': 'page', code: 'code example'}
-	h2#about-post.subtle= `About this ${urlPath === '/' ? 'site' : (pageTypeMap[layout] || pageTypeMap[group] || 'article')}`
+	- const pageTypeMap = {'index.pug': 'index page', 'note.pug': 'thread', 'internal.pug': 'page', 'c-code': 'code example'}
+	h2#about-post.subtle= `About this ${urlPath === '/' ? 'site' : (pageTypeMap[layout] || pageTypeMap[type] || 'article')}`
 	address.print
 		p
 			= layout === 'index.pug' ? 'Curated' : 'Written'

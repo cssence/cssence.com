@@ -1,15 +1,15 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "The ‹u› in Group"
 description: "A proposal to give the &lt;u&gt; element an additional purpose."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2015-11-22T08:07:00Z
-deprecatedUrl: "/blog/2015-11-the-u-in-group"
+deprecatedUrl: /blog/2015-11-the-u-in-group
 syndication:
-  - url: "https://medium.com/@cssence/the-u-in-group-c0fb4faf9e06"
+  - url: https://medium.com/@cssence/the-u-in-group-c0fb4faf9e06
     published: 2015-11-22T09:24:00Z
-  - url: "https://twitter.com/cssence/status/674881260037283841"
+  - url: https://twitter.com/cssence/status/674881260037283841
     published: 2015-12-10T09:20:05Z
 ---
 

@@ -1,23 +1,23 @@
 ---
-layout: "article.pug"
-group: "code"
+layout: article.pug
+type: c-code
 title: "Maintaining Aspect Ratio with CSS&nbsp;Grid"
 description: "Turns out there are multiple ways to maintain aspect ratio nowadays."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2018-01-21T12:56:00Z
-deprecatedUrl: "/code/2018-01-21-maintaining-aspect-ratio-with-css-grid"
+deprecatedUrl: /code/2018-01-21-maintaining-aspect-ratio-with-css-grid
 syndication:
-  - url: "https://codepen.io/cssence/pen/BJMwwN"
+  - url: https://codepen.io/cssence/pen/BJMwwN
 conversation:
-  - url: "https://medium.com/@cssence/thanks-noam-for-the-inspiring-idea-it-gave-me-the-opportunity-to-explore-additional-options-f939f8ac10c1"
+  - url: https://medium.com/@cssence/thanks-noam-for-the-inspiring-idea-it-gave-me-the-opportunity-to-explore-additional-options-f939f8ac10c1
     text: "Thanks Noam for the inspiring idea, it gave me the opportunity to explore additional options. While turning this into pure CSS by using generated content for the SVG (similar to what Chris did), I ran into some additional quirks such as the need to add line-height:0 for certain browsers, but all in all, it works.<br><br>[cssence.com/code/2018-01-21-maintaining-aspect-ratio-with-css-grid](https://cssence.com/2018/maintaining-aspect-ratio-with-css-grid)"
     posted: 2018-01-21T16:45:47Z
-  - url: "https://medium.com/@realnoam/glad-to-see-the-idea-generate-more-creative-stuff-44508994a399"
+  - url: https://medium.com/@realnoam/glad-to-see-the-idea-generate-more-creative-stuff-44508994a399
     text: "Glad to see the idea generate more creative stuff!"
-    author: {url: "https://medium.com/@realnoam", name: "Noam Rosenthal"}
+    author: {url: https://medium.com/@realnoam, name: "Noam Rosenthal"}
     posted: 2018-01-21T21:01:00Z # %% WRONG TIMESTAMP
   - unavailable: "technical"
-  - url: "https://medium.com/@cssence/you-are-right-it-does-matter-in-the-sense-that-it-the-whole-thing-is-somehow-constrained-5e250a5d6179"
+  - url: https://medium.com/@cssence/you-are-right-it-does-matter-in-the-sense-that-it-the-whole-thing-is-somehow-constrained-5e250a5d6179
     text: "You are right, it does matter, in the sense that the whole thing is somehow constrained (otherwise it gets unnecessarily large for demonstration purposes). Nevertheless, even if you remove the body width or specify a width for each container individually you should end up with 16:9 content boxes."
     posted: 2018-01-22T13:15:50Z
 ---

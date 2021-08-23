@@ -1,6 +1,6 @@
 #{orderedCards ? 'ol' : 'ul'}.cards
 	each card in cards
-		li.card(class=getClassName(card.group))
+		li.card(class=card.type)
 			h3
 				a(href=card.urlPath)!= card.title
 			p!= card.description

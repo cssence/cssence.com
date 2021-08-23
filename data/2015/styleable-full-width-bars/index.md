@@ -1,14 +1,14 @@
 ---
-layout: "article.pug"
-group: "code"
+layout: article.pug
+type: c-code
 title: "Style-able Full-Width Bars"
 description: "Full-width backgrounds on individual regions, without additional elements."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2015-08-10T11:40:10Z
 revised: 2015-08-16T11:35:13Z
-deprecatedUrl: "/code/2015-08-10-styleable-full-width-bars"
+deprecatedUrl: /code/2015-08-10-styleable-full-width-bars
 syndication:
-  - url: "https://codepen.io/cssence/pen/oXVpWj"
+  - url: https://codepen.io/cssence/pen/oXVpWj
 ---
 
 # Style-able Full-Width Bars

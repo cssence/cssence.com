@@ -1,13 +1,13 @@
 ---
-layout: "article.pug"
-group: "code"
+layout: article.pug
+type: c-code
 title: "::first-letter Test Page"
 description: "You think it’s easy to determine the first letter of a sentence? Think again!"
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2018-07-19T08:41:00Z
-deprecatedUrl: "/code/2018-07-19-first-letter-test-page"
+deprecatedUrl: /code/2018-07-19-first-letter-test-page
 syndication:
-  - url: "https://codepen.io/cssence/pen/yqaGqB"
+  - url: https://codepen.io/cssence/pen/yqaGqB
 ---
 
 # ::first-letter Test Page

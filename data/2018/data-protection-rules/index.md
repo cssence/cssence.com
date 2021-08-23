@@ -1,15 +1,15 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "Data Protection Rules!"
 description: "Turning regulations into something positive."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2018-12-30T08:08:00Z
-deprecatedUrl: "/blog/2018-12-data-protection-rules"
+deprecatedUrl: /blog/2018-12-data-protection-rules
 syndication:
-  - url: "https://medium.com/@cssence/data-protection-rules-3103c36f504c"
+  - url: https://medium.com/@cssence/data-protection-rules-3103c36f504c
     published: 2019-01-06T06:35:06Z
-  - url: "https://twitter.com/cssence/status/1079362372127653888"
+  - url: https://twitter.com/cssence/status/1079362372127653888
     published: 2018-12-30T13:03:37Z
 ---
 

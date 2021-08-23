@@ -1,31 +1,31 @@
 ---
-layout: "article.pug"
-group: "code"
+layout: article.pug
+type: c-code
 title: "Inclusive Toggle Buttons"
 description: "Tweaking the ones from “Inclusive Components” by Heydon Pickering."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2019-12-20T13:14:12Z
 syndication:
-  - url: "https://codepen.io/cssence/pen/KKwWeze"
-  - url: "https://twitter.com/cssence/status/1208024956447145986"
+  - url: https://codepen.io/cssence/pen/KKwWeze
+  - url: https://twitter.com/cssence/status/1208024956447145986
     posted: 2019-12-20T14:02:48Z
 conversation:
-  - url: "https://twitter.com/cssence/status/1213089975337664513"
+  - url: https://twitter.com/cssence/status/1213089975337664513
     text: "Looking for #a11y research on <code>&lt;label for=&quot;button&quot;&gt</code>. Online search takes me to “labeling buttons”, which is not what I want (see link [twitter.com/cssence/status/1208024956447145986](https://twitter.com/cssence/status/1208024956447145986)). I’ve only been able to test Safari+VoiceOver and Chrome+ChromeVox, looks promising. /cc [@mmatuzo](https://twitter.com/mmatuzo) [@paciellogroup](https://twitter.com/paciellogroup)"
     posted: 2020-01-03T13:29:22Z
-  - url: "https://twitter.com/aardrian/status/1213290511047569410"
+  - url: https://twitter.com/aardrian/status/1213290511047569410
     text: "[@cssence](https://twitter.com/cssence) [@mmatuzo](https://twitter.com/mmatuzo) [@paciellogroup](https://twitter.com/paciellogroup)<br>Much more context needed. Are you trying to apply <code>&lt;label&gt;</code> to a <code>&lt;button&gt;</code> element? What is “auxiliary labeling”?"
-    author: {url: "https://twitter.com/aardrian", name: "Adrian Roselli"}
+    author: {url: https://twitter.com/aardrian, name: "Adrian Roselli"}
     posted: 2020-01-04T02:46:14Z
-  - url: "https://twitter.com/cssence/status/1213372003085889537"
+  - url: https://twitter.com/cssence/status/1213372003085889537
     text: "[@aardrian](https://twitter.com/aardrian) [@mmatuzo](https://twitter.com/mmatuzo) [@paciellogroup](https://twitter.com/paciellogroup)<br>Exactly. Based on what [@heydonworks](https://twitter.com/heydonworks) did in the new “Inclusive Components” book, where he uses <code>aria-labelledby</code> to add a description to Toggle Buttons, I tried the same but used a label for the button, as shown under [cssence.com/2019/inclusive-toggle-buttons](https://cssence.com/2019/inclusive-toggle-buttons)"
     posted: 2020-01-04T08:10:03Z
-  - url: "https://twitter.com/cssence/status/1213383155622850561"
+  - url: https://twitter.com/cssence/status/1213383155622850561
     text: "[@aardrian](https://twitter.com/aardrian) [@mmatuzo](https://twitter.com/mmatuzo) [@paciellogroup](https://twitter.com/paciellogroup)<br>And here is the direct link to the working example on CodePen: [codepen.io/cssence/pen/KKwWeze](https://codepen.io/cssence/pen/KKwWeze)<br>W3C HTML spec considers <code>&lt;button&gt;</code> and <code>&lt;input type=&quot;button&quot;&gt;</code> as labelable elements, hence the cross-browser-ness. A niche thing nonetheless, usually the button text <strong>is</strong> the label."
     posted: 2020-01-04T08:54:22Z
-  - url: "https://twitter.com/aardrian/status/1213452010114179073"
+  - url: https://twitter.com/aardrian/status/1213452010114179073
     text: "[@cssence](https://twitter.com/cssence) [@mmatuzo](https://twitter.com/mmatuzo) [@paciellogroup](https://twitter.com/paciellogroup)<br>If you do not know which provides the accessible name then you will have to test.<br><br>Check what is exposed in the browser so you know which wins in which UA.<br><br>TalkBack and VoiceOver warrant a test as well.<br><br>Also, validate the page, just to be confirm it is cool."
-    author: {url: "https://twitter.com/aardrian", name: "Adrian Roselli"}
+    author: {url: https://twitter.com/aardrian, name: "Adrian Roselli"}
     posted: 2020-01-04T13:27:58Z
 ---
 

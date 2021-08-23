@@ -1,9 +1,9 @@
 ---
-layout: "index.pug"
-group: "about"
+layout: index.pug
+type: c-about
 title: "About About"
 description: "This is the “Inception page” of CSSence.com. Kind of."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 ---
 
 # 𝄆About𝄇

@@ -1,9 +1,9 @@
 ---
-layout: "internal.pug"
-group: "default"
+layout: internal.pug
+type: c-default
 title: "Settings"
 description: "If you prefer something other than the defaults, you may customize this site."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 revised: 2020-04-19T18:23:00Z
 ---
 

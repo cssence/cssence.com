@@ -17,7 +17,6 @@ metalsmith('.')
 			years: { from: 2010, to: 2021 },
 			url: 'https://cssence.com'
 		},
-		getClassName: (group) => `c-${group}`,
 		getFilteredPosts: (posts, urlPath) => posts.filter((post) => post.listings.includes(urlPath)),
 		getAuthor: (message, order) => {
 			// if (message.unavailable) return {};

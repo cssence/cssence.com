@@ -1,14 +1,14 @@
 ---
-layout: "article.pug"
-group: "code"
+layout: article.pug
+type: c-code
 title: "mix-blend-mode Overflow Issue"
 description: "Chrome won’t repaint the overflow area after scrolling, so you end up with cut-off text."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2017-12-30T10:59:00Z
 revised: 2018-01-05T18:00:00Z
-deprecatedUrl: "/code/2017-12-30-mix-blend-mode-overflow-issue"
+deprecatedUrl: /code/2017-12-30-mix-blend-mode-overflow-issue
 syndication:
-  - url: "https://codepen.io/cssence/pen/mpmMMO"
+  - url: https://codepen.io/cssence/pen/mpmMMO
 ---
 
 # mix-blend-mode Overflow Issue

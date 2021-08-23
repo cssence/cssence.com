@@ -6,7 +6,6 @@
 	--color-dark: #202225;
 	--color-light: #fff;
 	--color-lighter: rgba(255,255,255,.8);
-	--color-accent: #d34b6c;
 	--padding-horizontal: .875rem;
 	--height-header: 2.625rem;
 	--border-radius: .5rem;
@@ -415,6 +414,15 @@ a[rel="home"]:hover .tagline {
 	border: 1px solid;
 	color: var(--color-accent);
 }
+.c-default,
+.c-article {
+	--color-accent: #d34b6c;
+}
+.c-note,
+.c-opinion,
+.c-bookmark {
+	--color-accent: #4099ff;
+}
 .c-code {
 	--color-accent: #ff571a;
 }
@@ -424,17 +432,9 @@ a[rel="home"]:hover .tagline {
 .c-essay {
 	--color-accent: #ee82ee;
 }
-.c-note,
-.c-opinion,
-.c-bookmark {
-	--color-accent: #4099ff;
-}
 .c-editorial,
 .c-about {
 	--color-accent: #bada55;
-}
-.c-default {
-	--color-accent: #d34b6c;
 }
 .indicator.c-essay::before {
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath fill='%23fff' d='M9.84 2.96l3.2 3.2L3.2 16H0v-3.2l9.84-9.84zm1.12-1.12L12.8 0 16 3.2l-1.84 1.84-3.2-3.2z'/%3E%3C/svg%3E");

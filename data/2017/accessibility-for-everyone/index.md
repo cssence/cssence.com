@@ -1,16 +1,16 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "Accessibility for Everyone"
 description: "When it comes to accessibility, webhint.io can help you walk the walk."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2017-12-10T11:37:00Z
 revised: 2018-12-28T07:19:00Z
-deprecatedUrl: "/blog/2017-12-accessibility-for-everyone"
+deprecatedUrl: /blog/2017-12-accessibility-for-everyone
 syndication:
-  - url: "https://medium.com/@cssence/accessibility-for-everyone-47c471d941e3"
+  - url: https://medium.com/@cssence/accessibility-for-everyone-47c471d941e3
     published: 2017-12-11T09:51:11Z
-  - url: "https://twitter.com/cssence/status/939825792531484672"
+  - url: https://twitter.com/cssence/status/939825792531484672
     published: 2017-12-10T12:55:04Z
 ---
 

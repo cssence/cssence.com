@@ -1,9 +1,9 @@
 ---
-layout: "index.pug"
-group: "event"
+layout: index.pug
+type: c-event
 title: "Events"
 description: "Around the world: Latest blog posts from the category “Events”."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 latest: 10
 ---
 

@@ -1,12 +1,12 @@
 ---
-layout: "article.pug"
-group: "editorial"
+layout: article.pug
+type: c-editorial
 title: "Re: Design - Superfluous and Advanced"
 description: "JavaScript. The optional enhancement."
-thumbnail: {url: "/2020/redesign/index.png"}
+thumbnail: {url: /2020/redesign/index.png}
 published: 2020-11-20T21:40:00Z
 syndication:
-  - url: "https://twitter.com/cssence/status/1330096143758454786"
+  - url: https://twitter.com/cssence/status/1330096143758454786
     published: 2020-11-21T10:30:07Z
 ---
 

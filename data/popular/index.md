@@ -1,30 +1,30 @@
 ---
-layout: "index.pug"
-group: "default"
+layout: index.pug
+type: c-default
 title: "Popular Posts"
 description: "Popularity contest: Most read, most controversial, or simply handpicked by the author."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 revised: 2021-08-13T23:59:00Z
 latest: 0
 highlights:
-  - id: "most-read"
+  - id: most-read
     name: "Most read posts"
     posts:
-      - "/2018/maintaining-aspect-ratio-with-css-grid/"
-      - "/2017/mix-blend-mode-overflow-issue/"
-      - "/2016/the-javascript-wars/"
-  - id: "most-controversial"
+      - /2018/maintaining-aspect-ratio-with-css-grid/
+      - /2017/mix-blend-mode-overflow-issue/
+      - /2016/the-javascript-wars/
+  - id: most-controversial
     name: "Most controversial posts"
     posts:
-      - "/2016/the-javascript-wars/"
-      - "/2016/beyond-progressive-web-apps/"
-      - "/2018/no-webfont-no-cry/"
-  - id: "handpicked"
+      - /2016/the-javascript-wars/
+      - /2016/beyond-progressive-web-apps/
+      - /2018/no-webfont-no-cry/
+  - id: handpicked
     name: "Handpicked posts"
     posts:
-      - "/2017/accessibility-for-everyone/"
-      - "/2015/5vw-ftw/"
-      - "/2019/just-launch/"
+      - /2017/accessibility-for-everyone/
+      - /2015/5vw-ftw/
+      - /2019/just-launch/
 ---
 
 # Popular Posts

@@ -1,26 +1,26 @@
 ---
-layout: "article.pug"
-group: "event"
+layout: article.pug
+type: c-event
 title: "CSS&nbsp;Day 2018 UX&nbsp;Special"
 description: "@CSSDayConf 2018 Day #1, all eyes are on User Experience."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2018-06-14T06:36:00Z
 revised: 2018-12-31T14:05:00Z
-deprecatedUrl: "/about/2018-06-cssday-uxspecial"
+deprecatedUrl: /about/2018-06-cssday-uxspecial
 syndication:
-  - url: "https://twitter.com/cssence/status/1007152477282734080"
+  - url: https://twitter.com/cssence/status/1007152477282734080
     published: 2018-06-14T06:47:17Z
 conversation:
-  - url: "https://twitter.com/cssence/status/1007152477282734080"
+  - url: https://twitter.com/cssence/status/1007152477282734080
     text: "I’ve got my badge, ready for #CSSDay. Talk about [@CSSDayConf](https://twitter.com/cssdayconf)’s attention to detail, they’ve added hand-picked conversation starters for 400+&nbsp;attendees. Amazing."
     posted: 2018-06-14T06:47:17Z
-  - url: "https://twitter.com/cssdayconf/status/1007152853171998720"
+  - url: https://twitter.com/cssdayconf/status/1007152853171998720
     text: "Hah, only to the badges with a public Twitter account! 🙂"
-    author: {url: "https://twitter.com/CSSDayConf", name: "CSS Day conference"}
+    author: {url: https://twitter.com/CSSDayConf, name: "CSS Day conference"}
     posted: 2018-06-14T06:48:46Z
-  - url: "https://twitter.com/Jarno/status/1007153361496559616"
+  - url: https://twitter.com/Jarno/status/1007153361496559616
     text: "Nice touch, can’t wait to get mine tomorrow."
-    author: {url: "https://twitter.com/Jarno", name: "Jarno de Wit"}
+    author: {url: https://twitter.com/Jarno, name: "Jarno de Wit"}
     posted: 2018-06-14T06:50:48Z
 ---
 

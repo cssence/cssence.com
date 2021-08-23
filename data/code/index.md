@@ -1,9 +1,9 @@
 ---
-layout: "index.pug"
-group: "code"
+layout: index.pug
+type: c-code
 title: "Code Snippets"
 description: "The web development playground: Latest blog posts from the category “Code”."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 latest: 10
 ---
 

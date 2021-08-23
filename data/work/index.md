@@ -1,9 +1,9 @@
 ---
-layout: "internal.pug"
-group: "default"
+layout: internal.pug
+type: c-default
 title: "Portfolio"
 description: "My online portfolio is not even a work in progress yet."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 revised: 2016-11-13T16:57:00Z
 ---
 

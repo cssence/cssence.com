@@ -1,24 +1,24 @@
 ---
-layout: "article.pug"
-group: "code"
+layout: article.pug
+type: c-code
 title: "VoiceOver Table Issues"
 description: "Do not feed an HTML table without display:table to VoiceOver (Mac)."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2020-05-06T16:44:03Z
 revised: 2020-05-07T05:04:55Z
 syndication:
-  - url: "https://codepen.io/cssence/pen/LYpQypY"
-  - url: "https://twitter.com/cssence/status/1258101829222699009"
+  - url: https://codepen.io/cssence/pen/LYpQypY
+  - url: https://twitter.com/cssence/status/1258101829222699009
     published: 2020-05-06T18:30:25Z
 conversation:
-  - url: "https://twitter.com/cssence/status/1258102480182837249"
+  - url: https://twitter.com/cssence/status/1258102480182837249
     text: "Yes, that last example in my CodePen I took from an MDN article, but it looks like it came straight from [@htm_hell](https://twitter.com/htm_hell) 😈<br>[developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Row_Role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Row_Role)"
     posted: 2020-05-06T18:33:00Z
-  - url: "https://twitter.com/mmatuzo/status/1258112810476875776"
+  - url: https://twitter.com/mmatuzo/status/1258112810476875776
     text: "[@cssence](https://twitter.com/cssence) Yes 🙂<br>[adrianroselli.com/2018/02/tables-css-display-properties-and-aria.html](https://adrianroselli.com/2018/02/tables-css-display-properties-and-aria.html)"
-    author: {url: "https://twitter.com/mmatuzo", name: "Manuel Matuzović"}
+    author: {url: https://twitter.com/mmatuzo, name: "Manuel Matuzović"}
     posted: 2020-05-06T19:14:03Z
-  - url: "https://twitter.com/cssence/status/1258114393453273088"
+  - url: https://twitter.com/cssence/status/1258114393453273088
     text: "[@mmatuzo](https://twitter.com/mmatuzo) Thanks so much, Manuel. 🙌<br>Should have asked earlier. 😁"
     posted: 2020-05-06T19:20:20Z
 ---

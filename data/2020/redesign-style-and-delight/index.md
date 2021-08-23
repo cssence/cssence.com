@@ -1,18 +1,18 @@
 ---
-layout: "article.pug"
-group: "editorial"
+layout: article.pug
+type: c-editorial
 title: "Re: Design - Style and Delight"
 description: "Stylesheets. To make HTML pleasing to the eye."
-thumbnail: {url: "/2020/redesign/index.png"}
+thumbnail: {url: /2020/redesign/index.png}
 published: 2020-07-01T21:47:00Z
 syndication:
-  - url: "https://twitter.com/cssence/status/1278563069749276672"
+  - url: https://twitter.com/cssence/status/1278563069749276672
     published: 2020-07-02T05:36:05Z
 conversation:
-  - url: "https://twitter.com/cssence/status/1278565469893656577"
+  - url: https://twitter.com/cssence/status/1278565469893656577
     text: "Wow, not only has [@sarah_edo](https://twitter.com/sarah_edo)’s article on website fussiness [css-tricks.com/in-defense-of-a-fussy-website/](https://css-tricks.com/in-defense-of-a-fussy-website/) been an inspiration for my latest blog post, but then …"    
     posted: 2020-07-02T05:45:37Z
-  - url: "https://twitter.com/cssence/status/1278565595366244354"
+  - url: https://twitter.com/cssence/status/1278565595366244354
     text: "… [@mxbck](https://twitter.com/mxbck) took it to the next level and created “The Whimsical Web”, a collection of websites that spark joy. 😉<br>[whimsical.club](https://whimsical.club/)"
     posted: 2020-07-02T05:46:07Z
 ---

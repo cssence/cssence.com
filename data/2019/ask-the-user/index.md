@@ -1,16 +1,16 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "Ask the User"
 description: "You could make assumptions about what your users want. Or you could just ask them."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2019-06-19T05:54:00Z
-deprecatedUrl: "/blog/2019-06-ask-the-user"
+deprecatedUrl: /blog/2019-06-ask-the-user
 syndication:
-  - url: "https://twitter.com/cssence/status/1141233622915174400"
+  - url: https://twitter.com/cssence/status/1141233622915174400
     published: 2019-06-19T06:37:53Z
 conversation:
-  - url: "https://twitter.com/cssence/status/1141234646614794241"
+  - url: https://twitter.com/cssence/status/1141234646614794241
     text: "[As mentioned,] This happens to be a late follow-up blog post on this excellent article by [@rem](https://twitter.com/rem) [remysharp.com/2019/04/09/code-highlighting-server-or-client](https://remysharp.com/2019/04/09/code-highlighting-server-or-client)"
     posted: 2019-06-19T06:41:57Z
 ---

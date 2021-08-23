@@ -1,12 +1,12 @@
 ---
-layout: "article.pug"
-group: "essay"
+layout: article.pug
+type: c-essay
 title: "Farewell CSS Hacks"
 description: "It is time to remove all CSS hacks that target Internet Explorer."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2011-06-30T21:48:11Z
 syndication:
-  - url: "http://cssence.wordpress.com/2011/06/30/farewell-css-hacks/?draft"
+  - url: http://cssence.wordpress.com/2011/06/30/farewell-css-hacks/?draft
 ---
 
 # Farewell CSS Hacks

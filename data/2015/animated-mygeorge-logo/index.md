@@ -1,12 +1,12 @@
 ---
-layout: "article.pug"
-group: "code"
+layout: article.pug
+type: c-code
 title: "Animated @myGeorge_at Logo"
 description: "My very first CodePen, influenced by a project I’m currently working on."
 published: 2015-06-09T10:47:15Z
-deprecatedUrl: "/code/2015-06-09-animated-mygeorge-logo"
+deprecatedUrl: /code/2015-06-09-animated-mygeorge-logo
 syndication:
-  - url: "https://codepen.io/cssence/pen/jPmdGe"
+  - url: https://codepen.io/cssence/pen/jPmdGe
 ---
 
 # Animated @myGeorge_at Logo

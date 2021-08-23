@@ -1,11 +1,11 @@
 ---
-layout: "article.pug"
-group: "editorial"
+layout: article.pug
+type: c-editorial
 title: "About Metalsmith.io"
 description: "Behind the scenes: The Static Site Generator that renders this website."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2017-07-13T18:23:00Z
-deprecatedUrl: "/about/metalsmith-io"
+deprecatedUrl: /about/metalsmith-io
 ---
 
 # About Metalsmith.io

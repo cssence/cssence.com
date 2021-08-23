@@ -1,13 +1,13 @@
 ---
-layout: "article.pug"
-group: "code"
+layout: article.pug
+type: c-code
 title: "Animating Emojis"
 description: "It happened again, with the 2020 Monkey Edition."
-thumbnail: {type: "image/png"}
+thumbnail: {type: image/png}
 published: 2020-06-19T06:48:27Z
 syndication:
-  - url: "https://codepen.io/cssence/pen/JjGENwr"
-  - url: "https://twitter.com/cssence/status/1273883482285015050"
+  - url: https://codepen.io/cssence/pen/JjGENwr
+  - url: https://twitter.com/cssence/status/1273883482285015050
     published: 2020-06-19T07:41:04Z
 ---
 

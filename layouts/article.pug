@@ -1,7 +1,7 @@
 extends internal.pug
 
 append article
-	if group === 'code'
+	if type === 'c-code'
 		include fragments/codepen
 
 block conversation

@@ -1,11 +1,11 @@
 ---
-layout: "article.pug"
-group: "editorial"
+layout: article.pug
+type: c-editorial
 title: "Redesigning the Relaunch"
 description: "Version 2.1 of cssence.com went live not long after the last major change."
-thumbnail: {type: "image/jpeg"}
+thumbnail: {type: image/jpeg}
 published: 2016-05-07T05:45:00Z
-deprecatedUrl: "/about/2016-05-redesign"
+deprecatedUrl: /about/2016-05-redesign
 ---
 
 # Redesigning the Relaunch
