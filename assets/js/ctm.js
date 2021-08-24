@@ -23,7 +23,7 @@
 		console.info(reason, '\nNo further progressive enhancement.');
 	};
 	try {
-		if (!window.CSS.supports('--:1')) {
+		if (!window.CSS.supports('--v:4')) {
 			fallback('Browser does not support CSS custom properties.');
 			return;
 		}
