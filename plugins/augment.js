@@ -38,7 +38,7 @@ module.exports = (opts) => (files, metalsmith, done) => {
 			}
 		} else {
 			let fallbackThumbnailPath = `${item.listings[0]}index`;
-			if (item.type === 'c-groupdefault') {
+			if (item.type === 'c-default') {
 				fallbackThumbnailPath = '/default'
 			} else if (item.layout === 'note.pug') {
 				fallbackThumbnailPath = '/notes/index';
