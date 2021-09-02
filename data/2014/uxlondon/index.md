@@ -32,4 +32,4 @@ After [last year’s experience](/2013/uxlondon/) I am more than thrilled to be 
 
 I’m also glad they kept the venue, UX London once again takes place in the somehow extremely well-fitting [Trinity Laban Conservatoire of Music &amp; Dance](https://www.trinitylaban.ac.uk/).
 
-<p><img src="/2013/uxlondon/trinity-laban.jpg" alt="Lots of open space and fresh air, the grass in front of the Trinity Laban building couldn’t be any greener."></p>
+<p><img src="/2014/uxlondon/trinity-laban.jpg" alt="Lots of open space and fresh air, the grass in front of the Trinity Laban building couldn’t be any greener."></p>

@@ -938,7 +938,8 @@ nav {
 	:root {
 		--padding-horizontal: 1.75rem;
 	}
-	.article {
+	.article,
+	.posts > p {
 		line-height: 1.625;
 	}
 	.standout,

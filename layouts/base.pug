@@ -1,5 +1,6 @@
 doctype html
 html(lang="en", class=type)
+	- const titleNbspSafe = title.replace(/&nbsp;/g, ' ')
 	- const permalink = `${website.url}${urlPath}`
 	include helpers/mixins
 

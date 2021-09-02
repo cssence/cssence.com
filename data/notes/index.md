@@ -7,7 +7,7 @@ thumbnail: {type: image/jpeg}
 latest: 10
 ---
 
-# <del>Notes</del> Thoughts
+# Notes
 ^ Opinions, Conversations and Links
 
 Whenever I feel the need to constrain my thoughts to a certain number of characters, it ends up here.

@@ -1,10 +1,10 @@
-title!= `${title}${urlPath === '/' ? '' : ' • CSSence.com'}`
+title= `${titleNbspSafe}${urlPath === '/' ? '' : ' • CSSence.com'}`
 meta(name="description", content!=description)
 meta(property="og:type", content=(layout === 'index.pug' ? 'website' : 'article'))
 meta(property="og:url", content=permalink)
 meta(name="twitter:card", content="summary")
 meta(name="twitter:creator", content="@cssence")
-meta(name="twitter:title", property="og:title", content=title)
+meta(name="twitter:title", property="og:title", content=titleNbspSafe)
 meta(name="twitter:description", property="og:description", content!=description)
 if thumbnail
 	meta(name="twitter:image", property="og:image", content=`${website.url}${thumbnail.url}`)
