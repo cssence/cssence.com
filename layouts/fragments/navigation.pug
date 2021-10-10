@@ -20,10 +20,18 @@ nav
 				span(hidden, aria-hidden="true")= '04 '
 				| About
 		li
-			a(href="/popular/") Most popular
+			a(href="/popular/", accesskey="5")
+				span(hidden, aria-hidden="true")= '05 '
+				| Popular
 		li
-			a(href=`/${website.years.to}/`) This year
+			a(href=`/${website.years.to}/`, accesskey="6")
+				span(hidden, aria-hidden="true")= '06 '
+				| This year
 		li
-			a(href=`/${website.years.to - 1}/`) Last year
+			a(href=`/${website.years.to - 1}/` , accesskey="7")
+				span(hidden, aria-hidden="true")= '07 '
+				| Last year
 		li
-			a(href="/archive/") Archive
+			a(href="/archive/", accesskey="8")
+				span(hidden, aria-hidden="true")= '08 '
+				| Archive

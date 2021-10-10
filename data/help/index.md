@@ -16,10 +16,15 @@ revised: 2020-04-25T03:55:00Z
 
 Access keys are used on this site to reach specific pages or page areas with keyboard shortcuts. Depending on your operating system, web browser, and assistive technology, you might need to combine these access keys with modifier keys. But the basic keys are these.
 
+- <kbd>0</kbd>: Jump to the top<small> (of current page)</small>.
 - <kbd>1</kbd>: Open the home page.
 - <kbd>2</kbd>: Open the “Articles” overview.
 - <kbd>3</kbd>: Open the “Notes” overview.
 - <kbd>4</kbd>: Open the “About” page.
+- <kbd>5</kbd>: Open the overview with the most popular posts.
+- <kbd>6</kbd>: Open the overview with posts from this year.
+- <kbd>7</kbd>: Open the overview with posts from last year.
+- <kbd>8</kbd>: Open the archive page.
 - <kbd>h</kbd>: Open this help page.
 - <kbd>n</kbd>: Jump to navigation<small> (on current page)</small>.
 - <kbd>s</kbd>: Open the settings page.
