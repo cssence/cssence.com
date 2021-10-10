@@ -13,7 +13,7 @@ deprecatedUrl: /about/2016-05-redesign
 
 It’s only been a couple of month since the [relaunch of cssence.com](/about/) went online. In such a short amount of time I would’ve expected to advance with subtle changes, if any. And here I am today, releasing a noticeable visual overhaul, with additional emphasize on the [<abbr>CSS</abbr> wallpaper I’ve blogged about](/2015/head-display-block/). Those article thumbnail images I’ve used as a full-width background, that I’ve even blurred with a CSS filter, to avoid their high-res counterparts? They are gone to make way for the wallpaper, as this is now a recurring theme, present on almost every page.
 
-<figure class="portrait"><img src="/2016/redesign/index.jpg" alt="The Wallpaper pattern can also be found in thumbnail images."><figcaption>The CSS wallpaper comes with color and icon resembling the section an article belongs to. It goes without saying that the site uses no images to achieve this, only markup.</figcaption></figure>
+<figure class="standoff"><img src="/2016/redesign/index.jpg" alt="The Wallpaper pattern can also be found in thumbnail images."><figcaption>The CSS wallpaper comes with color and icon resembling the section an article belongs to. It goes without saying that the site uses no images to achieve this, only markup.</figcaption></figure>
 
 Starting with the October 2015 relaunch, where I went from blog-only to [a full-fledged #IndieWeb hub](/2015/own-your-own-data/), the home page delivered descriptions of all the sections found on the site, including links to the three most recent articles per section. Presumably just mildly annoying for first-timers, that type of home page made little sense for returning visitors who wanted to jump between the pages quickly.
 

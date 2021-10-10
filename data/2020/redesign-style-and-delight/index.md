@@ -5,10 +5,11 @@ title: "Re: Design - Style and Delight"
 description: "Stylesheets. To make HTML pleasing to the eye."
 thumbnail: {url: /2020/redesign/index.png}
 published: 2020-07-01T21:47:00Z
-syndication:
-  - url: https://twitter.com/cssence/status/1278563069749276672
-    published: 2020-07-02T05:36:05Z
 conversation:
+  - url: https://twitter.com/cssence/status/1278563069749276672
+    id: comment-0
+    text: "Part Two of my Three Part Blog Series “The Basics of The Web”:<br>A letter of appreciation to #CSS<br>[cssence.com/2020/redesign-style-and-delight](/2020/redesign-style-and-delight/)"
+    posted: 2020-07-02T05:36:05Z
   - url: https://twitter.com/cssence/status/1278565469893656577
     text: "Wow, not only has [@sarah_edo](https://twitter.com/sarah_edo)’s article on website fussiness [css-tricks.com/in-defense-of-a-fussy-website/](https://css-tricks.com/in-defense-of-a-fussy-website/) been an inspiration for my latest blog post, but then …"    
     posted: 2020-07-02T05:45:37Z
@@ -20,17 +21,11 @@ conversation:
 # Style & Delight
 ^ Redesign pt.2
 
-<div class="passage"><style>
-@media (min-width: 40em){.passage{display:grid;gap:0 1.75rem;grid-template-areas:'intro list' 'note note';grid-template-columns:1fr 1fr;align-items:start}}
-.passage ol{counter-reset:part;list-style-type:square;grid-area:list;margin-top:.5rem;padding:1.25rem .875rem .5rem;border:1px solid var(--color-bg-subtle);border-radius:var(--border-radius)}
-.passage li::before{counter-increment:part;content:"Part " counter(part) ": ";font-variant-numeric:lining-nums tabular-nums;font-weight:600}
-.passage p{grid-area:note}
-.passage style+p{grid-area:intro}
-</style>
+<div class="standoff metadata"><link rel="stylesheet" href="/2020/redesign/series.css">
 
 This is Part Two of a <strong id="3-part-blog-series">Three Part Blog Series.</strong> Although the focus of this Editorial series is an in-depth look at the [latest redesign of this site](/2019/just-launch/), you may read these posts as letters of appreciation to the [Basics of the Web.](/2016/webdesign-basics/)
 
-<ol aria-labelledby="3-part-blog-series">
+<ol class="figure" aria-labelledby="3-part-blog-series">
 <li><a href="/2020/redesign-structure-and-semantics/">Structure &amp; Semantics</a></li>
 <li>Style &amp; Delight</li>
 <li><a href="/2020/redesign-superfluous-and-advanced/">Superfluous &amp; Advanced</a></li>
@@ -52,7 +47,7 @@ When I wrote about URLs in [part 1,](/2020/redesign-structure-and-semantics/) I�
 
 A few years ago, I introduced [the CSS wallpaper.](/2016/redesign) A simple idea: Make the source code of the site’s inline styles visible and use it as the background. Wouldn’t work everywhere, but when CSS is part of your domain name, it kinda does. It has since been a very distinguishing feature, so I couldn’t eliminate it completely. Another thing I’ve mentioned in part 1 is that all posts on this site now start with the content, i.e. `<h1>`. What looks like a header is fake and exists only visually. Naturally this ended up being the place where the wallpaper continues to exist, it allows the fake header to sit on top of the actual content. Some of the links in the navigation at the end have special markup, so they can be used to appear in the header too. Clicking a link in the fake header basically triggers a click in the navigation below. You wouldn’t notice, as the fake header and the navigation are never visible in the viewport at the same time. A bit tricky to describe, I’ll dedicate a spin-off post with some example code to this. For now, let’s focus on the appearance.
 
-<p class="standout"><img src="/2020/redesign-style-and-delight/fake-header.png" alt="Showing how the header of this website looks on large and small screens."></p>
+<p class="figure standout"><img src="/2020/redesign-style-and-delight/fake-header.png" alt="Showing how the header of this website looks on large and small screens."></p>
 
 So we have the CSS wallpaper and three links in the header. The logo on the left takes you home, on the right you may navigate to the menu or the settings page. That last one I added for visual balance, both links on the right take up the same amount of space as the logo on the left. At least on larger screens, on mobile I do not show “Settings”, so everything fits while still allowing for a bit of wallpaper to shine through. In this case the visual balance is gone, we no longer have the same amount of space for links left and right, but we’ll get back to that.
 
@@ -66,7 +61,7 @@ Ah yes, colors. Way back I decided to put my posts in categories like [“Code�
 
 To avoid ending up with seven menu items and a responsive design nightmare, I initially hid the not so important categories behind “More”, but that didn’t feel right the moment I put it online. As things progressed I grouped everything under two super categories. [“Articles”](/articles/) feature all long-form blog posts, and [“Notes”](/notes/) take care of standalone tweets, i.e. the ones that are not comments to articles.
 
-<p class="standout"><img src="/2020/redesign-style-and-delight/navigation-versions.png" alt="The appearance and number of menu items of this site’s navigation has evolved over time"></p>
+<p class="figure standout"><img src="/2020/redesign-style-and-delight/navigation-versions.png" alt="The appearance and number of menu items of this site’s navigation has evolved over time"></p>
 
 While all the regular category index pages continue to exist, the super category “Articles” allowed me to keep the menu items to a minimum, without the need for an infamous “More” section. Wait a minute. If all categories have colors assigned to them, which color will a super category get? “Notes” had only one color to begin with, as I never differentiated between tweet types. And for “Articles” the answer had to be: All of them, rainbow to the rescue. 🌈
 
@@ -78,7 +73,7 @@ Lesson #2: Sometimes it’s OK to take shortcuts.
 
 Thanks to decent browser support for `scroll-behavior: smooth`, this time around I abstained from adding JavaScript to the hamburger menu, and went pure CSS instead. The _Menu_ navigation item is simply an internal anchor link with [#navigation](#navigation) in its `href` attribute, and using the `:target` selector allowed me to tweak styles when someone clicked it.
 
-<figure class="standout"><img src="/2020/redesign-style-and-delight/navigation-target.png" alt="Comparing the site’s navigation in regular and expanded state."><figcaption>The navigation’s regular appearance on the left vs. the “expanded” <code>:target</code> state on the right.</figcaption></figure>
+<figure class="figure standout"><img src="/2020/redesign-style-and-delight/navigation-target.png" alt="Comparing the site’s navigation in regular and expanded state."><figcaption>The navigation’s regular appearance on the left vs. the “expanded” <code>:target</code> state on the right.</figcaption></figure>
 
 Most notably, the menu items at the top grow immensely in size. But as the image also shows, at the bottom there are the archive links, which allow you to navigate by year. In `:target` state, a horizontal scrollbar appears, enabling you to travel back in time even further with a mouse. (Keyboard navigation will work in the both states.) The navigation adheres to the `max-width` of the content above, and this site has been online for a while now, so some not-so-recent years get cut off, courtesy of `overflow: hidden`. If you add up all those factors, no matter how big your screen is, the scrollbar would always be there. So for aesthetic reasons I only allow scrolling once my visitors put their attention to the menu.
 

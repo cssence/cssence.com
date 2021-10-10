@@ -1,27 +1,29 @@
-nav.screen
-	h2.subtle.visually-hidden#navigation Where to go from here?
-	ul.nav
+nav
+	h2.visually-hidden#navigation Where to go from here?
+	ul(role="list", aria-label="Menu")
 		li
-			a.c-default(rel="home", href="/", accesskey="1") Home
-				span.branding.mood(class=type, aria-hidden="true")
-					span.print= ' of '
-					include ../../assets/img/logo-grayscale.svg
-					| #[abbr CSS]ence.com
-					span.print= ' - '
-					em.tagline The Essence of CSS
-		each section, index in ['Articles', 'Notes', 'About']
-			li
-				- const sectionHref = `/${section.toLowerCase()}/`
-				- const sectionClassName = sectionHref.slice(0, sectionHref.endsWith('s/') ? -2 : -1).replace('/', 'c-')
-				a(class=sectionClassName, href=sectionHref, accesskey=index+2)= section
-	h3.visually-hidden#navigation-advanced Find popular posts or browse by year
-	.nav-more
-		ul
-			li
-				a(href="/popular/") Most popular
-			- let yearTitle = website.years.to + 1
-			while --yearTitle >= website.years.from
-				li
-					- const yearUrl = `/${yearTitle}/`
-					a(href=yearUrl)
-						time= yearTitle
+			a.c-default(rel="home", href="/", accesskey="1")
+				span(hidden, aria-hidden="true")= '01 '
+				| Home
+				span(class=type, aria-hidden="true", data-hl="Home")
+					include ../../assets/logo.svg
+		li
+			a.c-article(href="/articles/", accesskey="2")
+				span(hidden, aria-hidden="true")= '02 '
+				| Articles
+		li
+			a.c-note(href="/notes/", accesskey="3")
+				span(hidden, aria-hidden="true")= '03 '
+				| Notes
+		li
+			a.c-about(href="/about/", accesskey="4")
+				span(hidden, aria-hidden="true")= '04 '
+				| About
+		li
+			a(href="/popular/") Most popular
+		li
+			a(href=`/${website.years.to}/`) This year
+		li
+			a(href=`/${website.years.to - 1}/`) Last year
+		li
+			a(href="/archive/") Archive

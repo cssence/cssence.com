@@ -3,7 +3,6 @@ layout: internal.pug
 type: c-default
 title: "Not Found"
 description: "This page does not exist. Don’t feel bad, it happens all the time."
-thumbnail: {type: image/png}
 revised: 2015-05-18T15:25:00Z
 ---
 

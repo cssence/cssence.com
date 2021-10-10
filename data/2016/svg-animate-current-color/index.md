@@ -7,10 +7,7 @@ thumbnail: {type: image/png}
 published: 2016-06-02T09:19:00Z
 revised: 2016-06-02T12:42:16Z
 deprecatedUrl: /code/2016-06-02-svg-animate-current-color
-syndication:
-  - url: https://codepen.io/cssence/pen/RRNvQX
-  - url: https://twitter.com/cssence/status/738350017669435392
-    published: 2016-06-02T12:42:16Z
+codepen: https://codepen.io/cssence/pen/RRNvQX
 conversation:
   - url: https://twitter.com/cssence/status/738350017669435392
     text: "SVG fill + transition + currentColor: I’d happily file bugs, but which browser gets it right?<br>[codepen.io/cssence/pen/RRNvQX](https://codepen.io/cssence/pen/RRNvQX)<br>cc [@LeaVerou](https://twitter.com/LeaVerou)"

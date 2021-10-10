@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Should You Self-Host Google Fonts?"
 description: "A question asked and answered by Michael Scharnagl."
 published: 2020-01-16T10:44:52Z
-syndication:
-  - url: https://twitter.com/cssence/status/1217759620078407680
+origin: https://twitter.com/cssence/status/1217759620078407680
 conversation:
   - url: https://twitter.com/justmarkup/status/1217729391582760961
     text: "Should you self-host Google Fonts?<br><br>Tl;dr Yes, better performance and better privacy.<br><br>[www.tunetheweb.com/blog/should-you-self-host-google-fonts/](https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/)"

@@ -5,10 +5,12 @@ title: "Animating Emojis"
 description: "It happened again, with the 2020 Monkey Edition."
 thumbnail: {type: image/png}
 published: 2020-06-19T06:48:27Z
-syndication:
-  - url: https://codepen.io/cssence/pen/JjGENwr
+codepen: https://codepen.io/cssence/pen/JjGENwr
+conversation:
   - url: https://twitter.com/cssence/status/1273883482285015050
-    published: 2020-06-19T07:41:04Z
+    id: comment-0
+    text: "🙈<br>[cssence.com/2020/animating-emojis](/2020/animating-emojis/)"
+    posted: 2020-06-19T07:41:04Z
 ---
 
 # Animating Emojis

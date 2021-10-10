@@ -1,12 +1,11 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "No Agreed-Upon Minimum Resolution"
 description: "A short conversation with Ron Gilmour."
 thumbnail: {url: /2015/5vw-ftw/index.png}
 published: 2019-11-01T19:46:30Z
-syndication:
-  - url: https://twitter.com/cssence/status/1190354448696139777
+origin: https://twitter.com/cssence/status/1190354448696139777
 conversation:
   - url: https://twitter.com/gilmour70/status/1190294939797803008
     text: "Greetings, #responsive #webdesign people! Is there an agreed-upon minimum width for responsive layouts? If my layout works at &gt;= 375px is that okay?<br>[@SaraSoueidan](https://twitter.com/@SaraSoueidan) [@chriscoyier](https://twitter.com/@chriscoyier)"

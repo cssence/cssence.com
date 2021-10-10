@@ -6,10 +6,12 @@ description: "How to show your alternate designs."
 summary: "Learn how alternate stylesheets (that have been with us for many years now) are put to good use today. Websites no longer have just one design, they come with additional designs created for special purposes, such as mobiles phones. Why hide them?"
 thumbnail: {type: image/png}
 published: 2011-02-26T21:18:05Z
-syndication:
-  - url: http://cssence.wordpress.com/2011/02/26/alternate-stylesheet/
+origin: http://cssence.wordpress.com/2011/02/26/alternate-stylesheet/
+conversation:
   - url: https://twitter.com/cssence/status/42351635766317056
-    published: 2011-02-28T22:33:11Z
+    id: comment-0
+    text: "New issue of cssence - [j.mp/e01C8E](/2011/alternate-stylesheet/) - Show your alternate designs"
+    posted: 2011-02-28T22:33:11Z
 ---
 
 # Say »Hello« to Device Fragmentation
@@ -24,7 +26,7 @@ To cope with this fact, there is a lot of server-side user agent sniffing going 
 
 But not always. Even if we get the sniffing right, the user may still want to see the full page. So it is a good idea to provide a link to the full version of your site. Follow the link and you get the full site. No more sniffing is done, otherwise you’d bump into the mobile version again.
 
-<p class="blend"><img src="/2011/alternate-stylesheet/engadget-desktop.png" alt="m.engadget.com has a link labelled “Desktop” at the bottom of their site, that leads to their full site."></p><!-- Link at m.engadget.com, leading to their full site -->
+<p><img src="/2011/alternate-stylesheet/engadget-desktop.png" alt="m.engadget.com has a link labeled “Desktop” at the bottom of their site, that leads to their full site."></p><!-- Link at m.engadget.com, leading to their full site -->
 
 Many websites already do that, e.g., [engadget](http://m.engadget.com/). Whenever you decide to provide a mobile version, you should include such a link. Users usually expect it at the bottom of the page. Good practice.
 
@@ -46,7 +48,7 @@ We start by adding all the designs we already have as alternate stylesheets. The
 
 I add the alternate stylesheets only to the desktop version, because currently I do not see how to make use of them on a phone. Okay, all my additional designs are defined as alternate stylesheets. Now what? Take Firefox. This browser lists our alternate stylesheets and let’s you choose the page style. You could even look at the page with no style at all.
 
-<p class="blend"><img src="/2011/alternate-stylesheet/firefox-page-style.png" alt="Firefox allows you to change the page style in the menu under View &gt; Page Style."></p>
+<p><img src="/2011/alternate-stylesheet/firefox-page-style.png" alt="Firefox allows you to change the page style in the menu under View &gt; Page Style."></p>
 
 Sure, this may be good enough for tech-savvy web surfers with a capable browser, but who’s going to check if there are alternate stylesheets. Next stop: JavaScript. You can provide a stylesheet switcher, as [seen on css-tricks.com](http://css-tricks.com/examples/AlternateStyleSheets). With the switcher in place, visitors have a visual cue to stumble upon. And if they make an alternate choice, this choice can be made permanent with cookies, for future visits.
 

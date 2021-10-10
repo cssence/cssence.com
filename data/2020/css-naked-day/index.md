@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "CSS Naked Day 2020"
 description: "Today I learned two things."
 published: 2020-04-08T06:26:05Z
-syndication:
-  - url: https://twitter.com/cssence/status/1247772686081613824
+origin: https://twitter.com/cssence/status/1247772686081613824
 conversation:
   - url: https://twitter.com/meyerweb/status/1247641433223376898
     text: "It’s been a few years since it was A Thing, true, but the most recent CSS Naked Day was held on the ninth of April. Anyone else interested in reviving the practice this Thursday? It’ll speed up your site! Temporarily. [css-naked-day.github.io](https://css-naked-day.github.io)"

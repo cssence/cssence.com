@@ -6,8 +6,7 @@ description: "Is it just me or did you too see that smiley face blink?"
 thumbnail: {type: image/png}
 published: 2019-09-17T06:22:00Z
 deprecatedUrl: /code/2019-09-17-animating-emojis
-syndication:
-  - url: https://codepen.io/cssence/pen/oNvPwwG
+codepen: https://codepen.io/cssence/pen/oNvPwwG
 ---
 
 # Animating Emojis

@@ -1,12 +1,11 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Speaking at @dotCSS"
 description: "Feeling overwhelmed after being chosen to give a 4-minute Lightning Talk at @dotCSS in Paris."
 published: 2016-11-28T11:23:33Z
 revised: 2016-12-02T23:30:54Z
-syndication:
-  - url: https://twitter.com/cssence/status/803197636333412352
+origin: https://twitter.com/cssence/status/803197636333412352
 conversation:
   - url: https://twitter.com/cssence/status/803197636333412352
     text: "Feeling overwhelmed after being chosen to give a 4-minute Lightning Talk at [@dotCSS](https://twitter.com/dotCSS) in Paris. Yes, it will be #CSS related."

@@ -6,11 +6,12 @@ description: "A media query test page for web browsers."
 thumbnail: {type: image/png}
 published: 2020-09-17T18:32:12Z
 revised: 2020-09-18T19:05:30Z
-syndication:
-  - url: https://codepen.io/cssence/pen/ExKeZOR
-  - url: https://twitter.com/cssence/status/1307969397227769857
-    published: 2020-09-21T09:06:19Z
+codepen: https://codepen.io/cssence/pen/ExKeZOR
 conversation:
+  - url: https://twitter.com/cssence/status/1307969397227769857
+    id: comment-0
+    text: "Who is using #CSS media query breakpoints in print styles? I did, so you don’t have to.<br>[cssence.com/2020/breakpoints-for-print](/2020/breakpoints-for-print/)"
+    posted: 2020-09-21T09:06:19Z
   - url: https://twitter.com/cssence/status/1308632357365317633
     text: "Working on this piece reminded me of my first encounter with [@mmatuzo](https://twitter.com/mmatuzo) in 2016, a conversation on Medium, where we concluded that we share a fondness for print styles. 🖨"
     posted: 2020-09-23T05:00:41Z
@@ -41,7 +42,7 @@ Now that we are in CSS-only land, what follows is a list of strategies, ordered 
 
 There should have been a third strategy on how you may actually use breakpoints with caution, but thanks to a bug in Chrome (and Chromium Edge) there is no such thing. If you add `min-width` or `max-width` media queries, things work fine for `px` and other absolute units on your screen. But Chrome is unable to replicate this behavior in print. Initially I thought this is due to not including the margin of the page, but the problem occurs no matter what the margin is set to. It used to work in Edge, but as they switched to Chromium, they picked up the bug too.
 
-<figure><img src="/2020/breakpoints-for-print/comparison.png" alt="Firefox and old Edge get it right, whereas Chrome and new Edge have a bug."><figcaption>Comparing the print output of different browsers. Chrome’s shortcoming has been highlighted, where media queries should match, but they only do on screen, not on print.</figcaption></figure>
+<figure class="standout invert"><img src="/2020/breakpoints-for-print/comparison.png" alt="Firefox and old Edge get it right, whereas Chrome and new Edge have a bug."><figcaption>Comparing the print output of different browsers. Chrome’s shortcoming has been highlighted, where media queries should match, but they only do on screen, not on print.</figcaption></figure>
 
 ## Additional observations
 

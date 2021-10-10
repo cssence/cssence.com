@@ -1,12 +1,11 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Twitter Comment System"
 description: "Not answering how using Twitter to comment on my site works yet."
 published: 2016-11-13T10:01:30Z
 revised: 2016-11-13T10:02:01Z
-syndication:
-  - url: https://twitter.com/cssence/status/797741166397624320
+origin: https://twitter.com/cssence/status/797741166397624320
 conversation:
   - url: https://twitter.com/mendaomn/status/797731882288947201
     text: "[@cssence](https://twitter.com/cssence) just stumbled upon your blog. Am wondering how you enabled those twitter-comments! Is it open source/did you write about it? Thanks!"

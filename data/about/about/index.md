@@ -3,7 +3,6 @@ layout: index.pug
 type: c-about
 title: "About About"
 description: "This is the “Inception page” of CSSence.com. Kind of."
-thumbnail: {type: image/jpeg}
 ---
 
 # About About

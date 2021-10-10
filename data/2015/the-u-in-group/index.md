@@ -2,15 +2,16 @@
 layout: article.pug
 type: c-essay
 title: "The ‹u› in Group"
-description: "A proposal to give the &lt;u&gt; element an additional purpose."
+description: "A proposal to give the ‹u› element an additional purpose."
 thumbnail: {type: image/jpeg}
 published: 2015-11-22T08:07:00Z
 deprecatedUrl: /blog/2015-11-the-u-in-group
-syndication:
-  - url: https://medium.com/@cssence/the-u-in-group-c0fb4faf9e06
-    published: 2015-11-22T09:24:00Z
+deprecatedSyndication: {posted: 2015-11-22T09:24:00Z, url: https://medium.com/@cssence/the-u-in-group-c0fb4faf9e06}
+conversation:
   - url: https://twitter.com/cssence/status/674881260037283841
-    published: 2015-12-10T09:20:05Z
+    id: comment-0
+    text: "The ‹u› in Group #HTML #webstandards [cssence.com/blog/2015-11-the-u-in-group](/2015/the-u-in-group/)"
+    posted: 2015-12-10T09:20:05Z
 ---
 
 # The ‹u› in Group
@@ -59,10 +60,10 @@ Why go with `<u>`? Let us look at the alternatives first.
 
 My case in point, style hooks are not the sole purpose. Splitting a date into its parts _conveys semantic meaning_, not unlike an <q>unarticulated, though explicitly rendered, non-textual annotation</q>, which is why I have brought `<u>` to the table.
 
-<figure><img src="/2015/the-u-in-group/be-careful.jpg" alt="A reminder to be careful."><figcaption>The author is torn when it comes to whether the sample code used in this article is conform with the specs or not. If you consider reuse, do so at your own risk, as some standardistas might haunt you afterwards.</figcaption></figure>
+<figure class="standout"><img src="/2015/the-u-in-group/be-careful.jpg" alt="A reminder to be careful."><figcaption>The author is torn when it comes to whether the sample code used in this article is conform with the specs or not. If you consider reuse, do so at your own risk, as some standardistas might haunt you afterwards.</figcaption></figure>
 
 ## Footnote
 
 All semantics aside, in many cases adding that kind of markup won’t be necessary as soon as it can be handled simply by using just CSS. Which is why I support [the call for :nth-everything](https://css-tricks.com/a-call-for-nth-everything/).
 
-Then again, selectors like `:nth-letter` and `:nth-word`, once implemented, might only work for simpler stuff, the moment you are dealing with variable length and the likes it can still be useful to degroup using. So why not let `<u>` do it.
+Then again, selectors like `:nth-letter` and `:nth-word`, once implemented, might only work for simpler stuff, the moment you are dealing with variable length and the likes, it can still be useful to (de)group directly in HTML. So why not let `<u>` do it.

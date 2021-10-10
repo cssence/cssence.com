@@ -6,9 +6,6 @@ description: "@CSSDayConf 2018 Day #2, enjoying eight great talks in Amsterdam."
 thumbnail: {type: image/jpeg}
 published: 2018-06-15T05:59:00Z
 deprecatedUrl: /about/2018-06-cssday
-syndication:
-  - url: https://twitter.com/cssence/status/1007508002826579969
-    published: 2018-06-15T06:20:01Z
 conversation:
   - url: https://twitter.com/cssence/status/1007508002826579969
     text: "We are in for another treat… well, eight treats to be exact. From [@meyerweb](https://twitter.com/meyerweb) to [@brucel](https://twitter.com/brucel), what’s not to like? #CSSDay"

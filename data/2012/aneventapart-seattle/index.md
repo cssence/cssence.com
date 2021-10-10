@@ -6,14 +6,13 @@ description: "Attending my first ever web conference."
 thumbnail: {type: image/jpeg}
 published: 2012-04-02T15:58:40Z
 revised: 2012-08-26T08:53:51Z
-syndication:
-  - url: https://twitter.com/cssence/status/186845111240507392
-    published: 2012-04-02T15:58:40Z
+comment: https://twitter.com/cssence/status/186845111240507392
 conversation:
   - url: https://twitter.com/cssence/status/185953973067452416
     text: "Looking forward to attending “Three Days Of Design, Code, And Content”. [@AnEventApart](https://twitter.com/aneventapart) Seattle starts on Monday. #AEA"
     posted: 2012-03-31T04:57:36Z
   - url: https://twitter.com/cssence/status/186845111240507392
+    id: comment-2
     text: "Live at [@AnEventApart](https://twitter.com/aneventapart) Seattle, yay!"
     posted: 2012-04-02T15:58:40Z
   - url: https://twitter.com/cssence/status/186865554307547137

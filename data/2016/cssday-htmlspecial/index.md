@@ -7,9 +7,6 @@ thumbnail: {type: image/jpeg}
 published: 2016-06-16T17:43:00Z
 revised: 2016-06-29T08:50:10Z
 deprecatedUrl: /about/2016-06-cssday-htmlspecial
-syndication:
-  - url: https://twitter.com/cssence/status/743535151695675392
-    published: 2016-06-16T20:06:09Z
 conversation:
   - url: https://twitter.com/cssence/status/742646266987991040
     text: "Special indeed. Day 1 of [@CSSDayConf](https://twitter.com/cssdayconf) = HTML Special. Incredible line-up! [cssday.nl/2016/programme#day1](https://cssday.nl/2016/programme#day1) … #LookingForward"
@@ -67,6 +64,10 @@ conversation:
   - url: https://twitter.com/cssence/status/743431232457945091
     text: "[@notwaldorf](https://twitter.com/notwaldorf) +1 on [@adactio](https://twitter.com/adactio)’s question #CSSDay [twitter.com/adactio/status/743428866845315072](https://twitter.com/adactio/status/743428866845315072)"
     posted: 2016-06-16T13:13:12Z
+  - url: https://twitter.com/cssence/status/743535151695675392
+    id: comment-15
+    text: "Big thanks to all speakers on Day #1 of @CSSDayConf. Here’s a quick list of their slide decks [cssence.com/about/2016-06-cssday-htmlspecial](/2016/cssday-htmlspecial/) #cssday"
+    posted: 2016-06-16T20:06:09Z
   - url: https://twitter.com/cssence/status/748076077889781760
     text: "And [@adactio](https://twitter.com/adactio)’s keynote [adactio.com/articles/10887](https://adactio.com/articles/10887) completes the list - [@CSSDayConf](https://twitter.com/cssdayconf) HTML Special"
     posted: 2016-06-29T08:50:10Z

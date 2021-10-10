@@ -6,8 +6,7 @@ description: "Using a simple border #hack to achieve what Youtube recently did. 
 thumbnail: {type: image/png}
 published: 2016-03-17T08:42:00Z
 deprecatedUrl: /code/2016-03-17-youtube-play-pause-animation
-syndication:
-  - url: https://codepen.io/cssence/pen/bpgqjm
+codepen: https://codepen.io/cssence/pen/bpgqjm
 ---
 
 # YouTube Play/Pause Animation

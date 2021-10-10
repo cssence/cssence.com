@@ -1,34 +1,36 @@
-each message, messageIndex in conversation
-	- const showContent = !message.unavailable
-	article.conversation-item(class=(!showContent && '-unavailable'))
-		h3.conversation-item-metadata(id=`comment-${messageIndex + 1}`)
-			if showContent
-				- const author = getAuthor(message, order)
-				- const linkOrNot = author.url ? 'a' : 'span'
-				- const byCuratorOrElse = author.url ? (message.author ? 'author' : 'me author') : undefined
-				#{linkOrNot}.avatar(rel=byCuratorOrElse, href=author.url)= author.name
+- let messageNumber = 0;
+each message in conversation
+	- const hasContent = !message.unavailable;
+	- const showContent = message.id !== 'comment-0';
+	- if (showContent) messageNumber += 1;
+	article(data-unavailable=message.unavailable, hidden=!showContent)
+		h3(id=(message.id || `comment-${messageNumber}`))
+			if hasContent
+				- const author = getAuthor(message, order);
+				- const linkOrNot = author.url ? 'a' : 'span';
+				- const byCuratorOrElse = author.url ? (message.author ? 'author' : 'me author') : undefined;
+				#{linkOrNot}(rel=byCuratorOrElse, href=author.url)= author.name
 				= ' wrote on '
-				- const timestampOptions = { timePrefix: ' at ' }
+				- const timestampOptions = { timePrefix: ' at ' };
 				if !message.url.startsWith('https://medium.com/@cssence')
 					a(href=message.url)
 						+ts(message.posted, timestampOptions)
 				else
 					+ts(message.posted, timestampOptions)
 			else
-				= `Comment ${messageIndex + 1} is unavailable`
-		.conversation-item-content
-			if showContent
-				- const text = message.text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
-				if message.text.startsWith('<')
-					!= text
-				else
-					p
-						!= text
-				if message.image
-					p
-						img(src=message.image.url, alt=message.image.alt)
-						if message.image.credit
-							- const credit = message.image.credit
-							include credit
+				= `Comment ${messageNumber} is unavailable`
+		if hasContent
+			- const text = message.text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+			if message.text.startsWith('<')
+				!= text
 			else
-				p Legal or technical reasons may be the cause.
+				p
+					!= text
+			if message.image
+				p
+					img(src=message.image.url, alt=message.image.alt)
+					if message.image.credit
+						- const credit = message.image.credit;
+						include credit
+		else
+			p Legal or technical reasons may be the cause.

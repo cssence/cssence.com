@@ -1,13 +1,12 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "ChromeDevTools Power-Up"
 description: "Some devices in the Device Emulation now have additional options."
 thumbnail: {type: image/png}
 published: 2015-09-18T08:26:25Z
 deprecatedUrl: /gossip/2015-09-18-chromedevtools-power-up
-syndication:
-  - url: https://twitter.com/cssence/status/644789562183688192
+origin: https://twitter.com/cssence/status/644789562183688192
 conversation:
   - url: https://twitter.com/cssence/status/644789562183688192
     text: "Nifty [@ChromeDevTools](https://twitter.com/ChromeDevTools) portrait/landscape toggle got supercharged (certain devices only)"

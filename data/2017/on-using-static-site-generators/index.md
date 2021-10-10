@@ -6,11 +6,12 @@ description: "I wrote about static site generators, but went down the Vanilla-or
 thumbnail: {type: image/jpeg}
 published: 2017-07-22T16:50:00Z
 deprecatedUrl: /blog/2017-07-on-using-static-site-generators
-syndication:
-  - url: https://medium.com/@cssence/on-using-static-site-generators-57879d215746
-    published: 2017-07-25T08:40:50Z
+deprecatedSyndication: {posted: 2017-07-25T08:40:50Z, url: https://medium.com/@cssence/on-using-static-site-generators-57879d215746}
+conversation:
   - url: https://twitter.com/cssence/status/889489356314091520
-    published: 2017-07-24T14:16:03Z
+    id: comment-0
+    text: "I wrote about static site generators, but went down the Vanilla-or-not rabbit hole.<br>[cssence.com/blog/2017-07-on-using-static-site-generators](/2017/on-using-static-site-generators/)"
+    posted: 2017-07-24T14:16:03Z
 ---
 
 # On Using Static Site Generators

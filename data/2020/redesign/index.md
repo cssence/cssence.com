@@ -5,8 +5,7 @@ title: "Re: Design - A Series"
 description: "Letters of appreciation to the basics of the web."
 thumbnail: {url: /2020/redesign/index.png}
 revised: 2020-11-21T10:29:00Z
-latest: "Editorial"
-highlights:
+sections:
   - id: series
     name: "Posts in this series"
     posts:

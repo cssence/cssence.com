@@ -6,10 +6,12 @@ description: "Replacing the “Sliding Doors” technique with border-image."
 summary: "There are many browsers out there that support a whole lot of the new CSS3 features. So there is a good chance that some of us are still using CSS techniques that are no longer state of the art. What about sliding doors? Obsolete?"
 thumbnail: {type: image/jpeg}
 published: 2011-03-26T21:05:39Z
-syndication:
-  - url: http://cssence.wordpress.com/2011/03/26/sliding-door-no-more/
+origin: http://cssence.wordpress.com/2011/03/26/sliding-door-no-more/
+conversation:
   - url: https://twitter.com/cssence/status/57332403454230528
-    published: 2011-04-11T06:41:24Z
+    id: comment-0
+    text: "Last month’s issue of #cssence ★ from sliding doors to border-image: [j.mp/gN3FMK](/2011/sliding-door-no-more/)"
+    posted: 2011-04-11T06:41:24Z
 ---
 
 # Sliding Door, No More
@@ -45,7 +47,7 @@ Needless to say, the order of the images is important, the one you specify first
 
 That is not our problem, on the contrary. `image-bg.png` is repeated all the way from left to right, if we place images that contain transparent areas on top of it, we’ll end up with this:
 
-<p class="blend"><img src="/2011/sliding-door-no-more/button-multiple-images.png" alt="Applying multiple images in order to create a button does not lead to the desired result."></p>
+<p class="invert"><img src="/2011/sliding-door-no-more/button-multiple-images.png" alt="Applying multiple images in order to create a button does not lead to the desired result."></p>
 
 The intention here is to create a pill-shaped button, but our images overlap. Addressing this problem is one of the main tasks of the sliding doors technique. Margins are applied to the stacked elements to prevent the repeated image from interfering with our transparent ends. If you specify multiple backgrounds on one single element, you have no stacked elements where you could play with margins.
 
@@ -71,7 +73,7 @@ What have we got? In this case no border on top and at the bottom, but 25 pixel 
 
 And then there are two more keywords (one for each axis, x and y) that tell the browser how to apply all the slices on the border and the residue within the border. In this case: stretch them. Of course, the image is designed to go well together with the specified measurements, hence nothing is stretched or distorted on the border itself. Only the residue will be stretched to fill the inner area from left to right. Try changing the `height` to 60px, and you’ll see the effect on the border as well.
 
-<p class="blend"><img src="/2011/sliding-door-no-more/button-border-image.png" alt="Using border-image instead of multiple background images gives as the desired result."></p>
+<p class="invert"><img src="/2011/sliding-door-no-more/button-border-image.png" alt="Using border-image instead of multiple background images gives as the desired result."></p>
 
 For the finishing touch, I added some additional styles for the button text. If you want to see it in action, here is the [button.png](/2011/sliding-door-no-more/button.png) and the complete source code:
 
@@ -89,7 +91,7 @@ a {
   -webkit-border-image: url(button.png) 0 25 0 25 repeat repeat;
   -moz-border-image: url(button.png) 0 25 0 25 repeat repeat;
   border-image: url(button.png) 0 25 0 25 repeat repeat;
-  text-shadow:  0 -1px 5px rgba(0,0,0,0.6), 0 1px 5px rgba(255,255,255,0.6);
+  text-shadow: 0 -1px 5px rgba(0,0,0,0.6), 0 1px 5px rgba(255,255,255,0.6);
 }
     </style>
   </head>

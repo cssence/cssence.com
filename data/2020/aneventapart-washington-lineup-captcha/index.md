@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Line-up for An Event Apart in Washington, DC"
 description: "Me thinks @zeldman is prototyping a new image Captcha."
 published: 2020-01-24T13:44:10Z
-syndication:
-  - url: https://twitter.com/cssence/status/1220703843517857793
+origin: https://twitter.com/cssence/status/1220703843517857793
 conversation:
   - url: https://twitter.com/zeldman/status/1220536022209040384
     text: "➠ Jam-packed with cool people and great new talks: [@AnEventApart](https://twitter.com/AnEventApart) kicks off 2020 in Washington, DC’s Woodley Park. Check the schedule and get your ticket before early bird ends!<br><br>[aneventapart.com/event/washington-dc-2020](https://aneventapart.com/event/washington-dc-2020)"

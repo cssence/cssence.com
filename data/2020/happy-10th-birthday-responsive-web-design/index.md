@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Happy 10th Birthday @RWD"
 description: "Ethan Marcotte reflects on ten years of Responsive Web Design."
 published: 2020-05-25T20:14:02Z
-syndication:
-  - url: https://twitter.com/cssence/status/1265013275885998080
+origin: https://twitter.com/cssence/status/1265013275885998080
 conversation:
   - url: https://twitter.com/beep/status/1264919155364503554
     text: "🦊<br><br>Oh my GOODNESS, responsive design turns ten today! Here’s how it happened, and who helped *make* it happen:<br>[ethanmarcotte.com/wrote/responsive-design-at-10/](https://ethanmarcotte.com/wrote/responsive-design-at-10/)"

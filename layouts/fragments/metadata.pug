@@ -1,34 +1,29 @@
-- const syndicated = syndication ? syndication[0] : {}
 footer.metadata
-	- const pageTypeMap = {'index.pug': 'index page', 'note.pug': 'thread', 'internal.pug': 'page', 'c-code': 'code example'}
-	h2#about-post.subtle= `About this ${urlPath === '/' ? 'site' : (pageTypeMap[layout] || pageTypeMap[type] || 'article')}`
-	address.print
+	- const pageTypeMap = {'/': 'site', 'index.pug': 'index page', 'note.pug': 'thread', 'internal.pug': 'page'};
+	h2#about-post= `About this ${pageTypeMap[urlPath] || pageTypeMap[layout] || 'article'}`
+	address
 		p
 			= layout === 'index.pug' ? 'Curated' : 'Written'
 			= ' by '
 			a(rel="author", href=`${website.url}/about/matt/`) Matthias Zöchling
-			= (conversation && conversation.filter((item) => item.author).length) ? ' et al.' : '.'
+			= (layout === 'note.pug' && conversation && conversation.filter((item) => item.author).length) ? ' et al.' : '.'
 	if published
 		p
-			if syndicated.published || !syndicated.url
+			if !origin
 				= 'Published'
 			else
 				= `Originally ${conversation && conversation[0].author ? 'responded' : 'published'} on `
-				if !syndicated.url.includes('medium') && !syndicated.url.includes('wordpress')
-					a(href=syndicated.url)= syndicated.url.split('/')[2]
+				if !origin.includes('medium') && !origin.includes('wordpress')
+					a(href=origin)= origin.split('/')[2]
 				else
-					= syndicated.url.split('/')[2]
+					= origin.split('/')[2]
 			= ' on '
 			+ts(published)
 			= '.'
-			if syndicated.published && !syndicated.url.includes('twitter') && !syndicated.url.includes('medium')
-				= ' Syndicated to '
-				a(href=syndicated.url)= syndicated.url.split('/')[2]
-				= '.'
 	if revised && (!published || revised.toISOString().slice(0, 10) !== published.toISOString().slice(0, 10))
-		p= 'Last revised on '
+		p
+			= 'Last revised on '
 			+ts(revised)
 			= '.'
-	p.print
-		= 'Permalink: '
-		a(href=permalink)= permalink
+	p
+		a(href=permalink)= `Permalink: ${permalink}`

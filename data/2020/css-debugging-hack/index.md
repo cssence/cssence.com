@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "CSS Debugging Hack"
 description: "In a nutshell: * { outline: 1px solid hotpink; }"
 published: 2020-05-27T09:18:21Z
-syndication:
-  - url: https://twitter.com/cssence/status/1265573041876189194
+origin: https://twitter.com/cssence/status/1265573041876189194
 conversation:
   - url: https://twitter.com/florinpop1705/status/1265535524414111748
     text: "CSS debugging hack to visualize all the elements on the page:<br><br><code>* { outline: 1px solid purple; }</code>"

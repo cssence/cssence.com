@@ -6,10 +6,12 @@ description: "Designing for the lowest common denominator is no longer the way t
 summary: "»CSS3 is dead!« is a call for action. In 2011, designing for the lowest common denominator is no longer the way to go. In addition, it explains why CSS3 doesn’t want to be called CSS3 anymore. That way the title makes sense. Sort of."
 thumbnail: {type: image/jpeg}
 published: 2011-01-26T19:23:37Z
-syndication:
-  - url: http://cssence.wordpress.com/2011/01/26/css3-is-dead/
+origin: http://cssence.wordpress.com/2011/01/26/css3-is-dead/
+conversation:
   - url: https://twitter.com/cssence/status/32197793019863040
-    published: 2011-01-31T22:05:26Z
+    id: comment-0
+    text: "Seriously? CSS3 is dead? [j.mp/g8vmfz](/2011/css3-is-dead/)"
+    posted: 2011-01-31T22:05:26Z
 ---
 
 # CSS3 is Dead
@@ -41,7 +43,7 @@ The other day, I’ve been reading [this blog post](http://sixrevisions.com/css/
 
 I didn’t immerse myself in the details. Instead, I read [another post](http://www.webdesignerdepot.com/2009/08/5-css3-design-enhancements-that-you-can-use-today/). So what? Stumbling upon blog posts is not uncommon when you browse the web. Right. But then, the craziest thing happened. You’re not going to believe this. Hold on to your mousepads. I read [a third post](http://gizmodo.com/5740244/html-5-just-wants-to-be-html-from-now-on). This one tells us why HTML5 no longer wants to be called HTML5. Because there is only one HTML.
 
-That’s when it hit me. The same is true for CSS3. Why should we care about the version? Of course, right now everybody is shouting from the rooftops: Start implementing CSS3! And that’s a good thing. To create awareness. But I’m glad I didn’t wait for rooftop-noise in order to start using CSS3 selectors. I’ve read about them, some browsers already supported them, they looked neat and powerful. I liked them, so I started using them. Rounded corners? Same thing. Well, there may be special cases. Take the `text-shadow` property. It was introduced in the CSS2 specification. Dropped in version 2.1. And now reintroduced in version 3. So? Was there any browser support in between? It doesn’t matter, it’s just another example that shows us why we couldn’t care less about the CSS version.
+That’s when it hit me. The same is true for CSS3. Why should we care about the version? Of course, right now everybody is shouting from the rooftops: Start implementing CSS3! And that’s a good thing. To create awareness. But I’m glad I didn’t wait for rooftop noise in order to start using CSS3 selectors. I’ve read about them, some browsers already supported them, they looked neat and powerful. I liked them, so I started using them. Rounded corners? Same thing. Well, there may be special cases. Take the `text-shadow` property. It was introduced in the CSS2 specification. Dropped in version 2.1. And now reintroduced in version 3. So? Was there any browser support in between? It doesn’t matter, it’s just another example that shows us why we couldn’t care less about the CSS version.
 
 What really matters is what browser makers have implemented. Wanna know the best part? All it takes is one browser. If the last decade told us one thing, it’s that waiting for all browsers to implement a CSS feature (correctly) makes no sense&thinsp;—&thinsp;unless you love procrastination. So at this point, it all boils down to the one thing: <abbr title="Lowest Common Denominator">LCD</abbr>.
 

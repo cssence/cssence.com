@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "My Twitter Anniversary"
 description: "I joined ten years ago. I’m still here. Reluctantly."
 published: 2020-07-24T09:44:15Z
-syndication:
-  - url: https://twitter.com/cssence/status/1286598059124719618
+origin: https://twitter.com/cssence/status/1286598059124719618
 conversation:
   - url: https://twitter.com/cssence/status/1286598059124719618
     text: "Apparently I joined Twitter 10 years ago today. But it’ll be three more months until my first tweet is ten years old. The URL in my first tweet was shortened by a service that no longer exists. Twitter has no edit button, so I cannot replace it with the actual URL. However, …"

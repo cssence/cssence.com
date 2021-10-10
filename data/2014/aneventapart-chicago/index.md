@@ -6,9 +6,6 @@ description: "It is now three years in a row, I’ve returned for another An Eve
 thumbnail: {type: image/jpeg}
 published: 2014-08-25T14:08:08Z
 revised: 2014-08-27T19:10:07Z
-syndication:
-  - url: https://twitter.com/cssence/status/503906677003808768
-    published: 2014-08-25T14:08:08Z
 conversation:
   - url: https://twitter.com/cssence/status/503906677003808768
     text: "Jeffrey [@zeldman](https://twitter.com/zeldman) talks about what he does on a plane. Welcome to AEA Chicago! Feeling excited. #AEAChi"

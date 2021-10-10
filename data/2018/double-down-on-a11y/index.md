@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Double Down on Accessibility"
 description: "Jared Spool encourages people to activate Image Alt Text on Twitter."
 published: 2018-01-05T06:59:19Z
-syndication:
-  - url: https://twitter.com/cssence/status/949173449976578048
+origin: https://twitter.com/cssence/status/949173449976578048
 conversation:
   - url: https://twitter.com/jmspool/status/948996550558183430
     text: "[twitter.com/_Red_Long/status/948577112860086272](https://twitter.com/_Red_Long/status/948577112860086272)<br><br>This is a great example of what I call Socially Transmitted Functionality. The only way to learn about the capability is for someone to tell you about it.<br><br>(And, by the way, you should totally turn this on and put in the descriptions.)"

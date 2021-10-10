@@ -5,14 +5,12 @@ title: "We Are Web Clerks 2019"
 description: "Attending the first-ever @WeAreWebClerks in Vienna, Austria. Yes, on home turf!"
 thumbnail: {type: image/jpeg}
 published: 2019-11-25T05:38:00Z
-syndication:
-  - url: https://twitter.com/cssence/status/1198874120596971520
-    published: 2019-11-25T06:51:27Z
 conversation:
   - url: https://twitter.com/cssence/status/1198856706966593536
     text: "[@wearewebclerks](https://twitter.com/wearewebclerks)<br><code>-vienna-appearance: beautiful !important;</code><br>[cssence.com/2019/we-are-web-clerks](/2019/we-are-web-clerks/)"
     posted: 2019-11-25T06:51:27Z
   - url: https://twitter.com/cssence/status/1198874120596971520
+    id: comment-2
     text: "First conference on home turf. First conference as a married man. Let’s do this.<br>[@wearewebclerks](https://twitter.com/wearewebclerks) #webclerks"
     image:
       url: https://pbs.twimg.com/media/EKNBpopWsAAf1Qc?format=jpg&name=large

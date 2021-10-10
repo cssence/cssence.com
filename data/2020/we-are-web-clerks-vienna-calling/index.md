@@ -6,9 +6,6 @@ description: "Attending a meetup/conference hybrid, completely remote."
 thumbnail: {type: image/jpeg}
 published: 2020-07-29T16:54:59Z
 revised: 2020-07-30T06:43:01Z
-syndication:
-  - url: https://twitter.com/cssence/status/1288751274809327617
-    published: 2020-07-30T08:20:22Z
 conversation:
   - url: https://twitter.com/cssence/status/1288527511597584398
     text: "Listening to [@cassiecodes](https://twitter.com/cassiecodes) at #ViennaCalling … takeaways so far:<br>1. Yay Progressive Enhancement!<br>2. Yay Accessibility! #a11y<br>3. [makefrontendshitagain.party](https://makefrontendshitagain.party) is a thing.<br>[@wearewebclerks](https://twitter.com/wearewebclerks) [@CssVienna](https://twitter.com/CssVienna)"
@@ -57,6 +54,7 @@ conversation:
     text: "#CSS should be about “providing guides and rules for layout, instead of micromanaging the browser.” [@hankchizljaw](https://twitter.com/hankchizljaw) at the #ViennaCalling [@wearewebclerks](https://twitter.com/wearewebclerks) meetup"
     posted: 2020-07-29T18:59:30Z
   - url: https://twitter.com/cssence/status/1288751274809327617
+    id: comment-14
     text: "👏 Thanks to all the speakers and the organizers, [@wearewebclerks](https://twitter.com/wearewebclerks) and [@CssVienna](https://twitter.com/CssVienna) pulled off a truly wonderful #ViennaCalling meetup last night."
     posted: 2020-07-30T08:20:22Z
 ---

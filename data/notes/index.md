@@ -3,8 +3,8 @@ layout: index.pug
 type: c-note
 title: "Notes"
 description: "Opinions and Links, sometimes even conversations: Latest thoughts, i.e. message threads."
-thumbnail: {type: image/jpeg}
-latest: 10
+sections:
+  - limit: 10
 ---
 
 # Notes

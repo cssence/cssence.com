@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Powered by @netlify"
 description: "A short conversation with Brian Lovin."
 published: 2019-12-10T15:17:20Z
-syndication:
-  - url: https://twitter.com/cssence/status/1204419835121127424
+origin: https://twitter.com/cssence/status/1204419835121127424
 conversation:
   - url: https://twitter.com/brian_lovin/status/1204169671878025217
     text: "Do you write about design or development on a personal, self-hosted blog? Drop a link here, I’d love to check some out and see what you are thinking about 🔗"

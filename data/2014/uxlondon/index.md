@@ -6,9 +6,6 @@ description: "Back in Greenwich for my second installment of UX London."
 thumbnail: {type: image/jpeg}
 published: 2014-05-27T19:27:19Z
 revised: 2014-05-29T06:13:47Z
-syndication:
-  - url: https://twitter.com/cssence/status/471372092106362880
-    published: 2014-05-27T19:27:19Z
 conversation:
   - url: https://twitter.com/cssence/status/471372092106362880
     text: "Finally made it to Greenwich, ready for 3 days of #UX enlightenment [@UXLondon](https://twitter.com/UXLondon)"
@@ -32,4 +29,4 @@ After [last year’s experience](/2013/uxlondon/) I am more than thrilled to be 
 
 I’m also glad they kept the venue, UX London once again takes place in the somehow extremely well-fitting [Trinity Laban Conservatoire of Music &amp; Dance](https://www.trinitylaban.ac.uk/).
 
-<p><img src="/2014/uxlondon/trinity-laban.jpg" alt="Lots of open space and fresh air, the grass in front of the Trinity Laban building couldn’t be any greener."></p>
+<p class="standout"><img src="/2014/uxlondon/trinity-laban.jpg" alt="Lots of open space and fresh air, the grass in front of the Trinity Laban building couldn’t be any greener."></p>

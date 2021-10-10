@@ -1,14 +1,13 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Displayable Content Inside Document Head?"
 description: "My site makes its own inline styles visible."
 published: 2020-04-08T04:46:59Z
-syndication:
-  - url: https://twitter.com/cssence/status/1247747744661303296
+origin: https://twitter.com/cssence/status/1247747744661303296
 conversation:
   - url: https://twitter.com/sir_pepe/status/1247535767204687873
-    text: "<p><span lang=\"de\">Wie oft habt ihr schon für nicht-humoristische Zwecke &lt;script&gt;, &lt;head&gt; usw. sichtbar gemacht und wie normale Elemente verwendet?</span></p>"
+    text: "<p lang=\"de\">Wie oft habt ihr schon für nicht-humoristische Zwecke &lt;script&gt;, &lt;head&gt; usw. sichtbar gemacht und wie normale Elemente verwendet?</p>"
     author: {url: https://twitter.com/sir_pepe, name: "Peter Kröner"}
     posted: 2020-04-07T14:44:39Z
   - url: https://twitter.com/cssence/status/1247747744661303296

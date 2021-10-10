@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Learning May Be Fun"
 description: "Thanks to Heydon Pickering’s “Webbed Briefs”."
 published: 2021-02-09T12:22:12Z
-syndication:
-  - url: https://twitter.com/cssence/status/1359115382028718085
+origin: https://twitter.com/cssence/status/1359115382028718085
 conversation:
   - url: https://twitter.com/cssence/status/1359115382028718085
     text: "From the director who brought us the developer-award-winning “Making Future Interfaces”, comes “Webbed Briefs”.<br><br>[briefs.video](https://briefs.video) by [@heydonworks](https://twitter.com/heydonworks)"

@@ -2,16 +2,16 @@
 layout: article.pug
 type: c-essay
 title: "No Web Font, No&nbsp;Cry"
-description: "I’ve turned off font loading six month ago. This is what I learned."
+description: "I’ve turned off font loading six months ago. This is what I learned."
 thumbnail: {type: image/png}
 published: 2018-05-18T05:51:00Z
 deprecatedUrl: /blog/2018-05-no-webfont-no-cry
-syndication:
-  - url: https://medium.com/@cssence/no-web-font-no-cry-14c5c61da0e6
-    published: 2018-05-20T04:02:23Z
-  - url: https://twitter.com/cssence/status/997900619619893248
-    published: 2018-05-19T18:03:42Z
+deprecatedSyndication: {posted: 2018-05-20T04:02:23Z, url: https://medium.com/@cssence/no-web-font-no-cry-14c5c61da0e6}
 conversation:
+  - url: https://twitter.com/cssence/status/997900619619893248
+    id: comment-0
+    text: "I’ve turned off web font loading six months ago. This is what I learned.<br>[cssence.com/blog/2018-05-no-webfont-no-cry](/2018/no-webfont-no-cry/)"
+    posted: 2018-05-19T18:03:42Z
   - url: https://twitter.com/cssence/status/998577280145293313
     text: "When it comes to font loading, let’s not forget the mandatory shoutout to [@zachleat](https://twitter.com/zachleat) 🙂 - even though my article focuses more on the user’s choice."
     posted: 2018-05-21T14:52:30Z
@@ -37,7 +37,7 @@ Having Firefox installed, I went through the settings, where they gave me an int
 
 ## Font Off
 
-<p class="blend"><img src="/2018/no-webfont-no-cry/firefox-settings.png" alt="On Firefox for Android the ability to turn off loading web fonts is found under Advanced Settings."></p>
+<p><img src="/2018/no-webfont-no-cry/firefox-settings.png" alt="On Firefox for Android the ability to turn off loading web fonts is found under Advanced Settings."></p>
 
 One of the perks of living in Austria is the inexpensive generous data plan you’ll have on your phone, so no need for eliminating the font download, right? Not quite, I also want my websites to load fast, so I gave it a try and turned off web fonts on my mobile. To this day, they are still off.
 
@@ -51,7 +51,7 @@ I’ve noticed in the last months that most sites work just fine, so even withou
 
 I was surprised to find out how many sites still use icon fonts given that [SVGs are clearly superior](https://www.sarasoueidan.com/blog/icon-fonts-to-svg/). I’ve seen lots of buttons that display just a random letter instead, so good luck trying to figure out what is going on. While it is easy to guess that those broken icons in an auto-advancing carousel are the left/right arrows, what about a standalone button in the top banner? It could toggle the menu, open a search form, etc., so quite often your only option is to click to find out. At least somewhat easier to identify is this other weirdness, take the icons on this year’s Google&nbsp;IO site as an example. In the screenshot below, the left part shows the site with web fonts turned on, while on the right you’ll notice they are [using icon fonts with ligatures.](https://css-tricks.com/ligature-icons/)
 
-<p class="blend"><img src="/2018/no-webfont-no-cry/font-on-off-googleio.png" alt="Comparison of the 2018 Google IO site with web fonts turned on and off. Font off reveals the use of icon font ligatures."></p>
+<p class="standout"><img src="/2018/no-webfont-no-cry/font-on-off-googleio.png" alt="Comparison of the 2018 Google IO site with web fonts turned on and off. Font off reveals the use of icon font ligatures."></p>
 
 Even worse, sometimes I ended up seeing no text at all, so I might not even have noticed certain control elements. Sadly this happens whenever an icon font does the right thing by putting the icons in [Unicode’s Private Use Area.](https://en.wikipedia.org/wiki/Private_Use_Areas) This is just one more reason for developers to switch to SVG icons, but while we are at it, why not [make things obvious.](https://www.lukew.com/ff/entry.asp?1945)
 

@@ -5,13 +5,17 @@ title: "The Day The Website Stood Still"
 description: "On the intersection of progressive degradation and graceful enhancement."
 thumbnail: {type: image/png}
 published: 2021-08-28T13:25:00Z
-syndication:
-  - url: https://twitter.com/cssence/status/1432342867377336325
-    published: 2021-08-30T14:02:05Z
 conversation:
+  - url: https://twitter.com/cssence/status/1432342867377336325
+    id: comment-0
+    text: "📝 New blog post:<br>“The Day The Website Stood Still”<br>—An Ode to Progressive Enhancement.<br>[cssence.com/2021/the-day-the-website-stood-still](/2021/the-day-the-website-stood-still/)"
+    posted: 2021-08-30T14:02:05Z
   - url: https://twitter.com/cssence/status/1432344525578686465
     text: "<p>If you haven’t heard of the <em>Cutting The Mustard</em> concept, [@adactio](https://twitter.com/adactio) covers it in his brilliant book “Resilient Web Design”:<br>[resilientwebdesign.com/chapter5/#cuttingthemustard](https://resilientwebdesign.com/chapter5/#cuttingthemustard)</p><p>Actually, read the whole book!</p>"
     posted: 2021-08-30T14:08:41Z
+  - url: https://twitter.com/cssence/status/1432813918968291334
+    text: "<p>#HTML ≥ #CSS ≥ #JS</p><blockquote><p>[Everyone should be] able to consume the content (HTML). Your stylesheets (CSS) must never interfere with that. Even more important, your scripts (JS) must never interfere with that.</p></blockquote>"
+    posted: 2021-08-31T21:13:53Z
 ---
 
 # The Day The Website Stood Still
@@ -34,7 +38,7 @@ It wasn’t until a few days later, when I realized that I haven’t looked at m
 
 Kind of. My site should look like the right-most version in the [image below](#figure-1). But what I got was the one in the middle.
 
-<figure id="figure-1"><img src="/2021/the-day-the-website-stood-still/versions.png" alt="Screenshots of three different versions of this article on cssence.com."><figcaption>From left to right: This article 1. without stylesheets, 2. on older browsers, 3. in it’s most enhanced form.</figcaption></figure>
+<figure id="figure-1" class="standout"><img src="/2021/the-day-the-website-stood-still/versions.png" alt="Screenshots of three different versions of this article on cssence.com."><figcaption>From left to right: This article 1. without stylesheets, 2. on older browsers, 3. in it’s most enhanced form.</figcaption></figure>
 
 This happens to be an alternate theme I’ve added for <del>older browsers</del><ins> Internet Explorer</ins>. Apparently the most essential part in my [Cutting the Mustard](/2020/css-variables-in-style-attributes/) script broke.
 

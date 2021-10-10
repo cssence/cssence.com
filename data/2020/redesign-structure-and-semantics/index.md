@@ -6,10 +6,11 @@ description: "URLs and HTML. The foundation of every website."
 thumbnail: {url: /2020/redesign/index.png}
 published: 2020-05-14T19:27:00Z
 revised: 2020-07-01T21:47:00Z
-syndication:
-  - url: https://twitter.com/cssence/status/1261184022144847872
-    published: 2020-05-15T06:37:57Z
 conversation:
+  - url: https://twitter.com/cssence/status/1261184022144847872
+    id: comment-0
+    text: "Part One of my Three Part Blog Series “The Basics of The Web”:<br>A letter of appreciation to #HTML<br>[cssence.com/2020/redesign-structure-and-semantics](/2020/redesign-structure-and-semantics/)"
+    posted: 2020-05-15T06:37:57Z
   - url: https://twitter.com/cssence/status/1261219566266527749
     text: "Now that all pages on my site start right with the content, as hinted in [@vasilis](https://twitter.com/vasilis)’ thesis “Exclusive Design”, I wonder: People relying on assistive technology, did you get so used to website crap that not having to bypass a header/navigation with a lot of links seems weird? #a11y"
     posted: 2020-05-15T08:59:11Z
@@ -27,17 +28,11 @@ conversation:
 # Structure & Semantics
 ^ Redesign pt.1
 
-<div class="passage"><style>
-@media (min-width: 40em){.passage{display:grid;gap:0 1.75rem;grid-template-areas:'intro list' 'note note';grid-template-columns:1fr 1fr;align-items:start}}
-.passage ol{counter-reset:part;list-style-type:square;grid-area:list;margin-top:.5rem;padding:1.25rem .875rem .5rem;border:1px solid var(--color-bg-subtle);border-radius:var(--border-radius)}
-.passage li::before{counter-increment:part;content:"Part " counter(part) ": ";font-variant-numeric:lining-nums tabular-nums;font-weight:600}
-.passage p{grid-area:note}
-.passage style+p{grid-area:intro}
-</style>
+<div class="standoff metadata"><link rel="stylesheet" href="/2020/redesign/series.css">
 
 This is Part One of a <strong id="3-part-blog-series">Three Part Blog Series.</strong> Although the focus of this Editorial series is an in-depth look at the [latest redesign of this site](/2019/just-launch/), you may read these posts as letters of appreciation to the [Basics of the Web.](/2016/webdesign-basics/)
 
-<ol aria-labelledby="3-part-blog-series">
+<ol class="figure" aria-labelledby="3-part-blog-series">
 <li>Structure &amp; Semantics</li>
 <li><a href="/2020/redesign-style-and-delight/">Style &amp; Delight</a></li>
 <li><a href="/2020/redesign-superfluous-and-advanced/">Superfluous &amp; Advanced</a></li>
@@ -91,4 +86,4 @@ Last but not least, I’ve added a proper heading (level 3) to each individual *
 
 To get a really good grasp how each page is marked up, you should look at my site without any styles applied. You may have your own way to accomplish this, but this will even become a feature when I find the time to add this to my [Settings](/settings/) page.
 
-<figure><img src="/2020/redesign-structure-and-semantics/x-ray.png" alt="The Inspector tab of Firefox’s developer tools, with some elements inside document body expanded."><figcaption>These are the outermost HTML elements of this page. Also depicted in this screenshot: One of the few <code>&lt;div&gt;</code> elements, never more than five per page.</figcaption></figure>
+<figure class="standout invert"><img src="/2020/redesign-structure-and-semantics/x-ray.png" alt="The Inspector tab of Firefox’s developer tools, with some elements inside document body expanded."><figcaption>These are the outermost HTML elements of this page. Also depicted in this screenshot: One of the few <code>&lt;div&gt;</code> elements, never more than five per page.</figcaption></figure>

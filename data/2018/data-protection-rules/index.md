@@ -1,16 +1,17 @@
 ---
 layout: article.pug
-type: c-essay
+type: c-editorial
 title: "Data Protection Rules!"
 description: "Turning regulations into something positive."
 thumbnail: {type: image/jpeg}
 published: 2018-12-30T08:08:00Z
 deprecatedUrl: /blog/2018-12-data-protection-rules
-syndication:
-  - url: https://medium.com/@cssence/data-protection-rules-3103c36f504c
-    published: 2019-01-06T06:35:06Z
+deprecatedSyndication: {posted: 2019-01-06T06:35:06Z, url: https://medium.com/@cssence/data-protection-rules-3103c36f504c}
+conversation:
   - url: https://twitter.com/cssence/status/1079362372127653888
-    published: 2018-12-30T13:03:37Z
+    id: comment-0
+    text: "With great interest I read about “Privacy Enhancements” by [@_gettalong](https://twitter.com/_gettalong), where he explains how GDPR inspired him to make changes on his site. I thought about doing something similar…<br>[cssence.com/blog/2018-12-data-protection-rules](/2018/data-protection-rules/)"
+    posted: 2018-12-30T13:03:37Z
 ---
 
 # Data Protection Rules!
@@ -33,7 +34,7 @@ Both measures led to increased performance, but you could quibble over the not-a
 
 With these changes in place, no matter which page on cssence.com you look at, your IP address won’t be transferred to a third party location anymore. Sure enough, your IP address will be transferred to the server that hosts my site, which happens to be the awesome [Netlify](https://www.netlify.com), but if a regulation would forbid that, there won’t be a web anymore.
 
-<figure><img src="/2018/data-protection-rules/farewell-fun-footer.png" alt="No stylesheets were harmed while making this website. Other assets were not so lucky. One font did suffer."><figcaption>The original fat footer on this website included a cheerful disclaimer stating that stylesheets were treated properly (and web fonts poorly). Now that I no longer use web fonts, I put the footer on a diet. Given how boring the current footer looks, you could conclude that Data Protection Initiatives suck the fun out of everything.</figcaption></figure>
+<figure class="standout"><img src="/2018/data-protection-rules/farewell-fun-footer.png" alt="No stylesheets were harmed while making this website. Other assets were not so lucky. One font did suffer."><figcaption>The original fat footer on this website included a cheerful disclaimer stating that stylesheets were treated properly (and web fonts poorly). Now that I no longer use web fonts, I put the footer on a diet. Given how boring the current footer looks, you could conclude that Data Protection Initiatives suck the fun out of everything.</figcaption></figure>
 
 ## Privacy, center stage
 

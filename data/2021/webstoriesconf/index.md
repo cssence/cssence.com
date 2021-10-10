@@ -5,9 +5,7 @@ title: "WebStories Lille 2021"
 description: "@webstoriesconf 2021, from Lille (France) straight to my home."
 thumbnail: {type: image/jpeg}
 published: 2021-02-05T07:38:00Z
-syndication:
-  - url: https://twitter.com/cssence/status/1357599337786834944
-    published: 2021-02-05T07:57:59Z
+revised: 2021-09-07T22:40:00Z
 conversation:
   - url: https://twitter.com/cssence/status/1357599337786834944
     text: "I wouldn’t have made it to Lille, France. But thanks to [@webstoriesconf](https://twitter.com/webstoriesconf)
@@ -68,8 +66,6 @@ I’ve been attending Web Stories, which—according to their [website](https://
 * “Ombromanie: Storytelling with Machine-Learning Infused Hand Shadows” by [Jen Looper](https://twitter.com/jenlooper)
 * “Scaling yourself: Building what works for you” by [Cassidy Williams](https://twitter.com/cassidoo)
 * “Design in the Background” by [Eric Meyer](https://twitter.com/meyerweb)
-
-<p><small>Note: This blog post is about a recent event, I’ll add slides and other resources when they become available.</small></p>
 
 ## Q&A
 

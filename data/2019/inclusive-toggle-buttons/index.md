@@ -5,11 +5,12 @@ title: "Inclusive Toggle Buttons"
 description: "Tweaking the ones from “Inclusive Components” by Heydon Pickering."
 thumbnail: {type: image/png}
 published: 2019-12-20T13:14:12Z
-syndication:
-  - url: https://codepen.io/cssence/pen/KKwWeze
-  - url: https://twitter.com/cssence/status/1208024956447145986
-    posted: 2019-12-20T14:02:48Z
+codepen: https://codepen.io/cssence/pen/KKwWeze
 conversation:
+  - url: https://twitter.com/cssence/status/1208024956447145986
+    id: comment-0
+    text: "Started reading “Inclusive Components” by [@heydonworks](https://twitter.com/heydonworks), a strong contender for Book of the Year. Now I am pondering the possibility to use <code>&lt;label&gt;</code> for auxiliary labeling.<br>[cssence.com/2019/inclusive-toggle-buttons](/2019/inclusive-toggle-buttons/)"
+    posted: 2019-12-20T14:02:48Z
   - url: https://twitter.com/cssence/status/1213089975337664513
     text: "Looking for #a11y research on <code>&lt;label for=&quot;button&quot;&gt</code>. Online search takes me to “labeling buttons”, which is not what I want (see link [twitter.com/cssence/status/1208024956447145986](https://twitter.com/cssence/status/1208024956447145986)). I’ve only been able to test Safari+VoiceOver and Chrome+ChromeVox, looks promising. /cc [@mmatuzo](https://twitter.com/mmatuzo) [@paciellogroup](https://twitter.com/paciellogroup)"
     posted: 2020-01-03T13:29:22Z

@@ -7,9 +7,6 @@ thumbnail: {type: image/jpeg}
 published: 2018-06-14T06:36:00Z
 revised: 2018-12-31T14:05:00Z
 deprecatedUrl: /about/2018-06-cssday-uxspecial
-syndication:
-  - url: https://twitter.com/cssence/status/1007152477282734080
-    published: 2018-06-14T06:47:17Z
 conversation:
   - url: https://twitter.com/cssence/status/1007152477282734080
     text: "I’ve got my badge, ready for #CSSDay. Talk about [@CSSDayConf](https://twitter.com/cssdayconf)’s attention to detail, they’ve added hand-picked conversation starters for 400+&nbsp;attendees. Amazing."

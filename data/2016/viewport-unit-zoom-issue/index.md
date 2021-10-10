@@ -1,12 +1,11 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "The Trouble With Viewport Units"
 description: "This thread started as a spin-off from my The JavaScript Wars article, deviating from the topic at hand."
 published: 2016-11-07T14:08:41Z
 revised: 2016-11-13T20:12:39Z
-syndication:
-  - url: https://twitter.com/cssence/status/795629046881284096
+origin: https://twitter.com/cssence/status/795629046881284096
 conversation:
   - url: https://twitter.com/br0llercoaster/status/795614988962512901
     text: "[@cssence](https://twitter.com/cssence) Hey, is your site supposed to have a font size of 52px on large displays? Not very comfortable to read an entire article like that."

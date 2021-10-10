@@ -6,10 +6,11 @@ description: "You could make assumptions about what your users want. Or you coul
 thumbnail: {type: image/png}
 published: 2019-06-19T05:54:00Z
 deprecatedUrl: /blog/2019-06-ask-the-user
-syndication:
-  - url: https://twitter.com/cssence/status/1141233622915174400
-    published: 2019-06-19T06:37:53Z
 conversation:
+  - url: https://twitter.com/cssence/status/1141233622915174400
+    id: comment-0
+    text: "You could make assumptions about what your users want. Or you could just ask them.<br>[cssence.com/blog/2019-06-ask-the-user](/2019/ask-the-user/)"
+    posted: 2019-06-19T06:37:53Z
   - url: https://twitter.com/cssence/status/1141234646614794241
     text: "[As mentioned,] This happens to be a late follow-up blog post on this excellent article by [@rem](https://twitter.com/rem) [remysharp.com/2019/04/09/code-highlighting-server-or-client](https://remysharp.com/2019/04/09/code-highlighting-server-or-client)"
     posted: 2019-06-19T06:41:57Z
@@ -30,7 +31,7 @@ No. Instead, I considered an alternative to find a way out of the dilemma. Needl
 
 I could simply enhance an existing script that already defers loading of PrismJS, because what it does is check upfront if there are code blocks on a page, so even today the library will only be added to a page if needed. Many server-side fans commented in Remy’s poll that they did not like _flash of unstyled content (FOUC)._ Well, Highlighting on my blog does not cause any reflow by adding line numbers, nor do I use a handwriting font for comments or anything else that would. It only changes the text color, and I find those color flashes to be acceptable. Accessibility-wise I need to do a bit of research, simply hiding the toggle with `aria-hidden` crossed my mind, but that might not be ideal.
 
-<figure><img src="/2019/ask-the-user/syntax-highlighting.png" alt="This mockup shows how the enhancement could look like on this site."><figcaption>Running the script will add a syntax highlighting toggle on top of each code block.</figcaption></figure>
+<figure class="standout"><img src="/2019/ask-the-user/syntax-highlighting.png" alt="This mockup shows how the enhancement could look like on this site."><figcaption>Running the script will add a syntax highlighting toggle on top of each code block.</figcaption></figure>
 
 We could even go beyond a boolean toggle, and instead present a list of different color schemes to the user. E.g., one option that plays nicely with the colors of the blog, but also some schemes from popular <abbr title="Integrated Development Environment">IDE</abbr>s.
 

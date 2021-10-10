@@ -16,7 +16,9 @@ I’m a front-end web craftsman. I started when Netscape was in its prime; my fi
 
 In addition to prototyping in the browser, I focus on creating responsive sites and making them accessible for all kinds of humans, devices and connection speeds. Thanks to fewer browser inconsistences, I enjoy it more than ever.
 
-<figure class="portrait"><img src="/about/matt/photo.jpg" alt="Photo of Matthias Zöchling."><figcaption>This photo, taken in 2012, is part of my avatar image, where it is placed behind the CSSence logo.</figcaption></figure>
+<style media="screen">.standoff{margin-top:-6rem}</style>
+
+<figure class="standoff"><img src="/about/matt/photo.jpg" alt="Photo of Matthias Zöchling."><figcaption>This photo, taken in 2012, is part of my avatar image, where it is placed behind the CSSence logo.</figcaption></figure>
 
 ## Private life
 

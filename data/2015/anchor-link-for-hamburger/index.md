@@ -1,12 +1,11 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Plain Anchor Link for Hamburger"
 description: "I am considering to enhance my site’s navigation skip-link."
 published: 2015-10-15T20:06:00Z
 deprecatedUrl: /gossip/2015-10-15-anchor-link-for-hamburger
-syndication:
-  - url: https://twitter.com/cssence/status/654750231653806081
+origin: https://twitter.com/cssence/status/654750231653806081
 conversation:
   - url: https://twitter.com/codefashioned/status/654719432216875009
     text: "[@cssence](https://twitter.com/cssence)  A. Love how accessible [cssence.com](https://cssence.com/) is.  B. Hamburger menu that doesn’t open a slide-out/dropdown menu is confusing."

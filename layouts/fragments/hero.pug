@@ -1,6 +1,4 @@
-header.hero
+header
 	!= titleMarkdown
-	- const banner = {forHero: true, urlPath: urlPath, layout: layout, type: type, published: published, revised: revised}
+	- const banner = {urlPath: urlPath, layout: layout, type: type, thumbnail: thumbnail, published: published, revised: revised};
 	include banner
-	p.thumbnail.blend
-		img(src=thumbnail.url, alt="", aria-hidden="true")

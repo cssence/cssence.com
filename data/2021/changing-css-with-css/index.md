@@ -5,11 +5,12 @@ title: "Changing CSS with CSS?"
 description: "tl;dr pseudo styles are not really a thing."
 thumbnail: {type: image/png}
 published: 2021-01-27T07:52:13Z
-syndication:
-  - url: https://codepen.io/cssence/pen/MWjNZaj
-  - url: https://twitter.com/cssence/status/1354542417282801665
-    published: 2021-01-27T21:30:53Z
+codepen: https://codepen.io/cssence/pen/MWjNZaj
 conversation:
+  - url: https://twitter.com/cssence/status/1354542417282801665
+    id: comment-0
+    text: "“I woke up today wondering if I could add CSS code with CSS.”<br>[cssence.com/2021/changing-css-with-css](/2021/changing-css-with-css/)"
+    posted: 2021-01-27T21:30:53Z
   - url: https://twitter.com/cssence/status/1354547160977702915
     text: "I’m using ol’ trusty [@prismjs](https://twitter.com/prismjs) for syntax highlighting on my blog, and even it has troubles with my questionable early morning ideas."
     image:

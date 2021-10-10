@@ -6,12 +6,12 @@ description: "In one corner, we have die-hard NoScripters. And then there are �
 thumbnail: {type: image/jpeg}
 published: 2016-11-01T20:17:00Z
 deprecatedUrl: /blog/2016-11-the-javascript-wars
-syndication:
-  - url: https://medium.com/@cssence/the-javascript-wars-6852ff3de371
-    published: 2016-11-13T19:37:00Z
-  - url: https://twitter.com/cssence/status/794219334847660032
-    published: 2016-11-03T16:46:59Z
+deprecatedSyndication: {posted: 2016-11-13T19:37:00Z, url: https://medium.com/@cssence/the-javascript-wars-6852ff3de371}
 conversation:
+  - url: https://twitter.com/cssence/status/794219334847660032
+    id: comment-0
+    text: "The JavaScript Wars. [/2016-11-the-javascript-wars](/2016/the-javascript-wars/) #javascript #pwa"
+    posted: 2016-11-03T16:46:59Z
   - url: https://twitter.com/cssence/status/794668908875804673
     text: "A follow-up to [nolanlawson.com/2016/10/13/progressive-enhancement-isnt-dead-but-it-smells-funny](https://nolanlawson.com/2016/10/13/progressive-enhancement-isnt-dead-but-it-smells-funny/) by [@nolanlawson](https://twitter.com/nolanlawson)"
     posted: 2016-11-04T22:33:26Z
@@ -24,7 +24,7 @@ conversation:
     posted: 2016-11-13T09:57:37Z
   - url: https://twitter.com/k0deh4mst3r/status/797840749169639424
     text: "[@css](https://twitter.com/css) Hi there! That’s an amazing article really, informative, bitterly truthful &amp; awakening! In this scenario what one should do?!"
-    author: {url: https://twitter.com/k0deh4mst3r}
+    author: {url: https://twitter.com/k0deh4mst3r, name: "@k0deh4mst3r"}
     posted: 2016-11-13T16:37:12Z
   - url: https://medium.com/@alpha_hydrae/the-thing-is-the-web-is-competing-with-native-mobile-apps-now-b0b5de56c656
     text: "The thing is, the web is competing with native mobile apps now. It’s in the interest of web developers that the web isn’t falling behind and is instead growing. The competition with rich native apps and the growing expectations from users is why the javascript ecosystem is exploding."

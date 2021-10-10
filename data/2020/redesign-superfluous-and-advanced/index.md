@@ -5,25 +5,21 @@ title: "Re: Design - Superfluous and Advanced"
 description: "JavaScript. The optional enhancement."
 thumbnail: {url: /2020/redesign/index.png}
 published: 2020-11-20T21:40:00Z
-syndication:
+conversation:
   - url: https://twitter.com/cssence/status/1330096143758454786
-    published: 2020-11-21T10:30:07Z
+    id: comment-0
+    text: "Final Part of my Three Part Blog Series “The Basics of The Web”:<br>A letter of appreciation* to #JavaScript<br><br>* well, almost<br>[cssence.com/2020/redesign-superfluous-and-advanced](cssence.com/2020/redesign-superfluous-and-advanced)"
+    posted: 2020-11-21T10:30:07Z
 ---
 
 # Superfluous & Advanced
 ^ Redesign pt.3
 
-<div class="passage"><style>
-@media (min-width: 40em){.passage{display:grid;gap:0 1.75rem;grid-template-areas:'intro list' 'note note';grid-template-columns:1fr 1fr;align-items:start}}
-.passage ol{counter-reset:part;list-style-type:square;grid-area:list;margin-top:.5rem;padding:1.25rem .875rem .5rem;border:1px solid var(--color-bg-subtle);border-radius:var(--border-radius)}
-.passage li::before{counter-increment:part;content:"Part " counter(part) ": ";font-variant-numeric:lining-nums tabular-nums;font-weight:600}
-.passage p{grid-area:note}
-.passage style+p{grid-area:intro}
-</style>
+<div class="standoff metadata"><link rel="stylesheet" href="/2020/redesign/series.css">
 
 This is the Final Part of a <strong id="3-part-blog-series">Three Part Blog Series.</strong> Although the focus of this Editorial series is an in-depth look at the [latest redesign of this site](/2019/just-launch/), you may read these posts as letters of appreciation to the [Basics of the Web.](/2016/webdesign-basics/)
 
-<ol aria-labelledby="3-part-blog-series">
+<ol class="figure" aria-labelledby="3-part-blog-series">
 <li><a href="/2020/redesign-structure-and-semantics/">Structure &amp; Semantics</a></li>
 <li><a href="/2020/redesign-style-and-delight/">Style &amp; Delight</a></li>
 <li>Superfluous &amp; Advanced</li>

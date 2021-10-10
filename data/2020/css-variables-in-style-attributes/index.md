@@ -5,11 +5,12 @@ title: "CSS Variables in Style Attributes"
 description: "HTML for content, CSS for styling. What about the HTML style attribute?"
 thumbnail: {type: image/png}
 published: 2020-01-24T15:23:07Z
-syndication:
-  - url: https://codepen.io/cssence/pen/wvBOGjQ
-  - url: https://twitter.com/cssence/status/1220733127670345728
-    published: 2020-01-24T15:40:32Z
+codepen: https://codepen.io/cssence/pen/wvBOGjQ
 conversation:
+  - url: https://twitter.com/cssence/status/1220733127670345728
+    id: comment-0
+    text: "CSS Variables in Style Attributes: Based on [ishadeed.com/article/css-variables-inline-styles/](https://ishadeed.com/article/css-variables-inline-styles/) by [@shadeed9](https://twitter.com/shadeed9) and with a shoutout to [matuzo.at/blog/beyond-automatic-accessibility-testing…](https://matuzo.at/blog/beyond-automatic-accessibility-testing-6-things-i-check-on-every-website-i-build/) by [@mmatuzo](https://twitter.com/mmatuzo)<br>[cssence.com/2020/prevent-orphan-in-flexbox](/2020/prevent-orphan-in-flexbox/)"
+    posted: 2020-01-24T15:40:32Z
   - url: https://twitter.com/mmatuzo/status/1220735951787347968
     text: "[@cssence](https://twitter.com/cssence) Thanks for the shoutout! 🤗"
     author: {url: https://twitter.com/mmatuzo, name: "Manuel Matuzović"}

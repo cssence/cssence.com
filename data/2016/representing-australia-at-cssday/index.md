@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Representing Australia at @CSSDayConf"
 description: "Despite this being a joke, 🇦🇺 truly is my home away from home."
 published: 2016-06-14T09:00:54Z
-syndication:
-  - url: https://twitter.com/cssence/status/742642961696034816
+origin: https://twitter.com/cssence/status/742642961696034816
 conversation:
   - url: https://twitter.com/cssdayconf/status/736191043234828288
     text: "And we’ve just reached 300 attendees for this year! Check out who’s coming at [cssday.nl/2016/attendees](https://cssday.nl/2016/attendees)"

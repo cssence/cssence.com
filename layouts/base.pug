@@ -1,20 +1,22 @@
 doctype html
 html(lang="en", class=type)
-	- const titleNbspSafe = title.replace(/&nbsp;/g, ' ')
-	- const permalink = `${website.url}${urlPath}`
+	- const titleNbspSafe = title.replace(/&nbsp;/g, ' ');
+	- const permalink = `${website.url}${urlPath}`;
 	include helpers/mixins
 
-	head#top
+	head
 		meta(charset="utf-8")
 		meta(name="viewport", content="width=device-width,initial-scale=1")
-		include fragments/seo
+		title= `${titleNbspSafe}${urlPath === '/' ? '' : ' • CSSence.com'}`
+		meta(name="description", content!=description)
 		include fragments/styles
+		include fragments/seo
 		include fragments/manifest
-		script
-			include ../public/js/ctm.min.js
+		script(src="/assets/ctm.js")
 
-	body
+	body#top
 		main
-			block content
+			#{layout === 'index.pug' ? 'div' : 'article'}(aria-labelledby=(layout === 'index.pug' ? null : "content"))
+				block content
 		include fragments/navigation
 		include fragments/footer 

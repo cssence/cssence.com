@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Keep Sharing"
 description: "A case for blogging more frequently."
 published: 2020-11-26T10:41:41Z
-syndication:
-  - url: https://twitter.com/cssence/status/1331910993706962949
+origin: https://twitter.com/cssence/status/1331910993706962949
 conversation:
   - url: https://twitter.com/m_ott/status/1331691403051753474
     text: "People who make (and visit) websites!<br><br>What was/is your favorite personal site of the year? Or, did you launch or relaunch your own site in 2020?<br>🚀✨<br><br>Let me know!<br>👇"

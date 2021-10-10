@@ -1,0 +1,20 @@
+.standoff.metadata {
+	padding: .1875rem var(--padding-horizontal) 0 0;
+}
+.standoff.metadata ol {
+	counter-reset: part;
+	list-style-type: disc;
+	margin: 0 calc(-1* var(--padding-horizontal)) .75rem 0;
+}
+.standoff.metadata li {
+	margin-left: .875rem;
+}
+.standoff.metadata li::before {
+	counter-increment: part;
+	content: "Part " counter(part) ":\0a";
+	white-space: pre;
+	font-weight: 700;
+}
+.standoff.metadata li:last-child {
+	margin-bottom: 0;
+}

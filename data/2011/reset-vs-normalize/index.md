@@ -5,8 +5,7 @@ title: "Reset vs. Normalize"
 description: "How normalize.css differs from the traditional CSS reset."
 thumbnail: {type: image/png}
 published: 2011-07-17T21:55:12Z
-syndication:
-  - url: http://cssence.wordpress.com/2011/07/17/reset-vs-normalize/?draft
+origin: http://cssence.wordpress.com/2011/07/17/reset-vs-normalize/?draft
 ---
 
 # Reset vs. Normalize
@@ -20,7 +19,7 @@ So, instead of worrying about defaults, these days many web developers simply ov
 
 Over the years, reset.css has been tweaked, more directives have been added, most importantly because HTML5’s new elements and attributes [were desperate to join the party](http://html5doctor.com/html-5-reset-stylesheet/).
 
-<p class="blend"><img src="/2011/reset-vs-normalize/vs.png" alt=""></p>
+<p><img src="/2011/reset-vs-normalize/vs.png" alt=""></p>
 
 ## Normalization
 

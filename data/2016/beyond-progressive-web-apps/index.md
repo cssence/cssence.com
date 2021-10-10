@@ -6,12 +6,12 @@ description: "My personal thoughts in response to “Regressive Web Apps” by J
 thumbnail: {type: image/png}
 published: 2016-05-27T16:57:00Z
 deprecatedUrl: /blog/2016-05-beyond-progressive-web-apps
-syndication:
-  - url: https://medium.com/@cssence/beyond-progressive-web-apps-54eb2b1969e0
-    published: 2016-05-31T15:51:00Z
-  - url: https://twitter.com/cssence/status/736240598861160448
-    published: 2016-05-27T17:00:12Z
+deprecatedSyndication: {posted: 2016-05-31T15:51:00Z, url: https://medium.com/@cssence/beyond-progressive-web-apps-54eb2b1969e0}
 conversation:
+  - url: https://twitter.com/cssence/status/736240598861160448
+    id: comment-0
+    text: "Beyond Progressive Web Apps [cssence.com/blog/2016-05-beyond-progressive-web-apps](/2016/beyond-progressive-web-apps/)<br>A follow-up on [@adactio](https://twitter.com/adactio)’s Regressive Web Apps"
+    posted: 2016-05-27T17:00:12Z
   - url: https://adactio.com/links/10735
     text: "Matthias Beitl takes a stab at trying to tackle the tricky UI problem of exposing the URLs of Progressive Web Apps. [This stuff is hard](http://www.brucelawson.co.uk/2016/on-urls-in-progressive-web-apps/)."
     author: {url: https://adactio.com/about/, name: "Jeremy Keith"}
@@ -83,7 +83,7 @@ When I first saw Palm’s WebOS I was delighted. It did not last. Firefox&nbsp;O
 
 Having a BrowserOS in place, we no longer need criteria for Progressive Web Apps. Whatever you want to open, a website, a “web app,” an app, BrowserOS should simply open it for you. Hopefully without making too many assumptions when doing so.
 
-<figure><img src="/2016/beyond-progressive-web-apps/android.png" alt="The (hypothetical) state of web-versus-native on Android."><figcaption>The mockup on the right hand side shows a hypothetical Chrome browser on Android, where the address bar functionality slides in from the top. The screenshot on the left is a reminder that web and native already found a friendly way to coexist: The App Overview. <abbr title="By the way">BTW</abbr>, only one of the three, i.e.,&nbsp;Amazon Kindle, is an installed app.</figcaption></figure>
+<figure class="standout"><img src="/2016/beyond-progressive-web-apps/android.png" alt="The (hypothetical) state of web-versus-native on Android."><figcaption>The mockup on the right hand side shows a hypothetical Chrome browser on Android, where the address bar functionality slides in from the top. The screenshot on the left is a reminder that web and native already found a friendly way to coexist: The App Overview. <abbr title="By the way">BTW</abbr>, only one of the three, i.e.,&nbsp;Amazon Kindle, is an installed app.</figcaption></figure>
 
 Okay, full disclosure: I do not like apps. With every new mobile phone, first I have to install three to four additional apps. Then disable over a dozen of the preinstalled ones. (As a finishing touch, I disable all notifications, so [once again I agree with Jeremy](https://adactio.com/journal/8658), but that goes beyond the scope of this article.)
 

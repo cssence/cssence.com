@@ -1,13 +1,12 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "@cssence on @surge_sh"
 description: "I have transferred my website to a new host."
 published: 2015-10-20T15:07:00Z
 revised: 2015-10-20T18:28:00Z
 deprecatedUrl: /gossip/2015-10-20-cssence-on-surge
-syndication:
-  - url: https://twitter.com/cssence/status/656486923947626496
+origin: https://twitter.com/cssence/status/656486923947626496
 conversation:
   - url: https://twitter.com/cssence/status/656486923947626496
     text: "Zero bullshit indeed. Moved [cssence.com](https://cssence.com/) to [@surge_sh](https://twitter.com/surge_sh) a week ago. Now considering to publish all my sites there."

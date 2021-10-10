@@ -1,14 +1,13 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "The Human API"
 description: "Recommending “Conversational Design” by Erika Hall in times of Google Duplex."
 thumbnail: {type: image/png}
 published: 2018-06-25T18:31:49Z
 revised: 2018-06-25T19:45:43Z
 deprecatedUrl: /gossip/2018-06-25-the-human-api
-syndication:
-  - url: https://twitter.com/cssence/status/1011316044592533504
+origin: https://twitter.com/cssence/status/1011316044592533504
 conversation:
   - url: https://twitter.com/cssence/status/1011316044592533504
     text: "Now that Google Duplex is turning humans into APIs, you may want to re-read “Conversational Design” by [@mulegirl](https://twitter.com/mulegirl). If you haven’t read it yet, get it at [@abookapart](https://twitter.com/abookapart)."

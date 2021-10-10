@@ -6,9 +6,10 @@ description: "I have written a “Thank You” letter to the World Wide Web."
 thumbnail: {type: image/png}
 published: 2017-09-23T08:59:00Z
 deprecatedUrl: /about/being-online-for-20-years
-syndication:
+conversation:
   - url: https://twitter.com/cssence/status/1190232417271009281
-    published: 2019-11-01T11:41:36Z
+    text: "I've written my own #WebStory two years ago, glad to see there is finally a hashtag for this.<br>[cssence.com/about/being-online-for-20-years](/2017/being-online-for-20-years/)"
+    posted: 2019-11-01T11:41:36Z
 ---
 
 # Online for Twenty Years
@@ -26,7 +27,7 @@ What did not change is the fact that even back then you needed someone that got 
 
 Slowly but surely I managed to build my first site. We used URLs that looked like <tt>&#104;ttp://members.provider.tld/~user/</tt>, and anyone who stumbled upon my URL could access my content. My window to the world turned out to be no one-way street, I was able to contribute.
 
-<figure><img src="/2017/being-online-for-20-years/websites.png" alt="Screenshots of my website from the time when there was a tilde in the URL."><figcaption>In the last century, I changed the design of my website frequently, as I liked to play around with HTML. I used tables for layout (what else?) and the content was only available in German.</figcaption></figure>
+<figure class="standout"><img src="/2017/being-online-for-20-years/websites.png" alt="Screenshots of my website from the time when there was a tilde in the URL."><figcaption>In the last century, I changed the design of my website frequently, as I liked to play around with HTML. I used tables for layout (what else?) and the content was only available in German.</figcaption></figure>
 
 I did not stop there, learning JavaScript was soon to follow. A couple of years later CSS became a thing. But it all started with learning HTML.
 

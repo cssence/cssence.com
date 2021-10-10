@@ -1,8 +1,8 @@
 //- Warning: Index pages only have a subset of info stored in 'banner'
-p.banner(class=banner.forHero && !banner.published && 'print')
-	span.screen.visually-hidden= banner.published ? 'Published on ' : 'Last updated on '
+p
+	- const indicatorMap = {'index.pug': 'Index', 'internal.pug': 'Internal', 'c-code': 'Code', 'c-editorial': 'Editorial', 'c-essay': 'Essay', 'c-event': 'Event', 'c-note': 'Note'};
+	i= banner.urlPath === '/' ? 'Home' : (indicatorMap[banner.layout] || indicatorMap[banner.type])
+	br
 	+ts(banner.published || banner.revised)
-	span.screen.visually-hidden= '. Filed under '
-	- const indicatorMap = {'index.pug': 'Index', 'internal.pug': 'Internal', 'c-bookmark': 'Bookmark', 'c-code': 'Code', 'c-editorial': 'Editorial', 'c-essay': 'Essay', 'c-event': 'Event', 'c-opinion': 'Opinion'}
-	i.indicator(class=banner.type)= banner.urlPath === '/' ? 'Home' : (indicatorMap[banner.layout] || indicatorMap[banner.type])
-	span.screen.visually-hidden= '.'
+	br
+	img(src=banner.thumbnail.url, alt="")

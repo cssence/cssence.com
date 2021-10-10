@@ -1,12 +1,11 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Avoid Gatekeepers"
 description: "You should not need a particular browser or app to view content."
 thumbnail: {type: image/png}
 published: 2015-06-30T13:25:02Z
-syndication:
-  - url: https://twitter.com/cssence/status/615873681332543488
+origin: https://twitter.com/cssence/status/615873681332543488
 conversation:
   - url: https://twitter.com/cssence/status/615873681332543488
     text: "Best viewed with anything! We now have to come past the #Apple #Android shenanigans. #WebDesign"

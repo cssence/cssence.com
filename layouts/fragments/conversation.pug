@@ -1,9 +1,10 @@
-aside.conversation
-	h2.subtle#comments Comments
-		if conversation
-			= ` (${conversation.length})`
+aside
+	- const hasVisibleMessages = conversation ? conversation.filter((c) => c.id !== 'comment-0').length : 0;
+	h2#comments Comments
+		if hasVisibleMessages
+			= ` (${hasVisibleMessages})`
 	if conversation
 		include conversation-thread
-	else
+	if !hasVisibleMessages
 		p No comments have been added so far.
 	include conversation-join

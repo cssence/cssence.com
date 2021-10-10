@@ -1,14 +1,13 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Must-Have CSS Book"
 description: "Conversing with Lea Verou, author of “CSS Secrets”."
 thumbnail: {type: image/jpeg}
 published: 2015-11-22T17:23:00Z
 revised: 2015-11-24T08:31:21Z
 deprecatedUrl: /gossip/2015-11-22-must-have-css-book
-syndication:
-  - url: https://twitter.com/cssence/status/668488712414736384
+origin: https://twitter.com/cssence/status/668488712414736384
 conversation:
   - url: https://twitter.com/cssence/status/668488712414736384
     text: "Finished reading the magnificent [@csssecretsbook](https://twitter.com/csssecretsbook) - a gift from my girlfriend ♥ who added an inscription"

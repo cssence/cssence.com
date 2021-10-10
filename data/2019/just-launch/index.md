@@ -1,12 +1,11 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Just Launch!"
 description: "Indicating my latest redesign."
 thumbnail: {type: image/jpeg}
 published: 2019-11-23T19:51:21Z
-syndication:
-  - url: https://twitter.com/cssence/status/1198328198758621186
+origin: https://twitter.com/cssence/status/1198328198758621186
 conversation:
   - url: https://twitter.com/cssence/status/1198328198758621186
     text: "Deadlines are good. I’m currently redesigning my site and set the goal to be online before the first-ever [@wearewebclerks](https://twitter.com/wearewebclerks) conference. Otherwise I most likely would have ended up tinkering around forever. Instead, I just called it <em>Beta</em> and went live. [cssence.com]((https://cssence.com/)"

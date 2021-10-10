@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Publish in Multiple Venues"
 description: "You should own your own data. But you can also take the next step."
 published: 2015-07-09T05:34:16Z
-syndication:
-  - url: https://twitter.com/cssence/status/619016701091409920
+origin: https://twitter.com/cssence/status/619016701091409920
 conversation:
   - url: https://twitter.com/SaraSoueidan/status/618853637935251456
     text: "I still genuinely don’t understand why someone who has a blog would rather post an article on Medium instead."

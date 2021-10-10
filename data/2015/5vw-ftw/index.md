@@ -7,8 +7,7 @@ thumbnail: {type: image/png}
 published: 2015-09-23T15:18:00Z
 revised: 2017-09-08T04:40:00Z
 deprecatedUrl: /code/2015-09-23-5vw-ftw
-syndication:
-  - url: https://codepen.io/cssence/pen/YyGpXz
+codepen: https://codepen.io/cssence/pen/YyGpXz
 ---
 
 # 5vw FTW

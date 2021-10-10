@@ -1,7 +1,8 @@
 /* cssence.com codepen.io-enhancer */
 ((document) => {
 	'use strict';
-	const script = document.querySelector('script[src^="https://cssence.com/js/codepen"]');
+	const domain = 'https://cssence.com';
+	const script = document.querySelector(`script[src^="${domain}/"][src*="/codepen"]`);
 	const helpUrl = script.src.split('#')[1];
 	if (!helpUrl) {
 		console.warn('Added "Learn more" script without help URL.');
@@ -16,7 +17,7 @@
 	document.head.appendChild(style);
 	const anchor = document.createElement('a');
 	anchor.rel = 'help';
-	anchor.href = `https://cssence.com${helpUrl}`;
+	anchor.href = `${domain}${helpUrl}`;
 	anchor.target = '_blank';
 	anchor.textContent = 'Learn more';
 	document.body.appendChild(anchor);

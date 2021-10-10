@@ -1,13 +1,12 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Media Queries for Device Classes"
 description: "Reflecting on media query requirements with Obinwanne Hill."
 published: 2014-05-08T05:15:05Z
 revised: 2014-05-08T15:38:59Z
 deprecatedUrl: /gossip/2014-05-08-mediaqueries-for-device-classes
-syndication:
-  - url: https://twitter.com/cssence/status/464272254252363776
+origin: https://twitter.com/cssence/status/464272254252363776
 conversation:
   - url: https://twitter.com/cssence/status/464272254252363776
     text: "MediaQueries for device classes could be a thing. I’d rather go with input types, e.g. touch [@ObiHill](https://twitter.com/ObiHill) [polarb.com/176083](http://polarb.com/176083)"

@@ -6,9 +6,6 @@ description: "The forth iteration of our local developer meetup in Vienna."
 thumbnail: {type: image/png}
 published: 2016-06-28T19:12:55Z
 deprecatedUrl: /gossip/2016-06-28-visiting-viennahtml
-syndication:
-  - url: https://twitter.com/cssence/status/747870410436390912
-    published: 2016-06-28T19:12:55Z
 conversation:
   - url: https://twitter.com/cssence/status/747870410436390912
     text: "Inspiring talks earlier today at @ViennaHTML - need time to look into some of the stuff in more detail."

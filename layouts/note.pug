@@ -1,7 +1,7 @@
 extends internal.pug
 
 block article
-	.conversation
-		h2#comments.screen.visually-hidden Message thread
+	div
+		h2#comments.visually-hidden Message thread
 		include fragments/conversation-thread
 		include fragments/conversation-join

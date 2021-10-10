@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-bookmark
+type: c-note
 title: "Make the Future Awesome"
 description: "Mischa Andrews on innovation that comes from accessibility."
 published: 2018-09-27T05:49:11Z
-syndication:
-  - url: https://twitter.com/cssence/status/1045188583487934464
+origin: https://twitter.com/cssence/status/1045188583487934464
 conversation:
   - url: https://twitter.com/cssence/status/1045188583487934464
     text: "“A world where people manage tech, not where tech manages people.” [@MischaAndrews](https://twitter.com/MischaAndrews) [uxdesign.cc/future-tech-accessibility-e93600e8917e](https://uxdesign.cc/future-tech-accessibility-e93600e8917e)"

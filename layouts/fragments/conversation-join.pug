@@ -1,11 +1,12 @@
-section.screen
-	h3.subtle#contribute= conversation ? 'Join the conversation' : 'Start the conversation'
+section
+	- const thread = conversation || [];
+	- const threadHook = thread.filter((c) => c.id)[0] || thread.filter((c) => !c.author)[0];
+	- const threadLength = thread.length - (threadHook && threadHook.id === 'comment-0' ? 1 : 0);
+	h3#contribute= threadLength ? 'Join the conversation' : 'Start the conversation'
 	p
-		- const syndicationTwitter = syndication && syndication.filter((item) => item.url.includes('twitter'))[0]
-		- const commentUrlValue = syndicationTwitter ? syndicationTwitter.url.split('/').pop() : encodeURIComponent(`@cssence ${permalink} `)
-		a(href=`https://twitter.com/intent/tweet${syndicationTwitter ? '?in_reply_to=' : '?text='}${commentUrlValue}`) Have your say
+		- const commentUrlValue = threadHook ? threadHook.url.split('/').pop() : encodeURIComponent(`@cssence ${permalink} `)
+		a(href=`https://twitter.com/intent/tweet${threadHook ? '?in_reply_to=' : '?text='}${commentUrlValue}`) Have your say
 		= ' on Twitter, or simply '
 		- const shareUrlValue = encodeURIComponent(`“${titleNbspSafe}” ${permalink} by @cssence`)
-		- const sharePostTypeMap = {'c-bookmark': 'thread', 'c-opinion': 'thread', 'c-code': 'code example'}
-		a(href=`https://twitter.com/intent/tweet?text=${shareUrlValue}`)= `share this ${sharePostTypeMap[type] || 'article'}`
+		a(href=`https://twitter.com/intent/tweet?text=${shareUrlValue}`)= `share this ${layout === 'note.pug' ? 'thread' : 'article'}`
 		= '.'

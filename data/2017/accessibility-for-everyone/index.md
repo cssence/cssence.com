@@ -7,11 +7,12 @@ thumbnail: {type: image/jpeg}
 published: 2017-12-10T11:37:00Z
 revised: 2018-12-28T07:19:00Z
 deprecatedUrl: /blog/2017-12-accessibility-for-everyone
-syndication:
-  - url: https://medium.com/@cssence/accessibility-for-everyone-47c471d941e3
-    published: 2017-12-11T09:51:11Z
+deprecatedSyndication: {posted: 2017-12-11T09:51:11Z, url: https://medium.com/@cssence/accessibility-for-everyone-47c471d941e3}
+conversation:
   - url: https://twitter.com/cssence/status/939825792531484672
-    published: 2017-12-10T12:55:04Z
+    id: comment-0
+    text: "For me, 2017 turned out to be the year of accessibility. #web #a11y<br>[cssence.com/blog/2017-12-accessibility-for-everyone](/2017/accessibility-for-everyone/)"
+    posted: 2017-12-10T12:55:04Z
 ---
 
 # Accessibility for Everyone

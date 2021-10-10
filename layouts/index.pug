@@ -3,48 +3,49 @@ extends base.pug
 block content
 	include fragments/hero
 
-	- const isHome = urlPath === '/'
+	- const isHome = urlPath === '/';
 	block intro
-		.article
+		div
 			if isHome
-				.intro
-					style.page(media="screen", aria-hidden="true")
-						include ../public/css/home.min.css
-					!= contents
-			else
-				!= contents
+				style(media="screen", aria-hidden="true")
+					include ../public/assets/home.css
+			!= contents
 
-	if typeof latest === 'undefined' || (typeof latest === 'number' && latest > 0)
-		- let cards = getFilteredPosts(posts, urlPath)
-		- const numberOfPostsInCategory = cards.length
-		- const latestOnly = typeof latest === 'number' && numberOfPostsInCategory > latest
-		- if (latestOnly) cards = cards.slice(0, latest)
-		- if (urlPath === '/about/about/') cards.sort((a, b) => b.revised - a.revised)
+	each section in sections || [{}]
 		section.posts
-			h2(id=isHome ? 'latest' : 'overview')= (isHome || latestOnly) ? 'Latest posts' : 'All posts'
-				small.visually-hidden= ' (most recent first)'
-			include fragments/cards
-			if !isHome
-				p.screen
-					- const writtenForm = (n) => countLong[n] ? countLong[n].toLowerCase() : n
+
+			- let cards;
+			- const placement = section.posts;
+			- if (placement) cards = posts.filter((post) => placement.includes(post.urlPath));
+			- if (placement) cards.sort((a, b) => placement.indexOf(a.urlPath) - placement.indexOf(b.urlPath));
+			- if (!placement) cards = getFilteredPosts(posts, section.query || urlPath);
+			- const numberOfPostsInCategory = cards.length;
+			- const latestOnly = section.limit && numberOfPostsInCategory > section.limit;
+			- if (latestOnly) cards = cards.slice(0, section.limit);
+			- if (urlPath === '/about/about/') cards.sort((a, b) => b.revised - a.revised);
+			- var listLabel = section.id || 'overview';
+			h2(id=listLabel)= section.name || (latestOnly ? 'Latest posts' : 'All posts')
+			#{isHome || !section.id ? 'ul' : 'ol'}(role="list", aria-labelledby=listLabel)
+				each card in cards
+					li(class=card.type)
+						h3
+							a(href=card.urlPath)!= card.title
+						p!= card.description
+						- const banner = card;
+						include fragments/banner
+
+			if !section.id
+				p
+					- const writtenForm = (n) => countLong[n] ? countLong[n].toLowerCase() : n;
 					if latestOnly
-						= `The list above contains only the ${writtenForm(latest)} most recent entries.`
+						= `The list above contains only the ${writtenForm(section.limit)} most recent entries.`
 						= ` In this section alone, there are ${writtenForm(numberOfPostsInCategory)} blog posts, and there are other sections on this site.`
 					else
 						= `The list above contains ${writtenForm(numberOfPostsInCategory)} entries, but there are a lot more in other sections on this site.`
 					= ' To see what else is going on, you may want to head over to the '
-					a(href="/") #[strong Home] page
+					a(href="/") home page
 					= ' or browse using the '
 					a(href="#navigation") navigation
 					= ' below.'
-	if highlights
-		each highlight in highlights
-			section.posts
-				- const placement = highlight.posts
-				- const cards = posts.filter((post) => placement.includes(post.urlPath))
-				- cards.sort((a, b) => placement.indexOf(a.urlPath) - placement.indexOf(b.urlPath))
-				h2(id=highlight.id)= highlight.name
-				- const orderedCards = highlight.id !== 'featured'
-				include fragments/cards
 
 	include fragments/metadata

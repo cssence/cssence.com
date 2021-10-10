@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Tabs Over Spaces Over Tabs"
 description: "Even though Remy Sharp’s poll allows you to vote for “Spaces” only."
 published: 2017-10-12T13:57:45Z
-syndication:
-  - url: https://twitter.com/cssence/status/918475782577586176
+origin: https://twitter.com/cssence/status/918475782577586176
 conversation:
   - url: https://twitter.com/rem/status/918455401196261376
     text: "I think this is important, so I’ve put together [a poll](https://twitter.com/rem/status/918455401196261376) so I know, once and for all, which is right: tabs…or spaces?"

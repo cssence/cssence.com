@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "Skipping Skip Links"
 description: "“Start with the content”, says Vasilis van Gemert."
 published: 2021-03-09T12:37:48Z
-syndication:
-  - url: https://twitter.com/cssence/status/1346404847734706177
+origin: https://twitter.com/cssence/status/1346404847734706177
 conversation:
   - url: https://twitter.com/SaraSoueidan/status/1368927415506964481
     text: "“I would propose to skip skip links. It makes much more sense to start each page with the content people expect on that page. And if you really need navigation […] you can add it in the footer. Which is the correct place for metadata anyway.” –[@vasilis](https://twitter.com/vasilis)<br><br>[vasilis.nl/nerd/skipping-skip-links/](https://vasilis.nl/nerd/skipping-skip-links/)"

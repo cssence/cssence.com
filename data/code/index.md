@@ -3,8 +3,8 @@ layout: index.pug
 type: c-code
 title: "Code Snippets"
 description: "The web development playground: Latest blog posts from the category “Code”."
-thumbnail: {type: image/jpeg}
-latest: 10
+sections:
+  - limit: 10
 ---
 
 # Code Snippets

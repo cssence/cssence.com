@@ -7,9 +7,6 @@ thumbnail: {type: image/jpeg}
 published: 2016-06-17T17:43:00Z
 revised: 2016-12-06T21:52:00Z
 deprecatedUrl: /about/2016-06-cssday
-syndication:
-  - url: https://twitter.com/cssence/status/743834022258872320
-    published: 2016-06-17T15:53:45Z
 conversation:
   - url: https://twitter.com/cssence/status/743686720290361345
     text: "Actual #CSSDay, yay! <abbr title=\"By the way\">Btw</abbr>, thanks [@CSSDayConf](https://twitter.com/cssdayconf) for the matching color scheme #coincidence"
@@ -78,6 +75,14 @@ conversation:
     text: "[@cssence](https://twitter.com/cssence) [@CSSDayConf](https://twitter.com/cssdayconf) if it has not loaded you would get the fallback color."
     author: {url: https://twitter.com/svgeesus, name: "Chris Lilley"}
     posted: 2016-06-17T14:40:17Z
+  - url: https://twitter.com/cssence/status/743834022258872320
+    id: comment-17
+    text: "Epic #cssday, really raised the bar. Find today’s slide decks under [cssence.com/about/2016-06-cssday](/2016/cssday/)"
+    posted: 2016-06-17T15:53:45Z
+  - url: https://twitter.com/rvanderelst/status/743838087713783808
+    text: "Thanks! 😄"
+    author: {url: https://twitter.com/rvanderelst, name: "Robert van der Elst"}
+    posted: 2016-06-17T16:09:54Z
 ---
 
 # CSS Day

@@ -3,7 +3,7 @@ layout: internal.pug
 type: c-about
 title: "Privacy"
 description: "This page contains the Privacy Policy and a Legal Notice. You have been warned."
-revised: 2018-12-30T09:50:00Z
+revised: 2021-09-26T22:10:00Z
 ---
 
 # Mandatory Information
@@ -30,8 +30,9 @@ Content under [creative commons (CC BY 4.0)](https://creativecommons.org/license
 
 **Published by:**  
 Matthias Zöchling  
-Goettweiger Str 19  
-3121 Karlstetten, Austria
+Göttweiger Straße 19  
+3121 Karlstetten  
+Austria
 
 You can contact the author [Matt](/about/matt/) via e-mail, the address is  
 _legal (at) this domain_.

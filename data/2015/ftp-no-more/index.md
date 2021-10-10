@@ -1,12 +1,11 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "FTP No More"
 description: "Thanks to @surge_sh I can bid farewell to FTP."
 published: 2015-06-10T13:19:06Z
 revised: 2015-06-10T18:11:35Z
-syndication:
-  - url: https://twitter.com/cssence/status/608624429657153536
+origin: https://twitter.com/cssence/status/608624429657153536
 conversation:
   - url: https://twitter.com/cssence/status/608624429657153536
     text: "Although I’m old enough to remember FTP, I’m glad I no longer have to deal with it. Thank you [@surge_sh](https://twitter.com/surge_sh)"

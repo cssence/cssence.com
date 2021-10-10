@@ -6,11 +6,10 @@ description: "Turns out there are multiple ways to maintain aspect ratio nowaday
 thumbnail: {type: image/png}
 published: 2018-01-21T12:56:00Z
 deprecatedUrl: /code/2018-01-21-maintaining-aspect-ratio-with-css-grid
-syndication:
-  - url: https://codepen.io/cssence/pen/BJMwwN
+codepen: https://codepen.io/cssence/pen/BJMwwN
 conversation:
   - url: https://medium.com/@cssence/thanks-noam-for-the-inspiring-idea-it-gave-me-the-opportunity-to-explore-additional-options-f939f8ac10c1
-    text: "Thanks Noam for the inspiring idea, it gave me the opportunity to explore additional options. While turning this into pure CSS by using generated content for the SVG (similar to what Chris did), I ran into some additional quirks such as the need to add line-height:0 for certain browsers, but all in all, it works.<br><br>[cssence.com/code/2018-01-21-maintaining-aspect-ratio-with-css-grid](https://cssence.com/2018/maintaining-aspect-ratio-with-css-grid)"
+    text: "Thanks Noam for the inspiring idea, it gave me the opportunity to explore additional options. While turning this into pure CSS by using generated content for the SVG (similar to what Chris did), I ran into some additional quirks such as the need to add <code>line-height:0</code> for certain browsers, but all in all, it works.<br><br>[cssence.com/code/2018-01-21-maintaining-aspect-ratio-with-css-grid](https://cssence.com/2018/maintaining-aspect-ratio-with-css-grid)"
     posted: 2018-01-21T16:45:47Z
   - url: https://medium.com/@realnoam/glad-to-see-the-idea-generate-more-creative-stuff-44508994a399
     text: "Glad to see the idea generate more creative stuff!"

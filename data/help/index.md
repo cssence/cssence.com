@@ -10,9 +10,11 @@ revised: 2020-04-25T03:55:00Z
 # Help
 ^ I need somebody.
 
+<style>kbd{display:inline-block;padding:.625rem;border:.0625rem solid;border-bottom-width:.125rem;border-radius:.25rem;line-height:0}</style>
+
 ## Access Keys
 
-Access keys are used on this site to reach specific pages or page areas with keyboard shortcuts. Depending on the operating system, assistive technology and web browser you use, you might need to combine these access keys with modifier keys. But the basic keys are these.
+Access keys are used on this site to reach specific pages or page areas with keyboard shortcuts. Depending on your operating system, web browser, and assistive technology, you might need to combine these access keys with modifier keys. But the basic keys are these.
 
 - <kbd>1</kbd>: Open the home page.
 - <kbd>2</kbd>: Open the “Articles” overview.

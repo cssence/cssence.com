@@ -3,8 +3,8 @@ layout: index.pug
 type: c-essay
 title: "Essays"
 description: "The classic CSSence weblog: Latest blog posts from the category “Essay”."
-thumbnail: {type: image/jpeg}
-latest: 10
+sections:
+  - limit: 10
 ---
 
 # Essays

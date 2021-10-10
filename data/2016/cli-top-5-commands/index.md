@@ -1,12 +1,11 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "CLI Top 5 Commands"
 description: "Responding to Remy Sharp in regards to the Command Line."
 published: 2016-06-03T06:32:58Z
 deprecatedUrl: /gossip/2016-06-03-cli-top-5-commands
-syndication:
-  - url: https://twitter.com/cssence/status/738619467500904448
+origin: https://twitter.com/cssence/status/738619467500904448
 conversation:
   - url: https://twitter.com/rem/status/738456631781040129
     text: "My top 5 from <code>history|awk '{print $2}'|sort|uniq -c|sort -n</code> is: git, npm, ls, cd, curl. What's your? (also, sorry, boring, eh?)"

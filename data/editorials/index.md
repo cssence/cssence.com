@@ -3,8 +3,8 @@ layout: index.pug
 type: c-editorial
 title: "Editorials"
 description: "Behind the scenes: Latest blog posts from the category “Editorials”."
-thumbnail: {type: image/jpeg}
-latest: 10
+sections:
+  - limit: 10
 ---
 
 # Editorials

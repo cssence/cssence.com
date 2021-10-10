@@ -6,10 +6,12 @@ description: "Forget Mobile First. Providing Styles for Print should be your fir
 thumbnail: {type: image/jpeg}
 published: 2015-09-16T06:43:00Z
 deprecatedUrl: /blog/2015-09-print-first
-syndication:
-  - url: https://medium.com/@cssence/print-first-ef5806ba9989
+origin: https://medium.com/@cssence/print-first-ef5806ba9989
+conversation:
   - url: https://twitter.com/cssence/status/654399313011937280
-    published: 2015-10-14T20:52:09Z
+    id: comment-0
+    text: "Forget Mobile First. Print First! #CSS #WebDesign [cssence.com/blog/2015-09-print-first](/2015/print-first/)"
+    posted: 2015-10-14T20:52:09Z
 ---
 
 # Print First

@@ -6,8 +6,7 @@ description: "Exploring the differences between em and rem."
 summary: "Explore the differences between em and rem. The em unit has been with us for a long time, see what rem — brought to you by CSS3 — adds to the relative measurement arena."
 thumbnail: {type: image/png}
 published: 2011-05-26T13:05:39Z
-syndication:
-  - url: http://cssence.wordpress.com/2011/05/26/rem-root-em-a-unit-introduced-with-css3/
+origin: http://cssence.wordpress.com/2011/05/26/rem-root-em-a-unit-introduced-with-css3/
 ---
 
 # rem (Root Em), a Unit Introduced With CSS3
@@ -16,7 +15,7 @@ One of the most important files on my laptop at home and at the office is the ha
 
 A couple of days ago, [for reasons unknown](http://www.subzin.com/quotes/Futurama%3A+Into+the+Wild+Green+Yonder/For+reasons+unknown), the term `rem` on the last page of said document caught my eye.
 
-<p class="blend"><img src="/2011/rem-root-em-a-unit-introduced-with-css3/cheat-sheet.png" alt="Rem unit on CSS3 cheat sheet"></p>
+<p class="standout"><img src="/2011/rem-root-em-a-unit-introduced-with-css3/cheat-sheet.png" alt="Rem unit on CSS3 cheat sheet"></p>
 
 ## Relative measurement
 
@@ -40,7 +39,7 @@ So what? Mathematics 101, why not specify `pre { font-size: 0.86667em }` in orde
 
 ## Nested elements
 
-<p class="blend"><img src="/2011/rem-root-em-a-unit-introduced-with-css3/nested-elements.png" alt="Nested elements, using unordered lists as an example."></p>
+<p class="invert"><img src="/2011/rem-root-em-a-unit-introduced-with-css3/nested-elements.png" alt="Nested elements, using unordered lists as an example."></p>
 
 The basic advantage of the rem unit is that for nested elements the font size is no longer decreased or increased <span lang="la">ad infinitum</span>. For example, if you apply a font size of 0.9em to list items, this will give you a font size of 0.81em (0.9 times 0.9, or 90% of 90%) at the second depth level. And so on.
 
@@ -50,7 +49,7 @@ Thanks to **rem**, instead of a) resetting the font size, as in `li li { font-si
 
 Today, using relative measurements is the norm in web design, and that applies not just for font sizes. But especially with font sizes, you’ll be glad having used relative values the very moment your client comes up with the requirement to implement a JavaScript font size selector.
 
-<p class="blend"><img src="/2011/rem-root-em-a-unit-introduced-with-css3/font-size-selector.png" alt="Javascript font size selector."></p>
+<p><img src="/2011/rem-root-em-a-unit-introduced-with-css3/font-size-selector.png" alt="Javascript font size selector."></p>
 
 With nothing but relative values in place, simply adjust the base font size of the `html` element, and all other elements will follow suit. Granted, this is possible with `em`s as well, but with `rem`s it got even easier.
 

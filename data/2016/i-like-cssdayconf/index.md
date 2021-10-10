@@ -1,11 +1,10 @@
 ---
 layout: note.pug
-type: c-opinion
+type: c-note
 title: "I Like @CSSDayConf"
 description: "Reminding Peter-Paul Koch about his own creation."
 published: 2016-07-18T15:26:03Z
-syndication:
-  - url: https://twitter.com/cssence/status/755061074022506496
+origin: https://twitter.com/cssence/status/755061074022506496
 conversation:
   - url: https://twitter.com/ppk/status/755004022810087424
     text: "Please help me make a list of good grass-roots European front-end conferences. Which one(s) do you like in particular?"

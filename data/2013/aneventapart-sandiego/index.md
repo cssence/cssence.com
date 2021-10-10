@@ -6,9 +6,6 @@ description: "After Seattle 2012, I’m at another An Event Apart, but this time
 thumbnail: {type: image/jpeg}
 published: 2013-05-20T17:19:47Z
 revised: 2013-05-23T00:10:42Z
-syndication:
-  - url: https://twitter.com/cssence/status/336531713427652610
-    published: 2013-05-20T17:19:47Z
 conversation:
   - url: https://twitter.com/cssence/status/336531713427652610
     text: "Live at An Event Apart, responsive all over #AEASD"
