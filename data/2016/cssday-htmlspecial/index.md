@@ -17,8 +17,8 @@ conversation:
   - url: https://twitter.com/malabooboo/status/743350430550241280
     text: "#CSSday starts off with a great history lesson of our industry by [@adactio](https://twitter.com/adactio)"
     image:
-      url: https://pbs.twimg.com/media/ClDpRcPVEAIM5w2.jpg
-      credit: {author: {name: "Tim Malabuyo"}}
+      url: /2016/cssday-htmlspecial/interview.jpg
+      credit: {name: "Tim Malabuyo", origin: https://pbs.twimg.com/media/ClDpRcPVEAIM5w2.jpg, via: "Twitter"}
       alt: "Ruben Bos interviewing Jeremy Keith."
     author: {url: https://twitter.com/malabooboo, name: "Tim Malabuyo"}
     posted: 2016-06-16T07:52:08Z
@@ -28,7 +28,7 @@ conversation:
   - url: https://twitter.com/cssence/status/743355614823276544
     text: "“Scripts ruin everything!!!” [@yoavweiss](https://twitter.com/yoavweiss) #CSSDay"
     image:
-      url: https://pbs.twimg.com/media/ClDt8xLVEAQFXUO.jpg
+      url: /2016/cssday-htmlspecial/scripts-ruin-everything.jpg
       alt: "Yoav Weiss opines on JavaScript in his talk."
     posted: 2016-06-16T08:24:11Z
   - url: https://twitter.com/789789789_h/status/743359783302926337
@@ -52,7 +52,7 @@ conversation:
   - url: https://twitter.com/cssence/status/743368244594020353
     text: "Gorgeous venue #CSSDay [@Compagnietheate](https://twitter.com/Compagnietheate)"
     image:
-      url: https://pbs.twimg.com/media/ClD5b0aVAAAm-Ic.jpg
+      url: /2016/cssday-htmlspecial/venue.jpg
       alt: "The event takes place at Compagnietheater. Through a top-floor window, you look directly at beautiful houses and one of Amsterdam’s many canals."
     posted: 2016-06-16T09:02:55Z
   - url: https://twitter.com/cssence/status/743402513290887168

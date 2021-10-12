@@ -11,7 +11,7 @@ conversation:
   - url: https://twitter.com/cssence/status/743686720290361345
     text: "Actual #CSSDay, yay! <abbr title=\"By the way\">Btw</abbr>, thanks [@CSSDayConf](https://twitter.com/cssdayconf) for the matching color scheme #coincidence"
     image:
-      url: https://pbs.twimg.com/media/ClIbIMYUkAAeH4w.jpg
+      url: /2016/cssday/badge.jpg
       alt: "This year’s #CSSDay name badges come in purple, so mine blends in nicely with my CSSence logo."
     posted: 2016-06-17T06:08:25Z
   - url: https://twitter.com/rvanderelst/status/743690478525124608
@@ -21,8 +21,8 @@ conversation:
   - url: https://twitter.com/jmulfiw/status/743702470958841856
     text: "Kicking off 2. day of #CSSDay with [@csswizardry](https://twitter.com/csswizardry) and just 116 slides! 😳"
     image:
-      url: https://pbs.twimg.com/media/ClIpcfNUkAADZYl.jpg
-      credit: {author: {name: "Ulf Walter-Laufs"}}
+      url: /2016/cssday/audience.jpg
+      credit: {name: "Ulf Walter-Laufs", origin: https://pbs.twimg.com/media/ClIpcfNUkAADZYl.jpg, via: "Twitter"}
       alt: "The audience is waiting for Harry Roberts to start his talk."
     author: {url: https://twitter.com/jmulfiw, name: "Ulf Walter-Laufs"}
     posted: 2016-06-17T07:11:01Z
@@ -45,13 +45,13 @@ conversation:
   - url: https://twitter.com/cssence/status/743719812732379137
     text: "Best bug ever. #a11y Firefox flex-box tab order #CSSDay"
     image:
-      url: https://pbs.twimg.com/media/ClI5MpcVYAAhxrr.jpg
+      url: /2016/cssday/firefox-bug.jpg
       alt: "Léonie Watson explaining that Firefox treats the CSS order property not in the same way as other browsers."
     posted: 2016-06-17T08:19:55Z
   - url: https://twitter.com/cssence/status/743732430868090880
     text: "In case you meet your #web hero, say “Hi!” #CSSDay"
     image:
-      url: https://pbs.twimg.com/media/ClJEnmkUYAAP1mE.jpg
+      url: /2016/cssday/jeremy-keith-matthias-beitl.jpg
       alt: "Yours truly together with web legend Jeremy Keith. While I’ve seen him at other conferences before, this time I actually talked to him."
     posted: 2016-06-17T09:10:04Z
   - url: https://twitter.com/cssence/status/743733022390788096

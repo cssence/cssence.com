@@ -12,7 +12,7 @@ conversation:
   - url: https://twitter.com/cssence/status/725220493721227265
     text: "Chrome choice based on serviceworker? [@adactio](https://twitter.com/adactio) already made it into my search bar /cc&nbsp;[@jaffathecake](https://twitter.com/jaffathecake)"
     image:
-      url: https://pbs.twimg.com/media/ChCAMgMW0AASGKm.jpg
+      url: /2016/opensearch-xml-file/address-bar-suggestions.png
       alt: "The address bar in my Chrome browser offers the ability to limit searches to Jeremy Keith’s website."
     posted: 2016-04-27T07:10:14Z
   - url: https://twitter.com/jaffathecake/status/725224947447140352

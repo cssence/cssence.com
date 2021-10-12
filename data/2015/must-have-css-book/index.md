@@ -12,8 +12,8 @@ conversation:
   - url: https://twitter.com/cssence/status/668488712414736384
     text: "Finished reading the magnificent [@csssecretsbook](https://twitter.com/csssecretsbook) - a gift from my girlfriend ♥ who added an inscription"
     image:
-      url: https://pbs.twimg.com/media/CUby8OzWsAAYyv-.jpg
-      alt: "My girlfriend bought me Lea Verou’s book and she drew something on the first page, were only the two of us know what is means."
+      url: /2015/must-have-css-book/book-inscription.jpg
+      alt: "My girlfriend bought me Lea Verou’s book and she drew something on the first page, were only the two of us know what it means."
     posted: 2015-11-22T17:58:23Z
   - url: https://twitter.com/LeaVerou/status/668957885229957120
     text: "[@cssence](https://twitter.com/cssence) Awwww, that is so cute!! Your <abbr title=\"girlfriend\">gf</abbr> has good taste 🙂<br>Now that you finished, please consider leaving an Amazon review?"

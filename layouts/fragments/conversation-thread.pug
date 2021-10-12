@@ -28,9 +28,11 @@ each message in conversation
 					!= text
 			if message.image
 				p
-					img(src=message.image.url, alt=message.image.alt)
+					img(src=message.image.url, data-origin=message.image.remoteUrl, alt=message.image.alt)
 					if message.image.credit
-						- const credit = message.image.credit;
-						include credit
+						small.credit
+							= ` — Image by ${message.image.credit.name} `
+							a(href=message.image.credit.origin)= `(Source: ${message.image.credit.via})`
+
 		else
 			p Legal or technical reasons may be the cause.

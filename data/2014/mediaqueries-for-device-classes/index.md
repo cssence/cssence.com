@@ -12,8 +12,7 @@ conversation:
     text: "MediaQueries for device classes could be a thing. I’d rather go with input types, e.g. touch [@ObiHill](https://twitter.com/ObiHill) [polarb.com/176083](http://polarb.com/176083)"
     image:
       url: /2014/mediaqueries-for-device-classes/polarb.jpg
-      remoteUrl: http://polls-polarb-com.a.ssl.fastly.net/000/176/083/176083-1-large-e8b02d362919a9b4.jpg
-      credit: {author: {name: "Obinwanne Hill"}, via: {url: http://polarb.com/, name: "Polar Polls"}}
+      credit: {name: "Obinwanne Hill", origin: http://polls-polarb-com.a.ssl.fastly.net/000/176/083/176083-1-large-e8b02d362919a9b4.jpg, via: "Polar Polls"}
       alt: "How about media queries to target specific types of devices? Currently we try to figure out which device it is by querying height and width, which is probably as bad as trying to identify browsers by parsing user agent string."
     posted: 2014-05-08T05:15:05Z
   - url: https://twitter.com/ObiHill/status/464393932869468160

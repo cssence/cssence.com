@@ -13,13 +13,13 @@ conversation:
     id: comment-2
     text: "First conference on home turf. First conference as a married man. Let’s do this.<br>[@wearewebclerks](https://twitter.com/wearewebclerks) #webclerks"
     image:
-      url: https://pbs.twimg.com/media/EKNBpopWsAAf1Qc?format=jpg&name=large
+      url: /2019/we-are-web-clerks/badge.jpg
       alt: "Just picked up my conference badge on location. Urania, Vienna, Austria."
     posted: 2019-11-25T08:00:39Z
   - url: https://twitter.com/cssence/status/1198879299710914560
     text: "Press Esc to stop coffee. 😛<br>[@wearewebclerks](https://twitter.com/wearewebclerks) #webclerks"
     image:
-      url: https://pbs.twimg.com/media/EKNGXOyXkAArfqx?format=jpg&name=medium
+      url: /2019/we-are-web-clerks/coffee-machine.jpg
       alt: "The coffee machines at the conference may have been designed by a developer."
     posted: 2019-11-25T08:21:13Z
   - url: https://twitter.com/cssence/status/1198889344565727232
@@ -31,7 +31,7 @@ conversation:
   - url: https://twitter.com/cssence/status/1198912184614563840
     text: "Ha! Just realized I’m wearing my “Pluto being kicked out as a planet” T-shirt at <span lang=\"de\">Urania Sternwarte. </span>#webclerks #coincidence"
     image:
-      url: https://pbs.twimg.com/media/EKNkRUdXUAA4VPL?format=jpg&name=large
+      url: /2019/we-are-web-clerks/t-shirt.jpg
       alt: "Wearing a shirt with planets on it. How fitting."
     posted: 2019-11-25T10:31:54Z
   - url: https://twitter.com/cssence/status/1198916997666480128
@@ -64,7 +64,7 @@ conversation:
   - url: https://twitter.com/cssence/status/1199033658683904000
     text: "And that’s a wrap. Thanks to all the speakers, and especially everyone at [@wearewebclerks](https://twitter.com/wearewebclerks) for putting Vienna on the map and making this web conference a reality. 💙"
     image:
-      url: https://pbs.twimg.com/media/EKPSwE9WoAEBkfq?format=jpg&name=large
+      url: /2019/we-are-web-clerks/vienna.jpg
       alt: "Viennese city lights right out side the conference venue. Some Christmas decoration already in place."
     posted: 2019-11-25T18:34:35Z
   - url: https://twitter.com/cssence/status/1199209784874094592

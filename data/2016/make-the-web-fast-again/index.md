@@ -11,8 +11,8 @@ conversation:
   - url: https://twitter.com/cssence/status/799667921614053376
     text: "Thank you [@surge_sh](https://twitter.com/surge_sh) for helping me achieve these #PageSpeed results."
     image:
-      url: https://pbs.twimg.com/media/Cxj9ZtQWIAAaRn3.jpg
-      alt: "Testing the performance of my website by using a service provided by google delivered really good results."
+      url: /2016/make-the-web-fast-again/page-speed-insights.png
+      alt: "Testing the performance of my website by using a service provided by Google delivered really good results."
     posted: 2016-11-18T17:37:44Z
 ---
 
