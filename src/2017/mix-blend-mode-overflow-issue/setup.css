@@ -1,0 +1,7 @@
+.parent {
+	position: fixed;
+	overflow: scroll;
+}
+.child {
+	mix-blend-mode: overlay;
+}

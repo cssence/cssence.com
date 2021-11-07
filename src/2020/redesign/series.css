@@ -1,0 +1,22 @@
+.standoff ol {
+	counter-reset: part;
+	list-style-type: disc;
+	margin: 0 0 .75rem 0;
+}
+@media (max-width: 39em) {
+	.standoff ol {
+		margin-right: calc(-1* var(--padding-horizontal));
+	}
+}
+.standoff li {
+	margin-left: .875rem;
+}
+.standoff li::before {
+	counter-increment: part;
+	content: "Part " counter(part) ":\0a";
+	white-space: pre;
+	font-weight: 700;
+}
+.standoff li:last-child {
+	margin-bottom: 0;
+}

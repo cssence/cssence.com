@@ -1,0 +1,3 @@
+[style*='--url-thumbnail'] {
+	background-image: var(--url-thumbnail);
+}

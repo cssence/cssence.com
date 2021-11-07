@@ -1,0 +1,4 @@
+input:checked + span::before {
+	border-width: 1em 0 1em 2em;
+	border-style: solid;
+}

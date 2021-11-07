@@ -1,0 +1,6 @@
+.multi-background-button {
+	background:
+		url(image-1.png) no-repeat left center,
+		url(image-2.png) no-repeat right center,
+		url(image-bg.png) repeat-x center center;
+}

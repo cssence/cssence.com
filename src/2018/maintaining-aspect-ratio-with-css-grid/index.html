@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="c-code" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<title>Maintaining Aspect Ratio with CSS&nbsp;Grid</title>
+<meta name="description" content="Turns out there are multiple ways to maintain aspect ratio nowadays.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/BJMwwN" title="Code example on codepen.io">
+<script type="module" src="/dev/browser.mjs"></script>
+</head>
+<body id="top">
+<main>
+<article aria-labelledby="content">
+<header>
+<h1 id="content">Maintaining Aspect Ratio with CSS&nbsp;Grid</h1>
+<p>With the help of an empty SVG</p>
+<p><i>Code</i><br><time>2018-01-21T12:56:00Z</time><br><img src="/2018/maintaining-aspect-ratio-with-css-grid/index.png" alt=""></p>
+</header>
+<div>
+<p>Yesterday <a href="https://medium.com/@realnoam/keeping-aspect-ratio-with-html-and-no-padding-tricks-40705656808b">this Medium post</a> by <a href="https://twitter.com/realnoam">Noam Rosenthal</a> was brought to my attention when <a href="https://twitter.com/Real_CSS_Tricks/status/954760435860873216">CSS Tricks called it</a> a <q cite="https://twitter.com/Real_CSS_Tricks/status/954760435860873216">clever aspect-ratio trick that involves using an inline SVG with a viewBox to push out the size, and CSS Grid to overlay the content.</q></p>
+<p>Before Noam came up with this neat idea, the <a href="https://css-tricks.com/aspect-ratio-boxes/">percentage padding hack</a> was the only way to maintain the aspect ratio of anything but images. He on the other hand put an empty inline SVG in charge of maintaining the aspect ratio. Clever indeed! But in his solution, the SVG was part of the HTML, which is why I started playing around with it a bit more. I wanted to find out if it could all be done in CSS. Looking at some unused code in his <a href="https://codepen.io/noamr/pen/mpamVN">Pen</a>, I think Noam already tried to achieve something similar.</p>
+<p>So here we go. When generating <code>::before</code> and <code>::after</code> pseudo-elements, we need the <code>content</code> CSS property. You probably know that this property <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/content">can also take a URL value,</a> so we can turn the SVG into a data URI. Doing so without any base64 encoding, we end up with some still readable code. If you take a close look on the <code>viewBox</code> attribute in the example below, you’ll notice the we are going to use this example to maintain a 16:9 aspect ratio. Need another aspect ratio? Simply adjust the <code>viewBox</code> attribute.</p>
+<pre><code class="language-css">.container::before {
+    content: url(&quot;data:image/svg+xml,%3Csvg viewBox=&#39;0 0 16 9&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39;%3E%3C/svg%3E&quot;);
+}</code></pre>
+<p>Using these lines, I’ve been able to rewrite Noam’s example so that the SVG is no longer part of the HTML. If you kept up with CSS Grid, i.e. the work of <a href="https://twitter.com/rachelandrew">Rachel Andrew</a> and <a href="https://twitter.com/jensimmons">Jen Simmons,</a> you know that generated content pseudo-elements are treated as grid items. So now, if I simply use the <code>::before</code> pseudo-element, I can put the actual content on top of the generated SVG in the same way Noam did.</p>
+<h2 id="encore">Encore</h2>
+<p>Having done that, I asked myself why not use the original percentage-based approach, but with CSS Grid instead of absolute positioning? So I ended up adding <a href="https://codepen.io/cssence/pen/BJMwwN">all three approaches for easy comparison on CodePen.</a></p>
+<h2 id="now-what">Now what?</h2>
+<p>I’d argue that the original approach will still be around for a little while, but it is good to have alternatives.</p>
+<ul>
+<li>Keep using the Percentage-Padding method for better control on how to handle the <code>overflow</code>.</li>
+<li>Use the SVG method if applying <code>position: relative</code> to your container is not an option, e.g. if your content has children that need to break out in a special way.</li>
+<li>Do some testing before using the CSS Grid + Percentage-Padding method, as there seem to be cross-browser issues. I’ve seen inconsistencies in Firefox and Safari, hopefully I’ll find the time to investigate further.</li>
+</ul>
+<p>While researching for this example, I found a number of interesting articles <a href="https://ramenhog.com/blog/2017/05/09/experiments-in-fixed-aspect-ratios">on the subject.</a> Maybe at some point we might no longer need hacks and we’ll be able to <a href="https://www.bram.us/2017/06/16/aspect-ratios-in-css-are-a-hack/">maintain aspect ratios directly in CSS.</a></p>
+</div>
+<aside aria-labelledby="comments">
+<h2 id="comments">Comments</h2>
+<article aria-labelledby="comment-1">
+<h3 id="comment-1"><a rel="me author" href="https://twitter.com/cssence">Matthias Beitl</a> wrote on <time>2018-01-21T16:45:47Z</time></h3>
+<p>Thanks Noam for the inspiring idea, it gave me the opportunity to explore additional options. While turning this into pure CSS by using generated content for the SVG (similar to what Chris did), I ran into some additional quirks such as the need to add <code>line-height:0</code> for certain browsers, but all in all, it works.<br><br><a href="https://cssence.com/2018/maintaining-aspect-ratio-with-css-grid">cssence.com/code/2018-01-21-maintaining-aspect-ratio-with-css-grid</a></p>
+</article>
+<article aria-labelledby="comment-2">
+<h3 id="comment-2"><a rel="author" href="https://medium.com/@realnoam">Noam Rosenthal</a> wrote on <a href="https://medium.com/@realnoam/glad-to-see-the-idea-generate-more-creative-stuff-44508994a399"><time>2018-01-21T21:01:00Z</time></a></h3>
+<p>Glad to see the idea generate more creative stuff!</p>
+</article>
+<article aria-labelledby="comment-3" data-unavailable="technical">
+<h3 id="comment-3">Comment 3 is unavailable</h3>
+<p>Legal or technical reasons may be the cause.</p>
+</article>
+<article aria-labelledby="comment-4">
+<h3 id="comment-4"><a rel="me author" href="https://twitter.com/cssence">Matthias Beitl</a> wrote on <time>2018-01-22T13:15:50Z</time></h3>
+<p>You are right, it does matter, in the sense that the whole thing is somehow constrained (otherwise it gets unnecessarily large for demonstration purposes). Nevertheless, even if you remove the body width or specify a width for each container individually you should end up with 16:9 content boxes.</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>

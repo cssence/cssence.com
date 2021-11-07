@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html class="c-editorial" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<title>Re: Design - Structure and Semantics</title>
+<meta name="description" content="URLs and HTML. The foundation of every website.">
+<script type="module" src="/dev/browser.mjs"></script>
+</head>
+<body id="top">
+<main>
+<article aria-labelledby="content">
+<header>
+<h1 id="content">Structure &amp; Semantics</h1>
+<p>Redesign pt.1</p>
+<p><i>Editorial</i><br><time data-revised="2020-07-01T21:47:00Z">2020-05-14T19:27:00Z</time><br><img src="/2020/redesign/index.png" alt=""></p>
+</header>
+<div>
+<aside class="standoff metadata" aria-labelledby="3-part-blog-series">
+<link rel="stylesheet" media="screen" href="/2020/redesign/series.css">
+<p>This is Part One of a <strong id="3-part-blog-series">Three Part Blog Series.</strong> Although the focus of this Editorial series is an in-depth look at the <a href="/2019/just-launch/">latest redesign of this site</a>, you may read these posts as letters of appreciation to the <a href="/2016/webdesign-basics/">Basics of the Web.</a></p>
+<ol class="figure" aria-labelledby="3-part-blog-series">
+<li>Structure &amp; Semantics</li>
+<li><a href="/2020/redesign-style-and-delight/">Style &amp; Delight</a></li>
+<li><a href="/2020/redesign-superfluous-and-advanced/">Superfluous &amp; Advanced</a></li>
+</ol>
+<p>The order of the three parts is not random, I wrote about the most important part first. While I did kick off the redesign of this site with a launch in late 2019, it has since turned into an ongoing incremental journey. But the structure and semantics&#8202;&mdash;&#8202;mainly URLs and HTML&#8202;&mdash;&#8202;won’t change a lot anymore, if at all.</p>
+</aside>
+<h2 id="it-all-starts-with-urls">It all starts with URLs</h2>
+<p>Like I said years ago, in the aftermath of my <a href="/2016/the-javascript-wars/">JavaScript Wars essay:</a></p>
+<blockquote>
+<p>There is another building block for the web, one that is more important than HTML, CSS and JavaScript combined. It all starts with URLs.</p>
+</blockquote>
+<p>While my latest redesign did include lots of visual changes, the even bigger part has been a complete reorganisation of the content. Before the change, my posts were split up into the sections they belonged to, i.e. all essays have been served under <code>/blog</code>, while my tweets were located under <code>/gossip</code>. These folder names have also been used to serve the index pages, <a href="https://adactio.com/journal/1197">nice hackable URLs.</a> But this approach wasn’t very flexible, and sometimes the lines between those sections were blurry.</p>
+<p>After a lot of back and forth, I decided to use the year as the top-most (and only) way to structure the content. The URLs are still hackable, so <code>/2020</code> lists <a href="/2020/">posts from the year 2020.</a> But years are just one type of index, I still have <a href="#navigation">sections</a>, even though I’m using new names. Then and now, sections list only the ten most recent posts. Contrary to that, the year-based index pages show all posts of that year, so the redesign neatly solved my <em>I need an archive</em> issue.</p>
+<h3 id="link-rot">Link rot</h3>
+<p><q>Link rot is the entropy of the web,</q> says Jeremy Keith, and he <a href="http://longbets.org/601/">even bet on it.</a> People don’t live forever, nature has four seasons, there is always decay, which is a good thing. But when it comes to URLs, I think we have an obligation to keep them alive as long as possible and feasible.</p>
+<p>Somewhere out there, web sites are still linking to my posts using those now deprecated URLs. This includes links in content I myself have created, but on other services that are out of my control, mainly Twitter. As I cannot update my tweets, old links to my site would reach <a href="/404/">a dead end.</a> Luckily there are <em>redirects,</em> and thanks to my host <a href="https://www.netlify.com/">Netlify</a> I have an easy way to specify them, so old URLs remain intact. For example, my aforementioned »JavaScript Wars« essay can still be reached via the no longer used URL <code>/blog/2016-11-the-javascript-wars</code>; the browser gets instructions to forward the request to <code>/2016/the-javascript-wars</code>.</p>
+<p>But enough about URLs.</p>
+<h2 id="html">HTML</h2>
+<p>None of them fancy <em>Single Page Applications (SPA)</em> would exist without at least a mouthful of HTML. SPAs typically give you an empty container, only to put a script in charge of getting your content. This site is no SPA, each request delivers a full page. FYI, that makes sense for a web log. Ah yes, the content, this is where it starts to get interesting.</p>
+<h3 id="heading-level-one">Heading level one</h3>
+<p><a href="https://exclusive-design.vasilis.nl/more-death-to-more-bullshit/">»More death to more bullshit«</a>, a chapter in Vasilis van Gemert’s thesis »Exclusive Design«, has been my inspiration to try out something that websites did in the last century, but at some point stopped doing.</p>
+<blockquote>
+<p>Almost all webpages start with a navigation with all kinds of links that try to convince you to go to another page. If you think about this for a minute it sounds ridiculous. Why would you want to start a webpage with pointing people in other directions when they just followed a link to this specific page?</p>
+</blockquote>
+<p>He argues that we should get our priorities straight, which I did. Now every page on this site starts right with the content, specifically with the page title.</p>
+<p>As I will show you in <a href="/2020/redesign-style-and-delight">part 2</a> of this series, this is not just about placing the navigation and other things further down, only to mess with source order later, using styles to rearrange content. No. I’ll let you know how I still got something that visually looks like a classic web site header.</p>
+<p>Starting with the content means there is no need for skip links. I did add some, but they might not even count. They are at the end of each page and always visible. They take you back to the top or other places on the current page.</p>
+<h3 id="solved-issues">Solved issues</h3>
+<p>Every so often, I encounter tweets that say something like <q>it is 2020 and there are still blog posts that do not show the <strong>date of publication.</strong></q> <a href="https://twitter.com/brucel/status/1265577433199267840">(Most prominently, Sara and Bruce told me so.)</a> Well, that was something <a href="/2016/redesign/">my 2016 redesign</a> didn’t properly take care of. All my pages did show when they were published and/or last updated, but the information was placed after the page content, together with other metadata. I’ve decided to duplicate the date, so I can also show it up top, where it is more common.</p>
+<p>Last but not least, I’ve added a proper heading (level 3) to each individual <strong>comment</strong>, a shortcoming I wasn’t even aware of, and ensured that all headings have unique IDs, so they can serve as anchor link targets.</p>
+<h3 id="in-closing">In closing</h3>
+<p>To get a really good grasp how each page is marked up, you should look at my site without any styles applied. You may have your own way to accomplish this, but this will even become a feature when I find the time to add this to my <a href="/settings/">Settings</a> page.</p>
+<figure class="standout invert"><img src="/2020/redesign-structure-and-semantics/x-ray.png" alt="The Inspector tab of Firefox’s developer tools, with some elements inside document body expanded.">
+<figcaption>These are the outermost HTML elements of this page. Also depicted in this screenshot: One of the few <code>&lt;div&gt;</code> elements, never more than five per page.</figcaption>
+</figure>
+</div>
+<aside aria-labelledby="comments">
+<h2 id="comments">Comments</h2>
+<article aria-labelledby="comment-0" hidden>
+<h3 id="comment-0"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1261184022144847872"><time>2020-05-15T06:37:57Z</time></a></h3>
+<p>Part One of my Three Part Blog Series “The Basics of The Web”:<br>A letter of appreciation to #HTML<br><a href="/2020/redesign-structure-and-semantics/">cssence.com/2020/redesign-structure-and-semantics</a></p>
+</article>
+<article aria-labelledby="comment-1">
+<h3 id="comment-1"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1261219566266527749"><time>2020-05-15T08:59:11Z</time></a></h3>
+<p>Now that all pages on my site start right with the content, as hinted in <a href="https://twitter.com/vasilis">@vasilis</a>’ thesis “Exclusive Design”, I wonder: People relying on assistive technology, did you get so used to website crap that not having to bypass a header/navigation with a lot of links seems weird? #a11y</p>
+</article>
+<article aria-labelledby="comment-2">
+<h3 id="comment-2"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1261220031054123008"><time>2020-05-15T09:01:02Z</time></a></h3>
+<p>Maybe that’s a question I should ask the expert <a href="https://twitter.com/LeonieWatson">@LeonieWatson</a> directly…<br><a href="https://twitter.com/cssence/status/1261219566266527749">twitter.com/cssence/status/1261219566266527749</a><br>#HTML #a11y</p>
+</article>
+<article aria-labelledby="comment-3">
+<h3 id="comment-3"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1261346286835511296"><time>2020-05-15T17:22:44Z</time></a></h3>
+<p>I’ve already mentioned it in the article, but to reiterate: <a href="https://twitter.com/netlify">@netlify</a> redirects are *chef’s kiss*</p>
+</article>
+<article aria-labelledby="comment-4">
+<h3 id="comment-4"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1265588600885968898"><time>2020-05-27T10:20:10Z</time></a></h3>
+<p>Yes! This is the kind of tweet I wanted to link to when I wrote [this].<br>I’ve updated the article to include the Sara&Bruce™ reference.<br><a href="https://twitter.com/brucel/status/1265577433199267840">twitter.com/brucel/status/1265577433199267840</a></p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>

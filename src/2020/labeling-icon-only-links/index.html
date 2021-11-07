@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class="c-note" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<title>Labeling Icon-Only Links</title>
+<meta name="description" content="My response to “Accessible SVG Icons” on CSS-Tricks.">
+<link rel="alternate" type="text/html" href="https://css-tricks.com/accessible-svg-icons" title="Thread on css-tricks.com">
+<script type="module" src="/dev/browser.mjs"></script>
+</head>
+<body id="top">
+<main>
+<article aria-labelledby="content">
+<header>
+<h1 id="content">Labeling Icon-Only Links</h1>
+<p>A response to <a href="https://css-tricks.com/accessible-svg-icons/">“Accessible SVG Icons” on CSS-Tricks.</a></p>
+<p><i>Note</i><br><time>2020-12-29T19:00:19Z</time></p>
+</header>
+<div>
+<h2 class="visually-hidden" id="comments">Message thread</h2>
+<article aria-labelledby="comment-1">
+<h3 id="comment-1"><span>Barry</span> wrote on <a href="https://css-tricks.com/accessible-svg-icons/#comment-1766740"><time>2020-12-29T09:21:40Z</time></a></h3>
+<p>Is there any difference between:<br><code>&lt;a href=&quot;/&quot; aria-label=&quot;Good Label&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; … &gt;&lt;/svg&gt;&lt;/a&gt;</code><br>and<br><code>&lt;a href=&quot;/&quot;&gt;&lt;svg aria-label=&quot;Good Label&quot; role=&quot;img&quot; … &gt;&lt;/svg&gt;&lt;/a&gt;</code><br><br>And why not use <code>&lt;title&gt;</code> in this case?</p>
+</article>
+<article aria-labelledby="comment-2">
+<h3 id="comment-2"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://css-tricks.com/accessible-svg-icons/#comment-1766761"><time>2020-12-29T19:00:19Z</time></a></h3>
+<p>In theory they are the same, see <a href="https://html5accessibility.com/stuff/2020/11/07/not-so-short-note-on-aria-label-usage-big-table-edition/">html5accessibility.com/stuff/2020/11/07/not-so-short-note-on-aria-label-usage-big-table-edition/,</a> but …<br><br>… the second form is more verbose in VoiceOver, because SVG with aria-label is announced as a group, so rather go with aria-label on the link.</p>
+</article>
+</div>
+</article>
+</main>
+</body>
+</html>

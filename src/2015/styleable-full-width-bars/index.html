@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="c-code" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<title>Style-able Full-Width Bars</title>
+<meta name="description" content="Full-width backgrounds on individual regions, without additional elements.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/oXVpWj" title="Code example on codepen.io">
+<script type="module" src="/dev/browser.mjs"></script>
+</head>
+<body id="top">
+<main>
+<article aria-labelledby="content">
+<header>
+<h1 id="content">Style-able Full-Width Bars</h1>
+<p><i>Code</i><br><time data-revised="2015-08-16T11:35:13Z">2015-08-10T11:40:10Z</time><br><img src="/2015/styleable-full-width-bars/index.png" alt=""></p>
+</header>
+<div>
+<p>There are many ways to align page text in a centered column while still being able to apply full-width backgrounds on individual regions. How about one without the need for additional elements?</p>
+<p>Instead of creating a centered  <code>.container</code> like this …</p>
+<pre><code class="language-css">.parent.container {
+  width: 32em;
+  margin: 0 auto;
+}</code></pre>
+<p>…, which then contains one or more children breaking out from center so you can apply a full-width background on them, let us add <code>.container</code> to every child. These children now no longer need a parent and you can use <code>padding</code> instead. To make this work we let <code>calc()</code> do the magic.</p>
+<pre><code class="language-css">.orphan.container {
+  padding: 0 calc(50% - 16em); /* ½ of desired width, e.g. for 32em we have to use 16em */
+}</code></pre>
+<p>Good to know:</p>
+<ul>
+<li>Requires no nested elements just for adding style hooks.</li>
+<li>The actual width is not specified anywhere but implied, see padding.</li>
+<li>Does not (need to) work in combination with min/max-width.</li>
+<li>Does <strong>not</strong> cause an accidental horizontal scrollbar.</li>
+</ul>
+<p>So much for the overall concept. Make sure to check out the result where I added some media query goodness.</p>
+</div>
+<aside aria-labelledby="comments">
+<h2 id="comments">Comments</h2>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>

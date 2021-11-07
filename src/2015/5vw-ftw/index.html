@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html class="c-code" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<title>5vw FTW</title>
+<meta name="description" content="The fastest way to cater for designs that do not scale well below 320px.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/YyGpXz" title="Code example on codepen.io">
+<script type="module" src="/dev/browser.mjs"></script>
+</head>
+<body id="top">
+<main>
+<article aria-labelledby="content">
+<header>
+<h1 id="content">5vw FTW</h1>
+<p><i>Code</i><br><time data-revised="2017-09-08T04:40:00Z">2015-09-23T15:18:00Z</time><br><img src="/2015/5vw-ftw/index.png" alt=""></p>
+</header>
+<div>
+<p>320 is the lowest number of pixels web developers usually look after when it comes to page width, but there are devices out there with even lower resolutions, e.g. 240. Below 320, unless you are using minimum or fixed width, your text might reflow just fine. But it could look weird. If so, instead of doing nothing, why not simply add …</p>
+<pre><code class="language-css">@media (max-width: 19.95em) {
+  html {
+    font-size: 5vw;
+  }
+}</code></pre>
+<p>The above works under the assumption that your web page comes with a font-size of 16px on the root element, and every other element will use a relative unit like <code>em</code> or <code>rem</code>. Multiply 19.95 by 16 and you get roughly 319px, this is what we need for the media query.</p>
+<p>By doing all this, <a href="https://css-tricks.com/viewport-sized-typography/">using a font-size of 5vw</a> for everything up to 320px will scale down your 320px layout to lower resolutions without reflowing text.</p>
+<p>As always, test your design on actual devices that have such a low resolution, to ensure your text is still readable. It is worth pointing out that using the raw viewpoint unit on <code>font-size</code> disables zoom, which is bad for accessibility. But for a specific edge case like this one I’d say it’s a quick win.</p>
+</div>
+<aside aria-labelledby="comments">
+<h2 id="comments">Comments</h2>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>

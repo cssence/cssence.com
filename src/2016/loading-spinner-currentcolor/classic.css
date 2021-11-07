@@ -1,0 +1,24 @@
+@keyframes rotation {
+	to { transform: rotate(1turn); }
+}
+.loading {
+	display: block;
+	position: relative;
+	padding-top: 4.25em;
+	color: rgba(0,0,0,.5);
+	text-align: center;
+}
+.loading::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	height: 4em;
+	width: 4em;
+	margin-left: -2em;
+	border: .375em solid currentColor;
+	border-right-color: rgba(0,0,0,.8);
+	border-radius: 50%;
+	animation: rotation .8s linear infinite;
+}

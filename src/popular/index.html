@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html class="c-default" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<title>Popular Posts</title>
+<meta name="description" content="Popularity contest: Most read, most controversial, or simply handpicked by the author.">
+<script type="module" src="/dev/browser.mjs"></script>
+</head>
+<body id="top">
+<main>
+<div>
+<header>
+<h1 id="content">Popular Posts</h1>
+<p>The popularity contest on CSSence.com</p>
+<p><i>Index</i><br><time>2021-10-03T21:20:00Z</time><br><img src="/popular/index.jpg" alt=""></p>
+</header>
+<div>
+<p>Why not do rankings? Here are the <a href="#most-read">most read</a> and the <a href="#most-controversial">most controversial</a> posts from this site; and also some of <a href="#featured">my favorites.</a></p>
+<style media="screen">.posts li::before{position:absolute;left:5rem;top:0;line-height:1}
+.posts li:nth-child(1)::before{content:"🥇"}
+.posts li:nth-child(2)::before{content:"🥈"}
+.posts li:nth-child(3)::before{content:"🥉"}
+</style>
+</div>
+<section class="posts">
+<h2 id="featured">Featured posts</h2>
+<ol role="list" aria-labelledby="featured">
+<!--
+	/2020/css-variables-in-style-attributes/
+	/2019/just-launch/
+	/2017/accessibility-for-everyone/
+-->
+</ol>
+</section>
+<section class="posts">
+<h2 id="most-read">Most read posts</h2>
+<ol role="list" aria-labelledby="most-read">
+<!--
+	/2018/maintaining-aspect-ratio-with-css-grid/
+	/2016/the-javascript-wars/
+	/2017/mix-blend-mode-overflow-issue/
+-->
+</ol>
+</section>
+<section class="posts">
+<h2 id="most-controversial">Most controversial posts</h2>
+<ol role="list" aria-labelledby="most-controversial">
+<!--
+	/2016/beyond-progressive-web-apps/
+	/2018/no-webfont-no-cry/
+	/2019/leaving-social-sites/
+-->
+</ol>
+</section>
+</div>
+</main>
+</body>
+</html>

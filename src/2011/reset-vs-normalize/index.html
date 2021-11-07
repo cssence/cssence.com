@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html class="c-essay" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<title>Reset vs. Normalize</title>
+<meta name="description" content="How normalize.css differs from the traditional CSS reset.">
+<link rel="alternate" type="text/html" href="http://cssence.wordpress.com/2011/07/17/reset-vs-normalize/?draft" title="Article on cssence.wordpress.com">
+<script type="module" src="/dev/browser.mjs"></script>
+</head>
+<body id="top">
+<main>
+<article aria-labelledby="content">
+<header>
+<h1 id="content">Reset vs. Normalize</h1>
+<p>Switching to normalize.css</p>
+<p><i>Essay</i><br><time>2011-07-17T21:55:12Z</time><br><img src="/2011/reset-vs-normalize/index.png" alt=""></p>
+</header>
+<div>
+<h2 id="its-all-your-default">It’s all your (de)fault</h2>
+<p>Browsers have a default way of rendering when it comes to presenting HTML to their audience. That’s why we see bullets on unordered lists in case no style sheet is applied. Needless to say, looking at this default in various browsers, the result looks slightly different. In order to iron out browser inconsistencies, web developers got rid of these defaults, e.g. by using <a href="http://developer.yahoo.com/yui/reset/">CSS reset</a>, something Eric Meyer <a href="http://meyerweb.com/eric/thoughts/2004/09/15/emreallyem-undoing-htmlcss/">came up with in 2004</a>.</p>
+<p>So, instead of worrying about defaults, these days many web developers simply override them and build their styles on top of <em>CSS reset</em>. As do I. In fact, the lines of code from the original reset.css have been an inspiration when designing the background for the header logo of this weblog.</p>
+<p>Over the years, reset.css has been tweaked, more directives have been added, most importantly because HTML5’s new elements and attributes <a href="http://html5doctor.com/html-5-reset-stylesheet/">were desperate to join the party</a>.</p>
+<p><img src="/2011/reset-vs-normalize/vs.png" alt=""></p>
+<h2 id="normalization">Normalization</h2>
+<p>Not too long ago, overriding defaults got challenged. The predator being normalization. How does it differ from the brute force method of resetting all defaults? Well, the approach is more gentle. The goal of normalization is to make use of meaningful defaults. Therefore, normalization targets anomalies in certain browsers and provides a fix, in order to achieve a consistent default.</p>
+<p>Or, to quote <a href="http://necolas.github.com/normalize.css/">the normalize.css website</a>:</p>
+<blockquote>
+<p>Normalize.css is a customisable CSS file that makes browsers render all elements more consistently and in line with modern standards. We researched the differences between default browser styles in order to precisely target only the styles that need normalizing.</p>
+</blockquote>
+<p>When I first looked at normalize.css, the attention to detail that has been woven into it immediately meet the eye. On top of it, browser-specific features have been documented really well.</p>
+<h3 id="pros">Pros</h3>
+<ul>
+<li>In tools like Firebug you’ll see fewer overrides of overrides.</li>
+<li>Fewer overrides lead to better performance (but these differences might be minuscule).</li>
+</ul>
+<h3 id="cons">Cons</h3>
+<ul>
+<li>Even minified it is way bigger than reset.css.</li>
+<li>Does not validate out of the box, with all the included Internet Explorer hacks.</li>
+</ul>
+<p>I’m already using normalize.css for my most recent projects. I hesitated at first, but when <a href="http://html5boilerplate.com">HTML5boilerplate</a> switched from reset to normalization, I was All Systems Go. <em>Course laid in, captain!</em></p>
+<h2 id="how-to-end-up-with-valid-css">How to end up with valid CSS?</h2>
+<p>Depending on the how you aid Internet Explorer, you can either 1. extract all hacks from normalize.css and put it in a separate file you include with conditional comments, or 2. replace underscore hack and star hack with <a href="/2011/farewell-css-hacks/">IE specific classes</a>.</p>
+<p>To clarify: In the first approach, you’ll move all invalid CSS to an additional file only IE users will get. So the second file does not validate, since the hacks are still there.</p>
+<p>I myself use a combination of both approaches. I do not want to send IE specific crap to users of standard compliant browsers, and I have no troubles penalizing IE users with an additional HTTP request. In case you are wondering, yes, I’m aware of the issues that might come with those conditional comments.</p>
+<h2 id="no-copypaste">No copy/paste</h2>
+<p>No matter what technique you’ll end up with, both files - reset.css and normalize.css - are not meant to be copied and pasted. If you really want to do it well, you have to extract only the parts you’ll need for your site. Although it takes lots of effort, in doing so you only deliver CSS data to your client that is actually needed.</p>
+<p>In the meantime, I’ll be thinking about whether or not to update the background of my main logo.</p>
+</div>
+<aside aria-labelledby="comments">
+<h2 id="comments">Comments</h2>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>

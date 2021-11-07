@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="c-code" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<title>Breakpoints for Print</title>
+<meta name="description" content="A media query test page for web browsers.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/ExKeZOR" title="Code example on codepen.io">
+<script type="module" src="/dev/browser.mjs"></script>
+</head>
+<body id="top">
+<main>
+<article aria-labelledby="content">
+<header>
+<h1 id="content">Breakpoints for Print</h1>
+<p>A cross-browser nightmare</p>
+<p><i>Code</i><br><time data-revised="2020-09-18T19:05:30Z">2020-09-17T18:32:12Z</time><br><img src="/2020/breakpoints-for-print/index.png" alt=""></p>
+</header>
+<div>
+<p>When was the last time you had to debug print styles? I ran into issues with media queries. This is not about <code>@media print</code> (which works as intended), but more specifically about responsive breakpoints.</p>
+<p>If you are here for the tl;dr, I made a test page for web browsers, so you may want to <a href="#showcase">jump over the bullet points</a> and check it out. Maybe you too find it useful. As browsers hopefully improve over time, I myself will revisit this for further investigation.</p>
+<h2 id="takeaways">Takeaways</h2>
+<p>On screen, using media queries to switch things around at certain breakpoints or depending on orientation works like a charm. Doing the same for print is a different story. It would be a long story, so let me give you the main takeaways instead.</p>
+<ul>
+<li><strong>No JS <code>matchMedia</code>.</strong> The only thing browsers seem to agree on is the complete lack of JavaScript support in print. Fair enough, it’s hard to send content to paper if it keeps changing. But between screen and print there is the printer dialog purgatory, where you can still make choices, so keep in mind: Whatever <code>matchMedia</code> detected on screen will be sent to the print preview. If you make adjustments in print preview, e.g. choosing a different paper size, the JS media queries won’t be reevaluated.</li>
+<li>CSS media queries on the other hand work just fine in print preview, unless the browser’s name is Safari, but I’ll get to that.</li>
+</ul>
+<p>Now that we are in CSS-only land, what follows is a list of strategies, ordered by importance. I’d suggest you only read the first item in the list.</p>
+<ol>
+<li><strong>Avoid breakpoints altogether.</strong> At the time of writing, there is no cross-browser way to achieve anything meaningful.</li>
+<li><strong>Stick with <code>orientation</code> only.</strong> If you need different layouts for portrait and landscape, e.g. you want to adjust the number of columns, fine. But remember, Safari will be tied to the <code>screen</code> orientation, which is usually landscape, so plan ahead to prevent an undesired result.</li>
+</ol>
+<p>There should have been a third strategy on how you may actually use breakpoints with caution, but thanks to a bug in Chrome (and Chromium Edge) there is no such thing. If you add <code>min-width</code> or <code>max-width</code> media queries, things work fine for <code>px</code> and other absolute units on your screen. But Chrome is unable to replicate this behavior in print. Initially I thought this is due to not including the margin of the page, but the problem occurs no matter what the margin is set to. It used to work in Edge, but as they switched to Chromium, they picked up the bug too.</p>
+<figure class="standout invert"><img src="/2020/breakpoints-for-print/comparison.png" alt="Firefox and old Edge get it right, whereas Chrome and new Edge have a bug.">
+<figcaption>Comparing the print output of different browsers. Chrome’s shortcoming has been highlighted, where media queries should match, but they only do on screen, not on print.</figcaption>
+</figure>
+<h2 id="additional-observations">Additional observations</h2>
+<ul>
+<li>Embedding stylesheets with <code>media=&quot;print&quot;</code> or putting your styles inside <code>@media print</code> works, but doesn’t magically improve things. Even this way Safari won’t make it to the party.</li>
+<li>You may use the <code>@page</code> rule to align the default page margin across non-Safari browsers.</li>
+<li>No browser supports <code>@page</code> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@page">descriptors.</a> However, you could add declarations like <code>size</code> today to be future-friendly.</li>
+</ul>
+<p>Despite lots of testing, there is a chance I got something wrong, so why don’t you head over to my test page on CodePen and try it out yourself.</p>
+</div>
+<aside aria-labelledby="comments">
+<h2 id="comments">Comments</h2>
+<article aria-labelledby="comment-0" hidden>
+<h3 id="comment-0"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1307969397227769857"><time>2020-09-21T09:06:19Z</time></a></h3>
+<p>Who is using #CSS media query breakpoints in print styles? I did, so you don’t have to.<br><a href="/2020/breakpoints-for-print/">cssence.com/2020/breakpoints-for-print</a></p>
+</article>
+<article aria-labelledby="comment-1">
+<h3 id="comment-1"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1308632357365317633"><time>2020-09-23T05:00:41Z</time></a></h3>
+<p>Working on this piece reminded me of my first encounter with <a href="https://twitter.com/mmatuzo">@mmatuzo</a> in 2016, a conversation on Medium, where we concluded that we share a fondness for print styles. 🖨</p>
+</article>
+<article aria-labelledby="comment-2">
+<h3 id="comment-2"><a rel="author" href="https://twitter.com/mmatuzo">Manuel Matuzović</a> wrote on <a href="https://twitter.com/mmatuzo/status/1308640121214906368"><time>2020-09-23T05:31:32Z</time></a></h3>
+<p><a href="https://twitter.com/cssence">@cssence</a> Print styles 💜</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,7 @@
+/* place print styles outside of any query */
+@media screen {
+	/* generic screen styles here */
+}
+@media screen and (min-width: …) {
+	/* add breakpoint-specific styles */
+}

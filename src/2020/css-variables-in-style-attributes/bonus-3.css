@@ -1,0 +1,4 @@
+/* This is invalid CSS at the time of writing! */
+[data-thumbnail] {
+	background-image: attr(data-thumbnail);
+}

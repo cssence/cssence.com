@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="c-code" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<title>SVG currentColor</title>
+<meta name="description" content="A potential issue while transitioning to currentColor used in SVG fill.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/RRNvQX" title="Code example on codepen.io">
+<script type="module" src="/dev/browser.mjs"></script>
+</head>
+<body id="top">
+<main>
+<article aria-labelledby="content">
+<header>
+<h1 id="content">SVG currentColor</h1>
+<p><i>Code</i><br><time>2016-06-02T09:19:00Z</time><br><img src="/2016/svg-animate-current-color/index.png" alt=""></p>
+</header>
+<div>
+<p>Color transitions on SVG paths can be tricky, as browsers behave differently when it comes to transition property <code>color</code> and <code>fill</code>. Especially when <code>currentColor</code> is involved.</p>
+<p>This was something I would have needed for the navigation on this site, but I ran into browser issues. In the end I used a slightly different solution and specified a handful of actual color values instead of using the <code>currentColor</code> shortcut. But I made this pen to check if browser behavior changes over time.</p>
+</div>
+<aside aria-labelledby="comments">
+<h2 id="comments">Comments</h2>
+<article aria-labelledby="comment-1">
+<h3 id="comment-1"><a rel="me author" href="https://twitter.com/cssence">Matthias Beitl</a> wrote on <a href="https://twitter.com/cssence/status/738350017669435392"><time>2016-06-02T12:42:16Z</time></a></h3>
+<p>SVG fill + transition + currentColor: I’d happily file bugs, but which browser gets it right?<br><a href="https://codepen.io/cssence/pen/RRNvQX">codepen.io/cssence/pen/RRNvQX</a><br>cc <a href="https://twitter.com/LeaVerou">@LeaVerou</a></p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>

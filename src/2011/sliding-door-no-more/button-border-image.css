@@ -1,0 +1,5 @@
+.border-image-button {
+	border-width: 0 25px;
+	border-image: url(image.png) 0 25 0 25 stretch stretch;
+	height: 50px;
+}

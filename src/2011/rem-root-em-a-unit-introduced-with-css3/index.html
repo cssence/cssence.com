@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="c-essay" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<title>rem (Root Em), a Unit Introduced With CSS3</title>
+<meta name="description" content="Exploring the differences between em and rem.">
+<link rel="alternate" type="text/html" href="http://cssence.wordpress.com/2011/05/26/rem-root-em-a-unit-introduced-with-css3/" title="Article on cssence.wordpress.com">
+<script type="module" src="/dev/browser.mjs"></script>
+</head>
+<body id="top">
+<main>
+<article aria-labelledby="content">
+<header>
+<h1 id="content">rem (Root Em), a Unit Introduced With CSS3</h1>
+<p><i>Essay</i><br><time>2011-05-26T13:05:39Z</time><br><img src="/2011/rem-root-em-a-unit-introduced-with-css3/index.png" alt=""></p>
+</header>
+<aside class="standoff metadata" aria-labelledby="quick-summary">
+<h2 id="quick-summary">Quick summary</h2>
+<p>Explore the differences between em and rem. The em unit has been with us for a long time, see what rem — brought to you by CSS3 — adds to the relative measurement arena.</p>
+</aside>
+<div>
+<p>One of the most important files on my laptop at home and at the office is the handy <a href="http://www.veign.com/reference/css3-guide.php">CSS3 cheat sheet</a>, available for <a href="http://www.veign.com/downloads/guides/qrg0008.pdf">download at veign.com.</a></p>
+<p>A couple of days ago, for reasons unknown, the term <code>rem</code> on the last page of said document caught my eye.</p>
+<p><img src="/2011/rem-root-em-a-unit-introduced-with-css3/cheat-sheet.png" alt="The rem unit highlighted in the CSS3 cheat sheet."></p>
+<h2 id="relative-measurement">Relative measurement</h2>
+<p>In CSS3, rem has nothing to do with <a href="http://en.wikipedia.org/wiki/Rapid_eye_movement_sleep">rapid eye movement</a>, it is an abbreviation for <em>root em</em>. The cheat sheet told me, if I’m going to use rem I get <q>the font size of the root element</q>.</p>
+<p>I had a hunch what was going on here, but I took a closer look.</p>
+<p>The difference between <code>em</code> and <code>rem</code> is, rem values are not relative to their parent, but to the root. In this case, the root element is not the document body, it really is the document root, i.e. <code>&lt;html&gt;</code>. So all we have to do is specify a font size for the <code>html</code> element and make all other elements relative to that value.</p>
+<pre><code class="language-css">html { font-size: 1.25em; }  /* 16px ✕ 1.25 = 20px, details below */
+body { font-size: 0.75rem; } /* 20px ✕ 0.75 = 15px */
+pre  { font-size: 0.65rem; } /* 20px ✕ 0.65 = 13px */</code></pre>
+<p>Keep in mind, the font size for the <code>html</code> element itself can be either absolute or relative. In our example, 1.25em would be relative to the browser default, which is usually 16 Pixels.</p>
+<p>But back to the <code>rem</code> values. Let’s say all we got is the three declarations above. If we had given our <code>pre</code>formatted text a font size of 0.65em, we’ll get approximately 10px (15px ✕ 0.65 = 9.75), because these <code>em</code>s would be relative to the value found at the <code>body</code>.</p>
+<p>So what? Mathematics 101, why not specify <code>pre { font-size: 0.86667em }</code> in order to end up with the desired size (15px ✕ 0.86667 = 13px)? The answer lies in the reason why <strong>root em</strong> has been invented in the first place.</p>
+<h2 id="nested-elements">Nested elements</h2>
+<p class="invert"><img src="/2011/rem-root-em-a-unit-introduced-with-css3/nested-elements.png" alt="Nested elements, using unordered lists as an example."></p>
+<p>The basic advantage of the rem unit is that for nested elements the font size is no longer decreased or increased <span lang="la">ad infinitum</span>. For example, if you apply a font size of 0.9em to list items, this will give you a font size of 0.81em (0.9 times 0.9, or 90% of 90%) at the second depth level. And so on.</p>
+<p>Thanks to <strong>rem</strong>, instead of a) resetting the font size, as in <code>li li { font-size: 1em }</code>, or b) switching from element selectors to class selectors, or c) insert-your-own-personal-old-habit-here, you can simply apply a font size of 0.9rem. And you are done!</p>
+<h2 id="typical-usage">Typical usage</h2>
+<p>Today, using relative measurements is the norm in web design, and that applies not just for font sizes. But especially with font sizes, you’ll be glad having used relative values the very moment your client comes up with the requirement to implement a JavaScript font size selector.</p>
+<p><img src="/2011/rem-root-em-a-unit-introduced-with-css3/font-size-selector.png" alt="A mouse cursor next to three buttons (regular, large, and extra large) that will adjust the font size. Javascript is needed for the actual adjustment, and to persist the selection across pages and for future visits."></p>
+<p>With nothing but relative values in place, simply adjust the base font size of the <code>html</code> element, and all other elements will follow suit. Granted, this is possible with <code>em</code>s as well, but with <code>rem</code>s it got even easier.</p>
+<h3 id="browser-support">Browser support</h3>
+<p>Browser support is actually quite decent, as <a href="http://twitter.com/snookca">Jonathan Snook</a> points out in his <a href="http://snook.ca/archives/html_and_css/font-size-with-rem">excellent article on the subject</a>.</p>
+<h2 id="should-we-use-the-rem-unit">Should we use the rem unit?</h2>
+<p>Yes, you can start now. But as always, just make sure to provide a fallback for older browsers that do not support <code>rem</code> units:</p>
+<pre><code class="language-css">p {
+  font-size: 16px; /* fallback */
+  font-size: 1rem;
+}</code></pre>
+</div>
+<aside aria-labelledby="comments">
+<h2 id="comments">Comments</h2>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>

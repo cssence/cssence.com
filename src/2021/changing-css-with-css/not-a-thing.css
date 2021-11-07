@@ -1,0 +1,3 @@
+style::after {
+	content: 'span { color: red; }';
+}

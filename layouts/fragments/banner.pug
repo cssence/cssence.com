@@ -1,8 +1,0 @@
-//- Warning: Index pages only have a subset of info stored in 'banner'
-p
-	- const indicatorMap = {'index.pug': 'Index', 'internal.pug': 'Internal', 'c-code': 'Code', 'c-editorial': 'Editorial', 'c-essay': 'Essay', 'c-event': 'Event', 'c-note': 'Note'};
-	i= banner.urlPath === '/' ? 'Home' : (indicatorMap[banner.layout] || indicatorMap[banner.type])
-	br
-	+ts(banner.published || banner.revised)
-	br
-	img(src=banner.thumbnail.url, alt="")

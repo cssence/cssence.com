@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="c-code" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<title>::first-letter Test Page</title>
+<meta name="description" content="You think it’s easy to determine the first letter of a sentence? Think again!">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/yqaGqB" title="Code example on codepen.io">
+<script type="module" src="/dev/browser.mjs"></script>
+</head>
+<body id="top">
+<main>
+<article aria-labelledby="content">
+<header>
+<h1 id="content">::first-letter Test Page</h1>
+<p>Chasing Unicode Characters</p>
+<p><i>Code</i><br><time>2018-07-19T08:41:00Z</time><br><img src="/2018/first-letter-test-page/index.png" alt=""></p>
+</header>
+<div>
+<p>I made a test page for <code>::first-letter</code> many years ago, but I couldn’t find it. Which is why I created this revised page. Needless to say, after I finished it I found the original, so this time I <a href="https://codepen.io/cssence/pen/yqaGqB">put it on CodePen</a> for my future self and everybody else.</p>
+<p>My initial test page used floats to create large drop caps, but they accounted for additional problems, which is why I tried to keep things simple.</p>
+<figure class="standout"><img src="/2018/first-letter-test-page/comparison.png" alt="Chrome, Firefox, Internet Explorer and Safari have different approaches when it comes to selecting the first letter.">
+<figcaption>Comparing how different browsers target the first letter of a paragraph. No problem when it comes to letters and punctuation, but once you reach some of the more special Unicode ranges, browser behavior starts to differ.</figcaption>
+</figure>
+<p>You’d think that handling something as old as this pseudo-element would have been sorted by now, but on top of inconsistencies I might have even found bugs. Granted, selecting the first letter is <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/%3A%3Afirst-letter">quite challenging.</a></p>
+<p>Without going into detail here, I’d say Firefox and Safari drew the same conclusions from the specification.</p>
+</div>
+<aside aria-labelledby="comments">
+<h2 id="comments">Comments</h2>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,5 @@
+span::before {
+	border: 0 solid transparent;
+	border-left: 2em double #fff;
+	transition: border .3s linear;
+}

@@ -1,0 +1,3 @@
+.element-with-style-attribute::before {
+	content: var(--url-thumbnail);
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class="c-note" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<title>On Using aria-labelledby for Images</title>
+<meta name="description" content="Gunnar Bittersmann asks about the effect on the alt text.">
+<link rel="alternate" type="text/html" href="https://twitter.com/cssence/status/1434589105044795394" title="Thread on twitter.com">
+<script type="module" src="/dev/browser.mjs"></script>
+</head>
+<body id="top">
+<main>
+<article aria-labelledby="content">
+<header>
+<h1 id="content">On Using aria-labelledby for Images</h1>
+<p>Are we allowed to omit the <code>alt</code> tag in this case?</p>
+<p><i>Note</i><br><time>2021-09-05T18:47:50Z</time></p>
+</header>
+<div>
+<h2 class="visually-hidden" id="comments">Message thread</h2>
+<article aria-labelledby="comment-1">
+<h3 id="comment-1"><a rel="author" href="https://twitter.com/g16n">Gunnar Bittersmann</a> wrote on <a href="https://twitter.com/g16n/status/1434439119850123266"><time>2021-09-05T08:51:51Z</time></a></h3>
+<p>#a11y question: When the text alternative to an image is implemented using <code>aria-labelledby</code>, there’s no need for <code>alt=&quot;&quot;</code>, is it?</p>
+</article>
+<article aria-labelledby="comment-2">
+<h3 id="comment-2"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1434589105044795394"><time>2021-09-05T18:47:50Z</time></a></h3>
+<p>Good question, I’d also like to know. Maybe this is similar to an image inside a figure which has a <code>&lt;figcaption&gt;</code> that is already “verbose” enough that the image needs no additional alt. <abbr title="If I remember correctly,">IIRC,</abbr> even in this case you specify <code>alt=&quot;&quot;</code>.</p>
+</article>
+</div>
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,4 @@
+.loading::before {
+	/* no border-right-color thank you */
+	border-right-style: double;
+}

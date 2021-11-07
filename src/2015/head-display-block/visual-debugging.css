@@ -1,0 +1,7 @@
+head,
+meta[name="viewport"] {
+	display: block;
+}
+meta[name="viewport"]::before {
+	content: attr(content);
+}

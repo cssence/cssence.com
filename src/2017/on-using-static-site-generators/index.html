@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="c-essay" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<title>On Using Static Site Generators</title>
+<meta name="description" content="I wrote about static site generators, but went down the Vanilla-or-not rabbit hole.">
+<link rel="alternate" type="text/html" href="https://medium.com/@cssence/on-using-static-site-generators-57879d215746" title="Article on medium.com" data-syndication="2017-07-25T08:40:50.000Z">
+<script type="module" src="/dev/browser.mjs"></script>
+</head>
+<body id="top">
+<main>
+<article aria-labelledby="content">
+<header>
+<h1 id="content">On Using Static Site Generators</h1>
+<p>Vanilla, or not</p>
+<p><i>Essay</i><br><time>2017-07-22T16:50:00Z</time><br><img src="/2017/on-using-static-site-generators/index.jpg" alt=""></p>
+</header>
+<div>
+<p>Last year I spoke at <a href="/2016/viennahtml/">our local developer meetup (@ViennaHTML)</a> about why you would want to create your own static site generator. Spoiler alert: You <em>wouldn’t</em>. Weirdly enough, at that meetup I’ve made the case for the exact opposite. Did I mention that I went through that kind of trouble three times to date. One time for personal use, as <a href="https://cssence.com/">one my own sites</a> is powered by a self-written static site generator. Another spoiler alert: Not anymore. Even back then I anticipated that the time would come where I would ditch my own creation and switch to using <a href="https://metalsmith.io/">Metalsmith</a> instead. Fast forward one year, I finally managed to get to it. I could have used something else, as there are <a href="https://www.staticgen.com/">many alternatives</a> out there, including more popular ones. My only self-imposed limitation was that the generator itself had to be written in JavaScript. The fact that I’ve used Metalsmith for other projects and clients before made it the obvious choice. In case you have not heard of Metalsmith, <a href="/2017/metalsmith-io/">I’ve got you covered.</a></p>
+<p>What follows are my revised thoughts on the subject.</p>
+<h2 id="reinventing-the-wheel">Reinventing the wheel</h2>
+<p>Rooting for vanilla, my reasoning always boiled down to being in charge, meaning</p>
+<ol>
+<li>it can be a valuable lesson to do something on your own, but also</li>
+<li>if you have written the code yourself, you are in control of what is actually going on under the hood.</li>
+</ol>
+<p>Those arguments could be brought into play not just for building static site generators, but every time you are doing something the vanilla way, i.e. without libraries or frameworks.</p>
+<p>But where to draw the line? Almost everything I’ve done in recent years would not have been possible without <a href="https://nodejs.org/">Node.js</a>, so am I going to create my own variant of Node.js for the sake of having gone through such an arduous undertaking? Of course not. No matter how much code I write myself, I am never going to be in charge of the <em>entire</em> tech stack.</p>
+<p>There are of course good reasons for doing something from scratch. Vanilla can make sense when we want to keep things lean, when we have to consider performance and bandwidth. The long-running discussion of <a href="https://css-tricks.com/now-ever-might-not-need-jquery/">jQuery being a thing of the past</a> serves as a prominent example. But static site generators? Well, I had to call bullshit on my earlier arguments, and instead start reaping the benefits of building on top of existing solutions.</p>
+<h2 id="on-the-shoulders-of-giants">On the shoulders of giants</h2>
+<p>Now that I’ve made the switch to Metalsmith, the biggest benefit is having fewer lines of code to maintain. For example, using my own approach, I had to deal with reading all the files and&#8202;&mdash;&#8202;after modifications have been performed on those files&#8202;&mdash;&#8202;writing them back, which is something all static site generators will do for you.</p>
+<p>By the way, this is pretty much the only thing Metalsmith does, any kind of file manipulation is being delegated to plugins. And guess what, thanks to the community there are lots of those plugins out there. So unless you need something fancy, you could even end up with almost no code of your own, by simply using your generator of choice the way it is intended to be used.</p>
+<h2 id="you-can-spell-refactoring-without-boring">You can spell refactoring without boring</h2>
+<p>On the other hand, why bother making the switch in the first place? I’ve been using my own creation for almost three years, so it already accomplished what any off-the-shelf static site generator could do. Switching to Metalsmith meant refactoring the entire codebase, while ensuring that after all that work my site looks exactly the same as before.</p>
+<p>With am eyebrow-raising goal like that, there had to be other benefits, so one would not lose track and actually follow through, right? In my case, not only do I now have less code to take care of, it also led to improved separation of concerns. Generator-related bits are now clearly distinguishable from the actual content. To top it off, the amount of content-related metadata got reduced, which makes updating the site a lot easier in the future.</p>
+<h2 id="vanilla-or-not">Vanilla, or not</h2>
+<p>Where do you draw the line?</p>
+</div>
+<aside aria-labelledby="comments">
+<h2 id="comments">Comments</h2>
+<article aria-labelledby="comment-0" hidden>
+<h3 id="comment-0"><a rel="me author" href="https://twitter.com/cssence">Matthias Beitl</a> wrote on <a href="https://twitter.com/cssence/status/889489356314091520"><time>2017-07-24T14:16:03Z</time></a></h3>
+<p>I wrote about static site generators, but went down the Vanilla-or-not rabbit hole.<br><a href="/2017/on-using-static-site-generators/">cssence.com/blog/2017-07-on-using-static-site-generators</a></p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>
