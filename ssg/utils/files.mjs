@@ -10,7 +10,7 @@ const getFileList = async () => {
 			const stats = await lstat(file);
 			const isDir = stats.isDirectory();
 			if (isDir) {
-				getFiles(file, depth + 1);
+				await getFiles(file, depth + 1);
 			} else if (fileInFolder === 'index.html') {
 				list.push(file);
 			}
