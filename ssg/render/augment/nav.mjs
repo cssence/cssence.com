@@ -27,7 +27,7 @@ const modify = (content, meta) => {
 	];
 	const insertBefore = content.indexOf('</body>');
 	content.splice(insertBefore, 0, nav.join('\n'));
-	return content;
+
 };	
 
 export default modify;

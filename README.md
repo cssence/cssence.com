@@ -9,23 +9,35 @@
 
 The chapters below assume you are on a system with [nodejs](https://nodejs.org/) version 16 or later.
 
-In addition, every `start:*` script found in `package.json` requires you to have [http-server](https://www.npmjs.com/package/http-server)² already installed.
+### Development
 
-### Development (serve raw files)
+To serve files from the source folder (they will be enriched on request), run:
 
 ```console
 npm run start:dev
 ```
 
-### Build (create static website)
+There is no hot reload, but changes on existing files in the `./src` folder will be picked up by refreshing the page in the browser. However, after adding/removing `index.html` pages, a restart of the DEV server is required. The same is true when changes in the actual generator are made, i.e. changes in the `./ssg` folder.
+
+### Build
+
+To create the static website, which will render/enhance all `index.html` files, run:
 
 ```console
 npm run build
 ```
 
-Once the build has finished, the generated website is found in the `public` folder.
+Once the build has finished, the generated website is found in the `./public` folder.
+
+To build and immediately serve² the files, run:
+
+```console
+npm run start
+```
+
+This is basically a shorthand for running the build and the command `npm run start:sim`, which serves the files the build just generated, consecutively.
 
 ## Footnotes
 
-1. The self-written parses raw HTML files, without using any [https://www.npmjs.com/package/htmlparser2](HTML parser) (yet). Do not try this at home.
-2. The http-server dependency is not included in the `package.json` file, as there are other ways to serve the `public` folder. In contrast, when it comes to serving the `src` folder for development purposes (which `npm run start:dev` takes care of), the http-server dependency will be removed entirely in an upcoming version.
+1. The included generator parses raw HTML files, without using any [https://www.npmjs.com/package/htmlparser2](HTML parser) (yet). Do not try this at home.
+2. The included http server is for development/testing purposes, way too brittle to be used for actually serving the site. In reality, the generated files will be hosted and served otherwise.

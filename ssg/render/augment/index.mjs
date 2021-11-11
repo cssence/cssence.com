@@ -3,7 +3,7 @@
 const determine = (content, meta) => {
 
 	const start = content.indexOf('<section class="posts">');
-	if (start === -1) return content;
+	if (start === -1) return;
 	const end = content.indexOf('</main>');
 	let i = start - 1;
 
@@ -82,7 +82,6 @@ const determine = (content, meta) => {
 		}
 	}
 
-	return content;
 };	
 
 export default determine;

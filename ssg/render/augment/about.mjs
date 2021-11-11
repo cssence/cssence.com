@@ -33,7 +33,7 @@ const add = (content, meta) => {
 
 	const insertBefore = content.indexOf('</main>') - 1; // = `</article> || </div>`
 	content.splice(insertBefore, 0, footer.join('\n'));
-	return content;
+
 };
 
 export default add;

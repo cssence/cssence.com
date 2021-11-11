@@ -2,8 +2,8 @@
 
 const modify = (content, meta) => {
 
-	if (!meta.page.isPostByYear || meta.page.className !== 'c-code') return content;
-	if (!meta.page.alternateUrl) return content;
+	if (!meta.page.isPostByYear || meta.page.className !== 'c-code') return;
+	if (!meta.page.alternateUrl) return;
 
 	const aside = [
 		'<aside class="figure standout codepen" aria-labelledby="showcase">',
@@ -13,7 +13,7 @@ const modify = (content, meta) => {
 	];
 	const insertBefore = content.indexOf('<aside aria-labelledby="comments">');
 	content.splice(insertBefore, 0, aside.join('\n'));
-	return content;
+
 };
 
 export default modify;

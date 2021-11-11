@@ -27,8 +27,8 @@ const getPageData = (urlPath, content) => {
 			description: description,
 			published: dates[1],
 			revised: dates[0],
-			thumbnail: thumbnailUrlPath,
-			className: className === 'c-default' ? undefined : className
+			thumbnail: thumbnailUrlPath || '/404/index.png',
+			className: className // === 'c-default' ? undefined : className
 		}
 	};
 };

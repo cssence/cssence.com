@@ -1,27 +1,30 @@
 import { readdir, readFile, lstat, writeFile } from 'fs/promises';
 
-const getFileList = async () => {
-	const list = [];
+const getFileList = async (folder) => {
 
-	const getFiles = async (folder, depth = 0) => {
-		const filesInFolder = await readdir(folder);
+	const fileList = [];
+
+	const getFiles = async (dir, depth = 0) => {
+		const filesInFolder = await readdir(dir);
 		for (const fileInFolder of filesInFolder) {
-			const file = `${folder}/${fileInFolder}`;
+			const file = `${dir}/${fileInFolder}`;
 			const stats = await lstat(file);
 			const isDir = stats.isDirectory();
 			if (isDir) {
 				await getFiles(file, depth + 1);
 			} else if (fileInFolder === 'index.html') {
-				list.push(file);
+				fileList.push(file);
 			}
 		}
 	};
-	await getFiles('./src');
-	return list;
+	await getFiles(folder);
+
+	return fileList;
 };
 
-const getFileContent = async (file) => await readFile(file, 'utf8');
+const getFileContent = async (file, options = {}) => await readFile(file, options.useBuffer ? null : 'utf8');
 
 const writeFileContent = async (file, data) => await writeFile(file, data, 'utf8');
 
-export { getFileList, getFileContent, writeFileContent };
+export { getFileContent, writeFileContent };
+export default getFileList;

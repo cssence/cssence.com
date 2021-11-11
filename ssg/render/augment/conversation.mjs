@@ -2,7 +2,7 @@
 
 const modify = (content, meta) => {
 
-	if (!meta.page.isPostByYear) return content; // commenting not possible/allowed
+	if (!meta.page.isPostByYear) return; // commenting not possible/allowed
 
 	const isStandaloneThread = meta.page.isPostByYear && meta.page.className === 'c-note';
 
@@ -56,7 +56,7 @@ const modify = (content, meta) => {
 	delete conversation.start;
 	delete conversation.end;
 	content.splice(insertBefore, 0, ...contributeSection)
-	return content;
+
 };	
 
 export default modify;

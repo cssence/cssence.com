@@ -3,7 +3,7 @@
 const add = (content, meta) => {
 
 	const start = content.indexOf('<section class="posts">');
-	if (start === -1) return content;
+	if (start === -1) return;
 
 	const indicatorMap = {
 		'c-default': 'Internal',
@@ -52,7 +52,6 @@ const add = (content, meta) => {
 		content.splice(insertBefore, 0, summary);
 	}
 
-	return content;
 };	
 
 export default add;

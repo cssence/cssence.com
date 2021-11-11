@@ -37,9 +37,9 @@ const modify = (content, meta) => {
 		'<script src="/assets/ctm.js"></script>',
 	];
 
-	const replace = content.indexOf('</head>') - 1; // = `script[src="/dev/browser.mjs"]`
-	content[replace] = headPlus.join('\n');
-	return content;
+	const insertBefore = content.indexOf('</head>');
+	content.splice(insertBefore, 0, headPlus.join('\n'));
+
 };	
 
 export default modify;
