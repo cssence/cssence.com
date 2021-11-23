@@ -5,17 +5,20 @@ import indexCards from './augment/index.mjs';
 import modifyHead from './augment/head.mjs';
 import modifyHeader from './augment/header.mjs';
 import addPosts from './augment/posts.mjs';
+import modifyContentArchive from './augment/archive.mjs';
 import addCodepen from './augment/codepen.mjs';
 import modifyConversation from './augment/conversation.mjs';
 import addAboutPage from './augment/about.mjs';
 import addNav from './augment/nav.mjs';
 import addFooter from './augment/footer.mjs';
+import assignIds from './augment/id.mjs';
 
 const augment = (urlPath, html, meta) => {
 	const content = html.split('\n');
 	storePageData(urlPath, meta);
 	indexCards(content, meta);
 	modifyHead(content, meta);
+	modifyContentArchive(content, meta);
 	modifyHeader(content, meta);
 	addPosts(content, meta);
 	addCodepen(content, meta);
@@ -23,6 +26,7 @@ const augment = (urlPath, html, meta) => {
 	addAboutPage(content, meta);
 	addNav(content, meta);
 	addFooter(content, meta);
+	assignIds(content, meta);
 	return content.join('\n');
 };
 

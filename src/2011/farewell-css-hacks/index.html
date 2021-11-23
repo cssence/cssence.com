@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html class="c-essay" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 <title>Farewell CSS Hacks</title>
 <meta name="description" content="It is time to remove all CSS hacks that target Internet Explorer.">
 <link rel="alternate" type="text/html" href="http://cssence.wordpress.com/2011/06/30/farewell-css-hacks/?draft" title="Article on cssence.wordpress.com">
 </head>
-<body id="top">
+<body>
 <main>
-<article aria-labelledby="content">
+<article>
 <header>
-<h1 id="content">Farewell CSS Hacks</h1>
+<h1>Farewell CSS Hacks</h1>
 <p><i>Essay</i><br><time>2011-06-30T21:48:11Z</time><br><img src="/2011/farewell-css-hacks/index.png" alt=""></p>
 </header>
 <div>
 <p>Let’s face, Internet Explorer is the browser we need to work our way around the most.</p>
 <p>Getting some JavaScript to work in IE is one thing, styles being applied in the way you want is another. To do the latter, we have CSS hacks to target specific version of IE, by exploiting some weird behavior that only occurs in a that exact version. We even named those hacks. Underscore hack, star hack, the list goes on.</p>
 <p>The problem with all those CSS hacks: They generate CSS that simply does not validate.</p>
-<h2 id="a-better-way">A better way</h2>
+<h2>A better way</h2>
 <p>Take a look at <a href="https://css-tricks.com/snippets/html/add-body-class-just-for-ie/">this short post on CSS Tricks</a>. It explains how to add class names to either <code>&lt;html&gt;</code> or <code>&lt;body&gt;</code>. With those class names in place, you can now select any version of Internet Explorer. All thanks to Microsoft’s Conditional Comments, pure HTML, no need to use a script that does some User Agent string sniffing.</p>
 <pre><code class="language-html">&lt;!--[if IE ]&gt;
    &lt;body class=&quot;ie&quot;&gt;
@@ -29,7 +27,7 @@
 <p>The only downside: If you add such a class names in front of your regular selector, it will increase specificity, but that is also true for some of the CSS hacks.</p>
 <p>That being said, …</p>
 <p>I, for one, welcome our root class overlords.</p>
-<h2 id="in-favor-of-hack-elimination">In favor of hack elimination</h2>
+<h2>In favor of hack elimination</h2>
 <p>Not sold? Still fancy the old hacky way? Here are a few things that should tip the scale in favor for this approach:</p>
 <ul>
 <li>Hacks can backfire in the future. While not highly likely, Microsoft might deliver a fresh version of IE that reintroduces an already fixed bug. And by doing so, a hack meant to target IE6 or IE7 all of a sudden applies to IEx, where x stands for said fresh version.</li>
@@ -37,7 +35,7 @@
 <li>You can play around by e.g. temporarily setting class <code>ie7</code> in IE8 or even Firefox, which might come in handy for debugging purposes. In contrast, the hack itself does not give you this option. Ever tried to tell Google Chrome to fire the underscore hack?</li>
 </ul>
 </div>
-<aside aria-labelledby="comments">
+<aside>
 <h2 id="comments">Comments</h2>
 <p>No comments have been added so far.</p>
 </aside>

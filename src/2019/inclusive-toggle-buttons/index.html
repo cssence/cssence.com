@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html class="c-code" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 <title>Inclusive Toggle Buttons</title>
 <meta name="description" content="Tweaking the ones from “Inclusive Components” by Heydon Pickering.">
 <link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/KKwWeze" title="Code example on codepen.io">
 </head>
-<body id="top">
+<body>
 <main>
-<article aria-labelledby="content">
+<article>
 <header>
-<h1 id="content">Inclusive Toggle Buttons</h1>
+<h1>Inclusive Toggle Buttons</h1>
 <p>With a tweak.</p>
 <p><i>Code</i><br><time>2019-12-20T13:14:12Z</time><br><img src="/2019/inclusive-toggle-buttons/index.png" alt=""></p>
 </header>
 <div>
 <p>The book <a href="https://inclusive-components.design/">“Inclusive Components”</a> by <a href="https://twitter.com/heydonworks">Heydon Pickering</a> has finally arrived and I immediately started reading. If you do not have a copy yet, you should <a href="http://book.inclusive-components.design/">buy one asap,</a> it’s worth every penny.</p>
 <p>Chapter One is about <a href="https://inclusive-components.design/toggle-button/"><em>Toggle Buttons</em></a>. Heydon ends the chapter with switches that need “Auxiliary Labeling”. For those, he uses <code>aria-labelled-by</code> to tie a label to a button. Made me wonder, why not just use good ol’ <code>&lt;label&gt;</code> to do the job?</p>
-<h2 id="using-label-for-auxiliary-labeling">Using <code>&lt;label&gt;</code> for auxiliary labeling</h2>
+<h2>Using <code>&lt;label&gt;</code> for auxiliary labeling</h2>
 <pre><code class="language-html">&lt;!-- Original implementation by Heydon Pickering --&gt;
 &lt;span id=&quot;notify-email&quot;&gt;Notify by email&lt;/span&gt;
 &lt;button role=&quot;switch&quot; aria-checked=&quot;true&quot; aria-labelledby=&quot;notify-email&quot;&gt;&lt;span&gt;on&lt;/span&gt; &lt;span&gt;off&lt;/span&gt;&lt;/button&gt;
@@ -29,29 +27,29 @@
 <p>This comes with a bonus, clicking the label now also acts as a trigger for the button. Browsers are fine with this, but I haven’t been able to test screen readers yet. In general, am I missing something here?</p>
 <p>To see Heydon’s <a href="https://codepen.io/cssence/pen/KKwWeze">full example with my tweak added,</a> head over to CodePen.</p>
 </div>
-<aside aria-labelledby="comments">
+<aside>
 <h2 id="comments">Comments</h2>
-<article aria-labelledby="comment-0" hidden>
+<article hidden>
 <h3 id="comment-0"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1208024956447145986"><time>2019-12-20T14:02:48Z</time></a></h3>
 <p>Started reading “Inclusive Components” by <a href="https://twitter.com/heydonworks">@heydonworks</a>, a strong contender for Book of the Year. Now I am pondering the possibility to use <code>&lt;label&gt;</code> for auxiliary labeling.<br><a href="/2019/inclusive-toggle-buttons/">cssence.com/2019/inclusive-toggle-buttons</a></p>
 </article>
-<article aria-labelledby="comment-1">
+<article>
 <h3 id="comment-1"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1213089975337664513"><time>2020-01-03T13:29:22Z</time></a></h3>
 <p>Looking for #a11y research on <code>&lt;label for=&quot;button&quot;&gt</code>. Online search takes me to “labeling buttons”, which is not what I want (see link <a href="https://twitter.com/cssence/status/1208024956447145986">twitter.com/cssence/status/1208024956447145986</a>). I’ve only been able to test Safari+VoiceOver and Chrome+ChromeVox, looks promising. /cc <a href="https://twitter.com/mmatuzo">@mmatuzo</a> <a href="https://twitter.com/paciellogroup">@paciellogroup</a></p>
 </article>
-<article aria-labelledby="comment-2">
+<article>
 <h3 id="comment-2"><a rel="author" href="https://twitter.com/aardrian">Adrian Roselli</a> wrote on <a href="https://twitter.com/aardrian/status/1213290511047569410"><time>2020-01-04T02:46:14Z</time></a></h3>
 <p><a href="https://twitter.com/cssence">@cssence</a> <a href="https://twitter.com/mmatuzo">@mmatuzo</a> <a href="https://twitter.com/paciellogroup">@paciellogroup</a><br>Much more context needed. Are you trying to apply <code>&lt;label&gt;</code> to a <code>&lt;button&gt;</code> element? What is “auxiliary labeling”?</p>
 </article>
-<article aria-labelledby="comment-3">
+<article>
 <h3 id="comment-3"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1213372003085889537"><time>2020-01-04T08:10:03Z</time></a></h3>
 <p><a href="https://twitter.com/aardrian">@aardrian</a> <a href="https://twitter.com/mmatuzo">@mmatuzo</a> <a href="https://twitter.com/paciellogroup">@paciellogroup</a><br>Exactly. Based on what <a href="https://twitter.com/heydonworks">@heydonworks</a> did in the new “Inclusive Components” book, where he uses <code>aria-labelledby</code> to add a description to Toggle Buttons, I tried the same but used a label for the button, as shown under <a href="https://cssence.com/2019/inclusive-toggle-buttons">cssence.com/2019/inclusive-toggle-buttons</a></p>
 </article>
-<article aria-labelledby="comment-4">
+<article>
 <h3 id="comment-4"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1213383155622850561"><time>2020-01-04T08:54:22Z</time></a></h3>
 <p><a href="https://twitter.com/aardrian">@aardrian</a> <a href="https://twitter.com/mmatuzo">@mmatuzo</a> <a href="https://twitter.com/paciellogroup">@paciellogroup</a><br>And here is the direct link to the working example on CodePen: <a href="https://codepen.io/cssence/pen/KKwWeze">codepen.io/cssence/pen/KKwWeze</a><br>W3C HTML spec considers <code>&lt;button&gt;</code> and <code>&lt;input type=&quot;button&quot;&gt;</code> as labelable elements, hence the cross-browser-ness. A niche thing nonetheless, usually the button text <strong>is</strong> the label.</p>
 </article>
-<article aria-labelledby="comment-5">
+<article>
 <h3 id="comment-5"><a rel="author" href="https://twitter.com/aardrian">Adrian Roselli</a> wrote on <a href="https://twitter.com/aardrian/status/1213452010114179073"><time>2020-01-04T13:27:58Z</time></a></h3>
 <p><a href="https://twitter.com/cssence">@cssence</a> <a href="https://twitter.com/mmatuzo">@mmatuzo</a> <a href="https://twitter.com/paciellogroup">@paciellogroup</a><br>If you do not know which provides the accessible name then you will have to test.<br><br>Check what is exposed in the browser so you know which wins in which UA.<br><br>TalkBack and VoiceOver warrant a test as well.<br><br>Also, validate the page, just to be confirm it is cool.</p>
 </article>

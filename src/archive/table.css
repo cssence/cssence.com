@@ -1,0 +1,59 @@
+thead th {
+	height: 6rem;
+	border-bottom-style: double;
+	border-bottom-width: .1875rem;
+	font-size: .875rem;
+	vertical-align: bottom;
+}
+th i {
+	padding: 0;
+}
+th i span {
+	position: absolute;
+	transform: rotate(-45deg) translate(-1.25rem, -2.25rem);
+	transform-origin: 0 0;
+}
+th i::before {
+	display: inline-block;
+	position: static;
+	width: .875rem;
+	height: .875rem;
+	margin: 0;
+}
+tbody tr:hover,
+tbody tr:focus-within {
+	background-color: var(--color-bg-subtle);
+}
+th,
+td {
+	width: 9%;
+	padding: .25rem 0 .25rem .875rem;
+	border: 0 solid var(--color-bg-subtle);
+	vertical-align: middle;
+}
+tr + tr :where(th, td) {
+	border-top-width: .0625rem;
+}
+tfoot :where(th, td) {
+	border-top-width: .125rem;
+}
+th:first-child {
+	padding-left: var(--padding-horizontal);
+	white-space: nowrap;
+}
+th:last-child,
+td:last-child {
+	width: calc(2 * var(--padding-horizontal) + .25rem + var(--width-sidebar));
+	padding-right: var(--padding-horizontal);
+}
+table data {
+	font-variant-numeric: lining-nums tabular-nums;
+}
+tbody data[value="0"] {
+	color: var(--color-bg-subtle);
+}
+@media (max-width: 39em) {
+	th:first-child {
+		padding-left: 0;
+	}
+}

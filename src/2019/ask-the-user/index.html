@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html class="c-essay" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 <title>Ask the User</title>
 <meta name="description" content="You could make assumptions about what your users want. Or you could just ask them.">
 </head>
-<body id="top">
+<body>
 <main>
-<article aria-labelledby="content">
+<article>
 <header>
-<h1 id="content">Ask the User</h1>
+<h1>Ask the User</h1>
 <p>When it comes to one versus the other, there might be a third option</p>
 <p><i>Essay</i><br><time>2019-06-19T05:54:00Z</time><br><img src="/2019/ask-the-user/index.png" alt=""></p>
 </header>
 <div>
 <p>On Twitter, I rarely vote when a poll shows up in my timeline. But I did participate when <a href="https://twitter.com/rem">Remy Sharp</a> asked if we should do <a href="https://twitter.com/rem/status/1112821258259922950">Syntax Highlighting on the client or server side.</a> Client, sure thing. It’s what I do on my blog. Otherwise I would have to teach <a href="/2017/on-using-static-site-generators/">my static site generator</a> to prepare everything upfront.</p>
 <p>It got even more interesting when <a href="https://remysharp.com/2019/04/09/code-highlighting-server-or-client">Remy wrote a follow-up blog post</a> on the subject, where instead of relying on gut feeling he went trough the trouble of creating tests for both cases. Concluding that pre-rendering pages, i.e. adding Syntax Highlighting on the server, is the way to go these days. Initially he too thought otherwise, but the tests revealed this wasn’t the case. At least not anymore, back in the day the client was the only option. Alas, time changes everything. My situation is not so different, I’ve also been doing this thing <a href="/2017/being-online-for-20-years/">for a long time.</a> We should challenge old assumptions every once in a while.</p>
-<h2 id="how-about-a-third-option">How about a third option?</h2>
+<h2>How about a third option?</h2>
 <p>From Remy’s test we can derive that, once compressed, the already enhanced HTML performs better than sending an accompanying JavaScript library like <a href="https://prismjs.com/">PrismJS</a> to do the job. While I won’t argue with the facts, I am still reluctant to go ahead and inject tons of <code>&lt;span&gt;</code>s in my code blocks. Maybe I wanted the client to win after all. Should I go ahead and create tests to figure out if the playing field would level for recurring visitors, i.e. those who have the JavaScript library already in cache?</p>
 <p>No. Instead, I considered an alternative to find a way out of the dilemma. Needless to say, on technical blogs Syntax Highlighting makes a lot of sense. But let’s not forget that it is still an enhancement, not a requirement. So get the best of both worlds, how about we start off with plain code inside a <code>&lt;pre&gt;</code> tag, and give the user a choice. Said choice would be another job for the client. All I need to do is add a script that supplements each code block with a toggle to enable Syntax Highlighting. This means users will only get the highlighting library once they actively ask for it. But when they do, I will of course persist the user’s choice. As I <a href="/about/privacy/">do not use cookies on my site</a>, the user preference will be stored in <code>localStorage</code>.</p>
 <p>I could simply enhance an existing script that already defers loading of PrismJS, because what it does is check upfront if there are code blocks on a page, so even today the library will only be added to a page if needed. Many server-side fans commented in Remy’s poll that they did not like <em>flash of unstyled content (FOUC).</em> Well, Highlighting on my blog does not cause any reflow by adding line numbers, nor do I use a handwriting font for comments or anything else that would. It only changes the text color, and I find those color flashes to be acceptable. Accessibility-wise I need to do a bit of research, simply hiding the toggle with <code>aria-hidden</code> crossed my mind, but that might not be ideal.</p>
@@ -28,13 +26,13 @@
 <p>When I find the time, I will add just that to my blog.</p>
 <p>Addendum: If enhancing each code block is not your thing, you could just add one central toggle and bury it somewhere under “settings”, but doing so would most likely mean that visitors to your site will never see the toggle and its options.</p>
 </div>
-<aside aria-labelledby="comments">
+<aside>
 <h2 id="comments">Comments</h2>
-<article aria-labelledby="comment-0" hidden>
+<article hidden>
 <h3 id="comment-0"><a rel="me author" href="https://twitter.com/cssence">Matthias Beitl</a> wrote on <a href="https://twitter.com/cssence/status/1141233622915174400"><time>2019-06-19T06:37:53Z</time></a></h3>
 <p>You could make assumptions about what your users want. Or you could just ask them.<br><a href="/2019/ask-the-user/">cssence.com/blog/2019-06-ask-the-user</a></p>
 </article>
-<article aria-labelledby="comment-1">
+<article>
 <h3 id="comment-1"><a rel="me author" href="https://twitter.com/cssence">Matthias Beitl</a> wrote on <a href="https://twitter.com/cssence/status/1141234646614794241"><time>2019-06-19T06:41:57Z</time></a></h3>
 <p>[As mentioned,] This happens to be a late follow-up blog post on this excellent article by <a href="https://twitter.com/rem">@rem</a> <a href="https://remysharp.com/2019/04/09/code-highlighting-server-or-client">remysharp.com/2019/04/09/code-highlighting-server-or-client</a></p>
 </article>

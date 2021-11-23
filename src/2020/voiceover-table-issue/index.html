@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html class="c-code" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 <title>VoiceOver Table Issues</title>
 <meta name="description" content="Do not feed an HTML table without display:table to VoiceOver (Mac).">
 <link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/LYpQypY" title="Code example on codepen.io">
 </head>
-<body id="top">
+<body>
 <main>
-<article aria-labelledby="content">
+<article>
 <header>
-<h1 id="content">VoiceOver Table Issues</h1>
+<h1>VoiceOver Table Issues</h1>
 <p>Do we have to say “Goodbye” to flex/grid table rows?</p>
 <p><i>Code</i><br><time data-revised="2020-05-07T05:04:55Z">2020-05-06T16:44:03Z</time><br><img src="/2020/voiceover-table-issue/index.png" alt=""></p>
 </header>
@@ -21,25 +19,25 @@
 <p>While you should always have proper semantic HTML table markup, there are a lot of good reasons to apply styling so they end up looking less like tables, e.g. to create responsive tables on different screen sizes, or to have cells that can be expanded and collapsed. Especially table rows are good candidates for turning their cells into <code>flex</code> or even <code>grid</code> items.</p>
 <p>That said, I still need VoiceOver users to be able to navigate the table content as intended. <del>So unless I made a mistake in my tests,</del> I guess I have to go back to <code>display: table</code> and <code>table-layout: fixed</code>.</p>
 <p>If you have any experience in this regard, please let me know in the comments.</p>
-<h2 id="confirmation--updates">Confirmation &amp; Updates</h2>
+<h2 id="updates">Confirmation &amp; Updates</h2>
 <p><time id="update-1" class="update" datetime="2020-05-07">May 7, 2020:</time> First of all, thanks to Adrian Roselli and Manuel Matuzović I’ve got confirmation. According to the link <a href="#comment-3">Manuel sent me</a>, Adrian already wrote an <a href="https://adrianroselli.com/2018/02/tables-css-display-properties-and-aria.html">excellent article on the subject</a>, and now I also know that this is <strong>not limited to VoiceOver.</strong> NVDA on Windows is no different, because the browsers strip away the table information, leaving screen readers clueless.</p>
 <p>Best of all, Adrian keeps adding additional information, in his most recent update he highlights that Chrome 80 fixed the issue. Bug is still there in Safari and Firefox, so if you are using one of them, you may head over to my CodePen for a test.</p>
 </div>
-<aside aria-labelledby="comments">
+<aside>
 <h2 id="comments">Comments</h2>
-<article aria-labelledby="comment-1">
+<article>
 <h3 id="comment-1"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1258101829222699009"><time>2020-05-06T18:30:25Z</time></a></h3>
 <p>#a11y #web people, do you have any knowledge of VoiceOver failing to properly handle HTML tables that are not <code>display: table</code>?</p>
 </article>
-<article aria-labelledby="comment-2">
+<article>
 <h3 id="comment-2"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1258102480182837249"><time>2020-05-06T18:33:00Z</time></a></h3>
 <p>Yes, that last example in my CodePen I took from an MDN article, but it looks like it came straight from <a href="https://twitter.com/htm_hell">@htm_hell</a> 😈<br><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Row_Role">developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Row_Role</a></p>
 </article>
-<article aria-labelledby="comment-3">
+<article>
 <h3 id="comment-3"><a rel="author" href="https://twitter.com/mmatuzo">Manuel Matuzović</a> wrote on <a href="https://twitter.com/mmatuzo/status/1258112810476875776"><time>2020-05-06T19:14:03Z</time></a></h3>
 <p><a href="https://twitter.com/cssence">@cssence</a> Yes 🙂<br><a href="https://adrianroselli.com/2018/02/tables-css-display-properties-and-aria.html">adrianroselli.com/2018/02/tables-css-display-properties-and-aria.html</a></p>
 </article>
-<article aria-labelledby="comment-4">
+<article>
 <h3 id="comment-4"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1258114393453273088"><time>2020-05-06T19:20:20Z</time></a></h3>
 <p><a href="https://twitter.com/mmatuzo">@mmatuzo</a> Thanks so much, Manuel. 🙌<br>Should have asked earlier. 😁</p>
 </article>

@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html class="c-essay" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 <title>head {display:block}</title>
 <meta name="description" content="Content inside ‹head› is usually hidden, but it doesn’t need to be.">
 <link rel="alternate" type="text/html" href="https://medium.com/@cssence/head-display-block-da4cd2ff71cf" title="Article on medium.com">
 </head>
-<body id="top">
+<body>
 <main>
-<article aria-labelledby="content">
+<article>
 <header>
-<h1 id="content">head {display:block}</h1>
+<h1>head {display:block}</h1>
 <p><i>Essay</i><br><time>2015-10-02T06:27:00Z</time><br><img src="/2015/head-display-block/index.jpg" alt=""></p>
 </header>
 <div>
@@ -22,9 +20,9 @@
 title {
   display: block;
 }</code></pre>
-<h2 id="is-this-in-any-way-useful">Is this in any way useful?</h2>
+<h2>Is this in any way useful?</h2>
 <p>Not really, certain edge cases aside, like <a href="https://cssence.com/">a website focusing on CSS where the text of some inline CSS is used as a wallpaper background</a>. In addition, most elements in the head of an HTML file, think <code>meta</code> and <code>link</code>, simply do not have content, so there is nothing to display in the first place. But feel free to play around. And read along.</p>
-<h2 id="visual-debugging">Visual debugging</h2>
+<h2>Visual debugging</h2>
 <p>I have tested the following code in the latest version of Chrome, Firefox, IE, Edge, Safari, including a number of mobile browsers I could get my hands on. And it works, even though it should not, as I’m about to explain.</p>
 <pre><code class="language-css">head,
 meta[name=&quot;viewport&quot;] {
@@ -34,12 +32,12 @@ meta[name=&quot;viewport&quot;]::before {
   content: attr(content);
 }</code></pre>
 <p>On a mobile-friendly site, something along the lines of <code>width=device-width, <a href="https://css-tricks.com/probably-use-initial-scale1">initial-scale=1</a></code> will appear in your browser window. I do not write the standards, but <code>meta</code> tags are standalone tags in the same way as <code>img</code>. In the specification they are referred to as <a href="https://www.w3.org/TR/html5/syntax.html#void-elements">void elements</a>, and as such are not allowed to have pseudo-generated content. <a href="https://stackoverflow.com/questions/26633229/to-what-self-closing-elements-can-before-and-after-pseudo-elements-be-applie">Subject to debate</a> or not, being of little practical value I assume no one will complain. While we’re at it, I am among the people who would appreciate being able to add generated content to all elements, specifically to images and input fields, but this is another story.</p>
-<h2 id="cross-browser-consistency">Cross-browser consistency</h2>
+<h2>Cross-browser consistency</h2>
 <p>Overall, it is nice to see that browser makers do not treat the document head differently. Instead they use the same web mechanisms, in this case CSS, for dealing with this portion of the HTML file. But the real lesson here is, you get consistent results across browsers, even on a seemingly irrelevant feature. This couldn’t have been said a few years ago. Progress. I like the sound of that.</p>
 </div>
-<aside aria-labelledby="comments">
+<aside>
 <h2 id="comments">Comments</h2>
-<article aria-labelledby="comment-0" hidden>
+<article hidden>
 <h3 id="comment-0"><a rel="me author" href="https://twitter.com/cssence">Matthias Beitl</a> wrote on <a href="https://twitter.com/cssence/status/657455868473155584"><time>2015-10-23T07:17:48Z</time></a></h3>
 <p>head {display:block} #CSS #HTML <a href="/2015/head-display-block/">cssence.com/blog/2015-10-head-display-block</a></p>
 </article>

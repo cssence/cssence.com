@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html class="c-essay" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 <title>Accessibility for Everyone</title>
 <meta name="description" content="When it comes to accessibility, webhint.io can help you walk the walk.">
 <link rel="alternate" type="text/html" href="https://medium.com/@cssence/accessibility-for-everyone-47c471d941e3" title="Article on medium.com" data-syndication="2017-12-11T09:51:11.000Z">
 </head>
-<body id="top">
+<body>
 <main>
-<article aria-labelledby="content">
+<article>
 <header>
-<h1 id="content">Accessibility for Everyone</h1>
+<h1>Accessibility for Everyone</h1>
 <p><i>Essay</i><br><time data-revised="2018-12-28T07:19:00Z">2017-12-10T11:37:00Z</time><br><img src="/2017/accessibility-for-everyone/index.jpg" alt=""></p>
 </header>
 <div>
@@ -19,13 +17,13 @@
 <p>“Accessibility for Everyone” is not only the title of this article, but also a book by <a href="https://twitter.com/laurakalbag">Laura Kalbag</a> that I bought from <a href="https://abookapart.com/">A Book Apart.</a> I’m glad I did.</p>
 <p>I was pretty sure that 2017&#8202;&mdash;&#8202;for me&#8202;&mdash;&#8202;would be the year of progressive web apps. And it was, but I’ll write about that some other time. Even more so, it turned out to be about accessibility. Work-wise, two month ago I switched from technical consulting back to hands-on web development. Not only have I been offered to work on creating a design pattern library for a large web application, which is already great on its own. Even more important, accessibility finally got management attention. Although there is still no dedicated budget, at least we have in on the radar. Progress.</p>
 <p>Where was I? Ah yes, Laura’s book. I read it. It’s awesome. My personal takeaway is that we should not treat accessibility as an add-on or something we <strong>have</strong> to do. Quite the opposite, accessibility is fundamental: Everyone benefits if we make websites accessible. If we start with semantic markup we usually get a site that’s accessible. Then we add more and more stuff and in doing so there is a great chance we screw it up. As a result, the accessibility of our site deteriorates. Which is why it is our job to make sure we don’t.</p>
-<h2 id="everyone-benefits-if-we-make-websites-accessible">Everyone benefits if we make websites accessible</h2>
+<h2>Everyone benefits if we make websites accessible</h2>
 <p>Once this thought became ingrained in the back of my head, it really started to show in the work I did at the office.</p>
 <p>What about outside the office? Well, I’ve always been keen on accessibility, and even though I’ve been reading up on the subject lately, this wasn’t news to me. Also, I’ve been digging web standards for <a href="/2017/being-online-for-20-years/">a really long time</a> now, so for sure my personal pet projects must be accessible, right? Hold that thought for a moment.</p>
 <p>Web geeks usually end the year with <a href="https://24ways.org/">24&nbsp;ways</a>, where 24&nbsp;articles help us shorten the wait for Christmas. The <a href="https://24ways.org/2017/lint-the-web-forward-with-sonarwhal/">second article this year</a> was by <a href="https://twitter.com/seaotta">Stephanie Drescher</a> about <em><a href="https://sonarwhal.com/">Sonarwhal</a></em><ins><sup><a href="#update-1">[1]</a></sup></ins>. Once you get past the cute logo (a narwhal named Nellie), you’ll notice this tool can help you find issues with your website. According to Stephanie, <q cite="https://24ways.org/2017/lint-the-web-forward-with-sonarwhal/">currently Sonarwhal checks for best practices in five categories.</q> Guess what, accessibility is among them. We’ll get back to that shortly.</p>
 <p>Speaking of 24&nbsp;ways, Sonarwhal was not the end of it. The articles on December <a href="https://24ways.org/2017/wcag-for-people-who-havent-read-them/">4</a> and <a href="https://24ways.org/2017/automating-your-accessibility-tests/">7</a> have <em>accessibility</em> in the title. Maybe we are on to something.</p>
 <p>Granted, accessibility is a big topic, it’s easy to not know where to start. How about&hellip;</p>
-<h2 id="alt-text-for-images">Alt-text for images</h2>
+<h2>Alt-text for images</h2>
 <p>Most of us know, images should <strong>always</strong> have an <code>alt</code> attribute, where you describe what the image is about. This way we provide an alternative for people who cannot make use of the image itself. Accessibility is just one aspect, adding a description can also be useful in case the image does not load. Leaving the attribute empty is an option if the image description is not essential, either because the image itself is ornamental or it has already been described elsewhere in the markup.</p>
 <p>Maybe by now you know where this is going. I checked my own site using Sonarwhal’s web interface, and it was disheartening. While it was true that I did add proper alt-text to all the images in my blog posts, I was surprised to find out that I had forgotten about the images found in the comments of said blog posts. Commenting on my articles is only possible through third parties like Twitter, but I ensure that a copy of each comment is also <a href="/2015/own-your-own-data/">hosted on my site for longevity.</a> So for the things I am in charge of, I was able to travel back in time to add alt-text where it was missing.</p>
 <p>Depending on the amount of images under your control, this can be an arduous task. But even if you are not doing it for past images, how about starting today?</p>
@@ -36,7 +34,7 @@
           this time I actually talked to him.&quot;&gt;</code></pre>
 <p>This should work, especially when&#8202;&mdash;&#8202;unlike above&#8202;&mdash;&#8202;it is not taken out of context. I am not an expert on what someone who is relying on image alt-text might want to read. For starters, something is better than nothing. In case you want to learn more, I found <a href="https://twitter.com/danielgoransson">Daniel Göransson</a>’s <em><a href="https://axesslab.com/alt-texts/">Ultimate Guide</a></em> quite helpful.</p>
 <p>Did I mention Twitter? <a href="https://twitter.com/zachleat">Zach Leatherman</a>’s handy <em><a href="https://www.zachleat.com/web/twitter-guide/">Twitter Guide</a></em> reminds us that whenever we post images on Twitter we should also add alt-text for maximum accessibility. Zach also explains how to turn this feature on.</p>
-<h2 id="in-closing">In closing</h2>
+<h2>In closing</h2>
 <p>So no more images without an <code>alt</code> attribute. But I’ve allowed myself to have empty alt-text. Kind of an exception to the rule, my article thumbnail images do not get preferential treatment, so their <code>alt</code> attributes remain empty, because I decided they are merely eye candy. On second thought, I admit that they are somewhat contributing to the story, so perhaps I’ll reconsider.</p>
 <p>Alt-text is just one step, making and keeping your site accessible in an ongoing journey. Nevertheless, I am glad that I can finally say the following.</p>
 <ul>
@@ -50,9 +48,9 @@
 <li><time id="update-1" class="update" datetime="2018-12-28">December 28, 2018:</time> Sonarwhal is now <a href="https://webhint.io/">webhint.io</a>.</li>
 </ol>
 </div>
-<aside aria-labelledby="comments">
+<aside>
 <h2 id="comments">Comments</h2>
-<article aria-labelledby="comment-0" hidden>
+<article hidden>
 <h3 id="comment-0"><a rel="me author" href="https://twitter.com/cssence">Matthias Beitl</a> wrote on <a href="https://twitter.com/cssence/status/939825792531484672"><time>2017-12-10T12:55:04Z</time></a></h3>
 <p>For me, 2017 turned out to be the year of accessibility. #web #a11y<br><a href="/2017/accessibility-for-everyone/">cssence.com/blog/2017-12-accessibility-for-everyone</a></p>
 </article>

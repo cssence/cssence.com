@@ -17,6 +17,7 @@ const folderOut = './public';
 		const clean = (card, deletableCardProps = []) => {
 			if (card.className === 'c-default') deletableCardProps.push('className');
 			if (card.thumbnail === '/404/index.png') deletableCardProps.push('thumbnail');
+			if (card.alternateUrl) deletableCardProps.push('alternateUrl');
 			for (const key of deletableCardProps) {
 				delete card[key];
 			}

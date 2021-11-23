@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html class="c-essay" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 <title>Sliding Door, No More</title>
 <meta name="description" content="Replacing the “Sliding Doors” technique with border-image.">
 <link rel="alternate" type="text/html" href="http://cssence.wordpress.com/2011/03/26/sliding-door-no-more/" title="Article on cssence.wordpress.com">
 </head>
-<body id="top">
+<body>
 <main>
-<article aria-labelledby="content">
+<article>
 <header>
-<h1 id="content">Sliding Door, No More</h1>
+<h1>Sliding Door, No More</h1>
 <p><i>Essay</i><br><time>2011-03-26T21:05:39Z</time><br><img src="/2011/sliding-door-no-more/index.jpg" alt=""></p>
 </header>
 <aside class="standoff metadata" aria-labelledby="quick-summary">
@@ -19,13 +17,13 @@
 <p>There are many browsers out there that support a whole lot of the new CSS3 features. So there is a good chance that some of us are still using CSS techniques that are no longer state of the art. What about sliding doors? Obsolete?</p>
 </aside>
 <div>
-<h2 id="method-obsolescence">Method obsolescence</h2>
+<h2>Method obsolescence</h2>
 <p>March 2011, what a month! A hearty welcome to Internet Explorer&nbsp;9 and Firefox&nbsp;4. I wonder if I should include Google Chrome&nbsp;10? Um, the people at the Googleplex deliver new versions up the wazoo, so for Chrome I guess it will be easier to welcome only versions divisible by three.</p>
 <p>Let me start again by saying there are many browsers out there that support a whole lot of the new CSS3 features. So there is a good chance that some of us are still using CSS techniques that are no longer state of the art. What about <strong>sliding doors</strong>? Obsolete?</p>
-<h2 id="a-brief-history-on-sliding-doors">A brief history on sliding doors</h2>
+<h2>A brief history on sliding doors</h2>
 <p>Back in 2003, <a href="http://www.alistapart.com/articles/slidingdoors2/">Douglas Bowman introduced sliding doors</a> to the CSS community. Special-purpose images stacked up on top of each other could be used to create expandable buttons and tabs. Over the years, <a href="http://azadcreative.com/2009/03/bulletproof-css-sliding-doors/">developers improved upon the original version</a>, ending up with fully clickable regions that use only one image. Others have been inspired by Bowman and went on to use this for custom corners and borders in flexible layouts. I think it’s safe to say: If you’ve been dealing with CSS at an advanced level, you’ve been using sliding doors in one way or the other. Although many of these ways resulted in additional HTML markup that you needed as hooks for your styles, it was the best you could get out of CSS at the time.</p>
-<h2 id="css3-to-the-rescue">CSS3 to the rescue</h2>
-<h3 id="multiple-background-images">Multiple background images</h3>
+<h2>CSS3 to the rescue</h2>
+<h3>Multiple background images</h3>
 <p>Let’s jump to conclusions, shall we? The ability to assign more than one background image to an element seems to be just what we need to put an end to sliding doors. And best of all, our HTML file is not adding extra meat on its bones, erm, not adding markup just for style’s sake.</p>
 <p>Specifying multiple background images is easy. Just use the <code>background</code> property the way you’re used to, but instead of applying only one image, repeat the syntax and add commas for separation, like so:</p>
 <pre><code class="language-css">.multi-background-button {
@@ -40,7 +38,7 @@
 <p>The intention here is to create a pill-shaped button, but our images overlap. Addressing this problem is one of the main tasks of the sliding doors technique. Margins are applied to the stacked elements to prevent the repeated image from interfering with our transparent ends. If you specify multiple backgrounds on one single element, you have no stacked elements where you could play with margins.</p>
 <p><em>Note: Replacing the transparency in our images with a static background color would be a cheap (and lousy) fix. Furthermore, this particular example could be fixed by adding rounded corners, but that too is no real solution. We want something that works in any case, even with irregular shapes at one or both ends of our button.</em></p>
 <p>While there are many things you can do with multiple background images&thinsp;—&thinsp;including effects such as <a href="http://en.wikipedia.org/wiki/Parallax_scrolling">parallax scrolling</a>&thinsp;—&thinsp;, it turns out they are of little help when we want to replace sliding doors.</p>
-<h3 id="border-images">Border images</h3>
+<h3>Border images</h3>
 <p>Luckily, <a href="http://www.w3.org/TR/CSS3-background/">CSS3 background</a> is more than just multiple backgrounds. It’s got something called border images.</p>
 <p>The syntax is tricky, but the general idea is to specify a border and apply specific parts of one single background-image to this border and the area within the border. Currently, <code>border-image</code> must be used with vendor-prefixes to work in Firefox and WebKit, which I left out for better readability:</p>
 <pre><code class="language-css">.border-image-button {
@@ -74,13 +72,13 @@ a {
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 <p>To learn more about border-images, check out <a href="http://css-tricks.com/understanding-border-image/">Nora Brown’s article at css-tricks.com</a>, or simply play with her <a href="http://www.norabrowndesign.com/css-experiments/border-image-anim.html">interactive demo</a>.</p>
-<h2 id="conclusion">Conclusion</h2>
+<h2>Conclusion</h2>
 <p>Compatibility for older browsers aside, sliding doors are not meant to stay. Their spirit lives on in border-image.</p>
 <p>If you’ve never heard of sliding doors you should still try to understand the underlying technique, as you may derive other creative uses from it. But when it comes to buttons, tabs and fancy borders, we’re going to see a decline in the use of sliding doors, if not a complete stop. After all, that’s one of the reasons why border-images have been introduced.</p>
 </div>
-<aside aria-labelledby="comments">
+<aside>
 <h2 id="comments">Comments</h2>
-<article aria-labelledby="comment-0" hidden>
+<article hidden>
 <h3 id="comment-0"><a rel="me author" href="https://twitter.com/cssence">Matthias Beitl</a> wrote on <a href="https://twitter.com/cssence/status/57332403454230528"><time>2011-04-11T06:41:24Z</time></a></h3>
 <p>Last month’s issue of #cssence ★ from sliding doors to border-image: <a href="/2011/sliding-door-no-more/">j.mp/gN3FMK</a></p>
 </article>

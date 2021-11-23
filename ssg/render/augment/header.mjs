@@ -11,6 +11,6 @@ const modify = (content, meta) => {
 	if (!content[i].includes('<br><img')) {
 		content[i] = content[i].replace('</p>', `<br><img src="${meta.page.thumbnail}" alt=""></p>`);
 	}
-};	
+};
 
 export default modify;

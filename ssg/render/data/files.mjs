@@ -7,7 +7,7 @@ const getIndexHtmlList = async (folder) => {
 	// create build file list
 
 	const fileList = await getFileList(folder);
-	return fileList.map((file) => ['', file.split('/').slice(2, -1), ''].flat().join('/'));
+	return fileList.map((file) => file.slice(folder.length, -'index.html'.length));
 };
 
 const getSortedIndexHtmlList = (toc) => {

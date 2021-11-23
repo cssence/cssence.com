@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html class="c-essay" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 <title>CSS3 is Dead</title>
 <meta name="description" content="Designing for the lowest common denominator is no longer the way to go.">
 <link rel="alternate" type="text/html" href="http://cssence.wordpress.com/2011/01/26/css3-is-dead/" title="Article on cssence.wordpress.com">
 </head>
-<body id="top">
+<body>
 <main>
-<article aria-labelledby="content">
+<article>
 <header>
-<h1 id="content">CSS3 is Dead</h1>
+<h1>CSS3 is Dead</h1>
 <p><i>Essay</i><br><time>2011-01-26T19:23:37Z</time><br><img src="/2011/css3-is-dead/index.jpg" alt=""></p>
 </header>
 <aside class="standoff metadata" aria-labelledby="quick-summary">
@@ -20,7 +18,7 @@
 </aside>
 <div>
 <p>So this is it. The first of <a href="/about/">a series of articles</a> about <abbr title="Cascading Style Sheets">CSS</abbr>. Pure CSS. No digressions. But instead of frolicking with our shiny new CSS3 features, the headline says: CSS3 is dead! WTF?</p>
-<h2 id="the-tipping-point">The tipping point</h2>
+<h2>The tipping point</h2>
 <p>Here we are in 2011, starting another decade. Behind us lies the best decade for CSS so far. Unlike in the old millennium, where CSS has been mainly <a href="http://www.w3.org/TR/REC-CSS1/">an idea on (electronic) paper</a>, browser makers started to implement CSS. CSS1. And later CSS2. And/or CSS2.1. Maybe something in between. At least they thought they did after reading the <abbr title="World Wide Web Consortium">W3C</abbr> specs. Sure, it’s also been a decade with cross-browser implementation issues and hacks. But that came along with the adoption, i.e., the browser support.</p>
 <p>Back to the present. CSS has become an integral part of web design. HTML specifications have been designed in order to allow styling mechanisms other than CSS to eventually emerge and coexist, but no dice. Today, thanks to HTML5, whenever you refer to a stylesheet, you no longer need to specify that the type is text/css.</p>
 <pre><code class="language-html">&lt;!-- old: --&gt;
@@ -32,25 +30,25 @@
 <figcaption>Maybe the artist wasn’t referring to CSS. Well, anyway.</figcaption>
 </figure>
 <p>Nice way to state the status quo, but is there a point here? Patience, I’m getting there.</p>
-<h2 id="css3-doesnt-want-to-be-called-css3-anymore">CSS3 doesn’t want to be called CSS3 anymore</h2>
+<h2>CSS3 doesn’t want to be called CSS3 anymore</h2>
 <p>The other day, I’ve been reading <a href="http://sixrevisions.com/css/3-advanced-css3-techniques-you-should-learn/">this blog post</a>. It shows some nice examples for what the author calls “Advanced CSS3 Techniques”. <a href="http://www.w3.org/TR/css3-selectors/#selectors">CSS3 selectors</a> being one of these techniques. Made me think. Sure, Internet Explorer up to a certain number has issues dealing with most of these selectors, nevertheless I’ve been using many of them for quite a while now. In fact, I’ve gotten so used to them, how can they be CSS3? Well, not all of them are, but for example <code>:last-child</code> is. And I’ve been using that one long before CSS3 had the chance to become a buzzword.</p>
 <p>I didn’t immerse myself in the details. Instead, I read <a href="http://www.webdesignerdepot.com/2009/08/5-css3-design-enhancements-that-you-can-use-today/">another post</a>. So what? Stumbling upon blog posts is not uncommon when you browse the web. Right. But then, the craziest thing happened. You’re not going to believe this. Hold on to your mousepads. I read <a href="http://gizmodo.com/5740244/html-5-just-wants-to-be-html-from-now-on">a third post</a>. This one tells us why HTML5 no longer wants to be called HTML5. Because there is only one HTML.</p>
 <p>That’s when it hit me. The same is true for CSS3. Why should we care about the version? Of course, right now everybody is shouting from the rooftops: Start implementing CSS3! And that’s a good thing. To create awareness. But I’m glad I didn’t wait for rooftop noise in order to start using CSS3 selectors. I’ve read about them, some browsers already supported them, they looked neat and powerful. I liked them, so I started using them. Rounded corners? Same thing. Well, there may be special cases. Take the <code>text-shadow</code> property. It was introduced in the CSS2 specification. Dropped in version 2.1. And now reintroduced in version 3. So? Was there any browser support in between? It doesn’t matter, it’s just another example that shows us why we couldn’t care less about the CSS version.</p>
 <p>What really matters is what browser makers have implemented. Wanna know the best part? All it takes is one browser. If the last decade told us one thing, it’s that waiting for all browsers to implement a CSS feature (correctly) makes no sense&thinsp;—&thinsp;unless you love procrastination. So at this point, it all boils down to the one thing: The Lowest Common Denominator (LCD).</p>
-<h2 id="designing-for-the-lcd-is-a-thing-of-the-past">Designing for the LCD is a thing of the past</h2>
+<h2>Designing for the LCD is a thing of the past</h2>
 <figure><img src="/2011/css3-is-dead/ie-left-behind.png" alt="Happy browser logos, but Internet Explorer left alone.">
 <figcaption>Yes, LCD, the Lowest Common Denominator (*cough* IE6). It is the single most quoted excuse why someone cannot start using new CSS features. Designing web pages for the LCD suppresses creativity when it comes to CSS.</figcaption>
 </figure>
 <p>I’ve been&thinsp;–&thinsp;and I still am&thinsp;–&thinsp;an advocate of <a href="http://en.wikipedia.org/wiki/Graceful_degradation">graceful degradation</a>. Every new project I did start in a modern browser. Granted, it was painful to realize later, how difficult it is to get a desirable result for the less capable browsers. So I used hacks. And I threw in additional tags to my once clean markup. Knowing that later on this will make maintaining the site more traumatizing. These days, the use of powerful CSS properties results in even cleaner markup and even better maintenance. Naturally, the gap to less capable browsers is widening. Therefore, designing for the LCD is no longer the way to go, especially with the attention to detail (read: pixel-perfect).</p>
 <p>We must cast off the shackles of the lowest common denominator, and move on. No one blames IE6 for not being state of the art, that browser is about to celebrate its 10th birthday.</p>
 <p>Don’t get me wrong, I adhere to the principle that <a href="http://en.wikipedia.org/wiki/Progressive_enhancement#Core_principles">basic content should be accessible to all browsers</a>. But design isn’t content. Sometimes, I go as far as to suggest that IE6 should embrace CSS Naked Day the whole year and display only the text version. Sadly, not a single client accepted this. What to do? Personally, I proceed by simply telling the truth. If you put a price tag on it, clients will start to understand how much of their budget is blown on trying to get pixel-perfect websites for IE6. This must be a thing of the past.</p>
-<h2 id="conclusion">Conclusion</h2>
+<h2>Conclusion</h2>
 <p>Now that the lowest common denominator is no longer holding us back, let us go out there and use the freshest CSS available. Use it with vendor prefixes. Use it.</p>
 <p>Forget the version number. CSS3 is dead. Long live CSS!</p>
 </div>
-<aside aria-labelledby="comments">
+<aside>
 <h2 id="comments">Comments</h2>
-<article aria-labelledby="comment-0" hidden>
+<article hidden>
 <h3 id="comment-0"><a rel="me author" href="https://twitter.com/cssence">Matthias Beitl</a> wrote on <a href="https://twitter.com/cssence/status/32197793019863040"><time>2011-01-31T22:05:26Z</time></a></h3>
 <p>Seriously? CSS3 is dead? <a href="/2011/css3-is-dead/">j.mp/g8vmfz</a></p>
 </article>

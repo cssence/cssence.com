@@ -11,8 +11,9 @@ const modify = (content, meta) => {
 		conversation.start = content.indexOf('</header>') + 1;
 		conversation.end = content.lastIndexOf('</article>') - 1;
 	} else {
-		conversation.start = content.indexOf('<aside aria-labelledby="comments">');
+		conversation.start = content.indexOf('<h2 id="comments">Comments</h2>') - 1;
 		conversation.end = conversation.start + content.slice(conversation.start).indexOf('</aside>');
+		content[conversation.start] = '<aside aria-labelledby="comments">';
 	}
 	for (let i = conversation.start + 2; i < conversation.end; i += 1) {
 		if (content[i].startsWith('<article')) {
@@ -37,6 +38,7 @@ const modify = (content, meta) => {
 			} else {
 				conversation.thread.push(comment);
 			}
+			content[i] = content[i].replace('<article', `<article aria-labelledby="${comment.id}"`);
 			content[i + 1] = content[i + 1].replace(/<time>([^<]+)<\/time>/g, (_, textContent) => meta.date.format(textContent, 'hh:mm'));
 		}
 	}

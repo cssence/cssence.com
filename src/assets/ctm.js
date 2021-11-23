@@ -8,24 +8,21 @@
 		s.href = href;
 		dh.appendChild(s);
 	};
+	var onReady = function (cb) {
+		if (d.readyState !== 'loading') return cb();
+		d.addEventListener('DOMContentLoaded', cb);
+	};
 	var fallback = function (reason) {
-		d.querySelector('link[rel="stylesheet"][media="print"]').removeAttribute('media');
-		d.querySelector('link[rel="stylesheet"][media="screen"]').disabled = true;
-		d.addEventListener('DOMContentLoaded', function () {
-			var s = d.querySelectorAll('link[rel="stylesheet"][media="screen"], style[media="screen"]');
-			for (var i = 0; i < s.length; ++i) s[i].disabled = true;
+		onReady(function () {
+			var s = d.querySelectorAll('link[rel="alternate stylesheet"], link[rel="stylesheet"][title="Advanced Style"], style[title="Advanced Style"]');
+			for (var i = 0; i < s.length; ++i) s[i].parentNode.removeChild(s[i]);
+			d.querySelector('link[rel="stylesheet"][media="print"]').removeAttribute('media');
 		});
 		console.info(reason, '\nNo further progressive enhancement.');
 	};
 	try {
-		if (!w.CSS.supports('--v:4')) {
-			fallback('Browser does not support CSS custom properties.');
-			return;
-		}
-		if (w.location.search === '?ie') {
-			fallback('Fallback requested manually.');
-			return;
-		}
+		if (!w.CSS.supports('--v:4')) return fallback('Browser does not support CSS custom properties.');
+		if (w.location.search.indexOf('?ie') === 0) return fallback('Fallback requested manually.');
 		var highlight = function () {
 			if (d.querySelectorAll('code[class]').length) {
 				var loadJS = function (src, cb) {
@@ -45,11 +42,7 @@
 				});
 			}
 		};
-		if (d.readyState === 'loading') {
-			d.addEventListener('DOMContentLoaded', highlight);
-		} else {
-			highlight();
-		}
+		onReady(highlight);
 	} catch (err) {
 		console.warn(err);
 		fallback('Error occured, switching to fallback mode.');

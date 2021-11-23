@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html class="c-essay" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 <title>The ‹u› in Group</title>
 <meta name="description" content="A proposal to give the ‹u› element an additional purpose.">
 <link rel="alternate" type="text/html" href="https://medium.com/@cssence/the-u-in-group-c0fb4faf9e06" title="Article on medium.com" data-syndication="2015-11-22T09:24:00.000Z">
 </head>
-<body id="top">
+<body>
 <main>
-<article aria-labelledby="content">
+<article>
 <header>
-<h1 id="content">The ‹u› in Group</h1>
+<h1>The ‹u› in Group</h1>
 <p>Sometimes you have to bend the standards</p>
 <p><i>Essay</i><br><time>2015-11-22T08:07:00Z</time><br><img src="/2015/the-u-in-group/index.jpg" alt=""></p>
 </header>
@@ -25,7 +23,7 @@
 </blockquote>
 <p>In case you think the quote above might as well be written in Chinese, because you did not get it, do not fret. It took me some time and <a href="https://html5doctor.com/u-element/">this article on HTML5 doctor</a> to understand what was going on. So head over there and read for yourself, I am going to wait for you to get back.</p>
 <p>Cool, right? The thing is, I blog about Web Design in English, so I don’t need this, do I?</p>
-<h2 id="degrouping-a-span-of-text">Degrouping a span of text</h2>
+<h2>Degrouping a span of text</h2>
 <p>The proper markup for a date would be the <code>&lt;time&gt;</code> element. Also for time, but never mind. It should contain human readable text representing a date. Quite often that date is not just a month or year, but a combination of these things. In other words, the <code>&lt;time&gt;</code> element forms a group, and the members of that group are individual parts of a date.</p>
 <p>Now let me suggest the following: On top of the stuff mentioned in the specification, let us use <code>&lt;u&gt;</code> for degrouping text. Degrouping, is that even a thing?</p>
 <p>Consider the following example, something I use in a similar fashion on my own site.</p>
@@ -35,7 +33,7 @@
   &lt;u class=&quot;year&quot;&gt;2015&lt;/u&gt;
 &lt;/time&gt;</code></pre>
 <p>This is neither Chinese nor misspelt. I need this markup because I am using those elements as hooks, so I can do some nifty styling for the different parts of the date. To be honest, at the time of writing my code is even more complex and I am using <code>&lt;i&gt;</code> instead of <code>&lt;u&gt;</code>. But I am going to change that, as I would like to argue that the code above makes more sense.</p>
-<h2 id="reasoning">Reasoning</h2>
+<h2>Reasoning</h2>
 <p>Why go with <code>&lt;u&gt;</code>? Let us look at the alternatives first.</p>
 <ul>
 <li>Sure, I could simply continue to use <code>&lt;i&gt;</code>, but starting with HTML&nbsp;5 its purpose is to label a span of text in an alternate voice or mood. No, that’s not what we have here.</li>
@@ -48,13 +46,13 @@
 <figure class="standout"><img src="/2015/the-u-in-group/be-careful.jpg" alt="A reminder to be careful.">
 <figcaption>The author is torn when it comes to whether the sample code used in this article is conform with the specs or not. If you consider reuse, do so at your own risk, as some standardistas might haunt you afterwards.</figcaption>
 </figure>
-<h2 id="footnote">Footnote</h2>
+<h2>Footnote</h2>
 <p>All semantics aside, in many cases adding that kind of markup won’t be necessary as soon as it can be handled simply by using just CSS. Which is why I support <a href="https://css-tricks.com/a-call-for-nth-everything/">the call for :nth-everything</a>.</p>
 <p>Then again, selectors like <code>:nth-letter</code> and <code>:nth-word</code>, once implemented, might only work for simpler stuff, the moment you are dealing with variable length and the likes, it can still be useful to (de)group directly in HTML. So why not let <code>&lt;u&gt;</code> do it.</p>
 </div>
-<aside aria-labelledby="comments">
+<aside>
 <h2 id="comments">Comments</h2>
-<article aria-labelledby="comment-0" hidden>
+<article hidden>
 <h3 id="comment-0"><a rel="me author" href="https://twitter.com/cssence">Matthias Beitl</a> wrote on <a href="https://twitter.com/cssence/status/674881260037283841"><time>2015-12-10T09:20:05Z</time></a></h3>
 <p>The ‹u› in Group #HTML #webstandards <a href="/2015/the-u-in-group/">cssence.com/blog/2015-11-the-u-in-group</a></p>
 </article>

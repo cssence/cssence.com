@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html class="c-code" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 <title>CSS Variables in Style Attributes</title>
 <meta name="description" content="HTML for content, CSS for styling. What about the HTML style attribute?">
 <link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/wvBOGjQ" title="Code example on codepen.io">
 </head>
-<body id="top">
+<body>
 <main>
-<article aria-labelledby="content">
+<article>
 <header>
-<h1 id="content">CSS Variables in Style Attributes</h1>
+<h1>CSS Variables in Style Attributes</h1>
 <p>For increased separation of concerns.</p>
 <p><i>Code</i><br><time>2020-01-24T15:23:07Z</time><br><img src="/2020/css-variables-in-style-attributes/index.png" alt=""></p>
 </header>
 <div>
 <p>I use CSS variables, also called custom properties, a lot lately. Even more so, with the <a href="/2019/just-launch/">latest redesign of my site</a>, they became my benchmark for <a href="https://responsivenews.co.uk/post/18948466399/cutting-the-mustard">Cutting the Mustard</a>. Browsers that do not support CSS variables&#8202;&ndash;&#8202;I’m looking at you, Internet Explorer&#8202;&ndash;&#8202;will get raw HTML with (almost) no CSS applied. As a result, IE users would be better off <a href="/2015/print-first/">printing my site,</a> but I digress.</p>
-<h2 id="what-if-stylesheets-do-not-load-or-you-do-not-want-them-to-load">What if stylesheets do not load, or you do not want them to load?</h2>
+<h2>What if stylesheets do not load, or you do not want them to load?</h2>
 <p>I started giving workshops on accessibility not too long ago, and when I do, I always refer them to this handy <a href="https://www.matuzo.at/blog/beyond-automatic-accessibility-testing-6-things-i-check-on-every-website-i-build/">Six Things Guide</a> by <a href="https://twitter.com/mmatuzo">Manuel Matuzović</a>. One of the things he recommends is removing all styles. If this trick is already part of your tool belt, you most likely have a bookmarklet or browser plugin that does this for you. If not, a quick way would be to open developer tools, and remove the document <code>&lt;head&gt;</code>. This should already give you a raw HTML document with only browser default styling applied, unless there are a lot of <code>&lt;style&gt;</code> declarations inside the document body (something that is getting more common these days), in which case you would have to hunt down those elements and delete them too. But doing all this won’t eliminate the declarations that have been set directly with <code>style</code> attributes.</p>
 <p>In an ideal world, there are no style attributes. We only want external stylesheets, to achieve content and style separation. But let’s take a look at reality instead.</p>
 <p>Even this site uses style attributes. <a href="/code/">Articles filed under Code</a> (including this one) end with <a href="#showcase">a link to the demo on CodePen.</a> Back in the day each link served as a hook and got replaced by the actual demo running inside an <code>&lt;iframe&gt;</code>, but <a href="/2018/data-protection-rules/">I’ve removed the CodePen script that does that.</a> To make the now untouched link more prominent (and to increase visual appeal), I add the article’s thumbnail image via style attribute. But the way I do this has changed.</p>
-<h2 id="setting-css-variables-directly-in-the-style-attribute">Setting CSS variables directly in the style attribute</h2>
+<h2>Setting CSS variables directly in the style attribute</h2>
 <p><a href="https://twitter.com/css/status/1194673806264152064">“Weird but cool,”</a> CSS-Tricks wrote when they featured <a href="https://ishadeed.com/article/css-variables-inline-styles/">this article about setting CSS variables inline</a> by <a href="https://twitter.com/shadeed9">Ahmad Shadeed.</a></p>
 <p>I assume you already know how my thumbnail image handling has changed. Let’s apply the knowledge from the aforementioned article and replace the inline <code>background-image</code> directive with a custom property.</p>
 <pre><code class="language-html">&lt;!-- OLD, background image is applied directly. --&gt;
@@ -33,7 +31,7 @@
 <p>If you view this page as raw HTML, with no stylesheets applied, nowadays everything is fine because the background image is specified using custom properties. Before the change (shown on the left in the image below), the dark background of the image made it hard to read the link text.</p>
 <p class="figure standout"><img src="/2020/css-variables-in-style-attributes/before-after.png" alt="Deactivating stylesheets in the old approach does not eliminate all the styling, because things that are set in style attributes are still applied."></p>
 <p>Tempting to think we handed ourselves a neat little accessibility improvement, but usually stylesheets <em>do</em> load, so this is really more for debugging purposes. In other words, going the extra mile on <strong>HTML for Content, CSS for Style</strong> is all we got from this? Not quite, bonus point #1 described below is a genuine advantage.</p>
-<h3 id="bonus-points">Bonus points</h3>
+<h3>Bonus points</h3>
 <p>&#49;. If we use custom properties, we are no longer limited to the HTML element with the style attribute itself. We can let the pseudo-generated content do the styling, e.g. <code>::before</code>.</p>
 <pre><code class="language-css">.element-with-style-attribute::before {
   content: var(--url-thumbnail);
@@ -48,17 +46,17 @@
   background-image: attr(data-thumbnail);
 }</code></pre>
 </div>
-<aside aria-labelledby="comments">
+<aside>
 <h2 id="comments">Comments</h2>
-<article aria-labelledby="comment-0" hidden>
+<article hidden>
 <h3 id="comment-0"><a rel="me author" href="https://twitter.com/cssence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/cssence/status/1220733127670345728"><time>2020-01-24T15:40:32Z</time></a></h3>
 <p>CSS Variables in Style Attributes: Based on <a href="https://ishadeed.com/article/css-variables-inline-styles/">ishadeed.com/article/css-variables-inline-styles/</a> by <a href="https://twitter.com/shadeed9">@shadeed9</a> and with a shoutout to <a href="https://matuzo.at/blog/beyond-automatic-accessibility-testing-6-things-i-check-on-every-website-i-build/">matuzo.at/blog/beyond-automatic-accessibility-testing…</a> by <a href="https://twitter.com/mmatuzo">@mmatuzo</a><br><a href="/2020/prevent-orphan-in-flexbox/">cssence.com/2020/prevent-orphan-in-flexbox</a></p>
 </article>
-<article aria-labelledby="comment-1">
+<article>
 <h3 id="comment-1"><a rel="author" href="https://twitter.com/mmatuzo">Manuel Matuzović</a> wrote on <a href="https://twitter.com/mmatuzo/status/1220735951787347968"><time>2020-01-24T15:51:45Z</time></a></h3>
 <p><a href="https://twitter.com/cssence">@cssence</a> Thanks for the shoutout! 🤗</p>
 </article>
-<article aria-labelledby="comment-2">
+<article>
 <h3 id="comment-2"><a rel="author" href="https://twitter.com/shadeed9">Ahmad Shadeed</a> wrote on <a href="https://twitter.com/shadeed9/status/1220738538230157313"><time>2020-01-24T16:02:02Z</time></a></h3>
 <p><a href="https://twitter.com/cssence">@cssence</a> Thanks for the link!</p>
 </article>

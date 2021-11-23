@@ -47,6 +47,7 @@ img + small,
 .subtle,
 figure,
 blockquote,
+thead th,
 .posts h2,
 .codepen,
 #comments,
@@ -594,14 +595,14 @@ nav a.c-article {
 	margin-right: 0;
 	margin-left: -.5rem;
 	padding-right: .5rem;
-	padding-left: 3.25rem;
+	padding-left: 3.375rem;
 	text-transform: none;
 }
 [data-hl="Home"] svg {
 	overflow: visible;
 	position: absolute;
 	top: 0;
-	left: .5rem;
+	left: .4375rem;
 	height: 2.5rem;
 	width: 2.5rem;
 	background-color: var(--color-dark);

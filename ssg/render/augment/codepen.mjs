@@ -11,7 +11,7 @@ const modify = (content, meta) => {
 		`<p><a href="${meta.page.alternateUrl}">Visit CodePen to see this&nbsp;example in&nbsp;action.</a></p>`,
 		'</aside>'
 	];
-	const insertBefore = content.indexOf('<aside aria-labelledby="comments">');
+	const insertBefore = content.indexOf('<h2 id="comments">Comments</h2>') - 1;
 	content.splice(insertBefore, 0, aside.join('\n'));
 
 };
