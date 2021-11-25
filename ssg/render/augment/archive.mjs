@@ -26,8 +26,8 @@ const modify = (content, meta) => {
 	const tableContent = ['<tbody>'];
 	for (let year = meta.date.year; year >= 2010; year -= 1) {
 		const cols = [`<th><a href="/${year}/">${year}</a></th>`];
-		for (const className of ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', SUM]) {
-			const value = stats[className][year];
+		for (const className of ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', SUM, 'c-articles']) {
+			const value = className === 'c-articles' ? stats[SUM][year] - stats['c-note'][year] : stats[className][year];
 			cols.push(`<td><data value="${value}">${value}</data></td>`);
 		}
 		tableContent.push(`<tr>${cols.join('')}</tr>`);
@@ -35,14 +35,19 @@ const modify = (content, meta) => {
 	tableContent.push('</tbody>');
 	tableContent.push('<tfoot>');
 	const lastRowCols = [`<th>All</th>`];
-	for (const className of ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', SUM]) {
-		const value = stats[className][SUM];
+	for (const className of ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', SUM, 'c-articles']) {
+		const value = className === 'c-articles' ? stats[SUM][SUM] - stats['c-note'][SUM] : stats[className][SUM];
 		lastRowCols.push(`<td><data value="${value}">${value}</data></td>`);
 	}
 	tableContent.push(`<tr>${lastRowCols.join('')}</tr>`);
 	tableContent.push('</tfoot>');
 
 	const insertBefore = content.indexOf('</table>');
+	const total = insertBefore + 2;
+	content[total] = content[total].replace('<!-- articles: -->The number of', stats[SUM][SUM] - stats['c-note'][SUM]);
+	content[total] = content[total].replace('<!-- notes: -->the number of', stats['c-note'][SUM]);
+	content[total] = content[total].replace('<!-- posts: -->many', meta.toc.posts.length); // should be equal to stats[SUM][SUM]
+	content[total] = content[total].replace('<!-- all: -->even more', meta.toc.posts.length + meta.toc.indexes.length + meta.toc.pages.length);
 	content.splice(insertBefore, 0, tableContent.join('\n'));
 
 };

@@ -4,11 +4,12 @@
 <title>Archive</title>
 <meta name="description" content="Over time, a lot of blog posts have been written. Maybe you find some goodness from yesteryear.">
 <style>
-table{border-collapse:collapse;width:100%}
+table{border-collapse:collapse;width:100%;margin:2em 0}
 thead th{font-size:75%}
 th,td{width:15%;text-align:right}
 th:first-child{width:auto;text-align:left}
-td:last-child,tfoot{font-weight:700}
+td:nth-child(7),tfoot{font-weight:700}
+th:last-child,td:last-child{display:none}
 </style>
 <link rel="stylesheet" media="screen" href="/archive/table.css" title="Advanced Style">
 </head>
@@ -21,7 +22,7 @@ td:last-child,tfoot{font-weight:700}
 <p><i>Internal</i><br><img src="/archive/index.png" alt=""></p>
 </header>
 <div>
-<p>The table below shows how many blog posts have been written on CSSence.com over the years. You find the total numbers in the last column and the last row respectively. Columns are split up into categories the posts belong to. Rows contain one entry per year (most recent first), and the years are links, so as an added bonus this page lets can navigate to all the years this weblog has existed.</p>
+<p>The table below shows how many blog posts have been written on CSSence.com over the years. Columns are split up into categories the posts belong to. Rows contain one entry per year (most recent first), and the years are links, so as an added bonus this page lets can navigate to all the years this weblog has existed.</p>
 <div class="standout">
 <table>
 <thead>
@@ -32,11 +33,13 @@ td:last-child,tfoot{font-weight:700}
 <th class="c-event"><i><span>Events</span></i></th>
 <th class="c-code"><i><span>Code</span></i></th>
 <th class="c-note"><i><span>Notes</span></i></th>
-<th>All categories</th>
+<th>Total</th>
+<th class="c-articles"><i><span>thereof Articles</span></i></th>
 </tr>
 </thead>
 </table>
 </div>
+<p><!-- articles: -->The number of&nbsp;articles and <!-- notes: -->the number of&nbsp;notes make a total of <!-- posts: -->many&nbsp;blog&nbsp;posts, but this site needs indexes and other pages too. Currently the whole site has <strong><!-- all: -->even more</strong>&nbsp;pages altogether.</p>
 </div>
 </article>
 </main>

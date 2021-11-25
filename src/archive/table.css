@@ -1,8 +1,14 @@
+table {
+	margin: 3rem 0;
+}
 thead th {
-	height: 6rem;
+	height: 5rem;
+	padding-top: 0;
 	border-bottom-style: double;
 	border-bottom-width: .1875rem;
+	font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", "Noto Sans", "DejaVu Sans", sans-serif;
 	font-size: .875rem;
+	line-height: calc(16 / 14);
 	vertical-align: bottom;
 }
 th i {
@@ -10,8 +16,11 @@ th i {
 }
 th i span {
 	position: absolute;
-	transform: rotate(-45deg) translate(-1.25rem, -2.25rem);
+	transform: rotate(-45deg) translate(-1.25rem, -2rem);
 	transform-origin: 0 0;
+}
+th:last-child i span {
+	transform: rotate(-45deg) translate(-2rem, -2.5rem);
 }
 th i::before {
 	display: inline-block;
@@ -19,6 +28,9 @@ th i::before {
 	width: .875rem;
 	height: .875rem;
 	margin: 0;
+}
+th:last-child i::before {
+	visibility: hidden;
 }
 tbody tr:hover,
 tbody tr:focus-within {
@@ -31,19 +43,24 @@ td {
 	border: 0 solid var(--color-bg-subtle);
 	vertical-align: middle;
 }
-tr + tr :where(th, td) {
+tr + tr > * {
 	border-top-width: .0625rem;
 }
-tfoot :where(th, td) {
+tfoot tr > * {
 	border-top-width: .125rem;
+	padding-bottom: 0;
 }
 th:first-child {
 	padding-left: var(--padding-horizontal);
 	white-space: nowrap;
 }
-th:last-child,
-td:last-child {
-	width: calc(2 * var(--padding-horizontal) + .25rem + var(--width-sidebar));
+tr > *:nth-child(7) {
+	width: calc(2 * var(--padding-horizontal) + .25rem + var(--width-sidebar) / 2);
+	padding-right: var(--padding-horizontal);
+}
+tr > *:last-child {
+	display: table-cell;
+	width: calc(var(--width-sidebar) / 2);
 	padding-right: var(--padding-horizontal);
 }
 table data {
@@ -56,4 +73,7 @@ tbody data[value="0"] {
 	th:first-child {
 		padding-left: 0;
 	}
+	/*.standout {
+		padding-right: var(--padding-horizontal);
+	}*/
 }
