@@ -15,10 +15,11 @@ const modify = (content, meta) => {
 		conversation.end = conversation.start + content.slice(conversation.start).indexOf('</aside>');
 		content[conversation.start] = '<aside aria-labelledby="comments">';
 	}
+	let commentIndex = 0;
 	for (let i = conversation.start + 2; i < conversation.end; i += 1) {
 		if (content[i].startsWith('<article')) {
 			const comment = {
-				id: content[i + 1].match(/id="([^"]+)"/)[1],
+				id: content[i + 1].match(/id="([^"]+)"/)?.[1],
 				url: content[i + 1].match(/wrote on <a href="([^"]+)"/)?.[1],
 				own: content[i + 1].includes('rel="me author"'),
 				offset: i - conversation.start,
@@ -33,12 +34,19 @@ const modify = (content, meta) => {
 			if (!conversation.hook && comment.own && comment.url?.startsWith('https://twitter.com')) {
 				conversation.hook = comment;
 			}
-			if (comment.id === 'comment-0') {
+			if (content[i].includes('hidden')) {
+				comment.id = 'comment-0';
 				conversation.hidden = comment;
 			} else {
+				commentIndex += 1;
+				if (comment.id && commentIndex !== parseInt(comment.id.split('-')[1], 10)) {
+					console.warn(`Blog post ${meta.page.path} contains comment(s) with out-of-sync ID.`);
+				}
+				comment.id = `comment-${commentIndex}`;
 				conversation.thread.push(comment);
 			}
 			content[i] = content[i].replace('<article', `<article aria-labelledby="${comment.id}"`);
+			if (!content[i + 1].startsWith('<h3 id=')) content[i + 1] = content[i + 1].replace('<h3', `<h3 id="${comment.id}"`);
 			content[i + 1] = content[i + 1].replace(/<time>([^<]+)<\/time>/g, (_, textContent) => meta.date.format(textContent, 'hh:mm'));
 		}
 	}

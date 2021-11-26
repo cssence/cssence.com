@@ -53,6 +53,7 @@ blockquote,
 #comments ~ article h3,
 #comments ~ p,
 #comments ~ section,
+[data-chain],
 [data-unavailable],
 #contribute,
 .metadata,
@@ -79,6 +80,7 @@ header p:last-child,
 .posts li p:last-child,
 #comments,
 #comments ~ article h3,
+[data-chain],
 [data-unavailable],
 .metadata,
 img + small,
@@ -454,6 +456,7 @@ header,
 	filter: grayscale(1);
 }
 i::before,
+[data-chain]::before,
 [data-hl]:empty::after,
 .imprint section a::after {
 	content: "";
@@ -464,6 +467,18 @@ i::before,
 	background-color: currentColor;
 	-webkit-mask: var(--icon) center / contain no-repeat;
 	mask: var(--icon) center / contain no-repeat;
+}
+[data-chain] {
+	padding: .1875rem 0 0 1.25em;
+	margin-bottom: .1875rem;
+}
+[data-chain]::before {
+	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath d='M7 12.12V16l-6-6 6-6v3.97c6.98.16 6.68-4.75 4.9-7.97C16.3 4.74 15.36 12.34 7 12.12z'/%3E%3C/svg%3E");
+	margin: .1875rem 0 0 -1.25em;
+	transform: scale(1, 1);
+}
+[data-chain="continue"]::before {
+	transform: scale(-1, 1);
 }
 i::before {
 	width: 1.25rem;
