@@ -16,7 +16,7 @@ const modify = (content, meta) => {
 		navItems[5] = navItems[6];
 		navItems[6] = {url: `/${meta.date.year - 2}/`, label: '2 years ago'};
 	}
-	const createMenuItem = (link, index) => `<li><a${link.className ? ` class="${link.className}"` : ''}${link.url === '/' ? ' rel="home"' : ''} href="${link.url}" accesskey="${index + 1}"><span hidden aria-hidden="true">0${index + 1} </span>${link.label}${link.suffix || ''}</a></li>`;
+	const createMenuItem = (link, index) => `<li><a${link.className ? ` class="${link.className}"` : ''}${link.url === '/' ? ' rel="home"' : ''} href="${link.url}"><span hidden aria-hidden="true">0${index + 1} </span>${link.label}${link.suffix || ''}</a></li>`;
 	const nav = [
 		'<nav>',
 		'<h2 class="visually-hidden" id="navigation">Where to go from here?</h2>',
