@@ -17,13 +17,7 @@
 <p>The book <a href="https://inclusive-components.design/">“Inclusive Components”</a> by <a href="https://twitter.com/heydonworks">Heydon Pickering</a> has finally arrived and I immediately started reading. If you do not have a copy yet, you should <a href="http://book.inclusive-components.design/">buy one asap,</a> it’s worth every penny.</p>
 <p>Chapter One is about <a href="https://inclusive-components.design/toggle-button/"><em>Toggle Buttons</em></a>. Heydon ends the chapter with switches that need “Auxiliary Labeling”. For those, he uses <code>aria-labelled-by</code> to tie a label to a button. Made me wonder, why not just use good ol’ <code>&lt;label&gt;</code> to do the job?</p>
 <h2>Using <code>&lt;label&gt;</code> for auxiliary labeling</h2>
-<pre><code class="language-html">&lt;!-- Original implementation by Heydon Pickering --&gt;
-&lt;span id=&quot;notify-email&quot;&gt;Notify by email&lt;/span&gt;
-&lt;button role=&quot;switch&quot; aria-checked=&quot;true&quot; aria-labelledby=&quot;notify-email&quot;&gt;&lt;span&gt;on&lt;/span&gt; &lt;span&gt;off&lt;/span&gt;&lt;/button&gt;
-
-&lt;!-- Potential tweak, needs testing --&gt;
-&lt;label for=&quot;notify-email&quot;&gt;Notify by email&lt;/label&gt;
-&lt;button role=&quot;switch&quot; aria-checked=&quot;true&quot; id=&quot;notify-email&quot;&gt;&lt;span&gt;on&lt;/span&gt; &lt;span&gt;off&lt;/span&gt;&lt;/button&gt;</code></pre>
+<pre><a href="/2019/inclusive-toggle-buttons/code.before-after.html">View HTML example.</a></pre>
 <p>This comes with a bonus, clicking the label now also acts as a trigger for the button. Browsers are fine with this, but I haven’t been able to test screen readers yet. In general, am I missing something here?</p>
 <p>To see Heydon’s <a href="https://codepen.io/cssence/pen/KKwWeze">full example with my tweak added,</a> head over to CodePen.</p>
 </div>

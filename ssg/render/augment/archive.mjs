@@ -25,7 +25,7 @@ const modify = (content, meta) => {
 
 	const tableContent = ['<tbody>'];
 	for (let year = meta.date.year; year >= 2010; year -= 1) {
-		const cols = [`<th><a href="/${year}/">${year}</a></th>`];
+		const cols = [`<th scope="row"><a href="/${year}/">${year}</a></th>`];
 		for (const className of ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', SUM, 'c-articles']) {
 			const value = className === 'c-articles' ? stats[SUM][year] - stats['c-note'][year] : stats[className][year];
 			cols.push(`<td><data value="${value}">${value}</data></td>`);
@@ -34,7 +34,7 @@ const modify = (content, meta) => {
 	}
 	tableContent.push('</tbody>');
 	tableContent.push('<tfoot>');
-	const lastRowCols = [`<th>All</th>`];
+	const lastRowCols = [`<th scope="row">All</th>`];
 	for (const className of ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', SUM, 'c-articles']) {
 		const value = className === 'c-articles' ? stats[SUM][SUM] - stats['c-note'][SUM] : stats[className][SUM];
 		lastRowCols.push(`<td><data value="${value}">${value}</data></td>`);

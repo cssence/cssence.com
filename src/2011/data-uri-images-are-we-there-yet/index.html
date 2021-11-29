@@ -25,7 +25,7 @@
 </figure>
 <p>I’ve been making websites for more than a decade now. In the beginning, when it was all Netscape Navigator and no CSS, you needed tables and images, and&thinsp;—&thinsp;pardon my French&thinsp;—&thinsp;you needed a shitload of them. But almost all these image tags referred to the same GIF file. The file contained not more than one transparent pixel, and that pixel would get stretched to whatever width and/or height was needed. As is had been transparent, it never got distorted. Its sole purpose was to make sure that the surrounding table cells expanded to whatever size the image had been stretched to. Did I already mention that back then we stretched the hell out of this poor pixel?</p>
 <p>Be that as it may, if we send said transparent pixel through some serious base64 encoding, we <a href="http://www.sveinbjorn.org/dataurlmaker">get a data URI</a>. Put this URI in the <code>src</code> attribute of an image tag and it looks something like this:</p>
-<pre><code class="language-html">&lt;img src=&quot;data:image/gif;base64,R0lGODlhAQABAIAAALsEBLsEBCH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&quot; /&gt;</code></pre>
+<pre><a href="/2011/data-uri-images-are-we-there-yet/code.clearpixel-data-uri.html">View HTML example.</a></pre>
 <p><span lang="de">Gesundheit!</span> Looks like someone sneezed at our markup. We’ll get back to this syntax, but first let’s find out why the web isn’t already swarming with data URIs.</p>
 <h2>Internet Explorer</h2>
 <p>As with almost anything in the world of web browsing, the reason why data URIs haven’t really taken off yet is found in the lack of support in the still dominating browser. Internet Explorer&nbsp;8 supports the data URI scheme in part. With IE9, data URIs become much more usable because there are fewer restrictions.</p>
@@ -33,23 +33,7 @@
 <p>So what about data URI images? Do we once again have to sit back and wait for ginormous changes in browser usage? The answer is going to be »No«, as you will see right after the following example.</p>
 <h2>How to use data URI images</h2>
 <p>I promised we’ll get back on the syntax, and here it is. But this time, instead of just one transparent pixel we’ll use an image we can actually see.</p>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot; /&gt;
-    &lt;style&gt;
-p {
-  background: url(data:image/gif;base64,R0lGODlhDAAYAOMOACaRnyeSoCeToCeToSeVoyiWpCynti+xwTCzwzK9zjbM3jfO4TjQ4zjR4////////yH5BAEKAA8ALAAAAAAMABgAAAQp8MlJ62OALPuMKESAVEdhmkIiKcPpFkDTvu5M33iu73zv/8CgcEgcRgAAOw==)
-       repeat-x bottom #f5e9bd;
-  width: 170px; margin: 2em; padding: 20px 20px 40px;
-  color: #595444; font-style: italic;
-}
-    &lt;/style&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;p&gt;This is how it should look like if your browser is capable of handling data URI images.&lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<pre><a href="/2011/data-uri-images-are-we-there-yet/code.result.html">View HTML example.</a></pre>
 <figure class="standout"><img src="/2011/data-uri-images-are-we-there-yet/background-demo.png" alt="The data URI image used as repeating background, when viewed in capable browsers.">
 <figcaption>The paragraph element from the example above.</figcaption>
 </figure>

@@ -26,10 +26,7 @@
 </figure>
 <p>This happens to be an alternate theme I’ve added for <del>older browsers</del><ins> Internet Explorer</ins>. Apparently the most essential part in my <a href="/2020/css-variables-in-style-attributes/">Cutting the Mustard</a> script broke.</p>
 <p>The check for CSS custom properties support all of a sudden returned false, so the fallback kicked in, which replaces the regular stylesheet with said alternate version. This is when things got weird, because my incremental update had nothing to do with that.</p>
-<pre><code class="language-js">if (!window.CSS.supports(&#39;--:1&#39;)) {
-    fallback(&#39;Browser does not support CSS custom properties.&#39;);
-    return;
-}</code></pre>
+<pre><a href="/2021/the-day-the-website-stood-still/code.firefox-breakage.js">View JS example.</a></pre>
 <p>To top it off, looking at my site on my phone revealed: In the mobile browser it displayed as if nothing had happened. After some debugging I learned that, thanks to a browser update, Firefox had a change of mind. The expression <code>--:1</code> is no longer good enough, a proper CSS custom property needs at least a single character after the two hyphens. That was easily fixed, and sure enough everything started working again.</p>
 <p>But my site had been broken for a couple of days.</p>
 <h2>Part 2: Phoenix.</h2>

@@ -22,29 +22,18 @@
 <h2>Setting CSS variables directly in the style attribute</h2>
 <p><a href="https://twitter.com/css/status/1194673806264152064">“Weird but cool,”</a> CSS-Tricks wrote when they featured <a href="https://ishadeed.com/article/css-variables-inline-styles/">this article about setting CSS variables inline</a> by <a href="https://twitter.com/shadeed9">Ahmad Shadeed.</a></p>
 <p>I assume you already know how my thumbnail image handling has changed. Let’s apply the knowledge from the aforementioned article and replace the inline <code>background-image</code> directive with a custom property.</p>
-<pre><code class="language-html">&lt;!-- OLD, background image is applied directly. --&gt;
-&lt;p class=&quot;codepen&quot; style=&quot;background-image:url(/thumbnail.png)&quot;&gt;…&lt;/p&gt;
-
-&lt;!-- NEW, &quot;background-image: var(…);&quot; must be set in stylesheet. --&gt;
-&lt;p class=&quot;codepen&quot; style=&quot;--url-thumbnail:url(/thumbnail.png)&quot;&gt;…&lt;/p&gt;</code></pre>
+<pre><a href="/2020/css-variables-in-style-attributes/code.before-after.html">View HTML example.</a></pre>
 <p>What difference does it make? Not a lot, but the latter gets us closer to having styles only in CSS. With this approach, removing all stylesheets from the document leaves you with style attributes that do not style anything.</p>
 <p>If you view this page as raw HTML, with no stylesheets applied, nowadays everything is fine because the background image is specified using custom properties. Before the change (shown on the left in the image below), the dark background of the image made it hard to read the link text.</p>
 <p class="figure standout"><img src="/2020/css-variables-in-style-attributes/before-after.png" alt="Deactivating stylesheets in the old approach does not eliminate all the styling, because things that are set in style attributes are still applied."></p>
 <p>Tempting to think we handed ourselves a neat little accessibility improvement, but usually stylesheets <em>do</em> load, so this is really more for debugging purposes. In other words, going the extra mile on <strong>HTML for Content, CSS for Style</strong> is all we got from this? Not quite, bonus point #1 described below is a genuine advantage.</p>
 <h3>Bonus points</h3>
-<p>&#49;. If we use custom properties, we are no longer limited to the HTML element with the style attribute itself. We can let the pseudo-generated content do the styling, e.g. <code>::before</code>.</p>
-<pre><code class="language-css">.element-with-style-attribute::before {
-  content: var(--url-thumbnail);
-}</code></pre>
-<p>&#50;. We could even use the presence of the inline style variable to apply the additional styling, like so.</p>
-<pre><code class="language-css">[style*=&#39;--url-thumbnail&#39;] {
-  background-image: var(--url-thumbnail);
-}</code></pre>
-<p>&#51;. To achieve the ultimate separation of concerns, ideally we should set data attributes and refer to them in our stylesheets, but the following is not (yet) possible. Let’s go crazy another time.</p>
-<pre><code class="language-css">/* This is invalid CSS at the time of writing! */
-[data-thumbnail] {
-  background-image: attr(data-thumbnail);
-}</code></pre>
+<p>1. If we use custom properties, we are no longer limited to the HTML element with the style attribute itself. We can let the pseudo-generated content do the styling, e.g. <code>::before</code>.</p>
+<pre><a href="/2020/css-variables-in-style-attributes/code.bonus-1.css">View CSS example.</a></pre>
+<p>2. We could even use the presence of the inline style variable to apply the additional styling, like so.</p>
+<pre><a href="/2020/css-variables-in-style-attributes/code.bonus-2.css">View CSS example.</a></pre>
+<p>3. To achieve the ultimate separation of concerns, ideally we should set data attributes and refer to them in our stylesheets, but the following is not (yet) possible. Let’s go crazy another time.</p>
+<pre><a href="/2020/css-variables-in-style-attributes/code.bonus-3.css">View CSS example.</a></pre>
 </div>
 <aside>
 <h2 id="comments">Comments</h2>

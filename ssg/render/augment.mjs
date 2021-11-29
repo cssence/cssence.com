@@ -5,6 +5,7 @@ import indexCards from './augment/index.mjs';
 import modifyHead from './augment/head.mjs';
 import modifyHeader from './augment/header.mjs';
 import addPosts from './augment/posts.mjs';
+import addSourceCode from './augment/source.mjs';
 import modifyContentArchive from './augment/archive.mjs';
 import addCodepen from './augment/codepen.mjs';
 import modifyConversation from './augment/conversation.mjs';
@@ -13,7 +14,7 @@ import addNav from './augment/nav.mjs';
 import addFooter from './augment/footer.mjs';
 import assignIds from './augment/id.mjs';
 
-const augment = (urlPath, html, meta) => {
+const augment = async (urlPath, html, meta) => {
 	const content = html.split('\n');
 	storePageData(urlPath, meta);
 	indexCards(content, meta);
@@ -21,6 +22,7 @@ const augment = (urlPath, html, meta) => {
 	modifyContentArchive(content, meta);
 	modifyHeader(content, meta);
 	addPosts(content, meta);
+	await addSourceCode(content, meta);
 	addCodepen(content, meta);
 	modifyConversation(content, meta);
 	addAboutPage(content, meta);

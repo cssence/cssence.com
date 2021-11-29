@@ -28,13 +28,7 @@
 <p>Until now, after you have pieced together your print style declarations, you either put them in a dedicated file or you saved that HTTP request by adding them to your regular stylesheet, embedded within a <code>@media print</code> query.</p>
 <p>Why not do even less? With Print First, you simply use the print style as your default, and then work your way towards the screens. Within those media queries for the screen, you can&#x200a;—&#x200a;and should&#x200a;—&#x200a;still design mobile first. Or smartwatch first.</p>
 <p>Make sure to embed your stylesheet in your HTML document without any media attribute, or with <code>media=&quot;screen, print&quot;</code>. Here is how the stylesheet will be structured:</p>
-<pre><code class="language-css">/* place print styles outside of any query */
-@media screen {
-    /* generic screen styles here */
-}
-@media screen and (min-width: …) {
-    /* add breakpoint-specific styles */
-}</code></pre>
+<pre><a href="/2015/print-first/code.concept.css">View CSS example.</a></pre>
 <p>Without mentioning print anywhere, the printed version of your website will pick up all style declarations outside those media queries and ignore anything within <code>@media screen</code>. But it does not stop here. <a href="https://caniuse.com/#feat=css-mediaqueries">Older browsers unaware of media queries</a> will also render the print style as a default. The print style now acts as a replacement for any generic fallback layout, which in most cases would have been a centered single column layout with a fixed width. Although you no longer need an alternate fallback, you might want to make sure there is a <code>max-width</code> in your Print First design. Maybe one that is large enough so it does not affect your print version but ensures readability on screens by limiting the number of words per line.</p>
 <p>You can of course still add media queries for <code>@media print</code>, perhaps because you do not want to see <code>pt</code> units loitering in your default. Just make sure that those older browsers living outside of query land pick up everything intended for your default design. While we are at it, be aware of a sometimes overlooked fact: <a href="https://css-tricks.com/logic-in-media-queries/">Media queries add no specifity</a> to your CSS selectors, only source order matters.</p>
 <p>Needless to say, with Print First you will encounter situations where have to you override CSS values that would otherwise be hidden behind <code>@media print</code> to get things going on the screen. <abbr title="In my humble opinion">IMHO</abbr>, a small price to pay for getting a smart default.</p>

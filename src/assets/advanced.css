@@ -126,10 +126,14 @@ main a:focus::after {
 a:focus::after {
 	color: var(--color-light);
 }
-a:focus {
+a:focus,
+pre[tabindex]:focus {
 	text-decoration: none;
 	outline: .1875rem double;
 	outline-offset: .0625rem;
+}
+pre[tabindex]:focus {
+	outline-color: var(--color-dark);
 }
 abbr[title] {
 	text-decoration: none;
@@ -253,8 +257,8 @@ pre {
 	background-color: var(--color-dark);
 	color: var(--color-light);
 	line-height: 1.5;
-	-moz-tab-size: 2;
-	tab-size: 2;
+	-moz-tab-size: 4;
+	tab-size: 4;
 }
 pre code {
 	display: block;
@@ -641,6 +645,10 @@ nav a.c-article {
 	}
 	.posts h3 {
 		font-size: inherit;
+	}
+	pre {
+		-moz-tab-size: 2;
+		tab-size: 2;
 	}
 }
 @media (max-width: 39em) {

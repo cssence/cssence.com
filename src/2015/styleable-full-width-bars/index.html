@@ -14,15 +14,10 @@
 </header>
 <div>
 <p>There are many ways to align page text in a centered column while still being able to apply full-width backgrounds on individual regions. How about one without the need for additional elements?</p>
-<p>Instead of creating a centered  <code>.container</code> like this …</p>
-<pre><code class="language-css">.parent.container {
-  width: 32em;
-  margin: 0 auto;
-}</code></pre>
+<p>Instead of creating a centered <code>.container</code> like this …</p>
+<pre><a href="/2015/styleable-full-width-bars/code.before.css">View CSS example.</a></pre>
 <p>…, which then contains one or more children breaking out from center so you can apply a full-width background on them, let us add <code>.container</code> to every child. These children now no longer need a parent and you can use <code>padding</code> instead. To make this work we let <code>calc()</code> do the magic.</p>
-<pre><code class="language-css">.orphan.container {
-  padding: 0 calc(50% - 16em); /* ½ of desired width, e.g. for 32em we have to use 16em */
-}</code></pre>
+<pre><a href="/2015/styleable-full-width-bars/code.after.css">View CSS example.</a></pre>
 <p>Good to know:</p>
 <ul>
 <li>Requires no nested elements just for adding style hooks.</li>

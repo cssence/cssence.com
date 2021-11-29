@@ -15,7 +15,7 @@ const folder = './public';
 		for (const urlPath of meta.indexHtmlList) {
 			const file = `${folder}${urlPath}index.html`;
 			const html = await getFileContent(file);
-			const enhancedHtml = augment(urlPath, html, meta);
+			const enhancedHtml = await augment(urlPath, html, meta);
 			await writeFileContent(file, enhancedHtml);
 		}
 

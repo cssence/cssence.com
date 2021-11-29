@@ -14,35 +14,9 @@
 </header>
 <div>
 <p>Single element solutions for a loading spinner are quite common. When using infinite rotation on an element that has a rounded border we usually change the color of one of the four borders, otherwise we would not see the rotation. Consider the following …</p>
-<pre><code class="language-css">@keyframes rotation {
-  to { transform: rotate(1turn); }
-}
-.loading {
-  display: block;
-  position: relative;
-  padding-top: 4.25em;
-  color: rgba(0,0,0,.5);
-  text-align: center;
-}
-.loading::before {
-  content: &quot;&quot;;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  height: 4em;
-  width: 4em;
-  margin-left: -2em;
-  border: .375em solid currentColor;
-  border-right-color: rgba(0,0,0,.8);
-  border-radius: 50%;
-  animation: rotation .8s linear infinite;
-}</code></pre>
+<pre><a href="/2016/loading-spinner-currentcolor/code.classic.css">View CSS example.</a></pre>
 <p>In this example however I keep <code>border-color</code> as it is and change <code>border-style</code> instead.</p>
-<pre><code class="language-css">.loading::before {
-  /* no border-right-color thank you */
-  border-right-style: double;
-}</code></pre>
+<pre><a href="/2016/loading-spinner-currentcolor/code.tweak.css">View CSS example.</a></pre>
 <p>What we get looks like a snake being trapped inside of a ring.</p>
 </div>
 <aside>

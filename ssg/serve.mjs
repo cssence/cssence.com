@@ -55,7 +55,7 @@ const folder = isDev ? './src' : './public';
 			try {
 				const html = await getFileContent(file);
 				if (!isDev) return finish(200, getMimeType('html'), html);
-				const enhancedHtml = augment(path, html, meta);
+				const enhancedHtml = await augment(path, html, meta);
 				return finish(201, getMimeType('html'), enhancedHtml);
 			} catch (err) {
 				return finish(500, null, err);
