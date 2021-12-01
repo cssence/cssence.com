@@ -49,6 +49,8 @@ figure,
 blockquote,
 .posts h2,
 .codepen,
+#updates,
+#footnotes,
 #comments,
 #comments ~ article h3,
 #comments ~ p,
@@ -203,6 +205,9 @@ li {
 	margin-bottom: .75rem;
 	margin-left: 1.75rem;
 }
+li ul,
+li ol,
+li li,
 li p {
 	margin-bottom: 0;
 }
@@ -361,6 +366,8 @@ article > aside:not(.codepen),
 .posts h2,
 .codepen h2,
 .metadata h2,
+#updates,
+#footnotes,
 #comments,
 #contribute {
 	font-size: .875rem;
