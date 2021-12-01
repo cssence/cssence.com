@@ -15,7 +15,7 @@
 </header>
 <div>
 <p>Today at work I’ve been debugging an accessibility issue with one of our more complex tables. After several hours I drew the conclusion that VoiceOver on Mac trips up on tables that have <code>display: table</code> taken from them. It might still recognize it as a table, but you can no longer navigate the cells inside.</p>
-<p>I’ve tested VoiceOver on Mac (no iOS) in Safari, Chrome<ins><sup><a href="#update-1">[1]</a></sup></ins> and Firefox. Results are all pretty much the same across browsers.</p>
+<p>I’ve tested VoiceOver on Mac (no iOS) in Safari, Chrome<ins><sup><a id="ref-update-1" href="#update-1" role="doc-noteref" aria-label="Jump to update #1">[1]</a></sup></ins> and Firefox. Results are all pretty much the same across browsers.</p>
 <p>While you should always have proper semantic HTML table markup, there are a lot of good reasons to apply styling so they end up looking less like tables, e.g. to create responsive tables on different screen sizes, or to have cells that can be expanded and collapsed. Especially table rows are good candidates for turning their cells into <code>flex</code> or even <code>grid</code> items.</p>
 <p>That said, I still need VoiceOver users to be able to navigate the table content as intended. <del>So unless I made a mistake in my tests,</del> I guess I have to go back to <code>display: table</code> and <code>table-layout: fixed</code>.</p>
 <p>If you have any experience in this regard, please let me know in the comments.</p>

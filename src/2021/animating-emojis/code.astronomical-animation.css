@@ -1,0 +1,14 @@
+.art {
+	/* animation-duration: 1 Julien astronomical year, in seconds */
+	animation: appear-3-days 31557600s infinite;
+}
+
+@keyframes appear-3-days {
+	/* 3 days in 1 Gregorian calendar year make up 0.821917808219% */
+	0%, 0.821917808220%, 100% {
+		opacity: 0;
+	}
+	0.000000000001%, 0.821917808219% {
+		opacity: 1;
+	}
+}
