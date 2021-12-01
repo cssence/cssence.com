@@ -34,7 +34,7 @@ const modify = (content, meta) => {
 		'<meta name="theme-color" content="#202225">',
 	];
 	const other = [
-		`<meta name="robots" content="${['/404/', '/assets/', '/about/about/'].includes(meta.page.path) ? 'no' : ''}index,follow">`,
+		`<meta name="robots" content="${['/404/', '/about/about/', '/assets/', '/series/'].includes(meta.page.path) ? 'no' : ''}index,follow">`,
 	];
 	const scripts = [
 		'<script src="/assets/ctm.js"></script>',
