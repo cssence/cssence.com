@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="c-essay" lang="en">
+<head>
+<title>Beyond 100vw</title>
+<meta name="description" content="We’ve come a long way since the first iPhone supercharged the mobile web.">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Beyond 100vw</h1>
+<p>How about undoing years of Responsive Web Design on purpose?</p>
+<p><i>Essay</i><br><time>2021-12-02T06:10:16Z</time><br><img src="/2021/beyond-100vw/index.png" alt=""></p>
+</header>
+<aside class="standoff metadata" aria-labelledby="quick-summary">
+<h2 id="quick-summary">Quick summary</h2>
+<p>We’ve come a long way since the first iPhone supercharged the mobile web. Let’s revisit those early days, let’s explore if there is something that we can take from history and turn it into a current design.</p>
+</aside>
+<div>
+<p><a href="/2020/happy-10th-birthday-responsive-web-design/">Responsive Web Design turned 10 last year.</a> Sure enough, the mobile web is even older. And by that I mean the proper mobile web, not the <a href="https://en.wikipedia.org/wiki/Wireless_Application_Protocol">Wireless Application Protocol</a> that preceeded it.</p>
+<p>When Apple unveiled the first iPhone in 2007, they wanted the proper web on it. At that point in time, websites were <em>best viewed in X&times;Y resolution</em>, and the majority of sites out there did their best to make sure they would <strong>not</strong> look great on this new handheld form factor.</p>
+<p>So Apple had to invent the <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html">viewport meta tag,</a> and <a href="https://www.quirksmode.org/mobile/viewports2.html">the rest is World Wide Web history.</a> Weirdly, even after more than a decade, this tag is still not standardized.</p>
+<h2>The Virtual Viewport</h2>
+<p>Adopting the viewport meta tag didn’t happen overnight. In the early days, users had to zoom in and out on mobile devices. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag">According to MDN, …</a></p>
+<blockquote>
+<p>Narrow screen devices (e.g. mobiles) render pages in a virtual window or viewport, which is usually wider than the screen, and then shrink the rendered result down so it can all be seen at once. Users can then pan and zoom to see different areas of the page. For example, if a mobile screen has a width of 640px, pages might be rendered with a virtual viewport of 980px, and then it will be shrunk down to fit into the 640px space.</p>
+</blockquote>
+<p>Far from ideal, which is why today we are creating websites that adapt to any screen size. Our efforts would be in vein though, if the virtual viewport behavior would kick in. As MDN goes on to say, …</p>
+<blockquote>
+<p>[This] mechanism is not so good for pages that are optimized for narrow screens using media queries — if the virtual viewport is 980px for example, media queries that kick in at 640px [or less] will never be used, limiting the effectiveness of such responsive design techniques.</p>
+</blockquote>
+<p>This is where a viewport meta tag like the one shown below comes in. Adding it to a page ensures all media queries work as expected, and we are using the actual screen size<sup><a id="ref-footnote-1" href="#footnote-1" role="doc-noteref" aria-label="Jump to footnote #1">[1]</a></sup> to display our content.</p>
+<pre><a href="/2021/beyond-100vw/code.viewport-meta-tag.html">View HTML example.</a></pre>
+<h2>Breaking out</h2>
+<p>What if we went back to having two<sup><a id="ref-footnote-2" href="#footnote-2" role="doc-noteref" aria-label="Jump to footnote #2">[2]</a></sup> scrollbars? Seriously?</p>
+<p>With the latest redesign of this site, I did just that. I didn’t ditch the viewport meta tag though. I do need the actual screen width as a starting point, so no shrinking. But below a certain breakpoint&#8202;&mdash;&#8202;usually handheld territory&#8202;&mdash;&#8202;<strong>the width of the page is wider than the width of the screen, on purpose.</strong> To do so, I’m setting the body width beyond the viewport width of <code>100vw</code>. There are numerous ways to achieve this, but the code below should get you started.</p>
+<pre><a href="/2021/beyond-100vw/code.calc-100vw-plus.css">View CSS example.</a></pre>
+<p>There is one key difference to the <em>zoom in and out</em> days of the early mobile web. I made sure my visitors are able to consume the content by going top to bottom. I’ll write about the details of this redesign in an upcoming Editorial blog post, but in a nutshell:</p>
+<ul>
+<li>Independent of screen size, the layout <strong>always features two columns;</strong>
+<ul>
+<li>a wider one for the primary content on the left,</li>
+<li>and a sidebar on the right.</li>
+</ul>
+</li>
+<li>The main article is shown in the left column, which <strong>fits on the screen.</strong></li>
+<li>So reading the article is possible by scrolling down only.</li>
+<li>Certain elements however, like source code blocks or prominent images, span across both columns.</li>
+<li>Some not so essential things, e.g. article thumbnails, protrude into the sidebar, even though they are tied to what is going on in the left column.</li>
+<li>Other not so essential things, e.g. article summaries, live exclusively in the sidebar.</li>
+<li>Even in the left-most scrolling position, I made sure a small portion of the sidebar is visible, so my visitors have a clue that scrolling in both axes is a feature here.</li>
+</ul>
+<p>As always, it was an iterative redesign, but now in its final form, I found <em>»breaking out of the actual viewport«</em> to be an interesting design decision. Eventually, not just the main content, but everything&#8202;&mdash;&#8202;header, navigation, footer&#8202;&mdash;&#8202;adheres to the two columns in some shape or form, leading to off-centered appearances that I wouldn’t have thought of otherwise.</p>
+<p>But most importantly, this makes it possible to use <strong>one layout for all screen sizes,</strong> with almost no media queries<sup><a id="ref-footnote-3" href="#footnote-3" role="doc-noteref" aria-label="Jump to footnote #3">[3]</a></sup>.</p>
+<p>Is it a good idea?</p>
+<p>I do not know.</p>
+<p>An innovative idea? You decide.</p>
+<p><a href="/2016/dotcss/">On this day five years ago,</a> on stage at dotCSS, <a href="/2016/diversity-in-style/">I myself said:</a> This is about …</p>
+<blockquote>
+<p>[…] the <em>design patterns</em> we have at our disposal. And this is where we seem to be stuck. We have the continuous long scroll on mobile, we have the hamburger menu. We need to expand our repertoire. And to do so, we need to innovate. And innovation can’t be done on localhost, innovation needs to be done out there, in the open.</p>
+</blockquote>
+<p>Let’s go out there, and innovate.</p>
+<h2>Footnotes</h2>
+<ol>
+<li id="footnote-1">To keep things simple, I’m neglecting that <a href="https://www.quirksmode.org/blog/archives/2010/04/a_pixel_is_not.html">a pixel is not a pixel.</a> <a href="#ref-footnote-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="footnote-2">Sometimes websites flip from vertical to horizontal scrolling for aesthetic reasons, so they too go beyond 100vw. But those sites are a different story, as they still have only one scroll axis. <a href="#ref-footnote-2" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="footnote-3">And without <a href="https://css-tricks.com/responsive-layouts-fewer-media-queries/">fancy math.</a> <a href="#ref-footnote-3" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+</ol>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>
