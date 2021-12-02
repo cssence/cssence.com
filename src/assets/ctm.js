@@ -1,13 +1,6 @@
 /* cssence.com init script (mustard cutter, async asset loader) */
 (function(w, d, dh) {
 	'use strict';
-	var addStyle = function (href) {
-		var s = d.createElement('link');
-		s.setAttribute('rel', 'stylesheet');
-		s.setAttribute('media', 'screen');
-		s.href = href;
-		dh.appendChild(s);
-	};
 	var onReady = function (cb) {
 		if (d.readyState !== 'loading') return cb();
 		d.addEventListener('DOMContentLoaded', cb);
@@ -25,6 +18,14 @@
 		if (w.location.search.indexOf('?ie') === 0) return fallback('Fallback requested manually.');
 		var highlight = function () {
 			if (d.querySelectorAll('code[class]').length) {
+				var addStyle = function (href) {
+					var s = d.createElement('link');
+					s.setAttribute('rel', 'stylesheet');
+					s.setAttribute('media', 'screen');
+					s.setAttribute('title', 'Advanced Style');
+					s.href = href;
+					dh.appendChild(s);
+				};
 				var loadJS = function (src, cb) {
 					/* loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. */
 					var s = d.createElement('script');
