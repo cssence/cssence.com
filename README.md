@@ -39,5 +39,5 @@ This is basically a shorthand for running the build and the command `npm run sta
 
 ## Footnotes
 
-1. The included generator parses raw HTML files, without using any [https://www.npmjs.com/package/htmlparser2](HTML parser) (yet). Do not try this at home.
+1. The included generator parses raw HTML files, without using any [HTML parser](https://www.npmjs.com/package/htmlparser2) (yet). Do not try this at home.
 2. The included http server is for development/testing purposes, way too brittle to be used for actually serving the site. In reality, the generated files will be hosted and served otherwise.
