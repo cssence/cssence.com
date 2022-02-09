@@ -605,7 +605,9 @@ nav a.c-article {
 	margin-right: -.5rem;
 	padding: .5625rem 1.875rem .6875rem .5rem;
 	color: var(--color-text);
-	text-decoration-color: var(--color-accent);
+}
+[data-hl]:hover {
+	text-decoration: underline solid var(--color-accent);
 }
 [data-hl]::before {
 	content: attr(data-hl);
