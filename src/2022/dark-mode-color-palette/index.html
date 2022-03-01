@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html class="c-code" lang="en">
+<head>
+<title>Dark Mode Color Palette</title>
+<meta name="description" content="I’ve added Dark Mode to my website. No image editor was harmed in the process.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/MWOzaYP" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Dark Mode Color Palette</h1>
+<p>From code to color.</p>
+<p><i>Code</i><br><time>2022-03-01T09:58:00Z</time><br><img src="/2022/dark-mode-color-palette/index.png" alt=""></p>
+</header>
+<div>
+<p>Thanks to all the work that went into <a href="/2021/beyond-100vw/">the latest redesign</a> of this site, adding Dark Mode was rather easy. Colors were already neatly stored in CSS custom properties, so all I had to do was to actually redefine them for visitors that have a certain preference<sup><a id="ref-footnote-1" href="#footnote-1" role="doc-noteref" aria-label="Jump to footnote #1">[1]</a></sup>.</p>
+<pre><a href="/2022/dark-mode-color-palette/code.prefers-color-scheme.css">View CSS example.</a></pre>
+<p>I tried out some colors, and was already quite happy. But then I remembered that I also wanted reduce the brightness for images, like so.</p>
+<pre><a href="/2022/dark-mode-color-palette/code.reduce-image-brightness.css">View CSS example.</a></pre>
+<p>The thing is, more often than not, some of the colors used on my site make a cameo appearance in article images, especially in the article thumbnails. I concluded, if <code>&lt;img&gt;</code> elements get the filter applied, I should adjust the colors for dark mode in the exact same way, so they still match. Creating <a href="https://codepen.io/cssence/pen/MWOzaYP">a CodePen to do just that</a> saved me a trip to an image editor, because I can pour in the light mode colors, apply the filter, and then pick the colors based on what is shown on screen. As a bonus, to create a thumbnail for this article, I simply made a screenshot of the color palette.</p>
+<h2>Footnotes</h2>
+<ol>
+<li id="footnote-1">This adheres to what visitors have set in their operating system or browser. <a href="/settings/">A manual override</a> does not exist, at least not yet. <a href="#ref-footnote-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+</ol>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>

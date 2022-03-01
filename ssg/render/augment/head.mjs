@@ -7,7 +7,7 @@ const modify = (content, meta) => {
 	const intro = [
 		'<meta charset="utf-8">',
 		'<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">',
-		meta.page.path === '/' ? content[TITLE] : `<title>${meta.page.title} • CSSence.com</title>`, // this also replaces all &nbsp;
+		meta.page.path === '/' ? content[TITLE] : `<title>${meta.page.title} - CSSence.com</title>`, // this also replaces all &nbsp;
 		content[DESC],
 		`<meta name="author" content="${meta.date.getAuthor(meta.page.published || meta.page.revised)}">`,
 		`<link rel="canonical" href="${meta.getPermalink(meta.page.path)}">`,

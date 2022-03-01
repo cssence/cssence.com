@@ -8,7 +8,7 @@
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+	box-sizing: border-box;
 }
 html {
 	--color-bg-subtle: #eaeaeb;
@@ -16,17 +16,48 @@ html {
 	--color-text: #313437;
 	--color-dark: #202225;
 	--color-light: #fff;
+	--color-focus: #f4ff17;
+	--color-accent-default: #d34b6c;
+	--color-accent-note: #4099ff;
+	--color-accent-code: #ff571a;
+	--color-accent-event: #2ac7b7;
+	--color-accent-essay: #ee82ee;
+	--color-accent-other: #bada55;
 	--padding-horizontal: 1.75rem;
 	--o: var(--padding-horizontal);
 	--height-header: 6.25rem;
 	--width-sidebar: 12.5rem;
-	box-sizing: border-box;
 	background-color: var(--color-bg);
 	color: var(--color-text);
 	font-family: "Constantia", "Lucida Bright", "Lucidabright", "Lucida Serif", "Lucida", "Noto Serif", "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", "Georgia", serif;
 	font-size: 100%;
 	line-height: 1.625;
 	-webkit-tap-highlight-color: rgba(204,85,85,.5);
+}
+@media (prefers-color-scheme: dark) {
+	html {
+		--color-bg-subtle: var(--color-dark);
+		--color-bg: #080809;
+		--color-text: var(--color-light);
+		--color-dark: #1b1c1e;
+		--color-light: #d9d9d9;
+		--color-focus: #ced726;
+		--color-accent-default: #aa425c;
+		--color-accent-note: #3c80cf;
+		--color-accent-code: #cd4c1e;
+		--color-accent-event: #2ea59a;
+		--color-accent-essay: #c371c3;
+		--color-accent-other: #9fb751;
+	}
+	img:not([src$=".svg"]) {
+		filter: brightness(85%) grayscale(10%);
+	}
+	.invert img:not([src$=".svg"]) {
+		filter: brightness(85%) grayscale(10%) invert(1);
+	}
+	[data-hl="Home"] path:first-child {
+		fill: var(--color-text);
+	}
 }
 @media (prefers-reduced-motion: no-preference) {
 	html {
@@ -117,8 +148,8 @@ a:hover {
 	text-decoration-style: double;
 }
 a:focus:not(:active) {
-	background: #f4ff17 !important;
-	box-shadow: 0 0 0 .1875rem #f4ff17;
+	background: var(--color-focus) !important;
+	box-shadow: 0 0 0 .1875rem var(--color-focus);
 	color: var(--color-dark);
 	text-shadow: none !important;
 }
@@ -306,23 +337,23 @@ header p:last-child {
 }
 .c-default,
 .c-article {
-	--color-accent: #d34b6c;
+	--color-accent: var(--color-accent-default);
 }
 .c-note {
-	--color-accent: #4099ff;
+	--color-accent: var(--color-accent-note);
 }
 .c-code {
-	--color-accent: #ff571a;
+	--color-accent: var(--color-accent-code);
 }
 .c-event {
-	--color-accent: #2ac7b7;
+	--color-accent: var(--color-accent-event);
 }
 .c-essay {
-	--color-accent: #ee82ee;
+	--color-accent: var(--color-accent-essay);
 }
 .c-editorial,
 .c-about {
-	--color-accent: #bada55;
+	--color-accent: var(--color-accent-other);
 }
 .c-essay i {
 	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6 10l2-1 7-7-1-1-7 7-1 2zM4.52 13.548c-0.494-1.043-1.026-1.574-2.069-2.069l1.548-4.262 2-1.217 6-6h-3l-6 6-3 10 10-3 6-6v-3l-6 6-1.217 2z'%3E%3C/path%3E%3C/svg%3E");
@@ -375,6 +406,7 @@ article > aside:not(.codepen),
 	line-height: 1.5;
 	text-transform: uppercase;
 }
+.c-code #footnotes + ol,
 .posts :where(ol, ul) {
 	margin-bottom: 3rem;
 }
@@ -592,7 +624,7 @@ nav a [hidden] {
 .c-article header img,
 .posts li.c-article img,
 nav a.c-article {
-	background-image: linear-gradient(90deg, #ff571a 15%, yellow, aqua, #ee82ee 85%);
+	background-image: linear-gradient(90deg, var(--color-accent-code) 15%, var(--color-focus), var(--color-accent-event), var(--color-accent-essay) 85%);
 }
 [data-hl]:empty::after {
 	margin: .25em 0 0 .57143em;
