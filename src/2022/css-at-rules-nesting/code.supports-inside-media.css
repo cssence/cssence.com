@@ -1,0 +1,5 @@
+@media (min-width: 40em) {
+	@supports (display: grid) {
+		/* CSS declarations in here work just fine */
+	}
+}
