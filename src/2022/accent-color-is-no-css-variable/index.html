@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="c-code" lang="en">
+<head>
+<title>accent-color is no CSS variable</title>
+<meta name="description" content="But you can try the other way around to make use of your accent color.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/vYpyxyz" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Accent Color Access</h1>
+<p><i>Code</i><br><time>2022-03-23T08:17:09Z</time><br><img src="/2022/accent-color-is-no-css-variable/index.png" alt=""></p>
+</header>
+<div>
+<p>Yesterday <a href="https://twitter.com/Una/status/1506383666548822020">Una Kravets mentioned</a> that <code>accent-color</code> is now supported in all modern browsers. So now we have a simple and accessible way to make form controls feel more at home in our site theme.</p>
+<p>I wondered if you could access its value to use it for things beyond its purpose. However, it is no custom property, indicated by the fact that it does not start with two hyphens.</p>
+<p><abbr title="Too long, didn’t read">Tl;dr,</abbr> I could not find a way, but you can approach this the other way around, by using an actual custom property as an intermediary.</p>
+<pre><a href="/2022/accent-color-is-no-css-variable/code.accent-color-workaround.css">View CSS example.</a></pre>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><a rel="me author" href="https://twitter.com/CSSence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/CSSence/status/1506567864597336066"><time>2022-03-23T09:45:44Z</time></a></h3>
+<p>Quick reminder: <code>accent-color</code> is not a custom property.<br><a href="/2022/accent-color-is-no-css-variable/">cssence.com/2022/accent-color-is-no-css-variable/</a></p>
+</article>
+<article>
+<h3><a rel="me author" href="https://twitter.com/CSSence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/CSSence/status/1506570725511024649"><time>2022-03-23T09:57:06Z</time></a></h3>
+<p>Please correct me if I’m wrong.</p>
+<p>Also, shout-out to <a href="https://twitter.com/Una">@Una</a> for indicating—in addition to browser support—that it goes well with <code>color-scheme</code>.<br><a href="https://twitter.com/Una/status/1506383666548822020">twitter.com/Una/status/1506383666548822020</a></p>
+</article>
+<article>
+<h3><a rel="me author" href="https://twitter.com/CSSence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/CSSence/status/1506644309122158594"><time>2022-03-23T14:49:30Z</time></a></h3>
+<p>Well, <a href="https://twitter.com/KittyGiraudel">@KittyGiraudel</a> has a point. Similar to <code>::selection</code>, just because we can does not mean we should.<br><a href="https://twitter.com/KittyGiraudel/status/1506625171263787009">twitter.com/KittyGiraudel/status/1506625171263787009</a></p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>

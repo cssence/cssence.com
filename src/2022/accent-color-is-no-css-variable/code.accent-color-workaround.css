@@ -1,0 +1,11 @@
+.does-not-work {
+	accent-color: green;
+	color: accent-color; /* 🚫 */
+	color: var(accent-color); /* 🚫 */
+}
+
+.workaround {
+	--actual-var: green;
+	accent-color: var(--actual-var);
+	color: var(--actual-var); /* ✅ */
+}
