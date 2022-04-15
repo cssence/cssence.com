@@ -11,8 +11,12 @@
 <header>
 <h1>Maintaining Aspect Ratio with CSS&nbsp;Grid</h1>
 <p>With the help of an empty SVG</p>
-<p><i>Code</i><br><time>2018-01-21T12:56:00Z</time><br><img src="/2018/maintaining-aspect-ratio-with-css-grid/index.png" alt=""></p>
+<p><i>Code</i><br><time data-revised="2022-04-15T18:26:00Z">2018-01-21T12:56:00Z</time><br><img src="/2018/maintaining-aspect-ratio-with-css-grid/index.png" alt=""></p>
 </header>
+<aside class="standoff metadata" aria-labelledby="deprecation">
+<h2 id="deprecation">Deprecation notice</h2>
+<p>The advice given here is only needed in legacy browsers. To see how it is done nowadays, consider reading <a href="/2022/maintaining-aspect-ratio-revisited/">“Maintaining Aspect Ratio, Revisited”,</a> published in 2022.</p>
+</aside>
 <div>
 <p>Yesterday <a href="https://medium.com/@realnoam/keeping-aspect-ratio-with-html-and-no-padding-tricks-40705656808b">this Medium post</a> by <a href="https://twitter.com/realnoam">Noam Rosenthal</a> was brought to my attention when <a href="https://twitter.com/Real_CSS_Tricks/status/954760435860873216">CSS Tricks called it</a> a <q cite="https://twitter.com/Real_CSS_Tricks/status/954760435860873216">clever aspect-ratio trick that involves using an inline SVG with a viewBox to push out the size, and CSS Grid to overlay the content.</q></p>
 <p>Before Noam came up with this neat idea, the <a href="https://css-tricks.com/aspect-ratio-boxes/">percentage padding hack</a> was the only way to maintain the aspect ratio of anything but images. He on the other hand put an empty inline SVG in charge of maintaining the aspect ratio. Clever indeed! But in his solution, the SVG was part of the HTML, which is why I started playing around with it a bit more. I wanted to find out if it could all be done in CSS. Looking at some unused code in his <a href="https://codepen.io/noamr/pen/mpamVN">Pen</a>, I think Noam already tried to achieve something similar.</p>
