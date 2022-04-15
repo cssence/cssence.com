@@ -460,6 +460,23 @@ header,
 	-webkit-mask-image: var(--mask);
 	mask-image: var(--mask);
 }
+#deprecation {
+	position: relative;
+	text-shadow: 0 -.0625rem .125rem var(--color-bg);
+}
+#deprecation::after {
+	content: " ⚠️";
+}
+#deprecation::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	inset: -.6875rem 0 auto;
+	height: 1.5rem;
+	background-image: repeating-linear-gradient(120deg, var(--color-accent) 0, var(--color-accent) .5rem, transparent .5rem, transparent 1rem);
+	mask: linear-gradient(0, #0000, #000);
+	opacity: .3;
+}
 #comments ~ article {
 	margin-top: 3rem;
 	margin-bottom: 3rem;
@@ -703,9 +720,10 @@ nav a.c-article {
 	.figure,
 	figure,
 	pre {
-		margin-left: calc(var(--padding-horizontal) * -1);
+		margin-left: calc(-1 * var(--padding-horizontal));
 	}
 	main,
+	#deprecation,
 	nav ul,
 	.imprint div {
 		margin-right: calc(-1 * var(--padding-horizontal));
