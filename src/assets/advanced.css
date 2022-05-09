@@ -477,6 +477,7 @@ header,
 	mask: linear-gradient(0, #0000, #000);
 	opacity: .3;
 }
+.codepen,
 #comments ~ article {
 	margin-top: 3rem;
 	margin-bottom: 3rem;
