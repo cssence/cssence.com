@@ -26,6 +26,9 @@ img {
 	max-width: 100%;
 	margin: 0 auto;
 }
+sub {
+	font-size: .5em;
+}
 footer.metadata {
 	margin-top: 7em;
 }
@@ -215,6 +218,10 @@ main .visually-hidden {
 		tab-size: 4;
 		white-space: pre-wrap;
 	}
+	code {
+		font-size: .875em;
+		letter-spacing: -.02em;
+	}
 	footer.metadata h2 {
 		margin: 0;
 		border-top: 1px solid;
@@ -225,6 +232,7 @@ main .visually-hidden {
 	}
 	header i::after,
 	#comments ~ section,
+	.codepen,
 	nav,
 	body > footer {
 		display: none;
