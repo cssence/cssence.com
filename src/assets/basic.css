@@ -113,6 +113,10 @@ nav li:nth-child(5)::before {
 }
 body > footer p > span {
 	display: block;
+
+}
+[data-hl="Home"] {
+	display: block;
 }
 [data-hl="Home"]::before {
 	content: "ence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com css";
