@@ -5,7 +5,7 @@ const add = (content, meta) => {
 	const nonIndexTypeMap = {'c-default': 'page', 'c-about': 'page', 'c-note': 'thread'};
 	const type = meta.page.isIndex ? (meta.page.path === '/' ? 'site' : 'index page') : (nonIndexTypeMap[meta.page.className] || 'article');
 
-	const isStandaloneThread = meta.page.isPostByYear && meta.page.className === 'c-note';
+	const isStandaloneThread = meta.page.isPostByYear && content.includes('<h2 class="visually-hidden" id="comments">Message thread</h2>');
 	const multipleAuthors = isStandaloneThread && meta.page.conversation?.thread.filter((comment) => !comment.own).length ? ' et al' : '';
 	const footer = [
 		'<footer class="metadata">',
