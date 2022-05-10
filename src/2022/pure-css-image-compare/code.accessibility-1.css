@@ -1,0 +1,16 @@
+@keyframes pingpong {
+	0%, 100% {
+		width: calc(var(--expand) + 50% + var(--splitter-size) / 2);
+	}
+	75% {
+		width: var(--handle-size);
+	}
+	25% {
+		width: calc(var(--expand) + 100%);
+	}
+}
+.image-compare:focus span {
+	background-image: none;
+	animation: pingpong 5s linear infinite;
+	resize: none;
+}

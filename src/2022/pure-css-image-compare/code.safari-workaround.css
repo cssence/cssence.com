@@ -1,0 +1,5 @@
+@supports (-webkit-hyphens: none) { /* Safari */
+	.image-compare span {
+		width: var(--handle-size);
+	}
+}

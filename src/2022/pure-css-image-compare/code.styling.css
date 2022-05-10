@@ -1,0 +1,40 @@
+.image-compare {
+	--splitter-color: hotpink;
+	--splitter-size: 0.125rem;
+	--expand: 0.875rem;
+	--handle-size: calc(var(--expand) + var(--splitter-size));
+	position: relative;
+}
+.image-compare span {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: calc(-1 * var(--expand));
+	bottom: calc(-1 * var(--expand));
+	width: calc(var(--expand) + 50% + var(--splitter-size) / 2);
+	max-width: calc(100% + var(--expand));
+	min-width: var(--handle-size);
+	padding-left: var(--expand);
+	padding-bottom: var(--expand);
+	background: linear-gradient(135deg, transparent 0, transparent 50%, var(--splitter-color) 50%, var(--splitter-color)) 100% 100% / var(--handle-size) var(--handle-size) no-repeat;
+	resize: horizontal;
+	overflow: hidden;
+}
+.image-compare img {
+	display: block;
+	height: 100%;
+	user-select: none;
+}
+.image-compare > img {
+	max-width: 100%;
+	height: auto;
+}
+.image-compare span::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: var(--expand);
+	border-right: var(--splitter-size) solid var(--splitter-color);
+}

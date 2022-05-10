@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="c-code" lang="en">
+<head>
+<title>Pure CSS Image Comparison Slider</title>
+<meta name="description" content="Can the CSS resize property be tricked into achieving something like this?">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/zYRqgKO" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Image Comparison Slider</h1>
+<p>CSS only, using the <code>resize</code> property.</p>
+<p><i>Code</i><br><time>2022-05-10T17:51:00Z</time><br><img src="/2022/pure-css-image-compare/index.png" alt=""></p>
+</header>
+<div>
+<p>For an upcoming blog post, I wanted to create an image comparison slider that does not require JavaScript. Like others before me, I concluded I might be able to bend the <code>resize</code> property to make it work. But even <a href="https://lea.verou.me/2014/07/image-comparison-slider-with-pure-css/">eight years after Lea Verou created her proof of concept,</a> with neat things like <code>object-fit</code> being supported across browsers, the situation is not perfect, nor beautiful.</p>
+<p>But let’s start at the beginning, here’s a checklist of what we want:</p>
+<ul>
+<li>Display two images of the same size in the same spot, with a vertical slider on top. The slider may be dragged horizontally, and it’s position will determine how much of each image we will see. If the slider is placed exactly in the middle, we will see the left half of one image, and the right half of the other. Whereas in the left- or right-most position, one image is displayed in full, and the other not at all.</li>
+<li>The HTML must be meaningful, hence even without any styles applied, the markup must make sense.</li>
+<li>It must be accessible, so it has to work with keyboard too, and we’ll cover screen readers.</li>
+</ul>
+<p>Not a long list, but already quite challenging. Given that <code>resize</code> only works when using a mouse, we’ll have to come up with a fallback behavior for keyboard navigation later. Let’s tackle the HTML first, always a good starting point.</p>
+<h2>The Basics</h2>
+<p>As we are about to compare images, it might be a good idea to put everything inside a <code>&lt;figure&gt;</code> element, but this is just an optional wrapper. Our solution will work for any element that has the <code>.image-compare</code> class.</p>
+<pre><a href="/2022/pure-css-image-compare/code.basics.html">View HTML example.</a></pre>
+<p>You may have noticed the <code>&lt;span&gt;</code> element. To fast forward a little, I’ve already wrapped the first image inside a container with no semantic meaning, as this will become our resizable element.</p>
+<h2>The Breathing Space</h2>
+<p><a href="https://drafts.csswg.org/css-ui/#resize">The specification states</a> which elements should be resizable, and while images may be covered, in reality there is no browser support. But we anyhow would not want to resize images directly, because of the breathing space we are going to introduce for the draggable handle. Without the breathing space, browsers won’t let us hide the first image completely, as the draggable handle needs to be visible, in order to be … well, draggable. Hence we add this space&#8202;&mdash;&#8202;an overflow area if you will&#8202;&mdash;&#8202;to have a parking spot for the handle when the first image is completely hidden, as the following diagram shows.</p>
+<p class="standout"><img src="/2022/pure-css-image-compare/breathing-space.png" alt="The breathing space (a.k.a overflow area) protrudes underneath and on the left side of the first image."></p>
+<p>Using CSS, we will expand the resizable container to the left, and add a padding to push the image back into place, i.e. to where it would be without the expansion. We will do the same at the bottom, that space underneath will allow us to work around an issue in Safari, <a href="#the-safari-workaround">which I’ll cover later.</a> Coming up with the right size is tricky<sup><a id="ref-footnote-1" href="#footnote-1" role="doc-noteref" aria-label="Jump to footnote #1">[1]</a></sup>, but our final example will feature a CSS variable for the size of the breathing space, so it can be easily adjusted.</p>
+<h2>The Styling</h2>
+<p>We’ll be using the center position as a starting point for the slider, so it becomes obvious that user interaction is possible here. To do that, we can no longer just set the width of the resizable container to 50%, as everything we do from now on needs to take the breathing space into account. So let’s bring in <code>calc()</code> to help us out.</p>
+<pre><a href="/2022/pure-css-image-compare/code.styling.css">View CSS example.</a></pre>
+<p>That’s quite something, so let’s digest what is going on here. Only the second image is part of the regular document flow, and as such in charge of determining the height. This is usually he image’s actual height, but as the width is constrained by the container, wide images are shrunk, which also reduces the height to maintain aspect ratio. All the heavy lifting is done by the <code>&lt;span&gt;</code>, so here’s what it does:</p>
+<ul>
+<li>It contains the first image, and it is absolutely positioned, so it can be placed on top of the second.</li>
+<li>When it grows, it reveals more of the first image, so in turn we see less of the second; in other words, it uses <code>overflow: hidden</code> to cut off none/parts/all of the first image.</li>
+<li>But at the same time it expands to accomodate aforementioned breathing space, where the draggable handle resides. Expanding the area ensures the handle&#8202;&mdash;&#8202;unlike the image&#8202;&mdash;&#8202;is fully visible, despite the hidden overflow.</li>
+<li>It adds a vertical splitter (which sadly is not draggable) using the <code>::after</code> pseudo element.</li>
+<li>Finally, it adds a linear gradient as a background image to make the draggable handle more prominent.</li>
+</ul>
+<h2>Accessibility Fallback #1</h2>
+<p>I’ve already hinted that we need to do something to support keyboard navigation, but this chapter is also be relevant for browsers on mobile phones, where <code>resize</code> might not even work. As it is not possible to make the actual resizing keyboard-controllable, we need to do the next best thing.</p>
+<p>We’ll enhance the <code>.image-compare</code> element by adding three attributes:</p>
+<ul>
+<li><code>tabindex="0"</code> to make it focusable,</li>
+<li><code>role="img"</code> so our <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Img_role">two images become one unit,</a></li>
+<li>and an <code>aria-label</code> that is announced when the combined image is focused. (Side note: This accessible label supercedes the alt text of each individual image, but it is still a good idea to add proper alt text, as search engines and others might rely on it.)</li>
+</ul>
+<p>Whenever our <code>.image-compare</code> element receives focus, the image comparison “happens automatically”, thanks to this animation:</p>
+<pre><a href="/2022/pure-css-image-compare/code.accessibility-1.css">View CSS example.</a></pre>
+<p>And conversely, the animation stops when focus is lost.</p>
+<h2>Accessibility Fallback #2</h2>
+<p>We are in for a wild slide, which could be too much motion for some people, so let’s do one better. If we detect preference for reduced motion, we will fall back to a more subtle animation:</p>
+<pre><a href="/2022/pure-css-image-compare/code.accessibility-2.css">View CSS example.</a></pre>
+<h2>The Safari Workaround</h2>
+<p>Safari (at least up to version 15.4) has two issues.</p>
+<p>For starters, it does add a draggable handle to the <code>&lt;span&gt;</code>, but it places the image on top, so we can no longer grab the handle. I could not find a way to change the stacking order, which is why I made sure the handle is placed below the images. Hence I had to expand the breathing space also in this direction, which is now the default for all browsers.</p>
+<p>The second issue is, on resizable elements, Safari treats width and height as min-width and min-height, so we’d no longer be able to hide the first image completely. To work around this, the left-most position needs to be the slider’s initial position. But this time I do not want other browsers to suffer, so we’ll limit this adjustment to Safari:</p>
+<pre><a href="/2022/pure-css-image-compare/code.safari-workaround.css">View CSS example.</a></pre>
+<h2>Verdict</h2>
+<p>While all of the above works, this is one of the cases where I cannot vouch for a CSS-only solution. Instead, you could bring in <code>&lt;input type=&quot;range&quot;&gt;</code>, update a CSS variable every time the range’s value changes, and take it from there. You’ll most likely need only a few lines of Javascript, but you’ll end up with something superior to the poor man’s draggable handle we’ve seen here.</p>
+<h2>Footnotes</h2>
+<ol>
+<li id="footnote-1">The width of the breathing space has to be large enough to fit the handle. How large? We do not know, as it depends on <abbr title="operating system">OS</abbr> settings and the browser. To be on the safe side you could simply make the breathing space very large, but there could be side effects. A large value could break the overall site design when our image comparison slider is present. It is unlikely to do harm horizontally, because we protrude to the side that won’t introduce an unwanted scrollbar. If at all, it could be an issue vertically, so you have to test. <a href="#ref-footnote-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+</ol>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>
