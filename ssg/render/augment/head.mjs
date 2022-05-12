@@ -16,6 +16,7 @@ const modify = (content, meta) => {
 		'<link rel="alternate stylesheet" media="screen" href="/assets/basic.css" title="Basic Style">',
 		'<link rel="stylesheet" media="screen" href="/assets/advanced.css" title="Advanced Style">',
 		'<link rel="stylesheet" media="print" href="/assets/basic.css">',
+		'<meta name="color-scheme" content="light dark">',
 	];
 	const crap = [
 		`<meta property="og:type" content="${meta.page.isIndex ? 'website' : 'article'}">`,
@@ -34,7 +35,7 @@ const modify = (content, meta) => {
 		'<meta name="theme-color" content="#202225">',
 	];
 	const other = [
-		`<meta name="robots" content="${['/404/', '/about/about/', '/assets/', '/series/'].includes(meta.page.path) ? 'no' : ''}index,follow">`,
+		`<meta name="robots" content="${['/404/', '/about/about/', '/assets/'].includes(meta.page.path) ? 'no' : ''}index,follow">`,
 	];
 	const scripts = [
 		'<script src="/assets/ctm.js"></script>',

@@ -10,7 +10,7 @@
 *::after {
 	box-sizing: border-box;
 }
-html {
+:root {
 	--color-bg-subtle: #eaeaeb;
 	--color-bg: #fff;
 	--color-text: #313437;
@@ -27,6 +27,9 @@ html {
 	--o: var(--padding-horizontal);
 	--height-header: 6.25rem;
 	--width-sidebar: 12.5rem;
+	color-scheme: light dark;
+}
+html {
 	background-color: var(--color-bg);
 	color: var(--color-text);
 	font-family: "Lucida Bright", "Lucidabright", "Lucida Serif", "Lucida", "Noto Serif", "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", "Georgia", serif;
@@ -35,7 +38,7 @@ html {
 	-webkit-tap-highlight-color: rgba(204,85,85,.5);
 }
 @media (prefers-color-scheme: dark) {
-	html {
+	:root {
 		--color-bg-subtle: var(--color-dark);
 		--color-bg: #080809;
 		--color-text: var(--color-light);
@@ -692,7 +695,7 @@ nav a.c-article {
 	fill: var(--color-accent);
 }
 @media (max-width: 55.45em) {
-	html {
+	:root {
 		--padding-horizontal: .875rem;
 	}
 	h1 {
@@ -749,7 +752,7 @@ nav a.c-article {
 	}
 }
 @media (min-width: 85em) {
-	html {
+	:root {
 		--o: calc(50% - 33.25rem);
 	}
 	/*head {
