@@ -13,7 +13,8 @@
 <p>Redesign pt.2</p>
 <p><i>Editorial</i><br><time>2020-07-01T21:47:00Z</time><br><img src="/2020/redesign/index.png" alt=""></p>
 </header>
-<aside class="standoff metadata" aria-labelledby="3-part-blog-series">
+<div>
+<aside class="standoff" aria-labelledby="3-part-blog-series">
 <p>This is Part Two of a <strong id="3-part-blog-series">Three Part Blog Series.</strong> Although the focus of this Editorial series is an in-depth look at the <a href="/2019/just-launch/">latest redesign of this site</a>, you may read these posts as letters of appreciation to the <a href="/2016/webdesign-basics/">Basics of the Web.</a></p>
 <ol class="figure" aria-labelledby="3-part-blog-series">
 <li><a href="/2020/redesign-structure-and-semantics/">Structure &amp; Semantics</a></li>
@@ -22,7 +23,6 @@
 </ol>
 <p>The order of the three parts is not random, the most important one came first. You are reading part 2, which is all about my hobbyhorse CSS.</p>
 </aside>
-<div>
 <h2>Prologue</h2>
 <p>Earlier this week, <a href="https://twitter.com/sarah_edo">Sarah Drasner</a> has been <a href="https://css-tricks.com/in-defense-of-a-fussy-website/">defending website fussiness.</a> She writes about the little a-ha moments that make her stay on websites, pointing to excellent examples, where clearly their makers put in lots of additional effort, beyond merely chasing perfect Lighthouse scores. Her article conveyed a message I desperately needed to read, without it I would not have sat down to write the second part of this blog series.</p>
 <p>When I decided to go for a redesign, it wasn’t because one has been long overdue. No, what I did was taking the next major steps <a href="/2015/own-your-own-data/">to bring the content I’ve published elsewhere</a> also to my own place on the web. Adding some kind of archive was on my to-do list, as my existing index pages only featured the most recent entries, so bringing in more of my old stuff increased that need even further. Being no fan of pagination, I was on a quest to improve my navigation overall.</p>
@@ -42,7 +42,7 @@
 <p>Lesson #2: Sometimes it’s OK to take shortcuts.</p>
 <h2>The <code>:target</code> selector</h2>
 <p>Thanks to decent browser support for <code>scroll-behavior: smooth</code>, this time around I abstained from adding JavaScript to the hamburger menu, and went pure CSS instead. The <em>Menu</em> navigation item is simply an internal anchor link with <a href="#navigation">#navigation</a> in its <code>href</code> attribute, and using the <code>:target</code> selector allowed me to tweak styles when someone clicked it.</p>
-<figure class="figure standout"><img src="/2020/redesign-style-and-delight/navigation-target.png" alt="Comparing the site’s navigation in regular and expanded state.">
+<figure class="standout"><img src="/2020/redesign-style-and-delight/navigation-target.png" alt="Comparing the site’s navigation in regular and expanded state.">
 <figcaption>The navigation’s regular appearance on the left vs. the “expanded” <code>:target</code> state on the right.</figcaption>
 </figure>
 <p>Most notably, the menu items at the top grow immensely in size. But as the image also shows, at the bottom there are the archive links, which allow you to navigate by year. In <code>:target</code> state, a horizontal scrollbar appears, enabling you to travel back in time even further with a mouse. (Keyboard navigation will work in the both states.) The navigation adheres to the <code>max-width</code> of the content above, and this site has been online for a while now, so some not-so-recent years get cut off, courtesy of <code>overflow: hidden</code>. If you add up all those factors, no matter how big your screen is, the scrollbar would always be there. So for aesthetic reasons I only allow scrolling once my visitors put their attention to the menu.</p>

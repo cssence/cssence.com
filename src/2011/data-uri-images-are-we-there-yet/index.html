@@ -12,18 +12,18 @@
 <h1>Data URI Images: Are We There yet?</h1>
 <p><i>Essay</i><br><time>2011-04-11T06:41:24Z</time><br><img src="/2011/data-uri-images-are-we-there-yet/index.png" alt=""></p>
 </header>
-<aside class="standoff metadata" aria-labelledby="quick-summary">
+<div>
+<aside class="standoff" aria-labelledby="quick-summary">
 <h2 id="quick-summary">Quick summary</h2>
 <p>A deeper look into pros and cons of data URIs, especially data URI images. One size fits all, or not useful at all?</p>
 </aside>
-<div>
 <h2>What are data URIs anyway?</h2>
 <p>This question probably needs to be answered before we explore the pros and cons of data URI images. In a nutshell: Data URIs provide a way to embed data instead of referencing to it, hence there is no longer the need for the referenced file. Confused? <a href="http://en.wikipedia.org/wiki/Data_URI_scheme">Learn more at wikipedia</a>.</p>
 <h2>The simplest of all images</h2>
 <figure class="standoff"><img src="/2011/data-uri-images-are-we-there-yet/bbc-homepage-may-2000-with-clearpixel.png" alt="“X-ray” of the BBC homepage, May 5th, 2000. Transparent images have been highlighted.">
 <figcaption>Exposing transparent pixels on an old version of the BBC homepage (May 2000, via <a href="http://web.archive.org">WebArchive</a>).</figcaption>
 </figure>
-<p>I’ve been making websites for more than a decade now. In the beginning, when it was all Netscape Navigator and no CSS, you needed tables and images, and&thinsp;—&thinsp;pardon my French&thinsp;—&thinsp;you needed a shitload of them. But almost all these image tags referred to the same GIF file. The file contained not more than one transparent pixel, and that pixel would get stretched to whatever width and/or height was needed. As is had been transparent, it never got distorted. Its sole purpose was to make sure that the surrounding table cells expanded to whatever size the image had been stretched to. Did I already mention that back then we stretched the hell out of this poor pixel?</p>
+<p>I’ve been making websites for more than a decade now. In the beginning, when it was all Netscape Navigator and no CSS, you needed tables and images, and—pardon my French—you needed a shitload of them. But almost all these image tags referred to the same GIF file. The file contained not more than one transparent pixel, and that pixel would get stretched to whatever width and/or height was needed. As is had been transparent, it never got distorted. Its sole purpose was to make sure that the surrounding table cells expanded to whatever size the image had been stretched to. Did I already mention that back then we stretched the hell out of this poor pixel?</p>
 <p>Be that as it may, if we send said transparent pixel through some serious base64 encoding, we <a href="http://www.sveinbjorn.org/dataurlmaker">get a data URI</a>. Put this URI in the <code>src</code> attribute of an image tag and it looks something like this:</p>
 <pre><a href="/2011/data-uri-images-are-we-there-yet/code.clearpixel-data-uri.html">View HTML example.</a></pre>
 <p><span lang="de">Gesundheit!</span> Looks like someone sneezed at our markup. We’ll get back to this syntax, but first let’s find out why the web isn’t already swarming with data URIs.</p>

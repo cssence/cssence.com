@@ -236,7 +236,7 @@ main .visually-hidden {
 	}
 	header i::after,
 	#comments ~ section,
-	.codepen,
+	aside[aria-labelledby="showcase"],
 	nav,
 	body > footer {
 		display: none;

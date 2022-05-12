@@ -6,7 +6,7 @@ const modify = (content, meta) => {
 	if (!meta.page.alternateUrl) return;
 
 	const aside = [
-		'<aside class="figure standout codepen" aria-labelledby="showcase">',
+		'<aside class="figure standout" aria-labelledby="showcase">',
 		'<h2 id="showcase">Showcase</h2>',
 		`<p><a href="${meta.page.alternateUrl}">Visit CodePen to see this&nbsp;example in&nbsp;action.</a></p>`,
 		'</aside>'

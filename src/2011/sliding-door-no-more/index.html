@@ -12,11 +12,11 @@
 <h1>Sliding Door, No More</h1>
 <p><i>Essay</i><br><time>2011-03-26T21:05:39Z</time><br><img src="/2011/sliding-door-no-more/index.jpg" alt=""></p>
 </header>
-<aside class="standoff metadata" aria-labelledby="quick-summary">
+<div>
+<aside class="standoff" aria-labelledby="quick-summary">
 <h2 id="quick-summary">Quick summary</h2>
 <p>There are many browsers out there that support a whole lot of the new CSS3 features. So there is a good chance that some of us are still using CSS techniques that are no longer state of the art. What about sliding doors? Obsolete?</p>
 </aside>
-<div>
 <h2>Method obsolescence</h2>
 <p>March 2011, what a month! A hearty welcome to Internet Explorer&nbsp;9 and Firefox&nbsp;4. I wonder if I should include Google Chrome&nbsp;10? Um, the people at the Googleplex deliver new versions up the wazoo, so for Chrome I guess it will be easier to welcome only versions divisible by three.</p>
 <p>Let me start again by saying there are many browsers out there that support a whole lot of the new CSS3 features. So there is a good chance that some of us are still using CSS techniques that are no longer state of the art. What about <strong>sliding doors</strong>? Obsolete?</p>
@@ -32,7 +32,7 @@
 <p class="invert"><img src="/2011/sliding-door-no-more/button-multiple-images.png" alt="Applying multiple images in order to create a button does not lead to the desired result."></p>
 <p>The intention here is to create a pill-shaped button, but our images overlap. Addressing this problem is one of the main tasks of the sliding doors technique. Margins are applied to the stacked elements to prevent the repeated image from interfering with our transparent ends. If you specify multiple backgrounds on one single element, you have no stacked elements where you could play with margins.</p>
 <p><em>Note: Replacing the transparency in our images with a static background color would be a cheap (and lousy) fix. Furthermore, this particular example could be fixed by adding rounded corners, but that too is no real solution. We want something that works in any case, even with irregular shapes at one or both ends of our button.</em></p>
-<p>While there are many things you can do with multiple background images&thinsp;—&thinsp;including effects such as <a href="http://en.wikipedia.org/wiki/Parallax_scrolling">parallax scrolling</a>&thinsp;—&thinsp;, it turns out they are of little help when we want to replace sliding doors.</p>
+<p>While there are many things you can do with multiple background images—including effects such as <a href="http://en.wikipedia.org/wiki/Parallax_scrolling">parallax scrolling</a>—, it turns out they are of little help when we want to replace sliding doors.</p>
 <h3>Border images</h3>
 <p>Luckily, <a href="http://www.w3.org/TR/CSS3-background/">CSS3 background</a> is more than just multiple backgrounds. It’s got something called border images.</p>
 <p>The syntax is tricky, but the general idea is to specify a border and apply specific parts of one single background-image to this border and the area within the border. Currently, <code>border-image</code> must be used with vendor-prefixes to work in Firefox and WebKit, which I left out for better readability:</p>

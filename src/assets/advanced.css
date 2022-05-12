@@ -29,7 +29,7 @@ html {
 	--width-sidebar: 12.5rem;
 	background-color: var(--color-bg);
 	color: var(--color-text);
-	font-family: "Constantia", "Lucida Bright", "Lucidabright", "Lucida Serif", "Lucida", "Noto Serif", "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", "Georgia", serif;
+	font-family: "Lucida Bright", "Lucidabright", "Lucida Serif", "Lucida", "Noto Serif", "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", "Georgia", serif;
 	font-size: 100%;
 	line-height: 1.625;
 	-webkit-tap-highlight-color: rgba(204,85,85,.5);
@@ -76,10 +76,9 @@ header p:last-child,
 .posts li p:last-child,
 img + small,
 .subtle,
-figure,
+figure, .figure,
 blockquote,
 .posts h2,
-.codepen,
 #updates,
 #footnotes,
 #comments,
@@ -90,6 +89,7 @@ blockquote,
 [data-unavailable],
 #contribute,
 .metadata,
+.standoff,
 nav,
 footer {
 	font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", "Noto Sans", "DejaVu Sans", sans-serif;
@@ -116,6 +116,7 @@ header p:last-child,
 [data-chain],
 [data-unavailable],
 .metadata,
+.standoff,
 img + small,
 [data-hl],
 .imprint {
@@ -222,12 +223,10 @@ time {
 :where(pre, figure, .figure) + :where(pre, figure, .figure) {
 	margin-top: -1.5rem;
 }
-.codepen,
 ol,
 ul,
 blockquote,
-.figure,
-figure,
+figure, .figure,
 pre,
 p {
 	margin-bottom: 1.5rem;
@@ -262,16 +261,13 @@ figcaption {
 	margin-top: .5rem;
 	line-height: 1.375;
 }
-.figure,
-figure {
+figure, .figure {
 	background-color: var(--color-bg-subtle);
 }
-.figure code,
-figure code {
+figure code, .figure code {
 	background-color: var(--color-bg);
 }
-.figure,
-figure,
+figure, .figure,
 pre,
 nav,
 .imprint {
@@ -370,33 +366,33 @@ header p:last-child {
 .c-note i {
 	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1c4.418 0 8 2.91 8 6.5S12.418 14 8 14c-.424 0-.841-.027-1.247-.079-1.718 1.718-3.77 2.027-5.753 2.072v-.421c1.071-.525 2-1.48 2-2.572a3.01 3.01 0 0 0-.034-.448C1.157 11.36 0 9.54 0 7.5 0 3.91 3.582 1 8 1z'/%3E%3C/svg%3E");
 }
-article > aside:not(.codepen),
+aside.standoff:first-child,
+aside[aria-labelledby="comments"],
 .metadata {
 	margin-top: 2.9375rem;
-	border-top: .0625rem solid currentColor;
+	border-top: .0625rem solid;
 }
-.standoff.metadata {
+aside.standoff:first-child {
 	padding-top: .75rem;
-	border-bottom: .0625rem solid currentColor;
+	border-bottom: .0625rem solid;
 }
 .posts h2 {
 	margin: 6rem 0 3rem;
 }
-.figure h2,
-.standoff h2 {
+:where(.figure, .standoff) h2 {
 	margin-top: 0;
 }
-.codepen h2,
-.metadata h2,
-.metadata p,
+:where(.metadata, .standoff) :is(h2, p),
+#showcase,
 #comments,
 #contribute {
 	margin-bottom: .75rem;
 }
 .subtle,
 .posts h2,
-.codepen h2,
 .metadata h2,
+.standoff h2,
+#showcase,
 #updates,
 #footnotes,
 #comments,
@@ -407,7 +403,7 @@ article > aside:not(.codepen),
 	text-transform: uppercase;
 }
 .c-code #footnotes + ol,
-.posts :where(ol, ul) {
+.posts :is(ol, ul) {
 	margin-bottom: 3rem;
 }
 .posts li {
@@ -446,17 +442,17 @@ article > aside:not(.codepen),
 header,
 .posts li,
 #comments ~ article,
-.codepen {
+aside[aria-labelledby="showcase"] {
 	position: relative;
 	padding-right: calc(2 * var(--padding-horizontal) + .25rem + var(--width-sidebar));
 }
-.codepen a::after {
+aside[aria-labelledby="showcase"] a::after {
 	content: "";
 	display: block;
 	position: absolute;
 	inset: 0;
 	background: var(--icon) 0 / 2rem repeat var(--color-bg-subtle);
-	--mask: linear-gradient(90deg, #0000 0, #0000 calc(95% - var(--width-sidebar) - 2 * var(--padding-horizontal)), #0005);
+	--mask: linear-gradient(90deg, #0000 0, #0000 50%, #0005);
 	-webkit-mask-image: var(--mask);
 	mask-image: var(--mask);
 }
@@ -477,7 +473,7 @@ header,
 	mask: linear-gradient(0, #0000, #000);
 	opacity: .3;
 }
-.codepen,
+aside[aria-labelledby="showcase"],
 #comments ~ article {
 	margin-top: 3rem;
 	margin-bottom: 3rem;
@@ -553,7 +549,7 @@ i {
 .posts i {
 	margin-left: -1.75rem;
 }
-.codepen a,
+aside[aria-labelledby="showcase"] a,
 .imprint a[href*="codepen"] {
 	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m14.777 5.751-7-4.667a.5.5 0 0 0-.555 0l-7 4.667a.501.501 0 0 0-.223.416v4.667c0 .167.084.323.223.416l7 4.667a.5.5 0 0 0 .554 0l7-4.667a.501.501 0 0 0 .223-.416V6.167a.501.501 0 0 0-.223-.416zM7.5 10.232 4.901 8.5 7.5 6.768 10.099 8.5 7.5 10.232zM8 5.899V2.434l5.599 3.732L11 7.898l-3-2zm-1 0-3 2-2.599-1.732L7 2.435V5.9zM3.099 8.5 1 9.899V7.101L3.099 8.5zM4 9.101l3 2v3.465l-5.599-3.732L4 9.102zm4 2 3-2 2.599 1.732L8 14.565V11.1zM11.901 8.5 14 7.101v2.798L11.901 8.5z'/%3E%3C/svg%3E");
 }
@@ -718,8 +714,8 @@ nav a.c-article {
 	.standoff:not(figure):not(.figure) {
 		padding-right: var(--padding-horizontal);
 	}
-	.figure,
-	figure,
+	.standout.-left,
+	figure, .figure,
 	pre {
 		margin-left: calc(-1 * var(--padding-horizontal));
 	}
@@ -769,8 +765,8 @@ nav a.c-article {
 	}*/
 }
 
-main > div > header p:last-child > :where(i, time),
-html:where(.c-default, .c-about) header p:last-child > :where(i, time),
+main > div > header p:last-child > :is(i, time),
+html:where(.c-default, .c-about) header p:last-child > :is(i, time),
 .metadata address,
 header br,
 .posts li br {
