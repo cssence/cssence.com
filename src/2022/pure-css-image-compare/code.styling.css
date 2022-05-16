@@ -12,7 +12,7 @@
 	left: calc(-1 * var(--expand));
 	bottom: calc(-1 * var(--expand));
 	width: calc(var(--expand) + 50% + var(--splitter-size) / 2);
-	max-width: calc(100% + var(--expand));
+	max-width: calc(var(--expand) + 100%);
 	min-width: var(--handle-size);
 	padding-left: var(--expand);
 	padding-bottom: var(--expand);

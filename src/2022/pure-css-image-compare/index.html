@@ -37,7 +37,7 @@
 <ul>
 <li>It contains the first image, and it is absolutely positioned, so it can be placed on top of the second.</li>
 <li>When it grows, it reveals more of the first image, so in turn we see less of the second; in other words, it uses <code>overflow: hidden</code> to cut off none/parts/all of the first image.</li>
-<li>But at the same time it expands to accomodate aforementioned breathing space, where the draggable handle resides. Expanding the area ensures the handle—unlike the image—is fully visible, despite the hidden overflow.</li>
+<li>But at the same time it expands to accommodate aforementioned breathing space, where the draggable handle resides. Expanding the area ensures the handle—unlike the image—is fully visible, despite the hidden overflow.</li>
 <li>It adds a vertical splitter (which sadly is not draggable) using the <code>::after</code> pseudo element.</li>
 <li>Finally, it adds a linear gradient as a background image to make the draggable handle more prominent.</li>
 </ul>
@@ -47,7 +47,7 @@
 <ul>
 <li><code>tabindex="0"</code> to make it focusable,</li>
 <li><code>role="img"</code> so our <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Img_role">two images become one unit,</a></li>
-<li>and an <code>aria-label</code> that is announced when the combined image is focused. (Side note: This accessible label supercedes the alt text of each individual image, but it is still a good idea to add proper alt text, as search engines and others might rely on it.)</li>
+<li>and an <code>aria-label</code> that is announced when the combined image is focused. (Side note: This accessible label supersedes the alt text of each individual image, but it is still a good idea to add proper alt text, as search engines and others might rely on it.)</li>
 </ul>
 <p>Whenever our <code>.image-compare</code> element receives focus, the image comparison “happens automatically”, thanks to this animation:</p>
 <pre><a href="/2022/pure-css-image-compare/code.accessibility-1.css">View CSS example.</a></pre>
@@ -70,7 +70,7 @@
 <aside>
 <h2 id="comments">Comments</h2>
 <article hidden>
-<h3><a rel="me author" href="https://twitter.com/CSSence">Matthias Beitl</a> wrote on <a href="https://twitter.com/CSSence/status/1524712145908346881"><time>2022-05-12T11:24:38Z</time></a></h3>
+<h3><a rel="me author" href="https://twitter.com/CSSence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/CSSence/status/1524712145908346881"><time>2022-05-12T11:24:38Z</time></a></h3>
 <p>Image comparison slider, pure CSS, no JavaScript. #HTML #CSS #a11y<br><a href="/2022/pure-css-image-compare/">cssence.com/2022/pure-css-image-compare/</a></p>
 </article>
 <p>No comments have been added so far.</p>

@@ -1,0 +1,28 @@
+/* BEFORE & AFTER - a small selection of properties, taken from the actual code */
+
+/* With physical properties: */
+.image-compare span {
+	top: 0;
+	left: calc(-1 * var(--expand));
+	bottom: calc(-1 * var(--expand));
+
+	width: calc(var(--expand) + 50% + var(--splitter-size) / 2);
+	max-width: calc(100% + var(--expand));
+	min-width: var(--handle-size);
+
+	padding-left: var(--expand);
+	padding-bottom: var(--expand);
+}
+
+/* Now the same, but with logical properties instead: */
+.image-compare span {
+	inset-block: 0 calc(-1 * var(--expand));
+	inset-inline-start: calc(-1 * var(--expand));
+
+	inline-size: calc(50% + var(--expand) + var(--splitter-size) / 2);
+	max-inline-size: calc(100% + var(--expand));
+	min-inline-size: var(--handle-size);
+
+	padding-block-end: var(--expand);
+	padding-inline-start: var(--expand);
+}
