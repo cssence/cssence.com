@@ -459,14 +459,14 @@ aside[aria-labelledby="showcase"] a::after {
 	-webkit-mask-image: var(--mask);
 	mask-image: var(--mask);
 }
-#deprecation {
+[data-follow-up] {
 	position: relative;
 	text-shadow: 0 -.0625rem .125rem var(--color-bg);
 }
-#deprecation::after {
-	content: " ⚠️";
+[data-follow-up]::after {
+	content: " " attr(data-follow-up);
 }
-#deprecation::before {
+[data-follow-up]::before {
 	content: "";
 	position: absolute;
 	z-index: -1;
@@ -723,7 +723,7 @@ nav a.c-article {
 		margin-left: calc(-1 * var(--padding-horizontal));
 	}
 	main,
-	#deprecation,
+	[data-follow-up],
 	nav ul,
 	.imprint div {
 		margin-right: calc(-1 * var(--padding-horizontal));
