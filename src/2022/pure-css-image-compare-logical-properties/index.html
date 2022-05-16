@@ -14,14 +14,14 @@
 <p><i>Code</i><br><time>2022-05-16T06:32:00Z</time><br><img src="/2022/pure-css-image-compare-logical-properties/index.png" alt=""></p>
 </header>
 <div>
-<p>Last week I created an <a href="/2022/pure-css-image-compare/">image comparison slider in pure CSS,</a> and now I’m doing it again, only this time I’m using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties">CSS logical properties.</a> I’m aware of them, I’ve even used some of them in the past. Furthermore, my employer pays me to work on an international web product that is running in six countries, but the product has no dire need for logical properties, as all the languages it is translated into are read from left to right.</p>
+<p>Last week I created an <a href="/2022/pure-css-image-compare/">image comparison slider in pure CSS,</a> and now I’m doing it again, only this time I’m using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties">CSS logical properties.</a> I’m aware of them, I’ve even used some of them in the past, but not all too often. Even though my employer pays me to work on an international web product that is running in six countries, the product lacks the need for logical properties, because the languages in all those countries to are read from left to right.</p>
 <p>As a learning exercise, I wanted to work on something that contains none of the good old physical properties. Instead of coming up with a theoretical example, I took the slider to try it out.</p>
 <h2>Lessons learned</h2>
-<p>As I have already been familiar with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties#block_vs._inline">the block and inline dimension,</a> converting everything to logical properties was rather straightforward.</p>
+<p>I’ve already been familiar with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties#block_vs._inline">the block and inline dimension,</a> so converting everything to logical properties was rather straightforward.</p>
 <pre><a href="/2022/pure-css-image-compare-logical-properties/code.before-after.css">View CSS example.</a></pre>
 <p>That said, there have been aha moments along the way.</p>
 <h3>New shorthands</h3>
-<p>Logical properties outnumber their physical friends substantially, because they provide individual shorthands for block and inline dimension. This is something I find myself using more and more, because it is convenient. The assigned values on a single dimension are quite often the same. Let’s take inline, which happens to be <em>horizontally</em> if the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode">block flow direction</a> goes from top to bottom: Instead of specifying the same padding value twice for <code>-left</code> and <code>-right</code>, we can just write <code>padding-inline: 1rem</code>.</p>
+<p>Logical properties outnumber their physical friends substantially, because they provide individual shorthands for block and inline dimension. This is something I find myself using more and more, because it’s convenient. The assigned values on a single dimension are quite often the same. Let’s take inline, which amounts to <em>horizontal</em> if the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode">block flow direction</a> goes from top to bottom: Instead of specifying the same padding value twice for <code>-left</code> and <code>-right</code>, we can just write <code>padding-inline: 1rem</code>.</p>
 <p>Conversely, <code>padding-block</code> can be used instead of <code>-top</code> and <code>-bottom</code>.</p>
 <h3>Four-value shorthands</h3>
 <p>The first logical property I’ve ever used was <code>inset</code>, which too can be found in the convenience department. However, this is also where the first aha moment kicked in while converting my image slider. I knew that <code>inset</code> takes up to four values, but as I learned on MDN, it is <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Inset">agnostic to the writing mode:</a></p>
@@ -35,12 +35,12 @@
 <p>Using any four-value shorthand such as margin, padding, or border will currently use the physical versions, so if following the flow of the document is important, use the longhand properties for the time being.</p>
 </blockquote>
 <h3>Background images</h3>
-<p>If you use a gradient like <code>linear-gradient()</code> as a background, and said gradient must adhere to the writing mode, making it work can be a bit finicky, as my <a href="#showcase">final example</a> shows. The keeps things <a href="https://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY,</a> I recommend using CSS variables that change based on writing mode, instead of jotting down the gradient multiple times.</p>
+<p>If you use a gradient like <code>linear-gradient()</code> as a background, and said gradient must adhere to the writing mode, making it work can be a bit finicky, as my <a href="#showcase">final example</a> shows. To keeps things <a href="https://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY,</a> I recommend using CSS variables that change based on writing mode, instead of jotting down the gradient multiple times.</p>
 <h3>Logical values</h3>
 <p>The source code above only shows logical properties, but there are also existing properties that can take logical <strong>values</strong> in addition to the physical ones you may be accustomed to.</p>
 <p>This article in particular would not be complete without mentioning that <code>resize</code> takes logical values, so in my image comparison slider I replaced <code>resize: horizontal</code> with <code>resize: inline</code>. 🙂</p>
 <h2>Summary</h2>
-<p>While I’ve been dabbling in logical property waters for quite some time, I did so in the safe space of the left-to-right languages I’m used to. Which is why I switched to right-to-left as part of this learning exercise, and I can highly recommend it, as it will deepen your understanding for logical properties.</p>
+<p>While I’ve been dabbling in logical property waters for quite some time, I did so in the safe space of the left-to-right languages I’m used to. Which is why I switched to right-to-left as part of this learning exercise, and I can highly recommend it, as it will deepen your understanding of logical properties.</p>
 <p>For this example, I did not yet <a href="https://css-tricks.com/css-logical-properties-and-values/#aa-pay-attention-to-direction-and-writing-mode">flip the block and inline dimension,</a> which is a thing in languages that are written from top to bottom. That’s an exercise for another day.</p>
 </div>
 <aside>
@@ -52,6 +52,24 @@
 <article>
 <h3><a rel="me author" href="https://twitter.com/CSSence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/CSSence/status/1526204562083913729"><time>2022-05-16T14:14:57Z</time></a></h3>
 <p>Pardon my nonexistent knowledge of Arabic, I just hope whatever I copied from Google Translate into the accompanying CodePen isn’t terribly wrong. 🤞<br>/cc <a href="https://twitter.com/shadeed9">@shadeed9</a><br><a href="https://codepen.io/cssence/pen/LYQxbWN">codepen.io/cssence/pen/LYQxbWN</a></p>
+</article>
+<article>
+<h3><a rel="author" href="https://twitter.com/shadeed9">Ahmad Shadeed</a> wrote on <a href="https://twitter.com/shadeed9/status/1526209942109229060"><time>2022-05-16T14:36:20Z</time></a></h3>
+<p data-chain="reply">In reply to: @CSSence.</p>
+<p>Looks perfect 😉 Nice demo too!</p>
+</article>
+<article>
+<h3><a rel="me author" href="https://twitter.com/CSSence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/CSSence/status/1526211071048130560"><time>2022-05-16T14:40:49Z</time></a></h3>
+<p data-chain="reply">In reply to: @shadeed9.</p>
+<p>Thx! You’re too kind.</p>
+</article>
+<article>
+<h3><a rel="me author" href="https://twitter.com/CSSence">Matthias Zöchling</a> wrote on <a href="https://twitter.com/CSSence/status/1526214655248584704"><time>2022-05-16T14:55:04Z</time></a></h3>
+<p>Logical properties aside, using <code>resize</code> for this ain’t great. As stated in my previous article, …</p>
+<blockquote>
+<p>even eight years after <a href="https://twitter.com/LeaVerou">@LeaVerou</a> created her proof of concept, […] the situation is not perfect, nor beautiful.</p>
+</blockquote>
+<p>Hence, CSS-only not recommended.<br><a href="/2022/pure-css-image-compare/">cssence.com/2022/pure-css-image-compare/</a></p>
 </article>
 </aside>
 </article>
