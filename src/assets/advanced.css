@@ -220,6 +220,12 @@ h1 + p:not(:last-child) {
 time {
 	white-space: nowrap;
 }
+kbd {
+	padding: 0 .25rem;
+	border: .0625rem solid;
+	border-bottom-width: .125rem;
+	border-radius: .25rem;
+}
 [role="list"] {
 	list-style: none;
 }
