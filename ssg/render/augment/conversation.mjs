@@ -65,7 +65,7 @@ const modify = (content, meta) => {
 	const insertBefore = conversation.end;
 	delete conversation.start;
 	delete conversation.end;
-	content.splice(insertBefore, 0, ...contributeSection)
+	content.splice(insertBefore, 0, ...contributeSection);
 
 };	
 

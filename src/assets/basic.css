@@ -158,8 +158,12 @@ main .visually-hidden {
 		max-width: 40em;
 		margin: 0 auto;
 		padding: 2.5em 1.5em;
-		color: #111;
 		line-height: 1.5;
+	}
+	@media (prefers-color-scheme: light) {
+		body {
+			color: #111;
+		}
 	}
 	pre {
 		overflow: auto;
