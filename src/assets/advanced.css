@@ -9,6 +9,8 @@
 *::before,
 *::after {
 	box-sizing: border-box;
+	text-decoration-thickness: .125rem;
+	text-underline-offset: .125rem;
 }
 :root {
 	--color-bg-subtle: #eaeaeb;
@@ -150,6 +152,7 @@ a[href$=".pdf"]::after {
 }
 a:hover {
 	text-decoration-style: double;
+	text-decoration-thickness: .0625rem;
 }
 a:focus:not(:active) {
 	background: var(--color-focus) !important;
@@ -666,7 +669,8 @@ nav a.c-article {
 	color: var(--color-text);
 }
 [data-hl]:hover {
-	text-decoration: underline solid var(--color-accent);
+	text-decoration-color: var(--color-accent);
+	text-decoration-line: underline;
 }
 [data-hl]::before {
 	content: attr(data-hl);
