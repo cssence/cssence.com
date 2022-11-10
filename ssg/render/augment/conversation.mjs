@@ -31,8 +31,10 @@ const modify = (content, meta) => {
 				content[i] = content[i].replace(' data-hook', '');
 				conversation.hook = comment;
 			}
-			if (!conversation.hook && comment.own && comment.url?.startsWith('https://twitter.com')) {
-				conversation.hook = comment;
+			if (!conversation.hook && comment.own && comment.url) {
+				if (comment.url.startsWith('https://twitter.com') || comment.url.startsWith('https://mas.to')) {
+					conversation.hook = comment;
+				}
 			}
 			if (content[i].includes('hidden')) {
 				comment.id = 'comment-0';
@@ -52,21 +54,29 @@ const modify = (content, meta) => {
 	}
 	meta.page.conversation = conversation;
 
-	const TWEET_URL = 'https://twitter.com/intent/tweet';
-	const commentUrlKey = conversation.hook ? 'in_reply_to' : 'text';
-	const commentUrlValue = conversation.hook ? conversation.hook.url.split('/').pop() : encodeURIComponent(`@cssence ${meta.getPermalink(meta.page.path)} `);
-	const shareUrlValue = encodeURIComponent(`“${meta.page.title}” ${meta.getPermalink(meta.page.path)} by @cssence`);
+	const postType = isStandaloneThread ? 'thread' : 'article';
+	const shareUrlValue = encodeURIComponent(`“${meta.page.title}” ${meta.getPermalink(meta.page.path)} by @CSSence`);
+	const shareUrl = `<a href="https://twitter.com/intent/tweet?text=${shareUrlValue}">share this ${postType} on Twitter.</a>`;
 	const contributeSection = [
-		'<section>',
+		'<section aria-labelledby="contribute">',
 		`<h3 id="contribute">${conversation.thread.length ? 'Join' : 'Start'} the conversation</h3>`,
-		`<p><a href="${TWEET_URL}?${commentUrlKey}=${commentUrlValue}">Have your say</a> on Twitter, or simply <a href="${TWEET_URL}?text=${shareUrlValue}">share this ${isStandaloneThread ? 'thread' : 'article'}.</a></p>`,
+		`<p>Simply ${shareUrl}</p>`,
 		'</section>'
 	];
+	if (conversation.hook) {
+		if (conversation.hook.url.startsWith('https://twitter.com')) {
+			contributeSection[2] = `<p><a href="https://twitter.com/intent/tweet?in_reply_to=${conversation.hook.url.split('/').pop()}">Have your say on Twitter,</a> or simply ${shareUrl.replace(' on Twitter', '')}</p>`;
+		}
+		if (conversation.hook.url.startsWith('https://mas.to')) {
+			contributeSection[2] = `<p><a href="${conversation.hook.url}">Have your say on Mastodon,</a> or simply ${shareUrl}</p>`;
+		}
+	}
+
 	const insertBefore = conversation.end;
 	delete conversation.start;
 	delete conversation.end;
 	content.splice(insertBefore, 0, ...contributeSection);
 
-};	
+};
 
 export default modify;

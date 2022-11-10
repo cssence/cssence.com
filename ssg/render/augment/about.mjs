@@ -19,9 +19,9 @@ const add = (content, meta) => {
 		const origin = meta.page.className !== 'c-code' ? meta.page.alternateUrl : null;
 		if (origin) {
 			const remote = origin.split('/')[2];
-			const isResponseTwitter = !['cssence.wordpress.com', 'medium.com'].includes(remote) && !meta.page.conversation?.thread[0]?.own;
+			const isResponseCurated = !['cssence.wordpress.com', 'medium.com'].includes(remote) && !meta.page.conversation?.thread[0]?.own;
 			const isResponseElsewhere = content[content.indexOf('<header>') + 2].startsWith('<p>A response to');
-			const isResponse = isResponseTwitter || isResponseElsewhere;
+			const isResponse = isResponseCurated || isResponseElsewhere;
 			footer.push(`<p>Originally ${isResponse ? 'responded' : 'published'} on ${remote} on ${meta.date.format(meta.page.published)}.</p>`);
 		} else {
 			footer.push(`<p>Published on ${meta.date.format(meta.page.published)}.</p>`);

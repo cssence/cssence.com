@@ -10,7 +10,7 @@
 <article>
 <header>
 <h1>:focus-visible and JavaScript</h1>
-<p><i>Code</i><br><time>2022-11-08T13:53:42Z</time><br><img src="/2022/focus-visible-and-javascript/index.png" alt=""></p>
+<p><i>Code</i><br><time data-revised="2022-11-10T07:21:05Z">2022-11-08T13:53:42Z</time><br><img src="/2022/focus-visible-and-javascript/index.png" alt=""></p>
 </header>
 <div>
 <p>Thanks to <a href="https://caniuse.com/css-focus-visible">splendid browser support,</a> utilizing <code>:focus-visible</code> is a thing now. We can finally have highly prominent focus styles for those who navigate our sites with a keyboard, and at the same time do not need to show visitors browsing with a mouse how prominent they are. The keyboard/mouse divide is a bit of a simplification, as there are more input devices out there. In general, web browsers have heuristics to figure out which focus style to apply, but surely <em>how</em> our visitor got to an interactive element will be taken into account.</p>
@@ -22,7 +22,11 @@
 <dt><strong>Situation: </strong>A script causes focus to move from a non-:focus-visible element to another element</dt><dd>→ <strong>Does :focus-visible apply?</strong> No</dd>
 </dl>
 </blockquote>
-<p>Not being entirely satisfied with this, I created a little test page. Doing so, I’ve been able to confirm the above, and additionally I learned <code>:focus-visible</code> is also applied when a script moves focus on page load&thinsp;—&thinsp;a scenario where the web browser has a hard time figuring out which input device the visitor used beforehand. Feel free to play with it on CodePen.</p>
+<p>Not being entirely satisfied with this, I created a little test page. Doing so, I’ve been able to confirm the above, and additionally I learned <code>:focus-visible</code> is also applied …</p>
+<ul>
+<li>when a script moves focus on page load&thinsp;—&thinsp;a scenario where the web browser has a hard time figuring out which input device the visitor used beforehand;</li>
+<li>when the target is an editable input field like <code>input[type="text"]</code> or <code>textarea</code>&thinsp;—&thinsp; in these cases the focus-visible style is always applied, input device does not matter.</li>
+</ul>
 </div>
 <aside>
 <h2 id="comments">Comments</h2>
