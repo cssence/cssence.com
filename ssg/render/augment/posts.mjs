@@ -15,6 +15,9 @@ const add = (content, meta) => {
 		'c-note': 'Note'
 	};
 
+	const showAllPosts = meta.page.path === '/all/';
+	const noThumbnail = showAllPosts ? '/404/index.png' : undefined;
+
 	for (const section of meta.page.sections) {
 		const listItems = [];
 		for (const card of section.cards) {
@@ -24,7 +27,7 @@ const add = (content, meta) => {
 				`<li class="${card.className}">`,
 				`<h3><a href="${card.path}">${card.title}</a></h3>`,
 				`<p>${card.description}</p>`,
-				`<p><i>${indicator}</i><br>${date ? meta.date.format(date) : ''}<br><img src="${card.thumbnail}" alt=""></p>`,
+				`<p><i>${indicator}</i><br>${date ? meta.date.format(date) : ''}<br><img src="${noThumbnail || card.thumbnail}" alt=""></p>`,
 				'</li>'
 			];
 			listItems.push(listItem.join('\n'));
@@ -45,8 +48,8 @@ const add = (content, meta) => {
 		const unlimited = `The list above contains ${writtenForm(section.total)} ${section.total === 1 ? 'entry' : 'entries'}, but there are a lot more in other sections on this site.`;
 		const limited = `The list above contains only the ${writtenForm(section.limit)} most recent entries. In this section alone, there are ${writtenForm(section.total)} blog posts, and there are other sections on this site.`
 		const whatElse = ' To see what else is going on, you may want to head over to the <a href="/">home page</a> or browse using the <a href="#navigation">navigation</a> below.';
-
-		const summary = `<p>${latestOnly ? limited : unlimited}${whatElse}</p>`;
+		const regularSummary = `<p>${latestOnly ? limited : unlimited}${whatElse}</p>`;
+		const summary = showAllPosts ? regularSummary.replace(', but there are a lot more in other sections on this site. To see what else is going on', '. If this is too much') : regularSummary;
 
 		const insertBefore = content.indexOf('</main>') - 2;
 		content.splice(insertBefore, 0, summary);
