@@ -297,9 +297,6 @@ pre,
 footer.metadata {
 	margin-right: calc(-2 * var(--padding-horizontal) - .25rem - var(--width-sidebar));
 }
-figure.standout figcaption {
-	max-width: calc(100% - var(--padding-horizontal) - var(--width-sidebar));
-}
 pre {
 	overflow-x: auto;
 	overflow-y: hidden;
@@ -741,6 +738,9 @@ nav a.c-article {
 	figure, .figure,
 	pre {
 		margin-left: calc(-1 * var(--padding-horizontal));
+	}
+	figure.standout figcaption {
+		max-width: calc(100% - var(--padding-horizontal) - var(--width-sidebar));
 	}
 	main,
 	[data-follow-up],
