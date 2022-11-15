@@ -13,7 +13,7 @@ const modify = (content, meta) => {
 
 	const stopBefore = content.lastIndexOf('</div>');
 	for (i = content.indexOf('</header>') + 1; i < stopBefore; i += 1) {
-		if (!content[i].startsWith('<h')) continue; // no heading
+		if (!content[i].match(/^<h[1-6]/)) continue; // no heading
 		if (content[i].match(/id="([^"]+)"/)?.[1]) continue; // already has ID
 		const tag = content[i].slice(1, '<h#'.length);
 		let text2id = content[i].slice(content[i].indexOf('>') + 1, -'</h#>'.length); // innerText

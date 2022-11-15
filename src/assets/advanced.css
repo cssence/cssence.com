@@ -229,6 +229,12 @@ kbd {
 	border-bottom-width: .125rem;
 	border-radius: .25rem;
 }
+hr {
+	max-width: 50%;
+	margin: 3rem auto;
+	border: none;
+	border-top: .25rem dotted var(--color-bg-subtle);
+}
 [role="list"] {
 	list-style: none;
 }
