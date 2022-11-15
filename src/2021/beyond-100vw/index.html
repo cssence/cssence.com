@@ -10,7 +10,7 @@
 <header>
 <h1>Beyond 100vw</h1>
 <p>How about undoing years of Responsive Web Design on purpose?</p>
-<p><i>Essay</i><br><time>2021-12-02T06:10:16Z</time><br><img src="/2021/beyond-100vw/index.png" alt=""></p>
+<p><i>Essay</i><br><time data-revised="2022-11-15T05:59:04Z">2021-12-02T06:10:16Z</time><br><img src="/2021/beyond-100vw/index.png" alt=""></p>
 </header>
 <div>
 <aside class="standoff" aria-labelledby="quick-summary">
@@ -33,9 +33,9 @@
 <pre><a href="/2021/beyond-100vw/code.viewport-meta-tag.html">View HTML example.</a></pre>
 <h2>Breaking out</h2>
 <p>What if we went back to having two<sup><a id="ref-footnote-2" href="#footnote-2" role="doc-noteref" aria-label="Jump to footnote #2">[2]</a></sup> scrollbars? Seriously?</p>
-<p>With the latest redesign of this site, I did just that. I didn’t ditch the viewport meta tag though. I do need the actual screen width as a starting point, so no shrinking. But below a certain breakpoint—usually handheld territory—<strong>the width of the page is wider than the width of the screen, on purpose.</strong> To do so, I’m setting the body width beyond the viewport width of <code>100vw</code>. There are numerous ways to achieve this, but the code below should get you started.</p>
+<p>With the latest redesign of this site, I did just that. I didn’t ditch the viewport meta tag though. I do need the actual screen width as a starting point, so no shrinking. But below a certain breakpoint—usually handheld territory—<strong>the width of the page is wider than the width of the screen, on purpose.</strong> To do so, I’m setting the body width beyond the viewport width. There are numerous ways to achieve this, but the code below should get you started.</p>
 <pre><a href="/2021/beyond-100vw/code.calc-100vw-plus.css">View CSS example.</a></pre>
-<p>There is one key difference to the <em>zoom in and out</em> days of the early mobile web. I made sure my visitors are able to consume the content by going top to bottom. I’ll write about the details of this redesign in an upcoming Editorial blog post, but in a nutshell:</p>
+<p>There is one key difference to the <em>zoom in and out</em> days of the early mobile web. I made sure my visitors are able to consume the content by going top to bottom. I’ll write about the details of this redesign in an <a href="/2022/a-tale-of-two-scrollbars/">upcoming Editorial blog post,</a> but in a nutshell:</p>
 <ul>
 <li>Independent of screen size, the layout <strong>always features two columns;</strong>
 <ul>

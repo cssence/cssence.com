@@ -1,3 +1,3 @@
 body {
-	width: calc(100% + 20rem); /* simplified example */
+	width: calc(100vw + 20rem); /* simplified example */
 }
