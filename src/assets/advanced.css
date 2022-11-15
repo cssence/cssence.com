@@ -238,9 +238,6 @@ hr {
 [role="list"] {
 	list-style: none;
 }
-:where(pre, figure, .figure) + :where(pre, figure, .figure) {
-	margin-top: -1.5rem;
-}
 ol,
 ul,
 blockquote,
@@ -299,6 +296,9 @@ pre,
 #comments ~ article,
 footer.metadata {
 	margin-right: calc(-2 * var(--padding-horizontal) - .25rem - var(--width-sidebar));
+}
+figure.standout figcaption {
+	max-width: calc(100% - var(--padding-horizontal) - var(--width-sidebar));
 }
 pre {
 	overflow-x: auto;
