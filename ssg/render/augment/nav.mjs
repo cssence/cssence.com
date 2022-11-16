@@ -7,15 +7,11 @@ const modify = (content, meta) => {
 		{url: '/articles/', label: 'Articles', className: 'c-article'},
 		{url: '/notes/', label: 'Notes', className: 'c-note'},
 		{url: '/about/', label: 'About', className: 'c-about'},
+		{url: '/latest/', label: 'Latest'},
 		{url: '/popular/', label: 'Popular'},
-		{url: `/${meta.date.year}/`, label: 'This year'},
-		{url: `/${meta.date.year - 1}/`, label: 'Last year'},
+		{url: '/series/', label: 'Series'},
 		{url: '/archive/', label: 'Archive'}
 	];
-	if (!meta.toc.byPath[navItems[5].url]) {
-		navItems[5] = navItems[6];
-		navItems[6] = {url: `/${meta.date.year - 2}/`, label: '2 years ago'};
-	}
 	const createMenuItem = (link, index) => `<li><a${link.className ? ` class="${link.className}"` : ''}${link.url === '/' ? ' rel="home"' : ''} href="${link.url}"><span hidden aria-hidden="true">0${index + 1} </span>${link.label}${link.suffix || ''}</a></li>`;
 	const nav = [
 		'<nav>',

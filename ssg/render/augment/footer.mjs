@@ -10,7 +10,7 @@ const modify = (content, meta) => {
 		`<p><span>© 2010-${meta.date.year} <a href="/about/matt/">Matthias Zöchling.</a> </span><span>Available under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution 4.0 International License">CC&nbsp;BY</a> license. </span><span><a href="/about/privacy/">Legalese</a> <a href="/help/">Help</a> <a href="/settings/">Settings<span aria-hidden="true" data-hl="Settings"></span></a></span></p>`,
 		'<section>',
 		'<h3 class="visually-hidden" id="elsewhere">CSSence elsewhere on the web</h3>',
-		'<p><a rel="me" href="https://codepen.io/cssence">CodePen</a> <a rel="me" href="https://mas.to/@CSSence">Mastodon</a> <a rel="me" href="https://twitter.com/CSSence">Twitter</a></p>',
+		'<p><a href="https://github.com/cssence">GitHub</a> <a rel="me" href="https://codepen.io/cssence">CodePen</a> <a rel="me" href="https://mas.to/@CSSence">Mastodon</a></p>',
 		'</section>',
 		'<section>',
 		`<h3 class="visually-hidden" id="bottom">Thanks for ${meta.page.isIndex ? 'visiting' : 'reading'}</h3>`,

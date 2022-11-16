@@ -16,6 +16,7 @@ const add = (content, meta) => {
 	};
 
 	const showAllPosts = meta.page.path === '/all/';
+	const showLatestPosts = meta.page.path === '/latest/';
 	const noThumbnail = showAllPosts ? '/404/index.png' : undefined;
 
 	for (const section of meta.page.sections) {
@@ -46,15 +47,24 @@ const add = (content, meta) => {
 		content[sectionHeading] = content[sectionHeading].replace('Overview', latestOnly ? 'Latest posts' : 'All posts');
 
 		const unlimited = `The list above contains ${writtenForm(section.total)} ${section.total === 1 ? 'entry' : 'entries'}, but there are a lot more in other sections on this site.`;
-		const limited = `The list above contains only the ${writtenForm(section.limit)} most recent entries. In this section alone, there are ${writtenForm(section.total)} blog posts, and there are other sections on this site.`
+		const limited = `The list above contains only the ${writtenForm(section.limit)} most recent entries.`;
+		const limitedPlus = ` In this section alone, there are ${writtenForm(section.total)} blog posts, and there are other sections on this site.`
 		const whatElse = ' To see what else is going on, you may want to head over to the <a href="/">home page</a> or browse using the <a href="#navigation">navigation</a> below.';
-		const regularSummary = `<p>${latestOnly ? limited : unlimited}${whatElse}</p>`;
-		const summary = showAllPosts ? regularSummary.replace(', but there are a lot more in other sections on this site. To see what else is going on', '. If this is too much') : regularSummary;
-
+		let summary;
+		if (showLatestPosts) {
+			summary = `${limited}${whatElse}`;
+		} else if (latestOnly) {
+			summary = `${limited}${limitedPlus}${whatElse}`;
+		} else {
+			summary = `${unlimited}${whatElse}`;
+			if (showAllPosts) {
+				summary = summary.replace(', but there are a lot more in other sections on this site. To see what else is going on', '. If this is too much');
+			}
+		}
 		const insertBefore = content.indexOf('</main>') - 2;
-		content.splice(insertBefore, 0, summary);
+		content.splice(insertBefore, 0, `<p>${summary}</p>`);
 	}
 
-};	
+};
 
 export default add;

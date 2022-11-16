@@ -34,7 +34,7 @@ const modify = (content, meta) => {
 	}
 	tableContent.push('</tbody>');
 	tableContent.push('<tfoot>');
-	const lastRowCols = [`<th scope="row">All</th>`];
+	const lastRowCols = [`<th scope="row"><a href="/all/">All</a></th>`];
 	for (const className of ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', SUM, 'c-articles']) {
 		const value = className === 'c-articles' ? stats[SUM][SUM] - stats['c-note'][SUM] : stats[className][SUM];
 		lastRowCols.push(`<td><data value="${value}">${value}</data></td>`);
