@@ -1,0 +1,9 @@
+body {
+	--block-size: 100dvh;
+	block-size: var(--block-size);
+}
+@supports (block-size: 1dvh) {
+	body {
+		--block-size: 100dvh;
+	}
+}
