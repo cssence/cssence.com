@@ -1,4 +1,5 @@
 table {
+	--_s2: var(--width-sidebar) / 2;
 	margin: 3rem 0;
 }
 thead th {
@@ -55,12 +56,12 @@ th:first-child {
 	white-space: nowrap;
 }
 tr > *:nth-child(7) {
-	width: calc(2 * var(--padding-horizontal) + .25rem + var(--width-sidebar) / 2);
+	width: calc(var(--_pbs) - var(--_s2));
 	padding-right: var(--padding-horizontal);
 }
 tr > *:last-child {
 	display: table-cell;
-	width: calc(var(--width-sidebar) / 2);
+	width: var(--_s2);
 	padding-right: var(--padding-horizontal);
 }
 table data {

@@ -26,64 +26,72 @@ img {
 	max-width: 100%;
 	margin: 0 auto;
 }
+hr {
+	max-width: 50%;
+	margin: 3em auto;
+	border: none;
+	border-top: 1px dashed;
+	color: inherit;
+}
 sub {
 	font-size: .5em;
 }
+blockquote {
+	margin-left: 1px;
+	padding-left: 1.5em;
+	border-left: .25em solid;
+	font-family: serif;
+	font-style: italic;
+}
+ol,
+ul,
+#comments ~ article {
+	margin-left: 1px;
+	padding-left: 1.75em;
+}
 footer.metadata {
-	margin-top: 7em;
+	margin-top: 8em;
 }
 .posts li {
 	margin-bottom: 1.5em;
 	padding-bottom: .75em;
-	border-bottom: 1px dashed #404144;
+	border-bottom: 1px dotted;
 }
 .posts h3 + p {
 	margin: -.75em 0 -.25em;
 }
 #comments ~ article h3 {
-	margin-top: 2em;
-	padding: .125em .25em;
-	font-size: 75%;
+	margin-top: 2.66667em;
+	margin-left: -2.33333em;
+	padding-left: 1px;
 }
 #comments ~ section {
-	margin-top: 1.5em;
-	border-top: 1px solid #e0e2e5;
+	margin-top: 2em;
+	border-top: 1px dotted;
 }
-blockquote {
-	font-style: italic;
-}
+.standoff,
 pre,
-figure,
-blockquote {
+figure, p.figure {
 	margin-right: 0;
 	margin-left: 0;
-	padding: .875em 1em;
-}
-pre,
-figure,
-blockquote,
-#comments ~ article h3 {
-	border: 1px solid #e0e2e5;
-}
-header p:last-child,
-.posts li p:last-child,
-img + small,
-figure,
-blockquote,
-#comments ~ p,
-#comments ~ section,
-nav,
-footer {
-	font-family: sans-serif;
+	padding: .875em 1.75em;
+	border: 1px dashed;
 }
 header p:last-child,
 .posts li p:last-child,
 img + small,
 figcaption,
+.standoff h2,
+#comments ~ article h3,
+[data-chain],
 nav,
 footer {
-	font-size: 87.5%;
+	font-size: 75%;
 }
+footer.metadata h2 {
+	font-size: 200%;
+}
+.standoff h2,
 figcaption {
 	margin-top: .5em;
 }
@@ -91,10 +99,6 @@ nav {
 	margin-top: 4em;
 	padding-top: 4em;
 	border-top: 2px solid;
-}
-footer h3 {
-	font-size: 85.7143%;
-	margin-top: 1.5em;
 }
 nav ul {
 	display: block;
@@ -105,18 +109,13 @@ nav li {
 	display: inline;
 }
 nav li + li::before {
-	content: " ";
-}
-nav li:nth-child(5)::before {
-	content: "\0a\0a";
-	white-space: pre;
+	content: " · ";
 }
 body > footer p > span {
 	display: block;
-
 }
 [data-hl="Home"] {
-	display: block;
+	display: inline;
 }
 [data-hl="Home"]::before {
 	content: "ence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com css";
@@ -125,13 +124,13 @@ body > footer p > span {
 	top: 0;
 	right: 0;
 	left: 0;
-	color: #e0e2e5;
 	font-family: sans-serif;
-	font-size: 71.42857%;
+	font-size: 83.33333%;
 	font-weight: 700;
 	letter-spacing: 1em;
 	line-height: 1;
 	white-space: nowrap;
+	opacity: .5;
 }
 [data-hl="Home"] svg,
 header p:last-child br,
@@ -152,28 +151,18 @@ main .visually-hidden {
 	white-space: nowrap;
 }
 @media screen {
+	html {
+		overflow: hidden scroll;
+		font: 100%/1.5 sans-serif;
+	}
 	body {
-		overflow-x: hidden;
-		overflow-y: scroll;
 		max-width: 40em;
 		margin: 0 auto;
 		padding: 2.5em 1.5em;
-		line-height: 1.5;
-	}
-	@media (prefers-color-scheme: light) {
-		body {
-			color: #111;
-		}
 	}
 	pre {
 		overflow: auto;
 		tab-size: 2;
-	}
-	pre,
-	figure,
-	blockquote,
-	#comments ~ article h3 {
-		background-color: #e0e2e5;
 	}
 }
 @media screen and (max-width: 25em) {
@@ -192,7 +181,6 @@ main .visually-hidden {
 		display: block;
 		margin-bottom: .5em;
 		font-size: .875rem;
-		font-family: sans-serif;
 		font-weight: 400;
 	}
 	header p:last-child {

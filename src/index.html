@@ -9,7 +9,7 @@
 <div>
 <header>
 <h1>Welcome to CSSence.com</h1>
-<p><span aria-hidden="true">Hello, I’m <abbr>css</abbr>ence</span></p>
+<p><span aria-hidden="true">Hello, I’m <abbr>CSS</abbr>ence</span></p>
 <p><i>Home</i><br><img src="/index.png" alt=""></p>
 </header>
 <div>
@@ -31,43 +31,41 @@ h1 + p {
 h1 + p abbr {
 	color: var(--color-accent);
 }
-main > div style {
-	position: absolute;
-	height: calc(100% + .5rem);
-}
 main > div > div {
-	display: flex;
-	flex-direction: row;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: .125rem;
 	overflow: hidden;
 	position: relative;
-	margin-right: calc(-2 * var(--padding-horizontal) - .25rem - var(--width-sidebar));
-	background-color: var(--color-dark);
+	margin-right: calc(-1 * var(--_pbs));
+	background: linear-gradient(90deg, #0000 calc(50% - .0625rem), var(--color-bg) calc(50% - .0625rem), var(--color-bg) calc(50% + .0625rem), var(--color-accent) calc(50% + .0625rem)) var(--color-dark);
 	color: var(--color-light);
 }
-main > div > div::before {
-	content: "";
+main > div > div style {
+	display: block;
 	position: absolute;
-	top: 0;
-	bottom: 0;
-	width: 50%;
-	left: 50%;
-	background-color: var(--color-accent);
+	height: calc(100% + 2rem);
+	margin: -1rem -4.27em;
+	color: rgba(0,0,0,.1);
+	font-size: 2.87rem;
+	line-height: .28;
+	word-break: break-all;
+	cursor: default;
+	user-select: none;
+	--mask: linear-gradient(90deg, #000 calc(50% - .0625rem), #0000 calc(50% - .0625rem), #0000 calc(50% + .0625rem), #000 calc(50% + .0625rem));
+	-webkit-mask-image: var(--mask);
+	mask-image: var(--mask);
 }
 main > div > div section {
 	display: flex;
-	flex-direction: column;
 	position: relative;
-	z-index: 2;
-	width: 50%;
-	padding: 1rem 1.75rem 1rem var(--padding-horizontal);
-	border: 0 solid var(--color-bg);
-	border-width: 0 .0625rem 0 0;
+	flex-direction: column;
+	padding: .9375rem 1.6875rem .9375rem calc(var(--padding-horizontal) - .0625rem);
+	border: .0625rem solid transparent;
 }
 main > div > div section:last-of-type {
 	--color-accent: var(--color-dark);
-	z-index: 1;
-	padding: 1rem var(--padding-horizontal) 1rem 1.75rem;
-	border-width: 0 0 0 .0625rem;
+	padding: .9375rem calc(var(--padding-horizontal) - .0625rem) .9375rem 1.6875rem;
 }
 main > div > div section:last-of-type h3 {
 	margin-left: 1rem;
@@ -81,8 +79,9 @@ main > div > div h3 + p {
 main > div > div section:first-of-type a::after {
 	content: "";
 	position: absolute;
+	z-index: 1;
 	top: 1.625rem;
-	right: calc(3.125rem / -2 - .125rem);
+	right: -1.75rem;
 	width: 3.25rem;
 	height: 3.25rem;
 	background: url(/about/matt/photo.jpg) center / cover no-repeat var(--color-bg);
@@ -100,6 +99,11 @@ main > div > div section:first-of-type a::after {
 	}
 	main > div > div {
 		margin-left: calc(var(--padding-horizontal) * -1);
+	}
+}
+@media (forced-colors: active) {
+	main > div style {
+		display: none !important;
 	}
 }
 </style>

@@ -27,6 +27,8 @@
 	--o: var(--padding-horizontal);
 	--height-header: 6.25rem;
 	--width-sidebar: 12.5rem;
+	--size-separator: .25rem;
+	--_pbs: calc(2 * var(--padding-horizontal) + var(--size-separator) + var(--width-sidebar));
 	color-scheme: light dark;
 }
 html {
@@ -232,7 +234,7 @@ hr {
 	max-width: 50%;
 	margin: 3rem auto;
 	border: none;
-	border-top: .25rem dotted var(--color-bg-subtle);
+	border-top: var(--size-separator) dotted var(--color-bg-subtle);
 }
 [role="list"] {
 	list-style: none;
@@ -287,7 +289,10 @@ figure code, .figure code {
 	background-color: var(--color-bg);
 }
 figure, .figure,
-pre,
+pre {
+	padding: .9375rem calc(var(--padding-horizontal) - .0625rem);
+	border: .0625rem dashed transparent;
+}
 nav,
 .imprint {
 	padding: 1rem var(--padding-horizontal);
@@ -298,7 +303,7 @@ header,
 pre,
 #comments ~ article,
 footer.metadata {
-	margin-right: calc(-2 * var(--padding-horizontal) - .25rem - var(--width-sidebar));
+	margin-right: calc(-1 * var(--_pbs));
 }
 pre {
 	overflow-x: auto;
@@ -324,10 +329,10 @@ pre code {
 }
 main {
 	position: relative;
-	max-width: calc(35.75rem + 2 * var(--padding-horizontal) + .25rem + var(--width-sidebar));
+	max-width: calc(35.75rem + var(--_pbs));
 	min-height: calc(100vh - var(--height-header));
 	margin: 0 auto;
-	padding: 2rem calc(2 * var(--padding-horizontal) + .25rem + var(--width-sidebar)) 3rem 0;
+	padding: 2rem var(--_pbs) 3rem 0;
 }
 header {
 	min-height: 7.5rem;
@@ -446,10 +451,10 @@ aside.standoff:first-child {
 	content: "";
 	position: absolute;
 	z-index: 1;
-	top: 0;
+	top: .1875rem;
 	right: 0;
 	bottom: 0;
-	left: -1.75rem;
+	width: var(--width-sidebar);
 }
 .posts li p:last-child {
 	order: -1;
@@ -463,7 +468,7 @@ header,
 #comments ~ article,
 aside[aria-labelledby="showcase"] {
 	position: relative;
-	padding-right: calc(2 * var(--padding-horizontal) + .25rem + var(--width-sidebar));
+	padding-right: var(--_pbs);
 }
 aside[aria-labelledby="showcase"] a::after {
 	content: "";
@@ -612,7 +617,7 @@ nav ul,
 	display: grid;
 	grid-auto-flow: dense;
 	grid-template-columns: 1fr calc(var(--width-sidebar) - var(--reveal, 0rem));
-	gap: .75rem calc(2 * var(--padding-horizontal) + .25rem);
+	gap: .75rem calc(var(--_pbs) - var(--width-sidebar));
 	align-items: end;
 	max-width: 52rem;
 	margin: 2rem auto;
@@ -634,12 +639,13 @@ nav li:nth-child(4) ~ li {
 }
 nav a {
 	display: block;
-	padding: .5rem 0;
+	padding: .4375rem 0 .5rem;
 	letter-spacing: .0625rem;
 	text-align: right;
 	text-decoration-color: transparent;
 	text-transform: uppercase;
 	background: radial-gradient(at 55%, var(--color-accent), #313437 85%) 0 2.25rem no-repeat;
+	border-top: .0625rem dotted transparent;
 }
 nav a[class] {
 	background-image: linear-gradient(var(--color-accent), var(--color-accent));
@@ -666,7 +672,7 @@ nav a.c-article {
 	display: block;
 	position: absolute;
 	top: 1rem;
-	right: calc(var(--o) + var(--width-sidebar) + .25rem + var(--padding-horizontal) - var(--reveal, calc(5.5rem + var(--padding-horizontal))));
+	right: calc(var(--o) + var(--_pbs) - var(--padding-horizontal) - var(--reveal, calc(5.5rem + var(--padding-horizontal))));
 	margin-right: -.5rem;
 	padding: .5625rem 1.875rem .6875rem .5rem;
 	color: var(--color-text);
@@ -711,6 +717,25 @@ nav a.c-article {
 [data-hl="Home"] path:last-child {
 	fill: var(--color-accent);
 }
+footer.metadata p:last-child a {
+	overflow: hidden;
+	display: block;
+	max-width: max-content;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+footer.metadata p:last-child::after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	right: calc(var(--width-sidebar) + var(--padding-horizontal));
+	bottom: 9rem;
+	border-left: var(--size-separator) dotted var(--color-bg-subtle);
+}
+footer.metadata p:nth-child(5)::after {
+	margin-bottom: 2.0625rem;
+}
 @media (max-width: 55.45em) {
 	:root {
 		--padding-horizontal: .875rem;
@@ -729,7 +754,7 @@ nav a.c-article {
 @media (max-width: 39em) {
 	body {
 		--reveal: calc(var(--padding-horizontal) + .75rem);
-		width: calc(100% + var(--padding-horizontal) + .25rem + var(--width-sidebar) - var(--reveal));
+		width: calc(100% + var(--_pbs) - var(--padding-horizontal) - var(--reveal));
 	}
 	.standoff:not(figure):not(.figure) {
 		padding-right: var(--padding-horizontal);
@@ -753,7 +778,7 @@ nav a.c-article {
 		margin-right: var(--padding-horizontal);
 	}
 	footer.metadata {
-		margin-right: calc(-1 * var(--padding-horizontal) - .25rem - var(--width-sidebar));
+		margin-right: calc(-1 * var(--_pbs) + var(--padding-horizontal));
 	}
 }
 @media (max-width: 25em) {
@@ -775,17 +800,23 @@ nav a.c-article {
 	:root {
 		--o: calc(50% - 33.25rem);
 	}
-	/*head {
-		display: block;
-		overflow: hidden;
-		position: fixed;
-		z-index: -1;
-		left: 0;
-		top: 0;
-		height: 100vh;
-		width: calc(50% - 32rem);
-		box-shadow: inset -1rem 0 1rem -1rem rgba(0,0,0,.2);
-	}*/
+}
+@media (forced-colors: active) {
+	hr,
+	#comments ~ article:not([hidden]) ~ article::before,
+	footer.metadata p:last-child::after {
+		border-color: CanvasText;
+		opacity: .3;
+	}
+	[data-hl="Home"] {
+		margin-left: -.75rem;
+	}
+	[data-hl="Home"] path {
+		fill: CanvasText;
+	}
+	[data-hl="Home"] path:last-child {
+		fill: currentColor;
+	}
 }
 
 main > div > header p:last-child > :is(i, time),
@@ -805,33 +836,4 @@ header br,
 	clip: rect(0,0,0,0);
 	border: 0;
 	white-space: nowrap;
-}
-footer.metadata p:last-child a {
-	overflow: hidden;
-	display: block;
-	max-width: max-content;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-footer.metadata p:last-child::after {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	right: calc(var(--width-sidebar) + var(--padding-horizontal));
-	bottom: 9rem;
-	border-left: .25rem dotted var(--color-bg-subtle);
-}
-footer.metadata p:nth-child(5)::after {
-	margin-bottom: 2.0625rem;
-}
-style[aria-hidden] {
-	display: block;
-	margin: -.25rem -2em -.25rem -3.67em;
-	color: rgba(0,0,0,.1);
-	font-size: 2.87rem;
-	line-height: .28;
-	word-break: break-all;
-	cursor: default;
-	user-select: none;
 }
