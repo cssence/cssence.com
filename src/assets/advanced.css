@@ -494,7 +494,9 @@ aside[aria-labelledby="showcase"] a::after {
 	inset: -.6875rem 0 auto;
 	height: 1.5rem;
 	background-image: repeating-linear-gradient(120deg, var(--color-accent) 0, var(--color-accent) .5rem, transparent .5rem, transparent 1rem);
-	mask: linear-gradient(0, #0000, #000);
+	--mask: linear-gradient(0, #0000, #000);
+	-webkit-mask-image: var(--mask);
+	mask-image: var(--mask);
 	opacity: .3;
 }
 aside[aria-labelledby="showcase"],
@@ -808,14 +810,16 @@ footer.metadata p:nth-child(5)::after {
 		border-color: CanvasText;
 		opacity: .3;
 	}
-	[data-hl="Home"] {
-		margin-left: -.75rem;
+	i::before,
+	[data-chain]::before,
+	[data-hl]:empty::after,
+	.imprint section a::after {
+		-webkit-mask: none;
+		mask: none;
+		border: 1px dotted;
 	}
-	[data-hl="Home"] path {
-		fill: CanvasText;
-	}
-	[data-hl="Home"] path:last-child {
-		fill: currentColor;
+	[data-hl="Home"] svg {
+		forced-color-adjust: none;
 	}
 }
 
