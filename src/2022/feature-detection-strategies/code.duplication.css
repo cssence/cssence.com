@@ -1,4 +1,4 @@
 body {
-	block-size: 100vh;
-	block-size: 100dvh;
+	block-size: 100vb;
+	block-size: 100dvb;
 }

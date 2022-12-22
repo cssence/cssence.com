@@ -1,6 +1,6 @@
 h1 {
 	margin-bottom: .5em;
-	font-size: 225%;
+	font-size: 222.22222%;
 	line-height: 1.125;
 }
 h1 + p:not(:last-child) {
@@ -35,6 +35,10 @@ hr {
 }
 sub {
 	font-size: .5em;
+}
+code {
+	font-size: .875em;
+	letter-spacing: -.02em;
 }
 blockquote {
 	margin-left: 1px;
@@ -85,9 +89,8 @@ figcaption,
 .standoff h2,
 #comments ~ article h3,
 [data-chain],
-nav,
 footer {
-	font-size: 75%;
+	font-size: 77.7777777%;
 }
 footer.metadata h2 {
 	font-size: 200%;
@@ -96,24 +99,29 @@ footer.metadata h2 {
 figcaption {
 	margin-top: .5em;
 }
-nav {
+.imprint nav {
 	margin-top: 4em;
+	margin-bottom: 4em;
+}
+.imprint p,
+.nav-menu li {
+	white-space: pre-wrap; /* 2 whitespace */
+}
+.nav-menu {
 	padding-top: 4em;
 	border-top: 2px solid;
 }
-nav ul {
+.nav-menu ul {
 	display: block;
 	list-style: none;
+	margin: 0;
 	padding-left: 0;
 }
-nav li {
+.nav-menu li {
 	display: inline;
 }
-nav li + li::before {
-	content: " · ";
-}
-body > footer p > span {
-	display: block;
+.nav-menu li + li::before {
+	content: " ";
 }
 [data-hl="Home"] {
 	display: inline;
@@ -126,7 +134,7 @@ body > footer p > span {
 	right: 0;
 	left: 0;
 	font-family: sans-serif;
-	font-size: 83.33333%;
+	font-size: 71.4285714%;
 	font-weight: 700;
 	letter-spacing: 1em;
 	line-height: 1;
@@ -155,21 +163,21 @@ main .visually-hidden {
 @media screen {
 	html {
 		overflow: hidden scroll;
-		font: 100%/1.5 sans-serif;
+		font: 112.5%/1.5 sans-serif;
 	}
 	body {
 		max-width: 40em;
 		margin: 0 auto;
-		padding: 2.5em 1.5em;
+		padding: 2em 1em;
 	}
 	pre {
 		overflow: auto;
 		tab-size: 2;
 	}
 }
-@media screen and (max-width: 25em) {
+@media screen and (max-width: 24.95em) {
 	body {
-		font-size: 4vw;
+		font-size: 4.5vw;
 	}
 }
 @media print {
@@ -182,7 +190,7 @@ main .visually-hidden {
 		content: "https://cssence.com" attr(href);
 		display: block;
 		margin-bottom: .5em;
-		font-size: .875rem;
+		font-size: 87.5%;
 		font-weight: 400;
 	}
 	header p:last-child {
@@ -216,10 +224,6 @@ main .visually-hidden {
 		tab-size: 4;
 		white-space: pre-wrap;
 	}
-	code {
-		font-size: .875em;
-		letter-spacing: -.02em;
-	}
 	footer.metadata h2 {
 		margin: 0;
 		border-top: 1px solid;
@@ -231,7 +235,6 @@ main .visually-hidden {
 	header i::after,
 	#comments ~ section,
 	aside[aria-labelledby="showcase"],
-	nav,
 	body > footer {
 		display: none;
 	}

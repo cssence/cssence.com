@@ -26,8 +26,8 @@ const augment = async (urlPath, html, meta) => {
 	addCodepen(content, meta);
 	modifyConversation(content, meta);
 	addAboutPage(content, meta);
-	addNav(content, meta);
 	addFooter(content, meta);
+	addNav(content, meta);
 	assignIds(content, meta);
 	return content.join('\n');
 };

@@ -1,9 +1,9 @@
 body {
-	--block-size: 100dvh;
+	--block-size: 100vb;
 	block-size: var(--block-size);
 }
-@supports (block-size: 1dvh) {
+@supports (block-size: 1dvb) {
 	body {
-		--block-size: 100dvh;
+		--block-size: 100dvb;
 	}
 }

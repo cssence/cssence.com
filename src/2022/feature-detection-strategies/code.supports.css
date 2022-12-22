@@ -1,8 +1,8 @@
 body {
-	block-size: 100vh;
+	block-size: 100vb;
 }
-@supports (block-size: 1dvh) {
+@supports (block-size: 1dvb) {
 	body {
-		block-size: 100dvh;
+		block-size: 100dvb;
 	}
 }

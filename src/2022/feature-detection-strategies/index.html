@@ -21,19 +21,23 @@
 <p>… you could also do without the check, as browsers discard declarations they don’t understand.</p>
 </blockquote>
 <p>After all, this is how we adopted <a href="https://24ways.org/2009/working-with-rgba-colour/">transparency in colors</a> many years ago. We put a fallback color with <code>rgb()</code> or hex notation in place, and the desired <code>rgba()</code> color immediately afterwards.</p>
-<p>Using those new viewport units as an example, we set the supported <code>vh</code> and the (at the time of writing) not fully supported <code>dvh</code> in succession:</p>
+<p>Using those new viewport units as an example, we set the <code>vb</code> and the <code>dvb</code> in succession:</p>
 <pre><a href="/2022/feature-detection-strategies/code.duplication.css">View CSS example.</a></pre>
+<p>Browsers that only support the <code>vb</code> unit will use that and ignore the <code>dvb</code> declaration.<sup><a id="ref-footnote-1" href="#footnote-1" role="doc-noteref" aria-label="Jump to footnote #1">[1]</a></sup></p>
 <h2>2: Feature Queries</h2>
 <p>Sure enough, there are limits to redeclaration. Feature queries come into play when you have to reset things browsers <em>do</em> understand. Before <code>gap</code> (initially <code>grid-gap</code>) was supported in grid layout, we used margins to generate space between grid items. To future-proof things, we added a test for gap support using a <code>@supports</code> block, which included the proper way to do gaps, and the removal of the hacks. If you did those things without a feature query, the fallback margins would have vanished even in those browsers that still needed the hack, because all browsers understand the margin declaration.</p>
 <p>If we recreate the example above with feature queries, it looks more verbose:</p>
 <pre><a href="/2022/feature-detection-strategies/code.supports.css">View CSS example.</a></pre>
 <p>Those are the two ways. That’s it, right? For the most part, yes. But in this particular case, we have a third option.</p>
 <h2>3: Feature Queries &amp;&nbsp;Custom Properties</h2>
-<p>Our case being: We are querying the support of a unit (like <code>dvh</code>) and not a property (like <code>gap</code>). That’s why, instead of redeclaring it, we can store the thing we test for in a custom property, and assign just that.</p>
+<p>Our case being: We are querying the support of a unit (like <code>dvb</code>) and not a property (like <code>gap</code>). That’s why, instead of redeclaring it, we can store the thing we test for in a custom property, and assign just that.</p>
 <pre><a href="/2022/feature-detection-strategies/code.variables.css">View CSS example.</a></pre>
 <p>Why would you do that? This is even more verbose than the last one. True, but it becomes beneficial the moment you have to use the custom property in multiple places, unlike in this example, where it is assigned just once. And as soon as <code>calc()</code> comes into play, it could lead to duplication of potentially complex code. Instead of writing that calculation twice (as you would have to when using method 1 or 2), making the custom property containing the feature query result part of a single calculation is usually better.</p>
 <h2>Comparison</h2>
 <p>Ultimately, you have to choose what works in your particular case. The three examples described in this article all produce the same result. You can see for yourself by heading over to CodePen, where I’ve placed them side by side.</p>
+<h2>Footnotes</h2>
+<ol>
+<li id="footnote-1">I’m using this example only to illustrate the point; it is quite likely that both <code>vb</code> and <code>dvb</code> landed in browsers at the same time, meaning the second declaration always wins. With the <code>vh</code>/<code>dvh</code> combo on the other hand, there has been a time where only the former was supported. <a href="#ref-footnote-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
 </div>
 <aside>
 <h2 id="comments">Comments</h2>
