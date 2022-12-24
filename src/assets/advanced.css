@@ -133,7 +133,7 @@ h3,
 h1 + p:not(:last-child),
 b,
 strong,
-#comments ~ article h3 a[rel] {
+#comments ~ article h3 b {
 	font-weight: 700;
 }
 [data-unavailable],
@@ -521,21 +521,24 @@ aside[aria-labelledby="showcase"],
 	font-weight: inherit;
 	line-height: calc(20 / 14);
 }
-#comments ~ article h3 a {
-	display: block;
-	width: max-content;
-}
-#comments ~ article h3 a[rel~="me"]::after {
-	content: "";
-	display: inline-block;
+#comments ~ article h3 b {
 	position: relative;
-	top: -0.03125em;
+}
+#comments ~ article h3 b::after,
+#comments ~ article h3 time::before {
+	content: "\0a";
+	white-space: pre;
+}
+#comments ~ article h3 a[rel="me"] b::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: .071428571em;
+	left: calc(100% + .214285714em);
 	height: 1em;
 	width: 1em;
-	margin-left: .2em;
 	background: url(/assets/favicon-32.png) center / cover no-repeat var(--color-dark);
 	border-radius: 50%;
-	vertical-align: middle;
 	filter: grayscale(1);
 }
 i::before,

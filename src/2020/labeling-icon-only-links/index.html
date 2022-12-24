@@ -16,12 +16,12 @@
 <div>
 <h2 class="visually-hidden" id="comments">Message thread</h2>
 <article>
-<h3><span>Barry</span> wrote on <a href="https://css-tricks.com/accessible-svg-icons/#comment-1766740"><time>2020-12-29T09:21:40Z</time></a></h3>
+<h3><a href="https://css-tricks.com/accessible-svg-icons/#comment-1766740"><b>Barry</b> wrote on <time>2020-12-29T09:21:40Z</time></a></h3>
 <p>Is there any difference between:<br><code>&lt;a href=&quot;/&quot; aria-label=&quot;Good Label&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; … &gt;&lt;/svg&gt;&lt;/a&gt;</code><br>and<br><code>&lt;a href=&quot;/&quot;&gt;&lt;svg aria-label=&quot;Good Label&quot; role=&quot;img&quot; … &gt;&lt;/svg&gt;&lt;/a&gt;</code></p>
 <p>And why not use <code>&lt;title&gt;</code> in this case?</p>
 </article>
 <article>
-<h3><a rel="me author" href="https://twitter.com/CSSence">Matthias Zöchling</a> wrote on <a href="https://css-tricks.com/accessible-svg-icons/#comment-1766761"><time>2020-12-29T19:00:19Z</time></a></h3>
+<h3><a rel="me" href="https://css-tricks.com/accessible-svg-icons/#comment-1766761"><b>Matthias Zöchling</b> wrote on <time>2020-12-29T19:00:19Z</time></a></h3>
 <p data-chain="reply">In reply to previous comment.</p>
 <p>In theory they are the same, see <a href="https://html5accessibility.com/stuff/2020/11/07/not-so-short-note-on-aria-label-usage-big-table-edition/">html5accessibility.com/stuff/2020/11/07/not-so-short-note-on-aria-label-usage-big-table-edition/,</a> but …</p>
 <p>… the second form is more verbose in VoiceOver, because SVG with aria-label is announced as a group, so rather go with aria-label on the link.</p>

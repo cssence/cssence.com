@@ -20,8 +20,8 @@ const modify = (content, meta) => {
 		if (content[i].startsWith('<article')) {
 			const comment = {
 				id: content[i + 1].match(/id="([^"]+)"/)?.[1],
-				url: content[i + 1].match(/wrote on <a href="([^"]+)"/)?.[1],
-				own: content[i + 1].includes('rel="me author"'),
+				url: content[i + 1].match(/ href="([^"]+)"/)?.[1],
+				own: content[i + 1].includes('rel="me"'),
 				offset: i - conversation.start,
 			};
 			if (content[i].includes('data-unavailable')) {
