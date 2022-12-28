@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="c-editorial" lang="en">
+<head>
+<title>Zero Vulnerabilities Found</title>
+<meta name="description" content="The story of not switching to the Eleventy Static Site Generator.">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Zero Vulnerabilities Found</h1>
+<p>No dependencies, no worries.</p>
+<p><i>Editorial</i><br><time>2022-12-28T12:01:13</time><br><img src="/2022/zero-vulnerabilities-found/index.png" alt=""></p>
+</header>
+<div>
+<div class="standoff" aria-labelledby="foreword">
+<h2 id="foreword">Foreword</h2>
+<p><a href="/2021/beyond-100vw/">A lot has been written</a> about the <a href="/2022/a-tale-of-two-scrollbars/">latest redesign</a> of this site, but only about the visual changes. In the <a href="/2020/redesign/">previous redesign,</a> the visual changes have been a byproduct of the URL reorganisation behind the scenes. Sure enough, this time around, there too something has happened that no blog post has covered. Until now.</p>
+</div>
+<h2 id="plan" class="visually-hidden">The plan</h2>
+<p>Before my latest redesign, I’ve used a static site generator (SSG) called <a href="/2017/metalsmith-io/">Metalsmith</a> to render the pages of this website. Which I was going to replace with <a href="https://11ty.dev/">Eleventy.</a> For lots of good reasons, it coming from the brain of Zach Leatherman being one of them. But also because this is what all the cool kids are using these days.</p>
+<p>I was right on track. I read up on the documentation. I renamed almost all of my files to make trailing slashes in my URLs happen. I incrementally refactored my content to make the upcoming transition easier. Oddly, I implemented one-time-use plug-ins for Metalsmith to rewrite the content. And while I made those changes in a way so I could still feed the output back into the to-be-replaced SSG, I was getting closer to the big switch.</p>
+<h2>Change of plan</h2>
+<p>Fast forward to the launch of my Version&nbsp;4, Metalsmith was gone. But Eleventy didn’t replace it. Instead, I went full circle. Like in its early days, this site is once again rendered by a new lightweight SSG I created. So I’ve successfully worked against everything I wrote about in my essay <a href="/2017/on-using-static-site-generators/">»On Using Static Site Generators«</a> in 2017. Given the conclusions I drew back then, one can only say: How stupid.</p>
+<p>I agree. But I was on a different kind of mission.</p>
+<h2>Dependencies, gone</h2>
+<p>“I wanted to add a five-minute thing to a project I haven’t touched in a while, and ended up doing two hours of upgrading npm packages instead.” Sounds familiar? I’ve been there before, and I didn’t like it. Especially when I had to rewrite entire build scripts, because “using X has run out of fashion, we now use the much better supported Y instead”.</p>
+<p>Tired of this, many months ago I started <strong>removing all dependencies</strong> from all my projects, one pet project at a time. Considering I have a few more than the ones you’ll find on GitHub, it has been quite a journey. Not all those projects result in a website, so I came up with different approaches along the way. In one project, I changed the whole thing to run in the browser, not requiring a build step anymore. In two instances, I replaced entire build scripts with *nix-only shell scripts. And so on. But the bottom line always has been: The project’s package.json should no longer contain any dependencies.</p>
+<p>I got to the point where only one project remained. This very website. It was the most complex one, so I thought I’ll make an exception here.</p>
+<h2>Final frontier</h2>
+<p>Except, I didn’t. Eventually I abandoned the idea of migrating to Eleventy, and instead ended up with my own creation based on node.js (which technically is also a dependency, but not one that counts in package.json terms). It is a brittle and awkward solution, but it does the job.</p>
+<p>It came with lots of sacrifices. For starters, I didn’t want to write my own Markdown parser, so I no longer write my blog posts in Markdown, but HTML instead. What my SSG does, is—among other things—converting HTML input to enriched HTML output.</p>
+<p>Neither did I want to write any minifiers, so there is no more HTML/CSS/JS minification, which sounds like a <del>terrible idea</del><ins> throwback to the early web</ins>, and it is. But it has been the inspiration for this whole endeavour, as you will find out once I’ve finished writing my essay »View Source«.</p>
+<p>Sacrifices aside, my SSG can serve the files during development, and it has a build process. That build step is optional. While it does turn the content into a proper website, if some day everything goes wrong and node.js stops working, I could host the raw content instead.</p>
+<p>But the best part is, I no longer get fancy/scary messages from <code>npm</code>.</p>
+<figure class="standout cover"><img src="/2022/zero-vulnerabilities-found/console-not-zero.png" alt="Running `npm install` in the console, you often end up with lots of warnings. And in this particular screenshot, the packages used come with 58 vulnerabilities (6 low, 14 moderate, 30 high, 8 critical).">
+</figure>
+<p>Can you make a great product by doing everything yourself? No.<br>Do you have to use <em>all the frameworks</em> to end up with something meaningful? Also no.</p>
+</div>
+<aside aria-labelledby="comments">
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><a rel="me" href="https://mas.to/@CSSence/109591348891895758"><b>Matthias Zöchling</b> wrote on <time>2022-12-28T12:41:15Z</time></a></h3>
+<p>✍️ New on CSSence.com: Zero Vulnerabilities Found.<br>A blog post I didn’t need to write. And you don’t need to read it. But here we are.<br><a href="/2022/zero-vulnerabilities-found/">cssence.com/2022/zero-vulnerabilities-found</a><br>#WebDevelopment</p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>
