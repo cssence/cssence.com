@@ -6,12 +6,15 @@ const modify = (content, meta) => {
 
 	meta.toc.byPath['/archive/'].revised = meta.page.revised = meta.toc.posts[0].published;
 
+	let newestYear = meta.date.year;
+	if (!meta.toc.byPath[`/${newestYear}/`]) newestYear -= 1;
+
 	const SUM = 'ALL';
 	const stats = {};
 	for (const className of ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', SUM]) {
 		stats[className] = {};
 		stats[className][SUM] = 0;
-		for (let year = meta.date.year; year >= 2010; year -= 1) {
+		for (let year = newestYear; year >= 2010; year -= 1) {
 			stats[className][year] = 0;
 		}
 	}
@@ -24,7 +27,7 @@ const modify = (content, meta) => {
 	}
 
 	const tableContent = ['<tbody>'];
-	for (let year = meta.date.year; year >= 2010; year -= 1) {
+	for (let year = newestYear; year >= 2010; year -= 1) {
 		const cols = [`<th scope="row"><a href="/${year}/">${year}</a></th>`];
 		for (const className of ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', SUM, 'c-articles']) {
 			const value = className === 'c-articles' ? stats[SUM][year] - stats['c-note'][year] : stats[className][year];
