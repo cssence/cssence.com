@@ -14,14 +14,15 @@ const modify = (content, meta) => {
 	];
 	const createMenuItem = (link, index) => `<li><a${link.className ? ` class="${link.className}"` : ''}${link.url === '/' ? ' rel="home"' : ''} href="${link.url}"><span hidden aria-hidden="true">0${index + 1} </span>${link.label}${link.suffix || ''}</a></li>`;
 	const nav = [
-		'<nav id="navigation" class="nav-menu" aria-label="Main">',
+		'<nav class="nav-menu" aria-label="Main">',
 		'<ul role="list" aria-label="Menu">',
 		navItems.map((link, index) => createMenuItem(link, index)).join('\n'),
 		'</ul>',
 		'</nav>'
 	];
-	const insertBefore = content.indexOf('<footer class="imprint">');
-	content.splice(insertBefore + 2, 0, nav.join('\n'));
+	const insertNearTo = content.indexOf('<footer class="imprint">');
+	content.splice(insertNearTo + 2, 0, nav.join('\n'));
+	content[insertNearTo] = '<footer id="navigation" class="imprint">';
 
 };	
 
