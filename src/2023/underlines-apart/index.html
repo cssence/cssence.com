@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html class="c-code" lang="en">
+<head>
+<title>Underlines Apart</title>
+<meta name="description" content="On using text-underline-offset to separate underlines in nested elements.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/mdjZmpL" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Underlines Apart</h1>
+<p><i>Code</i><br><time>2023-02-09T21:40:30Z</time><br><img src="/2023/underlines-apart/index.png" alt=""></p>
+</header>
+<div>
+<p>Over time, I’ve used numerous techniques when it comes to formatting links. Quite often <code>border</code> did the trick, at times <code>box-shadow</code> came into play, not to mention <code>background</code> with gradient hacks. All these methods have pros and cons. But seeing how versatile <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration"><code>text-decoration</code></a> has become in recent years, nowadays I tend to favor good old underlines to make links easily recognizable. After all, this is the original way, the one that even predates CSS.</p>
+<blockquote>
+<p>Underline your f*cking links, you sociopaths.</p>
+<footer>— Heydon Pickering</footer></blockquote>
+<p>Line, color, style, and thickness are the four individual properties covered by the <code>text-decoration</code> shorthand, but it doesn’t stop there. We’ve been gifted with additional options for underlines, namely <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip-ink"><code>text-decoration-skip-ink</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-offset"><code>text-underline-offset</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-position"><code>text-underline-position</code></a>.</p>
+<h2>Default styling</h2>
+<p>There are some HTML elements where browsers decide to add an underline by default: Links, abbreviations with a <code>title</code> attribute,<del> and</del> insertions<ins id="local-showcase">, and <a href="/2015/the-u-in-group/">unarticulated annotations</a></ins>.</p>
+<p>Given how HTML works, these elements can be nested, so an abbreviation might end up inside a link. Using browser default styles once again, the abbreviation is now difficult to spot visually, because the underline of the link “swallows” the one from the abbreviation.</p>
+<h2>Offset to the rescue</h2>
+<p>To work around this, we could try to modify the underlines’ color, style, and/or thickness in a clever way, but adjusting the offset is usually favorable, as doing so ensures the individual underlines stand out. <a href="#showcase">Head over to CodePen</a> to see how it looks.</p>
+<p>There are obviously limits to using offset; once an underline is too far away from the actual text, it no longer looks decent. I decided to use two levels on this site: The underlines of links are offset a bit more (and they also use twice the thickness and a color that differs from the text), to leave room for a regular-sized underline on top of them, that I use for abbreviations and insertions. I’ve deliberately added an insertion containing a link in the previous chapter; in case you missed it, <a href="#local-showcase">scroll back up.</a></p>
+</p>
+</div>
+<aside aria-labelledby="comments">
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><a rel="me" href="https://mas.to/@CSSence/109840657256107706"><b>Matthias Zöchling</b> wrote on <time>2023-02-10T13:23:39Z</time></a></h3>
+<p>Quick #CSS tip: Separate multiple underlines using text-underline-offset:<br><a href="/2023/underlines-apart/">cssence.com/2023/underlines-apart</a></p>
+</article>
+<article>
+<h3><a href="https://fosstodon.org/@Graycot/109841485746775737"><b>Gray Cot</b> wrote on <time>2023-02-10T16:54:21Z</time></a></h3>
+<p>Nice! A simple yet very functional way to use underlines as text markers.</p>
+</article>
+<article>
+<h3><a rel="me" href="https://mas.to/@CSSence/109841743777247879"><b>Matthias Zöchling</b> wrote on <time>2023-02-10T17:59:58Z</time></a></h3>
+<p data-chain="reply">In reply to: @Graycot.</p>
+<p>Indeed. Add them to the <code>mark</code> element and off you go. 🙂<br><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark">developer.mozilla.org/en-US/docs/Web/HTML/Element/mark</a></p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>
