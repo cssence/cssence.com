@@ -1,0 +1,7 @@
+@supports (initial-letter: 3) {
+	p.with-drop-cap::first-letter {
+		initial-letter: 3;
+		margin-inline-end: 0.25rem;
+		font-weight: bold;
+	}
+}
