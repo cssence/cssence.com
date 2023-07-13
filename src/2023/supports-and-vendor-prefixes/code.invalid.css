@@ -1,0 +1,6 @@
+::-moz-selection,
+::-ms-selection,
+::selection {
+	/* stuff in here is only picked up by browsers
+	   that implement all three of the above */
+}

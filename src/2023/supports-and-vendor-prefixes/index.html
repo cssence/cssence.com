@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class="c-code" lang="en">
+<head>
+<title>@supports and vendor prefixes</title>
+<meta name="description" content="No code duplication needed when vendor prefixes are involved.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/PoxEyap" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>@supports and vendor prefixes</h1>
+<p><i>Code</i><br><time>2023-07-12T15:10:48Z</time><br><img src="/2023/supports-and-vendor-prefixes/index.png" alt=""></p>
+</header>
+<div>
+<p>After having added a <a href="/2023/drop-caps/#comment-1">bookmark to yesterday’s article about drop caps,</a> I obviously also inspected the bookmarked page, which happens to be the wonderful “Experimental Layout Lab of Jen Simmons”, in the Web Developer Console. While doing that, I had a <abbr title="today I learned">TIL</abbr> moment.</p>
+<p>When it comes to <code>@supports</code>, you can test for a property and their vendor-prefixed companions in one go, without invalidating the whole thing:</p>
+<pre><a href="/2023/supports-and-vendor-prefixes/code.forgiving.css">View CSS example.</a></pre>
+<p>The above detection works in e.g. Chrome and Firefox, even though they both know nothing of <code>-ms-hyphens</code>.</p>
+<p>This is interesting, so these “or” combinations in feature detections are apparently forgiving, similar to the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:where#forgiving_selector_parsing">forgiving selector parsing</a> in <code>:is</code> and <code>:where</code>. Compare this to a regular list of (top-level) comma-separated selectors: If it contains unknown/invalid segments, the whole list is ignored. Let’s look at the following example.</p>
+<pre><a href="/2023/supports-and-vendor-prefixes/code.invalid.css">View CSS example.</a></pre>
+<p>It is safe to assume no browser exists that has implemented both the <code>-moz-</code> and <code>-ms-</code> prefixed variant of <code>::selection</code>, so this selector can never be true. Your only way to style text selection is to split up the selector list, and by doing so, repeating the code for each prefix<sup><a id="ref-footnote-1" href="#footnote-1" role="doc-noteref" aria-label="Jump to footnote #1">[1]</a></sup>.</p>
+<p>Okay, enough, I’m deviating from the actual topic.</p>
+<p>What was it about?</p>
+<p>Let me recap by paraphrasing myself:</p>
+<blockquote>
+<p>A browser <strong>does not</strong> invalidate an <code>@supports</code> rule when it contains a vendor prefix unknown to said browser.</p>
+</blockquote>
+<p>I’ve created an example that showcases <del>how it works </del><ins>the fact that it does work</ins>.</p>
+<h2>Footnotes</h2>
+<ol>
+<li id="footnote-1">Luckily, vendor-prefixed versions of <code>::selection</code> are no longer needed these days<sup><a id="ref-footnote-2" href="#footnote-2" role="doc-noteref" aria-label="Jump to footnote #2">[2]</a></sup>. <a href="#ref-footnote-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="footnote-2">For accessibility reasons, it is best not to style text selection in the first place <sup><em>[citation needed]</em></sup>. <a href="#ref-footnote-2" role="doc-backlink" aria-label="Back to footnote #1">↩︎</a></li>
+</ol>
+</div>
+<aside aria-labelledby="comments">
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><a rel="me" href="https://mas.to/@CSSence/110701817444392359"><b>Matthias Zöchling</b> wrote on <time>2023-07-12T15:28:01Z</time></a></h3>
+<p>TIL about #CSS: You can feature-detect a property and their vendor-prefixed companions in one go, without invalidating the whole thing:<br><a href="/2023/supports-and-vendor-prefixes/">cssence.com/2023/supports-and-vendor-prefixes</a></p>
+</article>
+<article>
+<h3><a href="https://mas.to/@iamdtms/110702656854242075"><b>Tamas Dohany</b> wrote on <time>2023-07-12T19:01:29Z</time></a></h3>
+<p>Vendor prefix is a beta feature, would rather not building a castle 🏰 on it.</p>
+</article>
+<article>
+<h3><a rel="me" href="https://mas.to/@CSSence/110703665342938915"><b>Matthias Zöchling</b> wrote on <time>2023-07-12T23:17:57Z</time></a></h3>
+<p data-chain="reply">In reply to: @iamdtms.</p>
+<p>Sure, and they are (almost) a thing of the past anyhow, so my blog post is much ado about nothing.</p>
+<p>I was just surprised to see them work like that in a supports block, even though this is the way most people would expect. If this didn’t work, it would be weirder. Which is why, if we could redo #CSS from scratch, invalid segments in comma-separated lists would also be forgiving, as mentioned in the “Incomplete List of Mistakes in the Design of CSS”:<br><a href="https://wiki.csswg.org/ideas/mistakes">wiki.csswg.org/ideas/mistakes</a></p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>

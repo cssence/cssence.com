@@ -1,0 +1,4 @@
+@supports (hyphens: auto) or (-ms-hyphens: auto) {
+	/* stuff in here is picked up by all modern browsers,
+	   even those that do not implement "-ms-hyphens" */
+}
