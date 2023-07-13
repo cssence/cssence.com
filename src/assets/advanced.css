@@ -255,6 +255,7 @@ li {
 	margin-bottom: .75rem;
 	margin-left: 1.75rem;
 }
+#showcase + p,
 li ul,
 li ol,
 li li,
@@ -296,6 +297,11 @@ pre {
 	padding: .9375rem calc(var(--padding-horizontal) - .0625rem);
 	border: .0625rem dashed transparent;
 }
+.codepen,
+pre {
+	padding-top: 1.4375rem;
+	padding-bottom: 1.4375rem;
+}
 header,
 .posts li,
 .standout,
@@ -307,8 +313,6 @@ footer.metadata {
 pre {
 	overflow-x: auto;
 	overflow-y: hidden;
-	padding-top: 1.5rem;
-	padding-bottom: 1.5rem;
 	background-color: var(--color-dark);
 	color: var(--color-light);
 	line-height: 1.5;
@@ -429,7 +433,6 @@ aside[aria-labelledby="comments"],
 	line-height: 1.5;
 	text-transform: uppercase;
 }
-.c-code #footnotes + ol,
 .posts :is(ol, ul) {
 	margin-bottom: 3rem;
 }
@@ -469,11 +472,11 @@ aside[aria-labelledby="comments"],
 header,
 .posts li,
 #comments ~ article,
-aside[aria-labelledby="showcase"] {
+.codepen {
 	position: relative;
 	padding-right: var(--_pbs);
 }
-aside[aria-labelledby="showcase"] a::after {
+.codepen a::after {
 	content: "";
 	display: block;
 	position: absolute;
@@ -502,7 +505,6 @@ aside[aria-labelledby="showcase"] a::after {
 	mask-image: var(--mask);
 	opacity: .3;
 }
-aside[aria-labelledby="showcase"],
 #comments ~ article {
 	margin-top: 3rem;
 	margin-bottom: 3rem;
@@ -583,7 +585,7 @@ i {
 .posts i {
 	margin-left: -1.75rem;
 }
-aside[aria-labelledby="showcase"] a,
+.codepen a,
 .imprint a[href*="codepen"] {
 	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m14.777 5.751-7-4.667a.5.5 0 0 0-.555 0l-7 4.667a.501.501 0 0 0-.223.416v4.667c0 .167.084.323.223.416l7 4.667a.5.5 0 0 0 .554 0l7-4.667a.501.501 0 0 0 .223-.416V6.167a.501.501 0 0 0-.223-.416zM7.5 10.232 4.901 8.5 7.5 6.768 10.099 8.5 7.5 10.232zM8 5.899V2.434l5.599 3.732L11 7.898l-3-2zm-1 0-3 2-2.599-1.732L7 2.435V5.9zM3.099 8.5 1 9.899V7.101L3.099 8.5zM4 9.101l3 2v3.465l-5.599-3.732L4 9.102zm4 2 3-2 2.599 1.732L8 14.565V11.1zM11.901 8.5 14 7.101v2.798L11.901 8.5z'/%3E%3C/svg%3E");
 }
