@@ -20,8 +20,8 @@ const modify = (content, meta) => {
 		if (content[i].startsWith('<article')) {
 			const comment = {
 				id: content[i + 1].match(/id="([^"]+)"/)?.[1],
-				url: content[i + 1].match(/ href="([^"]+)"/)?.[1],
-				own: content[i + 1].includes('rel="me"'),
+				urls: content[i + 1].match(/href="([^"]+)"/)?.[1]?.split(',') || [],
+				own: content[i + 1].includes('<span'),
 				offset: i - conversation.start,
 			};
 			if (content[i].includes('data-unavailable')) {
@@ -31,8 +31,8 @@ const modify = (content, meta) => {
 				content[i] = content[i].replace(' data-hook', '');
 				conversation.hook = comment;
 			}
-			if (!conversation.hook && comment.own && comment.url) {
-				if (comment.url.startsWith('https://twitter.com') || comment.url.startsWith('https://mas.to')) {
+			if (!conversation.hook && comment.own && comment.urls.length) {
+				if (comment.urls[0].startsWith('https://twitter.com') || comment.urls[0].startsWith('https://mas.to')) {
 					conversation.hook = comment;
 				}
 			}
@@ -56,7 +56,7 @@ const modify = (content, meta) => {
 
 	const postType = isStandaloneThread ? 'thread' : 'article';
 	const shareUrlValue = encodeURIComponent(`“${meta.page.title}” ${meta.getPermalink(meta.page.path)} by @CSSence`);
-	const shareUrl = `<a href="https://twitter.com/intent/tweet?text=${shareUrlValue}">share this ${postType} on Twitter.</a>`;
+	const shareUrl = `<a href="https://twitter.com/intent/tweet?text=${shareUrlValue}">share this ${postType} on Twitter/X.</a>`;
 	const contributeSection = [
 		'<section aria-labelledby="contribute">',
 		`<h3 id="contribute">${conversation.thread.length ? 'Join' : 'Start'} the conversation</h3>`,
@@ -64,12 +64,23 @@ const modify = (content, meta) => {
 		'</section>'
 	];
 	if (conversation.hook) {
-		if (conversation.hook.url.startsWith('https://twitter.com')) {
-			contributeSection[2] = `<p><a href="https://twitter.com/intent/tweet?in_reply_to=${conversation.hook.url.split('/').pop()}">Have your say on Twitter,</a> or simply ${shareUrl.replace(' on Twitter', '')}</p>`;
-		}
-		if (conversation.hook.url.startsWith('https://mas.to')) {
-			contributeSection[2] = `<p><a href="${conversation.hook.url}">Have your say on Mastodon,</a> or simply ${shareUrl}</p>`;
-		}
+		const known = { 'mas.to': 'Mastodon', 'twitter.com': 'Twitter/X' };
+		const knownRemotes = Object.keys(known);
+		let andShare = ` or simply ${shareUrl}`;
+		const replies = conversation.hook.urls.map((url, index) => {
+			const remote = url.split('/')[2];
+			const prefix = index === 0 ? 'Have your say ' : 'reply on ';
+			if (remote === 'twitter.com') {
+				url = `https://twitter.com/intent/tweet?in_reply_to=${url.split('/').pop()}`;
+				andShare = '';
+				//  or simply ${shareUrl.replace(' on Twitter/X', '')}
+			} else if (!knownRemotes.includes(remote)) {
+				console.warn(`Blog post ${meta.page.path} contains unknown remote ${url}.`);
+			}
+			const isLast = !andShare && !conversation.hook.urls[index + 1];
+			return `<a href="${url}">${prefix}${known[remote] || remote}${isLast ? '.' : ','}</a>`;
+		});
+		contributeSection[2] = `<p>${replies.join(' or ')}${andShare}</p>`;
 	}
 
 	const insertBefore = conversation.end;

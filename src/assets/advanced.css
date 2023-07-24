@@ -526,16 +526,15 @@ header,
 	font-weight: inherit;
 	line-height: calc(20 / 14);
 }
-#comments ~ article h3 a {
+#comments ~ article h3 :is(a, span) {
 	display: block;
 }
-#comments ~ article h3 b,
-#comments ~ article h3 time {
+#comments ~ article h3 :is(b, time) {
 	display: block;
 	width: max-content;
 	max-width: 100%;
 }
-#comments ~ article h3 a[rel="me"] b::after {
+#comments ~ article h3 span b::after {
 	content: "";
 	display: inline-block;
 	position: relative;
