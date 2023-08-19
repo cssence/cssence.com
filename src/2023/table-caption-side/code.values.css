@@ -1,0 +1,5 @@
+/* Directional values: top, bottom */
+/* Logical values: block-start, block-end, inline-start, inline-end */
+table {
+	caption-side: bottom;
+}
