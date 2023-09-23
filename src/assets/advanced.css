@@ -73,6 +73,9 @@ body {
 	position: relative;
 	padding: var(--height-header) var(--padding-horizontal) 0;
 }
+li::marker {
+	font: inherit;
+}
 img {
 	display: block;
 	max-width: 100%;
