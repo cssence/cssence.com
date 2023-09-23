@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="c-editorial" lang="en">
+<head>
+<title>View Source</title>
+<meta name="description" content="I grew up writing HTML from scratch. And later JS, and eventually CSS.">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>View Source</h1>
+<p>My first code editor was Windows Notepad.</p>
+<p><i>Editorial</i><br><time>2023-09-23T14:22:00Z</time><br><img src="/2023/view-source/index.webp" alt=""></p>
+</header>
+<div>
+<aside class="standoff" aria-labelledby="foreword">
+<h2 id="foreword">Foreword</h2>
+<p>This is an accompaning piece to the editorial <a href="/2022/zero-vulnerabilities-found/">»Zero Vulnerabilities Found«</a> I wrote last year. When I did, I had no idea it would take me this long to finish this follow-up article.</p>
+</aside>
+<h2>How it started</h2>
+<p>While I do have a formal education in information technology and programming languages, I learned essentially nothing about the internet. Because said education took place before the internet became the hot new thing. Yes, I am this years old.</p>
+<p>I started to work in 1997, programming in <a href="https://en.wikipedia.org/wiki/Assembly_language#Assembly_language">assembly language</a> and <a href="https://en.wikipedia.org/wiki/COBOL">COBOL</a> (look them up). My first printed business card didn’t include an e-mail address, nor did anybody else’s at the company, there simply hasn’t been any. A year or so later, my department got internet access, on a single computer, in a dedicated room. The&nbsp;internetification of Austrian companies was still in its infancy.</p>
+<p>At home though, I got internet access a little sooner than I did at work. If you have read about me being <a href="/2017/being-online-for-20-years/">»Online for Twenty Years« in 2017,</a> you know that 1997 was the time when I started to learn HTML to build my first website.</p>
+<p>In German-speaking countries, <a href="https://wiki.selfhtml.org/wiki/SELFHTML">SelfHTML</a> has been <em>the</em> resource to learn about HTML. Which is why I’d like to say the following.</p>
+<blockquote>
+<p>Thank you <a lang="de" href="https://wiki.selfhtml.org/wiki/SELFHTML:Verein/Chronik">Stefan Münz</a> for being there at the beginning of what was about to become my career.<sup><a id="ref-footnote-1" href="#footnote-1" role="doc-noteref" aria-label="Jump to footnote #1">[1]</a></sup></p>
+</blockquote>
+<p>SelfHTML's tagline has always been <em lang="de">“Die Energie des Verstehens”</em>, which would literally mean “The Energy of Understanding”, but is more likely meant as “The Power of Knowledge”. In any case, a great tagline indeed.</p>
+<p>Back then, SelfHTML offered the ability to download the whole documentation for offline use. And download I did, so I could work on my site locally without being online.<sup><a id="ref-footnote-2" href="#footnote-2" role="doc-noteref" aria-label="Jump to footnote #2">[2]</a></sup></p>
+<p>Safe to say, SelfHTML has taught me the fundamentals and principles of HTML, and soon JavaScript (or <a href="https://en.wikipedia.org/wiki/Dynamic_HTML">DHTML</a> as we called it). Additionally, I got quite some JavaScript knowledge from printed books, mainly in English, so I would not have to wait for them being translated.</p>
+<h2>How it progressed</h2>
+<p>Whenever I wanted to learn how certain things I saw on the web have been implemented, I used the browser feature <strong>View Source</strong> on the site in question to see its source code.</p>
+<p>And there it was. With no compiler obscuring anything, I could look at the raw HTML somebody else had written. Understanding it may have taken a bit, but at least it was readable to begin with.</p>
+<h2>How it’s going</h2>
+<p>To this day, browsers still fetch the raw HTML and just parse it.<sup><a id="ref-footnote-3" href="#footnote-3" role="doc-noteref" aria-label="Jump to footnote #3">[3]</a></sup></p>
+<p>But!</p>
+<p>Viewing the source of today’s websites is no fun.</p>
+<ol>
+<li>Minifiers are usually first to blame, though to a certain degree you can get around them using the Web Developer Console. And if <a href="https://web.dev/source-maps/">Source Maps</a> exist, you may be even a bit better off. But all that means you need to learn about browser tools for debugging to begin with. Not great for those who are just getting started.</li>
+<li>More often than not, minification also comes with obfuscation, where primarily JavaScript becomes less readable, but also CSS class names and other stuff. The reasoning here is to reduce the number of bytes that need to be transferred to your browser. That sounds nice, but at an even greater rate, the number of bytes goes up thanks to the way we build websites today.<sup><a id="ref-footnote-4" href="#footnote-4" role="doc-noteref" aria-label="Jump to footnote #4">[4]</a></sup></li>
+<li>You can consider yourself lucky if you have actual HTML to begin with. Many websites (and especially “web apps”) these days forgo the server-side rendering, just deliver an almost empty <code>body</code> tag, and the content is built on the client’s browser using JavaScript.</li>
+</ol>
+<p>I could go on. Not that any of the aforementioned techniques are inherently bad, my point is that the way I got into the HTML game no longer works for those starting out today.</p>
+<p>On the other hand, things may have simply changed, nowadays someone just starting out will have alternate options, like interactive courses and the likes. Things I didn’t have.</p>
+<p>Still, my gut says the <em>barrier of entry</em> is higher today.<sup><a id="ref-footnote-5" href="#footnote-5" role="doc-noteref" aria-label="Jump to footnote #5">[5]</a></sup></p>
+<h2>Coming full circle</h2>
+<p>If you got here after having read my editorial <a href="/2022/zero-vulnerabilities-found/">»Zero Vulnerabilities Found«,</a> you know that I did remove all dependencies from all my GitHub projects, with this website being the one that completed the list. As I didn’t want to write things like minifiers myself, I’ve decided to host my website without any minification and obfuscation, i.e. in a more readable way, like we used to.</p>
+<p>I guess this is me trying to give back to the community. If someone decides to <strong>view the page source</strong> on my site, they may be pleasantly surprised.</p>
+<h2>Footnotes</h2>
+<ol>
+<li id="footnote-1">And also thank you to the people who followed him. SelfHTML is still alive and well for you to enjoy, and learn from it. <a href="#ref-footnote-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="footnote-2">At the time, internet access has been expensive, and slow. <a href="#ref-footnote-2" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="footnote-3">Sure enough, they need to fetch lots of additional files too, and make sense of them. Stylesheets, scripts, images, just to name a few. But you get the idea. <a href="#ref-footnote-3" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="footnote-4">On this particular site, what accounts for unminified content the most is white space characters like tabs and line breaks in HTML and CSS. But these characters come in a predictable sequence. While I don’t have proof, I think today compression algorithms like gzip will make quite some unminified content neglectable. <a href="#ref-footnote-4" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="footnote-5">Gut aside, this is also true for other reasons: Just look at how HTML, but even more so CSS and JS, have evolved in their capabilities, which makes them more difficult to learn. And let’s not forget about all the additional tech stacks that get thrown into the mix, which may be hard to ignore. <a href="#ref-footnote-5" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+</ol>
+</div>
+<aside aria-labelledby="comments">
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/111114934555483458, https://twitter.com/CSSence/status/1705590363942011267"><b>Matthias Zöchling</b> wrote on <time>2023-09-23T14:22:00Z</time></span></h3>
+<p>“Thank you <a href="https://bildung.social/@selfhtml">@SelfHTML</a> for being there at the beginning of what was about to become my career.”<br><a href="/2023/view-source/">cssence.com/2023/view-source</a><br>#WebDevelopment #History</p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>

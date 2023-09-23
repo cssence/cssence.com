@@ -46,7 +46,7 @@
 <h3>Not so small images</h3>
 <p>In almost all cases: No. But you’ll have to take a second look if you are designing a secure site. To quote wikipedia:</p>
 <blockquote>
-<p>When browsing a secure HTTPS web site, web browsers commonly require that all elements of a web page be downloaded over secure connections, or the user will be notified of reduced security due to a mixture of secure and insecure elements. HTTPS requests have significant overhead over common HTTP requests, so embedding data in data URIs may improve speed in this case.</p>
+<p>When browsing a secure HTTPS website, web browsers commonly require that all elements of a web page be downloaded over secure connections, or the user will be notified of reduced security due to a mixture of secure and insecure elements. HTTPS requests have significant overhead over common HTTP requests, so embedding data in data URIs may improve speed in this case.</p>
 </blockquote>
 <h3>CSS sprites</h3>
 <p>Maybe. If you switch to a data URI, you probably no longer need the <a href="http://www.google.com/images/nav_logo65.png">sprite</a>. Instead, split it into the original small files, that way you can also get rid of the background positioning. On the other hand, every binary image comes with a header, that’s why even something as small as one transparent pixel in a GIF file has at least 43 bytes. Splitting into many small files means many of these headers. And these headers are going to be encoded too. So a good mix could be necessary, say a couple of smaller sprites instead of one large one. There is no easy answer.</p>
