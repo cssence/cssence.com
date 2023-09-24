@@ -91,7 +91,7 @@ figure, .figure,
 blockquote,
 .posts h2,
 #updates,
-#footnotes,
+#fns,
 #comments,
 #comments ~ article h3,
 #comments ~ p,
@@ -428,7 +428,7 @@ aside[aria-labelledby="comments"],
 .standoff h2,
 #showcase,
 #updates,
-#footnotes,
+#fns,
 #comments,
 #contribute {
 	font-size: .875rem;
@@ -842,6 +842,8 @@ footer.metadata p:nth-child(5)::after {
 main > div > header p:last-child > :is(i, time),
 html:where(.c-default, .c-about) header p:last-child > :is(i, time),
 .metadata address,
+[aria-labelledby="updates"] > hr,
+[aria-labelledby="fns"] > hr,
 header br,
 .posts li br {
 	display: none;

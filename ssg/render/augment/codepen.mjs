@@ -13,8 +13,8 @@ const modify = (content, meta) => {
 	];
 	let insertBefore = content.indexOf('<h2 id="comments">Comments</h2>') - 2;
 	for (let i = insertBefore - 1; content[i] !== '</header>'; i -= 1) {
-		if (content[i].startsWith('<h2 id="updates"') || content[i] === '<h2>Footnotes</h2>') {
-			insertBefore = i;
+		if (content[i].startsWith('<h2 id="updates"') || content[i].startsWith('<h2 id="fns"')) {
+			insertBefore = i - 1;
 		} else if (content[i].startsWith('<h2')) {
 			break;
 		}

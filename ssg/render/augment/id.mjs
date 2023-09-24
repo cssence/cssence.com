@@ -1,4 +1,4 @@
-/* Assign IDs */
+/* Assign IDs, aria-labelledby, and data-title */
 
 const modify = (content, meta) => {
 
@@ -14,9 +14,15 @@ const modify = (content, meta) => {
 	const stopBefore = content.lastIndexOf('</div>');
 	for (i = content.indexOf('</header>') + 1; i < stopBefore; i += 1) {
 		if (!content[i].match(/^<h[1-6]/)) continue; // no heading
-		if (content[i].match(/id="([^"]+)"/)?.[1]) continue; // already has ID
-		const tag = content[i].slice(1, '<h#'.length);
 		let text2id = content[i].slice(content[i].indexOf('>') + 1, -'</h#>'.length); // innerText
+		const id = content[i].match(/id="([^"]+)"/)?.[1];
+		if (id) { // already has ID
+			if (content[i].startsWith('<h2 id="updates"') || content[i].startsWith('<h2 id="fns"')) {
+				content[i - 1] = `<section aria-labelledby="${id}"><hr>`;
+			}
+			continue;
+		}
+		const tag = content[i].slice(1, '<h#'.length);
 		text2id = text2id.replaceAll(/<[^>]+>/g, ''); // remove html elements
 		text2id = text2id.replaceAll('&nbsp;', ' ').replaceAll(/&[^;]+;/g, ''); // replace html entities
 		text2id = text2id.toLowerCase().replaceAll(/[^a-z0-9- ]/g, '').trim().replaceAll(' ', '-'); // convert to ID

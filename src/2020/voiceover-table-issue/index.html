@@ -19,9 +19,11 @@
 <p>While you should always have proper semantic HTML table markup, there are a lot of good reasons to apply styling so they end up looking less like tables, e.g. to create responsive tables on different screen sizes, or to have cells that can be expanded and collapsed. Especially table rows are good candidates for turning their cells into <code>flex</code> or even <code>grid</code> items.</p>
 <p>That said, I still need VoiceOver users to be able to navigate the table content as intended. <del>So unless I made a mistake in my tests,</del> I guess I have to go back to <code>display: table</code> and <code>table-layout: fixed</code>.</p>
 <p>If you have any experience in this regard, please let me know in the comments.</p>
+<section>
 <h2 id="updates">Confirmation &amp; Updates</h2>
 <p><time id="update-1" class="update" datetime="2020-05-07">May 7, 2020:</time> First of all, thanks to Adrian Roselli and Manuel Matuzović I’ve got confirmation. According to the link <a href="#comment-3">Manuel sent me</a>, Adrian already wrote an <a href="https://adrianroselli.com/2018/02/tables-css-display-properties-and-aria.html">excellent article on the subject</a>, and now I also know that this is <strong>not limited to VoiceOver.</strong> NVDA on Windows is no different, because the browsers strip away the table information, leaving screen readers clueless.</p>
 <p>Best of all, Adrian keeps adding additional information, in his most recent update he highlights that Chrome 80 fixed the issue. Bug is still there in Safari and Firefox, so if you are using one of them, you may head over to my CodePen for a test.</p>
+</section>
 </div>
 <aside>
 <h2 id="comments">Comments</h2>

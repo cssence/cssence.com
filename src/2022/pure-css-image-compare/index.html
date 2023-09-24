@@ -33,7 +33,7 @@
 <h2>The Breathing Space</h2>
 <p><a href="https://drafts.csswg.org/css-ui/#resize">The specification states</a> which elements should be resizable, and while images may be covered, in reality there is no browser support. But we anyhow would not want to resize images directly, because of the breathing space we are going to introduce for the draggable handle. Without the breathing space, browsers won’t let us hide the first image completely, as the draggable handle needs to be visible, in order to be … well, draggable. Hence we add this space—an overflow area if you will—to have a parking spot for the handle when the first image is completely hidden, as the following diagram shows.</p>
 <p class="standout -left"><img src="/2022/pure-css-image-compare/breathing-space.png" alt="The breathing space (a.k.a overflow area) protrudes underneath and on the left side of the first image."></p>
-<p>Using CSS, we will expand the resizable container to the left, and add a padding to push the image back into place, i.e. to where it would be without the expansion. We will do the same at the bottom, that space underneath will allow us to work around an issue in Safari, <a href="#the-safari-workaround">which I’ll cover later.</a> Coming up with the right size is tricky<sup><a id="ref-footnote-1" href="#footnote-1" role="doc-noteref" aria-label="Jump to footnote #1">[1]</a></sup>, but our final example will feature a CSS variable for the size of the breathing space, so it can be easily adjusted.</p>
+<p>Using CSS, we will expand the resizable container to the left, and add a padding to push the image back into place, i.e. to where it would be without the expansion. We will do the same at the bottom, that space underneath will allow us to work around an issue in Safari, <a href="#the-safari-workaround">which I’ll cover later.</a> Coming up with the right size is tricky<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Jump to footnote #1">[1]</a></sup>, but our final example will feature a CSS variable for the size of the breathing space, so it can be easily adjusted.</p>
 <h2>The Styling</h2>
 <p>We’ll be using the center position as a starting point for the slider, so it becomes obvious that user interaction is possible here. To do that, we can no longer just set the width of the resizable container to 50%, as everything we do from now on needs to take the breathing space into account. So let’s bring in <code>calc()</code> to help us out.</p>
 <pre><a href="/2022/pure-css-image-compare/code.styling.css">View CSS example.</a></pre>
@@ -66,10 +66,12 @@
 <pre><a href="/2022/pure-css-image-compare/code.safari-workaround.css">View CSS example.</a></pre>
 <h2>Verdict</h2>
 <p>While all of the above works, this is one of the cases where I cannot vouch for a CSS-only solution. Instead, you could bring in <code>&lt;input type=&quot;range&quot;&gt;</code>, update a CSS variable every time the range’s value changes, and take it from there. You’ll most likely need only a few lines of Javascript, but you’ll end up with something superior to the poor man’s draggable handle we’ve seen here.</p>
-<h2>Footnotes</h2>
+<section>
+<h2 id="fns">Footnotes</h2>
 <ol>
-<li id="footnote-1">The width of the breathing space has to be large enough to fit the handle. How large? We do not know, as it depends on <abbr title="operating system">OS</abbr> settings and the browser. To be on the safe side you could simply make the breathing space very large, but there could be side effects. A large value could break the overall site design when our image comparison slider is present. It is unlikely to do harm horizontally, because we protrude to the side that won’t introduce an unwanted scrollbar. If at all, it could be an issue vertically, so you have to test. <a href="#ref-footnote-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="fn-1">The width of the breathing space has to be large enough to fit the handle. How large? We do not know, as it depends on <abbr title="operating system">OS</abbr> settings and the browser. To be on the safe side you could simply make the breathing space very large, but there could be side effects. A large value could break the overall site design when our image comparison slider is present. It is unlikely to do harm horizontally, because we protrude to the side that won’t introduce an unwanted scrollbar. If at all, it could be an issue vertically, so you have to test. <a href="#ref-fn-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
 </ol>
+</section>
 </div>
 <aside>
 <h2 id="comments">Comments</h2>

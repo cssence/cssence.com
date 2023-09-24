@@ -29,10 +29,10 @@
 <blockquote>
 <p>[This] mechanism is not so good for pages that are optimized for narrow screens using media queries—if the virtual viewport is 980px for example, media queries that kick in at 640px [or less] will never be used, limiting the effectiveness of such responsive design techniques.</p>
 </blockquote>
-<p>This is where a viewport meta tag like the one shown below comes in. Adding it to a page ensures all media queries work as expected, and we are using the actual screen size<sup><a id="ref-footnote-1" href="#footnote-1" role="doc-noteref" aria-label="Jump to footnote #1">[1]</a></sup> to display our content.</p>
+<p>This is where a viewport meta tag like the one shown below comes in. Adding it to a page ensures all media queries work as expected, and we are using the actual screen size<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Jump to footnote #1">[1]</a></sup> to display our content.</p>
 <pre><a href="/2021/beyond-100vw/code.viewport-meta-tag.html">View HTML example.</a></pre>
 <h2>Breaking out</h2>
-<p>What if we went back to having two<sup><a id="ref-footnote-2" href="#footnote-2" role="doc-noteref" aria-label="Jump to footnote #2">[2]</a></sup> scrollbars? Seriously?</p>
+<p>What if we went back to having two<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Jump to footnote #2">[2]</a></sup> scrollbars? Seriously?</p>
 <p>With the latest redesign of this site, I did just that. I didn’t ditch the viewport meta tag though. I do need the actual screen width as a starting point, so no shrinking. But below a certain breakpoint—usually handheld territory—<strong>the width of the page is wider than the width of the screen, on purpose.</strong> To do so, I’m setting the body width beyond the viewport width. There are numerous ways to achieve this, but the code below should get you started.</p>
 <pre><a href="/2021/beyond-100vw/code.calc-100vw-plus.css">View CSS example.</a></pre>
 <p>There is one key difference to the <em>zoom in and out</em> days of the early mobile web. I made sure my visitors are able to consume the content by going top to bottom. I’ll write about the details of this redesign in an <a href="/2022/a-tale-of-two-scrollbars/">upcoming Editorial blog post,</a> but in a nutshell:</p>
@@ -51,7 +51,7 @@
 <li>Even in the left-most scrolling position, I made sure a small portion of the sidebar is visible, so my visitors have a clue that scrolling in both axes is a feature here.</li>
 </ul>
 <p>As always, it was an iterative redesign, but now in its final form, I found <em>»breaking out of the actual viewport«</em> to be an interesting design decision. Eventually, not just the main content, but everything—header, navigation, footer—adheres to the two columns in some shape or form, leading to off-centered appearances that I wouldn’t have thought of otherwise.</p>
-<p>But most importantly, this makes it possible to use <strong>one layout for all screen sizes,</strong> with almost no media queries<sup><a id="ref-footnote-3" href="#footnote-3" role="doc-noteref" aria-label="Jump to footnote #3">[3]</a></sup>.</p>
+<p>But most importantly, this makes it possible to use <strong>one layout for all screen sizes,</strong> with almost no media queries<sup><a id="ref-fn-3" href="#fn-3" role="doc-noteref" aria-label="Jump to footnote #3">[3]</a></sup>.</p>
 <p>Is it a good idea?</p>
 <p>I do not know.</p>
 <p>An innovative idea? You decide.</p>
@@ -60,12 +60,14 @@
 <p>[…] the <em>design patterns</em> we have at our disposal. And this is where we seem to be stuck. We have the continuous long scroll on mobile, we have the hamburger menu. We need to expand our repertoire. And to do so, we need to innovate. And innovation can’t be done on localhost, innovation needs to be done out there, in the open.</p>
 </blockquote>
 <p>Let’s go out there, and innovate.</p>
-<h2>Footnotes</h2>
+<section>
+<h2 id="fns">Footnotes</h2>
 <ol>
-<li id="footnote-1">To keep things simple, I’m neglecting that <a href="https://www.quirksmode.org/blog/archives/2010/04/a_pixel_is_not.html">a pixel is not a pixel.</a> <a href="#ref-footnote-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
-<li id="footnote-2">Sometimes websites flip from vertical to horizontal scrolling for aesthetic reasons, so they too go beyond 100vw. But those sites are a different story, as they still have only one scroll axis. <a href="#ref-footnote-2" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
-<li id="footnote-3">And without <a href="https://css-tricks.com/responsive-layouts-fewer-media-queries/">fancy math.</a> <a href="#ref-footnote-3" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="fn-1">To keep things simple, I’m neglecting that <a href="https://www.quirksmode.org/blog/archives/2010/04/a_pixel_is_not.html">a pixel is not a pixel.</a> <a href="#ref-fn-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="fn-2">Sometimes websites flip from vertical to horizontal scrolling for aesthetic reasons, so they too go beyond 100vw. But those sites are a different story, as they still have only one scroll axis. <a href="#ref-fn-2" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="fn-3">And without <a href="https://css-tricks.com/responsive-layouts-fewer-media-queries/">fancy math.</a> <a href="#ref-fn-3" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
 </ol>
+</section>
 </div>
 <aside>
 <h2 id="comments">Comments</h2>
