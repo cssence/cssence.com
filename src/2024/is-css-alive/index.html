@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="c-essay" lang="en">
+<head>
+<title>Is CSS alive?</title>
+<meta name="description" content="Spoiler alert: More than ever! But let me go back in time a bit.">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Is CSS alive?</h1>
+<p><i>Essay</i><br><time>2024-01-04T19:01:40Z</time><br><img src="/2024/is-css-alive/index.webp" alt=""></p>
+</header>
+<div>
+<p>Spoiler alert: More than ever!</p>
+<p>But let me go back in time a bit.</p>
+<h2>Thirteen years ago</h2>
+<p>In January 2011 I wrote und published <a href="/2011/css3-is-dead/">my first essay,</a> the one that got me into blogging. It had the provocative title <b>»CSS3 is dead«.</b></p>
+<p>To give you an idea of that time, Apple’s first iPhone had only been three years old, and I had not yet <a href="/2012/aneventapart-seattle/">learned about <em>Responsive Web Design.</em></a> Google Chrome gained traction, but had not been the dominant browser. And I had to call the title of my first essay provocative, because <a href="https://en.wikipedia.org/wiki/Clickbait">the concept of clickbait</a> was unknown to me back then.</p>
+<h2>A different world today</h2>
+<p><a href="https://en.wikipedia.org/wiki/Browser_wars">The Second Browser War</a> is long over. We undid the mistake that were vendor prefixes. New CSS features are shipped at an incredible pace, and thanks to initiatives like Interop, cross-browser support is better than ever. And let’s not forget that support for Internet Explorer ended almost two years ago.</p>
+<blockquote>
+<p>[L]et us go out there and use the freshest CSS available.</p>
+</blockquote>
+<p>This has been the call to action in my first essay, and given the vast amount of new features that have landed in CSS, it is more important than ever, albeit for different reasons.</p>
+<p>In the “real world”, you obviously cannot use something that is supported in one browser behind a flag. A quick look at <a href="caniuse.com">caniuse.com</a> will give you an idea if a feature is ready for prime time. If you didn’t take a look in a while, you may be pleasantly surprised.</p>
+<p><b>How about we go through some of the CSS features that have become available and take a closer look?</b></p>
+<p>I’ll share my personal opinions along the way. I may be biased, but let me tell you: Not all CSS features are equally important, and the size of a project usually has an impact in that regard. I get paid to work on a <a href="https://george-labs.com/">product used by millions of people.</a> In my spare time I work on pet projects that usually have an audience of one<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Jump to footnote #1">[1]</a></sup>, myself already included. So I know both ends of the spectrum.</p>
+<h2>(New) CSS Features</h2>
+<h3><span aria-hidden="true">✅ </span>Grid</h3>
+<p>Luckily, in 2024 this is old news. If you haven’t used <a href="https://gridbyexample.com/">Grid layout</a> yet, you are obviously forced to support the latest three versions of a dead browser.</p>
+<p>Remember, Grid is not a replacement for Flexbox and other layouting methods. Make sure to use the right tool for the problem at hand.</p>
+<p><strong class="subtle">Verdict:</strong> Important.</p>
+<h3><span aria-hidden="true">✅ </span>Subgrid</h3>
+<p>If you work on the web, chances are you already needed <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid">Subgrid</a> before September 2023, i.e. before we got full support.</p>
+<p><strong class="subtle">Verdict:</strong> Not daily business, but still kind of important.</p>
+<h3><span aria-hidden="true">✅ </span>Colors</h3>
+<p>I still need to get my head around <a href="https://svgees.us/blog/colorHistory.html">colors,</a> even though I’ve seen Chris Lilley talk enthusiastically about them. Lack of extensive knowledge aside, no longer being stuck in the sRGB color space and instead embracing <a href="https://css-tricks.com/the-expanding-gamut-of-color-on-the-web/">the abilities of wide-gamut displays</a> should be a no-brainer.</p>
+<p>Browser support is splendid, this is now a hardware topic. I haven’t seen colors beyond sRGB myself, as I do not own a capable display.</p>
+<p>My recommendation would be that you get accustomed to all things color, if you didn’t already. Start off by using <code>rgb()</code>—or even better <code>hsl()</code>—instead of <code>rgba()</code> when you need transparency. <a href="https://www.matuzo.at/blog/2022/100daysof-day11">Space-separated <code>rgb()</code></a> of course. Then take it from there all the way to color functions like <code>color-mix()</code>.</p>
+<p><strong class="subtle">Verdict:</strong> Niche? First world problem?</p>
+<h3><span aria-hidden="true">✅ </span>Container Queries</h3>
+<p>The long-awaited <a href="https://www.sitepoint.com/css-container-queries-introduction/">Container Queries</a> are a big topic, even without throwing the not-yet-supported Container Style Queries into the mix.</p>
+<p>I use them at work, but for my pet projects, querying the viewport size is enough. I think the importance of Container Queries grows with the size of your project. Eventually you’ll reach the point where you need to display a single component in multiple ways on the same viewport.</p>
+<p><strong class="subtle">Verdict:</strong> Overrated. Useful in complex or large products.</p>
+<h3><span aria-hidden="true">✅ </span>Cascade Layers</h3>
+<p>The elephant in the room when it comes to new CSS features: <a href="https://css-tricks.com/css-cascade-layers/">Cascade Layers</a> are the proper way to manage specificity. Large projects will obviously benefit, but unlike Container Queries, even that CodePen of yours could make use of them.</p>
+<p>Using them requires clever planning upfront, especially in large teams. And retrofitting them into existing projects is quite often a painful story.</p>
+<p><strong class="subtle">Verdict:</strong> Fundamental.</p>
+<h3><span aria-hidden="true">✅ </span>Nesting</h3>
+<p>Full support of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting">CSS Nesting</a> surprised me when writing this piece. And not just me, most syntax highlighters are not up to the task just yet. If this is one of the things you need SASS for, you will be happy.</p>
+<p>Even the parsing engine limitations seem to be gone, so using the <code>&amp;</code> symbol is no longer required.</p>
+<p><strong class="subtle">Verdict:</strong> Take it or leave it.</p>
+<h3><span aria-hidden="true">✅ </span>Logical properties and values</h3>
+<p>Yes, the <q cite="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values">ability to control layout through <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values">logical, rather than physical,</a> direction and dimension mappings.</q> It’s tempting to think this is only important if you deal with truly international websites, but I encourage you to make the switch.</p>
+<p>While we still lack a logical equivalent for the <a href="/2022/pure-css-image-compare-logical-properties/#four-value-shorthands">four-value shorthands</a> (margin, padding, etc.), the days of top/right/bottom/left are numbered.</p>
+<p><strong class="subtle">Verdict:</strong> Use them, and ditch the old ways.</p>
+<h3><span aria-hidden="true">✅ </span>Viewport units</h3>
+<p>More old news. They came to fix a bug on handheld devices. Now even the logical counterparts are fully supported, which gives us <a href="https://www.terluinwebdesign.nl/en/css/incoming-20-new-css-viewport-units-svh-lvh-dvh-svw-lvw-dvw/">20&nbsp;new viewport units.</a></p>
+<p><strong class="subtle">Verdict:</strong> Needed when needed.</p>
+<h3><span aria-hidden="true">✅ </span>Comparison functions</h3>
+<p>To fully understand <a href="https://web.dev/articles/min-max-clamp"><code>min()</code>, <code>max()</code>, and <code>clamp()</code>,</a> it’s a good idea to simply search the web for interesting and clever ways on how people use them.</p>
+<p><strong class="subtle">Verdict:</strong> Seemingly unimportant, but only at first glance.</p>
+<h3><span aria-hidden="true">✅ </span>:is() and :where()</h3>
+<p>To quote <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:is">MDN,</a> <code>:is()</code> and <code>:where()</code> are <q>useful for writing large selectors in a more compact form.</q> While this is nice, their true power lies in <a href="https://web.dev/articles/css-is-and-where">the way they affect specificity.</a> Quite often I resort to <code>:where()</code> when I need to downplay a selector’s specificity.</p>
+<p><strong class="subtle">Verdict:</strong> They come in handy.</p>
+<h3><span aria-hidden="true">✅ </span>:has()</h3>
+<p>All those years we’ve been told <a href="https://css-tricks.com/parent-selectors-in-css/">parent selectors will never be a reality.</a> But two weeks ago, Christmas came early, when Mozilla shipped Firefox&nbsp;121 and enabled us to finally use <a href="https://css-tricks.com/more-real-world-uses-for-has/"><code>:has()</code>.</a></p>
+<p>What becomes possible with <code>:has()</code> would require a dedicated blog post. Again, search the web. Bonus points for the fact that it also gives us the <em>previous sibling selector.</em></p>
+<p><strong class="subtle">Verdict:</strong> Game changer! Bigger than all of the above.</p>
+<h3><span aria-hidden="true">⁉️ </span>Anything else?</h3>
+<p>There is more on the horizon, like <a href="https://keithjgrant.com/posts/2023/04/scoped-css-is-back/">Scoping</a>, but to my list I’ve only added topics that have reached <a href="https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility">Baseline browser support.</a></p>
+<p>What about conic gradients and all the new pseudo-classes and pseudo-elements? Well, I deliberately left out smaller features, and also things related to Web Components, but there is still a chance I missed something entirely.</p>
+<p>For more depth, I encourage you to dive into <a href="https://www.matuzo.at/blog/2022/100-days-of-more-or-less-modern-css">#100DaysOfMoreOrLessModernCSS</a> by Manuel Matuzović.</p>
+<h2>Your voice matters</h2>
+<p>This is how I see it, your mileage may vary. More importantly, we should all be vocal about how far CSS has come. About its features. About what we like, and use.</p>
+<p>What if you wrote something similar on your blog?</p>
+<section>
+<h2 id="fns">Footnotes</h2>
+<ol>
+<li id="fn-1">This website is among those pet projects, and if you are reading this, 1. thank you, and 2. at least this pet project is apparently for more than “one people”. <a href="#ref-fn-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+</ol>
+</section>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/111702816956172587, https://twitter.com/CSSence/status/1743214767861354978"><b>Matthias Zöchling</b> wrote on <time>2024-01-05T10:56:06Z</time></span></h3>
+<p>📝 New blog post: “Is CSS alive?”<br>A list of major (new) #CSS features with cross-browser support.<br><a href="/2024/is-css-alive/">cssence.com/2024/is-css-alive</a></p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>
