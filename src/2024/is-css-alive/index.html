@@ -9,7 +9,7 @@
 <article>
 <header>
 <h1>Is CSS alive?</h1>
-<p><i>Essay</i><br><time>2024-01-04T19:01:40Z</time><br><img src="/2024/is-css-alive/index.webp" alt=""></p>
+<p><i>Essay</i><br><time data-revised="2024-01-05T19:07:25Z">2024-01-04T19:01:40Z</time><br><img src="/2024/is-css-alive/index.webp" alt=""></p>
 </header>
 <div>
 <p>Spoiler alert: More than ever!</p>
@@ -36,7 +36,7 @@
 <p><strong class="subtle">Verdict:</strong> Not daily business, but still kind of important.</p>
 <h3><span aria-hidden="true">✅ </span>Colors</h3>
 <p>I still need to get my head around <a href="https://svgees.us/blog/colorHistory.html">colors,</a> even though I’ve seen Chris Lilley talk enthusiastically about them. Lack of extensive knowledge aside, no longer being stuck in the sRGB color space and instead embracing <a href="https://css-tricks.com/the-expanding-gamut-of-color-on-the-web/">the abilities of wide-gamut displays</a> should be a no-brainer.</p>
-<p>Browser support is splendid, this is now a hardware topic. I haven’t seen colors beyond sRGB myself, as I do not own a capable display.</p>
+<p>Browser support is splendid, but this is also a hardware topic. I usually don’t see colors beyond sRGB<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Jump to footnote #2">[2]</a></sup>, as I do not own a capable display.</p>
 <p>My recommendation would be that you get accustomed to all things color, if you didn’t already. Start off by using <code>rgb()</code>—or even better <code>hsl()</code>—instead of <code>rgba()</code> when you need transparency. <a href="https://www.matuzo.at/blog/2022/100daysof-day11">Space-separated <code>rgb()</code></a> of course. Then take it from there all the way to color functions like <code>color-mix()</code>.</p>
 <p><strong class="subtle">Verdict:</strong> Niche? First world problem?</p>
 <h3><span aria-hidden="true">✅ </span>Container Queries</h3>
@@ -79,6 +79,7 @@
 <h2 id="fns">Footnotes</h2>
 <ol>
 <li id="fn-1">This website is among those pet projects, and if you are reading this, 1. thank you, and 2. at least this pet project is apparently for more than “one people”. <a href="#ref-fn-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="fn-2">Chris Lilley <a href="#comment-1">reached out to me,</a> so I’ve revised this part: Initially I concluded that’ve never seen any, but I can’t be sure about that, even if we’d limit this to computer monitors and phone screens. <a href="#ref-fn-2" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
 </ol>
 </section>
 </div>
@@ -88,7 +89,35 @@
 <h3><span data-href="https://mas.to/@CSSence/111702816956172587, https://twitter.com/CSSence/status/1743214767861354978"><b>Matthias Zöchling</b> wrote on <time>2024-01-05T10:56:06Z</time></span></h3>
 <p>📝 New blog post: “Is CSS alive?”<br>A list of major (new) #CSS features with cross-browser support.<br><a href="/2024/is-css-alive/">cssence.com/2024/is-css-alive</a></p>
 </article>
-<p>No comments have been added so far.</p>
+<article>
+<h3><a href="https://mastodon.social/@svgeesus/111703504892598213"><b>Chris Lilley</b> wrote on <time>2024-01-05T13:10:19Z</time></a></h3>
+<p>Thinking about this part:</p>
+<blockquote>
+<p>Browser support is splendid, this is now a hardware topic. I haven’t seen colors beyond sRGB myself, as I do not own a capable display.</p>
+</blockquote>
+<p>Firstly you have, because the real world exists.</p>
+<p>However it would be interesting to do a survey of WCG display availability to Web developers (and browser devs, too).</p>
+<p>#CSS #color</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/111704120700671104"><b>Matthias Zöchling</b> wrote on <time>2024-01-05T15:46:55Z</time></a></h3>
+<p data-chain="reply">In reply to: @svgeesus.</p>
+<p>Fair enough, will try to phrase this better.</p>
+<p>Forget my private devices (12yo Linux laptop, 6yo Android phone), but I did try on my relatively new company Windows 10 laptop, got lost in advanced color settings and eventually gave up.</p>
+<p>The CSS Tricks article I’ve linked to mentions an “eye-catching shade of pink”. The referenced site uses <code>color(display-p3 1 .012 .29 / 1)</code>, no fallback, turns out “passable red” on my end. But maybe I’m not doing this right, as stated, lack of knowledge.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/111704980390397459"><b>Matthias Zöchling</b> wrote on <time>2024-01-05T19:07:25Z</time></a></h3>
+<p data-chain="reply">In reply to: @svgeesus.</p>
+<p>I’ve updated my blog post.</p>
+<p>And I too think that such a survey would be helpful.</p>
+<p>Full disclosure, development and testing related to web accessibility is what I get paid for these days. Doing so, I spend a lot of time listening to Narrator, looking at a screen in Windows High Contrast Mode, maybe I shouldn’t be talking about colors in the first place 😉.</p>
+</article>
+<article>
+<h3><a href="https://mastodon.social/@svgeesus/111705453338227203"><b>Chris Lilley</b> wrote on <time>2024-01-05T21:25:49Z</time></a></h3>
+<p data-chain="reply">In reply to: @CSSence.</p>
+<p>Nope. Color very definitely has an accessibility component, so it is great to have the A11y community checking out this stuff too.</p>
+</article>
 </aside>
 </article>
 </main>
