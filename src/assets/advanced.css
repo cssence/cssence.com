@@ -825,17 +825,18 @@ footer.metadata p:nth-child(5)::after {
 		border-color: CanvasText;
 		opacity: .3;
 	}
+	header img,
+	.posts li img,
 	i::before,
 	[data-chain]::before,
 	[data-hl]:empty::after,
 	.imprint a[href="#top"]::after,
-	.nav-else a::after {
-		-webkit-mask: none;
-		mask: none;
-		border: 1px dotted;
-	}
+	.nav-else a::after,
 	[data-hl="Home"] svg {
 		forced-color-adjust: none;
+	}
+	i::before {
+		color: inherit;
 	}
 }
 
