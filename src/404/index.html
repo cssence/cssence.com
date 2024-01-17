@@ -10,16 +10,29 @@
 <header>
 <h1>Page Not Found</h1>
 <p>404</p>
-<p><i>Internal</i><br><time>2015-05-18T15:25:00Z</time></p>
+<p><i>Internal</i><br><time>2024-01-17T07:12:00Z</time></p>
 </header>
 <div>
 <h2>Something went wrong</h2>
 <p>Please continue by using the <a href="#navigation">navigation</a> or start over at the <a href="/">home page</a>.</p>
-<blockquote>
-<p>Truth be told, this is unacceptable.</p>
-<footer>— <cite><a href="/404/">Page Not Found</a>, Matthias&nbsp;Beitl, 2015</cite></footer>
-</blockquote>
-<p>I will put the content right here once I’ve found out where it went. I&nbsp;promise.</p>
+<style media="screen">
+form{display:block !important}
+form p.subtle{position:relative;padding:3rem var(--padding-horizontal,1em);background-color:var(--color-bg-subtle,#7771);border:.0625rem dashed;border-radius:var(--padding-horizontal,1em);letter-spacing:normal;text-align:center;text-transform:none}
+@media (max-width: 55.45em){label{display:block}}
+input[type="file"]{font:inherit}
+label::before{content:"";position:absolute;inset:0}
+/*input[type="file"]::file-selector-button{appearance:none}*/
+</style>
+<style media="screen" title="Advanced Style">
+input[type="file"]:focus{outline:.1875rem double;outline-offset:.0625rem}
+input[type="file"]:focus:not(:active){background:var(--color-focus) !important;box-shadow:0 0 0 .1875rem var(--color-focus);color:var(--color-dark)}
+</style>
+<form hidden aria-labelledby="quick-fix" action="upload-failed">
+<h2 id="quick-fix" class="subtle">Quick Fix</h2>
+<p>If you are absolutely 100% sure that there should be a page here, you can upload one yourself:</p>
+<p class="subtle"><label for="nonsense">Upload missing page: </label><input type="file" id="nonsense" name="nonsense" accept="text/html"></p>
+<p>Goes without saying, this is a joke.</p>
+</form>
 </div>
 </article>
 </main>
