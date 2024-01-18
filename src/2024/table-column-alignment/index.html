@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="c-note" lang="en">
+<head>
+<title>Table Column Alignment</title>
+<meta name="description" content="Amelia Bellamy-Royds asks when/why browsers stopped supporting the HTML align attribute on table columns.">
+<link rel="alternate" type="text/html" href="https://twitter.com/CSSence/status/1581879248109068288" title="Thread on twitter.com">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Table Column Alignment</h1>
+<p>Did <code>align</code> ever work on <code>&lt;col&gt;</code>?</p>
+<p><i>Note</i><br><time>2024-01-18T06:28:37Z</time></p>
+</header>
+<div>
+<h2 class="visually-hidden" id="comments">Message thread</h2>
+<article>
+<h3><a href="https://front-end.social/@AmeliaBR/111774558295119081"><b>Amelia Bellamy-Royds</b> wrote on <time>2024-01-18T02:20:07Z</time></a></h3>
+<p>OK, web standards nerds:</p>
+<p>When/why did browsers stop supporting the HTML align attribute on table columns?</p>
+<p>Yes, it’s deprecated in the specs along with all other uses of the align attribute, but there’s no other way to do table column alignment other than very fragile nth-child selectors to count out individual table cells per row, which don’t work for complex table layouts.</p>
+<p>See this thread started by <a href="">@simevidas</a> &amp; the basic test case:<br><a href="https://jsbin.com/dotogah/edit?html,output">https://jsbin.com/dotogah/edit?html,output</a><br><a href="https://mastodon.social/@simevidas/111">https://mastodon.social/@simevidas/111</a></p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/111775535422273148"><b>Matthias Zöchling</b> wrote on <time>2024-01-18T06:28:37Z</time></span></h3>
+<p data-chain="reply">In reply to: @AmeliaBR, @simevidas.</p>
+<p><code>align</code> still works on <code>&lt;th&gt;</code>/<code>&lt;td&gt;</code>, maybe it never did on <code>&lt;col&gt;</code>?</p>
+<p>According to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/col#align">MDN</a> it should, would be interesting to see if it did work at some point. When I have access to older browsers later today I’ll run some tests.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/111777745767872280"><b>Matthias Zöchling</b> wrote on <time>2024-01-18T15:48:00Z</time></span></h3>
+<p data-chain="reply">In reply to: @AmeliaBR, @simevidas.</p>
+<p>This is hard, the old browsers cannot deal with https, and I cannot easily deploy an http-only test page. So far I can only say I found no https-capable browser (IE, Firefox, Safari, etc.) where <code>align</code> worked on <code>&lt;col&gt;</code>.</p>
+</article>
+</div>
+</article>
+</main>
+</body>
+</html>
