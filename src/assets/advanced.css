@@ -147,6 +147,9 @@ blockquote,
 em {
 	font-style: italic;
 }
+[id] {
+	scroll-margin-top: .75rem;
+}
 a {
 	color: inherit;
 	text-decoration-color: var(--color-accent);
