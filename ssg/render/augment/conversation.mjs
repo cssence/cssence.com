@@ -69,11 +69,10 @@ const modify = (content, meta) => {
 		let andShare = ` or simply ${shareUrl}`;
 		const replies = conversation.hook.urls.map((url, index) => {
 			const remote = url.split('/')[2];
-			const prefix = index === 0 ? 'Have your say ' : 'reply on ';
+			const prefix = index === 0 ? 'Have your say on ' : 'reply on ';
 			if (remote === 'twitter.com') {
 				url = `https://twitter.com/intent/tweet?in_reply_to=${url.split('/').pop()}`;
 				andShare = '';
-				//  or simply ${shareUrl.replace(' on Twitter/X', '')}
 			} else if (!knownRemotes.includes(remote)) {
 				console.warn(`Blog post ${meta.page.path} contains unknown remote ${url}.`);
 			}
