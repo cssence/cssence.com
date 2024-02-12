@@ -164,6 +164,7 @@ a:hover {
 	text-decoration-style: double;
 	text-decoration-thickness: .0625rem;
 }
+summary:focus:not(:active),
 a:focus:not(:active) {
 	background: var(--color-focus) !important;
 	box-shadow: 0 0 0 .1875rem var(--color-focus);
@@ -176,6 +177,7 @@ main a:focus::after {
 a:focus::after {
 	color: var(--color-light);
 }
+summary:focus,
 a:focus,
 pre[tabindex]:focus {
 	text-decoration: none;
@@ -184,6 +186,15 @@ pre[tabindex]:focus {
 }
 pre[tabindex]:focus {
 	outline-color: var(--color-dark);
+}
+summary {
+	width: fit-content;
+}
+li:has(> details:only-child) {
+	list-style-type: none;
+}
+li:has(> details:only-child) summary {
+	list-style-position: outside;
 }
 abbr[title] {
 	text-decoration: none;
