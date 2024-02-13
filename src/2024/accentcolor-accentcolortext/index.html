@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="c-note" lang="en">
+<head>
+<title>AccentColor and AccentColorText</title>
+<meta name="description" content="Today I learned about two new CSS system colors.">
+<link rel="alternate" type="text/html" href="https://mas.to/@CSSence/111923231644811411" title="Thread on mas.to">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>AccentColor and AccentColorText</h1>
+<p><i>Note</i><br><time>2024-02-13T08:29:42Z</time></p>
+</header>
+<div>
+<h2 class="visually-hidden" id="comments">Message thread</h2>
+<article>
+<h3><a href="https://front-end.social/@mia/111922702873228540"><b>Miriam Suzanne</b> wrote on <time>2024-02-13T06:15:14Z</time></a></h3>
+<p>Form controls use the system <code>accentColor</code> (which authors can access but not set in CSS), unless we provide an <code>accent-color</code> (which authors can set but not access in CSS).</p>
+<p>Obviously.</p>
+<p><a href="https://codepen.io/miriamsuzanne/pen/OJqBGzp">codepen.io/miriamsuzanne/pen/OJqBGzp</a></p>
+</article>
+<article>
+<h3><a href="https://front-end.social/@mia/111922729885552954"><b>Miriam Suzanne</b> wrote on <time>2024-02-13T06:22:06Z</time></a></h3>
+<p data-chain="continue">Continued from previous comment.</p>
+<p>We can’t set <code>accentColor</code> for good reason. That gives us CSS access to the operating system accent color, which can also be set by users.</p>
+<p>And we don’t necessarily need CSS access to the <code>accent-color</code> because… we set it. We can set it from a variable, and access that variable if we want.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/111923231644811411"><b>Matthias Zöchling</b> wrote on <time>2024-02-13T08:29:42Z</time></span></h3>
+<p data-chain="reply">In reply to: @mia.</p>
+<p>Wow, thanks, TIL! I’m using #CSS system colors frequently when tweaking things for High Contrast Mode (a.k.a Contrast Themes), but did not know about AccentColor and AccentColorText.</p>
+<p>I’ve updated my old blog post about <a href="/2022/accent-color-is-no-css-variable/">accent-color</a> and linked to your toot.</p>
+</article>
+</div>
+</article>
+</main>
+</body>
+</html>
