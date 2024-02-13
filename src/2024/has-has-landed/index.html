@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="c-code" lang="en">
+<head>
+<title>:has() Has Landed</title>
+<meta name="description" content="At long last, I’ve added a dash of :has() to my site.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/bGZQBox" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>:has() Has Landed</h1>
+<p><i>Code</i><br><time>2024-02-13T06:54:00Z</time><br><img src="/2024/has-has-landed/index.webp" alt=""></p>
+</header>
+<div>
+<p><code>:has()</code> has been the last entry in my recently published <a href="/2024/is-css-alive/">list of major (new) CSS features.</a> And I concluded:</p>
+<blockquote>
+<p>Game changer! Bigger than all of the above.</p>
+</blockquote>
+<p>And yet, there has been no occurance of this powerful selector on this site. Fair enough, it’s been only a couple of weeks since we got cross-browser support.</p>
+<h2>A dash of :has()</h2>
+<p>Lately, I’ve been adding a dash of <code>:has()</code> to my pull requests at work whenever possible. So it would only be matter of time until the same is true on my personal site. Last night, while I added support for <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code><sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup>, it finally happened.</p>
+<p>When I looked at the <a href="https://github.com/cssence/cssence.com/commit/7cd30e95d0fc5a8156300562a802a63590fe26f1">commit,</a> I found my first personal use of <code>:has()</code> to be rather unusual, which inspired this blog post.</p>
+<p>Let me write down what I ended up with verbatim:</p>
+<pre><a href="/2024/has-has-landed/code.first-use-of-has.css">View CSS code.</a></pre>
+<p>This essentially removes the bullet in every list item that contains a <code>&lt;details&gt;</code> element (and nothing else), and turns the <code>&lt;summary&gt;</code> triangle marker (i.e. its expanded/collapsed indicator) into the list item’s indicator.</p>
+<p>While this may be a bit too much of an edge case to end up in somebody’s <em>CSS&nbsp;Reset,</em> I found it cool enough to write about it, because it works without any additional styles.<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Footnote #2">[2]</a></sup>. In other words, it can be thrown on top of browsers’ bare user agent styles, which is exactly what I did in the accompanying CodePen.</p>
+<section>
+<h2 id="fns">Footnotes</h2>
+<ol>
+<li id="fn-1">Another first on this site. While <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> play an important role on one of my <a href="https://cv.cssence.com/">subdomains,</a> my blog managed to get by without them, that is, until I published the note <a href="/2024/seemingly-bookmarked/">»Seemingly Bookmarked«.</a> <a href="#ref-fn-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="fn-2"><code>list-style-position: outside</code> puts the marker outside of the focus ring, so in reality you may want to tweak that too. But you get the idea. <a href="#ref-fn-2" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+</ol>
+</section>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/111923081761317114, https://twitter.com/CSSence/status/1757311646475620605"><b>Matthias Zöchling</b> wrote on <time>2024-02-13T06:54:00Z</time></span></h3>
+<p>We can finally use <code>:has()</code>, and so I did. And it came out weird.<br><a href="/2024/has-has-landed/">cssence.com/2024/has-has-landed</a><br>#CSS</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>

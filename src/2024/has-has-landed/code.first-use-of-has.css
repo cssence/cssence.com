@@ -1,0 +1,6 @@
+li:has(> details:only-child) {
+	list-style-type: none;
+}
+li:has(> details:only-child) summary {
+	list-style-position: outside;
+}

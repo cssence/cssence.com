@@ -23,7 +23,7 @@
 <p>After all, this is how we adopted <a href="https://24ways.org/2009/working-with-rgba-colour/">transparency in colors</a> many years ago. We put a fallback color with <code>rgb()</code> or hex notation in place, and the desired <code>rgba()</code> color immediately afterwards.</p>
 <p>Using those new viewport units as an example, we set the <code>vb</code> and the <code>dvb</code> in succession:</p>
 <pre><a href="/2022/feature-detection-strategies/code.duplication.css">View CSS example.</a></pre>
-<p>Browsers that only support the <code>vb</code> unit will use that and ignore the <code>dvb</code> declaration.<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Jump to footnote #1">[1]</a></sup></p>
+<p>Browsers that only support the <code>vb</code> unit will use that and ignore the <code>dvb</code> declaration.<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup></p>
 <h2>2: Feature Queries</h2>
 <p>Sure enough, there are limits to redeclaration. Feature queries come into play when you have to reset things browsers <em>do</em> understand. Before <code>gap</code> (initially <code>grid-gap</code>) was supported in grid layout, we used margins to generate space between grid items. To future-proof things, we added a test for gap support using a <code>@supports</code> block, which included the proper way to do gaps, and the removal of the hacks. If you did those things without a feature query, the fallback margins would have vanished even in those browsers that still needed the hack, because all browsers understand the margin declaration.</p>
 <p>If we recreate the example above with feature queries, it looks more verbose:</p>

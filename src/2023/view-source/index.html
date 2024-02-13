@@ -23,26 +23,26 @@
 <p>At home though, I got internet access a little sooner than I did at work. If you have read about me being <a href="/2017/being-online-for-20-years/">»Online for Twenty Years« in 2017,</a> you know that 1997 was the time when I started to learn HTML to build my first website.</p>
 <p>In German-speaking countries, <a href="https://wiki.selfhtml.org/wiki/SELFHTML">SelfHTML</a> has been <em>the</em> resource to learn about HTML. Which is why I’d like to say the following.</p>
 <blockquote>
-<p>Thank you <a lang="de" href="https://wiki.selfhtml.org/wiki/SELFHTML:Verein/Chronik">Stefan Münz</a> for being there at the beginning of what was about to become my career.<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Jump to footnote #1">[1]</a></sup></p>
+<p>Thank you <a lang="de" href="https://wiki.selfhtml.org/wiki/SELFHTML:Verein/Chronik">Stefan Münz</a> for being there at the beginning of what was about to become my career.<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup></p>
 </blockquote>
 <p>SelfHTML's tagline has always been <em lang="de">“Die Energie des Verstehens”</em>, which would literally mean “The Energy of Understanding”, but is more likely meant as “The Power of Knowledge”. In any case, a great tagline indeed.</p>
-<p>Back then, SelfHTML offered the ability to download the whole documentation for offline use. And download I did, so I could work on my site locally without being online.<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Jump to footnote #2">[2]</a></sup></p>
+<p>Back then, SelfHTML offered the ability to download the whole documentation for offline use. And download I did, so I could work on my site locally without being online.<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Footnote #2">[2]</a></sup></p>
 <p>Safe to say, SelfHTML has taught me the fundamentals and principles of HTML, and soon JavaScript (or <a href="https://en.wikipedia.org/wiki/Dynamic_HTML">DHTML</a> as we called it). Additionally, I got quite some JavaScript knowledge from printed books, mainly in English, so I would not have to wait for them being translated.</p>
 <h2>How it progressed</h2>
 <p>Whenever I wanted to learn how certain things I saw on the web have been implemented, I used the browser feature <strong>View Source</strong> on the site in question to see its source code.</p>
 <p>And there it was. With no compiler obscuring anything, I could look at the raw HTML somebody else had written. Understanding it may have taken a bit, but at least it was readable to begin with.</p>
 <h2>How it’s going</h2>
-<p>To this day, browsers still fetch the raw HTML and just parse it.<sup><a id="ref-fn-3" href="#fn-3" role="doc-noteref" aria-label="Jump to footnote #3">[3]</a></sup></p>
+<p>To this day, browsers still fetch the raw HTML and just parse it.<sup><a id="ref-fn-3" href="#fn-3" role="doc-noteref" aria-label="Footnote #3">[3]</a></sup></p>
 <p>But!</p>
 <p>Viewing the source of today’s websites is no fun.</p>
 <ol>
 <li>Minifiers are usually first to blame, though to a certain degree you can get around them using the Web Developer Console. And if <a href="https://web.dev/source-maps/">Source Maps</a> exist, you may be even a bit better off. But all that means you need to learn about browser tools for debugging to begin with. Not great for those who are just getting started.</li>
-<li>More often than not, minification also comes with obfuscation, where primarily JavaScript becomes less readable, but also CSS class names and other stuff. The reasoning here is to reduce the number of bytes that need to be transferred to your browser. That sounds nice, but at an even greater rate, the number of bytes goes up thanks to the way we build websites today.<sup><a id="ref-fn-4" href="#fn-4" role="doc-noteref" aria-label="Jump to footnote #4">[4]</a></sup></li>
+<li>More often than not, minification also comes with obfuscation, where primarily JavaScript becomes less readable, but also CSS class names and other stuff. The reasoning here is to reduce the number of bytes that need to be transferred to your browser. That sounds nice, but at an even greater rate, the number of bytes goes up thanks to the way we build websites today.<sup><a id="ref-fn-4" href="#fn-4" role="doc-noteref" aria-label="Footnote #4">[4]</a></sup></li>
 <li>You can consider yourself lucky if you have actual HTML to begin with. Many websites (and especially “web apps”) these days forgo the server-side rendering, just deliver an almost empty <code>body</code> tag, and the content is built on the client’s browser using JavaScript.</li>
 </ol>
 <p>I could go on. Not that any of the aforementioned techniques are inherently bad, my point is that the way I got into the HTML game no longer works for those starting out today.</p>
 <p>On the other hand, things may have simply changed, nowadays someone just starting out will have alternate options, like interactive courses and the likes. Things I didn’t have.</p>
-<p>Still, my gut says the <em>barrier of entry</em> is higher today.<sup><a id="ref-fn-5" href="#fn-5" role="doc-noteref" aria-label="Jump to footnote #5">[5]</a></sup></p>
+<p>Still, my gut says the <em>barrier of entry</em> is higher today.<sup><a id="ref-fn-5" href="#fn-5" role="doc-noteref" aria-label="Footnote #5">[5]</a></sup></p>
 <h2>Coming full circle</h2>
 <p>If you got here after having read my editorial <a href="/2022/zero-vulnerabilities-found/">»Zero Vulnerabilities Found«,</a> you know that I did remove all dependencies from all my GitHub projects, with this website being the one that completed the list. As I didn’t want to write things like minifiers myself, I’ve decided to host my website without any minification and obfuscation, i.e. in a more readable way, like we used to.</p>
 <p>I guess this is me trying to give back to the community. If someone decides to <strong>view the page source</strong> on my site, they may be pleasantly surprised.</p>
