@@ -10,13 +10,17 @@
 <article>
 <header>
 <h1>Accent Color Access</h1>
-<p><i>Code</i><br><time>2022-03-23T08:17:09Z</time><br><img src="/2022/accent-color-is-no-css-variable/index.png" alt=""></p>
+<p><i>Code</i><br><time data-revised="2024-02-13T08:16:50">2022-03-23T08:17:09Z</time><br><img src="/2022/accent-color-is-no-css-variable/index.png" alt=""></p>
 </header>
 <div>
 <p>Yesterday <a href="https://twitter.com/Una/status/1506383666548822020">Una Kravets mentioned</a> that <code>accent-color</code> is now supported in all modern browsers. So now we have a simple and accessible way to make form controls feel more at home in our site theme.</p>
 <p>I wondered if you could access its value to use it for things beyond its purpose. However, it is no custom property, indicated by the fact that it does not start with two hyphens.</p>
 <p><abbr title="Too long, didn’t read">Tl;dr,</abbr> I could not find a way, but you can approach this the other way around, by using an actual custom property as an intermediary.</p>
 <pre><a href="/2022/accent-color-is-no-css-variable/code.accent-color-workaround.css">View CSS example.</a></pre>
+<section>
+<h2 id="updates">Update</h2>
+<p><time id="update-1" class="update" datetime="2024-02-13">February 13, 2024:</time> I just learned that <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/system-color">CSS system colors</a> named AccentColor and AccentColorText have been added at some point, thanks to <a href="https://front-end.social/@mia/111922702873228540">this toot by Miriam Suzanne.</a> Another thing to keep in mind.</p>
+</section>
 </div>
 <aside>
 <h2 id="comments">Comments</h2>
