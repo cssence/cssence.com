@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="c-code" lang="en">
+<head>
+<title>accent-color is no CSS variable, revisited</title>
+<meta name="description" content="But did you know there are also AccentColor and AccentColorText?">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/dyrwppa" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Accent Color Access, Revisited</h1>
+<p><i>Code</i><br><time>2024-02-14T18:15:00Z</time><br><img src="/2022/accent-color-is-no-css-variable/index.png" alt=""></p>
+</header>
+<div>
+<p>Earlier this week <a href="https://front-end.social/@mia/111922702873228540">Miriam Suzanne enlightened us</a> with the difference between <code>accent-color</code> and <code>AccentColor</code>, and she even added <a href="https://codepen.io/miriamsuzanne/pen/OJqBGzp">an interactive CodePen:</a></p>
+<blockquote>
+<p>Form controls use the <code>AccentColor</code>…<br>(which we can access, but not set)
+<p>… Unless we provide an <code>accent-color</code><br>(which we can set, but not access)</p>
+</blockquote>
+<p><a href="/2024/accentcolor-accentcolortext/">Initially I assumed</a> there is not much for me to do besides updating my article on <code>accent-color</code> from two years ago.</p>
+<p>But seeing that we may eventually end up with cross-browser support for <code>AccentColor</code>—<a href="https://caniuse.com/mdn-css_types_color_system-color_accentcolor_accentcolortext">only Chromium is missing</a> at the time of writing—, you now additionally have the option to go with the <strong>operating system (OS) default,</strong> and make use of it beyond form controls. Let’s not forget <code>AccentColorText</code>, so you actually have two colors, one for the text and the other for its background.</p>
+<p>Compare this to <code>accent-color</code>, here you do not really know what the accompanying text color will be, as browsers choose it for you. But they make sure it is accessible, contrast-wise. It is also worth pointing out, setting <code>accent-color</code> does not affect <code>AccentColor</code>, which always remains on the value defined by the OS.</p>
+<p>That said, if you want any custom color, you need the <a href="/2022/accent-color-is-no-css-variable/">custom properties solution</a> from the original article.</p>
+<p>Contrary, if you <em>do</em> want to piggyback on the default, just take a look at <a href="https://codepen.io/cssence/pen/dyrwppa">my simple CodePen example.</a></p>
+<p>To summarize:</p>
+<ul>
+<li><code>AccentColor</code> and <code>AccentColorText</code> are <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/system-color">CSS system colors</a> that can be assigned wherever a CSS property appreciates a color.</li>
+<li><code>accent-color</code> <em>is a CSS property</em> that a color can be assigned to.</li>
+</ul>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/111931414568378410, https://twitter.com/CSSence/status/1757847090594554077"><b>Matthias Zöchling</b> wrote on <time>2024-02-14T19:08:00</time></span></h3>
+<p>Quick reminder: <code>accent-color</code> is still no custom property.<br><a href="/2024/accent-color-is-no-css-variable-revisited/">cssence.com/2024/accent-color-is-no-css-variable-revisited</a></p>
+<p>Shoutout to @mia for inspiring me to write this follow-up article.</p>
+<p>#CSS #WebDevelopment</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>

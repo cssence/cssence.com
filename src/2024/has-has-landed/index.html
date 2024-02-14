@@ -39,6 +39,27 @@
 <h3><span data-href="https://mas.to/@CSSence/111923081761317114, https://twitter.com/CSSence/status/1757311646475620605"><b>Matthias Zöchling</b> wrote on <time>2024-02-13T06:54:00Z</time></span></h3>
 <p>We can finally use <code>:has()</code>, and so I did. And it came out weird.<br><a href="/2024/has-has-landed/">cssence.com/2024/has-has-landed</a><br>#CSS</p>
 </article>
+<article>
+<h3><a href="https://front-end.social/@kizu/111923372040649071"><b>Roma Komarov</b> wrote on <time>2024-02-13T09:05:25Z</time></a></h3>
+<p>Interestingly, Safari does not apply the <code>list-style-position</code> to the details. Probably worth it investigating if there is already a bug report for this, or filing up one if not yet, as both Chrome and Firefox support it, so this is just another <code>&lt;details&gt;</code> compat issue.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/111923399833947797"><b>Matthias Zöchling</b> wrote on <time>2024-02-13T09:12:29Z</time></span></h3>
+<p data-chain="reply">In reply to: @kizu.</p>
+<p>Thanks, and good to know. I have no Apple device at hand, and therefore been unable to test Safari, but will investigate on BrowserStack later today.</p>
+</article>
+<article>
+<h3><a href="https://front-end.social/@kizu/111923413301692541"><b>Roma Komarov</b> wrote on <time>2024-02-13T09:05:25Z</time></a></h3>
+<p data-chain="reply">In reply to: @CSSence.</p>
+<p>Quick search for the WebKit bug tracker:<br><a href="https://bugs.webkit.org/show_bug.cgi?id=157323">bugs.webkit.org/show_bug.cgi?id=157323</a>
+<p>Probably not worth it to fill up a new bug about this, but you could mention your article and the use case there, as a way to show that this is a thing that authors want. 🙂</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/111926411441167497"><b>Matthias Zöchling</b> wrote on <time>2024-02-13T21:58:22Z</time></span></h3>
+<p data-chain="reply">In reply to: @kizu.</p>
+<p>I see. This is because they are still riding the <code>::-webkit-details-marker</code> train. And sadly a case where adding their vendor prefix to my stylesheet doesn’t help, because the whole thing is not set up to be displayed as <code>list-item</code>. On the upside, it still looks decent in Safari, only the indentation is messed up.</p>
+<p>Anyway, I <a href="https://bugs.webkit.org/show_bug.cgi?id=157323#c17">added my example to the bug,</a> as you suggested.</p>
+</article>
 </aside>
 </article>
 </main>
