@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class="c-code" lang="en">
+<head>
+<title>Firefox &amp; Ellipsis</title>
+<meta name="description" content="Is ellipsis shown randomly inside a flex container?">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/QWoPoBB" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Firefox &amp; Ellipsis</h1>
+<p><i>Code</i><br><time>2024-02-21T08:36:00Z</time><br><img src="/2024/firefox-text-overflow-issue/index.webp" alt=""></p>
+</header>
+<div>
+<p>Yesterday at work I got what initially seemed be a simple bug report concerning <code>text-overflow: ellipsis</code> in Firefox. When a flex container (in our particular case inline-flex) contains a child that hides the overflow and uses aforementioned truncation strategy, Firefox seems to identify the need for showing the ellipsis even when there is no reason to do so. Digging deeper, I concluded there is no easy fix in sight, instead I need to file a bug report.</p>
+<p>When doing something like this, to make things easier for browser makers, you first look through existing bug tickets to see if this has already been reported. After that, ideally you replicate the issue in a simple HTML file, and wittle away everything that has nothing to do with the problem.</p>
+<p>This made the whole endeavour quite complex, given how random the issue is. I ended up using the character “i” repeatedly, until the issue kicks in. Then I used the same text, one time with one character added, one time one removed. The bug only appears at a certain sweat spot. But many times over, try adding more i’s until the issue appears again. And the font being used makes a difference too. (Side note: The bug report I got at work obviously used proper English text, so this can be reproduced with actual words.) What seems to be important is the presense of at least two flex children, the grandchild with <code>text-overflow</code> being in one of them.</p>
+<p>Testing with Firefox version 122, I’ve seen the incorrect text-overflow on Mac and Windows, initially Linux Mint seemed to be void of the issue. At that point I’ve always used the system’s default sans-serif font. However, once I’ve thrown a web font into the mix, Firefox on Linux has the same problem:</p>
+<p class="invert"><img src="/2024/firefox-text-overflow-issue/test-file-on-linux.webp" alt="The test file shown in Firefox on Linux, the system font does not cause the issue, whereas the web font “Inter” does."></p>
+<p>Looking at the CodePen I’ve created in Chromium and Safari, they never truncate, so one more reason to think this is a Firefox issue. Which is why <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1881220">I’ve submitted bug ticket #1881220.</a></p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/111968978715139071, https://twitter.com/CSSence/status/1760271865858138148"><b>Matthias Zöchling</b> wrote on <time>2024-02-20T11:21:00Z</time></span></h3>
+<p>Hello Firefox users, can you confirm (or provide other information to) a #CSS text-overflow issue I’ve encountered. Thanks in advance.<br><a href="/2024/firefox-text-overflow-issue/">cssence.com/2024/firefox-text-overflow-issue</a></p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>
