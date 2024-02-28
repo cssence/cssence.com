@@ -10,7 +10,7 @@
 <article>
 <header>
 <h1>Firefox &amp; Ellipsis</h1>
-<p><i>Code</i><br><time>2024-02-21T08:36:00Z</time><br><img src="/2024/firefox-text-overflow-issue/index.webp" alt=""></p>
+<p><i>Code</i><br><time data-revised="2024-02-29T10:10:30Z">2024-02-21T08:36:00Z</time><br><img src="/2024/firefox-text-overflow-issue/index.webp" alt=""></p>
 </header>
 <div>
 <p>Yesterday at work I got what initially seemed be a simple bug report concerning <code>text-overflow: ellipsis</code> in Firefox. When a flex container (in our particular case inline-flex) contains a child that hides the overflow and uses aforementioned truncation strategy, Firefox seems to identify the need for showing the ellipsis even when there is no reason to do so. Digging deeper, I concluded there is no easy fix in sight, instead I need to file a bug report.</p>
@@ -25,6 +25,27 @@
 <article>
 <h3><span data-href="https://mas.to/@CSSence/111968978715139071, https://twitter.com/CSSence/status/1760271865858138148"><b>Matthias Zöchling</b> wrote on <time>2024-02-20T11:21:00Z</time></span></h3>
 <p>Hello Firefox users, can you confirm (or provide other information to) a #CSS text-overflow issue I’ve encountered. Thanks in advance.<br><a href="/2024/firefox-text-overflow-issue/">cssence.com/2024/firefox-text-overflow-issue</a></p>
+</article>
+<article>
+<h3><a href="https://mastodon.social/@simevidas/112006517335359031"><b>Šime Vidas</b> wrote on <time>2024-02-28T01:30:21Z</time></a></h3>
+<p data-chain="reply">In reply to: @CSSence.</p>
+<p>So when you remove <code>display: inline-flex</code> from .child, the issue goes away, and nothing else changes. Is this declaration really needed?</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/112007862787502921"><b>Matthias Zöchling</b> wrote on <time>2024-02-28T07:12:31Z</time></span></h3>
+<p data-chain="reply">In reply to: @simevidas.</p>
+<p>Thanks for taking the time to investigate, I’ll take a look later at work.</p>
+<p>Additionally, the bug has already been marked as ‘fixed’ in Firefox.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/112008365477946377"><b>Matthias Zöchling</b> wrote on <time>2024-02-28T09:20:22Z</time></span></h3>
+<p>Regarding removing <code>inline-flex</code> on the second child, yes and no.</p>
+<p>For those who are interested, some context: This is about a <a href="https://designsystem.george-labs.com/storybook/?path=/story/components-dropdown-splitbutton--default">SplitButton React component</a> that contains two Button components, that is why both are <code>inline-flex</code>. I could change the second one in the way @simevidas suggested, but as said, in the bug I’ve filed you'll see that Mozilla is providing a fix.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/112014224936408718"><b>Matthias Zöchling</b> wrote on <time>2024-02-29T10:10:30Z</time></span></h3>
+<p>Important update: I was made aware that this breaks in other browsers too, when zoom level is below or above 100%.</p>
+<p>I then realized a way to fix it is to use <code>inline-grid</code> instead of <code>inline-flex</code> on the .parent, adding <code>grid-template-columns: 1fr 2.75rem</code>. This removes the need for the problematic calc() statement on the first child.</p>
 </article>
 </aside>
 </article>
