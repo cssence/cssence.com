@@ -5,8 +5,9 @@ const mimeTypeMap = {
 	'json': 'application/json',
 	'gif': 'image/gif',
 	'ico': 'image/vnd.microsoft.icon',
-	'jpg': 'image/jpeg', // TODO .jpeg
+	'jpg': 'image/jpeg',
 	'png': 'image/png',
+	'webp': 'image/webp',
 	'svg': 'image/svg+xml',
 	'txt': 'text/plain'
 };

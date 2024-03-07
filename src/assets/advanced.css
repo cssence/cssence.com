@@ -34,7 +34,7 @@
 html {
 	background-color: var(--color-bg);
 	color: var(--color-text);
-	font-family: "Lucida Bright", "Lucidabright", "Lucida Serif", "Lucida", "Noto Serif", "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", "Georgia", serif;
+	font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
 	font-size: 100%;
 	line-height: 1.625;
 	-webkit-tap-highlight-color: rgba(204,85,85,.5);
@@ -106,7 +106,7 @@ footer {
 }
 kbd,
 code {
-	font-family: "Consolas", "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Monaco", "Courier New", "Courier", monospace;
+	font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 }
 small,
 sup,
