@@ -19,7 +19,7 @@ const getPageData = (urlPath, content) => {
 	const thumbnailUrlPath = content[indicator].includes('<br><img') ? content[indicator].match(/<img src="([^"]+)/)[1] : undefined;
 	const dates = content[indicator].includes('<br><time') ? content[indicator].match(/<time( data-revised="([^"]+)")*>([^<]+)/).slice(2) : [undefined, undefined];
 	if (isIndexOrPage) dates.reverse(); // !isPostByYear posts are revised-only
-	const alternateUrl = content[ALT].startsWith('<link rel="alternate" type="text/html"') && !content[ALT].includes('data-syndication=') ? content[ALT].match(/href="([^"]+)/)[1] : undefined;
+	const alternateUrl = content[ALT].startsWith('<link rel="alternate"') && !content[ALT].includes('data-syndication=') ? content[ALT].match(/href="([^"]+)/)[1] : undefined;
 
 	return {
 		isIndex: isIndex,

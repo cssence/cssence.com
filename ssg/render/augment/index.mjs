@@ -88,6 +88,6 @@ const determine = (content, meta) => {
 		}
 	}
 
-};	
+};
 
 export default determine;

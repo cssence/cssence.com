@@ -4,7 +4,7 @@ const modify = (content, meta) => {
 
 	if (!meta.page.isPostByYear) return; // commenting not possible/allowed
 
-	const isStandaloneThread = meta.page.isPostByYear && content.includes('<h2 class="visually-hidden" id="comments">Message thread</h2>');
+	const isStandaloneThread = content.includes('<h2 class="visually-hidden" id="comments">Message thread</h2>');
 
 	const conversation = {thread: []};
 	if (isStandaloneThread) {

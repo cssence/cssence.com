@@ -107,6 +107,13 @@ figcaption {
 .nav-menu li {
 	white-space: pre-wrap; /* 2 whitespace */
 }
+.imprint p > span {
+	display: block;
+	margin-bottom: 1em;
+}
+a[href="#top"] {
+	float: right;
+}
 .nav-menu {
 	padding-top: 4em;
 	border-top: 2px solid;
