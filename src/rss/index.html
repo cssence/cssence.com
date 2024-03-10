@@ -3,6 +3,16 @@
 <head>
 <title>RSS Feeds</title>
 <meta name="description" content="A list of all RSS feeds on CSSence.com, subscribers welcome!">
+<style media="screen" title="Advanced Style">
+main ul{--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.13 11.73a2.13 2.13 0 1 0 0 4.25 2.13 2.13 0 1 0 0-4.25zM0 5.43V8.5c2 0 3.88.78 5.29 2.2a7.45 7.45 0 0 1 2.2 5.3h3.07C10.56 10.18 5.82 5.44 0 5.44zM0 0v3.07c7.13 0 12.92 5.8 12.92 12.93H16C16 7.18 8.82 0 0 0z'/%3E%3C/svg%3E");list-style-type:none}
+main li:has(> a)::before{content:"";position:absolute;width:1rem;height:1rem;margin:.3125rem 0 0 -1.75rem;background-color:currentColor;-webkit-mask:var(--icon) center / contain no-repeat;mask:var(--icon) center / contain no-repeat;forced-color-adjust:none}
+main h2 + ul > li:nth-child(8):nth-last-child(3) ~ li,
+main h2 + ul > li:nth-child(1) ~ li{margin-left:3.5rem}
+main h2 + ul > li:nth-child(2) ~ li{margin-left:5.25rem}
+main h2 + ul > li:nth-child(4) ~ li{margin-left:7rem}
+main h2 + ul > li:nth-child(9):nth-last-child(2) ~ li{margin-left:1.75rem}
+main ul ul li{margin-top:.75rem}
+</style>
 </head>
 <body>
 <main>
@@ -10,42 +20,54 @@
 <header>
 <h1>RSS Feeds</h1>
 <p>Subscribers welcome!</p>
-<p><i>Internal</i><br><time>2024-03-08T21:18:00Z</time><br><img src="/rss/index.webp" alt=""></p>
+<p><i>Internal</i><br><time>2024-03-10T23:34:00Z</time><br><img src="/rss/index.webp" alt=""></p>
 </header>
 <div>
-<p>The following <a href="https://aboutfeeds.com/">RSS feeds</a> are available on this site. You may subscribe to an individual feed, multiple feeds, or whatever makes sense for you.</p>
-<style media="screen" title="Advanced Style">
-style + ul {
-	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.13 11.73a2.13 2.13 0 1 0 0 4.25 2.13 2.13 0 1 0 0-4.25zM0 5.43V8.5c2 0 3.88.78 5.29 2.2a7.45 7.45 0 0 1 2.2 5.3h3.07C10.56 10.18 5.82 5.44 0 5.44zM0 0v3.07c7.13 0 12.92 5.8 12.92 12.93H16C16 7.18 8.82 0 0 0z'/%3E%3C/svg%3E");
-	list-style-type: none;
-}
-style + ul li::before {
-	content: "";
-	position: absolute;
-	width: 1rem;
-	height: 1rem;
-	margin: .3125rem 0 0 -1.75rem;
-	background-color: currentColor;
-	-webkit-mask: var(--icon) center / contain no-repeat;
-	mask: var(--icon) center / contain no-repeat;
-	forced-color-adjust: none;
-}
-style + ul li:nth-child(1) ~ li{margin-left:3.5rem}
-style + ul li:nth-child(2) ~ li{margin-left:5.25rem}
-style + ul li:nth-child(4) ~ li{margin-left:7rem}
-</style>
+<aside class="standoff" aria-labelledby="good-to-know">
+<h2 id="good-to-know" data-follow-up="💡">Good to know</h2>
+<p>What’s RSS?</p>
+<p>What’s a feed?</p>
+<p>Learn more at <a href="https://aboutfeeds.com/">aboutfeeds.com.</a></p>
+</aside>
+<p>Tl;dr, just take me the <a href="#feeds">available feeds.</a></p>
+<h2>Introduction</h2>
+<p>The following RSS feeds are available on this site. You may subscribe to an individual feed, multiple feeds, or whatever makes sense for you.</p>
+<p>Most feeds contain only the twelve most recent blog posts, either across all sections, or limited to a particular section. If you’ve seen the navigation at the bottom of this page, or the Big Table on the <a href="/archive/">archive page,</a> said sections should be familiar.</p>
+<p>No rule without an exception, let’s talk about the 🐘 in the room: The first entry in the list goes beyond recent posts, and instead <a href="#all">contains all</a> blog posts ever written.</p>
+<p id="special-offer">And I have a <strong>special offer</strong> if you don’t want to get too invested: Subscribe only until the end of the year (<a href="#current-year">2024</a> at the time of writing). Your subscription will end automatically, no strings attached. You can always come back to this page and subscribe for another year. Previous years are there too, obviously those feeds are no longer updated, but maybe you feel nostalgic. 🙂</p>
+<h2 id="feeds">Available feeds</h2>
 <ul aria-label="Subscribe to RSS feed">
-<li><a href="/all/rss.xml">All</a></li>
-<li><a href="/latest/rss.xml">Latest</a></li>
+<li id="all"><a href="/all/rss.xml">All</a></li>
+<li id="latest"><a href="/latest/rss.xml">Latest</a></li>
 <li><a href="/notes/rss.xml">Notes</a></li>
 <li><a href="/articles/rss.xml">Articles</a></li>
 <li><a href="/code/rss.xml">Code</a></li>
 <li><a href="/editorials/rss.xml">Editorials</a></li>
 <li><a href="/essays/rss.xml">Essays</a></li>
 <li><a href="/events/rss.xml">Events</a></li>
+<li id="current-year"><a href="/2024/rss.xml">2024</a></li>
+<li id="previous-years">
+<details>
+<summary>Previous years</summary>
+<ul aria-label="Subscribe to no longer updated RSS feed">
+<li><a href="/2023/rss.xml">2023</a></li>
+<li><a href="/2022/rss.xml">2022</a></li>
+<li><a href="/2021/rss.xml">2021</a></li>
+<li><a href="/2020/rss.xml">2020</a></li>
+<li><a href="/2019/rss.xml">2019</a></li>
+<li><a href="/2018/rss.xml">2018</a></li>
+<li><a href="/2017/rss.xml">2017</a></li>
+<li><a href="/2016/rss.xml">2016</a></li>
+<li><a href="/2015/rss.xml">2015</a></li>
+<li><a href="/2014/rss.xml">2014</a></li>
+<li><a href="/2013/rss.xml">2013</a></li>
+<li><a href="/2012/rss.xml">2012</a></li>
+<li><a href="/2011/rss.xml">2011</a></li>
+<li><a href="/2010/rss.xml">2010</a></li>
 </ul>
-<p>Each feed contains the twelve most recent blog posts, either across all sections, or limited to a particular section. If you've seen the navigation at the bottom of this page, or the Big Table on the <a href="/archive/">archive page,</a> said sections should be familiar.</p>
-<p>No rule without an exception, let’s talk about the 🐘 in the room: The first entry in the list goes beyond recent posts, and instead contains all blog posts ever written.</p>
+</details>
+</li>
+</ul>
 </div>
 </article>
 </main>
