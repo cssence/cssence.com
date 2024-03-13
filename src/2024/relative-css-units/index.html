@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="c-code" lang="en">
+<head>
+<title>Relative CSS units</title>
+<meta name="description" content="Quite a few more units have entered the picture.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/eYoZrOw" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Relative CSS units</h1>
+<p><i>Code</i><br><time>2024-03-13T05:48:00Z</time><br><img src="/2024/relative-css-units/index.webp" alt=""></p>
+</header>
+<div>
+<p>It was only last week <a href="/2024/lh-unit-support/">when I learned</a> we have cross-browser support for the <code>lh</code> unit.</p>
+<p>Well, color me impressed, I realized its root relative companion <code>rlh</code> also exists, so I had to look up what else is out there, and it turns out we have all of them: <a href="https://nerdy.dev/new-relative-units-ric-rex-rlh-and-rch">Adam Argyle wrote about the relative units.</a> They may have gone unnoticed now that those container units are all the rage.</p>
+<p>In case you don’t know what they are for, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">MDN has you covered.</a></p>
+<p>Since Adam wrote his piece, some progress was made, e.g. the <code>cap</code> unit now has cross-browser support. But most of the root relative ones have not, so either leave them be, or use them with a fallback in place.</p>
+<h2>A real world example</h2>
+<p>What I do like is that both <code>lh</code> and <code>rlh</code> are already usable. I’ve worked on a number of projects where I wanted the margin between two paragraphs to be the excact size another line of text would occupy. To achieve this, I’ve used <code>em</code> or <code>rem</code> and took the line-height into account, in other words I had to calculate the value upfront, or even throw custom properties at <code>calc()</code>. This is something I won’t need to do anymore.</p>
+<pre><a href="/2024/relative-css-units/code.margin-lh.css">View CSS example.</a></pre>
+<p>Not only is the second one shorter (at least in this case), using <code>lh</code> makes it clear what the actual intent is.</p>
+<h2>The future</h2>
+<p>Things may even get more exciting once we have <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-height-step"><code>line-height-step</code></a>, which is part of <a href="https://drafts.csswg.org/css-rhythm/">CSS Rhythmic Sizing.</a> This might take a while.</p>
+<p>For now, what I do like even more is that <code>rex</code> 🦖 exists.</p>
+<p>Ah yes, I almost forgot: I’ve created an example page, that started out as a test page, but became an overview of all relative units, including the root relative ones.</p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/112086924219768164, https://twitter.com/CSSence/status/1767797845141209274"><b>Matthias Zöchling</b> wrote on <time>2024-03-13T06:18:53Z</time></span></h3>
+<p>Relative CSS units, do you know them all?<br><a href="/2024/relative-css-units/">cssence.com/2024/relative-css-units</a></p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>
