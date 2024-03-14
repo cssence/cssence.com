@@ -12,7 +12,7 @@ const getPageData = (urlPath, content) => {
 	// const heading = content[content.indexOf('<header>') + 1].match(/<h1[^>]*>([\s\S]+)<\/h1>/)[1];
 	const title = content[TITLE].match(/<title>([^<]+)/)[1];
 	const description = content[DESC].match(/<meta name="description" content="([^"]+)/)[1];
-	const className = content[ROOT].match(/class="([^"]+)"/)[1];
+	const className = content[ROOT].match(/class="([^" ]+)/)[1];
 	const isIndex = !content[content.indexOf('<main>') + 1].startsWith('<article');
 	const isIndexOrPage = isIndex || ['c-default', 'c-about'].includes(className);
 	const indicator = content.indexOf('</header>') - 1;
