@@ -36,6 +36,10 @@ hr {
 sub {
 	font-size: .5em;
 }
+kbd,
+code {
+	font-family: "Roboto Mono", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+}
 code {
 	font-size: .875em;
 	letter-spacing: -.02em;

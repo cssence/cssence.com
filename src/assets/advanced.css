@@ -34,7 +34,7 @@
 html {
 	background-color: var(--color-bg);
 	color: var(--color-text);
-	font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+	font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
 	font-size: 100%;
 	line-height: 1.625;
 	-webkit-tap-highlight-color: rgba(204,85,85,.5);
@@ -106,7 +106,7 @@ footer {
 }
 kbd,
 code {
-	font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+	font-family: "Roboto Mono", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 }
 small,
 sup,
