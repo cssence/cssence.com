@@ -38,7 +38,7 @@ const modify = (content, meta) => {
 		`<meta name="robots" content="${['/404/', '/about/about/', '/assets/'].includes(meta.page.path) ? 'no' : ''}index,follow">`,
 	];
 	const scripts = [
-		'<script src="/assets/ctm.js"></script>',
+		'<script src="/assets/old.js"></script>',
 	];
 
 	const swapAfter = content.indexOf('<head>') + 1;
