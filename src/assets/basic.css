@@ -1,3 +1,9 @@
+button,
+input,
+textarea,
+select {
+	font: inherit;
+}
 h1 {
 	margin-bottom: .5em;
 	font-size: 222.22222%;
@@ -26,6 +32,9 @@ img {
 	max-width: 100%;
 	margin: 0 auto;
 }
+form {
+	margin: 1em 0;
+}
 hr {
 	max-width: 50%;
 	margin: 3em auto;
@@ -38,7 +47,7 @@ sub {
 }
 kbd,
 code {
-	font-family: "Roboto Mono", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+	font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 }
 code {
 	font-size: .875em;
@@ -79,6 +88,7 @@ footer.metadata {
 	border-top: 1px dotted;
 }
 .standoff,
+form,
 pre,
 figure, p.figure {
 	margin-right: 0;
@@ -172,14 +182,20 @@ main .visually-hidden {
 	white-space: nowrap;
 }
 @media screen {
-	html {
+	body {
 		overflow: hidden scroll;
+		margin: 0;
+		padding: 2em 1em;
 		font: 112.5%/1.5 sans-serif;
 	}
-	body {
+	main,
+	body > footer {
+		display: block;
 		max-width: 40em;
 		margin: 0 auto;
-		padding: 2em 1em;
+	}
+	body > footer {
+		max-width: 60em;
 	}
 	pre {
 		overflow: auto;
@@ -189,6 +205,12 @@ main .visually-hidden {
 @media screen and (max-width: 24.95em) {
 	body {
 		font-size: 4.5vw;
+	}
+}
+@media screen and (max-width: 39.95em) {
+	form label::after {
+		content: '\0a';
+		white-space: pre;
 	}
 }
 @media print {

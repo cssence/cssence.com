@@ -1,0 +1,60 @@
+/*! Based on Microsoft Visual Studio Code Dark Modern theme, generated with https://prism.dotenv.dev/ */
+
+html pre[class*="language-"] {
+	background-color: #1f1f1f;
+	color: #ccc;
+}
+html pre.language-css > code {
+	color: #fd9170;
+}
+.token.variable,
+.token.operator {
+	color: #d4d4d4;
+}
+.token.prolog {
+	color: #000080;
+}
+.token.comment,
+.token.punctuation {
+	color: #6a9955;
+}
+.token.builtin {
+	color: #4fc1ff;
+}
+.token.number,
+.token.inserted {
+	color: #b5cea8;
+}
+.token.constant,
+.token.hexcode {
+	color: #646695;
+}
+.token.tag,
+.token.changed,
+.token.function,
+.token.keyword {
+	color: #569cd6;
+}
+.token.attr-name,
+.token.selector,
+.token.property {
+	color: #9cdcfe;
+}
+.token.deleted,
+.token.string {
+	color: #ce9178;
+}
+.token.regex,
+.token.char {
+	color: #d16969;
+}
+.token.class-name {
+	color: #4ec9b0;
+}
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}

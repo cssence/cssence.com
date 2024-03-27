@@ -1,38 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" class="c-default">
+<html lang="en" class="c-default advanced">
 <head>
 <title>Settings</title>
-<meta name="description" content="If you prefer something other than the defaults, you may customize this site.">
+<meta name="description" content="Enough with the defaults! Customize this site!">
+<link rel="stylesheet" media="screen" href="/settings/advanced.css" title="Advanced Style">
+<script type="module" src="/settings/modern.js"></script>
 </head>
 <body>
 <main>
 <article>
 <header>
 <h1>Settings</h1>
-<p><i>Internal</i><br><time>2022-12-01T07:56:01Z</time><br><img src="/settings/index.png" alt=""></p>
+<p><i>Internal</i><br><time>2024-03-23T20:05:00Z</time><br><img src="/settings/index.png" alt=""></p>
 </header>
 <div>
-<p>You may customize this site, at least in theory. The reality however is, right now this page serves as a placeholder for changes to come.</p>
-<p>Here is a list of things that are planned in an upcoming version of this site.</p>
-<ul>
-<li><strong>Style Toggle:</strong> <a href="/2020/css-naked-day/">CSS</a> is an enhancement anyway.</li>
-<li><strong>Monochrome Mode:</strong> <a href="/2019/we-are-web-clerks/#comment-9">Colors</a> are an enhancement anyway.</li>
-<li><strong>Dark Mode<ins><sup><a id="ref-update-1" href="#update-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup></ins>:</strong> Enjoy this site in a low-light environment.</li>
-<li><strong>Syntax Highlighting Theme Switcher:</strong> As discussed in <a href="/2019/ask-the-user/">“Ask the User”.</a></li>
-<li><strong>Time Zone Toggle:</strong> Show local time instead of UTC.</li>
-</ul>
-<h2>Disclaimer</h2>
-<p>This site works just fine without scripts. (JavaScript is an enhancement anyway.) But this page has to make an exception, because your preferences will be stored locally in your browser, something that is not possible without having JavaScript turned on. The warning message below is issued to indicate this simple fact.</p>
+<p>Not satisfied with the defaults? How about you change things to your liking?</p>
+<p></p>
 <noscript>
-<p>Adjusting anything on this page will not work because your web browser either supports no JavaScript or it has been turned off.</p>
+<blockquote>
+<p>CSSence.com works fine without JavaScript, but this page has to make an exception, because your preferences will be stored locally in your web browser, something that is <strong>not possible without having JavaScript turned on.</strong></p>
+<p>Making adjustments in the form below is not possible because your browser either supports no JavaScript or it has been turned off.</p>
+</blockquote>
 </noscript>
-<p>Did you see the warning? If not, then your web browser has JavaScript enabled.</p>
-<section>
-<h2 id="updates">Updates</h2>
-<ol>
-<li id="update-1"><time class="update" datetime="2022-11-13">November 13, 2022:</time> I actually did add Dark Mode as part of the <a href="/2022/dark-mode-color-palette/">Version&nbsp;4 Redesign</a> of this site, but there is nothing relevant for Settings yet. Currently the dark/light theme is applied based on preference only, courtesy of <code>prefers-color-scheme</code>. <a href="#ref-update-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
-</ol>
-</section>
+<form id="customization" action="." aria-label="Settings">
+<h3 class="subtle">Options</h3>
+<p><label for="page-style">Page style: </label><select id="page-style" name="page-style" disabled><option value="none">None</option><option value="basic">Basic</option><option value="advanced" selected>Advanced (Default)</option></select></p>
+<p><label for="color-scheme">Color scheme: </label><select id="color-scheme" name="color-scheme" disabled><option value="auto" selected>Automatic (Default)</option><option value="dark">Dark</option><option value="light">Light</option></select></p>
+<p><label for="syntax-highlighting">Syntax highlighting: </label><select id="syntax-highlighting" name="syntax-highlighting" disabled><option value="none">None</option><option value="dark" selected>CSSence Dark (Default)</option><option value="vscode-dark-modern">VSCode Dark Modern</option><option value="vscode-light-modern">VSCode Light Modern</option></select></p>
+<p><label for="cnd-observation">CND observation: </label><select id="cnd-observation" name="cnd-observation" disabled><option value="none">Unobserved</option><option value="24h" selected>24 hours (Default)</option><option value="50h">50 hours</option></select></p>
+<p class="submit"><button type="reset" disabled>Reset</button> <button type="submit" disabled><strong>Save</strong></button></p>
+</form>
 </div>
 </article>
 </main>

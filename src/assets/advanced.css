@@ -1,3 +1,5 @@
+html.advanced {
+
 * {
 	margin: 0;
 	padding: 0;
@@ -10,37 +12,35 @@
 *::after {
 	box-sizing: border-box;
 }
-:root {
-	--color-bg-subtle: #eaeaeb;
-	--color-bg: #fff;
-	--color-text: #313437;
-	--color-dark: #202225;
-	--color-light: #fff;
-	--color-focus: #f4ff17;
-	--color-accent-default: #d34b6c;
-	--color-accent-note: #4099ff;
-	--color-accent-code: #ff571a;
-	--color-accent-event: #2ac7b7;
-	--color-accent-essay: #ee82ee;
-	--color-accent-other: #bada55;
-	--padding-horizontal: 1.75rem;
-	--o: var(--padding-horizontal);
-	--height-header: 6.25rem;
-	--width-sidebar: 12.5rem;
-	--size-separator: .25rem;
-	--_pbs: calc(2 * var(--padding-horizontal) + var(--size-separator) + var(--width-sidebar));
-	color-scheme: light dark;
-}
-html {
-	background-color: var(--color-bg);
-	color: var(--color-text);
-	font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
-	font-size: 100%;
-	line-height: 1.625;
-	-webkit-tap-highlight-color: rgba(204,85,85,.5);
-}
+
+--color-bg-subtle: #eaeaeb;
+--color-bg: #fff;
+--color-text: #313437;
+--color-dark: #202225;
+--color-light: #fff;
+--color-focus: #f4ff17;
+--color-accent-default: #d34b6c;
+--color-accent-note: #4099ff;
+--color-accent-code: #ff571a;
+--color-accent-event: #2ac7b7;
+--color-accent-essay: #ee82ee;
+--color-accent-other: #bada55;
+--padding-horizontal: 1.75rem;
+--o: var(--padding-horizontal);
+--height-header: 6.25rem;
+--width-sidebar: 12.5rem;
+--size-separator: .25rem;
+--_pbs: calc(2 * var(--padding-horizontal) + var(--size-separator) + var(--width-sidebar));
+color-scheme: light dark;
+background-color: var(--color-bg);
+color: var(--color-text);
+font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+font-size: 100%;
+line-height: 1.625;
+-webkit-tap-highlight-color: rgba(204,85,85,.5);
+
 @media (prefers-color-scheme: dark) {
-	:root {
+	&:where(:has(meta[name="color-scheme"][content$="dark"])) {
 		--color-bg-subtle: var(--color-dark);
 		--color-bg: #080809;
 		--color-text: var(--color-light);
@@ -53,7 +53,32 @@ html {
 		--color-accent-event: #2ea59a;
 		--color-accent-essay: #c371c3;
 		--color-accent-other: #9fb751;
+
+		img:not([src$=".svg"]) {
+			filter: brightness(85%) grayscale(10%);
+		}
+		.invert img:not([src$=".svg"]) {
+			filter: brightness(85%) grayscale(10%) invert(1);
+		}
+		[data-hl="Home"] path:first-child {
+			fill: var(--color-text);
+		}
 	}
+}
+&:where(:has(meta[name="color-scheme"][content="dark"])) {
+	--color-bg-subtle: var(--color-dark);
+	--color-bg: #080809;
+	--color-text: var(--color-light);
+	--color-dark: #1b1c1e;
+	--color-light: #d9d9d9;
+	--color-focus: #ced726;
+	--color-accent-default: #aa425c;
+	--color-accent-note: #3c80cf;
+	--color-accent-code: #cd4c1e;
+	--color-accent-event: #2ea59a;
+	--color-accent-essay: #c371c3;
+	--color-accent-other: #9fb751;
+
 	img:not([src$=".svg"]) {
 		filter: brightness(85%) grayscale(10%);
 	}
@@ -65,14 +90,16 @@ html {
 	}
 }
 @media (prefers-reduced-motion: no-preference) {
-	html {
-		scroll-behavior: smooth;
-	}
+	scroll-behavior: smooth;
 }
 body {
 	position: relative;
 	padding: var(--height-header) var(--padding-horizontal) 0;
 }
+button,
+input,
+textarea,
+select,
 li::marker {
 	font: inherit;
 }
@@ -87,6 +114,7 @@ header p:last-child,
 .posts li p:last-child,
 img + small,
 .subtle,
+form,
 figure, .figure,
 blockquote,
 .posts h2,
@@ -106,7 +134,7 @@ footer {
 }
 kbd,
 code {
-	font-family: "Roboto Mono", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+	font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 }
 small,
 sup,
@@ -163,25 +191,27 @@ a:hover {
 	text-decoration-style: double;
 	text-decoration-thickness: .0625rem;
 }
-summary:focus:not(:active),
-a:focus:not(:active) {
+:is(a, button, select, summary):focus:not(:active) {
 	background: var(--color-focus) !important;
 	box-shadow: 0 0 0 .1875rem var(--color-focus);
 	color: var(--color-dark);
 	text-shadow: none !important;
 }
+li:has(> details:only-child) summary:focus::marker,
 main a:focus::after {
 	color: var(--color-text);
 }
 a:focus::after {
 	color: var(--color-light);
 }
-summary:focus,
-a:focus,
+:is(a, button, select, summary):focus,
 pre[tabindex]:focus {
 	text-decoration: none;
 	outline: .1875rem double;
 	outline-offset: .0625rem;
+}
+:is(button, select):focus {
+	outline: .0625rem solid;
 }
 pre[tabindex]:focus {
 	outline-color: var(--color-dark);
@@ -258,6 +288,26 @@ hr {
 [role="list"] {
 	list-style: none;
 }
+:disabled {
+	cursor: not-allowed;
+}
+button,
+select {
+	padding: .25rem .5rem;
+	background-color: var(--color-bg);
+	border: .0625rem solid;
+	border-radius: .25rem;
+	color: var(--color-text);
+}
+button {
+	border-width: .125rem;
+}
+form label:has(+ :disabled),
+form :disabled {
+	color: currentColor;
+	opacity: .5;
+}
+form,
 ol,
 ul,
 blockquote,
@@ -302,12 +352,14 @@ figcaption {
 	margin-top: .5rem;
 	line-height: 1.375;
 }
+form,
 figure, .figure {
 	background-color: var(--color-bg-subtle);
 }
 figure code, .figure code {
 	background-color: var(--color-bg);
 }
+form,
 figure, .figure,
 pre {
 	padding: .9375rem calc(var(--padding-horizontal) - .0625rem);
@@ -368,6 +420,7 @@ header img,
 	top: .1875rem;
 	right: 0;
 	width: var(--width-sidebar);
+	height: auto;
 	background-color: var(--color-accent);
 }
 header i::after {
@@ -378,43 +431,40 @@ header p:last-child {
 	margin-top: 1.5rem;
 	margin-bottom: 0;
 }
-.c-default,
-.c-article {
+:is(&.c-default, .c-default, &.c-article, .c-article) {
 	--color-accent: var(--color-accent-default);
 }
-.c-note {
+:is(&.c-note, .c-note) {
 	--color-accent: var(--color-accent-note);
 }
-.c-code {
+:is(&.c-code, .c-code) {
 	--color-accent: var(--color-accent-code);
 }
-.c-event {
+:is(&.c-event, .c-event) {
 	--color-accent: var(--color-accent-event);
 }
-.c-essay {
+:is(&.c-essay, .c-essay) {
 	--color-accent: var(--color-accent-essay);
 }
-.c-editorial,
-.c-about {
+:is(&.c-editorial, .c-editorial, &.c-about, .c-about) {
 	--color-accent: var(--color-accent-other);
 }
-.c-default i,
-.c-about i {
+:is(.c-default i, .c-about i) {
 	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 14.8c-3 0-5.4-3-5.4-6 0-3.1 1.8-7.7 5.4-7.7 3.7 0 5.5 4.6 5.5 7.8 0 3-2.4 5.9-5.5 5.9zM7 4.5c.2-.2.2-.5 0-.7a.5.5 0 0 0-.6 0 6 6 0 0 0-1.5 2.4c-.4.9-.5 1.9-.5 2.7a.5.5 0 0 0 .9 0c0-.7.1-1.6.4-2.4a5 5 0 0 1 1.3-2z'%3E%3C/path%3E%3C/svg%3E");
 }
-.c-essay i {
+:is(&.c-essay, .c-essay) i {
 	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6 10l2-1 7-7-1-1-7 7-1 2zM4.52 13.548c-0.494-1.043-1.026-1.574-2.069-2.069l1.548-4.262 2-1.217 6-6h-3l-6 6-3 10 10-3 6-6v-3l-6 6-1.217 2z'%3E%3C/path%3E%3C/svg%3E");
 }
-.c-editorial i {
+:is(&.c-editorial, .c-editorial) i {
 	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M0 16C2 10 7.234 0 16 0c-4.109 3.297-6 11-9 11H4l-3 5H0z'/%3E%3C/svg%3E");
 }
-.c-event i {
+:is(&.c-event, .c-event) i {
 	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M15.494 14.482 14.4 11.2h-1.2l.666 3.2H2.133l.666-3.2h-1.2L.505 14.482C.227 15.317.719 16 1.599 16h12.8c.88 0 1.372-.683 1.094-1.518zM12 4a4 4 0 1 0-8 0c0 3.82 4 8 4 8s4-4.18 4-8zm-6.16.048c0-1.193.966-2.159 2.16-2.159a2.158 2.158 0 1 1 0 4.319 2.16 2.16 0 0 1-2.16-2.16z'/%3E%3C/svg%3E");
 }
-.c-code i {
+:is(&.c-code, .c-code) i {
 	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M9 11.5l1.5 1.5 5-5-5-5L9 4.5 12.5 8zM7 4.5L5.5 3l-5 5 5 5L7 11.5 3.5 8z'/%3E%3C/svg%3E");
 }
-.c-note i {
+:is(&.c-note, .c-note) i {
 	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1c4.418 0 8 2.91 8 6.5S12.418 14 8 14c-.424 0-.841-.027-1.247-.079-1.718 1.718-3.77 2.027-5.753 2.072v-.421c1.071-.525 2-1.48 2-2.572a3.01 3.01 0 0 0-.034-.448C1.157 11.36 0 9.54 0 7.5 0 3.91 3.582 1 8 1z'/%3E%3C/svg%3E");
 }
 .standoff {
@@ -536,8 +586,8 @@ header,
 	content: "";
 	position: absolute;
 	width: 1.75rem;
-	margin-top: -1.5625rem;
-	border-top: .1875rem double var(--color-bg-subtle);
+	margin-top: -1.5rem;
+	border-top: .0625rem dotted;
 }
 #comments ~ article h3 {
 	top: .1875rem;
@@ -679,7 +729,7 @@ i {
 	font-size: .625rem;
 	opacity: .75;
 }
-.c-article header img,
+&.c-article header img,
 .posts li.c-article img,
 .nav-menu a.c-article {
 	background-image: linear-gradient(90deg, var(--color-accent-code) 15%, var(--color-focus), var(--color-accent-event), var(--color-accent-essay) 85%);
@@ -756,9 +806,8 @@ footer.metadata p:nth-child(5)::after {
 	margin-bottom: 2.0625rem;
 }
 @media (max-width: 55.45em) {
-	:root {
-		--padding-horizontal: .875rem;
-	}
+	--padding-horizontal: .875rem;
+
 	h1 {
 		font-size: 1.75rem;
 	}
@@ -806,19 +855,13 @@ footer.metadata p:nth-child(5)::after {
 	}
 }
 @media (max-width: 19.95em) {
-	html {
-		font-size: 5vw;
-	}
+	font-size: 5vw;
 }
 @media (min-width: 75em) {
-	html {
-		font-size: 1.125rem;
-	}
+	font-size: 1.125rem;
 }
 @media (min-width: 85em) {
-	:root {
-		--o: calc(50% - 33.25rem);
-	}
+	--o: calc(50% - 33.25rem);
 }
 @media (forced-colors: active) {
 	hr,
@@ -842,7 +885,7 @@ footer.metadata p:nth-child(5)::after {
 }
 
 main > div > header p:last-child > :is(i, time),
-html:where(.c-default, .c-about):not(.🥚) header p:last-child > :is(i, time),
+&:where(.c-default, .c-about):not(.🥚) header p:last-child > :is(i, time),
 .metadata address,
 [aria-labelledby="updates"] > hr,
 [aria-labelledby="fns"] > hr,
@@ -860,4 +903,285 @@ header br,
 	clip: rect(0,0,0,0);
 	border: 0;
 	white-space: nowrap;
+}
+
+}
+
+html.basic {
+
+button,
+input,
+textarea,
+select {
+	font: inherit;
+}
+h1 {
+	margin-bottom: .5em;
+	font-size: 222.22222%;
+	line-height: 1.125;
+}
+h1 + p:not(:last-child) {
+	margin-top: -1em;
+	margin-bottom: 1.125em;
+}
+header p:last-child {
+	margin-bottom: 2em;
+}
+h2 {
+	margin-top: 2em;
+}
+i::after {
+	content: " — ";
+	white-space: pre;
+}
+i,
+address {
+	font-style: inherit;
+}
+img {
+	display: block;
+	max-width: 100%;
+	margin: 0 auto;
+}
+form {
+	margin: 1em 0;
+}
+hr {
+	max-width: 50%;
+	margin: 3em auto;
+	border: none;
+	border-top: 1px dashed;
+	color: inherit;
+}
+sub {
+	font-size: .5em;
+}
+kbd,
+code {
+	font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
+code {
+	font-size: .875em;
+	letter-spacing: -.02em;
+}
+blockquote {
+	margin-left: 1px;
+	padding-left: 1.5em;
+	border-left: .25em solid;
+	font-family: serif;
+	font-style: italic;
+}
+ol,
+ul,
+dd,
+#comments ~ article {
+	margin-left: 1px;
+	padding-left: 1.75em;
+}
+footer.metadata {
+	margin-top: 8em;
+}
+.posts li {
+	margin-bottom: 1.5em;
+	padding-bottom: .75em;
+	border-bottom: 1px dotted;
+}
+.posts h3 + p {
+	margin: -.75em 0 -.25em;
+}
+#comments ~ article h3 {
+	margin-top: 2.66667em;
+	margin-left: -2.33333em;
+	padding-left: 1px;
+}
+#comments ~ section {
+	margin-top: 2em;
+	border-top: 1px dotted;
+}
+.standoff,
+form,
+pre,
+figure, p.figure {
+	margin-right: 0;
+	margin-left: 0;
+	padding: .875em 1.75em;
+	border: 1px dashed;
+}
+header p:last-child,
+.posts li p:last-child,
+img + small,
+figcaption,
+.standoff h2,
+#comments ~ article h3,
+[data-chain],
+footer {
+	font-size: 77.7777777%;
+}
+footer.metadata h2 {
+	font-size: 200%;
+}
+.standoff h2,
+figcaption {
+	margin-top: .5em;
+}
+.imprint nav {
+	margin-top: 4em;
+	margin-bottom: 4em;
+}
+.imprint p,
+.nav-menu li {
+	white-space: pre-wrap; /* 2 whitespace */
+}
+.imprint p > span {
+	display: block;
+	margin-bottom: 1em;
+}
+a[href="#top"] {
+	float: right;
+}
+.nav-menu {
+	padding-top: 4em;
+	border-top: 2px solid;
+}
+.nav-menu ul {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+.nav-menu li {
+	display: inline;
+}
+.nav-menu li + li::before {
+	content: " ";
+}
+[data-hl="Home"] {
+	display: inline;
+}
+[data-hl="Home"]::before {
+	content: "ence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com cssence.com css";
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	font-family: sans-serif;
+	font-size: 71.4285714%;
+	font-weight: 700;
+	letter-spacing: 1em;
+	line-height: 1;
+	text-decoration: none;
+	white-space: nowrap;
+	opacity: .5;
+}
+[data-hl="Home"] svg,
+header p:last-child br,
+.posts li p:last-child br,
+.posts li img {
+	display: none;
+}
+header img,
+main .visually-hidden {
+	overflow: hidden;
+	position: absolute;
+	z-index: 1;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	clip: rect(0,0,0,0);
+	border: 0;
+	white-space: nowrap;
+}
+@media screen {
+	body {
+		overflow: hidden scroll;
+		margin: 0;
+		padding: 2em 1em;
+		font: 112.5%/1.5 sans-serif;
+	}
+	main,
+	body > footer {
+		display: block;
+		max-width: 40em;
+		margin: 0 auto;
+	}
+	body > footer {
+		max-width: 70em;
+	}
+	pre {
+		overflow: auto;
+		tab-size: 2;
+	}
+}
+@media screen and (max-width: 24.95em) {
+	body {
+		font-size: 4.5vw;
+	}
+}
+@media screen and (max-width: 39.95em) {
+	form label::after {
+		content: '\0a';
+		white-space: pre;
+	}
+}
+@media print {
+	body {
+		margin: 0;
+		padding: 0;
+		font-size: 12pt;
+	}
+	.posts li a::before {
+		content: "https://cssence.com" attr(href);
+		display: block;
+		margin-bottom: .5em;
+		font-size: 87.5%;
+		font-weight: 400;
+	}
+	header p:last-child {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		margin: 0;
+		border-bottom: 1px solid;
+	}
+	header p:last-child::before {
+		position: absolute;
+		content: "cssence.com";
+		left: 50%;
+		width: 80mm;
+		margin-left: -40mm;
+		font-weight: 700;
+		text-align: center;
+	}
+	header time {
+		float: right;
+	}
+	h1 {
+		margin-top: 20mm;
+	}
+	a {
+		color: inherit !important;
+		text-decoration: none;
+	}
+	pre {
+		tab-size: 4;
+		white-space: pre-wrap;
+	}
+	footer.metadata h2 {
+		margin: 0;
+		border-top: 1px solid;
+		font-size: inherit;
+	}
+	footer.metadata p {
+		margin: 0;
+	}
+	header i::after,
+	#comments ~ section,
+	.codepen,
+	body > footer {
+		display: none;
+	}
+}
+
 }

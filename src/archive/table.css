@@ -1,3 +1,5 @@
+html.advanced {
+	
 table {
 	--_s2: var(--width-sidebar) / 2;
 	margin: 3rem 0;
@@ -69,4 +71,6 @@ table data {
 }
 tbody data[value="0"] {
 	color: var(--color-bg-subtle);
+}
+
 }

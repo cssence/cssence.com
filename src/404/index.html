@@ -1,8 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" class="c-default">
+<html lang="en" class="c-default advanced">
 <head>
 <title>Not Found</title>
 <meta name="description" content="This page does not exist. Don’t feel bad, it happens all the time.">
+<style media="screen" title="Advanced Style">html.advanced {
+form .submit{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1rem;margin-bottom:1.5rem}
+@media (min-width: 55.5em){
+	form .submit{grid-template-columns: 2fr 1fr 1fr}
+	form .submit::before{content:''}
+}
+.upload{position:relative;margin-top:1.5rem;padding:3rem .5rem;background-color:var(--color-bg);border:.0625rem dashed;border-radius:.125rem;text-align:center}
+@media (max-width: 55.45em){
+	label{display:block}
+}
+label::before{content:"";position:absolute;inset:0}
+input[type="file"]::file-selector-button{padding:.125rem .5rem;background-color:var(--color-bg);border:.125rem solid;border-radius:.25rem;color:var(--color-text);font:inherit}
+input[type="file"]:focus{outline:.1875rem double;outline-offset:.0625rem}
+input[type="file"]:focus:not(:active){background:var(--color-focus) !important;box-shadow:0 0 0 .1875rem var(--color-focus);color:var(--color-dark)}
+}</style>
 </head>
 <body>
 <main>
@@ -10,29 +25,18 @@
 <header>
 <h1>Page Not Found</h1>
 <p>404</p>
-<p><i>Internal</i><br><time>2024-01-17T07:12:00Z</time></p>
+<p><i>Internal</i><br><time>2024-03-22T07:58:00Z</time></p>
 </header>
 <div>
 <h2>Something went wrong</h2>
 <p>Please continue by using the <a href="#navigation">navigation</a> or start over at the <a href="/">home page</a>.</p>
-<style media="screen">
-form{display:block !important}
-form p.subtle{position:relative;padding:3rem var(--padding-horizontal,1em);background-color:var(--color-bg-subtle,#7771);border:.0625rem dashed;border-radius:var(--padding-horizontal,1em);letter-spacing:normal;text-align:center;text-transform:none}
-@media (max-width: 55.45em){label{display:block}}
-input[type="file"]{font:inherit}
-label::before{content:"";position:absolute;inset:0}
-/*input[type="file"]::file-selector-button{appearance:none}*/
-</style>
-<style media="screen" title="Advanced Style">
-input[type="file"]:focus{outline:.1875rem double;outline-offset:.0625rem}
-input[type="file"]:focus:not(:active){background:var(--color-focus) !important;box-shadow:0 0 0 .1875rem var(--color-focus);color:var(--color-dark)}
-</style>
-<form hidden aria-labelledby="quick-fix" action="upload-failed">
 <h2 id="quick-fix" class="subtle">Quick Fix</h2>
 <p>If you are absolutely 100% sure that there should be a page here, you can upload one yourself:</p>
-<p class="subtle"><label for="nonsense">Upload missing page: </label><input type="file" id="nonsense" name="nonsense" accept="text/html"></p>
-<p>Goes without saying, this is a joke.</p>
+<form action="upload-nonsense" aria-labelledby="quick-fix">
+<p class="upload"><label for="file">Upload page: </label><input type="file" id="file" name="file" accept="text/html"></p>
+<p class="submit"><button type="reset">Reset</button> <button type="submit"><strong>Submit</strong></button></p>
 </form>
+<p>Goes without saying, this is a joke. Or not? Well, submitting the file will also return 404, to remain consistent.</p>
 </div>
 </article>
 </main>

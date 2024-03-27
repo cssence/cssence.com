@@ -10,13 +10,13 @@ const modify = (content, meta) => {
 		meta.page.path === '/' ? content[TITLE] : `<title>${meta.page.title} - CSSence.com</title>`, // this also replaces all &nbsp;
 		content[DESC],
 		`<meta name="author" content="${meta.date.getAuthor(meta.page.published || meta.page.revised)}">`,
+		'<meta name="color-scheme" content="light dark">',
 		`<link rel="canonical" href="${meta.getPermalink(meta.page.path)}">`,
 	];
 	const styles = [
 		'<link rel="alternate stylesheet" media="screen" href="/assets/basic.css" title="Basic Style">',
 		'<link rel="stylesheet" media="screen" href="/assets/advanced.css" title="Advanced Style">',
 		'<link rel="stylesheet" media="print" href="/assets/basic.css">',
-		'<meta name="color-scheme" content="light dark">',
 	];
 	const crap = [
 		`<meta property="og:type" content="${meta.page.isIndex ? 'website' : 'article'}">`,
@@ -38,7 +38,8 @@ const modify = (content, meta) => {
 		`<meta name="robots" content="${['/404/', '/about/about/', '/assets/'].includes(meta.page.path) ? 'no' : ''}index,follow">`,
 	];
 	const scripts = [
-		'<script src="/assets/old.js"></script>',
+		'<script nomodule type="text/javascript" src="/assets/old.js"></script>',
+		'<script type="module" src="/assets/modern.js"></script>',
 	];
 
 	const swapAfter = content.indexOf('<head>') + 1;
@@ -56,7 +57,7 @@ const modify = (content, meta) => {
 				styles.push(content[i]);
 			} else if (content[i].startsWith('<style')) {
 				styles.push(content[i]);
-				if (!content[i].endsWith('</style>')) inside = {addTo: styles, until: '</style>'};
+				if (!content[i].endsWith('</style>')) inside = {addTo: styles, until: '}</style>'};
 			} else {
 				other.push(content[i]);
 			}
@@ -64,11 +65,11 @@ const modify = (content, meta) => {
 	}
 	const head = [
 		...intro,
-		...styles,
-		...crap,
-		...branding,
-		...other,
 		...scripts,
+		...styles,
+		...branding,
+		...crap,
+		...other,
 	];
 	content.splice(swapAfter, swapBefore - swapAfter, head.join('\n'));
 };	

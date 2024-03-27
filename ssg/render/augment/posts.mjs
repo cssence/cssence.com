@@ -28,7 +28,7 @@ const add = (content, meta) => {
 				`<li class="${card.className}">`,
 				`<h3><a href="${card.path}">${card.title}</a></h3>`,
 				`<p>${card.description}</p>`,
-				`<p><i>${indicator}</i><br>${date ? meta.date.format(date) : ''}<br><img src="${noThumbnail || card.thumbnail}" alt=""></p>`,
+				`<p><i>${indicator}</i><br>${date ? meta.date.format(date) : ''}<br><img src="${noThumbnail || card.thumbnail}" width="128" height="96" alt=""></p>`,
 				'</li>'
 			];
 			listItems.push(listItem.join('\n'));

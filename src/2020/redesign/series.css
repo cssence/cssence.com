@@ -1,3 +1,5 @@
+html.advanced {
+
 .standoff ol {
 	counter-reset: part;
 	list-style-type: disc;
@@ -5,7 +7,7 @@
 }
 @media (max-width: 39em) {
 	.standoff ol {
-		margin-right: calc(-1* var(--padding-horizontal));
+		margin-right: calc(-1 * var(--padding-horizontal));
 	}
 }
 .standoff li {
@@ -19,4 +21,6 @@
 }
 .standoff li:last-child {
 	margin-bottom: 0;
+}
+
 }

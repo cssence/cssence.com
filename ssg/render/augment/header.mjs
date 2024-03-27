@@ -11,6 +11,7 @@ const modify = (content, meta) => {
 	if (!content[i].includes('<br><img')) {
 		content[i] = content[i].replace('</p>', `<br><img src="${meta.page.thumbnail}" alt=""></p>`);
 	}
+	content[i] = content[i].replace('alt=""', 'width="128" height="96" alt=""');
 };
 
 export default modify;
