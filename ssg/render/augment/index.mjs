@@ -10,10 +10,11 @@ const determine = (content, meta) => {
 	const filter = (query) => {
 		// const unIndexed = (index) => !index.path.startsWith('/series/') || index.path === '/series/';
 		const unIndexed = (index) => index.path.split('/').length < 4 || index.path === '/about/about/';
+		const unEgged = (index) => index.type !== 'Easter egg';
 		if (query === '/all/' || query === '/latest/') {
 			return [].concat(meta.toc.posts);
 		} else if (query === '/about/about/') {
-			return meta.toc.indexes.filter(unIndexed).concat(meta.toc.pages);
+			return meta.toc.indexes.filter(unIndexed).concat(meta.toc.pages.filter(unEgged));
 		} else if (query === '/articles/') {
 			return meta.toc.posts.filter((post) => post.className !== 'c-note');
 		} else if (query === '/series/') {

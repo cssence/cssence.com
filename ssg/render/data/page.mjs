@@ -7,7 +7,7 @@ const storePageData = (urlPath, meta) => {
 
 const getPageData = (urlPath, content) => {
 
-	const ROOT = 1, TITLE = 3, DESC = 4, ALT = 5;
+	const ROOT = 1, TITLE = 3, DESC = 4, ALT = 5, INDICATOR = content.indexOf('</header>') - 1;
 
 	// const heading = content[content.indexOf('<header>') + 1].match(/<h1[^>]*>([\s\S]+)<\/h1>/)[1];
 	const title = content[TITLE].match(/<title>([^<]+)/)[1];
@@ -15,9 +15,9 @@ const getPageData = (urlPath, content) => {
 	const className = content[ROOT].match(/class="([^" ]+)/)[1];
 	const isIndex = !content[content.indexOf('<main>') + 1].startsWith('<article');
 	const isIndexOrPage = isIndex || ['c-default', 'c-about'].includes(className);
-	const indicator = content.indexOf('</header>') - 1;
-	const thumbnailUrlPath = content[indicator].includes('<br><img') ? content[indicator].match(/<img src="([^"]+)/)[1] : undefined;
-	const dates = content[indicator].includes('<br><time') ? content[indicator].match(/<time( data-revised="([^"]+)")*>([^<]+)/).slice(2) : [undefined, undefined];
+	const type = content[INDICATOR].match(/^<p><i>([^<]+)/)[1];
+	const thumbnailUrlPath = content[INDICATOR].includes('<br><img') ? content[INDICATOR].match(/<img src="([^"]+)/)[1] : undefined;
+	const dates = content[INDICATOR].includes('<br><time') ? content[INDICATOR].match(/<time( data-revised="([^"]+)")*>([^<]+)/).slice(2) : [undefined, undefined];
 	if (isIndexOrPage) dates.reverse(); // !isPostByYear posts are revised-only
 	const alternateUrl = content[ALT].startsWith('<link rel="alternate"') && !content[ALT].includes('data-syndication=') ? content[ALT].match(/href="([^"]+)/)[1] : undefined;
 
@@ -26,6 +26,7 @@ const getPageData = (urlPath, content) => {
 		isPostByYear: !isIndexOrPage,
 		page: {
 			path: urlPath,
+			type: type,
 			title: title,
 			description: description,
 			published: dates[1],

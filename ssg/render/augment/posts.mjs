@@ -5,16 +5,6 @@ const add = (content, meta) => {
 	const start = content.indexOf('<section class="posts">');
 	if (start === -1) return;
 
-	const indicatorMap = {
-		'c-default': 'Internal',
-		'c-about': 'Internal',
-		'c-code': 'Code',
-		'c-editorial': 'Editorial',
-		'c-essay': 'Essay',
-		'c-event': 'Event',
-		'c-note': 'Note'
-	};
-
 	const showAllPosts = meta.page.path === '/all/';
 	const showLatestPosts = meta.page.path === '/latest/';
 	const noThumbnail = showAllPosts ? '/404/index.png' : undefined;
@@ -22,13 +12,12 @@ const add = (content, meta) => {
 	for (const section of meta.page.sections) {
 		const listItems = [];
 		for (const card of section.cards) {
-			const indicator = card.isIndex ? (card.urlPath === '/' ? 'Home' : 'Index') : indicatorMap[card.className];
 			const date = card.published || card.revised;
 			const listItem = [
 				`<li class="${card.className}">`,
 				`<h3><a href="${card.path}">${card.title}</a></h3>`,
 				`<p>${card.description}</p>`,
-				`<p><i>${indicator}</i><br>${date ? meta.date.format(date) : ''}<br><img src="${noThumbnail || card.thumbnail}" width="128" height="96" alt=""></p>`,
+				`<p><i>${card.type}</i><br>${date ? meta.date.format(date) : ''}<br><img src="${noThumbnail || card.thumbnail}" width="128" height="96" alt=""></p>`,
 				'</li>'
 			];
 			listItems.push(listItem.join('\n'));
