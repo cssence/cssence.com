@@ -47,8 +47,6 @@ const getToc = async (folder, indexHtmlList) => {
 		for (const key of Object.keys(cardDefaults)) {
 			card[key] = cardDefaults[key];
 		}
-		// if (!card.className) card.className = 'c-default';
-		// if (!card.thumbnail) card.thumbnail = '/404/index.png';
 		toc.byPath[card.path] = card;
 	};
 	for (const index of toc.indexes) assign(index, { isIndex: true });

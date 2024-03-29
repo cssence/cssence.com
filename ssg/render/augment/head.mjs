@@ -65,9 +65,9 @@ const modify = (content, meta) => {
 	}
 	const head = [
 		...intro,
-		...scripts,
 		...styles,
 		...branding,
+		...scripts,
 		...crap,
 		...other,
 	];
