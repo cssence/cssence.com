@@ -18,7 +18,7 @@
 	const anchor = document.createElement('a');
 	anchor.rel = 'help';
 	anchor.href = `${domain}${helpUrl}`;
-	anchor.target = '_blank';
+	anchor.target = '_top';
 	anchor.textContent = 'Learn more';
 	document.body.appendChild(anchor);
 })(document);
