@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="c-code advanced">
+<head>
+<title>aspect-ratio Gotcha!</title>
+<meta name="description" content="Be careful when you want to use aspect-ratio on an image element that has width/height attributes.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/xxeKaXN" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>aspect-ratio Gotcha!</h1>
+<p><i>Code</i><br><time>2024-04-03T08:04:00Z</time><br><img src="/2018/maintaining-aspect-ratio-with-css-grid/index.png" alt=""></p>
+</header>
+<div>
+<p>Imagine you have a picture of a cat, and the image has a 4:3 <a href="/2022/maintaining-aspect-ratio-revisited/">aspect ratio.</a></p>
+<figure class="standoff"><img src="https://cssence.github.io/assets/placeholder.jpg" alt="Close-up of a cat sleeping in grass, the focus is on its head.">
+<figcaption><a href="https://cssence.github.io/#resources">My official placeholder image</a> happens to be the picture of a cat.</figcaption>
+</figure>
+<p>Now imagine you do not want to display it as-is, but instead you want to crop it to end up with a square image, in other words the image should have a 1:1 aspect ratio.</p>
+<p>Luckily we have <code>object-fit</code> for quite some time, which allows us to do the cropping. We no longer need to involve background images, we can simply use <code>object-fit: cover</code> and off we go. To turn aforementioned 4:3 image into a square one, all that is left to be done is to ensure <code>width</code> and <code>height</code> have the same value. Or, ensure <code>inline-size</code> and <code>block-size</code> have the same value, because that’s what the cool kids are using <a href="/2024/is-css-alive/">these days.</a></p>
+<pre><a href="/2024/aspect-ratio-gotcha/code.both-axis.css">View CSS code.</a></pre>
+<p>Next up, instead of setting both inline and block size, we could just use one of the two, and accompany it with <code>aspect-ratio: 1 / 1</code>.</p>
+<pre><a href="/2024/aspect-ratio-gotcha/code.aspect-ratio.css">View CSS code.</a></pre>
+<p>So far, both ways will give us the same result. Setting the aspect ratio prevents repeating the size, so I’d usually go with that.</p>
+<p>Even more so, the second version is what you will have to use when you don’t have a fixed size, i.e. in a <a href="/2020/happy-10th-birthday-responsive-web-design/">responsive scenario,</a> where the inline size should take up the available space. Setting the inline size to 100% will do just that, but depending on how your HTML is set up you may now no longer be able to do the same for the block size. Don’t worry, aspect ratio is here to save the day.</p>
+<pre><a href="/2024/aspect-ratio-gotcha/code.responsive.css">View CSS code.</a></pre>
+<h2>Here comes the gotcha!</h2>
+<p>For this last part, imagine the image you are trying to style has dimensions set in HTML. If you now simply did the same as in the last part, i.e. setting one dimension and aspect ratio, your image will end up stretched, because it already has both dimensions set, albeit in HTML and not in CSS.<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup></p>
+<pre><a href="/2024/aspect-ratio-gotcha/code.gotcha.html">View HTML code.</a></pre>
+<p>If your HTML would allow it, you could obviously simply remove the attributes there. If not<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Footnote #2">[2]</a></sup>, you have to go the extra mile: In order to undo the damage, you need to explicitly set either inline or block size to <code>auto</code>. Voilà, you’ve got your responsive behavior back.</p>
+<pre><a href="/2024/aspect-ratio-gotcha/code.resolved.css">View CSS code.</a></pre>
+<section>
+<h2 id="updates">Update</h2>
+<p>When I first published this blog post, I incorrectly assumed that you cannot use <code>aspect-ratio</code> when sizes are set in HTML, and instead have to go back and explicitly set both dimensions. Luckily, <a href="#comment-2">Roma Komarov reached out</a> and pointed me to the solution.</p>
+</section>
+<section>
+<h2 id="fns">Footnotes</h2>
+<ol>
+<li id="fn-1"><del>You could argue whether this is a bug or not. However, all the browsers I’ve tested agree in not supporting it.</del><ins> It is not a bug, as Roma pointed out on Mastodon. You need to give the browser a hint, so it knows which axis it can tamper with.</ins> <a href="#ref-fn-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="fn-2">In my case, I stumbled over this gotcha when I added dimensions to the thumbnail images on this site. I’ve set a smaller width &amp;&nbsp;height compared to their actual dimensions, so the thumbnails are not too in-your-face for visitors who decide to <a href="/settings/">display CSSence.com without styles,</a> or for all visitors <a href="/about/css-naked-day/">on April&nbsp;9.</a> <a href="#ref-fn-2" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+</ol>
+</section>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/112206404208486413"><b>Matthias Zöchling</b> wrote on <time>2024-04-03T08:04:00Z</time></span></h3>
+<p>#CSS quick tip: You *cannot* use <code>aspect-ratio</code> when an #HTML <code>&lt;img&gt;</code> element has width &amp; height attributes.<br><a href="/2024/aspect-ratio-gotcha/">cssence.com/2024/aspect-ratio-gotcha</a></p>
+</article>
+<article>
+<h3 id="comment-2"><a href="https://front-end.social/@kizu/112207586385716546"><b>Roma Komarov</b> wrote on <time>2024-04-03T13:44:51Z</time></a></h3>
+<p data-chain="reply">In reply to: @CSSence@mas.to.</p>
+<p>*you can, but you need to choose which dimension to prioritize, as you’d have to set the other one to <code>auto</code> and then <code>aspect-ratio</code> <em>will</em> work.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/112207633379271487"><b>Matthias Zöchling</b> wrote on <time>2024-04-03T13:56:48Z</time></span></h3>
+<p data-chain="reply">In reply to: @kizu@front-end.social.</p>
+<p>Nice, thanks. Will take a look later when I get back to my desk.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/112208525620768608"><b>Matthias Zöchling</b> wrote on <time>2024-04-03T17:35:00Z</time></span></h3>
+<p>Thanks again @kizu@front-end.social for pointing me to the solution to my aspect-ratio issue.</p>
+<p>What’s weird is that even on my site I solved the issue by setting the height to auto, which I did last week(!), and I already forgot. I don’t know what tomfoolery was in play here.
+</p>
+<p>Anyhow, the revised blog post is online. I got lucky this time, as I didn’t need to delete the whole post. Even the revision can use the original title, »aspect-ratio gotcha!« Gotcha indeed, it got me real good. 😅</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>

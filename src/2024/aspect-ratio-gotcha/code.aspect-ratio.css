@@ -1,0 +1,5 @@
+img {
+	object-fit: cover;
+	inline-size: 20rem;
+	aspect-ratio: 1; /* shortened variant of "1 / 1" */
+}

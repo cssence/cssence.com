@@ -1,0 +1,6 @@
+img {
+	object-fit: cover;
+	inline-size: 100%;
+	block-size: auto; /* undo the <img height> attribute */
+	aspect-ratio: 1; /* perfectly fine now! */
+}

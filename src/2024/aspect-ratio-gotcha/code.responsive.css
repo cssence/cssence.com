@@ -1,0 +1,6 @@
+img {
+	object-fit: cover; /* to avoid a stretched image */
+	inline-size: 100%;
+	/* block-size 100% may not work, so ratio it is! */
+	aspect-ratio: 1;
+}

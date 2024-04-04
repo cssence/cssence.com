@@ -1,0 +1,5 @@
+img {
+	object-fit: cover; /* to avoid a stretched image */
+	inline-size: 20rem;
+	block-size: 20rem; /* identical values for x + y */
+}
