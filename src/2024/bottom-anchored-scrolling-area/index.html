@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="c-code advanced">
+<head>
+<title>CSS-only bottom-anchored scrolling area</title>
+<meta name="description" content="I’ve added an additional wrapper to Kitty Giraudel’s CodePen.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/xxeYLNw" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>CSS-only bottom-anchored scrolling area</h1>
+<p><i>Code</i><br><time>2024-04-05T08:21:00Z</time><br><img src="/2024/bottom-anchored-scrolling-area/index.webp" alt=""></p>
+</header>
+<div>
+<blockquote>
+<p>Well, that title is a mouthful.</p>
+</blockquote>
+<p>This is what Kitty Giraudel said in <a href="https://kittygiraudel.com/2024/02/26/css-only-bottom-anchored-scrolling-area/">their blog post with the same name.</a> After reading it, I was immediately wondering if it would be possible to create something similar, but without the need to put the content in reverse order.
+</p>
+<p>What if I throw in an extra <code>&lt;div&gt;</code> between the scrollable region and the actual content, that should be it, right? Putting it to test on CodePen, it worked.</p>
+<pre><a href="/2024/bottom-anchored-scrolling-area/code.scrollable.html">View HTML code.</a></pre>
+<pre><a href="/2024/bottom-anchored-scrolling-area/code.scrollable.css">View CSS code.</a></pre>
+<p>For good measure, I went online to see if someone already had the idea, and I found a comment <a href="https://stackoverflow.com/questions/18614301/keep-overflow-div-scrolled-to-bottom-unless-user-scrolls-up">in the depths of StackOverflow</a> that states: <q>In fact, if you just add a div under container to un-reverse everything.</q>
+<p>That comment is from 2017. Fascinating, and a reminder that the <a href="https://en.wikipedia.org/wiki/CSS_Flexible_Box_Layout">Flexible Box Layout</a> has been with us for a long time.</p>
+<p>But I discovered another comment an that same StackOverflow page: <q>Doesn’t this solution break text selection? It’s selecting from bottom to top.</q></p>
+<p>I tried, and it does if you <em>do not</em> throw in the additional layer. So one more reason to use the approach the person on StackOverflow and I in this post recommend. Sadly we have to mess up the HTML a bit, but maybe at some point we'll get <a href="https://github.com/argyleink/ScrollSnapExplainers/tree/main/css-scroll-start">a CSS way to specify a starting position</a> for scrollable regions.</p>
+<p>Until then, for future historians, let it be known that this is the first (and hopefully last) time @CSSence recommended an additional <code>&lt;div&gt;</code>. 🥲</p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/112217654139168556, https://twitter.com/CSSence/status/1776164300119281863"><b>Matthias Zöchling</b> wrote on <time>2024-04-05T08:21:00Z</time></span></h3>
+<p>#CSS quick tip: Content inside a scrollable region can be shown scolled to bottom on page load,no #JS required, using flex’s <code>column-reverse</code>—h/t to @KittyGiraudel for their inspiring blog post.<br><a href="/2024/bottom-anchored-scrolling-area/">cssence.com/2024/bottom-anchored-scrolling-area/</a></p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>
