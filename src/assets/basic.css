@@ -98,11 +98,10 @@ figure, p.figure {
 }
 header p:last-child,
 .posts li p:last-child,
-img + small,
+small,
 figcaption,
 .standoff h2,
 #comments ~ article h3,
-[data-chain],
 footer {
 	font-size: 77.7777777%;
 }
@@ -154,7 +153,6 @@ a[href="#top"] {
 	top: 0;
 	right: 0;
 	left: 0;
-	font-family: sans-serif;
 	font-size: 71.4285714%;
 	font-weight: 700;
 	letter-spacing: 1em;
@@ -195,7 +193,7 @@ main .visually-hidden {
 		margin: 0 auto;
 	}
 	body > footer {
-		max-width: 60em;
+		max-width: 70em;
 	}
 	pre {
 		overflow: auto;

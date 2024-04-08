@@ -34,9 +34,7 @@ html.advanced {
 color-scheme: light dark;
 background-color: var(--color-bg);
 color: var(--color-text);
-font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
-font-size: 100%;
-line-height: 1.625;
+font: 100%/1.625 system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", "Noto Sans", "DejaVu Sans", sans-serif;
 -webkit-tap-highlight-color: rgba(204,85,85,.5);
 
 @media (prefers-color-scheme: dark) {
@@ -110,28 +108,6 @@ img {
 .cover img {
 	width: 100%;
 }
-header p:last-child,
-.posts li p:last-child,
-img + small,
-.subtle,
-form,
-figure, .figure,
-blockquote,
-.posts h2,
-#updates,
-#fns,
-#comments,
-#comments ~ article h3,
-#comments ~ p,
-#comments ~ section,
-[data-chain],
-[data-unavailable],
-#contribute,
-.metadata,
-.standoff,
-footer {
-	font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", "Noto Sans", "DejaVu Sans", sans-serif;
-}
 kbd,
 code {
 	font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
@@ -140,7 +116,6 @@ small,
 sup,
 sub,
 code,
-tt,
 blockquote footer,
 figcaption,
 a[href$=".pdf"]::after {
@@ -150,11 +125,11 @@ header p:last-child,
 .posts li p:last-child,
 #comments,
 #comments ~ article h3,
-[data-chain],
 [data-unavailable],
 .metadata,
 .standoff,
 img + small,
+p > small:only-child,
 [data-hl],
 .imprint p {
 	font-size: .875rem;
@@ -243,6 +218,7 @@ sub {
 ins {
 	text-decoration-style: dotted;
 }
+img + small,
 p > small:only-child {
 	display: block;
 }
@@ -331,9 +307,6 @@ li p {
 blockquote {
 	padding-left: 1.375rem;
 	border-left: .375rem solid var(--color-accent);
-}
-img + small {
-	display: block;
 }
 .update,
 :not(pre) > code {
@@ -1009,11 +982,10 @@ figure, p.figure {
 }
 header p:last-child,
 .posts li p:last-child,
-img + small,
+small,
 figcaption,
 .standoff h2,
 #comments ~ article h3,
-[data-chain],
 footer {
 	font-size: 77.7777777%;
 }
@@ -1065,7 +1037,6 @@ a[href="#top"] {
 	top: 0;
 	right: 0;
 	left: 0;
-	font-family: sans-serif;
 	font-size: 71.4285714%;
 	font-weight: 700;
 	letter-spacing: 1em;

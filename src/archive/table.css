@@ -9,7 +9,6 @@ thead th {
 	padding-top: 0;
 	border-bottom-style: double;
 	border-bottom-width: .1875rem;
-	font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", "Noto Sans", "DejaVu Sans", sans-serif;
 	font-size: .875rem;
 	line-height: calc(16 / 14);
 	vertical-align: bottom;

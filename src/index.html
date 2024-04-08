@@ -47,8 +47,7 @@ main > div > div style {
 	height: calc(100% + 2rem);
 	margin: -1rem -4.27em;
 	color: rgba(0,0,0,.1);
-	font-size: 2.87rem;
-	line-height: .28;
+	font: 2.87rem / .28 serif;
 	word-break: break-all;
 	cursor: default;
 	user-select: none;
@@ -102,6 +101,11 @@ main > div > div section:first-of-type a::after {
 		margin-left: calc(var(--padding-horizontal) * -1);
 	}
 }
+@media (min-width: 39.05em) {
+	main > div > div section {
+		--padding-horizontal: 1.75rem;
+	}
+}
 @media (forced-colors: active) {
 	main > div style {
 		display: none !important;
@@ -111,7 +115,7 @@ main > div > div section:first-of-type a::after {
 <h2 id="introduction" class="visually-hidden">CSSence? What is that?</h2>
 <section>
 <h3 id="cssence-the-person">The Person</h3>
-<p>My name is Matthias, I’m also known as @CSSence. I’m a web developer, passionate about design, semantics and accessibility. And obviously CSS. I work in Vienna, Austria.</p>
+<p>My name is Matthias, I’m also known as @CSSence. I’m a web developer, passionate about design, semantics and accessibility. And obviously CSS. I work in Vienna, <abbr title="Austria">AT</abbr>.</p>
 <p><a href="/about/matt/">About Matthias Zöchling.</a></p>
 </section>
 <section>
