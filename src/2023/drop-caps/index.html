@@ -14,8 +14,8 @@
 <p><i>Code</i><br><time>2023-07-11T06:31:09Z</time><br><img src="/2023/drop-caps/index.png" alt=""></p>
 </header>
 <div>
-<aside class="standoff" aria-labelledby="quick-summary">
-<h2 id="quick-summary">Quick summary</h2>
+<aside class="standoff" aria-labelledby="introduction">
+<h2 id="introduction">Introduction</h2>
 <p>Using <code>float</code> to create a drop cap has never been simple, because you had to tweak the font size and account for an offset to take care of a font’s cap height. These days, browsers that support <code>initial-letter</code> (which at the time of writing this article happen to be all modern browsers except Firefox), do the heavy lifting for you.</p>
 </aside>
 <p>While reading an article on <a href="https://www.forbes.com/">forbes.com</a> today, I couldn’t help myself. I had to open the Web Developer Console to inspect how they did format the drop caps, i.e. those large initial letters at the beginning of a paragraph that span multiple lines. While their solution obviously works, they achieved it by including special markup in their HTML. The @CSSence in me expected a CSS-only solution. Even more so, the Accessibility Advocate in me expects one too, because without any additional measures, placing the first letter of a word in a separate element makes screen readers burp. So I opened CodePen to create something CSS-only with good old <code>float</code> and <code>::first-letter</code>.</p>

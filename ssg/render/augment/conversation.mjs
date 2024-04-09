@@ -1,4 +1,4 @@
-/* Modify conversation `html.c-note main > article > div, aside[aria-labelledby="comments"]` */
+/* Modify conversation `html.c-note,.c-link main > article > div, aside[aria-labelledby="comments"]` */
 
 const modify = (content, meta) => {
 

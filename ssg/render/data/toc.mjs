@@ -25,7 +25,7 @@ const getToc = async (folder, indexHtmlList) => {
 		const weight = [3, page.path];
 		if (['/', '/about/about/'].includes(page.path)) {
 			weight[0] = 0;
-		} else if (['/articles/', '/code/', '/editorials/', '/essays/', '/events/', '/notes/'].includes(page.path)) {
+		} else if (['/articles/', '/code/', '/editorials/', '/essays/', '/events/', '/links/', '/notes/', '/shorts/', '/threads/'].includes(page.path)) {
 			weight[0] = 1;
 		} else if (page.path.match(/^\/[0-9]{4}\//)) {
 			if (page.path.length > 6) {

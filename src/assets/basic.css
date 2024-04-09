@@ -19,7 +19,8 @@ header p:last-child {
 h2 {
 	margin-top: 2em;
 }
-i::after {
+header i::after,
+.posts i::after {
 	content: " — ";
 	white-space: pre;
 }

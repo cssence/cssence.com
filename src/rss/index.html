@@ -6,11 +6,10 @@
 <style media="screen" title="Advanced Style">html.advanced {
 main ul{--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.13 11.73a2.13 2.13 0 1 0 0 4.25 2.13 2.13 0 1 0 0-4.25zM0 5.43V8.5c2 0 3.88.78 5.29 2.2a7.45 7.45 0 0 1 2.2 5.3h3.07C10.56 10.18 5.82 5.44 0 5.44zM0 0v3.07c7.13 0 12.92 5.8 12.92 12.93H16C16 7.18 8.82 0 0 0z'/%3E%3C/svg%3E");list-style-type:none}
 main li:has(> a)::before{content:"";position:absolute;width:1rem;height:1rem;margin:.3125rem 0 0 -1.75rem;background-color:currentColor;-webkit-mask:var(--icon) center / contain no-repeat;mask:var(--icon) center / contain no-repeat;forced-color-adjust:none}
-main h2 + ul > li:nth-child(8):nth-last-child(3) ~ li,
-main h2 + ul > li:nth-child(1) ~ li{margin-left:3.5rem}
-main h2 + ul > li:nth-child(2) ~ li{margin-left:5.25rem}
-main h2 + ul > li:nth-child(4) ~ li{margin-left:7rem}
-main h2 + ul > li:nth-child(9):nth-last-child(2) ~ li{margin-left:1.75rem}
+main h2 + ul > li{margin-left:7rem}
+main h2 + ul > li:is(:nth-child(1), :nth-child(14)){margin-left:1.75rem}
+main h2 + ul > li:is(:nth-child(2), :nth-child(13)){margin-left:3.5rem}
+main h2 + ul > li:is(:nth-child(3), :nth-child(8), :nth-child(4), :nth-child(12)){margin-left:5.25rem}
 main ul ul li{margin-top:.75rem}
 }</style>
 </head>
@@ -20,16 +19,16 @@ main ul ul li{margin-top:.75rem}
 <header>
 <h1>RSS Feeds</h1>
 <p>Subscribers welcome!</p>
-<p><i>Internal</i><br><time>2024-03-10T23:34:00Z</time><br><img src="/rss/index.webp" alt=""></p>
+<p><i>Internal</i><br><time>2024-03-18T00:44:00Z</time><br><img src="/rss/index.webp" alt=""></p>
 </header>
 <div>
+<p>Tl;dr, just take me to the <a href="#feeds">available feeds.</a></p>
 <aside class="standoff" aria-labelledby="good-to-know">
-<h2 id="good-to-know" data-follow-up="💡">Good to know</h2>
+<h2 id="good-to-know">Good to know</h2>
 <p>What’s RSS?</p>
 <p>What’s a feed?</p>
 <p>Learn more at <a href="https://aboutfeeds.com/">aboutfeeds.com.</a></p>
 </aside>
-<p>Tl;dr, just take me the <a href="#feeds">available feeds.</a></p>
 <h2>Introduction</h2>
 <p>The following RSS feeds are available on this site. You may subscribe to an individual feed, multiple feeds, or whatever makes sense for you.</p>
 <p>Most feeds contain only the twelve most recent blog posts, either across all sections, or limited to a particular section. If you’ve seen the navigation at the bottom of this page, or the Big Table on the <a href="/archive/">archive page,</a> said sections should be familiar.</p>
@@ -39,12 +38,16 @@ main ul ul li{margin-top:.75rem}
 <ul aria-label="Subscribe to RSS feed">
 <li id="all"><a href="/all/rss.xml">All</a></li>
 <li id="latest"><a href="/latest/rss.xml">Latest</a></li>
-<li><a href="/notes/rss.xml">Notes</a></li>
 <li><a href="/articles/rss.xml">Articles</a></li>
-<li><a href="/code/rss.xml">Code</a></li>
+<li><a href="/extras/rss.xml">Extras</a></li>
 <li><a href="/editorials/rss.xml">Editorials</a></li>
 <li><a href="/essays/rss.xml">Essays</a></li>
 <li><a href="/events/rss.xml">Events</a></li>
+<li><a href="/shorts/rss.xml">Shorts</a></li>
+<li><a href="/code/rss.xml">Code snippets</a></li>
+<li><a href="/notes/rss.xml">Notes</a></li>
+<li><a href="/links/rss.xml">Links</a></li>
+<li><a href="/threads/rss.xml">Threads</a></li>
 <li id="current-year"><a href="/2024/rss.xml">2024</a></li>
 <li id="previous-years">
 <details>

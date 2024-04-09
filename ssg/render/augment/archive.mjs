@@ -1,4 +1,4 @@
-/* Add link to `html.c-code articles` */
+/* Calculate BigTable in `/archive/` */
 
 const modify = (content, meta) => {
 
@@ -10,8 +10,9 @@ const modify = (content, meta) => {
 	if (!meta.toc.byPath[`/${newestYear}/`]) newestYear -= 1;
 
 	const SUM = 'ALL';
+	const COLS = ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', 'c-link', SUM, 'c-extra', 'c-short'];
 	const stats = {};
-	for (const className of ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', SUM]) {
+	for (const className of COLS) {
 		stats[className] = {};
 		stats[className][SUM] = 0;
 		for (let year = newestYear; year >= 2010; year -= 1) {
@@ -20,8 +21,11 @@ const modify = (content, meta) => {
 	}
 	for (const post of meta.toc.posts) {
 		const year = post.published.split('-')[0];
+		const category = post.className[2] === 'e' ? 'c-extra' : 'c-short';
 		stats[post.className][year] += 1;
 		stats[post.className][SUM] += 1;
+		stats[category][year] += 1;
+		stats[category][SUM] += 1;
 		stats[SUM][year] += 1;
 		stats[SUM][SUM] += 1;
 	}
@@ -29,8 +33,8 @@ const modify = (content, meta) => {
 	const tableContent = ['<tbody>'];
 	for (let year = newestYear; year >= 2010; year -= 1) {
 		const cols = [`<th scope="row"><a href="/${year}/">${year}</a></th>`];
-		for (const className of ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', SUM, 'c-articles']) {
-			const value = className === 'c-articles' ? stats[SUM][year] - stats['c-note'][year] : stats[className][year];
+		for (const className of COLS) {
+			const value = stats[className][year];
 			cols.push(`<td><data value="${value}">${value}</data></td>`);
 		}
 		tableContent.push(`<tr>${cols.join('')}</tr>`);
@@ -38,8 +42,8 @@ const modify = (content, meta) => {
 	tableContent.push('</tbody>');
 	tableContent.push('<tfoot>');
 	const lastRowCols = [`<th scope="row"><a href="/all/">All</a></th>`];
-	for (const className of ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', SUM, 'c-articles']) {
-		const value = className === 'c-articles' ? stats[SUM][SUM] - stats['c-note'][SUM] : stats[className][SUM];
+	for (const className of COLS) {
+		const value = stats[className][SUM];
 		lastRowCols.push(`<td><data value="${value}">${value}</data></td>`);
 	}
 	tableContent.push(`<tr>${lastRowCols.join('')}</tr>`);
@@ -47,9 +51,9 @@ const modify = (content, meta) => {
 
 	const insertBefore = content.indexOf('</table>');
 	const total = insertBefore + 2;
-	content[total] = content[total].replace('<!-- articles: -->The number of', stats[SUM][SUM] - stats['c-note'][SUM]);
-	content[total] = content[total].replace('<!-- notes: -->the number of', stats['c-note'][SUM]);
-	content[total] = content[total].replace('<!-- posts: -->many', meta.toc.posts.length); // should be equal to stats[SUM][SUM]
+	content[total] = content[total].replace('<!-- extras: -->The number of', stats['c-extra'][SUM]);
+	content[total] = content[total].replace('<!-- shorts: -->the number of', stats['c-short'][SUM]);
+	content[total] = content[total].replace('<!-- posts: -->umpteen', meta.toc.posts.length); // should be equal to stats[SUM][SUM]
 	content[total] = content[total].replace('<!-- all: -->even more', meta.toc.posts.length + meta.toc.indexes.length + meta.toc.pages.length);
 	content.splice(insertBefore, 0, tableContent.join('\n'));
 

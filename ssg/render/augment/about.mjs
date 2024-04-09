@@ -2,7 +2,7 @@
 
 const add = (content, meta) => {
 
-	const nonIndexTypeMap = {'c-default': 'page', 'c-about': 'page', 'c-note': 'thread'};
+	const nonIndexTypeMap = {'c-default': 'page', 'c-about': 'page', 'c-note': 'thread', 'c-link': 'thread'};
 	const type = meta.page.isIndex ? (meta.page.path === '/' ? 'site' : 'index page') : (nonIndexTypeMap[meta.page.className] || 'article');
 
 	const isStandaloneThread = meta.page.isPostByYear && content.includes('<h2 class="visually-hidden" id="comments">Message thread</h2>');

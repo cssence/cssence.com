@@ -3,13 +3,28 @@
 <head>
 <title>Archive</title>
 <meta name="description" content="Over time, a lot of blog posts have been written. Maybe you find some goodness from yesteryear.">
-<style>html.basic, html.advanced {
+<style rel="alternate style" media="screen" title="Basic Style">
 table{border-collapse:collapse;width:100%;margin:2em 0}
 thead th{font-size:75%}
-th,td{width:15%;text-align:right}
-th:first-child{width:auto;text-align:left}
-td:nth-child(7),tfoot{font-weight:700}
-th:last-child,td:last-child{display:none}
+th,td{width:10%;text-align:right}
+th:first-child{text-align:left}
+td:nth-child(8),tfoot{font-weight:700}
+tr>*:nth-child(8)~*{display:none}
+@media (max-width: 44.99em){
+	tr>*:first-child~*{display:none}
+	tr>*:nth-child(7)~*{display:table-cell}
+}</style>
+<style media="print">
+table{border-collapse:collapse;width:100%;margin:2em 0}
+thead th{font-size:75%}
+th,td{width:8.5%;text-align:right}
+th:nth-child(8),td:nth-child(8),
+th:nth-child(9),td:nth-child(9){width:16%}
+th:first-child{text-align:left}
+td:nth-child(8),tfoot{font-weight:700}
+@media (orientation: portrait){
+	th,td{width:12%}
+	tr>*:nth-child(8)~*{display:none}
 }</style>
 <link rel="stylesheet" media="screen" href="/archive/table.css" title="Advanced Style">
 </head>
@@ -31,15 +46,17 @@ th:last-child,td:last-child{display:none}
 <th scope="col" class="c-essay"><i><span>Essays</span></i></th>
 <th scope="col" class="c-editorial"><i><span>Editorials</span></i></th>
 <th scope="col" class="c-event"><i><span>Events</span></i></th>
-<th scope="col" class="c-code"><i><span>Code</span></i></th>
+<th scope="col" class="c-code"><i><span>Snippets</span></i></th>
 <th scope="col" class="c-note"><i><span>Notes</span></i></th>
+<th scope="col" class="c-link"><i><span>Links</span></i></th>
 <th scope="col">Total</th>
-<th scope="col" class="c-articles"><i><span>thereof Articles</span></i></th>
+<th scope="col" class="c-extra"><i><span>Extras</span></i></th>
+<th scope="col" class="c-short"><i><span>Shorts</span></i></th>
 </tr>
 </thead>
 </table>
 </div>
-<p><!-- articles: -->The number of&nbsp;articles and <!-- notes: -->the number of&nbsp;notes make a total of <!-- posts: -->many&nbsp;blog&nbsp;posts, but this site needs indexes and other pages too. Currently the whole site has <strong><!-- all: -->even more</strong>&nbsp;pages altogether.</p>
+<p><!-- extras: -->The number of&nbsp;extras and <!-- shorts: -->the number of&nbsp;shorts make a total of <!-- posts: -->umpteen&nbsp;blog&nbsp;posts, but this site needs indexes and other pages too. Currently the whole site has <strong><!-- all: -->even more</strong>&nbsp;pages altogether.</p>
 </div>
 </article>
 </main>

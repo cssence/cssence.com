@@ -1,8 +1,9 @@
 html.advanced {
-	
+
 table {
-	--_s2: var(--width-sidebar) / 2;
+	width: 100%;
 	margin: 3rem 0;
+	border-collapse: collapse;
 }
 thead th {
 	height: 5rem;
@@ -21,9 +22,6 @@ th i span {
 	transform: rotate(-45deg) translate(-1.25rem, -2rem);
 	transform-origin: 0 0;
 }
-th:last-child i span {
-	transform: rotate(-45deg) translate(-2rem, -2.5rem);
-}
 th i::before {
 	display: inline-block;
 	position: static;
@@ -31,19 +29,54 @@ th i::before {
 	height: .875rem;
 	margin: 0;
 }
-th:last-child i::before {
+th:nth-child(8) ~ th i::before {
 	visibility: hidden;
+}
+th:nth-child(8) ~ th i span {
+	transform: rotate(-45deg) translate(-2.125rem, -1.625rem);
+}
+th,
+td {
+	width: 7.5%;
+	padding: .25rem 0;
+	border: 0 solid var(--color-bg-subtle);
+	text-align: right;
+	vertical-align: middle;
+}
+@media (min-width: 33em) and (max-width: 39em), (min-width: 48em) {
+	th,
+	td {
+		width: 9%; /*4rem;*/
+		padding-right: .875rem;
+	}
+}
+@media (max-width:22.49em){
+	th,
+	td {
+		font-size: .875rem;
+	}
+}
+th:first-child {
+	width: auto;
+	padding-left: var(--padding-horizontal);
+	text-align: left;
+	white-space: nowrap;
+}
+tr > *:nth-child(8) {
+	width: calc(var(--_pbs) - 8rem + .875rem - var(--padding-horizontal));
+	padding-right: .875rem;
+}
+tr > *:nth-child(9) {
+	width: 4rem;
+	padding-right: .875rem;
+}
+tr > *:last-child {
+	width: calc(4rem - .875rem + var(--padding-horizontal));
+	padding-right: var(--padding-horizontal);
 }
 tbody tr:hover,
 tbody tr:focus-within {
 	background-color: var(--color-bg-subtle);
-}
-th,
-td {
-	width: 9%;
-	padding: .25rem 0 .25rem .875rem;
-	border: 0 solid var(--color-bg-subtle);
-	vertical-align: middle;
 }
 tr + tr > * {
 	border-top-width: .0625rem;
@@ -52,24 +85,30 @@ tfoot tr > * {
 	border-top-width: .125rem;
 	padding-bottom: 0;
 }
-th:first-child {
-	padding-left: var(--padding-horizontal);
-	white-space: nowrap;
-}
-tr > *:nth-child(7) {
-	width: calc(var(--_pbs) - var(--_s2));
-	padding-right: var(--padding-horizontal);
-}
-tr > *:last-child {
-	display: table-cell;
-	width: var(--_s2);
-	padding-right: var(--padding-horizontal);
+td:nth-child(8),
+tfoot {
+	font-weight: 700;
 }
 table data {
 	font-variant-numeric: lining-nums tabular-nums;
 }
 tbody data[value="0"] {
 	color: var(--color-bg-subtle);
+}
+
+}
+
+html.basic {
+
+table{border-collapse:collapse;width:100%;margin:2em 0}
+thead th{font-size:75%}
+th,td{width:10%;text-align:right}
+th:first-child{text-align:left}
+td:nth-child(8),tfoot{font-weight:700}
+tr>*:nth-child(8)~*{display:none}
+@media (max-width: 44.99em){
+	tr>*:first-child~*{display:none}
+	tr>*:nth-child(7)~*{display:table-cell}
 }
 
 }
