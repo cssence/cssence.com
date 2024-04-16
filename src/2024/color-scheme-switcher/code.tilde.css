@@ -1,0 +1,4 @@
+/* You can use this instead of `:not([content="light"])` */
+html:has(meta[name="color-scheme"][content~="dark"]) {
+	/* matches "dark", "light dark", and "dark light" */
+}

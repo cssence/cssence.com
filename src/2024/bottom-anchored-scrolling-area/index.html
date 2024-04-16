@@ -16,12 +16,11 @@
 <blockquote>
 <p>Well, that title is a mouthful.</p>
 </blockquote>
-<p>This is what Kitty Giraudel said in <a href="https://kittygiraudel.com/2024/02/26/css-only-bottom-anchored-scrolling-area/">their blog post with the same name.</a> After reading it, I was immediately wondering if it would be possible to create something similar, but without the need to put the content in reverse order.
-</p>
+<p>This is what Kitty Giraudel said in <a href="https://kittygiraudel.com/2024/02/26/css-only-bottom-anchored-scrolling-area/">their blog post with the same name.</a> After reading it, I was immediately wondering if it would be possible to create something similar, but without the need to put the content in reverse order.</p>
 <p>What if I throw in an extra <code>&lt;div&gt;</code> between the scrollable region and the actual content, that should be it, right? Putting it to test on CodePen, it worked.</p>
 <pre><a href="/2024/bottom-anchored-scrolling-area/code.scrollable.html">View HTML code.</a></pre>
 <pre><a href="/2024/bottom-anchored-scrolling-area/code.scrollable.css">View CSS code.</a></pre>
-<p>For good measure, I went online to see if someone already had the idea, and I found a comment <a href="https://stackoverflow.com/questions/18614301/keep-overflow-div-scrolled-to-bottom-unless-user-scrolls-up">in the depths of StackOverflow</a> that states: <q>In fact, if you just add a div under container to un-reverse everything.</q>
+<p>For good measure, I went online to see if someone already had the idea, and I found a comment <a href="https://stackoverflow.com/questions/18614301/keep-overflow-div-scrolled-to-bottom-unless-user-scrolls-up">in the depths of StackOverflow</a> that states: <q>In fact, if you just add a div under container to un-reverse everything.</q></p>
 <p>That comment is from 2017. Fascinating, and a reminder that the <a href="https://en.wikipedia.org/wiki/CSS_Flexible_Box_Layout">Flexible Box Layout</a> has been with us for a long time.</p>
 <p>But I discovered another comment an that same StackOverflow page: <q>Doesn’t this solution break text selection? It’s selecting from bottom to top.</q></p>
 <p>I tried, and it does if you <em>do not</em> throw in the additional layer. So one more reason to use the approach the person on StackOverflow and I in this post recommend. Sadly we have to mess up the HTML a bit, but maybe at some point we'll get <a href="https://github.com/argyleink/ScrollSnapExplainers/tree/main/css-scroll-start">a CSS way to specify a starting position</a> for scrollable regions.</p>

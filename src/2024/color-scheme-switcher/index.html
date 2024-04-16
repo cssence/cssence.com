@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="c-code advanced">
+<head>
+<title>Color scheme switcher</title>
+<meta name="description" content="HTML-only and beyond: Automatic, light, or dark color scheme.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/qBwyvJR" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Color scheme switcher</h1>
+<p><i>Code</i><br><time>2024-04-16T05:49:00Z</time><br><img src="/2024/color-scheme-switcher/index.webp" alt=""></p>
+</header>
+<div>
+<p>Welcome to level&nbsp;8 of <a href="/2024/six-levels-of-dark-mode/">»Six levels of dark mode«</a>.</p>
+<p>When you build a color scheme switcher, sometimes also known as <em>dark mode toggle</em>, what do you add to the <code>&lt;html&gt;</code> element?</p>
+<ol>
+<li>A modifier class, like <code>.dark</code>.</li>
+<li>A data attribute, like <code>data-theme="dark"</code>.</li>
+</ol>
+<p>Crickets.</p>
+<blockquote cite="https://cssence.com/2024/six-levels-of-dark-mode/">
+<p>Well, we no longer need either one, because we can use <code>:has()</code> to query the real deal.</p>
+<pre><a href="/2024/six-levels-of-dark-mode/code.level-8.css">View CSS code.</a></pre>
+</blockquote>
+<p>That looks rather verbose. Don’t worry, it’ll get worse.</p>
+<p>But let’s not get ahead of ourselves.</p>
+<h2>Start without CSS</h2>
+<p>As a prerequisite, let’s assume we have a script that adjusts the content attribute of the color-scheme meta tag to either <code>light</code> or <code>dark</code>, depending on what the user has selected. (You can open the <a href="https://codepen.io/cssence/pen/qBwyvJR">full example</a> to follow along.)</p>
+<p>For good measure, we add third state that sets the content attribute to <code>light dark</code> (yes, <code>dark light</code> <a href="https://web.dev/articles/color-scheme">would also work</a>). This is the default when no scheme has been selected, i.e. we use the same scheme as the operating system.</p>
+<p>Doing all this already gives us a working scheme switcher, without any CSS involved.</p>
+<h2>Add some CSS</h2>
+<p>You may now add whatever you need for either light or dark scheme, and then override things for the other. Let’s assume ‘light’ goes first, and ‘dark’ does the override.</p>
+<pre><a href="/2024/color-scheme-switcher/code.twofold.css">View CSS code.</a></pre>
+<p>That would even be it, if we only had two states. But remember the default? We need one additional chunk.</p>
+<pre><a href="/2024/color-scheme-switcher/code.threeway.css">View CSS code.</a></pre>
+<p>This is the minimal setup, you can expand it from here.</p>
+<p>Now I hear you say, “that’s all nice and well, but a simple <code>.dark</code> class at the HTML element is way easier‽”</p>
+<p>Agreed. However, the reason for doing it this way is similar to applying styles based on ARIA attributes. Imagine a button that opens a dropdown, it has a nice little triangle marker to indicate the fact. Sure, you can add an <code>.expanded</code> class to the button when it has been clicked, and rotate the triangle based on that class. But, you could also rotate the triangle based on <code>[aria-expanded="true"]</code>. Doing the former, all you are testing is whether adding a class works. Doing the latter, you add a built-in test for the underlying accessibility feature.</p>
+<p>The same can be said for the long selector in this blog post. Using it adds a test for the HTML+JS version of the color scheme switcher, free of charge.</p>
+<p>Luckily, native CSS nesting has arrived, so you do not even need to repeat the long selector, you can just add everything in there.</p>
+<p>I’ll acknowledge there is a downside, but it has nothing to do with the selector, because the downside is also present when doing it the old-fashioned way: Due to the non-boolean nature of our scheme switcher, we have to duplicate the override styles, because even with CSS nesting we cannot combine a media query and a regular selector.</p>
+<p>One more thing: You can also use the tilde attribute selector on the content attribute.</p>
+<pre><a href="/2024/color-scheme-switcher/code.tilde.css">View CSS code.</a></pre>
+<p>That’s it. If you didn’t already, head over to CodePen to see a working color scheme switcher.</p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/112285167034639606"><b>Matthias Zöchling</b> wrote on <time>2024-04-16T05:49:00Z</time></span></h3>
+<p>Launching two blog posts on the same day is not what I usually do. Yesterday has been an exception, but at least I delayed the announcement of this one: For those who haven’t read it already, …</p>
+<p>… this is level 8 of<br>»Six levels of dark mode«<br><a href="/2024/color-scheme-switcher/">cssence.com/2024/color-scheme-switcher</a></p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/112285208229535913"><b>Matthias Zöchling</b> wrote on <time>2024-04-17T06:45:07Z</time></span></h3>
+<p>I only found out last night that @sarajw@front-end.social (sry for dragging you into this one too 😬) has written an in-depth intro to color-scheme on her site:<br><a href="https://sarajoy.dev/blog/color-scheme/">sarajoy.dev/blog/color-scheme</a></p>
+<p>Keep reading until the end, she also added noteworthy “Further reading” material to her article.</p>
+</article>
+<article>
+<h3><a href="https://front-end.social/@sarajw/112285253606359366"><b>Sara Joy</b> wrote on <time>2024-04-17T06:56:39Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: @CSSence@mas.to.</small></p>
+<p>heee, thanks 🙂 no need to apologise!</p>
+</article>
+<article>
+<h3><a href="https://mas.to/@CSSence/112285208229535913"><b>Sara Joy</b> wrote on <time>2024-04-17T06:45:07Z</time></a></h3>
+<p data-chain="continue"><small>Continued from previous comment.</small></p>
+<p>You might also be interested with my little toy based on the same idea:<br><a href="https://codepen.io/sarajw/pen/bGzeLZR">codepen.io/sarajw/pen/bGzeLZR</a></p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>

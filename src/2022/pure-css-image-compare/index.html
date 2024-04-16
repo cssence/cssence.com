@@ -65,7 +65,7 @@
 <p>The second issue is, on resizable elements, Safari treats width and height as min-width and min-height, so we’d no longer be able to hide the first image completely. To work around this, the left-most position needs to be the slider’s initial position. But this time I do not want other browsers to suffer, so we’ll limit this adjustment to Safari:</p>
 <pre><a href="/2022/pure-css-image-compare/code.safari-workaround.css">View CSS example.</a></pre>
 <h2>Verdict</h2>
-<p>While all of the above works, this is one of the cases where I cannot vouch for a CSS-only solution. Instead, you could bring in <code>&lt;input type=&quot;range&quot;&gt;</code>, update a CSS variable every time the range’s value changes, and take it from there. You’ll most likely need only a few lines of Javascript, but you’ll end up with something superior to the poor man’s draggable handle we’ve seen here.</p>
+<p>While all of the above works, this is one of the cases where I cannot vouch for a CSS-only solution. Instead, you could bring in <code>&lt;input type=&quot;range&quot;&gt;</code>, update a CSS variable every time the range’s value changes, and take it from there. You’ll most likely need only a few lines of JavaScript, but you’ll end up with something superior to the poor man’s draggable handle we’ve seen here.</p>
 <section>
 <h2 id="fns">Footnotes</h2>
 <ol>

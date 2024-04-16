@@ -1,0 +1,4 @@
+html:has(meta[name="color-scheme"][content="dark"]) {
+	--color-bg: black;
+	--color-text: white;
+}

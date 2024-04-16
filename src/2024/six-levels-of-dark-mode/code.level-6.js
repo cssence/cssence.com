@@ -1,0 +1,1 @@
+const isDarkScheme = window.matchMedia('(prefers-color-scheme:dark)');

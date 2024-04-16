@@ -1,0 +1,11 @@
+/*
+	Also use the dark override when the user
+	A. has a preference for dark scheme, and
+	B. has not explicitly selected the light scheme.
+*/
+@media (prefers-color-scheme: dark) {
+	html:has(meta[name="color-scheme"]:not([content="light"])) {
+		--color-bg: black;
+		--color-text: white;
+	}
+}

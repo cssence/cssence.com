@@ -1,0 +1,13 @@
+/*
+	Set the light scheme upfront,
+	but override it with the dark scheme
+	when the user has explicitly selected it.
+*/
+html {
+	--color-bg: white;
+	--color-text: black;
+}
+html:has(meta[name="color-scheme"][content="dark"]) {
+	--color-bg: black;
+	--color-text: white;
+}

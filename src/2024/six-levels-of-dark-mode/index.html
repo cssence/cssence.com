@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="c-essay advanced">
+<head>
+<title>Six levels of dark mode</title>
+<meta name="description" content="From HTML-only to JS-infused, and all the CSS in between.">
+<style media="screen" title="Advanced Style">html.advanced, html.basic {
+.standoff hr{margin:.75em 0 .6875em}
+} html.advanced {
+.standoff hr{max-width:calc(100% - 1.75rem);margin:1.5rem 0 1.25rem}
+@media (prefers-color-scheme: light) {
+	figure{background-color: var(--color-dark)}
+}
+}</style>
+<style rel="alternate stylesheet" media="screen" title="Basic Style">.standoff hr{margin:.75em 0 .6875em}</style>
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Six levels of dark mode</h1>
+<p><i>Essay</i><br><time>2024-04-16T05:42:00Z</time><br><img src="/2024/six-levels-of-dark-mode/index.webp" alt=""></p>
+</header>
+<div>
+<nav class="standoff" aria-label="Table of contents">
+<h2 id="toc">The six levels</h2>
+<ol aria-labelledby="toc">
+<li><a href="#level-1-barebone">Barebone</a></li>
+<li><a href="#level-2-basic">Basic</a></li>
+<li><a href="#level-3-benign">Benign</a></li>
+<li><a href="#level-4-bold">Bold</a></li>
+<li><a href="#level-5-bisectional">Bisectional</a></li>
+<li><a href="#level-5-ballistic">Ballistic</a></li>
+<li><hr><a href="#level-6-beyond">Beyond</a></li>
+<li><a href="#level-7-beguiling">Beguiling</a></li>
+</ol>
+</nav>
+<p>Being reminded of the <a href="/2024/native-visually-hidden/">visually hidden debate</a> hasn’t been the only thing that happened to me on this year’s <a href="/2024/css-naked-day/">CSS Naked Day.</a></p>
+<p>I’ve observed that on pretty much all the sites I’ve visited, dark mode was rather absent after the styles had been removed. This got me thinking, maybe it’s time to talk about the <strong>six levels of dark mode.</strong></p>
+<p>A less catchy—but more accurate—title for this blog post would have been “six levels of color scheme switching”. Oh well. Most of the example code in this article shows <em>the dark side,</em> so the title does make sense. Just keep in mind that the other way around also works.</p>
+<p>Enough said, let’s get to it.</p>
+<h2><small class="subtle">Level 1:<br></small> Barebone</h2>
+<p>This level is as easy as it gets, but apparently the underlying directive was missing on the sites mentioned in the introduction. You can opt into light/dark mode differentiation even without a single line of CSS, which is great in general, but especially on <a href="/about/css-naked-day/">April&nbsp;9.</a></p>
+<p>Simply add the following meta tag to the document head, and you are good to go.</p>
+<pre><a href="/2024/six-levels-of-dark-mode/code.level-1.html">View HTML code.</a></pre>
+<p>Whenever a web page contains this tag, the browser knows it should adhere to the user’s color scheme preference. The order of the entries in the content attribute matters, at least in theory. Users without a preference for a color scheme would get the first in the space-separated list. But the settings in today’s operating systems lack the option to *not* choose one, so you’ll always end up with the one that matches the OS.</p>
+<p>You could just specify a single entry in the content attribute. Doing so would enforce the corresponding scheme, without taking the user preference into account, but that’s another story.</p>
+<p>To some degree, the meta tag is the HTML equivalent of our next level.</p>
+<h2><small class="subtle">Level 2:<br></small> Basic</h2>
+<p>Let’s move on to the CSS way of light/dark mode differentiation.</p>
+<pre><a href="/2024/six-levels-of-dark-mode/code.level-2.css">View CSS code.</a></pre>
+<p>You won’t need this declaration if you already have the meta tag in the DOM. Unless you have no control over the HTML (e.g. if your content comes from a <abbr title="Content Management System">CMS</abbr>, poor you), I encourage you to always use the meta tag. This gives the browser a <code>&lt;head&gt;</code> start, as it already knows about the color scheme directive before any CSS has been parsed.</p>
+<p>Both ways essentially give you the option to piggyback on user agent default styles, and the light and dark mode that comes with them. Now add some CSS, but maybe limit yourself to the use of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/system-color">CSS system colors</a> while doing so, and you will already be able to achieve quite neat designs. Heck, the <a href="/settings/#page-style">page style switcher</a> on this site has entries named ‘None’ and ‘Basic’, they correspond to levels&nbsp;1 and&nbsp;2.</p>
+<p>Which brings us to the point where the two ways differ. Unlike the meta tag, which always applies to the whole document, the CSS <code>color-scheme</code> declaration can be set anywhere, not just on the root element. This enables some additional usage scenarios, but I’ll address those in another blog post.</p>
+<h2><small class="subtle">Level 3:<br></small> Benign</h2>
+<p>We are past the basic stage, but still in shallow waters. A rather recent addition to CSS, namely the <code>light-dark()</code> color function, allows for simple light/dark mode adjustments.</p>
+<pre><a href="/2024/six-levels-of-dark-mode/code.level-3.css">View CSS code.</a></pre>
+<p>The function takes two arguments, both should be colors. The first will be applied in light mode, you may guess what the second argument is for. Whether you simply specify actual colors, or even throw in custom properties that resolve in colors, is up to you.</p>
+<p>This is the only part level in this whole blog post where <a href="https://caniuse.com/mdn-css_types_color_light-dark">browser support is not great</a> at the time of writing, but we’ll get there.</p>
+<h2><small class="subtle">Level 4:<br></small> Bold</h2>
+<p>Moving on to the good old media query.</p>
+<pre><a href="/2024/six-levels-of-dark-mode/code.level-4.css">View CSS code.</a></pre>
+<p>Whether you query for <code>light</code> or <code>dark</code>, the media query allows for maximum customization, as you are not limited to merely changing colors. You can put anything in there. Wanna use a filter to desaturate images in dark mode? Go for it. Replace box shadows with colors? Sure.</p>
+<h2><small class="subtle">Level 5:<br></small> Bisectional</h2>
+<p>You can use the media query in HTML too. Adding it as a <code>media</code> attribute allows you to create stylesheets for each scheme.</p>
+<pre><a href="/2024/six-levels-of-dark-mode/code.level-5.html">View HTML code.</a></pre>
+<p>Dedicated files make sense if you do a lot of customization. The browser may ignore any CSS file that does not match the query, so there’ll be one less thing to download.</p>
+<h2><small class="subtle">Level 6:<br></small> Ballistic</h2>
+<p>Obviously JavaScript wants to play a part in this too. You can use the <code>matchMedia</code> function to query for either light or dark scheme, just like any other media query.</p>
+<pre><a href="/2024/six-levels-of-dark-mode/code.level-6.js">View JS code.</a></pre>
+<p>And then do whatever.</p>
+<hr>
+<p>In reality, you don’t stay within one lane, you can mix and match the techniques from all the aforementioned levels.</p>
+<h2><small class="subtle">Level 7:<br></small> Beyond</h2>
+<p>You don’t need to solely rely on the user preference, you can build a <strong>color scheme switcher.</strong></p>
+<p>If you do, be careful, the preference for either light or dark mode is not a boolean state, because initially you want to default to ‘Automatic’, i.e. adhere to <code>prefers-color-scheme</code>. By building a <a href="/settings/#color-scheme">scheme switcher</a> on top of that, you allow the user to opt into one of the three modes.</p>
+<figure class="standout"><img src="/2024/six-levels-of-dark-mode/level-6.webp" alt="A color scheme switcher; its dropdown shows entries named ‘Automatic (Default)’, ‘Dark’ and ‘Light’.">
+</figure>
+<p>If you already knew everything you’ve just read, I’ve got one more for you.</p>
+<h2><small class="subtle">Level 8:<br></small> Beguiling</h2>
+<p>When web developers create a level&nbsp;7 <strong>color scheme switcher</strong>, they usually either add a class like <code>.dark</code> to the HTML element, sometimes even a fancy <code>data-theme="dark"</code> attribute.</p>
+<p>Well, we no longer need either one, because we can use <code>:has()</code> to query the real deal.</p>
+<pre><a href="/2024/six-levels-of-dark-mode/code.level-8.css">View CSS code.</a></pre>
+<p>Check out my accompanying piece <a href="/2024/color-scheme-switcher/">»Color scheme switcher, 2024 edition«</a> to see it live.</p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/112281217350850297"><b>Matthias Zöchling</b> wrote on <time>2024-04-16T05:42:00Z</time></span></h3>
+<p>On this year’s CSS Naked Day, I saw a lot of sites without stylesheets. But also without dark mode. <a href="https://sarajoy.dev/">Sara Joy’s website</a> and my own have been the exception. So I was wondering, maybe it’s time to talk about “the six (or more) levels of dark mode”.<br><a href="/2024/six-levels-of-dark-mode/">cssence.com/2024/six-levels-of-dark-mode</a></p>
+</article>
+<article>
+<h3><a href="https://front-end.social/@sarajw/112281240921309601"><b>Sara Joy</b> wrote on <time>2024-04-16T13:56:10Z</time></a></h3>
+<p>I definitely saw a couple more sites that had this in their <code>&lt;head&gt;</code>s!</p>
+<p>But yes agreed, there’s so much CSS power available lately. When starting a new site from scratch with new styles, you can bake in light and dark modes really easily now. 🙂</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/112281255816086933"><b>Matthias Zöchling</b> wrote on <time>2024-04-16T13:59:58Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: @sarajw@front-end.social.</small></p>
+<p>Good to hear. Also, seems like we’ve been visiting different sites. 😅</p>
+<p>Would a CSS Naked Day webring make sense? 🤔</p>
+</article>
+<article>
+<h3><a href="https://front-end.social/@sarajw/112281936511659742"><b>Sara Joy</b> wrote on <time>2024-04-16T16:53:04Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: @CSSence@mas.to.</small></p>
+<p>it seems a bit specific for just naked day… oh, unless it’s done with a nav bar and iframes or something!! Old school…</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/112281255816086933"><b>Matthias Zöchling</b> wrote on <time>2024-04-16T16:59:21Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: @sarajw@front-end.social.</small></p>
+<p>Frameset? No, wait, that could backfire…<br><a href="https://adactio.com/journal/17916">adactio.com/journal/17916</a></p>
+</article>
+<article>
+<h3><a href="https://mastodon.social/@villepreux/112283449545627573"><b>Antoine Villepreux</b> wrote on <time>2024-04-16T23:17:51Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: @CSSence@mas.to.</small></p>
+<p>CSS naked ring? Awesome! I’m in!</p>
+<p>Could it be a regular ring but with an url parameter indicating you need to get naked?</p>
+<p>Might work for js-naked day too @zachleat@zachleat.com.</p>
+<p>BTW I’m pretty sure my site did support dark/light preference correctly during naked day. 😉</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/112282668192722536"><b>Matthias Zöchling</b> wrote on <time>2024-04-17T04:49:49Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: @villepreux@mastodon.social.</small></p>
+<blockquote>
+<p>Dark &amp; light color-scheme preference still respected.</p>
+<footer>— <cite><a href="https://mastodon.social/@villepreux/112236236495549838">mastodon.social/@villepreux/112236236495549838</a></cite></footer>
+</blockquote>
+<p>Looks like it. 😀👍</p>
+</article>
+<article>
+<h3><a href="https://mas.to/@iamdtms/112281740653483169"><b>Dohány Tamás</b> wrote on <time>2024-04-16T16:03:16Z</time></a></h3>
+<p>Well done! Plus a lot of hybrid levels are there. Variables with colour changer JS, hidden automatic colour scheme:<br><a href="https://gist.github.com/iamdtms/ddc4e556805e60652c21c06281d5b3c2">gist.github.com/iamdtms/ddc4e556805e60652c21c06281d5b3c2</a></p>
+</article>
+<article>
+<h3><a href="https://sunny.garden/@knowler/112282483009775779"><b>Nathan Knowler</b> wrote on <time>2024-04-16T19:12:03Z</time></a></h3>
+<p>One thing to note is that up until quite recently (perhaps the latest version), Safari did not have accessible link colours for dark mode. During last year’s CSS Naked Day, I noticed the issue on my website and decided to get rid of the meta tag and just use the light colour scheme. This year I added the meta tag back even though I knew that might create an inaccessible experience for some who might be using the older versions of Safari. I did notice that text boxes did not have any visible borders in Safari with dark mode.</p>
+<p>I’ve been starting to think that in the future I might include enough styles to keep my site accessible for CSS Naked Day, since User Agent styles are not fully accessible (even with correct, semantic HTML).</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/112282668192722536"><b>Matthias Zöchling</b> wrote on <time>2024-04-16T19:59:09Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: @knowler@sunny.garden.</small></p>
+<p>Yeah, good point. Then again, if you look out there realizing how many websites aren’t accessible all year round, April 9 will be the least of our worries.</p>
+</article>
+<article>
+<h3><a href="https://front-end.social/@sarajw/112282846639816566"><b>Sara Joy</b> wrote on <time>2024-04-16T20:44:32Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: @CSSence@mas.to, @knowler@sunny.garden.</small></p>
+<p>I almost think seeing the a11y fails on that day is sort of part of it. But it’s good of you to strive to keep it working well for everyone.</p>
+</article>
+<article>
+<h3><a href="https://mastodon.social/@pepelsbey/112285499011070635"><b>Vadim Makeev</b> wrote on <time>2024-04-17T07:59:04Z</time></a></h3>
+<p>I’m curious why there is <code>screen and …</code> in the Bisectional example. The default (when you have no prefix) would be <code>all and …</code>, which has the same effect unless you want to hide styles from printers.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/112285514838099727"><b>Matthias Zöchling</b> wrote on <time>2024-04-17T08:03:05Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: @pepelsbey@mastodon.social.</small></p>
+<p>Yes, hiding it from printers was the idea, I would assume they are anyhow taken care of in either a theme-independent core stylesheet, or a dedicated print stylesheet.</p>
+<p>So I guess I wanted to be on the safe side, #DarkMode for printers could waste a lot of ink. 😉</p>
+</article>
+<article>
+<h3><a href="https://mastodon.social/@pepelsbey/112286471713009153"><b>Vadim Makeev</b> wrote on <time>2024-04-17T12:06:26Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: @CSSence@mas.to.</small></p>
+<p>I toggled the system dark more and printed a sample page with the default dark mode styles enabled via the color-scheme. I even tried to enable the “background graphics” option. All I got was black text on white paper. It seems like all browsers don’t apply them to print.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/112287061546054705"><b>Matthias Zöchling</b> wrote on <time></time></span></h3>
+<p data-chain="reply"><small>In reply to: @pepelsbey@mastodon.social.</small></p>
+<p>Interesting. I also ran a test: I opened my <a href="https://cssence.com/2024/media-queries-including-level-5/">media queries test page,</a> in the print preview <code>prefers-color-scheme</code> always reports <code>light</code>. Which makes sense. And I guess that’s also the cause for your result. Good to know. (I’ve only been able to test Firefox and Chromium.)</p>
+</article>
+<article>
+<h3><a href="https://mastodon.social/@pepelsbey/112287076151173343"><b>Vadim Makeev</b> wrote on <time>2024-04-17T14:40:09Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: @CSSence@mas.to.</small></p>
+<p>It’s a bummer, though, if you have black paper and white ink, you know. 😄</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/112287079081828034"><b>Matthias Zöchling</b> wrote on <time>2024-04-17T14:40:54Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: @pepelsbey@mastodon.social.</small></p>
+<p>🤣</p>
+</article>
+<article>
+<h3><a href="https://front-end.social/@sarajw/112287098391747298"><b>Sara Joy</b> wrote on <time>2024-04-17T14:45:48Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: @pepelsbey@mastodon.social, @CSSence@mas.to.</small></p>
+<p>dark mode printers!</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>

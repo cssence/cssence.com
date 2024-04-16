@@ -1,0 +1,4 @@
+html {
+	background-color: light-dark(black, white);
+	color: light-dark(white, black);
+}
