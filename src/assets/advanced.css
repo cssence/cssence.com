@@ -347,7 +347,7 @@ pre {
 header,
 .posts li,
 .standout,
-pre,
+div > pre,
 #comments ~ article,
 footer.metadata {
 	margin-right: calc(-1 * var(--_pbs));
