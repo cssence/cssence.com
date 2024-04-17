@@ -289,6 +289,7 @@ ul,
 blockquote,
 figure, .figure,
 pre,
+:not(li) > details,
 p {
 	margin-bottom: 1.5rem;
 }
@@ -478,6 +479,9 @@ aside[aria-labelledby="comments"],
 	letter-spacing: .0625rem;
 	line-height: 1.5;
 	text-transform: uppercase;
+}
+#contribute {
+	margin-top: 4.5rem;
 }
 .posts :is(ol, ul) {
 	margin-bottom: 3rem;
