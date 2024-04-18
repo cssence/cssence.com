@@ -32,6 +32,7 @@ const folderOut = './public';
 			const rssFile = `${folderOut}${urlPath}${RSS_FILE}`;
 			const rss = [];
 			rss.push('<?xml version="1.0" encoding="utf-8"?>');
+			rss.push('<?xml-stylesheet href="/assets/rss.xsl" type="text/xsl"?>');
 			rss.push('<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">');
 			rss.push('<channel>');
 			const rssTitle = urlPath === '/all/' ? 'CSSence' : `CSSence: ${meta.toc.byPath[urlPath].title.split(' ')[0]}`;
