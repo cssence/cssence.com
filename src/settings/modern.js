@@ -3,10 +3,10 @@ const init = () => {
 	const cndMsgs = {
 		'today': 'Today is April&nbsp;9!<br>Happy CND! 🥳',
 		'somewhere': 'It is April&nbsp;9 somewhere on planet Earth!<br>Happy CND! 🌎',
-		'50h': 'You’re really into celebrating CND. This website will be shown without stylesheets when it is April&nbsp;9 in any time zone on planet Earth. 🤩',
-		'24h': 'CND is observed. This website will be shown without stylesheets on April&nbsp;9. 🙂',
+		'50h': 'You’re really into celebrating CND. This website will be shown without style sheets when it is April&nbsp;9 in any time zone on planet Earth. 🤩',
+		'24h': 'CND is observed. This website will be shown without style sheets on April&nbsp;9. 🙂',
 		'all-year': 'CND observation doesn’t matter much, you’ve chosen to go without a page style all year round. 🤓',
-		'opt-out': 'You’ve opted out of celebrating CND. This website will be shown with stylesheets all year round. 🥲'
+		'opt-out': 'You’ve opted out of celebrating CND. This website will be shown with style sheets all year round. 🥲'
 	};
 	const celebrateCssNakedDay = (() => {
 		const allYear = localStorage.getItem('page-style') === 'none';

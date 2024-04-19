@@ -22,10 +22,10 @@
 <p>It wasn’t until a few days later, when I realized that I haven’t looked at my site since. But surely it would still be up?</p>
 <p>Kind of. My site should look like the right-most version in the <a href="#figure-1">image below</a>. But what I got was the one in the middle.</p>
 <figure id="figure-1" class="standout"><img src="/2021/the-day-the-website-stood-still/versions.png" alt="Screenshots of three different versions of this article on cssence.com.">
-<figcaption>From left to right: This article 1. without stylesheets, 2. on older browsers, 3. in it’s most enhanced form.</figcaption>
+<figcaption>From left to right: This article 1. without style sheets, 2. on older browsers, 3. in it’s most enhanced form.</figcaption>
 </figure>
 <p>This happens to be an <a href="/2011/alternate-stylesheet/">alternate theme</a> I’ve added for <del>older browsers</del><ins> Internet Explorer</ins>. Apparently the most essential part in my <a href="/2020/css-variables-in-style-attributes/">Cutting the Mustard</a> script broke.</p>
-<p>The check for CSS custom properties support all of a sudden returned false, so the fallback kicked in, which replaces the regular stylesheet with said alternate version. This is when things got weird, because my incremental update had nothing to do with that.</p>
+<p>The check for CSS custom properties support all of a sudden returned false, so the fallback kicked in, which replaces the regular style sheet with said alternate version. This is when things got weird, because my incremental update had nothing to do with that.</p>
 <pre><a href="/2021/the-day-the-website-stood-still/code.firefox-breakage.js">View JS example.</a></pre>
 <p>To top it off, looking at my site on my phone revealed: In the mobile browser it displayed as if nothing had happened. After some debugging I learned that, thanks to a browser update, Firefox had a change of mind. The expression <code>--:1</code> is no longer good enough, a proper CSS custom property needs at least a single character after the two hyphens. That was easily fixed, and sure enough everything started working again.</p>
 <p>But my site had been broken for a couple of days.</p>
@@ -33,7 +33,7 @@
 <p>But has my site been broken for a couple of days?</p>
 <p>No.</p>
 <p>It may not have been displayed as intended in every browser, but all visitors were still able to consume the content (HTML).</p>
-<p>Your stylesheets (CSS) must never interfere with that. Even more important, your scripts (JS) must never interfere with that.</p>
+<p>Your style sheets (CSS) must never interfere with that. Even more important, your scripts (JS) must never interfere with that.</p>
 <p>If you know the <a href="https://www.gov.uk/service-manual/technology/using-progressive-enhancement">progressive enhancement game</a> and play it well, a faulty line in your JavaScript—even if it is in your most important script—does not derail your whole site.</p>
 <h2>Part 3: Revelation.</h2>
 <p><a href="/2011/css3-is-dead/">“CSS3 Is Dead”</a>, my first essay, and the reason this site exists, is now more than ten years old. In it, I was still part of team “Graceful Degradation”, but at least I seem to have had already acknowledged the merits of “Progressive Enhancement”. How times have evolved, today I see <a href="https://en.wikipedia.org/wiki/Progressive_enhancement">Progressive Enhancement</a> as the web’s most important idea.</p>
@@ -42,7 +42,7 @@
 <blockquote>
 <p>[…] I prefer to not stick to a specific approach. Instead, I like to mix them both.</p>
 </blockquote>
-<p>Not only am I with him when it comes to the mobile/desktop design debate, I like to give a similar answer when it comes to degradation and enhancement. No strict either/or, instead use the best tool for the job. (Also, swapping out stylesheets with JavaScript might give you <a href="https://en.wikipedia.org/wiki/Flash_of_unstyled_content">FOUC</a>, so doing it the other way around would punish those who use modern browsers.)</p>
+<p>Not only am I with him when it comes to the mobile/desktop design debate, I like to give a similar answer when it comes to degradation and enhancement. No strict either/or, instead use the best tool for the job. (Also, swapping out style sheets with JavaScript might give you <a href="https://en.wikipedia.org/wiki/Flash_of_unstyled_content">FOUC</a>, so doing it the other way around would punish those who use modern browsers.)</p>
 <p>In hindsight, the <em>progressive degradation</em> I am using for older browers turned out to be a <em>graceful enhancement</em> on the day(s) my website stood still.</p>
 <p>Yes, this is not a typo. Nor a pun. But intended.</p>
 <h2>Epiloque: The End?</h2>
@@ -63,7 +63,7 @@
 <h3><span data-href="https://twitter.com/CSSence/status/1432813918968291334"><b>Matthias Zöchling</b> wrote on <time>2021-08-31T21:13:53Z</time></span></h3>
 <p>#HTML ≥ #CSS ≥ #JS</p>
 <blockquote>
-<p>[Everyone should be] able to consume the content (HTML). Your stylesheets (CSS) must never interfere with that. Even more important, your scripts (JS) must never interfere with that.</p>
+<p>[Everyone should be] able to consume the content (HTML). Your style sheets (CSS) must never interfere with that. Even more important, your scripts (JS) must never interfere with that.</p>
 </blockquote>
 </article>
 </aside>
