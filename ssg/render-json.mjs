@@ -24,7 +24,7 @@ const folderOut = './public';
 		};
 		for (const index of meta.toc.indexes) clean(index, ['isIndex']);
 		for (const page of meta.toc.pages) clean(page);
-		for (const post of meta.toc.posts) clean(post, ['isPostByYear']);
+		for (const post of meta.toc.posts) clean(post, ['isPostByYear', 'rssDescription']);
 
 		// create JSON string and write to file
 

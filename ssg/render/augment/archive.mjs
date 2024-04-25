@@ -55,6 +55,7 @@ const modify = (content, meta) => {
 	content[total] = content[total].replace('<!-- shorts: -->the number of', stats['c-short'][SUM]);
 	content[total] = content[total].replace('<!-- posts: -->umpteen', meta.toc.posts.length); // should be equal to stats[SUM][SUM]
 	content[total] = content[total].replace('<!-- all: -->even more', meta.toc.posts.length + meta.toc.indexes.length + meta.toc.pages.length);
+	content[total] = content[total].replace('<!-- rss: -->many', meta.rssXmlList.length);
 	content.splice(insertBefore, 0, tableContent.join('\n'));
 
 };

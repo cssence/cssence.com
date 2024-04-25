@@ -5,7 +5,7 @@ const storePageData = (urlPath, meta) => {
 	meta.page.title = meta.page.title.replaceAll('&nbsp;', ' ');
 };
 
-const getPageData = (urlPath, content) => {
+const getPageData = (urlPath, content, meta) => {
 
 	const ROOT = 1, TITLE = 3, DESC = 4, ALT = 5, INDICATOR = content.indexOf('</header>') - 1;
 
@@ -20,6 +20,10 @@ const getPageData = (urlPath, content) => {
 	const dates = content[INDICATOR].includes('<br><time') ? content[INDICATOR].match(/<time( data-revised="([^"]+)")*>([^<]+)/).slice(2) : [undefined, undefined];
 	if (isIndexOrPage) dates.reverse(); // !isPostByYear posts are revised-only
 	const alternateUrl = content[ALT].startsWith('<link rel="alternate"') && !content[ALT].includes('data-syndication=') ? content[ALT].match(/href="([^"]+)/)[1] : undefined;
+
+	if (alternateUrl?.endsWith(meta.RSS_FILE)) {
+		meta.rssXmlList.push(urlPath);
+	}
 
 	return {
 		isIndex: isIndex,

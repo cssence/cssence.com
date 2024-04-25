@@ -13,6 +13,7 @@ import addAboutPage from './augment/about.mjs';
 import addNav from './augment/nav.mjs';
 import addFooter from './augment/footer.mjs';
 import assignIds from './augment/id.mjs';
+import extractFeedContent from './augment/rss.mjs';
 
 const augment = async (urlPath, html, meta) => {
 	const content = html.split('\n');
@@ -25,6 +26,7 @@ const augment = async (urlPath, html, meta) => {
 	await addSourceCode(content, meta);
 	addCodepen(content, meta);
 	modifyConversation(content, meta);
+	extractFeedContent(content, meta);
 	addAboutPage(content, meta);
 	addFooter(content, meta);
 	addNav(content, meta);

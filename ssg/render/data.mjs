@@ -11,7 +11,8 @@ const getMetaData = async (folder, filesOnly) => {
 	const meta = filesOnly ? {} : createMetaData();
 	meta.indexHtmlList = await getIndexHtmlList(folder);
 	if (filesOnly) return meta;
-	meta.toc = await getToc(folder, meta.indexHtmlList);
+	meta.rssXmlList = [];
+	meta.toc = await getToc(folder, meta);
 	meta.indexHtmlList = getSortedIndexHtmlList(meta.toc);
 	return meta;
 };

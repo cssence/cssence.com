@@ -1,7 +1,7 @@
 {
   "name": "cssence.com",
   "homepage": "https://cssence.com/",
-  "version": "4.47.0",
+  "version": "4.48.0",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
@@ -12,8 +12,7 @@
     "build:assets": "node ssg/copy.mjs",
     "build:json": "node ssg/render-json.mjs",
     "build:html": "node ssg/render-html.mjs",
-    "build:rss": "node ssg/render-rss.mjs",
-    "build": "npm run build:clean && npm run build:assets && npm run build:html && npm run build:rss",
+    "build": "npm run build:clean && npm run build:assets && npm run build:html",
     "start:dev": "node ssg/serve.mjs --dev",
     "start:sim": "node ssg/serve.mjs",
     "start": "npm run build && npm run start:sim"

@@ -6,6 +6,7 @@ const createMetaData = () => {
 
 	const now = new Date().toISOString().replace(/\.[0-9]+Z/, 'Z');
 	return {
+		RSS_FILE: 'rss.xml',
 		getPermalink: (path) => `https://cssence.com${path}`,
 		date: {
 			build: now,

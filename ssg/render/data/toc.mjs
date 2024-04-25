@@ -4,17 +4,17 @@ import { getFileContent } from '../../utils/files.mjs';
 
 import getPageData from './page.mjs';
 
-const getToc = async (folder, indexHtmlList) => {
+const getToc = async (folder, meta) => {
 
 	const toc = {indexes: [], pages: [], posts: [], byPath: {}};
 
 	// create individual decks
 
-	for (const urlPath of indexHtmlList) {
+	for (const urlPath of meta.indexHtmlList) {
 		const file = `${folder}${urlPath}index.html`;
 		const html = await getFileContent(file);
 		const content = html.split('\n');
-		const { page, isIndex, isPostByYear } = getPageData(urlPath, content);
+		const { page, isIndex, isPostByYear } = getPageData(urlPath, content, meta);
 		const deck = isIndex ? 'indexes' : (isPostByYear ? 'posts' : 'pages');
 		toc[deck].push(page);
 	}
@@ -22,18 +22,20 @@ const getToc = async (folder, indexHtmlList) => {
 	// sort entries in individual decks
 
 	const getIndexWeight = (page) => {
-		const weight = [3, page.path];
-		if (['/', '/about/about/'].includes(page.path)) {
-			weight[0] = 0;
-		} else if (['/articles/', '/code/', '/editorials/', '/essays/', '/events/', '/links/', '/notes/', '/shorts/', '/threads/'].includes(page.path)) {
-			weight[0] = 1;
+		const weight = [2, page.path];
+		if (page.path.startsWith('/series/')) {
+			weight[0] = 4;
 		} else if (page.path.match(/^\/[0-9]{4}\//)) {
 			if (page.path.length > 6) {
-				weight[0] = 4;
+				weight[0] = 5;
 			} else {
-				weight[0] = 2;
+				weight[0] = 3;
 				weight[1] = `/${9999 - Number(page.path.slice(1, -1))}/`;
 			}
+		} else if (['/', '/about/about/', '/all/', '/latest/', '/popular/'].includes(page.path)) {
+			weight[0] = 0;
+		} else if (['/articles/', '/extras/', '/shorts/', '/threads/'].includes(page.path)) {
+			weight[0] = 1;
 		}
 		return weight.join('');
 	};

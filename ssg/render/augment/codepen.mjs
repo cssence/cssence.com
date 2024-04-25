@@ -1,6 +1,6 @@
 /* Add link to `html.c-code articles` */
 
-const modify = (content, meta, plain) => {
+const modify = (content, meta) => {
 
 	if (!meta.page.isPostByYear || meta.page.className !== 'c-code') return;
 	if (!meta.page.alternateUrl) return;
@@ -19,7 +19,7 @@ const modify = (content, meta, plain) => {
 			break;
 		}
 	}
-	content.splice(insertBefore, 0, (plain ? aside.slice(1, -1) : aside).join('\n'));
+	content.splice(insertBefore, 0, aside.join('\n'));
 
 };
 
