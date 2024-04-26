@@ -4,7 +4,7 @@
 <title>RSS Feeds</title>
 <meta name="description" content="A list of all RSS feeds on CSSence.com, subscribers welcome!">
 <style media="screen" title="Advanced Style">html.advanced {
-main ul{--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.13 11.73a2.13 2.13 0 1 0 0 4.25 2.13 2.13 0 1 0 0-4.25zM0 5.43V8.5c2 0 3.88.78 5.29 2.2a7.45 7.45 0 0 1 2.2 5.3h3.07C10.56 10.18 5.82 5.44 0 5.44zM0 0v3.07c7.13 0 12.92 5.8 12.92 12.93H16C16 7.18 8.82 0 0 0z'/%3E%3C/svg%3E");list-style-type:none}
+main ul{--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.13 11.73a2.13 2.13 0 1 0 0 4.25 2.13 2.13 0 1 0 0-4.25zM0 5.43V8.5c2 0 3.88.78 5.29 2.2a7.45 7.45 0 0 1 2.2 5.3h3.07C10.56 10.18 5.82 5.44 0 5.44zM0 0v3.07c7.13 0 12.92 5.8 12.92 12.93H16C16 7.18 8.82 0 0 0z'/%3E%3C/svg%3E");list-style-type:""}
 main li:has(> a)::before{content:"";position:absolute;width:1rem;height:1rem;margin:.3125rem 0 0 -1.75rem;background-color:currentColor;-webkit-mask:var(--icon) center / contain no-repeat;mask:var(--icon) center / contain no-repeat;forced-color-adjust:none}
 main h2 + ul > li{margin-left:7rem}
 main h2 + ul > li:is(:nth-child(1), :nth-child(14)){margin-left:1.75rem}
@@ -35,7 +35,7 @@ main ul ul li{margin-top:.75rem}
 <p>No rule without an exception, let’s talk about the 🐘 in the room: The first entry in the list goes beyond recent posts, and instead <a href="#all">contains all</a> blog posts ever written.</p>
 <p id="special-offer">And I have a <strong>special offer</strong> if you don’t want to get too invested: Subscribe only until the end of the year (<a href="#current-year">2024</a> at the time of writing). Your subscription will end automatically, no strings attached. You can always come back to this page and subscribe for another year. Previous years are there too, obviously those feeds are no longer updated, but maybe you feel nostalgic. 🙂</p>
 <h2 id="feeds">Available feeds</h2>
-<ul aria-label="Subscribe to RSS feed">
+<ul>
 <li id="all"><a href="/all/rss.xml">All</a></li>
 <li id="latest"><a href="/latest/rss.xml">Latest</a></li>
 <li><a href="/articles/rss.xml">Articles</a></li>
@@ -52,7 +52,7 @@ main ul ul li{margin-top:.75rem}
 <li id="previous-years">
 <details>
 <summary>Previous years</summary>
-<ul aria-label="Subscribe to no longer updated RSS feed">
+<ul>
 <li><a href="/2023/rss.xml">2023</a></li>
 <li><a href="/2022/rss.xml">2022</a></li>
 <li><a href="/2021/rss.xml">2021</a></li>

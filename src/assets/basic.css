@@ -134,7 +134,7 @@ a[href="#top"] {
 }
 .nav-menu ul {
 	display: block;
-	list-style: none;
+	list-style-type: "";
 	margin: 0;
 	padding-left: 0;
 }

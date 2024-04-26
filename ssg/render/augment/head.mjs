@@ -38,7 +38,7 @@ const modify = (content, meta) => {
 		`<meta name="robots" content="${['/404/', '/about/about/', '/assets/'].includes(meta.page.path) ? 'no' : ''}index,follow">`,
 	];
 	const scripts = [
-		'<script nomodule type="text/javascript" src="/assets/old.js"></script>',
+		'<script nomodule src="/assets/old.js"></script>',
 		'<script type="module" src="/assets/modern.js"></script>',
 	];
 

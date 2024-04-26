@@ -19,7 +19,7 @@ const modify = (content, meta) => {
 	const createMenuItem = (link, index) => `<li><a${link.className ? ` class="${link.className}"` : ''}${link.url === '/' ? ' rel="home"' : ''} href="${link.url}"><span hidden aria-hidden="true">${String(index + 1).padStart(2, '0')} </span>${link.label}${link.suffix || ''}</a></li>`;
 	const nav = [
 		'<nav class="nav-menu" aria-label="Main">',
-		'<ul role="list" aria-label="Menu">',
+		'<ul>',
 		navItems.map((link, index) => createMenuItem(link, index)).join('\n'),
 		'</ul>',
 		'</nav>'

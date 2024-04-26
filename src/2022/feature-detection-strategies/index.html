@@ -15,7 +15,7 @@
 </header>
 <div>
 <p>Every CSS feature available in every browser at the same time? Not a reality. Features are adopted by browsers at their own pace, with different priorities. Can we make use of a feature before it lands in all browsers? Sure. These days we can check if a feature is supported with <code>@supports</code>, but we have other options. Let’s take a closer look.</p>
-<h2>1: Redeclaration</h2>
+<h2 id="redeclaration">1: Redeclaration</h2>
 <p>Instead of adding a <code>@supports</code> block, sometimes it is easier to simply repeat the declaration. As Bramus Van Damme comments in his <a href="https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/">The Large, Small, and Dynamic Viewports</a> article:</p>
 <blockquote>
 <p>… you could also do without the check, as browsers discard declarations they don’t understand.</p>
@@ -24,12 +24,12 @@
 <p>Using those new viewport units as an example, we set the <code>vb</code> and the <code>dvb</code> in succession:</p>
 <pre><a href="/2022/feature-detection-strategies/code.duplication.css">View CSS example.</a></pre>
 <p>Browsers that only support the <code>vb</code> unit will use that and ignore the <code>dvb</code> declaration.<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup></p>
-<h2>2: Feature Queries</h2>
+<h2 id="feature-queries">2: Feature Queries</h2>
 <p>Sure enough, there are limits to redeclaration. Feature queries come into play when you have to reset things browsers <em>do</em> understand. Before <code>gap</code> (initially <code>grid-gap</code>) was supported in grid layout, we used margins to generate space between grid items. To future-proof things, we added a test for gap support using a <code>@supports</code> block, which included the proper way to do gaps, and the removal of the hacks. If you did those things without a feature query, the fallback margins would have vanished even in those browsers that still needed the hack, because all browsers understand the margin declaration.</p>
 <p>If we recreate the example above with feature queries, it looks more verbose:</p>
 <pre><a href="/2022/feature-detection-strategies/code.supports.css">View CSS example.</a></pre>
 <p>Those are the two ways. That’s it, right? For the most part, yes. But in this particular case, we have a third option.</p>
-<h2>3: Feature Queries &amp;&nbsp;Custom Properties</h2>
+<h2 id="feature-queries-and-custom-properties">3: Feature Queries &amp;&nbsp;Custom Properties</h2>
 <p>Our case being: We are querying the support of a unit (like <code>dvb</code>) and not a property (like <code>gap</code>). That’s why, instead of redeclaring it, we can store the thing we test for in a custom property, and assign just that.</p>
 <pre><a href="/2022/feature-detection-strategies/code.variables.css">View CSS example.</a></pre>
 <p>Why would you do that? This is even more verbose than the last one. True, but it becomes beneficial the moment you have to use the custom property in multiple places, unlike in this example, where it is assigned just once. And as soon as <code>calc()</code> comes into play, it could lead to duplication of potentially complex code. Instead of writing that calculation twice (as you would have to when using method 1 or 2), making the custom property containing the feature query result part of a single calculation is usually better.</p>

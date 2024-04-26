@@ -196,7 +196,7 @@ summary {
 	width: fit-content;
 }
 li:has(> details:only-child) {
-	list-style-type: none;
+	list-style-type: "";
 }
 li:has(> details:only-child) summary {
 	list-style-position: outside;
@@ -262,8 +262,9 @@ hr {
 	border: none;
 	border-top: var(--size-separator) dotted var(--color-bg-subtle);
 }
-[role="list"] {
-	list-style: none;
+.posts :is(ol, ul),
+footer nav ul {
+	list-style-type: "";
 }
 :disabled {
 	cursor: not-allowed;
@@ -1049,7 +1050,7 @@ a[href="#top"] {
 }
 .nav-menu ul {
 	display: block;
-	list-style: none;
+	list-style-type: "";
 	margin: 0;
 	padding-left: 0;
 }
