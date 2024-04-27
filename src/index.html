@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="c-default advanced">
+<html lang="en" class="c-default">
 <head>
 <title>CSSence.com «The Essence of CSS»</title>
 <meta name="description" content="Weblog and #IndieWeb Hub of Matthias Zöchling (@CSSence).">
+<link rel="alternate stylesheet" media="screen" href="/advanced.css" title="Advanced Style">
+<link rel="stylesheet" media="screen" href="/advanced.css" title="Custom Style">
 </head>
 <body>
 <main>
@@ -13,105 +15,6 @@
 <p><i>Home</i><br><img src="/index.png" alt=""></p>
 </header>
 <div>
-<style media="screen" aria-hidden="true" title="Advanced Style">html.advanced {
-header {
-	min-height: 0;
-	margin-bottom: 1.5rem;
-}
-h1,
-header img {
-	opacity: .05;
-}
-h1 {
-	font-size: 1.5rem;
-}
-h1 + p {
-	font-size: 2.5rem;
-}
-h1 + p abbr {
-	color: var(--color-accent);
-}
-main > div > div {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: .125rem;
-	overflow: hidden;
-	position: relative;
-	margin-right: calc(-1 * var(--_pbs));
-	background: linear-gradient(90deg, #0000 calc(50% - .0625rem), var(--color-bg) calc(50% - .0625rem), var(--color-bg) calc(50% + .0625rem), var(--color-accent) calc(50% + .0625rem)) var(--color-dark);
-	color: var(--color-light);
-}
-main > div > div style {
-	display: block;
-	position: absolute;
-	height: calc(100% + 2rem);
-	margin: -1rem -4.27em;
-	color: rgba(0,0,0,.1);
-	font: 2.87rem / .28 serif;
-	word-break: break-all;
-	cursor: default;
-	user-select: none;
-	--mask: linear-gradient(90deg, #000 calc(50% - .0625rem), #0000 calc(50% - .0625rem), #0000 calc(50% + .0625rem), #000 calc(50% + .0625rem));
-	-webkit-mask-image: var(--mask);
-	mask-image: var(--mask);
-}
-main > div > div section {
-	display: flex;
-	position: relative;
-	flex-direction: column;
-	padding: .9375rem 1.6875rem .9375rem calc(var(--padding-horizontal) - .0625rem);
-	border: .0625rem dashed transparent;
-	text-shadow: 0 0 .125rem var(--color-dark);
-}
-main > div > div section:last-of-type {
-	--color-accent: var(--color-dark);
-	padding: .9375rem calc(var(--padding-horizontal) - .0625rem) .9375rem 1.6875rem;
-}
-main > div > div section:last-of-type h3 {
-	margin-left: 1rem;
-}
-main > div > div h3 {
-	margin-top: 1.5rem;
-}
-main > div > div h3 + p {
-	flex-grow: 1;
-}
-main > div > div section:first-of-type a::after {
-	content: "";
-	position: absolute;
-	z-index: 1;
-	top: 1.625rem;
-	right: -1.75rem;
-	width: 3.25rem;
-	height: 3.25rem;
-	background: url(/about/matt/photo.jpg) center / cover no-repeat var(--color-bg);
-	border: .125rem solid var(--color-bg);
-	border-radius: 50%;
-}
-@media (max-width: 55.45em) {
-	h1 + p {
-		font-size: 1.75rem;
-	}
-}
-@media (max-width: 39em) {
-	h1 {
-		font-size: inherit;
-	}
-	main > div > div {
-		margin-left: calc(var(--padding-horizontal) * -1);
-	}
-}
-@media (min-width: 39.05em) {
-	main > div > div section {
-		--padding-horizontal: 1.75rem;
-	}
-}
-@media (forced-colors: active) {
-	main > div style {
-		display: none !important;
-	}
-}
-}</style>
 <h2 id="introduction" class="visually-hidden">CSSence? What is that?</h2>
 <section>
 <h3 id="cssence-the-person">The Person</h3>
@@ -120,7 +23,7 @@ main > div > div section:first-of-type a::after {
 </section>
 <section>
 <h3 id="cssence-the-website">The Website</h3>
-<p>This site started as a weblog on WordPress. As time went by, I&nbsp;got my own domain and turned it into a full-fledged IndieWeb hub, where all my content resides for longevity.</p>
+<p>This site started as a weblog on Word&shy;Press. As time went by, I&nbsp;got my own domain and turned it into a full-fledged IndieWeb hub, where all my content resides for longevity.</p>
 <p><a href="/about/">About CSSence.com.</a></p>
 </section>
 </div>

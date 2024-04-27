@@ -211,6 +211,9 @@ main .visually-hidden {
 		content: '\0a';
 		white-space: pre;
 	}
+	form label[for] + id {
+		scroll-margin-top: 3rem;
+	}
 }
 @media print {
 	body {

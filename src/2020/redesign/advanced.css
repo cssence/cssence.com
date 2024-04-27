@@ -1,5 +1,3 @@
-html.advanced {
-
 .standoff ol {
 	counter-reset: part;
 	list-style-type: disc;
@@ -21,6 +19,4 @@ html.advanced {
 }
 .standoff li:last-child {
 	margin-bottom: 0;
-}
-
 }

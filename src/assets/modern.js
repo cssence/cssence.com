@@ -55,8 +55,18 @@ try {
 		});
 	}
 	const colorScheme = localStorage.getItem('color-scheme');
-	if (!pageStyle && !window.CSS.supports('selector(&)')) pageStyle = 'basic';
-	if (pageStyle) document.documentElement.className = document.documentElement.className.replace('advanced', pageStyle);
+	if (pageStyle) {
+		let styleSet = {};
+		document.querySelectorAll('link[media="screen"][rel$="stylesheet"]').forEach((stylesheet) => {
+			const style = stylesheet.title.split(' ')[0].toLowerCase();
+			if (style === 'custom') {
+				stylesheet.href = styleSet[pageStyle] || 'data:text/css;charset=utf-8,';
+				styleSet = {};
+			} else {
+				styleSet[style] = stylesheet.href;
+			}
+		});
+	}
 	if (colorScheme) document.querySelector('meta[name="color-scheme"]').setAttribute('content', colorScheme);
 	if (pageStyle !== 'none') onReady(highlight);
 

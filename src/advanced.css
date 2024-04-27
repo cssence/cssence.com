@@ -1,0 +1,107 @@
+header {
+	min-height: 0;
+	margin-bottom: 1.5rem;
+}
+header {
+	min-height: 0;
+	margin-bottom: 1.5rem;
+}
+h1,
+header img {
+	opacity: .05;
+}
+h1 {
+	font-size: 1.5rem;
+}
+h1 + p {
+	font-size: 2.5rem;
+}
+h1 + p abbr {
+	color: var(--color-accent);
+}
+main > div > div {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: .125rem;
+	overflow: hidden;
+	position: relative;
+	margin-right: calc(-1 * var(--_pbs));
+	background: linear-gradient(var(--color-bg-overlay, #0000), #0003), linear-gradient(90deg, #0000 calc(50% - .0625rem), var(--color-bg) calc(50% - .0625rem), var(--color-bg) calc(50% + .0625rem), var(--color-accent) calc(50% + .0625rem)) var(--color-dark);
+	color: var(--color-light);
+	text-align: justify;
+	hyphens: auto;
+}
+@media (prefers-color-scheme: dark) {
+	html:where(:has(meta[name="color-scheme"][content$="dark"])) {
+		--color-bg-overlay: #0006;
+	}
+}
+html:where(:has(meta[name="color-scheme"][content="dark"])) {
+	--color-bg-overlay: #0006;
+}
+main > div > div::before,
+main > div > div::after {
+	content: "";
+	position: absolute;
+	z-index: 0;
+	width: calc(50% - .0625rem);
+	inset: 0;
+	right: auto;
+	background: url('/404/index.png') center/cover no-repeat;
+	opacity: .15;
+}
+main > div > div::after {
+	right: 0;
+	left: auto;
+}
+main > div > div section {
+	display: flex;
+	position: relative;
+	z-index: 1;
+	flex-direction: column;
+	padding: .9375rem 1.6875rem .9375rem calc(var(--padding-horizontal) - .0625rem);
+	border: .0625rem dashed transparent;
+}
+main > div > div section:last-of-type {
+	--color-accent: var(--color-dark);
+	padding: .9375rem calc(var(--padding-horizontal) - .0625rem) .9375rem 1.6875rem;
+}
+main > div > div section:last-of-type h3 {
+	margin-left: 1rem;
+}
+main > div > div h3 {
+	margin-top: 1.5rem;
+}
+main > div > div h3 + p {
+	flex-grow: 1;
+}
+main > div > div section:first-of-type a::after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 1.625rem;
+	right: -1.75rem;
+	width: 3.25rem;
+	height: 3.25rem;
+	background: url(/about/matt/photo.jpg) center / cover no-repeat var(--color-bg);
+	border: .125rem solid var(--color-bg);
+	border-radius: 50%;
+}
+@media (max-width: 55.49em) {
+	h1 + p {
+		font-size: 1.75rem;
+	}
+}
+@media (max-width: 39em) {
+	h1 {
+		font-size: inherit;
+	}
+	main > div > div {
+		margin-left: calc(var(--padding-horizontal) * -1);
+	}
+}
+@media (min-width: 39.01em) {
+	main > div > div section {
+		--padding-horizontal: 1.75rem;
+	}
+}

@@ -1,0 +1,18 @@
+#poll div {
+	display: grid;
+	grid-template-columns: 8ch 6ch 1fr;
+	gap: 0 1rem;
+	align-items: center;
+}
+#poll div::after {
+	content: "";
+	width: var(--value);
+	height: .75rem;
+	border-radius: .25rem;
+	background: var(--color-accent);
+}
+#poll dd {
+	margin: 0;
+	font-variant-numeric: lining-nums tabular-nums;
+	text-align: right;
+}

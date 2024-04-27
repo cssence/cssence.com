@@ -15,8 +15,8 @@ const modify = (content, meta) => {
 	];
 	const styles = [
 		'<link rel="alternate stylesheet" media="screen" href="/assets/basic.css" title="Basic Style">',
-		'<link rel="stylesheet" media="screen" href="/assets/advanced.css" title="Advanced Style">',
-		'<link rel="stylesheet" media="print" href="/assets/basic.css">',
+		'<link rel="alternate stylesheet" media="screen" href="/assets/advanced.css" title="Advanced Style">',
+		'<link rel="stylesheet" media="screen" href="/assets/advanced.css" title="Custom Style">',
 	];
 	const crap = [
 		`<meta property="og:type" content="${meta.page.isIndex ? 'website' : 'article'}">`,
@@ -53,16 +53,17 @@ const modify = (content, meta) => {
 			if (content[i].startsWith('<script')) {
 				scripts.push(content[i]);
 				if (!content[i].endsWith('</script>')) inside = {addTo: scripts, until: '</script>'};
-			} else if (content[i].startsWith('<link rel="stylesheet"')) {
+			} else if (content[i].startsWith('<link rel="alternate stylesheet"') || content[i].startsWith('<link rel="stylesheet"')) {
 				styles.push(content[i]);
 			} else if (content[i].startsWith('<style')) {
 				styles.push(content[i]);
-				if (!content[i].endsWith('</style>')) inside = {addTo: styles, until: '}</style>'};
+				if (!content[i].endsWith('</style>')) inside = {addTo: styles, until: '</style>'};
 			} else {
 				other.push(content[i]);
 			}
 		}
 	}
+	styles.push('<link rel="stylesheet" media="print" href="/assets/basic.css">');
 	const head = [
 		...intro,
 		...styles,

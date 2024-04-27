@@ -1,5 +1,3 @@
-html.advanced {
-
 form {
 	position: relative;
 }
@@ -28,14 +26,14 @@ form h3 {
 }
 form h3::before,
 form h3::after {
-	content: '';
+	content: "";
 	border-top: .0625rem dotted;
 }
 form p:where(.submit) {
 	grid-template-columns: 1fr 1fr;
 	margin-top: 3rem;
 }
-@media (max-width: 55.45em) {
+@media (max-width: 55.49em) {
 	form p:where(.submit) {
 		margin-bottom: 3rem;
 	}
@@ -45,7 +43,7 @@ form p:where(.submit) {
 		grid-template-columns: 2fr 1fr 1fr;
 	}
 	form .submit::before {
-		content: '';
+		content: "";
 	}
 	select {
 		grid-column: 2 / -1;
@@ -142,6 +140,4 @@ form p:where(.submit) {
 	.token.punctuation {fill:#0451a5}
 	.token.selector,
 	.token.property {fill:#e50000}
-}
-
 }

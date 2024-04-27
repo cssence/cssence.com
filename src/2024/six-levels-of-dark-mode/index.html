@@ -1,17 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="c-essay advanced">
+<html lang="en" class="c-essay">
 <head>
 <title>Six levels of dark mode</title>
 <meta name="description" content="From HTML-only to JS-infused, and all the CSS in between.">
-<style media="screen" title="Advanced Style">html.advanced, html.basic {
-.standoff hr{margin:.75em 0 .6875em}
-} html.advanced {
-.standoff hr{max-width:calc(100% - 1.75rem);margin:1.5rem 0 1.25rem}
-@media (prefers-color-scheme: light) {
-	figure{background-color: var(--color-dark)}
-}
-}</style>
-<style rel="alternate stylesheet" media="screen" title="Basic Style">.standoff hr{margin:.75em 0 .6875em}</style>
+<link rel="alternate stylesheet" media="screen" href="data:text/css;charset=utf-8,.standoff%20hr%7Bmargin%3A.75em%200%20.6875em%7D" title="Basic Style">
+<link rel="alternate stylesheet" media="screen" href="data:text/css;charset=utf-8,.standoff%20hr%7Bmax-width%3Acalc%28100%25%20-%201.75rem%29%3Bmargin%3A1.5rem%200%201.25rem%7D%40media%20%28prefers-color-scheme%3A%20light%29%7Bfigure%7Bbackground-color%3A%20var%28--color-dark%29%7D%7D" title="Advanced Style">
+<link rel="stylesheet" media="screen" href="data:text/css;charset=utf-8,.standoff%20hr%7Bmax-width%3Acalc%28100%25%20-%201.75rem%29%3Bmargin%3A1.5rem%200%201.25rem%7D%40media%20%28prefers-color-scheme%3A%20light%29%7Bfigure%7Bbackground-color%3A%20var%28--color-dark%29%7D%7D" title="Custom Style">
 </head>
 <body>
 <main>
