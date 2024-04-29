@@ -1,0 +1,6 @@
+@media (min-width: 48em) {
+	/* when viewport size is 768px and above */
+}
+@media (max-width: 47.99em) {
+	/* when viewport size is below 768px */
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="c-code advanced">
+<head>
+<title>Superior Range Syntax</title>
+<meta name="description" content="One more thing about the improved viewport size media queries.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/xxeewjp" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Superior Range Syntax</h1>
+<p><i>Code</i><br><time>2024-04-29T04:45:00Z</time><br><img src="/2024/superior-range-syntax/index.webp" alt=""></p>
+</header>
+<div>
+<p>Whoopsie, when I wrote <a href="/2024/is-css-alive/">»Is CSS alive?«</a> earlier this year, I completely forgot to mention another <em>Baseline 2023</em> feature: The <a href="https://web.dev/articles/media-query-range-syntax">media query range syntax,</a> which allows us to be more concise when querying the viewport size. But in my opinion this is not even the best part.</p>
+<p>First things first. This is how the range syntax differs from the good old viewport size media queries.</p>
+<pre><a href="/2024/superior-range-syntax/code.comparison.css">View CSS code.</a></pre>
+<p>Things get even more concise when you need to query between lower and upper bounds.</p>
+<pre><a href="/2024/superior-range-syntax/code.next-level.css">View CSS code.</a></pre>
+<h2>So what’s the best part?</h2>
+<p>As you’ve seen, I’ve been using the <code>em</code> unit instead of <code>px</code>. If you are a pixel person<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup>, the following may not be as important to you. Then again, some bits may be, so keep reading just to be safe.</a></p>
+<p>Imagine you have a breakpoint at 768&nbsp;pixels, which is <code>48em</code> at a root font size of 16&nbsp;pixels.</p>
+<p>If you need two types of queries in your stylesheet, one where the breakpoint is not yet reached, and one where it is, in the olden days you had to do the following.</p>
+<pre><a href="/2024/superior-range-syntax/code.opposites-old.css">View CSS code.</a></pre>
+<p>That weird <code>47.99em</code> happens to be 767.84 pixels. Why not use <code>47.9375em</code>, which is precisely 767 pixels? For starters, it is longer, but more importantly you may run into issues on displays that use fractional scaling. If someone uses 1.5x fractional scaling (or 150% scaling) on their OS, a browser might end up with a calculated viewport width of 767.5 pixels, which may cause an in-between state, where none of the two media queries kicks in. To avoid that, I use two digits for the fractions, the second always being nine.<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Footnote #2">[2]</a></sup></p>
+<p>Anyhow, you may already know where this is going. Here’s the new improved way.</p>
+<pre><a href="/2024/superior-range-syntax/code.opposites-new.css">View CSS code.</a></pre>
+<p>Thanks to the ability to go with or without an equals sign in the comparison, we can write <code>48em</code> in both cases. 🥳</p>
+<p>As an added bonus, this makes it easier when you search for breakpoints in your code.</p>
+<p>As an added added bonus, the aforementioned issue with fractional scaling can be avoided if you use the range syntax.</p>
+<h2>The missing chapter</h2>
+<p>What follows is the chapter that should have been in my <a href="/2024/is-css-alive/">»Is CSS alive?«</a> essay.</p>
+<h3><span aria-hidden="true">✅ </span>Media query range syntax</h3>
+<p>Syntactic sugar? Far from it. Thanks to the new <a href="https://css-tricks.com/the-new-css-media-query-range-syntax/">range syntax</a> we finally have a proper way to query the viewport size, i.e. the thing that has opened the door for Responsive Web Design many years ago.</p>
+<p><strong class="subtle">Verdict:</strong> Use it, and never look back.</p>
+<hr>
+<aside class="standoff" aria-labelledby="spoiler" style="--offset:-7.6875rem">
+<h2 id="spoiler">Spoiler</h2>
+<p>My upcoming essay »Not always mobile first« is somewhat related to this, so tune in next month when it goes live.</p>
+</aside>
+<h2>The music player postscript</h2>
+<p>I’ve created a CodePen that makes use of the aforementioned breakpoint at 768 pixels to decide which piece of music you should listen to, because why not. It uses five ways to determine the breakpoint:</p>
+<ol>
+<li><code>px</code> unit, old syntax</li>
+<li><code>em</code> unit, old syntax, 1 digit for precision</li>
+<li><code>em</code> unit, old syntax, 2 digits for precision</li>
+<li><code>em</code> unit, new range syntax</li>
+<li><code>px</code> unit, new range syntax</li>
+</ol>
+<p>The hard part is getting it to show <a href="https://youtu.be/yKNxeF4KMsY">Coldplay’s “Yellow”,</a> which will only be presented at viewports somewhere between 767px and 768px, if at all. I managed to get it shown on a device with 150% scaling running Windows. I opened Responsive Design Mode in Firefox’s DevTools (or Device Toolbar in Chromium’s DevTools, Device Emulation in Edge’s DevTools), and then set the window width to 767px, The result was that the first two methods went “Yellow”, only the old syntax with sufficient precision and obviously the new syntax did not.</p>
+<p>This and the <a href="https://caniuse.com/css-media-range-syntax">green light from caniuse</a> should be enough reasons to only use the range syntax from now on.</p>
+<section>
+<h2 id="fns">Footnotes</h2>
+<ol>
+<li id="fn-1">After all, <a href="https://zellwk.com/blog/media-query-units/">we are past those Safari issues from eight years ago. Are we?</a> <a href="#ref-fn-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="fn-2">This means even the pixel people must go beyond integers to avoid those issues. <a href="#ref-fn-2" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+</ol>
+</section>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/112353513452820214"><b>Matthias Zöchling</b> wrote on <time>2024-04-29T04:25:00Z</time></span></h3>
+<p>I guess you know that the new range syntax allows media queries to be more concise. But <abbr title="in my opinion">IMO</abbr> this isn’t even the best part. Let me explain:<br><a href="/2024/superior-range-syntax/">cssence.com/2024/superior-range-syntax</a></p>
+<p>Also, if you ever wanted to do music selection based on viewport size (🤨), this article is for you.</p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>

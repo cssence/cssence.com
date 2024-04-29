@@ -1,0 +1,6 @@
+@media (min-width: 48em) {
+	/* styles for viewport size 768px and above */
+}
+@media (width >= 48em) {
+	/* same as above, but using range syntax */
+}
