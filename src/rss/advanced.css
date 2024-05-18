@@ -16,13 +16,13 @@ main li:has(> a)::before {
 main h2 + ul > li{
 	margin-left: 7rem;
 }
-main h2 + ul > li:is(:nth-child(1), :nth-child(14)) {
+main h2 + ul > li:is(:nth-child(1), :nth-child(12)) {
 	margin-left: 1.75rem;
 }
-main h2 + ul > li:is(:nth-child(2), :nth-child(13)){
+main h2 + ul > li:is(:nth-child(2), :nth-child(11)) {
 	margin-left: 3.5rem;
 }
-main h2 + ul > li:is(:nth-child(3), :nth-child(8), :nth-child(4), :nth-child(12)) {
+main h2 + ul > li:is(:nth-child(3), :nth-child(8)) {
 	margin-left: 5.25rem;
 }
 main ul ul li {

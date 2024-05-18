@@ -133,7 +133,7 @@ header p:last-child,
 img + small,
 p > small:only-child,
 [data-hl],
-.imprint p {
+.imprint > p {
 	font-size: .875rem;
 	line-height: 1.5;
 }
@@ -263,8 +263,7 @@ hr {
 	border: none;
 	border-top: var(--size-separator) dotted var(--color-bg-subtle);
 }
-.posts :is(ol, ul),
-footer nav ul {
+.posts :is(ol, ul) {
 	list-style-type: "";
 }
 :disabled {
@@ -376,8 +375,8 @@ pre code {
 	margin: 0;
 }
 main,
-.imprint p,
-.nav-menu ul {
+.nav-menu,
+.imprint > p {
 	max-width: calc(35.75rem + var(--_pbs));
 	margin: 0 auto;
 }
@@ -608,7 +607,7 @@ header,
 i::before,
 [data-chain]::before,
 [data-hl]:empty::after,
-.imprint p > a::after {
+.imprint > p > a::after {
 	content: "";
 	position: absolute;
 	width: 1em;
@@ -654,17 +653,23 @@ i {
 .imprint a[href="#top"] {
 	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M0 8a8 8 0 1016 0A8 8 0 000 8zm14.5 0a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z'/%3E%3Cpath d='M11.043 10.457l1.414-1.414L8 4.586 3.543 9.043l1.414 1.414L8 7.414z'/%3E%3C/svg%3E");
 }
-.imprint p {
+.imprint :is(p, details) {
 	margin-bottom: 0;
 }
-.imprint p > span:nth-child(2) {
+.imprint p {
+	display: grid;
+	grid-auto-flow: dense;
+	grid-template-columns: 1fr 1fr calc(var(--width-sidebar) - var(--reveal, 0rem));
+	gap: .75rem calc(var(--_pbs) - var(--width-sidebar));
+}
+.imprint > p > span:nth-child(2) {
 	display: flex;
 	gap: 1rem;
 }
-.imprint p > a {
+.imprint > p > a {
 	justify-self: end;
 }
-.imprint p > a {
+.imprint > p > a {
 	margin-right: 1.375rem;
 }
 .imprint {
@@ -674,50 +679,86 @@ i {
 	color: var(--color-light);
 }
 .nav-menu {
-	margin-bottom: 4rem;
-}
-.imprint p,
-.nav-menu ul {
-	display: grid;
-	grid-auto-flow: dense;
-	grid-template-columns: 1fr 1fr calc(var(--width-sidebar) - var(--reveal, 0rem));
-	gap: .75rem calc(var(--_pbs) - var(--width-sidebar));
-}
-.imprint p > span {
-	grid-column: 1 / 3;
-}
-.nav-menu li {
-	grid-column: 1;
-	/* max-width: var(--width-sidebar); */
-	margin: 0;
-}
-.nav-menu li:nth-child(even) {
-	grid-column: 2;
-}
-.imprint p > a,
-.nav-menu li:nth-child(8) ~ li {
-	grid-column: 3;
-}
-.nav-menu a {
 	--size-nav-item: 2.5rem;
 	--size-nav-stripe: 5px;
-	display: block;
-	padding-top: .4375rem;
+	display: grid;
+	grid-template-areas: 'nav';
+	margin-bottom: 4rem;
+}
+.nav-menu :is(p, details) {
+	grid-area: nav;
+}
+.nav-menu p {
+	grid-template-rows: repeat(4, var(--size-nav-item));
+}
+.nav-menu details {
+	position: relative;
+	pointer-events: none;
+}
+.nav-menu details :is(a, summary) {
+	pointer-events: auto;
+}
+.nav-menu details p {
+	position: absolute;
+	inset: 0;
+}
+.nav-menu details p::before,
+.nav-menu details p::after {
+	content: '';
+	order: -1;
+}
+.nav-menu summary {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: calc(var(--width-sidebar) - var(--reveal, 0rem));
 	height: var(--size-nav-item);
+}
+.nav-menu summary::marker {
+	content: none;
+}
+.imprint > p > span,
+.nav-menu > p a {
+	grid-column: 1 / 3;
+}
+.nav-menu:has(details[open]) > p a:first-child,
+.nav-menu details a {
+	grid-column: 1;
+}
+.nav-menu:has(details[open]) > p a:nth-child(4),
+.nav-menu details a:nth-child(even) {
+	grid-column: 2;
+}
+.imprint > p > a,
+.nav-menu > p a:nth-child(4) ~ a,
+.nav-menu details a:nth-child(6) ~ a {
+	grid-column: 3;
+}
+.nav-menu details[open] summary span:last-child,
+.nav-menu:has(details[open]) > p a:nth-child(2),
+.nav-menu:has(details[open]) > p a:nth-child(3),
+.nav-menu:has(details[open]) > p a:nth-child(4) ~ a {
+		display: none;
+}
+.nav-menu details[open] summary::after {
+	content: 'Less';
+}
+.nav-menu :is(a, summary) {
+	padding-top: .4375rem;
 	letter-spacing: .0625rem;
 	text-align: right;
 	text-decoration-color: transparent;
 	text-transform: uppercase;
-	background: radial-gradient(at 55%, var(--color-accent), #313437 85%) 0 calc(var(--size-nav-item) - var(--size-nav-stripe) - var(--size-nav-stripe-increase, 0rem)) no-repeat;
+	background: radial-gradient(at 55%, var(--color-accent), #313437 85%) 0 calc(var(--size-nav-item) - var(--size-nav-stripe) - var(--size-nav-stripe-increase, 0rem)) no-repeat var(--color-dark);
 	border-top: .0625rem dotted transparent;
 }
 .nav-menu a[class] {
 	background-image: linear-gradient(var(--color-accent), var(--color-accent));
 }
-.nav-menu a:hover {
+.nav-menu :is(a, summary):hover {
 	--size-nav-stripe-increase: 2px;
 }
-.nav-menu a [hidden]:not([class]) {
+.nav-menu :is(a, summary) [hidden]:not([class]) {
 	display: block !important;
 	float: left;
 	margin-top: .1875rem;
@@ -725,12 +766,24 @@ i {
 	opacity: .75;
 }
 .c-article header img,
-.posts li.c-article img {
-	background-image: linear-gradient(90deg, var(--color-accent-essay) 15%, var(--color-accent-event), var(--color-accent-event), var(--color-accent-other) 85%);
+.posts li.c-article img,
+.nav-menu a.c-article {
+	background-image: linear-gradient(90deg, var(--color-accent-code) 10%, var(--color-focus), var(--color-accent-event), var(--color-accent-essay) 90%);
+}
+.c-extra header img,
+.posts li.c-extra img,
+.nav-menu a.c-extra {
+	background-image: linear-gradient(90deg, var(--color-accent-essay) 15%, var(--color-accent-event) 42.5%, var(--color-accent-event) 57.5%, var(--color-accent-other) 85%);
 }
 .c-short header img,
-.posts li.c-short img {
-	background-image: linear-gradient(90deg, var(--color-accent-code) 15%, var(--color-accent-note), var(--color-accent-note), var(--color-accent-link) 85%);
+.posts li.c-short img,
+.nav-menu a.c-short {
+	background-image: linear-gradient(90deg, var(--color-accent-code) 15%, var(--color-accent-note) 42.5%, var(--color-accent-note) 57.5%, var(--color-accent-link) 85%);
+}
+.c-thread header img,
+.posts li.c-thread img,
+.nav-menu a.c-thread {
+	background-image: linear-gradient(90deg, var(--color-accent-note) 15%, var(--color-accent-link) 85%);
 }
 [data-hl]:empty::after {
 	margin: .25em 0 0 .57143em;
@@ -817,7 +870,10 @@ footer.metadata p:nth-child(5)::after {
 		-moz-tab-size: 2;
 		tab-size: 2;
 	}
-	.nav-menu ul {
+	.nav-menu summary {
+		width: calc((100% - 6rem) / 3);
+	}
+	.nav-menu p {
 		grid-template-columns: 1fr 1fr 1fr;
 		gap: .75rem 3rem;
 	}
@@ -848,13 +904,12 @@ footer.metadata p:nth-child(5)::after {
 	footer.metadata {
 		margin-right: calc(-1 * var(--_pbs) + var(--padding-horizontal));
 	}
-	.imprint p,
-	.nav-menu ul {
+	.nav-menu summary {
+		width: calc(var(--width-sidebar) - 2.25rem);
+	}
+	.imprint p {
 		grid-template-columns: 1fr 1fr calc(var(--width-sidebar) - 2.25rem);
 		gap: .75rem calc(2 * var(--padding-horizontal));
-	}
-	.imprint p > span {
-		justify-self: center;
 	}
 }
 @media (max-width: 19.99em) {
@@ -866,7 +921,7 @@ footer.metadata p:nth-child(5)::after {
 	html {
 		font-size: 1.125rem;
 	}
-	.nav-menu a {
+	.nav-menu {
 		--size-nav-stripe: 6px;
 	}
 }
@@ -887,7 +942,7 @@ footer.metadata p:nth-child(5)::after {
 	i::before,
 	[data-chain]::before,
 	[data-hl]:empty::after,
-	.imprint p > a::after,
+	.imprint > p > a::after,
 	[data-hl="Home"] svg {
 		forced-color-adjust: none;
 	}

@@ -116,33 +116,24 @@ figcaption {
 .imprint nav {
 	margin-top: 4em;
 	margin-bottom: 4em;
-}
-.imprint p,
-.nav-menu li {
-	white-space: pre-wrap; /* 2 whitespace */
-}
-.imprint p > span {
-	display: block;
-	margin-bottom: 1em;
-}
-a[href="#top"] {
-	float: right;
-}
-.nav-menu {
 	padding-top: 4em;
 	border-top: 2px solid;
 }
-.nav-menu ul {
+.imprint > p > span {
 	display: block;
-	list-style-type: "";
+	margin-bottom: 1em;
+}
+.imprint nav p {
 	margin: 0;
-	padding-left: 0;
 }
-.nav-menu li {
-	display: inline;
+.imprint nav summary {
+	width: max-content;
 }
-.nav-menu li + li::before {
-	content: " ";
+.imprint nav details[open] summary {
+	display: none;
+}
+a[href="#top"] {
+	float: right;
 }
 [data-hl="Home"] {
 	display: inline;

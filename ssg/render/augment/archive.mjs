@@ -10,7 +10,7 @@ const modify = (content, meta) => {
 	if (!meta.toc.byPath[`/${newestYear}/`]) newestYear -= 1;
 
 	const SUM = 'ALL';
-	const COLS = ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', 'c-link', SUM, 'c-extra', 'c-short'];
+	const COLS = ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', 'c-link', SUM, 'c-article', 'c-thread'];
 	const stats = {};
 	for (const className of COLS) {
 		stats[className] = {};
@@ -21,7 +21,7 @@ const modify = (content, meta) => {
 	}
 	for (const post of meta.toc.posts) {
 		const year = post.published.split('-')[0];
-		const category = post.className[2] === 'e' ? 'c-extra' : 'c-short';
+		const category = ['c-note', 'c-link'].includes(post.className) ? 'c-thread' : 'c-article';
 		stats[post.className][year] += 1;
 		stats[post.className][SUM] += 1;
 		stats[category][year] += 1;
@@ -51,8 +51,8 @@ const modify = (content, meta) => {
 
 	const insertBefore = content.indexOf('</table>');
 	const total = insertBefore + 2;
-	content[total] = content[total].replace('<!-- extras: -->The number of', stats['c-extra'][SUM]);
-	content[total] = content[total].replace('<!-- shorts: -->the number of', stats['c-short'][SUM]);
+	content[total] = content[total].replace('<!-- articles: -->The number of', stats['c-article'][SUM]);
+	content[total] = content[total].replace('<!-- threads: -->the number of', stats['c-thread'][SUM]);
 	content[total] = content[total].replace('<!-- posts: -->umpteen', meta.toc.posts.length); // should be equal to stats[SUM][SUM]
 	content[total] = content[total].replace('<!-- all: -->even more', meta.toc.posts.length + meta.toc.indexes.length + meta.toc.pages.length);
 	content[total] = content[total].replace('<!-- rss: -->many', meta.rssXmlList.length);
