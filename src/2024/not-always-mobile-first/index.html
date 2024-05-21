@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="c-essay">
+<head>
+<title>Not always mobile first</title>
+<meta name="description" content="With “Basics First” you’ll implement your designs with fewer lines of code.">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Not always mobile first</h1>
+<p><i>Essay</i><br><time>2024-05-21T16:46:00Z</time><br><img src="/2024/not-always-mobile-first/index.webp" alt=""></p>
+</header>
+<div>
+<p>On <a href="/2021/the-day-the-website-stood-still/">the day this website stood still,</a> which happened almost three years ago, I linked to an article by Ahmad Shadeed, <a href="https://ishadeed.com/article/the-state-of-mobile-first-and-desktop-first/">“The State of Mobile First and Desktop First”</a>. Ahmad states that he doesn’t stick to either method, instead he likes to mix them both. And he references an article by Elad Shechter, who calls this approach <a href="https://elad.medium.com/the-new-responsive-design-evolution-2bfb9b504a4e">“Basics First”.</a></p>
+<p>All I did when writing my article was to mention that I’m on board with mixing methods, but I never explained why I too think <strong>Basics First</strong> is the better approach, at least for web development. When it comes to web design, you can still go mobile or desktop first, whichever makes more sense. Well, let’s face it, mobile first makes more sense, and designers will disagree, given how limiting it is for them. But back to web development.</p>
+<h2>Buildup</h2>
+<p>Last month, two things have happened that made me want to (re)visit the topic.</p>
+<p>First, I learned <a href="https://henry.codes/writing/how-to-make-a-website/">“How To Make a Website”</a> on Henry Desroches’ website. Side note: Did I mention there is <a href="/2024/redesigning-in-the-open/">no redesign on the horizon</a> for my site? Seeing how slick and clean Henry’s site is makes me wanna drop my current design immediately. Luckily I don’t have time for that. Anyhow, in Henry’s article there’s a chapter telling us to stop worrying about the cascade (I agree), which also contains a note saying we should be doing mobile-first design (I disagree, as we’re about to find out).</p>
+<p>Second, I wrote <a href="/2024/superior-range-syntax/">»Superior Range Syntax«</a>, and in there I explained how the new range syntax finally allows us to be precise when you query breakpoints. The moment you no longer stick to mobile or desktop first, you’ll most likely need …</p>
+<blockquote>
+<p>[…] two types of queries in your stylesheet, one where the breakpoint is not yet reached, and one where it is.</p>
+</blockquote>
+<p>So how do we apply Basics First?</p>
+<h2>Start with the basics</h2>
+<p>In <strong>Mobile First,</strong> you start with the mobile styles and <code>@media (min-width: …)</code> your way up.</p>
+<p>In <strong>Basics First,</strong> you start with the mundane styles and hide the complex or fine-tuned stuff behind media queries. To do so, ideally you can start with the default the browser gives you out of the box, and enhance from there. As a result, a benefit of Basics First is that there is almost no need for overriding your own styles: Desktop does not need to override Mobile, and vice versa.</p>
+<h3>Isn’t Basics First anyhow Mobile First?</h3>
+<p>It may be, but not always.</p>
+<p>Aforementioned complex stuff could either be in mobile or desktop territory. Quite often it is in the latter. Let’s take a look.</p>
+<ol>
+<li>A common theme on mobile is the “single-column long scroll”, i.e. something that may be covered by <code>display: block</code>, which is the default for block-level elements anyhow. On desktop however, for certain parts of the page you may want to switch to horizontal orientation by using flexbox or grid. So this more complex style goes into a min-width media query. So far, no difference to the mobile-first approach.</li>
+<li>What about the primary navigation of a site? On desktop you may end up with menu items layed out in horizontal orientation, while on mobile you’ll hide the menu items behind a hamburger button. In this case, we could argue both types are complex, and neither is built atop the other. So where to start, mobile or desktop? Well, in a true basics-first fashion, I define the shared styles (e.g. the individual menu items may look alike on mobile &amp;&nbsp;desktop) outside any media query, and then diverge into both worlds with min and max queries.</li>
+<li>Which brings us to the last case, where the desktop version is simpler. Can you think of an example? Here’s mine: I usually align content such as images with the text horizontally, while on mobile I break out to the edge of the screen. This time I get the desktop alignment for free, and for mobile I place a negative margin inside a max-width media query. <span lang="fr">Et voilà,</span> full-width images.</li>
+</ol>
+<p>As always, your mileage may vary, those things depend heavily on the design you’re trying to implement. But hopefully this introduction to Basics First will start your own thought process.<p>
+<p>While my goal is to reduce the number of CSS overrides, so I don’t end up with lots of strikethrough declarations in DevTools, I’m not overdoing it. Usually the result of Basics First is fewer lines of code altogether, but sometimes it’s the opposite. In that case—instead of painstakingly adhering to Basics First and the separation that comes with it—overrides are fine.</p>
+<h3>A word on native CSS nesting.</h3>
+<p>While this is not exclusive to the Basics First approach, being able to place media queries inside a selector allows you to bring the differences closer together.</p>
+<pre><a href="/2024/not-always-mobile-first/code.nesting.css">View CSS example.</a></pre>
+<h3>A word on the new range syntax.</h3>
+<p>If you haven’t read my article about the <a href="/2024/superior-range-syntax/">new media query range syntax</a> and the issue it solves in the vicinity of a breakpoint, I encourage you to check it out.</p>
+<h3>A word on container queries.</h3>
+<p>While they are <a href="/2024/is-css-alive/">not top of my list,</a> everything mentioned in this article may be applied to container sizes too, not just the viewport size.</p>
+<h2>Content First</h2>
+<p>That was all nice and well, but these days responsive web design has shifted towards going <a href="https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/">entirely without breakpoints.</a> While this works to some degree, it may not take you across the finish line in all cases, so Basics First will still come in handy.</p>
+<p>At the end of the day it’s not so much about the design, the actual content should always have a higher priority.</p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/112480403111464085"><b>Matthias Zöchling</b> wrote on <time>2024-05-21T16:46:00Z</time></span></h3>
+<p>“Basics First” may be old news, but given all the shiny new #CSS features we got in recent years, I thought I would be a good idea to look at it with a fresh pair of eyes.<br><a href="/2024/not-always-mobile-first/">cssence.com/2024/not-always-mobile-first</a></p>
+<p>This article would not have been possible without the preceding work of @shadeed9@front-end.social, et al.</p>
+</article>
+<article>
+<h3><a href="https://front-end.social/@shadeed9/112483259845239823"><b>Ahmad Shadeed</b> wrote on <time>2024-05-22T06:12:15Z</time></a></h3>
+<p>Great article, Matthias. Thank you for the kind mention 🙏</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/112483346096858619"><b>Matthias Zöchling</b> wrote on <time>2024-05-22T06:34:11Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: @shadeed9@front-end.social.</small></p>
+<p>The pleasure is all mine. Thank you for writing <a href="https://ishadeed.com/article/the-state-of-mobile-first-and-desktop-first/">ishadeed.com/article/the-state-of-mobile-first-and-desktop-first</a>.</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>

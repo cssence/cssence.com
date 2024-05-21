@@ -1,0 +1,10 @@
+.the-thing-to-style {
+	/* basic styles go here */
+
+	@media (width < 48em) {
+		/* mobile styles go here */
+	}
+	@media (width >= 48em) {
+		/* desktop styles go here */
+	}
+}
