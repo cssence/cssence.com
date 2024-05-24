@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" class="c-code">
+<head>
+<title>Hyphenation</title>
+<meta name="description" content="Consistent browser behavior, but still hard to grasp.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/pombMEJ" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header> 
+<h1>Hyphenation</h1>
+<p><i>Code</i><br><time>2024-05-24T12:14:00Z</time><br><img src="/2024/hyphenation/index.webp" alt=""></p>
+</header>
+<div>
+<p>Hyphenation is hard.</p>
+<p>To grasp. Luckily, turning it on is easy these days, because <code>hyphens</code> is part of <a href="https://caniuse.com/css-hyphens">Baseline 2023,</a> and thus readily available. That said, it still feels a bit hit-or-miss.</p>
+<p>There are guides out there <a href="https://blog.logrocket.com/guide-css-word-wrap-overflow-wrap-word-break/">to get you started</a> on <code>overflow-wrap</code> (including its non-standard counterpart <code>word-wrap</code>) and <code>word-break</code>. And when you are done reading about those, you can go all in and learn <a href="https://clagnut.com/blog/2395">all you need to know about hyphenation in CSS.</a></p>
+<p>This short blog post is a result of a bug report I got at work yesterday. Hyphens did not show up where we would expect them. Naturally, <a href="https://codepen.io/cssence/pen/pombMEJ">I made a thing</a> on CodePen in hopes I would understand what browsers are doing, but seeing that some words break and others don’t, well, this whole topic remains a black box. E.g., capital letters seem to make a difference in English‽ 😵</p>
+<p>To quote <a href="https://css-tricks.com/almanac/properties/h/hyphenate/">the CSS Tricks Almanac</a>, …</p>
+<blockquote cite="https://css-tricks.com/almanac/properties/h/hyphenate/">
+<p>Note that <code>hyphens</code> is language-sensitive. Its ability to find break opportunities depends on the language, defined in the <code>lang</code> attribute of a parent element.</p>
+</blockquote>
+<p>Make sure to have the correct <code>lang</code> attribute in place. Then, if setting <code>hyphens</code> works out, great. If you need more control, don’t be <code>&amp;shy;</code>, add a soft hyphen in HTML where needed.</p>
+<p>Nevertheless, <a href="https://css-tricks.com/css-is-awesome/">CSS is awesome.</a></p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/112496042679193308"><b>Matthias Zöchling</b> wrote on <time>2024-05-24T12:14:00Z</time></span></h3>
+<p>#CSS Basics: Hyphenation, great support, but still kind of a black box.<br><a href="/2024/hyphenation/">cssence.com/2024/hyphenation</a></p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>
