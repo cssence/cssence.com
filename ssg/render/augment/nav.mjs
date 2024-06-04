@@ -14,7 +14,7 @@ const modify = (content, meta) => {
 		{url: '/essays/', label: 'Essays', className: 'c-essay'},
 		{url: '/events/', label: 'Events', className: 'c-event'},
 		{url: '/editorials/', label: 'Editorials', className: 'c-editorial'},
-		{url: '/code/', label: 'Snippets', className: 'c-code'}
+		{url: '/extras/', label: 'Extras', className: 'c-extra'}
 	];
 	const navShorts = [
 		{url: '/notes/', label: 'Notes', className: 'c-note'},

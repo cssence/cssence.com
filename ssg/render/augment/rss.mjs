@@ -17,7 +17,7 @@ const extractFeedContent = (content, meta) => {
 		rssContent[hr] = '<hr>';
 	}
 
-	if (meta.page.className === 'c-code') {
+	if (meta.page.className === 'c-extra') {
 		for (let i = rssContent.length - 1; i >= 0; i -= 1) {
 			if (rssContent[i].startsWith('<div class="figure standout codepen">')) {
 				rssContent[i] = rssContent[i].split('\n').slice(1, -1).join('\n');

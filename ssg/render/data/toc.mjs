@@ -34,7 +34,7 @@ const getToc = async (folder, meta) => {
 			}
 		} else if (['/', '/about/about/', '/all/', '/latest/', '/popular/'].includes(page.path)) {
 			weight[0] = 0;
-		} else if (['/articles/', '/extras/', '/shorts/', '/threads/'].includes(page.path)) {
+		} else if (['/articles/', '/threads/'].includes(page.path)) {
 			weight[0] = 1;
 		}
 		return weight.join('');

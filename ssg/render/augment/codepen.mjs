@@ -1,8 +1,8 @@
-/* Add link to `html.c-code articles` */
+/* Add link to `html.c-extra articles` */
 
 const modify = (content, meta) => {
 
-	if (!meta.page.isPostByYear || meta.page.className !== 'c-code') return;
+	if (!meta.page.isPostByYear || meta.page.className !== 'c-extra') return;
 	if (!meta.page.alternateUrl) return;
 
 	const aside = [

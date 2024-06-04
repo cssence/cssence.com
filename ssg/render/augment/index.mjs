@@ -11,22 +11,17 @@ const determine = (content, meta) => {
 		// const unIndexed = (index) => !index.path.startsWith('/series/') || index.path === '/series/';
 		const unIndexed = (index) => index.path.split('/').length < 4 || index.path === '/about/about/';
 		const unEgged = (index) => index.type !== 'Easter egg';
-		const extra = (post) => post.className[2] === 'e';
-		const thread = (post) => ['c-note', 'c-link'].includes(post.className);
+		const article = (post) => post.className[2] === 'e';
 		if (!query.filter) {
 			let allEntries = [];
 			query.toc.split(',').forEach((key) => allEntries = allEntries.concat(meta.toc[key]));
 			return allEntries;
 		} else if (query.filter === '[hidden]') {
 			return meta.toc.indexes.filter(unIndexed).concat(meta.toc.pages.filter(unEgged));
-		} else if (query.filter === '.c-extra') {
-			return meta.toc.posts.filter(extra);
-		} else if (query.filter === '.c-short') {
-			return meta.toc.posts.filter((post) => !extra(post));
 		} else if (query.filter === '.c-article') {
-			return meta.toc.posts.filter((post) => !thread(post));
+			return meta.toc.posts.filter(article);
 		} else if (query.filter === '.c-thread') {
-			return meta.toc.posts.filter(thread);
+			return meta.toc.posts.filter((post) => !article(post));
 		} else if (query.filter === '[href^="/series/"]:not([href="/series/"])') {
 			return meta.toc.indexes.filter((index) => !unIndexed(index));
 		} else if (query.filter.startsWith('[href')) {

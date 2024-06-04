@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="c-code">
+<html lang="en" class="c-extra">
 <head>
 <title>VoiceOver Table Issues</title>
 <meta name="description" content="Do not feed an HTML table without display:table to VoiceOver (Mac).">
@@ -11,7 +11,7 @@
 <header>
 <h1>VoiceOver Table Issues</h1>
 <p>Do we have to say “Goodbye” to flex/grid table rows?</p>
-<p><i>Code</i><br><time data-revised="2020-05-07T05:04:55Z">2020-05-06T16:44:03Z</time><br><img src="/2020/voiceover-table-issue/index.png" alt=""></p>
+<p><i>Extra</i><br><time data-revised="2020-05-07T05:04:55Z">2020-05-06T16:44:03Z</time><br><img src="/2020/voiceover-table-issue/index.png" alt=""></p>
 </header>
 <div>
 <p>Today at work I’ve been debugging an accessibility issue with one of our more complex tables. After several hours I drew the conclusion that VoiceOver on Mac trips up on tables that have <code>display: table</code> taken from them. It might still recognize it as a table, but you can no longer navigate the cells inside.</p>
@@ -21,7 +21,7 @@
 <p>If you have any experience in this regard, please let me know in the comments.</p>
 <section>
 <h2 id="updates">Confirmation &amp; Updates</h2>
-<p><time id="update-1" class="update" datetime="2020-05-07">May 7, 2020:</time> First of all, thanks to Adrian Roselli and Manuel Matuzović I’ve got confirmation. According to the link <a href="#comment-3">Manuel sent me</a>, Adrian already wrote an <a href="https://adrianroselli.com/2018/02/tables-css-display-properties-and-aria.html">excellent article on the subject</a>, and now I also know that this is <strong>not limited to VoiceOver.</strong> NVDA on Windows is no different, because the browsers strip away the table information, leaving screen readers clueless.</p>
+<p id="update-1"><time class="update" datetime="2020-05-07">May 7, 2020:</time> First of all, thanks to Adrian Roselli and Manuel Matuzović I’ve got confirmation. According to the link <a href="#comment-3">Manuel sent me</a>, Adrian already wrote an <a href="https://adrianroselli.com/2018/02/tables-css-display-properties-and-aria.html">excellent article on the subject</a>, and now I also know that this is <strong>not limited to VoiceOver.</strong> NVDA on Windows is no different, because the browsers strip away the table information, leaving screen readers clueless.</p>
 <p>Best of all, Adrian keeps adding additional information, in his most recent update he highlights that Chrome 80 fixed the issue. Bug is still there in Safari and Firefox, so if you are using one of them, you may head over to my CodePen for a test.</p>
 </section>
 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="c-code advanced">
+<html lang="en" class="c-extra">
 <head>
 <title>Superior Range Syntax</title>
 <meta name="description" content="One more thing about the improved viewport size media queries.">
@@ -10,7 +10,7 @@
 <article>
 <header>
 <h1>Superior Range Syntax</h1>
-<p><i>Code</i><br><time>2024-04-29T04:45:00Z</time><br><img src="/2024/superior-range-syntax/index.webp" alt=""></p>
+<p><i>Extra</i><br><time>2024-04-29T04:45:00Z</time><br><img src="/2024/superior-range-syntax/index.webp" alt=""></p>
 </header>
 <div>
 <p>Whoopsie, when I wrote <a href="/2024/is-css-alive/">»Is CSS alive?«</a> earlier this year, I completely forgot to mention another <em>Baseline 2023</em> feature: The <a href="https://web.dev/articles/media-query-range-syntax">media query range syntax,</a> which allows us to be more concise when querying the viewport size. But in my opinion this is not even the best part.</p>
@@ -19,7 +19,7 @@
 <p>Things get even more concise when you need to query between lower and upper bounds.</p>
 <pre><a href="/2024/superior-range-syntax/code.next-level.css">View CSS code.</a></pre>
 <h2>So what’s the best part?</h2>
-<p>As you’ve seen, I’ve been using the <code>em</code> unit instead of <code>px</code>. If you are a pixel person<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup>, the following may not be as important to you. Then again, some bits may be, so keep reading just to be safe.</a></p>
+<p>As you’ve seen, I’ve been using the <code>em</code> unit instead of <code>px</code>. If you are a pixel person<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup>, the following may not be as important to you. Then again, some bits may be, so keep reading just to be safe.</p>
 <p>Imagine you have a breakpoint at 768&nbsp;pixels, which is <code>48em</code> at a root font size of 16&nbsp;pixels.</p>
 <p>If you need two types of queries in your stylesheet, one where the breakpoint is not yet reached, and one where it is, in the olden days you had to do the following.</p>
 <pre><a href="/2024/superior-range-syntax/code.opposites-old.css">View CSS code.</a></pre>

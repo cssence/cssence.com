@@ -16,7 +16,7 @@ const add = (content, meta) => {
 	];
 
 	if (meta.page.published) {
-		const origin = meta.page.className !== 'c-code' ? meta.page.alternateUrl : null;
+		const origin = meta.page.className !== 'c-extra' ? meta.page.alternateUrl : null;
 		if (origin) {
 			const remote = origin.split('/')[2];
 			const isResponseCurated = !['cssence.wordpress.com', 'medium.com'].includes(remote) && !meta.page.conversation?.thread[0]?.own;

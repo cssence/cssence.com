@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="c-code">
+<html lang="en" class="c-extra">
 <head>
 <title>Firefox and Ellipsis</title>
 <meta name="description" content="Is ellipsis shown randomly inside a flex container?">
@@ -10,7 +10,7 @@
 <article>
 <header>
 <h1>Firefox &amp; Ellipsis</h1>
-<p><i>Code</i><br><time data-revised="2024-02-29T10:10:30Z">2024-02-21T08:36:00Z</time><br><img src="/2024/firefox-text-overflow-issue/index.webp" alt=""></p>
+<p><i>Extra</i><br><time data-revised="2024-02-29T10:10:30Z">2024-02-21T08:36:00Z</time><br><img src="/2024/firefox-text-overflow-issue/index.webp" alt=""></p>
 </header>
 <div>
 <p>Yesterday at work I got what initially seemed be a simple bug report concerning <code>text-overflow: ellipsis</code> in Firefox. When a flex container (in our particular case inline-flex) contains a child that hides the overflow and uses aforementioned truncation strategy, Firefox seems to identify the need for showing the ellipsis even when there is no reason to do so. Digging deeper, I concluded there is no easy fix in sight, instead I need to file a bug report.</p>

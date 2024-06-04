@@ -10,7 +10,7 @@ const modify = (content, meta) => {
 	if (!meta.toc.byPath[`/${newestYear}/`]) newestYear -= 1;
 
 	const SUM = 'ALL';
-	const COLS = ['c-essay', 'c-editorial', 'c-event', 'c-code', 'c-note', 'c-link', SUM, 'c-article', 'c-thread'];
+	const COLS = ['c-essay', 'c-editorial', 'c-event', 'c-extra', 'c-note', 'c-link', SUM, 'c-article', 'c-thread'];
 	const stats = {};
 	for (const className of COLS) {
 		stats[className] = {};
