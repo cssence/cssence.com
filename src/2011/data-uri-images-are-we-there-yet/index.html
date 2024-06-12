@@ -18,7 +18,7 @@
 <p>A deeper look into pros and cons of data URIs, especially data URI images. One size fits all, or not useful at all?</p>
 </aside>
 <h2>What are data URIs anyway?</h2>
-<p>This question probably needs to be answered before we explore the pros and cons of data URI images. In a nutshell: Data URIs provide a way to embed data instead of referencing to it, hence there is no longer the need for the referenced file. Confused? <a href="http://en.wikipedia.org/wiki/Data_URI_scheme">Learn more at wikipedia</a>.</p>
+<p>This question probably needs to be answered before we explore the pros and cons of data URI images. In a nutshell: Data URIs provide a way to embed data instead of referencing to it, hence there is no longer the need for the referenced file. Confused? <a href="http://en.wikipedia.org/wiki/Data_URI_scheme">Read about the data URI scheme on Wikipedia</a>.</p>
 <h2>The simplest of all images</h2>
 <figure class="standoff"><img src="/2011/data-uri-images-are-we-there-yet/bbc-homepage-may-2000-with-clearpixel.png" alt="“X-ray” of the BBC home page, May 5th, 2000. Transparent images have been highlighted.">
 <figcaption>Exposing transparent pixels on an old version of the BBC home page (May 2000, via <a href="http://web.archive.org">WebArchive</a>).</figcaption>
@@ -44,7 +44,7 @@
 <h3>Small images</h3>
 <p>Yes. The repeating background tile in the example above is a perfect candidate. Despite the increase in size we should experience a performance gain thanks to all the HTTP requests we save on all the small images. While we’re at it: Always choose the smallest file format. This applies for images in general, but it is even more important with data URIs. I was going to use a PNG file for my example, but it turned out the GIF counterpart had almost half the size.</p>
 <h3>Not so small images</h3>
-<p>In almost all cases: No. But you’ll have to take a second look if you are designing a secure site. To quote wikipedia:</p>
+<p>In almost all cases: No. But you’ll have to take a second look if you are designing a secure site. To quote Wikipedia:</p>
 <blockquote>
 <p>When browsing a secure HTTPS website, web browsers commonly require that all elements of a web page be downloaded over secure connections, or the user will be notified of reduced security due to a mixture of secure and insecure elements. HTTPS requests have significant overhead over common HTTP requests, so embedding data in data URIs may improve speed in this case.</p>
 </blockquote>

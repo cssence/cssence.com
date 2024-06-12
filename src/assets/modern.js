@@ -70,6 +70,18 @@ try {
 	if (colorScheme) document.querySelector('meta[name="color-scheme"]').setAttribute('content', colorScheme);
 	if (pageStyle !== 'none') onReady(highlight);
 
+	const shareLink = document.querySelector('#contribute + p a:last-child');
+	if (shareLink && navigator.share) {
+		shareLink.addEventListener('click', (event) => {
+			event.preventDefault();
+			navigator.share({
+				title: document.querySelector('title').textContent,
+				text: document.querySelector('meta[name="description"]').getAttribute('content'),
+				url: document.querySelector('link[rel="canonical"]').getAttribute('href')
+			});
+		});
+	}
+
 } catch (err) {
 	console.warn(err);
 }

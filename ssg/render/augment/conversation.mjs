@@ -32,9 +32,7 @@ const modify = (content, meta) => {
 				conversation.hook = comment;
 			}
 			if (!conversation.hook && comment.own && comment.urls.length) {
-				if (comment.urls[0].startsWith('https://twitter.com') || comment.urls[0].startsWith('https://mas.to')) {
-					conversation.hook = comment;
-				}
+				conversation.hook = comment;
 			}
 			if (content[i].includes('hidden')) {
 				comment.id = 'comment-0';
@@ -55,31 +53,22 @@ const modify = (content, meta) => {
 	meta.page.conversation = conversation;
 
 	const postType = isStandaloneThread ? 'thread' : 'article';
-	const shareUrlValue = encodeURIComponent(`“${meta.page.title}” ${meta.getPermalink(meta.page.path)} by @CSSence`);
-	const shareUrl = `<a href="https://twitter.com/intent/tweet?text=${shareUrlValue}">share this ${postType} on Twitter/X.</a>`;
+	const shareLink = `<a href="mailto:?subject=${encodeURIComponent(meta.page.title)}%20-%20CSSence.com&body=${encodeURIComponent(meta.getPermalink(meta.page.path))}">share this ${postType}.</a>`;
 	const contributeSection = [
 		'<section aria-labelledby="contribute">',
-		`<h3 id="contribute">${conversation.thread.length ? 'Join' : 'Start'} the conversation</h3>`,
-		`<p>Simply ${shareUrl}</p>`,
+		`<h3 id="contribute">Get involved</h3>`,
+		`<p>Feel free to ${shareLink}</p>`,
 		'</section>'
 	];
-	if (conversation.hook) {
-		const known = { 'mas.to': 'Mastodon', 'twitter.com': 'Twitter/X' };
-		const knownRemotes = Object.keys(known);
-		let andShare = ` or simply ${shareUrl}`;
-		const replies = conversation.hook.urls.map((url, index) => {
-			const remote = url.split('/')[2];
-			const prefix = index === 0 ? 'Have your say on ' : 'reply on ';
-			if (remote === 'twitter.com') {
-				url = `https://twitter.com/intent/tweet?in_reply_to=${url.split('/').pop()}`;
-				andShare = '';
-			} else if (!knownRemotes.includes(remote)) {
-				console.warn(`Blog post ${meta.page.path} contains unknown remote ${url}.`);
-			}
-			const isLast = !andShare && !conversation.hook.urls[index + 1];
-			return `<a href="${url}">${prefix}${known[remote] || remote}${isLast ? '.' : ','}</a>`;
-		});
-		contributeSection[2] = `<p>${replies.join(' or ')}${andShare}</p>`;
+	if (meta.date.isOld(meta.page.published)) {
+		contributeSection[2] = `<p>Feel free to ${shareLink} But keep in mind, it was published more than three years ago, so comments are closed.</p>`;
+	} else if (conversation.hook) {
+		const remoteUrl = conversation.hook.urls[0];
+		if (remoteUrl.startsWith('https://twitter.com/')) {
+			contributeSection[2] = `<p>Comments are closed, but feel free to ${shareLink}</p>`;
+		} else {
+			contributeSection[2] = `<p><a href="${remoteUrl}">Have your say on Mastodon,</a> or simply ${shareLink}</p>`;
+		}
 	}
 
 	const insertBefore = conversation.end;
