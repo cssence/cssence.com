@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="c-extra">
+<head>
+<title>Web Share API meets A11Y</title>
+<meta name="description" content="A Progressive Enhancement conundrum.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/XWwzyRW" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Web Share API meets A11Y</h1>
+<p><i>Extra</i><br><time>2024-06-15T04:29:00Z</time><br><img src="/2024/web-share-api/index.webp" alt=""></p>
+</header>
+<div>
+<p>Once every blue moon a JavaScript-related article ends up on this site. Today is such a moon. Let me set the scene for you.</p>
+<p>As part of my recent <a href="/2024/farewell-twitter/">Twitter shutdown,</a> I upgraded my site by replacing tweet intents with the <em>Web Share API.</em></p>
+<p><a href="https://adactio.com/journal/15972">Jeremy Keith wrote about the Web Share API</a> when he added it to thesession.org. I’ve been able to reuse his code verbatim:</p>
+<pre><a href="/2024/web-share-api/code.navigator-share.js">View JS example.</a></pre>
+<p>This is all you need to get rich sharing functionality. Neat. However, this only works in browsers that support the Web Share API. What else do we need beforehand?</p>
+<p>By looking at <a href="https://thesession.org">The Session,</a> I noticed Jeremy utilises a button labeled “Share”, which opens a popover. When opened, you find another button that allows you to copy the URL of the current page, and two links with different protocols: “mailto” and “sms”. Both allow you to share the current page, either via e-mail or text message. In browsers that support the Web Share API, the “Share” button no longer opens the popover, but instead calls <code>navigator.share</code>.</p>
+<p>I on the other hand wanted to keep it more basic, so I put a single mailto link directly on the page. I prepopulate the title as subject and the link as the body of the message, just like Jeremy did with the mailto link in his popover.</p>
+<pre><a href="/2024/web-share-api/code.mailto.js">View JS example.</a></pre>
+<p>In browers that support the Web Share API, I’ll hijack the link and prevent it’s default event. This way, things even work for those who browse the web without JavaScript. Sure enough, it’s 2024, so I could recreate Jeremy’s solution with a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API">native popover,</a> which in its most simple form also works without JavaScript. But that’s a topic for another blog post.</p>
+<p>Alright. I’ve progressively enhanced the already present link. But! What I *should* have done is something akin to what Phil Nash’s <a href="https://github.com/philnash/web-share-wrapper"><code>web-share-wrapper</code> web component</a> does, namely replacing the link with a button on the fly, because calling <code>navigator.share</code> does something (button), it does not go anywhere (link). My inner accessibility advocate agrees, so why did I still choose to *not* do that?</p>
+<p>Well, the link has additional value. Unlike a button, a link gives you a context menu on right-click. How browsers behave when you right-click a mailto link varies. I’ve noticed Firefox removes all “Open in new&thinsp;…” entries that you get with a regular link. Which is unnecessary—and half-assed—, because holding the <key>Shift</key> key while you right-click does bring back “Open in new tab” anyway.</p>
+<p>But why would you open a mailto link in a new tab? I’m glad I asked. Doing so gives us the option to bypass the progressive enhancement, i.e. the link behaves as if it was never hijacked in the first place. Voilà, back to mailto instead of <code>navigator.share()</code>. Granted, only power users may be aware of that, but still.</p>
+<p>So my conundrum is: Do I choose a tiny bit of additional functionality, or semantic correctness?</p>
+<p>As said, currently I’m doing the former, but I might give it another thought for accessibility reasons. What do you think? My implementation is already live, there’s a <a href="#contribute">“Share” link below</a> the comments. You can also check it out in more detail on CodePen.</p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/112630382160574180"><b>Matthias Zöchling</b> wrote on <time>2024-06-17T05:47:00Z</time></span><le/h3>
+<p>Progressive enhancement, accessibility, and the Web Share API. What do you think about my latest conundrum?<br><a href="/2024/web-share-api/">cssence.com/2024/web-share-api</a></p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>
