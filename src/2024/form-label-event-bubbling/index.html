@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="c-extra">
+<head>
+<title>Form label event bubbling</title>
+<meta name="description" content="Call stopPropagation once, shame on you. Call stopPropagation twice, …">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/abrxGEO" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Form label event bubbling</h1>
+<p><i>Extra</i><br><time>2024-06-28T11:38:00Z</time><br><img src="/2024/form-label-event-bubbling/index.webp" alt=""></p>
+</header>
+<div>
+<p>Another JavaScript-related article <a href="/2024/web-share-api/">in the same month?</a> What is going on?</p>
+<hr>
+<p>You may have heard of event bubbling and capturing. According to javascript.info, this is <a href="https://javascript.info/bubbling-and-capturing">how event bubbling works:</a></p>
+<blockquote cite="https://javascript.info/bubbling-and-capturing#bubbling">
+<p>When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.</p>
+</blockquote>
+<p>That knowledge serves you well. Given that this is all about ancestors, sibling elements are never affected.</p>
+<p>However, there are HTML elements with a special relationship, I’m talking about <code>&lt;label&gt;</code> and any interactive element that a label can be applied to, e.g. an <code>&lt;input&gt;</code>. While they can be nested, in which case the label is an ancestor of the labeled element, they can also be tied together using the <code>for</code> attribute on the label, like so:</p>
+<pre><a href="/2024/form-label-event-bubbling/code.label-for-input.html">View HTML example.</a></pre>
+<p>Label and labeled element are usually siblings, but if necessary they may live far from one another in remote parts of the DOM.</p>
+<p><strong>How does event bubbling on a labeled element work?</strong> Unsurprisingly, no difference to what we’ve already heard. The web browser runs the handlers on it, then on its parent, then all the way up on other ancestors.</p>
+<p><strong>How does event bubbling on a <code>&lt;label&gt;</code> element work?</strong> The web browser runs the handlers on it, then on its parent, then all the way up on other ancestors. Here comes the twist: It does not stop there. After reaching the topmost element, bubbling starts over at the labelled element, and then all the way up its ancestors too. It is almost as if you click the label, and the browser clicks the labelled element for you.</p>
+<p><strong>How does event bubbling on a <code>&lt;label&gt;</code> with nested labeled element work?</strong> Same as before, there are no shortcuts. This means clicking on the label will trigger its handlers twice: Immediately, and once again when it bubbles up from the labeled element.</p>
+<h2>stopPropagation</h2>
+<p>This is where <code>event.stopPropagation()</code> comes in. Use can call it at any point in the bubbling phase to bring it to a halt. In other words, after stopPropagation is executed, handlers of elements further up in the DOM won’t be called.</p>
+<p>With one caveat, which should already be clear, given what we just went through. When clicking a label, you may have to stop the bubbling twice, as it bubbles up for both label and labeled element. So next time an event handlers get called expectedly, maybe this is the reason.</p>
+<p>I made a CodePen to illustrate all that. It has three areas: First, two checkboxes to turn stopPropagation on and off; second, a form with two kinds of label &amp;&nbsp;labeled element combos; and third, a log that shows which event handlers are called when you click something on the form. Take a look.</p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/112694156055081767"><b>Matthias Zöchling</b> wrote on <time>2024-06-28T11:38:00Z</time></span><le/h3>
+<p>Did you ever ask yourself how the event bubbling of a form label works?<br><a href="/2024/form-label-event-bubbling/">cssence.com/2024/form-label-event-bubbling</a></p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>
