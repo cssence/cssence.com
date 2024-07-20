@@ -60,8 +60,9 @@ const modify = (content, meta) => {
 		`<p>Feel free to ${shareLink}</p>`,
 		'</section>'
 	];
-	if (meta.date.isOld(meta.page.published)) {
-		contributeSection[2] = `<p>Feel free to ${shareLink} But keep in mind, it was published more than three years ago, so comments are closed.</p>`;
+	const postAge = meta.date.getAgeInYears(meta.page.published);
+	if (postAge >= 3) {
+		contributeSection[2] = `<p>Feel free to ${shareLink} But keep in mind, it was published more than ${meta.number.format(postAge).toLowerCase()} years ago, so comments are closed.</p>`;
 	} else if (conversation.hook) {
 		const remoteUrl = conversation.hook.urls[0];
 		if (remoteUrl.startsWith('https://twitter.com/')) {

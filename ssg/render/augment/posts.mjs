@@ -28,8 +28,7 @@ const add = (content, meta) => {
 
 	const section = meta.page.sections[0];
 	if (meta.page.sections.length === 1 && section.id === 'overview') {
-		const countLong = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve'];
-		const writtenForm = (n) => countLong[n] ? countLong[n].toLowerCase() : n;
+		const writtenForm = (n) => meta.number.format(n).toLowerCase().replace('zero', 'no');
 		const latestOnly = section.limit && section.total > section.limit;
 
 		const sectionHeading = start + 1;
