@@ -875,6 +875,11 @@ footer.metadata p:nth-child(5)::after {
 		gap: .75rem calc(2 * var(--padding-horizontal));
 	}
 }
+@media (max-width: 25.49em) {
+	.imprint a[href="/webrings/"] {
+		display: none;
+	}
+}
 @media (max-width: 19.99em) {
 	html {
 		font-size: 5vw;

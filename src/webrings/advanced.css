@@ -1,0 +1,41 @@
+main nav ul {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: .875rem var(--padding-horizontal);
+}
+main nav li {
+	list-style-type: "";
+	margin-left: 0;
+}
+main nav li a {
+	display: block;
+	position: relative;
+	height: 100%;
+	padding: 1.75rem .75rem .5rem;
+	border: 1px dashed;
+	border-radius: .25rem;
+	text-align: center;
+}
+@media (max-width: 25.49em) {
+	main nav li a {
+		padding-inline: .25rem;
+	}
+}
+main nav li a::before {
+	position: absolute;
+	top: .375rem;
+	left: 50%;
+	transform: translateX(-50%);
+}
+main nav li a[href*="prev"]::before {
+	content: "◀️";
+	content: "◀️" / "";
+}
+main nav li a[href*="random"]::before {
+	content: "🔀";
+	content: "🔀" / "";
+}
+main nav li a[href*="next"]::before {
+	content: "▶️";
+	content: "▶️" / "";
+}
