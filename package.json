@@ -1,7 +1,7 @@
 {
   "name": "cssence.com",
   "homepage": "https://cssence.com/",
-  "version": "4.56.0",
+  "version": "4.57.0",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
@@ -15,7 +15,11 @@
     "build": "npm run build:clean && npm run build:assets && npm run build:html",
     "start:dev": "node ssg/serve.mjs --dev",
     "start:sim": "node ssg/serve.mjs",
-    "start": "npm run build && npm run start:sim"
+    "start": "npm run build && npm run start:sim",
+    "version:major": "node ssg/bump-version.mjs --major && npm i",
+    "version:minor": "node ssg/bump-version.mjs && npm i",
+    "version:patch": "node ssg/bump-version.mjs --patch && npm i",
+    "version": "npm run version:minor"
   },
   "engines": {
     "node": ">=16"
