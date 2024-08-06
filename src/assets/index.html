@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="c-default">
+<head>
+<title>/new/ template</title>
+<meta name="description" content="“Create new blog post” template … 🤖 bleep, bloop.">
+<link rel="alternate stylesheet" media="screen" href="/settings/advanced.css" title="Advanced Style">
+<link rel="stylesheet" media="screen" href="/settings/advanced.css" title="Custom Style">
+<link rel="alternate stylesheet" media="screen" href="data:text/css;charset=utf-8,form%20.standoff:not(:last-child)%7Bbottom:auto%7Dform%20.standoff:last-child%7Btop:auto%7Dform%20.standoff%20p%7Bmargin-top:0;margin-bottom:var(--offset,1.5rem)%7D" title="Advanced Style">
+<link rel="stylesheet" media="screen" href="data:text/css;charset=utf-8,form%20.standoff:not(:last-child)%7Bbottom:auto%7Dform%20.standoff:last-child%7Btop:auto%7Dform%20.standoff%20p%7Bmargin-top:0;margin-bottom:var(--offset,1.5rem)%7D" title="Custom Style">
+<style media="screen">
+@keyframes broadcast{0% {box-shadow:0 0 0 0 #8884} 95% {box-shadow: 0 0 0 1rem #8880}}
+#live::before{content:"";display:inline-block;width:.625rem;aspect-ratio:1;margin-right:.375rem;background-color:red;border:.25rem solid transparent;border-radius:50%;animation:broadcast 2s infinite}
+</style>
+<script type="module" src="/assets/modern2.js"></script>
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1 id="content">Template ✍️</h1>
+<p>CSSence.com v4.58.0</p>
+<p><i>Internal</i><br><time>2024-08-05T07:12:55Z</time></p>
+</header>
+<div>
+<p>Blog post template, to be used by the site author only.</p>
+<noscript>
+<blockquote>
+<p>CSSence.com works fine without JavaScript, but this page has to make an exception, because it creates a downloadable file without any server involvement. However, it is anyhow only intended for the site author, so you are not missing out.</p>
+</blockquote>
+</noscript>
+<form id="new" action="." aria-labelledby="content">
+<h3 id="general" class="subtle">Content</h3>
+<p><label for="type">Type: </label><select id="type" name="type" disabled><option value="c-essay">Essay</option><option value="c-editorial">Editorial</option><option value="c-event">Event</option><option value="c-extra">Extra</option><option value="c-note">Note</option><option value="c-link">Link</option></select></p>
+<p><label for="url">URL: </label><input type="text" id="url" name="url" disabled></p>
+<p><label for="thumbnail">Thumbnail: </label><input type="text" id="thumbnail" name="thumbnail" disabled></p>
+<p><label for="timestamp">Date: </label><input type="text" id="timestamp" name="timestamp" disabled></p>
+<p hidden><label for="codepen">CodePen URL: </label><input type="text" id="codepen" name="codepen" disabled></p>
+<p hidden><label for="title">Title: </label><input type="text" id="title" name="title" class="large" disabled></p>
+<p><label for="heading">Heading: </label><input type="text" id="heading" name="heading" class="large" disabled></p>
+<p><label for="post">Content: </label><textarea id="post" name="post" class="large" style="--size:16rem" disabled></textarea></p>
+<fieldset>
+<legend class="subtle">Comment #0</legend>
+<p><label for="comment-0-url">URL: </label><input type="text" id="comment-0-url" name="comment-0-url" disabled></p>
+<p><label for="comment-0-timestamp">Date: </label><input type="text" id="comment-0-timestamp" name="comment-0-timestamp" disabled></p>
+<p><label for="comment-0-chain">Chain: </label><input type="text" id="comment-0-chain" name="comment-0-chain" disabled></p>
+<p><label for="comment-0-content">Content:</label><textarea id="comment-0-content" name="comment-0-content" disabled></textarea></p>
+</fieldset>
+<p class="submit"><button type="reset" disabled>Reset</button> <button type="submit" disabled><strong>Save</strong></button></p>
+<aside class="figure standoff">
+<h3 class="subtle">Advanced</h3>
+<p><button type="button" disabled>Load content</button></p>
+</aside>
+<aside class="figure standoff">
+<h3 class="subtle">Options</h3>
+<p style="--offset:3.625rem"><button type="button" disabled>Detach title</button></p>
+<p><button type="button" disabled>Insert code</button></p>
+<p><button type="button" disabled>Insert figure</button></p>
+<p style="--offset:13.1875rem"><button type="button" disabled>Insert quote</button></p>
+<p><button type="button" disabled>Import comment…</button></p>
+<p style="--offset:14.125rem"><button type="button" disabled>Add comment</button></p>
+</aside>
+</form>
+<div class="metadata">
+<h2 id="live">LIVE</h2>
+<p data-title="This is a page about an **ongoing event.** Content will be added piece by piece.">It is quite likely that a <b>new blog post</b> is being created as you read this.</p>
+</div>
+</div>
+</article>
+</main>
+</body>
+</html>

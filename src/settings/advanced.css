@@ -9,29 +9,55 @@ form .standoff {
 	padding: .9375rem calc(var(--padding-horizontal) - .0625rem);
 	border: .0625rem dashed transparent;
 }
-form p:where(:not(.info)) {
+form .standoff button {
+	padding: .125rem;
+}
+form p:where(:not(.info, [hidden])) {
 	display: grid;
-	gap: .5rem 1rem;
+	gap: .375rem 0;
 	margin-bottom: 1.5rem;
 }
 form .info {
 	min-height: 3lh;
 }
-form h3 {
+form fieldset {
+	margin-top: 1.5rem;
+	border: none;
+}
+form fieldset :is(legend, p) {
+	margin-bottom: .75rem;
+}
+form :is(h3, legend) {
 	display: grid;
 	grid-template-columns: var(--padding-horizontal) max-content 1fr;
 	align-items: center;
 	gap: 1ex;
 	margin-top: 0;
 }
-form h3::before,
-form h3::after {
+form legend {
+	width: 100%;
+}
+form fieldset p {
+	grid-template-columns: 1fr 2fr;
+}
+form :is(input, select, textarea) {
+	width: auto;
+	min-width: 0;
+}
+form :is(h3, legend)::before,
+form :is(h3, legend)::after {
 	content: "";
 	border-top: .0625rem dotted;
 }
 form p:where(.submit) {
 	grid-template-columns: 1fr 1fr;
 	margin-top: 3rem;
+}
+form p:where(.submit) button[type="reset"] {
+	margin-right: .5rem;
+}
+form p:where(.submit) button[type="submit"] {
+	margin-left: .5rem;
 }
 @media (max-width: 55.49em) {
 	form p:where(.submit) {
@@ -40,15 +66,29 @@ form p:where(.submit) {
 }
 @media (min-width: 55.5em) {
 	form > p {
-		grid-template-columns: 2fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	form label {
+		margin-top: .0625rem;
 	}
 	form .submit::before {
 		content: "";
 	}
-	select {
+	form :is(input, select) {
 		grid-column: 2 / -1;
 	}
+	form .large {
+		grid-column: 1 / -1;
+	}
 }
+form input[type="text"] {
+	line-height: initial;
+}
+form textarea {
+	height: min(var(--size, 8rem), 90vh);
+	resize: vertical;
+}
+
 .preview {
 	overflow: hidden;
 	aspect-ratio: 1;

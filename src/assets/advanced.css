@@ -168,7 +168,7 @@ a:hover {
 	text-decoration-style: double;
 	text-decoration-thickness: .0625rem;
 }
-:is(a, button, select, summary):focus:not(:active) {
+:is(a, button, input, select, summary, textarea):focus:not(:active) {
 	background: var(--color-focus) !important;
 	box-shadow: 0 0 0 .1875rem var(--color-focus);
 	color: var(--color-dark);
@@ -181,13 +181,13 @@ main a:focus::after {
 a:focus::after {
 	color: var(--color-light);
 }
-:is(a, button, select, summary):focus,
+:is(a, button, input, select, summary, textarea):focus,
 pre[tabindex]:focus {
 	text-decoration: none;
 	outline: .1875rem double;
 	outline-offset: .0625rem;
 }
-:is(button, select):focus {
+:is(button, input, select, textarea):focus {
 	outline: .0625rem solid;
 }
 pre[tabindex]:focus {
@@ -270,7 +270,9 @@ hr {
 	cursor: not-allowed;
 }
 button,
-select {
+input[type="text"],
+select,
+textarea {
 	padding: .25rem .5rem;
 	background-color: var(--color-bg);
 	border: .0625rem solid;

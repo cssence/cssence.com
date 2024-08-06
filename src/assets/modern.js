@@ -41,8 +41,8 @@ try {
 		const sh = localStorage.getItem('syntax-highlighting');
 		if (sh === 'none') return;
 		if (sh) shTheme = `prism-${sh}.css`;
-		addStyle(`/assets/syntax/${shTheme}`);
-		loadJS('/assets/syntax/prism.js', () => {
+		addStyle(`/assets/${shTheme}`);
+		loadJS('/assets/prism.js', () => {
 			Prism.highlightAll();
 		});
 	};
