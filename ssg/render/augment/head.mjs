@@ -4,6 +4,8 @@ const modify = (content, meta) => {
 
 	const TITLE = 3, DESC = 4, ALT = 5;
 
+	const forbidden = ['/404/', '/about/about/', '/assets/'].includes(meta.page.path);
+
 	const intro = [
 		'<meta charset="utf-8">',
 		'<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">',
@@ -35,7 +37,7 @@ const modify = (content, meta) => {
 		'<meta name="theme-color" content="#202225">',
 	];
 	const other = [
-		`<meta name="robots" content="${['/404/', '/about/about/', '/assets/'].includes(meta.page.path) ? 'no' : ''}index,follow">`,
+		`<meta name="robots" content="${forbidden ? 'noindex' : 'index'},follow">`,
 	];
 	const scripts = [
 		'<script nomodule src="/assets/old.js"></script>',
