@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="c-note">
+<head>
+<title>Keyboard-accessible resize</title>
+<meta name="description" content="Terence Eden is looking for a CSS-only image comparison slider.">
+<link rel="alternate" type="text/html" href="https://mas.to/@CSSence/113047291845483959" title="Thread on mas.to">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Keyboard-accessible resize</h1>
+<p>A response to <a href="https://mastodon.social/@Edent/113046198542777812">“Image comparison slider *without* JavaScript?” on Mastodon.</a></p>
+<p><i>Note</i><br><time>2024-08-29T20:53:00Z</time></p>
+</header>
+<div>
+<h2 class="visually-hidden" id="comments">Message thread</h2>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113040741169556335"><b>Matthias Zöchling</b> wrote on <time>2024-08-28T17:54:34Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@mia@front-end.social</span>, <span>@zachleat@zachleat.com</span>, <span>@Jamessw@mastodon.cloud</span>, <span>@Edent@mastodon.social</span>.</small></p>
+<p><code>resize</code>, and some A11Y fallbacks:<br><a href="/2022/pure-css-image-compare/">cssence.com/2022/pure-css-image-compare</a></p>
+</article>
+<article>
+<h3><a href="https://mastodon.cloud/@Jamessw/113047933031082889"><b>James Stuckey Weber</b> wrote on <time>2024-08-29T23:36:04Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@CSSence@mas.to</span>.</small></p>
+<p>Great write up! The animation on focus fallback is a great idea.</p>
+<p>I’m pondering what UIs could be possible if we made the handle a stylable pseudo element and keyboard control.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113049214744067331"><b>Matthias Zöchling</b> wrote on <time>2024-08-30T05:02:01Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@Jamessw@mastodon.cloud</span>.</small></p>
+<p>Good question. Given that dragging a <code>resize</code>able element in a CSS grid adjusts the whole grid gives us possibilities we’ve last had in the olden days (which IIRC were also not keyboard-accessible):</p>
+<pre><code class="language-html">&lt;frameset cols="120, *"&gt;</code></pre>
+<p>How could it work? Like how an <code>&lt;input type="file"&gt;</code>’s button is stylable via the <code>::file-selector-button</code>?</p>
+</article>
+<article>
+<h3><a href="https://mastodon.cloud/@Jamessw/113051426640218828"><b>James Stuckey Weber</b> wrote on <time>2024-08-30T14:24:32Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@CSSence@mas.to</span>.</small></p>
+<p>Yeah, I think having it be a `part-like` pseudo element, like <code>::after</code>, <code>::before</code>, or <code>::file-selector-button</code> would make sense. It could be interesting to have it anchored to the resized element, so you could do things like <code>height: anchor-size(height); position-area: left</code> to position and size it.</p>
+</article>
+</div>
+</article>
+</main>
+</body>
+</html>
