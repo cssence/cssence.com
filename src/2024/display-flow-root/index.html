@@ -10,32 +10,32 @@
 <article>
 <header>
 <h1>Display flow-root</h1>
-<p><i>Extra</i><br><time>2024-05-09T13:28:00Z</time><br><img src="/2024/display-flow-root/index.webp" alt=""></p>
+<p><i>Extra</i><br><time data-revised="2024-09-07T06:50:00Z">2024-05-09T13:28:00Z</time><br><img src="/2024/display-flow-root/index.webp" alt=""></p>
 </header>
 <div>
 <p>Many years ago, <code>flow-root</code> has been added as another value for the display property. I’ve encountered it in DevTools, where it is shown among the other values in the display property dropdown, but I never felt the urge to learn more about it. Until now.</p>
-<p>Part of CSS Display Module Level&nbsp;3, <a href="https://rachelandrew.co.uk/archives/2017/01/24/the-end-of-the-clearfix-hack/">the idea behind flow root</a> was to end the clearfix hack, which has been a thing back in the day, and <a href="https://css-tricks.com/clearfix-a-lesson-in-web-development-evolution/">something you’ve been actively using</a> if you have been in web development since way back.</p>
-<p>Back to the question, has flow root been the end of the clearfix hack? Yes. However, the layout methods flexbox and grid have been the true end of the clearfix hack.</p>
-<p>Hack aside, there is at least one other thing you can use flow root for, but it all works in tandem with floated elements.</p>
+<p>Part of CSS Display Module Level&nbsp;3, <a href="https://rachelandrew.co.uk/archives/2017/01/24/the-end-of-the-clearfix-hack/">the idea behind flow-root</a> was to end the clearfix hack, which has been a thing back in the day, and <a href="https://css-tricks.com/clearfix-a-lesson-in-web-development-evolution/">something you’ve been actively using</a> if you have been in web development since way back.</p>
+<p>Back to the question, has flow-root been the end of the clearfix hack? Yes. However, the layout methods flexbox and grid have been the true end of the clearfix hack.</p>
+<p>Hack aside, there is at least one other thing you can use flow-root for, but it all works in tandem with floated elements.</p>
 <h2 id="hack-obsolescence">№1: Hack obsolescence</h2>
 <p>The <span lang="fr">raison d'être</span> for <code>display: flow-root</code>, if you apply it to an element that contains a floated element, that floated element will be contained.</p>
 <figure class="standout"><img src="/2024/display-flow-root/clearfix.webp" alt="Thanks to flow-root, a border goes around a floated image. Without flow-root, the border does not for far enough vertically, and as such is cut off by the floated image.">
 </figure>
 <h2 id="non-interference">№2: Non-interference</h2>
-<p>You can also add flow root to an element near a floated element, so the floated element doesn’t end up atop the other element. Such interference does not happen for the actual text, but if said element has a background color or border, it will be covered by the floated element.</p>
+<p>You can also add flow-root to an element near a floated element, so the floated element doesn’t end up atop the other element. Such interference does not happen for the actual text, but if said element has a background color or border, it will be covered by the floated element.</p>
 <figure class="standout"><img src="/2024/display-flow-root/non-interference.webp" alt="Thanks to flow-root, the border of another element is not covered by a floated image. Without flow-root, said border runs underneath the floated image.">
 </figure>
-<p>Without flow root, the text goes below the image, not wasting space. With flow root, borders and backgrounds make more sense. But you cannot have it both ways, the box that contains the text will always be a rectangle, and not a weirdly shaped <a href="https://www.goodoldtetris.com/">Tetris</a> piece.</p>
+<p>Without flow-root, the text goes below the image, not wasting space. With flow-root, borders and backgrounds make more sense. But you cannot have it both ways, the box that contains the text will always be a rectangle, and not a weirdly shaped <a href="https://www.goodoldtetris.com/">Tetris</a> piece.</p>
 <h2>Closing remarks</h2>
-<p>According to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">MDN’s display page,</a> this is what happens when you set flow root:</p>
+<p>According to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">MDN’s display page,</a> this is what happens when you set flow-root:</p>
 <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/CSS/display">
 <p>The element generates a block box that establishes a new block formatting context, defining where the formatting root lies.</p>
 </blockquote>
 <p>Okay‽</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_display/Block_formatting_context">MDN’s block formatting content page</a> is worth a read too.</p>
-<p>Wait! What if—instead of going down that MDN rabbit hole—we just apply flow root everywhere? After all, this seems to be the better behavior, no matter if a page has floating elements or not.</p>
-<p>Well, no. It’s not a drop-in replacement for the block display value. For starters, <a href="https://codepen.io/thierry/pen/GrvWNM">margins no longer collapse</a> when you use flow root, and there’s probably more. Here be dragons.</p>
-<p>I rarely use floats these days, so the float relationship may explain why I’ve never felt the need for the flow root display value. After you’ve played with my interactive example on CodePen, you’ll probably file this under ‘good to know’ and move on. Or you’ve stopped reading several paragraphs ago, because you are already playing Tetris.</p>
+<p>Wait! What if—instead of going down that MDN rabbit hole—we just apply flow-root everywhere? After all, this seems to be the better behavior, no matter if a page has floating elements or not.</p>
+<p>Well, no. It’s not a drop-in replacement for the block (i.e. <a href="/2024/display-multi-keyword-syntax/"><code>block flow</code></a>) display value. For starters, <a href="https://codepen.io/thierry/pen/GrvWNM">margins no longer collapse</a> when you use flow-root, and there’s probably more. Here be dragons.</p>
+<p>I rarely use floats these days, so the float relationship may explain why I’ve never felt the need for the flow-root display value. After you’ve played with my interactive example on CodePen, you’ll probably file this under ‘good to know’ and move on. Or you’ve stopped reading several paragraphs ago, because you are already playing Tetris.</p>
 </div>
 <aside>
 <h2 id="comments">Comments</h2>
