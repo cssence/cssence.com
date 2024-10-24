@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="c-extra">
+<head>
+<title>Mixing colors in Forced Colors Mode</title>
+<meta name="description" content="Firefox does perform a color-mix in Forced Colors Mode if all colors in the mix are CSS system colors.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/abeVWYK" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Mixing colors in Forced Colors Mode</h1>
+<p><i>Extra</i><br><time data-revised="2024-10-28T07:36:00Z">2024-10-24T21:57:00Z</time><br><img src="/2024/color-mix-in-forced-colors-mode/index.webp" alt=""></p>
+</header>
+<div>
+<p>While using the relatively new <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix"><code>color-mix</code></a> function, I noticed browser differences in Forced Colors Mode that I found worth exploring. Granted, it’s rather unusual that <code>color-mix</code> and Forced Colors Mode are part of the same sentence, let alone inspiration for a blog post.</p>
+<p>Well, what would you expect to happen when the color palette is reduced to a bare minimum? There is not a lot to mix in the first place. And <em>not a lot</em> is what is happening in Chromium-based browsers, <code>color-mix</code> doesn’t really do anything: The colors you throw into the mix do not matter, if the function is applied to e.g. <code>color</code> or <code>border-color</code>, you end up with the text color. And if it is applied to <code>background-color</code>, you end up with whatever the background should be on a given element, most often Canvas.</p>
+<p>This is where Firefox enters the picture. The moment all the colors are <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/system-color">CSS system colors</a>, Firefox <strong>actually performs the mix.</strong></p>
+<pre><a href="/2024/color-mix-in-forced-colors-mode/code.color-mix-with-system-colors.css">View CSS code.</a></pre>
+<p>So if we mix CanvasText with Canvas 50:50, like shown in the example above, we do get the inbetween color in Firefox.</p>
+<p>I didn’t stop there. I tried other combinations. If we mix a system color with transparent, we are back to CanvasText. Unless the mix happens for <code>background-color</code>, in that case we actually get a semi-transparent version of the system color. 😮</p>
+<p>Compare this to Chromium-based browsers, where we end up with CanvasText even if we “mix” Mark with Mark.</p>
+<p>In the early stage of discovering the issue, I found it cool what Firefox is doing. And I was tempted to say the other browsers should follow suit. But on second thought, Forced Colors Mode is about reducing the palette, hence the result of <code>color-mix</code> has little to no value here. And while I could even argue that mixing Canvas and CanvasText could be useful, the moment we start doing weird things like mixing CanvasText with LinkText we realize that this is actually nonsensical, right?</p>
+<p>I’ll file a Firefox bug.</a> Reluctantly?</p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113366557542425180"><b>Matthias Zöchling</b> wrote on <time>2024-10-25T06:06:28Z</time></span></h3>
+<p>Hello #WebDev people, do you think my latest encounter concerning Forced Colors Mode and the #CSS <code>color-mix</code> function is a #Firefox bug?</p>
+</article>
+<article>
+<h3><a href="https://c.im/@cwilcox808/113368036225995226"><b>Curtis Wilcox</b> wrote on <time>2024-10-25T12:22:31Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@CSSence@mas.to</span>.</small></p>
+<p>I agree with your reasoning and conclusion, it’s a Firefox bug.</p>
+<p>Unless the CSS rule also has <code>forced-color-adjust: none</code>, values with <code>color-mix()</code> should be ignored, even if it’s mixing system color keywords.</p>
+</article>
+<article>
+<h3><a href="https://toot.cafe/@aardrian/113369920330496854"><b>Adrian Roselli</b> wrote on <time>2024-10-25T20:21:40Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@CSSence@mas.to</span>.</small></p>
+<p>Yes.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113372790159535157"><b>Matthias Zöchling</b> wrote on <time>2024-10-26T08:31:30Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@cwilcox808@c.im</span>, <span>@aardrian@toot.cafe</span>.</small></p>
+<p>Thx for the nudge.</p>
+<p>Bug filed: <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1927252">Bug ticket #1927252.</a></p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113383882374879891"><b>Matthias Zöchling</b> wrote on <time>2024-10-28T07:32:24Z</time></span></h3>
+<p>Bug or feature?</p>
+<p><a href="https://github.com/w3c/csswg-drafts/issues/11097">CSSWG issue #11097.</a></p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>
