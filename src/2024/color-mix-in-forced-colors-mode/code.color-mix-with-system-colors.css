@@ -1,0 +1,3 @@
+li:nth-child(2) {
+	border-color: color-mix(in srgb, CanvasText, Canvas);
+}
