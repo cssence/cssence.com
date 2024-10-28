@@ -154,8 +154,12 @@ em {
 [id] {
 	scroll-margin-top: .75rem;
 }
+@media (forced-colors: none) {
+	a {
+		color: inherit;
+	}
+}
 a {
-	color: inherit;
 	text-decoration-color: var(--color-accent);
 	text-decoration-thickness: .125rem;
 	text-underline-offset: .125rem;
@@ -571,13 +575,13 @@ header,
 [data-chain] {
 	top: 0;
 }
-p[data-chain] > small {
-	display: flex;
-	flex-wrap: wrap;
-	white-space: pre-wrap;
+p[data-chain="reply"] > small {
+	display: grid;
+	overflow: hidden;
+	grid-template-columns: 100% 1ex;
 }
-[data-chain] span {
-	max-width: calc(100% - 1ex);
+[data-chain="reply"] span {
+	grid-column: 1;
 	overflow: hidden;
 	overflow-wrap: normal;
 	text-overflow: ellipsis;
