@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="c-extra">
+<head>
+<title>Not to mention</title>
+<meta name="description" content="I wrote .something about how to (not) select an ancestor, which turned out rather .specific.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/BaXOKLQ" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Not to mention</h1>
+<p><i>Extra</i><br><time data-revised="2024-11-06T07:01:00Z">2024-11-05T09:59:00Z</time><br><img src="/2024/not-to-mention/index.webp" alt=""></p>
+</header>
+<div>
+<p>Manuel Matuzović wrote about <a href="https://www.matuzo.at/blog/2022/100daysof-day50/">the difference between <code>:has(:not())</code> and <code>:not(:has())</code></a> almost two years ago.</p>
+<p>Another thing that may trip you up when using <code>:not()</code> is going the opposite direction: While <code>:has()</code> is about finding out about child nodes, what about selecting something further up in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">DOM</a>? Consider the following example.</p>
+<pre><a href="/2024/not-to-mention/code.impractical.css">View CSS code.</a></pre>
+<p>Here we are changing the color of an <code>.element</code> that does <strong>not</strong> have a <code>.specific</code> ancestor. Well, changes are this is <strong>always</strong> the case. Unless <strong>every</strong> ancestor all the way up to <code>&lt;HTML&gt;</code> has the <code>.specific</code> class attached, our color will be applied.</p>
+<p>For <code>:not()</code> to make sense, we need to tie to something else. Sadly this requires us to have <code>.something</code> to work with in the first place.</p>
+<pre><a href="/2024/not-to-mention/code.practical.css">View CSS code.</a></pre>
+<p>Now we target an <code>.element</code> that is part of <code>.something</code>, unless said something is <code>.specific</code>.</p>
+<p>So we are done?</p>
+<p>Almost. There is a way to make the wildcard version actually useful.</p>
+<pre><a href="/2024/not-to-mention/code.special.css">View CSS code.</a></pre>
+<p>By adding the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator">child combinator</a>, we are not targeting any ancestor, but just the parent. While this obviously a bit limiting, targeting a parent that is not <code>.specific</code> may at times be exactly what you need.</p>
+<section>
+<h2 id="updates">Update</h2>
+<p id="update-1">Now we are done. Or so I thought. But <a href="#comment-1">Christopher Kirk-Nielsen reached out</a> to inform me that by putting the ancestor inside <code>:not()</code> we can get rid of the limitation. You can <a href="https://chriskirknielsen.com/blog/select-an-element-which-doesnt-descend-from-another-in-css/">check out his article</a> for all the details, I’ll just put the example below.</p>
+<pre><a href="/2024/not-to-mention/code.perfect.css">View CSS code.</a></pre>
+</section>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/113429781551411942"><b>Matthias Zöchling</b> wrote on <time>2024-11-05T10:05:10Z</time></span></h3>
+<p>Here’s a #CSS quick tip regarding the <code>:not()</code> pseudo-class, because why not.<br><a href="/2024/not-to-mention/">cssence.com/2024/not-to-mention</a></p>
+</article>
+<article>
+<h3 id="comment-1"><a href="https://front-end.social/@chriskirknielsen/113430753964257686"><b>Christopher Kirk-Nielsen</b> wrote on <time>2024-11-05T14:12:27Z</time></a></h3>
+<p>It always bites ya! One trick further is <code>.element:not(.specific *)</code> so you don’t need the direct child combinator (see <a href="https://chriskirknielsen.com/blog/select-an-element-which-doesnt-descend-from-another-in-css/">chriskirknielsen.com/blog/select-an-element-which-doesnt-descend-from-another-in-css</a> — not meant to be self promo, but I hope it’s helpful!)</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113431075158548289"><b>Matthias Zöchling</b> wrote on <time>2024-11-05T15:34:08Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@chriskirknielsen@front-end.social</span>.</small></p>
+<p>Awesome, thank you. TIL!</p>
+<p>(Side note: That’s why I enjoy blogging, it’s so pollenating.)</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113434755721923198"><b>Matthias Zöchling</b> wrote on <time>2024-11-06T07:10:09Z</time></span></h3>
+<p>Thanks again @chriskirknielsen@front-end.social for the insightful comment. I’ve updated yday’s article about <code>:not()</code> accordingly.</p>
+<p>If you are wondering why said article is 🍅-themed, it’s because of this Mastodon post:<br><a href="https://front-end.social/@ashur/113245435634615724">front-end.social/@ashur/113245435634615724</a></p>
+</article>
+<article>
+<h3><a href="https://front-end.social/@chriskirknielsen/113436582625563571"><b>Christopher Kirk-Nielsen</b> wrote on <time>2024-11-06T14:54:46Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@CSSence@mas.to</span>.</small></p>
+<p>Happy it was useful! And tomato is a lovely colour indeed!</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>

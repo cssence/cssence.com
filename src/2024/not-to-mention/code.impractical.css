@@ -1,0 +1,3 @@
+:not(.specific) .element {
+	color: tomato;
+}
