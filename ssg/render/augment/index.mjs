@@ -16,6 +16,12 @@ const determine = (content, meta) => {
 			let allEntries = [];
 			query.toc.split(',').forEach((key) => allEntries = allEntries.concat(meta.toc[key]));
 			return allEntries;
+		} else if (query.filter === '[home]') {
+			const newestByCategory = [];
+			['c-essay', 'c-editorial', 'c-extra', 'c-event', 'c-note', 'c-link'].forEach((className) => {
+				newestByCategory.push(meta.toc.posts.find((post) => post.className === className));
+			});
+			return newestByCategory;
 		} else if (query.filter === '[hidden]') {
 			return meta.toc.indexes.filter(unIndexed).concat(meta.toc.pages.filter(unEgged));
 		} else if (query.filter === '.c-article') {

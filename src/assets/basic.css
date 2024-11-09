@@ -126,12 +126,6 @@ figcaption {
 .imprint nav p {
 	margin: 0;
 }
-.imprint nav summary {
-	width: max-content;
-}
-.imprint nav details[open] summary {
-	display: none;
-}
 a[href="#top"] {
 	float: right;
 }

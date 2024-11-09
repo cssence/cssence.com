@@ -110,3 +110,15 @@ main > div > div section:first-of-type a::after {
 		--padding-horizontal: 1.75rem;
 	}
 }
+.posts > div {
+	display: flex;
+	align-items: baseline;
+	gap: 1ex;
+}
+.posts > div .subtle {
+	order: 1;
+	letter-spacing: normal;
+}
+.posts > div::after {
+	content: "|";
+}
