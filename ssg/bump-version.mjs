@@ -27,7 +27,7 @@ const isBugfix = process.argv.slice(-1)[0] === `--${types[2]}`;
 		const fileContent = `${JSON.stringify(pkg, null, '  ')}\n`;
 		await writeFileContent(PACKAGE, fileContent);
 	
-		console.log(`Bump version to ${pkg.version} (${types[type]}).`);
+		console.info(`Bump version to ${pkg.version} (${types[type]}).`);
 	
 	} catch (err) {
 		console.error(err);

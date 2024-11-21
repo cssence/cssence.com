@@ -15,7 +15,7 @@ const getSortedIndexHtmlList = (toc) => {
 	// create sorted build file list
 
 	let indexHtmlList = [];
-	for (const deck of ['pages', 'posts', 'indexes']) {
+	for (const deck of ['pages', 'drafts', 'posts', 'indexes']) {
 		const deckFileList = toc[deck].map((card) => card.path);
 		if (deck === 'indexes') {
 			const swap = deckFileList[0]; deckFileList[0] = deckFileList[1]; deckFileList[1] = swap;

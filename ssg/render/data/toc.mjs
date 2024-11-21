@@ -6,7 +6,7 @@ import getPageData from './page.mjs';
 
 const getToc = async (folder, meta) => {
 
-	const toc = {indexes: [], pages: [], posts: [], byPath: {}};
+	const toc = {indexes: [], pages: [], posts: [], drafts: [], byPath: {}};
 
 	// create individual decks
 
@@ -15,8 +15,18 @@ const getToc = async (folder, meta) => {
 		const html = await getFileContent(file);
 		const content = html.split('\n');
 		const { page, isIndex, isPostByYear } = getPageData(urlPath, content, meta);
-		const deck = isIndex ? 'indexes' : (isPostByYear ? 'posts' : 'pages');
-		toc[deck].push(page);
+		if (isIndex) {
+			toc.indexes.push(page);
+		} else if (isPostByYear) {
+			if (page.published > meta.date.build) {
+				console.info(`Blog post ${urlPath} not indexed until ${page.published}.`);
+				toc.drafts.push(page);
+			} else {
+				toc.posts.push(page);
+			}
+		} else {
+			toc.pages.push(page);
+		}
 	}
 
 	// sort entries in individual decks
@@ -39,6 +49,7 @@ const getToc = async (folder, meta) => {
 		}
 		return weight.join('');
 	};
+	toc.drafts.sort((a, b) => b.published < a.published ? -1 : 1);
 	toc.posts.sort((a, b) => b.published < a.published ? -1 : 1);
 	toc.pages.sort((a, b) => a.path < b.path ? -1 : 1);
 	toc.indexes.sort((a, b) => getIndexWeight(a) < getIndexWeight(b) ? -1 : 1);
@@ -53,6 +64,7 @@ const getToc = async (folder, meta) => {
 	};
 	for (const index of toc.indexes) assign(index, { isIndex: true });
 	for (const page of toc.pages) assign(page);
+	for (const post of toc.drafts) assign(post, { isPostByYear: true });
 	for (const post of toc.posts) assign(post, { isPostByYear: true });
 
 	return toc;
