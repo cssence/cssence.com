@@ -21,7 +21,7 @@
 <p>I didn’t stop there. I tried other combinations. If we mix a system color with transparent, we are back to CanvasText. Unless the mix happens for <code>background-color</code>, in that case we actually get a semi-transparent version of the system color. 😮</p>
 <p>Compare this to Chromium-based browsers, where we end up with CanvasText even if we “mix” Mark with Mark.</p>
 <p>In the early stage of discovering the issue, I found it cool what Firefox is doing. And I was tempted to say the other browsers should follow suit. But on second thought, Forced Colors Mode is about reducing the palette, hence the result of <code>color-mix</code> has little to no value here. And while I could even argue that mixing Canvas and CanvasText could be useful, the moment we start doing weird things like mixing CanvasText with LinkText we realize that this is actually nonsensical, right?</p>
-<p>I’ll file a Firefox bug.</a> Reluctantly?</p>
+<p>I’ll file a Firefox bug. Reluctantly?</p>
 </div>
 <aside>
 <h2 id="comments">Comments</h2>
@@ -50,6 +50,14 @@
 <h3><span data-href="https://mas.to/@CSSence/113383882374879891"><b>Matthias Zöchling</b> wrote on <time>2024-10-28T07:32:24Z</time></span></h3>
 <p>Bug or feature?</p>
 <p><a href="https://github.com/w3c/csswg-drafts/issues/11097">CSSWG issue #11097.</a></p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113531361780233353"><b>Matthias Zöchling</b> wrote on <time>2024-11-23T08:38:21Z</time></span></h3>
+<p>The #CSS working group discussed my <code>color-mix()</code> issue earlier this week, and @tabatkins@mastodon.social made a good case for not allowing the mix of system colors in Forced Colors Mode, stating it …</p>
+<blockquote>
+<p>[…] might actually harm the users in question.</p>
+</blockquote>
+<p>If you look at the IRC log, a case was made for <code>:disabled</code>, but here I too would argue to go with <code>opacity</code> instead. And if devs want a color mix really badly, they could resort to <code>forced-color-adjust</code>—assuming they know what they are doing.</p>
 </article>
 </aside>
 </article>
