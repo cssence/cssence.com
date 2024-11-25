@@ -111,7 +111,6 @@ img {
 .cover img {
 	width: 100%;
 }
-kbd,
 code {
 	font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 }
@@ -260,6 +259,8 @@ kbd {
 	border: .0625rem solid;
 	border-bottom-width: .125rem;
 	border-radius: .25rem;
+	font: inherit;
+	white-space: nowrap;
 }
 hr {
 	max-width: 50%;
