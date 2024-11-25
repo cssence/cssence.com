@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="c-essay">
+<head>
+<title>Forced Colors Mode Strategies</title>
+<meta name="description" content="A reminder that “Forced Colors Mode” is a thing, and some strategies you can apply today.">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Forced Colors Mode Strategies</h1>
+<p><i>Essay</i><br><time>2024-11-29T09:30:00Z</time><br><img src="/2024/forced-colors-mode-strategies/index.webp" alt=""></p>
+</header>
+<div>
+<nav class="standoff" aria-labelledby="toc">
+<h2 id="toc" aria-hidden="true">The strategies</h2>
+<ol>
+<li><a href="#1-do-nothing">Do nothing</a></li>
+<li><a href="#2-hide-in-plain-sight">Hide in plain sight</a></li>
+<li><a href="#3-go-the-extra-mile">Go the extra mile</a></li>
+<li><a href="#4-use-the-force">Use the force</a></li>
+<li><a href="#5-be-bold">Be bold</a></li>
+<li><a href="#6-know-where-to-stop">Know where to stop</a></li>
+</ol>
+</nav>
+<p>I use Linux on my personal laptop. In the corporate world I’ve been using MacOS for many years, but after my MacBook had deteriorated beyond repair, I opted against replacing it with some shiny Apple silicon. Instead, I wanted a machine where I could run Windows. Not because it’s good, but because I wanted to be able to experience screen readers like Narrator and NVDA. Up to that point I’ve only been using VoiceOver on MacOS/iOS and TalkBack on Android.</p>
+<hr>
+<p>This isn’t a story about screen readers.</p>
+<p>Instead, this is a story about Forced Colors, which is another thing I’ve started enjoying after switching to Windows. Did you ever click on <em>Accessibility &gt; Displays &gt; Increase contrast</em> in MacOS, realizing that the effect is barely noticable? Well, unlike the Apple setting, <a href="https://support.microsoft.com/en-us/windows/change-color-contrast-in-windows-fedc744c-90ac-69df-aed5-c8a90125e696#WindowsVersion=Windows_11">selecting a Contrast Theme in Windows</a> drastically changes the operating system’s appearance.</p>
+<figure><img src="contrast-themes.webp" alt="In the “Accessibility &gt; Contrast Themes” settings page in Windows 11, there are four predefined themes to choose from. Their names are Aquatic, Desert, Dusk, and Night Sky.">
+<figcaption>You can choose one of the themes, or even create your own. Interestingly, only one of the predefined choices uses dark text on light background.</figcaption>
+</figure>
+<p>This accessibility setting was called <em>High Contrast</em> in Windows&nbsp;10, then Microsoft renamed it to <em>Contrast Themes</em> in Windows&nbsp;11. No matter how an operating system calls the feature, on the web we only talk about Forced Colors Mode.</p>
+<hr>
+<p>This isn’t a Forced Colors Mode introduction.</p>
+<p>Instead, I’d like to share my strategies on how to tackle Forced Colors Mode in the real world. I added these strategies to my toolbelt over time, and in doing so, the topic became a first-class citizen among all the other accessibility work I do.</p>
+<p>Why isn’t this an introduction? After all, I even gave such an introduction when I spoke at <em>CSS in Graz</em> earlier this year. Well, to be honest, great introductions are already out there. Kilian Valkhof wrote <a href="https://polypane.app/blog/forced-colors-explained-a-practical-guide/">Forced colors explained: A practical guide</a> on the Polypane blog. If you are more into video, Kevin Powell (who else?) talks about <a href="https://youtu.be/yYGLEy7CiT0">Forced colors and CSS</a> on his YouTube channel.</p>
+<p>Here’s an introductory quote from Kilian’s article:</p>
+<blockquote cite="https://polypane.app/blog/forced-colors-explained-a-practical-guide/">
+<p>The main feature is that it <strong>limits and controls the range of colors,</strong> making it easier for users to emphasize content and UI in a way that works for them.</p>
+<p>In other words, they force colors.</p>
+</blockquote>
+<p>If this is all news to you, I encourage you to get familiar with Forced Colors before we proceed.</p>
+<p>I’ll have some eggnog and wait for you to come back.</p>
+<p><em>*Slurp.*</em></p>
+<p>Good to go? Great. But to play it safe, let’s do a quick recap, to ensure we are all on the same page.</p>
+<h2>In a nutshell</h2>
+<p>What happens when Forced Colors Mode is active?</p>
+<ul>
+<li>Background colors are removed, and</li>
+<li>most other colors are replaced, expect for SVG’s <code>fill</code> and <code>stroke</code>.</li>
+<li>Only <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/system-color">CSS system colors</a> are kept.</li>
+<li>Box and text shadows are removed.</li>
+<li>Background images based on <code>url()</code> are kept.</li>
+<li>Other background images (e.g. gradients) are removed.</li>
+<li>A so-called backplate gets drawn behind text to make it more legible.</li>
+</ul>
+<p>This may be an oversimplification, but it’ll do. If you recall how many CSS properties can take a color, it becomes clear that this isn’t an exhaustive list.</p>
+<h2>Why is this important?</h2>
+<p>According to Microsoft, 4% of Windows users have the feature activated. I wouldn’t be surprised if the number of people using Forced Colors is already on par with those that use Firefox as their browser. So if you care about Firefox (and you should), then you should also care about Forced Colors.</p>
+<p>Speaking of Firefox, I’ve been using it as my main browser for years, but it wasn’t until I’ve read Kilian’s article to learn that you can activate Forced Colors Mode in settings under <em>General &gt; Colors &gt; Manage colors &gt; Override the colors: Always.</em> Obviously, doing so only affects web sites and not the OS. If you are on Team Chrome, you can open DevTools, hit <kbd>Ctrl/Cmd</kbd>&thinsp;+&thinsp;<kbd>Shift</kbd>&thinsp;+&thinsp;<kbd>P</kbd>, type “forced”, and you’ll find the option to <em>Emulate CSS forced-colors: active.</em></p>
+<p>Forced Colors Mode has actually quite some history, it goes back all the way to Internet Explorer 10, when Microsoft introduced their <code>-ms-high-contrast</code> media query. Do you remember how we misused the old query to <a href="https://stackoverflow.com/questions/18907131/detecting-ie-version-using-css-capability-feature-detection">detect Internet Explorer 10 and 11 in CSS</a>? Back then that was the reason I knew about the feature’s existence. Luckily these days are over, <a href="https://blogs.windows.com/msedgedev/2024/04/29/deprecating-ms-high-contrast/">Microsoft deprecated the old media query.</a> If you encounter any kind of outdated documentation, move on. Though certain articles like Adrian Roselli’s <a href="https://adrianroselli.com/2021/02/whcm-and-system-colors.html">WHCM and System Colors</a> are always worth a read.</p>
+<p>That said, nowadays you only have to care about the <code>forced-colors</code> media query and everything related to it. So let’s dive in.</p>
+<h2>How to design for Forced Colors Mode?</h2>
+<p>You don’t.</p>
+<figure>
+<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors#accessibility_concerns">In general, web authors should not be using the forced-colors media feature to create a separate design for users with this feature enabled. Instead, its intended usage is to make small tweaks to improve usability or legibility when the default application of forced colors does not work well for a given portion of a page.</blockquote>
+<figcaption><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors#accessibility_concerns">Accessibility concerns</a> mentioned on MDN’s <code>forced-colors</code> page.</figcaption>
+</figure>
+<p>Tweaks become necessary primarily because backgrounds and shadows get removed, therefore we need other means to denote separation and hierarchy. The reduced color palette on the other hand shouldn’t cause trouble, because to be accessible we anyhow cannot convey meaning with color alone.</p>
+<p>So we are down to white space and separator lines (borders and outlines). In reality it is only the latter, we don’t want our content to shift around by adding padding/margin in Forced Colors Mode, in other words we should only make use of the white space we already have in place.</p>
+<p>If you’ve read <a href="https://polypane.app/blog/forced-colors-explained-a-practical-guide/#in-summary">the summary in Kilian’s article</a>, you’re already off to a good start.</p>
+<h2>Strategies</h2>
+<p>Alright. Without further ado, here are my strategies.</p>
+<h3>1. Do nothing</h3>
+<p>As mentioned, we should not resort to creating a dedicated stylesheet. Instead, how about we craft our site in a way that just works for our users that have Forced Colors activated?</p>
+<p>That would be ideal, and sometimes it’s possible. But quite often, certain tweaks may be necessary.</p>
+<h3>2. Hide in plain sight</h3>
+<p>Shall we start making small adjustments, but without resorting to a media query just yet?</p>
+<p>This is where <code>transparent</code> becomes your friend. When used as <code>background-color</code>, it behaves as intended, there’s is no background color. However, when used as e.g. <code>border-color</code>, <code>transparent</code> will be replaced with the text color, so it becomes visible. This means, wherever you use a background color in your regular theme, there’s a chance you also want to add a transparent border or outline.</p>
+<p>This strategy would not be complete without the Forced Colors poster child technique concerning the focus ring. TL;DR, never remove the <code>outline</code>, only set its color to <code>transparent</code>. Then add your regular theme’s fancy focus ring based on box shadow. Yes, the shadow will be removed in Forced Colors, but the outline will take over. (Though personally I’d recommend to just go with <code>outline</code>, now that it adheres to <code>border-radius</code>.)</p>
+<pre><a href="/2024/forced-colors-mode-strategies/code.focus-ring.css">View CSS example.</a></pre>
+<h3>3. Go the extra mile</h3>
+<p>Eventually we need to implement something specifically for Forced Colors, something that should not leak into our regular theme. Media query <code>forced-colors</code> to the rescue! In addition, we can even differentiate between light and dark mode, because <code>prefers-color-scheme</code> will report one or the other depending on which contrast theme is selected. We’ll combine or nest our media queries and make adjustments accordingly.</p>
+<pre><a href="/2024/forced-colors-mode-strategies/code.media-query.css">View CSS example.</a></pre>
+<h3>4. Use the force</h3>
+<p>Next up, we have the <code>forced-color-adjust</code> property. If we set it to <code>none</code>, we instruct the browser to keep the colors as they are. While this sounds like it would turn the whole Forced Colors idea on its head, the directive has its uses. Imagine a color picker: If all its colors would be set to CanvasText in Forced Colors Mode, the component would make no sense.</p>
+<p>I have another use for the property. Sometimes I want a component to stand out in Forced Colors by inverting the colors. Badges and tooltips come to mind. Instead of displaying them CanvasText on Canvas, I flip them around. Fine, but they are both CSS system colors, as such they remain untouched in Forced Colors Mode. Why do we additionally need <code>forced-color-adjust</code>? Well, we don’t, at least not in Firefox. But the Chromiums rightfully go a bit overboard. I’ve mentioned the backplate that “gets drawn behind text to make it more legible”: After inverting the colors, the Chromiums shove a Canvas-colored backplate between our color and background color, so we end up with invisible text, i.e. not legible at all.</p>
+<pre><a href="/2024/forced-colors-mode-strategies/code.prevent-backplate.css">View CSS example.</a></pre>
+<p>Keep in mind that preventing the forced color adjustment on an element also affects all of its children. Which is why this should only be done for simple UI elements. Having a link among the children would already be a problem, as the link would then be shown in its regular theme color.</p>
+<h3>5. Be bold</h3>
+<p>We’ve reached the opposite end of doing nothing. Sometimes it’s okay to get creative.</p>
+<p>Consider a modal dialog. It is placed on top of other content, so the modal needs a background color. We deemphasize the still visible content around the modal with a backdrop, to visually indicate that the rest of the page is inert. A stark box shadow is attached to the modal to mimic elevation. In Forced Colors Mode we are derived of many of those things. To compensate, we can <a href="https://www.smashingmagazine.com/2022/03/windows-high-contrast-colors-mode-css-custom-properties/#styling-the-modal-for-forced-colors-mode">add a thick outline around the modal.</a></p>
+<p>When it comes to the size of separator lines, I tend to use at least ten pixels for modals, three or four for custom dropdowns, two for buttons and one for most other things, like table rows. And whenever I need even more variety, I change the border/outline style to dotted, dashed, or double.</p>
+<h3>6. Know where to stop</h3>
+<p>We have quite a few system colors at our disposal, and even AccentColor and AccentColorText will hopefully get Baseline support soon. But I urge you to not use these colors beyond their intended purpose, as you may end up confusing people. If you do make an exception, use good judgement. Case in point, I like what Eric W.&nbsp;Bailey did for Forced Colors when <a href="https://ericwbailey.design/published/a11y-syntax-highlighting-has-been-updated/">he updated his A11Y Syntax Highlighting.</a></p>
+<p>Having made it this far, you already know we are not dealing with the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Alpha">alpha channel</a> of a color in Forced Colors Mode. So it may seem counterintuitive to hear that <code>opacity</code> does work. However, my recommendation would be to not use it, or limit its use to styling <code>:disabled</code> controls.</p>
+<h3>7. Over to you</h3>
+<p>Are you already a Forced Colors Mode expert? Anything you’d like to add? Let me know <a href="https://mas.to/@CSSence">on Mastodon.</a></p>
+<h2>The real world</h2>
+<p>Web browsers have made a lot of progress in recent years, so much so that we’ve become rather comfortable and assume that things work cross-browser. Sadly, in Forced Colors Mode that is not the case. How long a feature has been with us seems to make no difference. For instance, <a href="https://www.smashingmagazine.com/2024/01/css-border-image-property/">the complex but awesome CSS <code>border-image</code> property</a> is probably not something you want to make use of, as Chromium-based browsers keep actual images and also gradients, but Firefox removes both. New features can also be a breading ground for inconsistencies, the other day I ran into <a href="https://cssence.com/2024/color-mix-in-forced-colors-mode/">an issue with <code>color-mix()</code>.</a> How browsers apply the backplate would warrant a dedicated article, expect inconsistencies there too. I could go on.</p>
+<p>The cross-browser issues I’ve mentioned imply that <strong>you have to test</strong> in Firefox and at least one of the Chromiums. Until Apple decides to support Forced Colors, don’t fret about Safari. I encourage you to test twice, first with a theme that uses light text on dark background, and then the other way round. In doing so, you’ll be able to spot content that is invisible in just one of the two themes.</p>
+<h2>Before you go</h2>
+<p>When I first selected a contrast theme in Windows, I immediately liked how slick and clean the user interface looked. Contrary to when I’m testing with screen readers, where after prolonged periods of time I end up feeling exhausted, this is something I don’t mind leaving turned on.</p>
+<p>Do you use Forced Colors all year around? If not, do you have Windows (or Firefox) nearby? How about you make <strong>December</strong> the month where you have Forced Colors turned on? Maybe you find it as comforting as I do. In that case, the least colorful time of the year can become <a href="https://youtu.be/AN_R4pR1hck">the most wonderful time of the year.</a></p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href=""><b>Matthias Zöchling</b> wrote on <time>2024-11-30T13:00:00Z</time></span></h3>
+<p>%%<br><a href="/2024/forced-colors-mode-strategies/">cssence.com/2024/forced-colors-mode-strategies</a></p>
+</article>
+<p>No comments have been added so far.</p>
+<!--Initially, this has been the article I wrote for this year’s <em>HTMHell.dev Advent Calendar,</em> but I ended up replacing it with <a href="/2024/forced-colors-mode-futility">a more sarcastic one.</a> Let me state the obvious, by borrowing from said article: Your <code>&lt;div role="button"&gt;</code> won’t get the ButtonText system color applied, nor will your onclick-infused </code>&lt;u tabindex="0"&gt;</code> be shown with LinkText. Instead of using the following strategies mentioned in this article to adjust the styling of such nonsense, make sure you have semantic HTML to begin with.-->
+</aside>
+</article>
+</main>
+</body>
+</html>

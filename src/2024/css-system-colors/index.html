@@ -11,13 +11,14 @@
 <header>
 <h1>CSS System Colors</h1>
 <p>A Forced Colors Mode Test Page.</p>
-<p><i>Extra</i><br><time>2024-11-21T14:33:00Z</time><br><img src="/2024/css-system-colors/index.webp" alt=""></p>
+<p><i>Extra</i><br><time data-revised="2024-11-25T12:10:00Z">2024-11-21T14:33:00Z</time><br><img src="/2024/css-system-colors/index.webp" alt=""></p>
 </header>
 <div>
 <p>When I wrote about the <a href="/2024/six-levels-of-dark-mode/">six (eight) levels of dark mode,</a> I also added an <a href="/2024/color-scheme-switcher/">accompanying Extra.</a></p>
-<p>I’m currently writing about <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors">Forced Colors Mode,</a> another case where I’m about to apply the <em>Essay&nbsp;&amp;&nbsp;Extra</em> strategy. Both articles will be published soon, but guess what, I even ended up with some leftovers about CSS&nbsp;System Colors.</p>
-<p>They are rather neat, and you can <a href="https://blog.jim-nielsen.com/2021/css-system-colors/">get quite creative with them.</a></p>
-<p>In Forced Colors Mode however, colors are replaced with said system colors, so here they are essential. Let me <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/system-color">quote MDN on the topic:</a></p>
+<p>I’m currently writing two articles about <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors">Forced Colors Mode,</a> they are about to be published. And guess what, I even ended up with some leftovers about CSS&nbsp;System Colors, which I’ve turned into the Extra you are reading right now. So this time I’m in <em>Essay &amp;&nbsp;Essay &amp;&nbsp;Extra</em> territory.</p>
+<hr>
+<p>System colors are rather neat, and you can <a href="https://blog.jim-nielsen.com/2021/css-system-colors/">get quite creative with them.</a></p>
+<p>In Forced Colors Mode however, colors are replaced with said system colors, so here they are not just neat but essential. Let me <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/system-color">quote MDN:</a></p>
 <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/CSS/system-color">
 <p>The <code>&lt;system-color&gt;</code> CSS data type usually reflects the default color choices used for the different parts of a web page.</p>
 <p>However, user agents can provide an accessibility feature called forced colors mode, in which colors are restricted into a user- and user agent-defined palette, overriding the author’s choice of colors in certain properties. In forced colors mode, <code>&lt;system-color&gt;</code> exposes the chosen colors, so that the rest of the page can integrate with them. An example of forced colors mode is <a href="https://blogs.windows.com/msedgedev/2020/09/17/styling-for-windows-high-contrast-with-new-standards-for-forced-colors/">high contrast mode on Windows.</a></p>
@@ -45,6 +46,13 @@
 <p data-chain="reply"><small>In reply to: <span>@konnorrogers@ruby.social</span>.</small></p>
 <p>I like your theme toggle. In my CodePen I only adhere to user preference.</p>
 <p>But now that I think of it, I just got another idea I’d like to realize if I find the time.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113543716901455237"><b>Matthias Zöchling</b> wrote on <time>2024-11-25T13:00:25Z</time></span></h3>
+<p>I made an update to my recent CodePen about system colors, both light and dark mode colors are now shown side by side.</p>
+<p>The #CSS <code>color-scheme</code> property helped me do it. Unless you view things in Forced Colors Mode (FCM), there we are back to a single column, because both would look the same.</p>
+<p>So, in FCM the <code>prefers-color-scheme</code> media query works, but <code>color-scheme</code> is ignored, but that’s no surprise.</p>
+<p><img src="/2024/css-system-colors/side-by-side.webp" alt="The same list of system colors twice, light on dark on the left, and dark on light on the right."></p>
 </article>
 </aside>
 </article>

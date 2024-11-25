@@ -1,0 +1,7 @@
+@media (forced-colors: active) {
+	.badge {
+		background-color: CanvasText;
+		color: Canvas;
+		forced-color-adjust: none; /* prevent backplate */
+	}
+}
