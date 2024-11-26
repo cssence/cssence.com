@@ -2,6 +2,7 @@
 
 import http from 'http';
 
+import getArg from './utils/args.mjs';
 import colorize, { getColorByHttpResponseStatusCode } from './utils/color.mjs';
 import { getFileContent } from './utils/files.mjs';
 import getMimeType from './utils/mime.mjs';
@@ -13,7 +14,7 @@ const hostname = '127.0.0.1';
 const port = 8080;
 const origin = `http://${hostname}:${port}`;
 
-const isDev = process.argv.slice(-1)[0] === '--dev';
+const isDev = getArg('--dev');
 const folder = isDev ? './src' : './public';
 
 (async () => {
