@@ -47,7 +47,7 @@ const modify = (content, meta) => {
 	const swapAfter = content.indexOf('<head>') + 1;
 	const swapBefore = content.indexOf('</head>');
 	let inside = null;
-	for (let i = ALT + (content[ALT].startsWith('<link rel="alternate" type="text/html"') ? 1 : 0); i < swapBefore; i += 1) {
+	for (let i = ALT; i < swapBefore; i += 1) {
 		if (inside) {
 			inside.addTo.push(content[i]);
 			if (content[i] === inside.until) inside = null;
@@ -60,6 +60,12 @@ const modify = (content, meta) => {
 			} else if (content[i].startsWith('<style')) {
 				styles.push(content[i]);
 				if (!content[i].endsWith('</style>')) inside = {addTo: styles, until: '</style>'};
+			} else if (content[i].startsWith('<link rel="alternate" type="text/html"')) {
+				const remoteUrl = content[i].match(/href="([^"]+)/)[1];
+				const remote = remoteUrl.split('/')[2];
+				if (!['codepen.io', 'medium.com', 'mas.to', 'bsky.app', 'twitter.com', 'cssence.wordpress.com'].includes(remote)) {
+					intro.push(content[i]);
+				}
 			} else {
 				other.push(content[i]);
 			}
