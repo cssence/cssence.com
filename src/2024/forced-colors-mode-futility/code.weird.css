@@ -1,0 +1,6 @@
+.button {
+	border: .125rem solid; /* etc. */
+}
+u {
+	color: light-dark(oklch(0.43 0.3 264.05), oklch(0.69 0.17 281.16));
+}
