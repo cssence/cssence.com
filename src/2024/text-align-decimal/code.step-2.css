@@ -1,0 +1,7 @@
+td {
+	font-variant-numeric: lining-nums tabular-nums;
+	text-align: right;
+}
+td [aria-hidden] {
+	visibility: hidden;
+}

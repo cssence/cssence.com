@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="c-extra">
+<head>
+<title>Character-based alignment</title>
+<meta name="description" content="How to align numbers in table cells by decimal point?">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/OPLJaRW" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Character-based alignment</h1>
+<p><i>Extra</i><br><time>2024-11-29T09:39:00Z</time><br><img src="/2024/text-align-decimal/index.webp" alt=""></p>
+</header>
+<div>
+<p>Earlier this week Silvestar Bistrović has been so kind to include one of my articles in his <a href="https://www.silvestar.codes/side-projects/ui-dev-newsletter/2024-11-25/">UI&nbsp;Dev Newsletter issue #106.</a> Also in there, Darin Senneff shared his <a href="https://www.darins.page/articles/my-3-most-wanted-css-table-features">three most-wanted CSS table features.</a> The third being <em>column data alignment:</em></p>
+<blockquote cite="https://www.darins.page/articles/my-3-most-wanted-css-table-features">
+<p>Unfortunately, there’s no native way to align data in a table column aside from basic left/right/center text alignment. If your data needs to align a certain way to be understood best, then your data’s presentation may be unclear.</p>
+</blockquote>
+<p>Darin also mentions <a href="https://drafts.csswg.org/css-text-4/#character-alignment">a proposed solution exists:</a>
+<pre><a href="/2024/text-align-decimal/code.future.css">View CSS code.</a></pre>
+<p>This would align numbers by the decimal point. Alas, there’s not one browser that supports this syntax.</p>
+<p>But we can work around this! Eric Meyer came up with a really <a href="https://meyerweb.com/eric/thoughts/2022/08/15/table-column-alignment-with-variable-transforms/">advanced solution using CSS transforms.</a> If you’re looking for something simpler, albeit less versatile, I may have something in store for you.</p>
+<p>Sadly the HTML needs to do some heavy lifting. On the upside, it degrades perfectly if the CSS doesn’t load. 🙂</p>
+<p>Let’s work our way towards the solution.</p>
+<h2>Adding padding</h2>
+<p>We pad our numbers with trailing zeros, and at the same time wrap the padded part inside a new element. This works for any number of digits in the fractional part, but here’s how it looks like if we want two digits after the decimal point:</p>
+<pre><a href="/2024/text-align-decimal/code.step-1.html">View HTML code.</a></pre>
+<p>The <code>aria-hidden</code> attribute ensures that screen readers don’t announce the suffix as a second value.</p>
+<p>To align such data in a table column, for starters we need right-aligned cells, and our <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric">digits all have to be the same size,</a> i.e. <code>font-variant-numeric</code> should give us tabular numbers.</p>
+<p>To state the obvious, we always have to fill up to the same number of digits, but once we have this in place, hiding the <code>&lt;span&gt;</code> <q cite="https://developer.mozilla.org/en-US/docs/Web/CSS/visibility">without changing layout</q> is all we need to do. This is where <code>visibility: hidden</code> comes in:</p>
+<pre><a href="/2024/text-align-decimal/code.step-2.css">View CSS code.</a></pre>
+<p>Done. At least in it’s simplest form.</p>
+<h2>Adding a unit</h2>
+<p>If our value should also have a unit at the end, we’ve got more work to do. We’ll add the unit as the last thing in our cell. Additionally, we now need a wrapper for the whole cell content, because we need to bring in flexbox, and we need the table cell to remain at <code>display: table-cell</code>, so we’ll add another <code>&lt;span&gt;</code> to do the flexing.</p>
+<pre><a href="/2024/text-align-decimal/code.step-3.html">View HTML code.</a></pre>
+<p>Inside our flexbox wrapper, we use <code>order: 1</code> move the hidden suffix after the unit:</p>
+<pre><a href="/2024/text-align-decimal/code.step-4.css">View CSS code.</a></pre>
+<p>Done.</p>
+<p>Unless you want to add even more creative styling (like I did in my CodePen). Eventually you may even need a wrapper for the unit:</p>
+<pre><a href="/2024/text-align-decimal/code.step-5.html">View HTML code.</a></pre>
+<p>Check out my CodePen example for all the details. It even contains a teeny bit of interactivity.</p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/113565682355543716, https://bsky.app/profile/cssence.com/post/3lc3dip7nt22p"><b>Matthias Zöchling</b> wrote on <time>2024-04-29T04:25:00Z</time></span></h3>
+<p>Earlier this week @cita@mastodon.social has been so kind to include an article of mine in his newsletter, which also contained an article by @darin@mas.to that got me thinking and, thus, new blog post.</p>
+<p>It’s about table cell alignment by the decimal point:<br><a href="/2024/text-align-decimal/">cssence.com/2024/text-align-decimal</a></p>
+</article>
+<article>
+<h3><a href="https://mas.to/@darin/113566981999629735"><b>Darin Senneff</b> wrote on <time>2024-11-29T15:37:02Z</time></a></h3>
+<p>Interesting approach if you have control over the HTML! I wonder if you could finagle a CMS to add those needed zeroes so that you could automate it…</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113567436858736447"><b>Matthias Zöchling</b> wrote on <time>2024-11-29T17:32:43Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@darin@mas.to</span>.</small></p>
+<blockquote>
+<p>if you have control over the HTML!</p>
+</blockquote>
+<p>I know, that’s a big if. 🙃</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>

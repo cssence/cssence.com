@@ -1,0 +1,7 @@
+td > span {
+	display: inline-flex;
+}
+td [aria-hidden] {
+	visibility: hidden;
+	order: 1;
+}

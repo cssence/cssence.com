@@ -1,0 +1,8 @@
+/* Section 7.2. "Character-based Alignment in a Table Column"
+   in the CSS Text Module Level 4 draft specification:
+   Using a string as a value to the text-align property.
+*/
+td {
+	text-align: "." right;
+}
+/* Browser support by the end of 2024: ❌ */
