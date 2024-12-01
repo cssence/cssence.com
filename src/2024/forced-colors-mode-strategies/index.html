@@ -9,7 +9,7 @@
 <article>
 <header>
 <h1>Forced Colors Mode Strategies</h1>
-<p><i>Essay</i><br><time>2024-11-29T09:30:00Z</time><br><img src="/2024/forced-colors-mode-strategies/index.webp" alt=""></p>
+<p><i>Essay</i><br><time data-revised="2024-12-12T12:42:00Z">2024-11-29T09:30:00Z</time><br><img src="/2024/forced-colors-mode-strategies/index.webp" alt=""></p>
 </header>
 <div>
 <nav class="standoff" aria-labelledby="toc">
@@ -85,9 +85,9 @@
 <pre><a href="/2024/forced-colors-mode-strategies/code.media-query.css">View CSS example.</a></pre>
 <h3>4. Use the force</h3>
 <p>Next up, we have the <code>forced-color-adjust</code> property. If we set it to <code>none</code>, we instruct the browser to keep the colors as they are. While this sounds like it would turn the whole Forced Colors idea on its head, the directive has its uses. Imagine a color picker: If all its colors would be set to CanvasText in Forced Colors Mode, the component would make no sense.</p>
-<p>I have another use for the property. Sometimes I want a component to stand out in Forced Colors by inverting the colors. Badges and tooltips come to mind. Instead of displaying them CanvasText on Canvas, I flip them around. Fine, but they are both CSS system colors, as such they remain untouched in Forced Colors Mode. Why do we additionally need <code>forced-color-adjust</code>? Well, we don’t, at least not in Firefox. But the Chromiums rightfully go a bit overboard. I’ve mentioned the backplate that “gets drawn behind text to make it more legible”: After inverting the colors, the Chromiums shove a Canvas-colored backplate between our color and background color, so we end up with invisible text, i.e. not legible at all.</p>
-<pre><a href="/2024/forced-colors-mode-strategies/code.prevent-backplate.css">View CSS example.</a></pre>
-<p>Keep in mind that preventing the forced color adjustment on an element also affects all of its children. Which is why this should only be done for simple UI elements. Having a link among the children would already be a problem, as the link would then be shown in its regular theme color.</p>
+<p>I have another use for the property. Sometimes you need to make sure that transparent stays transparent: If you use a pseudo-element’s border to <a href="https://nikitahl.com/css-only-tooltip">create a triangle for a tooltip</a> or dropdown, you do that by coloring only one of the four border sides. However, as all border colors will be changed to the text color in Forced Colors Mode, you end up with a rectangle. Here’s how to prevent that:</p>
+<pre><a href="/2024/forced-colors-mode-strategies/code.preserve-transparent.css">View CSS example.</a></pre>
+<p>Last and least, you can also use <code>forced-color-adjust</code> to get rid of the backplate that “gets drawn behind text to make it more legible”, but make sure you have a really good reason to do so, and test your assumptions.<ins><sup><a id="ref-update-1" href="#update-1" role="doc-noteref" aria-label="Update #1">[1]</a></sup></ins></p>
 <h3>5. Be bold</h3>
 <p>We’ve reached the opposite end of doing nothing. Sometimes it’s okay to get creative.</p>
 <p>Consider a modal dialog. It is placed on top of other content, so the modal needs a background color. We deemphasize the still visible content around the modal with a backdrop, to visually indicate that the rest of the page is inert. A stark box shadow is attached to the modal to mimic elevation. In Forced Colors Mode we are derived of many of those things. To compensate, we can <a href="https://www.smashingmagazine.com/2022/03/windows-high-contrast-colors-mode-css-custom-properties/#styling-the-modal-for-forced-colors-mode">add a thick outline around the modal.</a></p>
@@ -103,6 +103,21 @@
 <h2>Before you go</h2>
 <p>When I first selected a contrast theme in Windows, I immediately liked how slick and clean the user interface looked. Contrary to when I’m testing with screen readers, where after prolonged periods of time I end up feeling exhausted, this is something I don’t mind leaving turned on.</p>
 <p>Do you use Forced Colors all year around? If not, do you have Windows (or Firefox) nearby? How about you make <strong>December</strong> the month where you have Forced Colors turned on? Maybe you find it as comforting as I do. In that case, the least colorful time of the year can become <a href="https://youtu.be/AN_R4pR1hck">the most wonderful time of the year.</a></p>
+<section>
+<h2 id="updates">Update</h2>
+<p id="update-1"><time class="update" datetime="2024-12-12">December 12, 2024:</time> When publishing the article, my <a href="#4-use-the-force">Use the force</a> strategy contained a different example:</p>
+<blockquote>
+<details>
+<summary>About inverting colors.</summary>
+<p>Sometimes I want a component to stand out in Forced Colors by inverting the colors. Badges and tooltips come to mind. Instead of displaying them CanvasText on Canvas, I flip them around. Fine, but they are both CSS system colors, as such they remain untouched in Forced Colors Mode. Why do we additionally need <code>forced-color-adjust</code>? Well, we don’t, at least not in Firefox. But the Chromiums rightfully go a bit overboard. I’ve mentioned the backplate that “gets drawn behind text to make it more legible”: After inverting the colors, the Chromiums shove a Canvas-colored backplate between our color and background color, so we end up with invisible text, i.e. not legible at all.</p>
+<pre><a href="/2024/forced-colors-mode-strategies/code.prevent-backplate.css">View CSS example.</a></pre>
+<p>Keep in mind that preventing the forced color adjustment on an element also affects all of its children. Which is why this should only be done for simple UI elements. Having a link among the children would already be a problem, as the link would then be shown in its regular theme color.</p>
+</details>
+</blockquote>
+<p>@annam@nerdculture.de reached out to let me know that this may not be good A11Y advice: <q lang="en-GB">Some people need white text on black to be able to read, and that is why they invert the colours. If you now flip the colours back to black on white for some elements, they will become unreadable to them. I actually know someone who runs into this regularly. So, wanted to make you aware of that. Greetings, Anna.</q></p>
+<p>I did some research, sadly I couldn’t find articles on that subject. But as it seems really intuitive, I just took her word and replaced the aforementioned paragraph with information on how to keep transparent border colors, and how to prevent backplates in general.</p>
+<p>Thank you Anna. This is why I like to blog, you get valuable feedback. There’s always opportunity to learn. <a href="#ref-update-1" role="doc-backlink" aria-label="Back to article">↩︎</a></p>
+</section>
 </div>
 <aside>
 <h2 id="comments">Comments</h2>
@@ -114,10 +129,46 @@
 <p>Shoutout to @Kilian@mastodon.social, @kevinpowell@front-end.social and @eric@social.ericwbailey.website for paving the way.</p>
 </article>
 <article>
-<h3><span data-href="https://mas.to/@CSSence/113570845014603467, https://bsky.app/profile/cssence.com/post/3lc5mwoj3x226"><b>Matthias Zöchling</b> wrote on <time>2024-11-30T07:59:00Z</time></span></h3>
+<h3><span data-href="https://mas.to/@CSSence/113570845014603467, https://bsky.app/profile/cssence.com/post/3lc5mvhkfg226, https://bsky.app/profile/cssence.com/post/3lc5mwoj3x226"><b>Matthias Zöchling</b> wrote on <time>2024-11-30T07:59:00Z</time></span></h3>
 <p>This article has been a long time in the making. There’s quite a backstory, and it being Christmas-themed has a reason, but more on that next week.</p>
 <p>Also, the thumbnail image is not generated by AI (I would never do that). It’s a photo I took twelve years ago in San Francisco. A grafitti artist, unbeknownst to me, sprayed this on a wall. For the thumbnail I drastically reduced the color palette, and then I replaced the remaining colors.</p>
 <p><img src="/2024/forced-colors-mode-strategies/grafitti.webp" alt="Abstract art, very colorful. To me it looks like lots of intertwined loops."></p>
+</article>
+<article>
+<h3><a href="https://mastodon.world/@siblingpastry/113583782411330579"><b>James Edwards</b> wrote on <time>2024-12-02T14:49:36Z</time></a></h3>
+<p>What’s the benefit or purpose of nesting <code>prefers-color-scheme</code> inside <code>forced-colors</code>? Since you have no control over the colors, and no need to know what the user’s theme looks like, what would you do variantly in each case?</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113584575844958852"><b>Matthias Zöchling</b> wrote on <time>2024-12-02T18:11:23Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@siblingpastry@mastodon.world</span>.</small></p>
+<p>Yeah, not much to do there really, setting a <code>background-image</code> that works better for a specific theme, or adjusting an SVG’s <code>fill</code> comes to mind.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113584586007542584"><b>Matthias Zöchling</b> wrote on <time>2024-12-02T18:13:58Z</time></span></h3>
+<p data-chain="continue"><small>Continued from previous comment.</small></p>
+<p>Even though you don’t know the colors, you do know if it is light on dark or vice versa.</p>
+<p>But it’s quite likely that the tweaks you make for light/dark mode also work when Forced Colors are in play, so there’s little need in nesting those media queries.</p>
+</article>
+<article>
+<h3><a href="https://mastodon.world/@siblingpastry/113588380734041887"><b>James Edwards</b> wrote on <time>2024-12-03T10:19:01Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@CSSence@mas.to</span>.</small></p>
+<p>That makes sense, I can see how critical imagery would benefit from that (conventional imagery anyway, since SVG can use system colors too).</p>
+<p>But you know it is possible to detect the actual system colors being used (from <code>getComputedStyle</code>) and then programmatically apply them via <code>forced-color-adjust: none</code>? It seems a bit weird, to apply system colors as author colors, but it does work and can be useful.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113588426105137937"><b>Matthias Zöchling</b> wrote on <time>2024-12-03T10:30:33Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@siblingpastry@mastodon.world</span>.</small></p>
+<p>Nice, I never tried. I thought that would be restricted, similar to not being able to detect visited links (👋 VisitedText), for security &amp; fingerprinting issues.</p>
+</article>
+<article>
+<h3><a href="https://mastodon.world/@siblingpastry/113588442189817724"><b>James Edwards</b> wrote on <time>2024-12-03T10:34:39Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@CSSence@mas.to</span>.</small></p>
+<p>Yeah it could be considered a privacy leak, so long term that might not always be possible, but for now it is 😊 I’ve got a few of these little tricks that I don’t shout too much about, in case people start abusing them and then browsers close them off.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113639974986642902"><b>Matthias Zöchling</b> wrote on <time>2024-12-12T13:00:00Z</time></span></h3>
+<p>After receiving valuable feedback from @annam@nerdculture.de, I’ve updated my Forced Colors Mode Strategies article.</p>
+<p>If someone has links to articles related to avoiding color inversion under these circumstances, please let me know.</p>
 </article>
 <!--Initially, this has been the article I wrote for this year’s <em>HTMHell.dev Advent Calendar,</em> but I ended up replacing it with <a href="/2024/forced-colors-mode-futility/">a more sarcastic one.</a> Let me state the obvious, by borrowing from said article: Your <code>&lt;div role="button"&gt;</code> won’t get the ButtonText system color applied, nor will your onclick-infused </code>&lt;u tabindex="0"&gt;</code> be shown with LinkText. Instead of using the following strategies mentioned in this article to adjust the styling of such nonsense, make sure you have semantic HTML to begin with.-->
 </aside>
