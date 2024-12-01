@@ -34,7 +34,7 @@
 <h2>Adding a unit</h2>
 <p>If our value should also have a unit at the end, we’ve got more work to do. We’ll add the unit as the last thing in our cell. Additionally, we now need a wrapper for the whole cell content, because we need to bring in flexbox, and we need the table cell to remain at <code>display: table-cell</code>, so we’ll add another <code>&lt;span&gt;</code> to do the flexing.</p>
 <pre><a href="/2024/text-align-decimal/code.step-3.html">View HTML code.</a></pre>
-<p>Inside our flexbox wrapper, we use <code>order: 1</code> move the hidden suffix after the unit:</p>
+<p>Inside our flexbox wrapper, we use <code>order: 1</code> to move the hidden suffix after the unit:</p>
 <pre><a href="/2024/text-align-decimal/code.step-4.css">View CSS code.</a></pre>
 <p>Done.</p>
 <p>Unless you want to add even more creative styling (like I did in my CodePen). Eventually you may even need a wrapper for the unit:</p>
@@ -59,6 +59,11 @@
 <p>if you have control over the HTML!</p>
 </blockquote>
 <p>I know, that’s a big if. 🙃</p>
+</article>
+<article>
+<h3><a href="https://mastodon.social/@boldewyn/113658174971427594"><b>Manuel Strehl</b> wrote on <time>2024-12-15T18:08:37Z</time></a></h3>
+<p>funnily, old HTML had this feature for table cells (not-standardized, though, but Chromium-based browsers support it):</p>
+<pre><code class="language-html">&lt;td align=char char="."&gt;</code></pre>
 </article>
 </aside>
 </article>

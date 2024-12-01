@@ -13,7 +13,7 @@
 <article>
 <header>
 <h1>Forced Colors Mode Futility</h1>
-<p><i>Essay</i><br><time>2024-12-05T08:00:00Z</time><br><img src="/2024/forced-colors-mode-futility/index.webp" alt=""></p>
+<p><i>Essay</i><br><time>2024-12-24T20:00:00Z</time><br><img src="/2024/forced-colors-mode-futility/index.webp" alt=""></p>
 </header>
 <div>
 <p>Are you aware of <a href="https://blogs.windows.com/msedgedev/2020/09/17/styling-for-windows-high-contrast-with-new-standards-for-forced-colors/">Forced Colors Mode</a>? If not, there are some <a href="#resources">resources</a> at the end. If so, did you also know that this accessibility feature can be used as an entry-level debugging tool?</p>
@@ -41,7 +41,7 @@
 <p>I was about to ask “Is this it?”, but I just realized we need a database to keep track of all the links that have already been clicked, so we can visually indicate them as <code>.visited</code>, …—I’m gonna stop myself right there.</p>
 <h2>Good advice</h2>
 <p>Enough of the Sisyphean labor. Let’s do the following instead.</p>
-<pre><a href="/2024/forced-colors-mode-futility/code.bad.html">View HTML example.</a></pre>
+<pre><a href="/2024/forced-colors-mode-futility/code.good.html">View HTML example.</a></pre>
 <p>For styling, all you have to do is inherit the font for buttons, which is what your <a href="https://www.joshwcomeau.com/css/custom-css-reset/#six-inherit-fonts-for-form-controls-7">CSS reset</a> might do anyhow for all form controls.</p>
 <p>In Forced Colors Mode, things just work, buttons and links will be shown in proper CSS system colors. <strong>Semantics for the win!</strong><sup><a id="ref-fn-4" href="#fn-4" role="doc-noteref" aria-label="Footnote #4">[4]</a></sup></p>
 <figure class="standout"><img src="a-div-is-not-a-button-even-in-fcm.webp" alt="While we eventually can make our fake elements look like the real deal even in Forced Colors Mode, we should avoid all that work and use proper elements instead.">
@@ -50,13 +50,13 @@
 <p>So do we have an entry-level debugging tool? Well, unless someone goes all the way like we did in the last step of our bad example (highly unlikely!), in Forced Colors Mode you don’t need to be a developer to recognize real buttons and links. Unless the theme prevents it: Buttons are yellow and regular text is white in the “Night Sky” theme, but in “Desert” the difference is way too subtle. No need to stick to the defaults tough, you can create your own theme instead.</p>
 <h2>Full disclosure</h2>
 <p>I didn’t need to write this article, because common sense exists, right? Then again, there’s a reason why HTMHell.dev exists. (<abbr title="By the way">BTW</abbr>, thanks for having me, it’s been an honor to be part of the <a href="https://htmhell.dev/adventcalendar/2024/">2024 Advent Calendar</a> among all those talented people.)</p>
-<p>Initially I wrote something else, but it ended up being too long for a calendar entry. <em>The original article</em> is now <a href="https://cssence.com/2024/forced-colors-mode-strategies/">available on my blog.</a> If you are up for <strong>actual Forced Colors Mode advice,</strong> may I suggest you read it, and then consider joining my movement to make December <q cite="https://cssence.com/2024/forced-colors-mode-strategies/">the least colorful time of the year</q>.</p>
+<p>Initially I wrote something else, but it ended up being too long for a calendar entry. <em>The original article</em> is now <a href="/2024/forced-colors-mode-strategies/">available on my blog.</a> If you are up for <strong>actual Forced Colors Mode advice,</strong> may I suggest you read it, and then consider joining my movement to make December <q cite="https://cssence.com/2024/forced-colors-mode-strategies/">the least colorful time of the year</q>.</p>
 <h2>Resources</h2>
 <ul>
 <li><a href="https://polypane.app/blog/forced-colors-explained-a-practical-guide/">Forced colors explained: A practical guide</a>, <span>18min read by Kilian Valkhof</span></li>
 <li><a href="https://youtu.be/yYGLEy7CiT0">Forced colors and CSS</a>, <span>16min video by Kevin Powell</span></li>
 <li><a href="https://www.smashingmagazine.com/2022/03/windows-high-contrast-colors-mode-css-custom-properties/#styling-the-modal-for-forced-colors-mode">Windows High Contrast Mode, Forced Colors Mode And CSS Custom Properties</a>, <span>11min read by Eric W. Bailey</span></li>
-<li><a href="https://cssence.com/2024/forced-colors-mode-strategies/">Forced Colors Mode Strategies</a>, <span>14min read by yours truly</span></li>
+<li><a href="/2024/forced-colors-mode-strategies/">Forced Colors Mode Strategies</a>, <span>14min read by yours truly</span></li>
 </ul>
 <aside class="standoff" aria-labelledby="syndication" style="--offset:1.5rem">
 <h2 id="syndication">Syndication</h2>
@@ -78,11 +78,34 @@
 </div>
 <aside>
 <h2 id="comments">Comments</h2>
-<article hidden>
-<h3><span data-href=""><b>Matthias Zöchling</b> wrote on <time>2024-12-25T08:00:00Z</time></span></h3>
-<p>My contribution to this year’s Advent Calendar entry is now lso available on my site.<br><a href="/2024/forced-colors-mode-futility/">cssence.com/2024/forced-colors-mode-futility</a></p>
+<article>
+<h3><a href="https://mastodon.online/@stvfrnzl/113599423578720894"><b>Steve Frenzel</b> wrote on <time>2024-12-05T09:07:22Z</time></a></h3>
+<blockquote>
+<p>When the forced colors feature is turned on, colors will be replaced with CSS System Colors. Elements like buttons and links get special colors assigned, so wherever improper elements are used, things will fall out of place.</p>
+</blockquote>
+<p>Awesome, I’ve been wanting to dive deeper into this topic and know how to emulate it on a Mac. Now I DO know! 🥳</p>
 </article>
-<p>No comments have been added so far.</p>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113599454214316714"><b>Matthias Zöchling</b> wrote on <time>2024-12-05T09:15:09Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@stvfrnzl@mastodon.online</span>.</small></p>
+<p>Yeah, in Firefox’s settings, or via Chromium’s DevTools:<br><a href="/2024/forced-colors-mode-strategies/">cssence.com/2024/forced-colors-mode-strategies</a></p>
+<p>Admittedly, the easiest way would be to use Polypone from @Kilian@mastodon.social. 😉</p>
+</article>
+<article>
+<h3><a href="https://mastodon.social/@Kilian/113599462937614746"><b>Kilian Valkhof</b> wrote on <time>2024-12-05T09:17:22Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@CSSence@mas.to</span>, <span>@stvfrnzl@mastodon.online</span>.</small></p>
+<p>Thanks for the mention (both in the article and here!)</p>
+<p>@devtoolstips@front-end.social has a nice overview for Edge, Chrome and Polypane:<br><a href="https://devtoolstips.org/tips/en/emulate-forced-colors/">devtoolstips.org/tips/en/emulate-forced-colors</a></p>
+</article>
+<article>
+<h3><a href="https://mozilla.social/@nicolaschevobbe/113600650756779982"><b>Nicolas Chevobbe</b> wrote on <time>2024-12-05T14:19:27Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@Kilian@mastodon.social</span>, <span>@CSSence@mas.to</span>, <span>@stvfrnzl@mastodon.online</span>.</small></p>
+<p>I should really try to finalize my patch for @FirefoxDevTools@mozilla.social:<br><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1591539">Bugzilla ticket #1591539</a></p>
+</article>
+<article hidden data-hook>
+<h3><span data-href="https://mas.to/@CSSence/"><b>Matthias Zöchling</b> wrote on <time>2024-12-06T07:47:00Z</time></span></h3>
+<p>My contribution to this year’s HTMLHell.dev Advent Calendar entry is now also available on my site.<br><a href="/2024/forced-colors-mode-futility/">cssence.com/2024/forced-colors-mode-futility</a></p>
+</article>
 </aside>
 </article>
 </main>
