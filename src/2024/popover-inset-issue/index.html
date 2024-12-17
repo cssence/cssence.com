@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" class="c-extra">
+<head>
+<title>The Popover API and inset:unset</title>
+<meta name="description" content="Inconsistent cross-browser behavior on the top layer.">
+<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/MYgJXab" title="Code example on codepen.io">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>The Popover API and inset:unset</h1>
+<p><i>Extra</i><br><time>2024-12-17T10:57:00Z</time><br><img src="/2024/popover-inset-issue/index.webp" alt=""></p>
+</header>
+<div>
+<p>Ah, the <a href="https://developer.chrome.com/blog/what-is-the-top-layer/">CSS top layer,</a> what a great invention. And the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API">Popover API,</a> incredibly helpful for accessibility.</p>
+<p>Over at work, while implementing my first ever native popover (which in the meantime already got shipped), I noticed inconsistent behavior between the Chromiums and Firefox. This does not come as a surprise, it’s just a small price to pay for all the new shiny things we are getting these days.</p>
+<p>The next thing I would usually do is file a browser bug. But in this case I’m once again not really sure which browser gets it right; though I’m secretly hoping it is Firefox, so I can file a Chromium bug.</p>
+<h2>The default</h2>
+<p>We got these new user agent styles for native popovers: They add a border and background color to the popover, set its size to fit the content, and center the whole thing. A good start for a dialog, but if you use the Popover API for things like tooltips and dropdowns, you most likely end up undoing said default.</p>
+<p>We made jokes about <a href="https://css-tricks.com/centering-css-complete-guide/">centering stuff, which is easy these days.</a> For native popovers, the following happens:</p>
+<pre><a href="/2024/popover-inset-issue/code.popover-centering.css">View CSS example.</a></pre>
+<p>As the popover has block and inline size constraints, it will be centered inside the viewport.</p>
+<h2>The problem</h2>
+<p>If I want to place the popover elsewhere, I can adjust top, right, bottom, and/or left—or even better, the logical property variants thereof.</p>
+<p>But if my popover immediately follows the button that opens it, wouldn’t it be nice if I could just do <code>inset: unset</code> and the popover is placed underneath visually (while still being part of the top layer)?</p>
+<p><strong>That is exactly what Firefox is doing.</strong> But the Chromiums place the popover in the top left corner (or top right when the <a href="https://rtlstyling.com/posts/rtl-styling">direction is right to left,</a> you get the idea).</p>
+<figure><img src="comparison.webp" alt="Browser screenshots for comparison.">
+<figcaption>While Firefox (shown on the left) places the popover below the triggering button, it ends up in a corner in Chromium-based browsers.</figcaption>
+</figure>
+<p><abbr title="For what it’s worth">FWIW</abbr>, changing <code>margin</code> and <code>position</code> does not alter the behavior, as you’ll see if you examine the CodePen I made for the issue. While you take a look, I’ll be on the social networks, in hopes of finding out who does it right.</p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113667828483595068"><b>Matthias Zöchling</b> wrote on <time>2024-12-17T10:57:00Z</time></span></h3>
+<p>Hello Chromium and Firefox people, can you help me figure out which browser behavior is correct? It’s about the Popover API and the Top Layer:<br><a href="/2024/popover-inset-issue/">cssence.com/2024/popover-inset-issue</a></p>
+<p>Please be Firefox, please be Firefox. 🤞</p>
+</article>
+<article>
+<h3><a href="https://mastodon.social/@pepelsbey/113667855170331873"><b>Vadim Makeev</b> wrote on <time>2024-12-17T11:10:25Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@CSSence@mas.to</span>.</small></p>
+<p>It looks similar to what I tried to understand a few months ago. Still not sure! See the replies, too.<br><a href="https://mastodon.social/@pepelsbey/113385103374423675">mastodon.social/@pepelsbey/113385103374423675</a></p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113668635693559733"><b>Matthias Zöchling</b> wrote on <time>2024-12-17T14:28:55Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@pepelsbey@mastodon.social</span>.</small></p>
+<p>Great, thank you, that helps. So yeah, judging by your thread, it’s still <abbr title="to be defined">TBD</abbr>.</p>
+<p>Eventually it won’t matter much because we’ll just anchor-position everything.</p>
+<p>Nevertheless, there should be concensus among browsers, one way or another. Based on what I’ve read in the blog post from @hdv@front-end.social, I’m guessing it’s gonna be “another”:</p>
+<blockquote>
+<p>In summary, elements lose their position context when they are upgraded to the top layer. And that’s okay, we have other options.</p>
+<footer>— <cite><a href="https://hidde.blog/positioning-anchored-popovers/#heading-1">Positioning anchored popovers</a></cite></footer>
+</blockquote>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>
