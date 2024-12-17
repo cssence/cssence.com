@@ -17,7 +17,7 @@
 <blockquote cite="https://www.darins.page/articles/my-3-most-wanted-css-table-features">
 <p>Unfortunately, there’s no native way to align data in a table column aside from basic left/right/center text alignment. If your data needs to align a certain way to be understood best, then your data’s presentation may be unclear.</p>
 </blockquote>
-<p>Darin also mentions <a href="https://drafts.csswg.org/css-text-4/#character-alignment">a proposed solution exists:</a>
+<p>Darin also mentions <a href="https://drafts.csswg.org/css-text-4/#character-alignment">a proposed solution exists:</a></p>
 <pre><a href="/2024/text-align-decimal/code.future.css">View CSS code.</a></pre>
 <p>This would align numbers by the decimal point. Alas, there’s not one browser that supports this syntax.</p>
 <p>But we can work around this! Eric Meyer came up with a really <a href="https://meyerweb.com/eric/thoughts/2022/08/15/table-column-alignment-with-variable-transforms/">advanced solution using CSS transforms.</a> If you’re looking for something simpler, albeit less versatile, I may have something in store for you.</p>
@@ -64,6 +64,11 @@
 <h3><a href="https://mastodon.social/@boldewyn/113658174971427594"><b>Manuel Strehl</b> wrote on <time>2024-12-15T18:08:37Z</time></a></h3>
 <p>funnily, old HTML had this feature for table cells (not-standardized, though, but Chromium-based browsers support it):</p>
 <pre><code class="language-html">&lt;td align=char char="."&gt;</code></pre>
+</article>
+<article>
+<h3><a href="https://bsky.app/profile/crissov.de/post/3ldiowgcnzk23"><b>Christoph Päper</b> wrote on <time>2024-12-17T11:04:00Z</time></a></h3>
+<p>I created the <code>{{0}}</code> template in Wikipedia for that almost 20 years ago, hoping it would not be needed for long. (It lacks the ARIA attribute, though.</p>
+<p>Recently, I suggested to rethink the concept because support for <code>text-align: &lt;string&gt;</code> is still virtually nil. 🎻🦗<br><a href="https://github.com/w3c/csswg-drafts/issues/10791">CSSWG issue #10791</a></p>
 </article>
 </aside>
 </article>

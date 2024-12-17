@@ -23,7 +23,7 @@
 <pre><a href="/2024/web-share-api/code.mailto.js">View JS example.</a></pre>
 <p>In browers that support the Web Share API, I’ll hijack the link and prevent it’s default event. This way, things even work for those who browse the web without JavaScript. Sure enough, it’s 2024, so I could recreate Jeremy’s solution with a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API">native popover,</a> which in its most simple form also works without JavaScript. But that’s a topic for another blog post.</p>
 <p>Alright. I’ve progressively enhanced the already present link. But! What I *should* have done is something akin to what Phil Nash’s <a href="https://github.com/philnash/web-share-wrapper"><code>web-share-wrapper</code> web component</a> does, namely replacing the link with a button on the fly, because calling <code>navigator.share</code> does something (button), it does not go anywhere (link). My inner accessibility advocate agrees, so why did I still choose to *not* do that?</p>
-<p>Well, the link has additional value. Unlike a button, a link gives you a context menu on right-click. How browsers behave when you right-click a mailto link varies. I’ve noticed Firefox removes all “Open in new&thinsp;…” entries that you get with a regular link. Which is unnecessary—and half-assed—, because holding the <key>Shift</key> key while you right-click does bring back “Open in new tab” anyway.</p>
+<p>Well, the link has additional value. Unlike a button, a link gives you a context menu on right-click. How browsers behave when you right-click a mailto link varies. I’ve noticed Firefox removes all “Open in new&thinsp;…” entries that you get with a regular link. Which is unnecessary—and half-assed—, because holding the <kbd>Shift</kbd> key while you right-click does bring back “Open in new tab” anyway.</p>
 <p>But why would you open a mailto link in a new tab? I’m glad I asked. Doing so gives us the option to bypass the progressive enhancement, i.e. the link behaves as if it was never hijacked in the first place. Voilà, back to mailto instead of <code>navigator.share()</code>. Granted, only power users may be aware of that, but still.</p>
 <p>So my conundrum is: Do I choose a tiny bit of additional functionality, or semantic correctness?</p>
 <p>As said, currently I’m doing the former, but I might give it another thought for accessibility reasons. What do you think? My implementation is already live, there’s a <a href="#contribute">“Share” link below</a> the comments. You can also check it out in more detail on CodePen.</p>
@@ -31,12 +31,27 @@
 <aside>
 <h2 id="comments">Comments</h2>
 <article hidden>
-<h3><span data-href="https://mas.to/@CSSence/112630382160574180"><b>Matthias Zöchling</b> wrote on <time>2024-06-17T05:47:00Z</time></span><le/h3>
+<h3><span data-href="https://mas.to/@CSSence/112630382160574180"><b>Matthias Zöchling</b> wrote on <time>2024-06-17T05:47:00Z</time></span></h3>
 <p>Progressive enhancement, accessibility, and the Web Share API. What do you think about my latest conundrum?<br><a href="/2024/web-share-api/">cssence.com/2024/web-share-api</a></p>
 </article>
 <article>
-<h3><span data-href="https://mas.to/@CSSence/113463037831432992"><b>Matthias Zöchling</b> wrote on <time>2024-11-1108:02:00Z</time></span></h3>
+<h3><span data-href="https://mas.to/@CSSence/113463037831432992"><b>Matthias Zöchling</b> wrote on <time>2024-11-11T08:02:00Z</time></span></h3>
 <p>After having read about <a href="https://heydonworks.com/article/the-button-element/">the <code>&lt;button&gt;</code> element</a> (yes, it should have been <code>&lt;br&gt;</code>), especially the faux link-buttons part, I wonder what @heydon@front-end.social has to say when it comes to *not* replacing Share links with buttons.</p>
+</article>
+<article>
+<h3><a href="https://c.im/@cwilcox808/113679542009509333"><b>Curtis Wilcox</b> wrote on <time>2024-12-19T12:42:32Z</time></a></h3>
+<p>I would make the link a button in browsers that support the API.</p>
+<p>FYI, in the current versions of Chrome and Safari for Mac (which support the Web Share API), the contextual menu option on the hijacked link is “Copy Email address” but when I use it, there’s nothing in the clipboard.</p>
+<p>In Firefox (which doesn’t support the API), it’s also “Copy Email Address” and what I get is the following, which I guess is the what’s expected but I don’t see how that’s useful:</p>
+<pre><code>?subject=Web Share API meets A11Y - CSSence.com&body=https://cssence.com/2024/web-share-api/</code></pre>
+<p>Chrome’s “Open Link …” options do the original <code>mailto</code> action but I don’t know for whom that would be an expected behavior.</p>
+<p>I’ll add that screen reader users (for whom the proper semantics are most important) don’t typically know a link is a mailto link unless you tell them in the link text.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/113680500266811305"><b>Matthias Zöchling</b> wrote on <time>2024-12-19T16:46:14Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@cwilcox808@c.im</span>.</small></p>
+<p>Thanks for taking the time to investigate, that “interesting” browser behavior you’ve encountered pushes me over the edge: I’ll turn my Share link into a button.</p>
+<p>And my article will get an update too.</p>
 </article>
 </aside>
 </article>
