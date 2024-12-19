@@ -1,10 +1,18 @@
 /* Modify `head` */
 
-const modify = (content, meta) => {
+/* Inline example source code in `<pre>` */
+
+import { getFileContent } from '../../utils/files.mjs';
+
+const folderIn = './src';
+
+const modify = async (content, meta) => {
 
 	const TITLE = 3, DESC = 4, ALT = 5;
 
 	const forbidden = ['/404/', '/about/about/', '/assets/'].includes(meta.page.path);
+
+	const inlineSrc = await getFileContent(`${folderIn}/assets/inline.js`);
 
 	const intro = [
 		'<meta charset="utf-8">',
@@ -40,7 +48,9 @@ const modify = (content, meta) => {
 		`<meta name="robots" content="${forbidden ? 'noindex' : 'index'},follow">`,
 	];
 	const scripts = [
+		'<script>let FIREFOX_FOUC_FIX;</script>',
 		'<script nomodule src="/assets/old.js"></script>',
+		`<script type="module" async>${inlineSrc.replace(/\/\*.+?\*\//, '')}</script>`,
 		'<script type="module" src="/assets/modern.js"></script>',
 	];
 

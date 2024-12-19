@@ -19,7 +19,7 @@ const augment = async (urlPath, html, meta) => {
 	const content = html.split('\n');
 	storePageData(urlPath, meta);
 	indexCards(content, meta);
-	modifyHead(content, meta);
+	await modifyHead(content, meta);
 	modifyContentArchive(content, meta);
 	modifyHeader(content, meta);
 	addPosts(content, meta);

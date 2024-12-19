@@ -17,8 +17,8 @@ const modify = async (content, _meta) => {
 			example = example.replaceAll('&', '&amp;');
 			example = example.replaceAll('<', '&lt;');
 			example = example.replaceAll('>', '&gt;');
-			example = example.replaceAll('"', '&quot;');
-			example = example.replaceAll('\'', '&#39;');
+			// example = example.replaceAll('"', '&quot;');
+			// example = example.replaceAll('\'', '&#39;');
 			if (example.endsWith('\n')) example = example.slice(0, -1);
 			content[i] = `<pre><code class="language-${type}">${example}</code></pre>`;
 		}
