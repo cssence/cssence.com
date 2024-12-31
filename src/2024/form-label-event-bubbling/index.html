@@ -3,7 +3,6 @@
 <head>
 <title>Form label event bubbling</title>
 <meta name="description" content="Call stopPropagation once, shame on you. Call stopPropagation twice, …">
-<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/abrxGEO" title="Code example on codepen.io">
 </head>
 <body>
 <main>
@@ -30,6 +29,8 @@
 <p>This is where <code>event.stopPropagation()</code> comes in. Use can call it at any point in the bubbling phase to bring it to a halt. In other words, after stopPropagation is executed, handlers of elements further up in the DOM won’t be called.</p>
 <p>With one caveat, which should already be clear, given what we just went through. When clicking a label, you may have to stop the bubbling twice, as it bubbles up for both label and labeled element. So next time an event handlers get called expectedly, maybe this is the reason.</p>
 <p>I made a CodePen to illustrate all that. It has three areas: First, two checkboxes to turn stopPropagation on and off; second, a form with two kinds of label &amp;&nbsp;labeled element combos; and third, a log that shows which event handlers are called when you click something on the form. Take a look.</p>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://codepen.io/cssence/pen/abrxGEO">View “Form label event bubbling” on CodePen.</a></p>
 </div>
 <aside>
 <h2 id="comments">Comments</h2>

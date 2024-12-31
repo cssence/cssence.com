@@ -3,7 +3,6 @@
 <head>
 <title>Preventing Orphans in Flexbox</title>
 <meta name="description" content="No single element in last row, thanks to :nth-last-child.">
-<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/KKggLrW" title="Code example on codepen.io">
 </head>
 <body>
 <main>
@@ -45,6 +44,8 @@
 <p>This solution will work for any number of rows and columns. For fewer or more columns, simply adjust the container width and replace <em>3n</em> with your desired value. To get an even better understanding, head over to my <a href="#showcase">interactive version on CodePen,</a> where you can play around with different settings.</p>
 <h2>Postscript: A word on <code>gap</code></h2>
 <p>Adding a gap between the children is possible, but at the time of writing, setting a <code>gap</code> on flex containers is not supported in Safari. This can be achieved by setting a margin on each item, and negative margins on the container. No matter which one you add, <code>gap</code> or <code>margin</code>, the gap has to be taken into account when calculating the width of the container, and offsetting the items.</p>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://codepen.io/cssence/pen/KKggLrW">View “Prevent orphan list item with pure CSS” on CodePen.</a></p>
 </div>
 <aside>
 <h2 id="comments">Comments</h2>

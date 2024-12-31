@@ -7,7 +7,6 @@ import modifyHeader from './augment/header.mjs';
 import addPosts from './augment/posts.mjs';
 import addSourceCode from './augment/source.mjs';
 import modifyContentArchive from './augment/archive.mjs';
-import addCodepen from './augment/codepen.mjs';
 import modifyConversation from './augment/conversation.mjs';
 import addAboutPage from './augment/about.mjs';
 import addNav from './augment/nav.mjs';
@@ -24,7 +23,6 @@ const augment = async (urlPath, html, meta) => {
 	modifyHeader(content, meta);
 	addPosts(content, meta);
 	await addSourceCode(content, meta);
-	addCodepen(content, meta);
 	modifyConversation(content, meta);
 	extractFeedContent(content, meta);
 	addAboutPage(content, meta);

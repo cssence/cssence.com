@@ -254,7 +254,8 @@ main .visually-hidden {
 	}
 	header i::after,
 	#comments ~ section,
-	.codepen,
+	#showcase,
+	#showcase + p,
 	body > footer {
 		display: none;
 	}

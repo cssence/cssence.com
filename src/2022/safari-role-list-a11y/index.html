@@ -3,7 +3,6 @@
 <head>
 <title>Safari vs. Unstyled Lists</title>
 <meta name="description" content="Safari requires ARIA to retain semantics of unstyled lists.">
-<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/OJZZBXP" title="Code example on codepen.io">
 </head>
 <body>
 <main>
@@ -23,6 +22,8 @@
 <p>While it sure is a minor issue, one that can be solved with <a href="https://adactio.com/journal/17690">a little bit of otherwise unnecessary code,</a> it is one that bugs me the most on my own site. To add insult to injury, if you run code with these fixes applied through an HTML validator, it will happily tell you there is no need to add <code>role="list"</code> to lists, because the role is implied.</p>
 <p>Well.</p>
 <p>All this made me wonder if this was still a thing in the latest version of Safari. To find out, I’ve created a CodePen that allows me to quickly test it myself. Sure enough, the bug is still there in Safari 15. Here’s hoping that future me will be able to come back to this article and add an update stating the issue has been resolved.</p>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://codepen.io/cssence/pen/OJZZBXP">View “Safari List Semantics Test Page” on CodePen.</a></p>
 </div>
 <aside>
 <h2 id="comments">Comments</h2>

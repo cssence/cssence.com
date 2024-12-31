@@ -305,7 +305,6 @@ li {
 	margin-bottom: .75rem;
 	margin-left: 1.75rem;
 }
-#showcase + p,
 li ul,
 li ol,
 li li,
@@ -346,7 +345,6 @@ pre {
 	padding: .9375rem calc(var(--padding-horizontal) - .0625rem);
 	border: .0625rem dashed transparent;
 }
-.codepen,
 pre {
 	padding-top: 1.4375rem;
 	padding-bottom: 1.4375rem;
@@ -444,6 +442,7 @@ header p:last-child {
 .c-event i {
 	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M15.494 14.482 14.4 11.2h-1.2l.666 3.2H2.133l.666-3.2h-1.2L.505 14.482C.227 15.317.719 16 1.599 16h12.8c.88 0 1.372-.683 1.094-1.518zM12 4a4 4 0 1 0-8 0c0 3.82 4 8 4 8s4-4.18 4-8zm-6.16.048c0-1.193.966-2.159 2.16-2.159a2.158 2.158 0 1 1 0 4.319 2.16 2.16 0 0 1-2.16-2.16z'/%3E%3C/svg%3E");
 }
+#showcase ~ p,
 .c-extra i {
 	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M9 11.5l1.5 1.5 5-5-5-5L9 4.5 12.5 8zM7 4.5L5.5 3l-5 5 5 5L7 11.5 3.5 8z'/%3E%3C/svg%3E");
 }
@@ -475,6 +474,7 @@ aside[aria-labelledby="comments"],
 }
 :where(.metadata, .standoff) :is(h2, p),
 #showcase,
+#showcase ~ p,
 #comments,
 #contribute {
 	margin-bottom: .75rem;
@@ -535,20 +535,9 @@ aside[aria-labelledby="comments"],
 }
 header,
 .posts li,
-#comments ~ article,
-.codepen {
+#comments ~ article {
 	position: relative;
 	padding-right: var(--_pbs);
-}
-.codepen a::after {
-	content: "";
-	display: block;
-	position: absolute;
-	inset: 0;
-	background: var(--icon) 0 / 2rem repeat var(--color-bg-subtle);
-	--mask: linear-gradient(90deg, #0000 0, #0000 50%, #0005);
-	-webkit-mask-image: var(--mask);
-	mask-image: var(--mask);
 }
 [data-follow-up] {
 	position: relative;
@@ -589,6 +578,7 @@ p[data-chain="reply"] > small {
 	white-space: nowrap;
 }
 i::before,
+#showcase ~ p::before,
 [data-chain]::before,
 [data-hl]:empty::after,
 .imprint > p > a::after {
@@ -609,20 +599,23 @@ i::before,
 [data-chain="continue"]::before {
 	transform: scale(-1, 1);
 }
-i::before {
+i::before,
+#showcase ~ p::before {
 	width: 1.25rem;
 	height: 1.25rem;
 	margin: 0 0 0 -1.75rem;
 	color: var(--color-accent);
 }
-i {
+#showcase ~ p::before {
+	margin-top: .1875rem;
+	color: var(--color-accent);
+}
+i,
+#showcase ~ p {
 	padding-left: 1.75rem;
 }
 .posts i {
 	margin-left: -1.75rem;
-}
-.codepen a {
-	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m14.777 5.751-7-4.667a.5.5 0 0 0-.555 0l-7 4.667a.501.501 0 0 0-.223.416v4.667c0 .167.084.323.223.416l7 4.667a.5.5 0 0 0 .554 0l7-4.667a.501.501 0 0 0 .223-.416V6.167a.501.501 0 0 0-.223-.416zM7.5 10.232 4.901 8.5 7.5 6.768 10.099 8.5 7.5 10.232zM8 5.899V2.434l5.599 3.732L11 7.898l-3-2zm-1 0-3 2-2.599-1.732L7 2.435V5.9zM3.099 8.5 1 9.899V7.101L3.099 8.5zM4 9.101l3 2v3.465l-5.599-3.732L4 9.102zm4 2 3-2 2.599 1.732L8 14.565V11.1zM11.901 8.5 14 7.101v2.798L11.901 8.5z'/%3E%3C/svg%3E");
 }
 [data-hl="Menu"] {
 	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M7 2h9v2H0V2zm0 5h9v2H0V7zm0 5h9v2H0v-2zm0'/%3E%3C/svg%3E");
@@ -855,6 +848,7 @@ footer.metadata p:nth-child(5)::after {
 	header img,
 	.posts li img,
 	i::before,
+	#showcase ~ p::before,
 	[data-chain]::before,
 	[data-hl]:empty::after,
 	.imprint > p > a::after,

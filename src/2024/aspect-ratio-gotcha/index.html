@@ -3,7 +3,6 @@
 <head>
 <title>aspect-ratio Gotcha!</title>
 <meta name="description" content="Be careful when you want to use aspect-ratio on an image element that has width/height attributes.">
-<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/xxeKaXN" title="Code example on codepen.io">
 </head>
 <body>
 <main>
@@ -30,6 +29,8 @@
 <pre><a href="/2024/aspect-ratio-gotcha/code.gotcha.html">View HTML code.</a></pre>
 <p>If your HTML would allow it, you could obviously simply remove the attributes there. If not<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Footnote #2">[2]</a></sup>, you have to go the extra mile: In order to undo the damage, you need to explicitly set either inline or block size to <code>auto</code>. Voilà, you’ve got your responsive behavior back.</p>
 <pre><a href="/2024/aspect-ratio-gotcha/code.resolved.css">View CSS code.</a></pre>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://codepen.io/cssence/pen/xxeKaXN">View “aspect-ratio gotcha” on CodePen.</a></p>
 <section>
 <h2 id="updates">Update</h2>
 <p id="update-1">When I first published this blog post, I incorrectly assumed that you cannot use <code>aspect-ratio</code> when sizes are set in HTML, and instead have to go back and explicitly set both dimensions. Luckily, <a href="#comment-2">Roma Komarov reached out</a> and pointed me to the solution.</p>

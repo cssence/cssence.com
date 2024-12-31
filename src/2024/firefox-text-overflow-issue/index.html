@@ -3,7 +3,6 @@
 <head>
 <title>Firefox and Ellipsis</title>
 <meta name="description" content="Is ellipsis shown randomly inside a flex container?">
-<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/QWoPoBB" title="Code example on codepen.io">
 </head>
 <body>
 <main>
@@ -19,6 +18,8 @@
 <p>Testing with Firefox version 122, I’ve seen the incorrect text-overflow on Mac and Windows, initially Linux Mint seemed to be void of the issue. At that point I’ve always used the system’s default sans-serif font. However, once I’ve thrown a web font into the mix, Firefox on Linux has the same problem:</p>
 <p class="invert"><img src="/2024/firefox-text-overflow-issue/test-file-on-linux.webp" alt="The test file shown in Firefox on Linux, the system font does not cause the issue, whereas the web font “Inter” does."></p>
 <p>Looking at the CodePen I’ve created in Chromium and Safari, they never truncate, so one more reason to think this is a Firefox issue. Which is why <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1881220">I’ve submitted bug ticket #1881220.</a></p>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://codepen.io/cssence/pen/QWoPoBB">View “Firefox text-overflow: ellipsis issue” on CodePen.</a></p>
 </div>
 <aside>
 <h2 id="comments">Comments</h2>

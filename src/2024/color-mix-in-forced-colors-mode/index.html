@@ -3,7 +3,6 @@
 <head>
 <title>Mixing colors in Forced Colors Mode</title>
 <meta name="description" content="Firefox does perform a color-mix in Forced Colors Mode if all colors in the mix are CSS system colors.">
-<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/abeVWYK" title="Code example on codepen.io">
 </head>
 <body>
 <main>
@@ -22,6 +21,8 @@
 <p>Compare this to Chromium-based browsers, where we end up with CanvasText even if we “mix” Mark with Mark.</p>
 <p>In the early stage of discovering the issue, I found it cool what Firefox is doing. And I was tempted to say the other browsers should follow suit. But on second thought, Forced Colors Mode is about reducing the palette, hence the result of <code>color-mix</code> has little to no value here. And while I could even argue that mixing Canvas and CanvasText could be useful, the moment we start doing weird things like mixing CanvasText with LinkText we realize that this is actually nonsensical, right?</p>
 <p>I’ll file a Firefox bug. Reluctantly?</p>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://codepen.io/cssence/pen/abeVWYK">View “color-mix in Forced Colors Mode” on CodePen.</a></p>
 </div>
 <aside>
 <h2 id="comments">Comments</h2>

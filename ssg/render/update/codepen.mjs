@@ -5,11 +5,11 @@ const modify = (content, meta) => {
 	if (!meta.page.isPostByYear || meta.page.className !== 'c-extra') return;
 	if (!meta.page.alternateUrl) return;
 
+	const ALT = 5;
+
 	const aside = [
-		'<div class="figure standout codepen">',
 		'<h2 id="showcase">Showcase</h2>',
-		`<p><a href="${meta.page.alternateUrl}">Visit CodePen to see this&nbsp;example in&nbsp;action.</a></p>`,
-		'</div>'
+		`<p><a href="${meta.page.alternateUrl}">View “${meta.page.title}” on CodePen.</a></p>`,
 	];
 	let insertBefore = content.indexOf('<h2 id="comments">Comments</h2>') - 2;
 	for (let i = insertBefore - 1; content[i] !== '</header>'; i -= 1) {
@@ -20,6 +20,8 @@ const modify = (content, meta) => {
 		}
 	}
 	content.splice(insertBefore, 0, aside.join('\n'));
+
+	content.splice(ALT, 1);
 
 };
 

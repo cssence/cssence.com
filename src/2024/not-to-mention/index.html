@@ -3,7 +3,6 @@
 <head>
 <title>Not to mention</title>
 <meta name="description" content="I wrote .something about how to (not) select an ancestor, which turned out rather .specific.">
-<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/BaXOKLQ" title="Code example on codepen.io">
 </head>
 <body>
 <main>
@@ -24,6 +23,8 @@
 <p>Almost. There is a way to make the wildcard version actually useful.</p>
 <pre><a href="/2024/not-to-mention/code.special.css">View CSS code.</a></pre>
 <p>By adding the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator">child combinator</a>, we are not targeting any ancestor, but just the parent. While this obviously a bit limiting, targeting a parent that is not <code>.specific</code> may at times be exactly what you need.</p>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://codepen.io/cssence/pen/BaXOKLQ">View “Using :not() on ancestors” on CodePen.</a></p>
 <section>
 <h2 id="updates">Update</h2>
 <p id="update-1">Now we are done. Or so I thought. But <a href="#comment-1">Christopher Kirk-Nielsen reached out</a> to inform me that by putting the ancestor inside <code>:not()</code> we can get rid of the limitation. You can <a href="https://chriskirknielsen.com/blog/select-an-element-which-doesnt-descend-from-another-in-css/">check out his article</a> for all the details, I’ll just put the example below.</p>

@@ -3,7 +3,6 @@
 <head>
 <title>Feature Detection Strategies</title>
 <meta name="description" content="What to do when a CSS feature is not supported cross-browser.">
-<link rel="alternate" type="text/html" href="https://codepen.io/cssence/pen/XWYPoBR" title="Code example on codepen.io">
 </head>
 <body>
 <main>
@@ -35,6 +34,8 @@
 <p>Why would you do that? This is even more verbose than the last one. True, but it becomes beneficial the moment you have to use the custom property in multiple places, unlike in this example, where it is assigned just once. And as soon as <code>calc()</code> comes into play, it could lead to duplication of potentially complex code. Instead of writing that calculation twice (as you would have to when using method 1 or 2), making the custom property containing the feature query result part of a single calculation is usually better.</p>
 <h2>Comparison</h2>
 <p>Ultimately, you have to choose what works in your particular case. The three examples described in this article all produce the same result. You can see for yourself by heading over to CodePen, where I’ve placed them side by side.</p>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://codepen.io/cssence/pen/XWYPoBR">View “Feature Detection Strategies” on CodePen.</a></p>
 <section>
 <h2 id="fns">Footnotes</h2>
 <ol>
