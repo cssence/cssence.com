@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="c-extra">
+<head>
+<title>The Popover API and Firefox’s Shift+Tab trap</title>
+<meta name="description" content="If it looks like a bug, smells like a bug, and quacks like a bug, it’s probably a bug.">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Firefox’s Keyboard Trap</h1>
+<p>Popover API: The Saga Continues.</p>
+<p><i>Extra</i><br><time>2025-02-21T09:14:00Z</time><br><img src="/2025/popover-shift-tab-issue/index.webp" alt=""></p>
+</header>
+<div>
+<p>In <a href="/2024/popover-inset-issue/">my ongoing attempt to tame the Popover API,</a> I’ve encountered another oddity.</p>
+<p>When a popover is open in Firefox (at least on machines running Linux and Windows, I don’t have a Mac at hand), pressing <kbd>Shift</kbd>+<kbd>Tab</kbd> repeatedly will trap you in a loop that starts at the popover’s triggering element, and then goes back to the beginning of the page. All good so far. But from there you do not leave the web page and move on to browser UI controls, instead you end up inside the popover (assuming it contains interactive elements), then back to its trigger, and so on.</p>
+<p>The issue occurs in <code>manual</code> and <code>auto</code> popovers, and independent of what opened it, be that HTML’s <code>popovertarget</code> or JS’s <code>showPopover()</code>. You’ll be trapped no matter what, only the cycle of interactive elements might differ, because when you open the popover with JS, there is no triggering element, so in this case the popover’s position in the DOM will determine which interactive elements can be reached. In any case, it seems to be a bug, so <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1949678">I’ve filed #1949678.</a> (There is no issue when you move forward using <kbd>Tab</kbd>.)</p>
+<p>I ended up with more things that have bothered me, but those are not bugs and thus a story for another day.<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup></p>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://codepen.io/cssence/pen/RNwarvQ">View “Popover Shift+Tab Firefox issue” on CodePen.</a></p>
+<section>
+<h2 id="fns">Footnotes</h2>
+<ol>
+<li id="fn-1">Okay, fine, two things have bugged me: 1. The Popover API lacks something like the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details#open">details disclosure element’s <code>open</code> attribute,</a> in the sense that a popover cannot start off in it’s open state, so we need JS for that. And 2., despite native popovers’ excellent browser support, getting them to work with <a href="https://floating-ui.com/">Floating&nbsp;UI</a> is not my cup of tea; I’m starting to think that I’ll have to wait for <a href="https://css-tricks.com/css-anchor-positioning-guide/">CSS Anchor Positioning,</a> which is anyhow part of Interop&nbsp;2025. <a href="#ref-fn-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+</ol>
+</section>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/114041164523866796, https://bsky.app/profile/cssence.com/post/3lioijqxawc2s"><b>Matthias Zöchling</b> wrote on <time>2025-02-21T09:14:00Z</time></span></h3>
+<p>In case you are wondering why I’m relatively silent in 2025 (especially <a href="/2024/advent-calendar/">compared to last year</a>), no reason.</p>
+<p>At the moment I’m still having “fun” with the Popover API, I’ve just filed a Firefox issue:<br><a href="/2025/popover-shift-tab-issue/">cssence.com/2025/popover-shift-tab-issue/</a></p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/114041278833968040, https://bsky.app/profile/cssence.com/post/3liok5w7k7k2s"><b>Matthias Zöchling</b> wrote on <time>2025-02-21T09:56:58Z</time></span></h3>
+<p>On that subject, if you have experience with Floating&nbsp;UI and native popovers, let me know. 🙏</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>
