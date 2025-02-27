@@ -18,12 +18,12 @@
 <p>Hack aside, there is at least one other thing you can use flow-root for, but it all works in tandem with floated elements.</p>
 <h2 id="hack-obsolescence">№1: Hack obsolescence</h2>
 <p>The <span lang="fr">raison d'être</span> for <code>display: flow-root</code>, if you apply it to an element that contains a floated element, that floated element will be contained.</p>
-<figure class="standout"><img src="/2024/display-flow-root/clearfix.webp" alt="Thanks to flow-root, a border goes around a floated image. Without flow-root, the border does not for far enough vertically, and as such is cut off by the floated image.">
-</figure>
+<p class="standout"><img src="/2024/display-flow-root/clearfix.webp" alt="Thanks to flow-root, a border goes around a floated image. Without flow-root, the border does not for far enough vertically, and as such is cut off by the floated image.">
+</p>
 <h2 id="non-interference">№2: Non-interference</h2>
 <p>You can also add flow-root to an element near a floated element, so the floated element doesn’t end up atop the other element. Such interference does not happen for the actual text, but if said element has a background color or border, it will be covered by the floated element.</p>
-<figure class="standout"><img src="/2024/display-flow-root/non-interference.webp" alt="Thanks to flow-root, the border of another element is not covered by a floated image. Without flow-root, said border runs underneath the floated image.">
-</figure>
+<p class="standout"><img src="/2024/display-flow-root/non-interference.webp" alt="Thanks to flow-root, the border of another element is not covered by a floated image. Without flow-root, said border runs underneath the floated image.">
+</p>
 <p>Without flow-root, the text goes below the image, not wasting space. With flow-root, borders and backgrounds make more sense. But you cannot have it both ways, the box that contains the text will always be a rectangle, and not a weirdly shaped <a href="https://www.goodoldtetris.com/">Tetris</a> piece.</p>
 <h2>Closing remarks</h2>
 <p>According to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">MDN’s display page,</a> this is what happens when you set flow-root:</p>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="c-editorial">
 <head>
-<title>Re: Design - Structure and Semantics</title>
+<title>Re: Design - Structure and semantics</title>
 <meta name="description" content="URLs and HTML. The foundation of every website.">
 <link rel="alternate stylesheet" media="screen" href="/2020/redesign/advanced.css" title="Advanced Style">
 <link rel="stylesheet" media="screen" href="/2020/redesign/advanced.css" title="Custom Style">
@@ -10,7 +10,7 @@
 <main>
 <article>
 <header>
-<h1>Structure &amp; Semantics</h1>
+<h1>Structure &amp; semantics</h1>
 <p>Redesign pt.1</p>
 <p><i>Editorial</i><br><time data-revised="2020-07-01T21:47:00Z">2020-05-14T19:27:00Z</time><br><img src="/2020/redesign/index.png" alt=""></p>
 </header>
@@ -18,9 +18,9 @@
 <aside class="standoff" aria-labelledby="three-part-blog-series">
 <p>This is Part One of a <strong id="three-part-blog-series">Three Part Blog Series.</strong> Although the focus of this Editorial series is an in-depth look at the <a href="/2019/just-launch/">latest redesign of this site</a>, you may read these posts as letters of appreciation to the <a href="/2016/webdesign-basics/">Basics of the Web.</a></p>
 <ol class="figure" aria-labelledby="three-part-blog-series">
-<li>Structure &amp; Semantics</li>
-<li><a href="/2020/redesign-style-and-delight/">Style &amp; Delight</a></li>
-<li><a href="/2020/redesign-superfluous-and-advanced/">Superfluous &amp; Advanced</a></li>
+<li>Structure &amp; semantics</li>
+<li><a href="/2020/redesign-style-and-delight/">Style &amp; delight</a></li>
+<li><a href="/2020/redesign-superfluous-and-advanced/">Superfluous &amp; advanced</a></li>
 </ol>
 <p>The order of the three parts is not random, I wrote about the most important part first. While I did kick off the redesign of this site with a launch in late 2019, it has since turned into an ongoing incremental journey. But the structure and semantics—mainly URLs and HTML—won’t change a lot anymore, if at all.</p>
 </aside>
@@ -33,7 +33,7 @@
 <p>After a lot of back and forth, I decided to use the year as the topmost (and only) way to structure the content. The URLs are still hackable, so <code>/2020</code> lists <a href="/2020/">posts from the year 2020.</a> But years are just one type of index, I still have <a href="#navigation">sections</a>, even though I’m using new names. Then and now, sections list only the ten most recent posts. Contrary to that, the year-based index pages show all posts of that year, so the redesign neatly solved my <em>I need an archive</em> issue.</p>
 <h3>Link rot</h3>
 <p><q>Link rot is the entropy of the web,</q> says Jeremy Keith, and he <a href="http://longbets.org/601/">even bet on it.</a> People don’t live forever, nature has four seasons, there is always decay, which is a good thing. But when it comes to URLs, I think we have an obligation to keep them alive as long as possible and feasible.</p>
-<p>Somewhere out there, websites are still linking to my posts using those now deprecated URLs. This includes links in content I myself have created, but on other services that are out of my control, mainly Twitter. As I cannot update my tweets, old links to my site would reach <a href="/404/">a dead end.</a> Luckily there are <em>redirects,</em> and thanks to my host <a href="https://www.netlify.com/">Netlify</a> I have an easy way to specify them, so old URLs remain intact. For example, my aforementioned »JavaScript Wars« essay can still be reached via the no longer used URL <code>/blog/2016-11-the-javascript-wars</code>; the browser gets instructions to forward the request to <code>/2016/the-javascript-wars</code>.</p>
+<p>Somewhere out there, websites are still linking to my posts using those now deprecated URLs. This includes links in content I myself have created, but on other services that are out of my control, mainly Twitter. As I cannot update my tweets, old links to my site would reach <a href="/404/">a dead end.</a> Luckily there are <em>redirects,</em> and thanks to my host <a href="https://www.netlify.com/">Netlify</a> I have an easy way to specify them, so old URLs remain intact. For example, my aforementioned »JavaScript wars« essay can still be reached via the no longer used URL <code>/blog/2016-11-the-javascript-wars</code>; the browser gets instructions to forward the request to <code>/2016/the-javascript-wars</code>.</p>
 <p>But enough about URLs.</p>
 <h2>HTML</h2>
 <p>None of them fancy <em>Single Page Applications (SPA)</em> would exist without at least a mouthful of HTML. SPAs typically give you an empty container, only to put a script in charge of getting your content. This site is no SPA, each request delivers a full page. FYI, that makes sense for a web log. Ah yes, the content, this is where it starts to get interesting.</p>
