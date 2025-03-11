@@ -20,7 +20,7 @@
 <h2>What are data URIs anyway?</h2>
 <p>This question probably needs to be answered before we explore the pros and cons of data URI images. In a nutshell: Data URIs provide a way to embed data instead of referencing to it, hence there is no longer the need for the referenced file. Confused? <a href="http://en.wikipedia.org/wiki/Data_URI_scheme">Read about the data URI scheme on Wikipedia</a>.</p>
 <h2>The simplest of all images</h2>
-<figure class="standoff"><img src="/2011/data-uri-images-are-we-there-yet/bbc-homepage-may-2000-with-clearpixel.png" alt="“X-ray” of the BBC home page, May 5th, 2000. Transparent images have been highlighted.">
+<figure class="standoff"><img src="/2011/data-uri-images-are-we-there-yet/bbc-homepage-may-2000-with-clearpixel.png" alt="“X-ray” of the BBC home page, May 5th, 2000. Transparent images have been highlighted." style="--frame:#fff">
 <figcaption>Exposing transparent pixels on an old version of the BBC home page (May 2000, via <a href="http://web.archive.org">WebArchive</a>).</figcaption>
 </figure>
 <p>I’ve been making websites for more than a decade now. In the beginning, when it was all Netscape Navigator and no CSS, you needed tables and images, and—pardon my French—you needed a shitload of them. But almost all these image tags referred to the same GIF file. The file contained not more than one transparent pixel, and that pixel would get stretched to whatever width and/or height was needed. As is had been transparent, it never got distorted. Its sole purpose was to make sure that the surrounding table cells expanded to whatever size the image had been stretched to. Did I already mention that back then we stretched the hell out of this poor pixel?</p>
@@ -34,7 +34,7 @@
 <h2>How to use data URI images</h2>
 <p>I promised we’ll get back on the syntax, and here it is. But this time, instead of just one transparent pixel we’ll use an image we can actually see.</p>
 <pre><a href="/2011/data-uri-images-are-we-there-yet/code.result.html">View HTML example.</a></pre>
-<figure class="standout"><img src="/2011/data-uri-images-are-we-there-yet/background-demo.png" alt="The data URI image used as repeating background, when viewed in capable browsers.">
+<figure class="standout"><img src="/2011/data-uri-images-are-we-there-yet/background-demo.png" alt="The data URI image used as repeating background, when viewed in capable browsers." style="--frame:#fff">
 <figcaption>The paragraph element from the example above.</figcaption>
 </figure>
 <p>This time the data URI is part of the CSS, or more specifically, the <code>background</code> property. In the example I’ve taken the liberty not to use an external CSS file, so you can copy the whole code, paste it into an HTML file and check if the result looks anything like that picture.</p>
