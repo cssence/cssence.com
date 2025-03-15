@@ -24,17 +24,21 @@ const init = () => {
 	})();
 	document.querySelector('form').insertAdjacentHTML('beforeend', `<aside hidden class="figure standoff"><h3 class="subtle">Preview</h3><p class="preview"></p></aside><h3 class="subtle">Information</h3><p class="info">${cndMsgs[celebrateCssNakedDay].replace('CND', '<a href="/about/css-naked-day/">CSS Naked Day</a> (CND)')}</p>`);
 
-	Object.keys(localStorage).forEach((id) => {
-		document.getElementById(id).querySelector('[selected]').removeAttribute('selected');
-		document.getElementById(id).querySelector(`[value="${localStorage.getItem(id)}"]`).setAttribute('selected', '');
-	});
-	const dataMap = {
-		'page-style': 'data-style',
-		'color-scheme': 'data-scheme',
-		'syntax-highlighting': 'data-highlighter'
+	const map = {
+		'page-style': { data: 'data-style', storable: ['none', 'basic']},
+		'color-scheme': { data: 'data-scheme', storable: ['dark', 'light']},
+		'syntax-highlighting': { data: 'data-highlighter', storable: ['none', 'a11y-dark', 'a11y-light']},
 	};
-	Object.keys(dataMap).forEach((id) => {
-		document.querySelector('.preview').setAttribute(dataMap[id], document.getElementById(id).value);
+	Object.keys(localStorage).forEach((id) => {
+		if (map[id].storable.includes(localStorage.getItem(id))) {
+			document.getElementById(id).querySelector('[selected]').removeAttribute('selected');
+			document.getElementById(id).querySelector(`[value="${localStorage.getItem(id)}"]`).setAttribute('selected', '');
+		} else {
+			localStorage.removeItem(id);
+		}
+	});
+	Object.keys(map).forEach((id) => {
+		document.querySelector('.preview').setAttribute(map[id].data, document.getElementById(id).value);
 	});
 	const previews = {};
 	const currentPreview = document.getElementById('page-style').value;
@@ -74,8 +78,8 @@ const init = () => {
 			styleChange(hasStyle);
 			if (!hasStyle) msg = 'Syntax highlighting is not available if you choose to go without a page style.';
 		}
-		if (Object.keys(dataMap).includes(event.target.id)) {
-			document.querySelector('.preview').setAttribute(dataMap[event.target.id], document.getElementById(id).value);
+		if (Object.keys(map).includes(event.target.id)) {
+			document.querySelector('.preview').setAttribute(map[event.target.id].data, document.getElementById(id).value);
 		}
 		document.querySelector('.info').innerText = msg;
 	});

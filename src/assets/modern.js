@@ -48,6 +48,7 @@ try {
 	};
 
 	let pageStyle = localStorage.getItem('page-style');
+	if (pageStyle && !['none', 'basic'].includes(pageStyle)) pageStyle = null;
 	if (celebrateCssNakedDay) {
 		pageStyle = 'none';
 		onReady(() => {
@@ -67,7 +68,7 @@ try {
 			}
 		});
 	}
-	if (colorScheme) document.querySelector('meta[name="color-scheme"]').setAttribute('content', colorScheme);
+	if (colorScheme && ['dark', 'light'].includes(pageStyle)) document.querySelector('meta[name="color-scheme"]').setAttribute('content', colorScheme);
 	if (pageStyle !== 'none') onReady(highlight);
 
 	const shareLink = document.querySelector('#contribute + p a:last-child');
