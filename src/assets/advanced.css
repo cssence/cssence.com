@@ -357,7 +357,7 @@ footer.metadata {
 pre {
 	overflow-x: auto;
 	overflow-y: hidden;
-	background-color: var(--color-dark);
+	background-color: var(--prism-a11y-color-background, var(--color-dark));
 	color: var(--color-light);
 	line-height: 1.5;
 	-moz-tab-size: 4;

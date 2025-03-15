@@ -74,7 +74,7 @@ form p:where(.submit) {
 		fill: CanvasText;
 	}
 }
-[data-style="basic"][data-highlighter="dark"] {
+[data-style="basic"][data-highlighter="auto"] {
 	svg {
 		--color-accent-default: initial;
 		--color-accent-other: initial;
@@ -100,44 +100,35 @@ form p:where(.submit) {
 		--color-accent: #aa425c;
 	}
 }
-[data-highlighter="dark"] {
+[data-highlighter="auto"] {
 	.token.punctuation {fill:#aaa}
 	.token.selector {fill:var(--color-accent-other, #bada55)}
 	.token.property {fill:var(--color-accent-default, #d34b6c)}
 }
-[data-highlighter="material-dark"] {
+[data-highlighter="a11y-light"] {
 	svg {
-		--color-dark: #1f1f1f;
-		--color-light: #eee;
+		--prism-a11y-color-background: hsla(0, 0%, 100%, 1);
+		--prism-a11y-color-text-no-token: hsla(0, 0%, 33%, 1);
+		--prism-a11y-color-text-green: hsla(120, 100%, 25%, 1);
+		--prism-a11y-color-text-gray: hsla(0, 0%, 41%, 1);
+		--prism-a11y-color-text-red: hsla(2, 80%, 47%, 1);
 	}
-	.token.punctuation {fill:#89ddff}
-	.token.selector {fill:#ff6666}
-	.token.property {fill:#80cbc4}
 }
-[data-highlighter="material-light"] {
+[data-highlighter="a11y-dark"] {
 	svg {
-		--color-dark:#fafafa;
-		--color-light:#90a4ae;
-	}
-	.token.punctuation {fill:#39adb5}
-	.token.selector {fill:#e53935}
-	.token.property {fill:#39adb5}
+		--prism-a11y-color-background: hsla(0, 0%, 17%, 1);
+		--prism-a11y-color-text-no-token: hsla(60, 30%, 96%, 1);
+		--prism-a11y-color-text-green: hsla(80, 75%, 55%, 1);
+		--prism-a11y-color-text-gray: hsla(60, 30%, 96%, 1);
+		--prism-a11y-color-text-red: hsla(17, 100%, 74%, 1);
+	  }
 }
-[data-highlighter="vscode-dark-modern"] {
+[data-highlighter^="a11y-"] {
 	svg {
-		--color-dark: #1f1f1f;
-		--color-light: #ccc;
+		--color-dark: var(--prism-a11y-color-background);
+		--color-light: var(--prism-a11y-color-text-no-token);
 	}
-	.token.punctuation {fill:#6a9955}
-	.token.selector,
-	.token.property {fill:#80cbc4}
-}
-[data-highlighter="vscode-light-modern"] {
-	svg {
-		--color-dark:#fff;
-		--color-light:#3b3b3b;
-	}
-	.token.punctuation {fill:#0451a5}
-	.token.selector,
-	.token.property {fill:#e50000}
+	.token.punctuation {fill:var(--prism-a11y-color-text-gray)}
+	.token.selector {fill:var(--prism-a11y-color-text-green)}
+	.token.property {fill:var(--prism-a11y-color-text-red)}
 }

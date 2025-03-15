@@ -40,7 +40,7 @@ try {
 		let shTheme = 'prism.css';
 		const sh = localStorage.getItem('syntax-highlighting');
 		if (sh === 'none') return;
-		if (sh) shTheme = `prism-${sh}.css`;
+		if (sh && ['a11y-dark', 'a11y-light'].includes(sh)) shTheme = `prism-${sh}.css`;
 		addStyle(`/assets/${shTheme}`);
 		loadJS('/assets/prism.js', () => {
 			Prism.highlightAll();
