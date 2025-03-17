@@ -1,0 +1,44 @@
+main nav h2:first-child
+ {
+	--m: 2.625rlh;
+}
+main nav ul {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: .875rem var(--p);
+}
+main nav li {
+	list-style-type: "";
+	margin-inline-start: 0;
+}
+main nav li a {
+	display: block;
+	position: relative;
+	block-size: 100%;
+	padding-block: 1.625rem .75rem;
+	padding-inline: .75rem;
+	border-block-end: 1px solid;
+	border-inline-start: 3px solid var(--color-accent);
+	border-radius: .625rem;
+	text-align: center;
+}
+@media (width <= 27.5em) {
+	main nav li a {
+		font-size: .9375rem;
+	}
+}
+main nav li a::before {
+	position: absolute;
+	inset-block-start: .0625rem;
+	inset-inline-start: 50%;
+	transform: translateX(-50%);
+}
+main nav li a[href*="prev"]::before {
+	content: "◀️" / "";
+}
+main nav li a[href*="random"]::before {
+	content: "🔀" / "";
+}
+main nav li a[href*="next"]::before {
+	content: "▶️" / "";
+}

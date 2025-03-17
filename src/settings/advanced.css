@@ -80,16 +80,6 @@ form p:where(.submit) {
 		--color-accent-other: initial;
 	}
 }
-[data-scheme="light"] {
-	svg {
-		color-scheme: only light;
-		--color-bg: #fff;
-		--color-text: #313437;
-		--color-dark: #202225;
-		--color-light: #fff;
-		--color-accent: #d34b6c;
-	}
-}
 [data-scheme="dark"] {
 	svg {
 		color-scheme: only dark;
@@ -100,10 +90,29 @@ form p:where(.submit) {
 		--color-accent: #aa425c;
 	}
 }
+[data-scheme="light"] {
+	svg {
+		color-scheme: only light;
+		--color-bg: #fff;
+		--color-text: #313437;
+		--color-dark: #202225;
+		--color-light: #fff;
+		--color-accent: #d34b6c;
+	}
+}
 [data-highlighter="auto"] {
 	.token.punctuation {fill:#aaa}
 	.token.selector {fill:var(--color-accent-other, #bada55)}
 	.token.property {fill:var(--color-accent-default, #d34b6c)}
+}
+[data-highlighter="a11y-dark"] {
+	svg {
+		--prism-a11y-color-background: hsla(0, 0%, 17%, 1);
+		--prism-a11y-color-text-no-token: hsla(60, 30%, 96%, 1);
+		--prism-a11y-color-text-green: hsla(80, 75%, 55%, 1);
+		--prism-a11y-color-text-gray: hsla(60, 30%, 96%, 1);
+		--prism-a11y-color-text-red: hsla(17, 100%, 74%, 1);
+	}
 }
 [data-highlighter="a11y-light"] {
 	svg {
@@ -114,15 +123,6 @@ form p:where(.submit) {
 		--prism-a11y-color-text-red: hsla(2, 80%, 47%, 1);
 	}
 }
-[data-highlighter="a11y-dark"] {
-	svg {
-		--prism-a11y-color-background: hsla(0, 0%, 17%, 1);
-		--prism-a11y-color-text-no-token: hsla(60, 30%, 96%, 1);
-		--prism-a11y-color-text-green: hsla(80, 75%, 55%, 1);
-		--prism-a11y-color-text-gray: hsla(60, 30%, 96%, 1);
-		--prism-a11y-color-text-red: hsla(17, 100%, 74%, 1);
-	  }
-}
 [data-highlighter^="a11y-"] {
 	svg {
 		--color-dark: var(--prism-a11y-color-background);
@@ -131,4 +131,29 @@ form p:where(.submit) {
 	.token.punctuation {fill:var(--prism-a11y-color-text-gray)}
 	.token.selector {fill:var(--prism-a11y-color-text-green)}
 	.token.property {fill:var(--prism-a11y-color-text-red)}
+}
+[data-style="elegant"] {
+	&[data-scheme="auto"] {
+		svg {
+			--color-text: #000;
+			--color-bg: #fff;
+
+			@media (prefers-color-scheme: dark) {
+				--color-text: #fff;
+				--color-bg: #080809;
+				}
+		}
+	}
+	&[data-scheme="dark"] {
+		svg {
+			--color-text: #fff;
+			--color-bg: #080809;
+		}
+	}
+	&[data-scheme="light"] {
+		svg {
+			--color-text: #000;
+			--color-bg: #fff;
+		}
+	}
 }

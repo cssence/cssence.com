@@ -18,6 +18,7 @@ const modify = (content, meta) => {
 	const styles = [
 		'<link rel="alternate stylesheet" media="screen" href="/assets/basic.css" title="Basic Style">',
 		'<link rel="alternate stylesheet" media="screen" href="/assets/advanced.css" title="Advanced Style">',
+		'<link rel="alternate stylesheet" media="screen" href="/assets/elegant.css" title="Elegant Style">',
 		'<link rel="stylesheet" media="screen" href="/assets/advanced.css" title="Custom Style">',
 	];
 	const crap = [

@@ -1,0 +1,30 @@
+.standoff a[tabindex] {
+	display: grid;
+	grid-template: "▶️";
+	place-items: center;
+	margin-block-end: calc(.75rlh + var(--m));
+}
+.standoff a[tabindex]::before {
+	content: "";
+	grid-area: ▶️;
+	z-index: 1;
+	aspect-ratio: 1;
+	block-size: 5rem;
+	border: .25rem solid #fbfdffbb;
+	border-radius: 50%;
+}
+.standoff a[tabindex]::after {
+	content: "";
+	grid-area: ▶️;
+	box-sizing: content-box;
+	z-index: 1;
+	aspect-ratio: 1;
+	block-size: 0;
+	border: 0 solid transparent;
+	border-inline-start-color: #fbfdffbb;
+	border-width: 1.25rem 2rem;
+	margin-inline-end: -2.5rem;
+}
+.standoff a[tabindex] img {
+	grid-area: ▶️;
+}

@@ -1,0 +1,16 @@
+.upload {
+	position: relative;
+	padding: 3rem .5rem;
+	background-color: var(--color-bg);
+	border: 1px dashed;
+	border-radius: .25rem;
+	text-align: center;
+}
+input[type="file"]::file-selector-button {
+	padding-block: .25rem;
+	padding-inline: .5rem;
+	background-color: var(--color-bg);
+	border: .125rem solid #888;
+	border-radius: .25rem;
+	color: inherit;
+}

@@ -25,7 +25,7 @@ const init = () => {
 	document.querySelector('form').insertAdjacentHTML('beforeend', `<aside hidden class="figure standoff"><h3 class="subtle">Preview</h3><p class="preview"></p></aside><h3 class="subtle">Information</h3><p class="info">${cndMsgs[celebrateCssNakedDay].replace('CND', '<a href="/about/css-naked-day/">CSS Naked Day</a> (CND)')}</p>`);
 
 	const map = {
-		'page-style': { data: 'data-style', storable: ['none', 'basic']},
+		'page-style': { data: 'data-style', storable: ['none', 'basic', 'elegant']},
 		'color-scheme': { data: 'data-scheme', storable: ['dark', 'light']},
 		'syntax-highlighting': { data: 'data-highlighter', storable: ['none', 'a11y-dark', 'a11y-light']},
 	};
