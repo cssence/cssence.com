@@ -144,6 +144,7 @@ strong {
 }
 [data-unavailable],
 blockquote,
+samp,
 em {
 	font-style: italic;
 }
@@ -251,7 +252,7 @@ h1 + p:not(:last-child) {
 time {
 	white-space: nowrap;
 }
-kbd {
+kbd:not(:has(kbd)) {
 	padding: 0 .25rem;
 	border: .0625rem solid;
 	border-bottom-width: .125rem;

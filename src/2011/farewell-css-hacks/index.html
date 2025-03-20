@@ -14,7 +14,7 @@
 </header>
 <div>
 <p>Let’s face, Internet Explorer is the browser we need to work our way around the most.</p>
-<p>Getting some JavaScript to work in IE is one thing, styles being applied in the way you want is another. To do the latter, we have CSS hacks to target specific version of IE, by exploiting some weird behavior that only occurs in a that exact version. We even named those hacks. Underscore hack, star hack, the list goes on.</p>
+<p>Getting some JavaScript to work in IE is one thing, styles being applied in the way you want is another. To do the latter, we have CSS hacks to target specific version of IE, by exploiting some weird behavior that only occurs in that exact version. We even named those hacks. Underscore hack, star hack, the list goes on.</p>
 <p>The problem with all those CSS hacks: They generate CSS that simply does not validate.</p>
 <h2>A better way</h2>
 <p>Take a look at <a href="https://css-tricks.com/snippets/html/add-body-class-just-for-ie/">this short post on CSS-Tricks</a>. It explains how to add class names to either <code>&lt;html&gt;</code> or <code>&lt;body&gt;</code>. With those class names in place, you can now select any version of Internet Explorer. All thanks to Microsoft’s Conditional Comments, pure HTML, no need to use a script that does some User Agent string sniffing.</p>

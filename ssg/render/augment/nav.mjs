@@ -21,7 +21,7 @@ const modify = (content, meta) => {
 	];
 	const insertNearTo = content.indexOf('<footer class="imprint">');
 	content.splice(insertNearTo + 1, 0, nav.join('\n'));
-	content[insertNearTo] = '<footer id="navigation" class="imprint">';
+	content[insertNearTo] = '<footer id="navigation" class="imprint" tabindex="-1">';
 
 };
 

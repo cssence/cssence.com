@@ -1,0 +1,82 @@
+.standout:has(table) {
+	position: relative;
+	margin-block: 2.625rlh 1.75rlh;
+	margin-inline: var(---p);
+	padding-block-end: .875rlh;
+	overflow: auto hidden;
+}
+table {
+	table-layout: fixed;
+	inline-size: max-content;
+	min-inline-size: 100%;
+	border-spacing: 0;
+}
+table * {
+	overflow-wrap: normal;
+}
+thead th {
+	block-size: 5rem;
+	vertical-align: bottom;
+}
+thead i span {
+	position: absolute;
+	transform: rotate(-60deg) translate(-0.375rem, -2rem);
+	transform-origin: 0 0;
+}
+thead th {
+	border-block-end: 3px double;
+	font-size: .9375rem;
+}
+:is(th, td) {
+	--_size: 3.75rem;
+	padding-block: .375rem;
+
+	th ~ & {
+		padding-inline-end: 1rem;
+		text-align: end;
+
+		&:not(:nth-child(8)) {
+			inline-size: var(--_size);
+		}
+	}
+	:nth-child(7) ~ & {
+		inline-size: calc(var(--_size) + var(--p));
+		padding-inline-end: var(--p);
+	}
+	&:nth-child(8) {
+		position: sticky;
+		inset-inline-end: 0;
+		background-color: inherit;
+		border-inline-start: 1px dotted;
+		font-weight: 700;
+	}
+}
+th:first-child {
+	position: sticky;
+	z-index: 1;
+	inset-inline-start: 0;
+	padding-inline: var(--p) 1rem;
+	background-color: inherit;
+	border-inline-end: 1px dotted;
+	text-align: start;
+}
+tr {
+	background-color: var(--color-bg);
+
+	&:focus-within,
+	:not(thead) > &:hover {
+		background-color: var(--color-bg-o);
+	}
+}
+tbody :is(th, td) {
+	border-block-end: 1px solid;
+}
+tbody data {
+	font-variant-numeric: lining-nums tabular-nums;
+}
+tbody data[value="0"] {
+	opacity: .5;
+}
+tfoot :is(th, td) {
+	border-block-start: 1px solid;
+}

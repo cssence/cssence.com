@@ -14,7 +14,7 @@
 html {
 	--color-text: #000;
 	--color-bg: #fff;
-	--color-bg-o: #f7f7d4; /* #f4f4f4 */
+	--color-bg-o: #f7f7d4;
 	--color-accent: #d34b6c;
 	--color-focus: #05c;
 	--filter: sepia(1);
@@ -55,6 +55,7 @@ html:where(:has(meta[name="color-scheme"][content="dark"])) {
 body {
 	--p: 1.25rem;
 	---p: calc(-1 * var(--p));
+	--r0: .5rem;
 	--r: 0rem;
 	font-size: 1.125rem;
 	line-height: calc(1.5 / 1.125);
@@ -65,6 +66,7 @@ main {
 }
 b,
 kbd,
+samp,
 button,
 input,
 textarea,
@@ -73,8 +75,7 @@ select {
 }
 img {
 	display: block;
-	margin-block: -.75rlh;
-	margin-inline: var(---p);
+	margin: -.75rlh var(---p);
 
 	&:where(:not([style*="--frame"])) {
 		inline-size: calc(100% + 2 * var(--p));
@@ -104,7 +105,7 @@ code,
 blockquote footer,
 figcaption,
 a[href$=".pdf"]::after {
-	font-size: calc(1em / 1.125);
+	font-size: calc(1em / 1.2);
 }
 header p:last-child,
 .posts li p:last-child,
@@ -113,6 +114,7 @@ header p:last-child,
 [data-unavailable],
 .metadata,
 .standoff,
+img,
 img + small,
 p > small:only-child,
 #navigation p {
@@ -126,10 +128,10 @@ ol,
 dl,
 li,
 blockquote,
-table,
 form,
 figure, .figure,
 figcaption,
+details,
 pre,
 .standoff,
 #comments ~ :is(article, section) {
@@ -155,11 +157,33 @@ figcaption {
 .metadata p {
 	--m: 0;
 }
+.standoff:has(+ h2) {
+	--m: 2.1875rem;
+}
+.standoff:has(+ section) {
+	--m: 2.8125rem;
+}
+.posts > p:last-child {
+	--m: 3.5rlh;
+}
 section h2,
 #showcase,
 #comments ~ :is(article, section) {
 	margin-block-start: 2.625rlh;
 }
+/*#comments ~ article:not([hidden]) ~ article {
+	h3 {
+		--m: 3.5rlh;
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		inline-size: calc(2 * var(--p));
+		margin-block-start: -1.75rlh;
+		margin-inline-start: var(---p);
+		border-block-end: 1px dotted;
+	}
+}*/
 [data-chain] small {
 	font-size: .75rem !important;
 }
@@ -221,6 +245,16 @@ header img {
 	mask: linear-gradient(to var(--dir) in oklch, #0008, transparent);
 	object-fit: cover;
 
+	&[src="/404/index.png"] {
+		@media (prefers-color-scheme: dark) {
+			html:where(:has(meta[name="color-scheme"][content$="dark"])) & {
+				--filter: invert(1) grayscale(1);
+			}
+		}
+		html:where(:has(meta[name="color-scheme"][content="dark"])) & {
+			--filter: invert(1) grayscale(1);
+		}
+	}
 	@media (width > 27.5em) {
 		--dir: left;
 		inset-inline-end: 0;
@@ -271,6 +305,8 @@ strong {
 	font-weight: 700;
 }
 [data-unavailable],
+img,
+samp,
 em {
 	font-style: italic;
 }
@@ -289,13 +325,13 @@ a[href$=".pdf"]::after {
 a:hover {
 	text-decoration-style: double;
 }
-:is(a, button, select, summary):focus-visible,
-pre[tabindex]:focus-visible {
+*:focus-visible {
+	outline: .125rem solid var(--color-focus);
+	outline-offset: -.0625rem;
+}
+:is(a, button, select, summary):focus-visible {
 	outline: .1875rem solid var(--color-focus);
 	outline-offset: .0625rem;
-}
-pre[tabindex]:focus-visible {
-	outline-offset: -.1875rem;
 }
 summary {
 	inline-size: fit-content;
@@ -334,7 +370,7 @@ p {
 time {
 	white-space: nowrap;
 }
-kbd {
+kbd:not(:has(kbd)) {
 	padding-inline: .25rem;
 	border: .0625rem solid;
 	border-block-end-width: .125rem;
@@ -374,10 +410,16 @@ li {
 blockquote {
 	margin-inline-start: .0625rem;
 	padding-inline-start: calc(var(--p) - .25rem);
-	border-inline-start: .1875rem solid;
-}
-blockquote p {
-	font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+	border-inline-start: .1875rem solid var(--color-accent);
+
+	:is(p, li) {
+		font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+	}
+	:is(pre, p:has(img)) {
+		margin-inline-start: 0 !important;
+		border-start-start-radius: var(--r0);
+		border-end-start-radius: var(--r0);
+	}
 }
 .standoff blockquote {
 	padding-inline-start: calc(min(var(--p), 1.25rem) - .25rem);
@@ -391,17 +433,16 @@ blockquote p {
 	text-decoration: inherit;
 }
 .standoff,
-main :is(div, aside) p:has(img):not(:has(i)),
+p:has(img):not(:has(i)),
 form,
 figure, .figure,
 pre {
-	margin-inline: var(---p);
+	margin-inline: calc(var(---p) - 1px);
 	padding-block: .75rlh;
 	padding-inline: var(--p);
 	background-color: var(--color-bg-o);
 	border-radius: var(--r);
-	outline: 1px solid transparent;
-	outline-offset: -1px;
+	border: 1px solid var(--color-bg-o);
 	overflow: hidden;
 	clear: both;
 }
@@ -409,12 +450,12 @@ pre {
 	inline-size: min(calc(100% - var(--p)), 37.25rem);
 	margin-block-end: .875rlh;
 	margin-inline-start: auto;
-	border-start-start-radius: .375rem;
-	border-end-start-radius: .375rem;
+	border-start-start-radius: var(--r0);
+	border-end-start-radius: var(--r0);
 
 	&:not(.-large) {
 		float: inline-end;
-		inline-size: min(12rem + 2 * var(--p), 50%);
+		inline-size: min(12rem + 2 * var(--p), calc(50% + var(--p)));
 		margin-inline-start: var(--p);
 
 		&:first-child {
@@ -444,6 +485,7 @@ pre code {
 #comments,
 #contribute {
 	font-size: .9375rem;
+	font-weight: 700;
 	letter-spacing: .0625rem;
 	text-transform: uppercase;
 }
@@ -463,6 +505,10 @@ pre code {
 		transform: translateY(-.0625rem);
 	}
 }
+/*::marker,
+#showcase + p::before {
+	color: var(--color-accent);
+} */
 aside[aria-labelledby="comments"]::before,
 .metadata::before {
 	content: "";
@@ -678,7 +724,7 @@ aside[aria-labelledby="comments"]::before,
 @media (width >= 48em) {
 	body {
 		--p: 1.75rem;
-		--r: .5rem;
+		--r: var(--r0);
 	}
 	main {
 		inline-size: calc(48rem - 2 * var(--p));

@@ -14,8 +14,7 @@
 }
 .standoff li::before {
 	counter-increment: part;
-	content: "Part " counter(part) ":\0a";
-	white-space: pre;
+	content: "Part " counter(part) ": ";
 	font-size: .9375rem;
 	font-weight: 700;
 	letter-spacing: .0625rem;

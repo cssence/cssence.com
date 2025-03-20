@@ -47,10 +47,9 @@ hr {
 sub {
 	font-size: .5em;
 }
+samp,
 code {
 	font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
-}
-code {
 	font-size: .875em;
 	letter-spacing: -.02em;
 }
