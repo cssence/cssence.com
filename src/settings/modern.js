@@ -28,6 +28,7 @@ const init = () => {
 		'page-style': { data: 'data-style', storable: ['none', 'basic', 'elegant']},
 		'color-scheme': { data: 'data-scheme', storable: ['dark', 'light']},
 		'syntax-highlighting': { data: 'data-highlighter', storable: ['none', 'a11y-dark', 'a11y-light']},
+		'cnd-observation': { data: 'data-observation', storable: ['none', '50h']},
 	};
 	Object.keys(localStorage).forEach((id) => {
 		if (map[id].storable.includes(localStorage.getItem(id))) {
