@@ -610,12 +610,13 @@ aside[aria-labelledby="comments"]::before,
 
 		&::before,
 		&::after {
+			--_cut: currentColor;
 			position: absolute;
 			aspect-ratio: 1;
 			block-size: 1em;
 			margin-block-start: .25em;
-			background: radial-gradient(ellipse at 30% 30%, currentColor 25%, var(--color-accent));
-			mask: var(--icon) center / contain no-repeat;
+			background: linear-gradient(135deg, var(--_cut), var(--_cut) 35%, currentColor 35%, var(--color-accent)) no-repeat;
+			mask: var(--icon) center / 90% no-repeat;
 
 			@media (forced-colors: active) {
 				background: CanvasText;
@@ -660,6 +661,7 @@ aside[aria-labelledby="comments"]::before,
 			padding-inline-start: 1.5rem;
 
 			&::before {
+				--_cut: transparent;
 				content: "";
 				margin-inline-start: -1.5em;
 				transform: rotate(90deg);

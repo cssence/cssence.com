@@ -3,10 +3,10 @@ const init = () => {
 	const cndMsgs = {
 		'today': 'Today is April&nbsp;9!<br>Happy CND! 🥳',
 		'somewhere': 'It is April&nbsp;9 somewhere on planet Earth!<br>Happy CND! 🌎',
-		'50h': 'You’re really into celebrating CND. This website will be shown without style sheets when it is April&nbsp;9 in any time zone on planet Earth. 🤩',
-		'24h': 'CND is observed. This website will be shown without style sheets on April&nbsp;9. 🙂',
+		'50h': 'You’re really into celebrating CND. This website will be shown without styles when it is April&nbsp;9 in any time zone on planet Earth. 🤩',
+		'24h': 'CND is observed. This website will be shown without styles on April&nbsp;9. 🙂',
 		'all-year': 'CND observation doesn’t matter much, you’ve chosen to go without a page style all year round. 🤓',
-		'opt-out': 'You’ve opted out of celebrating CND. This website will be shown with style sheets all year round. 🥲'
+		'opt-out': 'You’ve opted out of celebrating CND. This website will be shown with styles all year round. 🥲'
 	};
 	const celebrateCssNakedDay = (() => {
 		const allYear = localStorage.getItem('page-style') === 'none';
@@ -22,7 +22,7 @@ const init = () => {
 		if (allYear) return 'all-year';
 		return duration;
 	})();
-	document.querySelector('form').insertAdjacentHTML('beforeend', `<aside hidden class="figure standoff"><h3 class="subtle">Preview</h3><p class="preview"></p></aside><h3 class="subtle">Information</h3><p class="info">${cndMsgs[celebrateCssNakedDay].replace('CND', '<a href="/about/css-naked-day/">CSS Naked Day</a> (CND)')}</p>`);
+	document.querySelector('form').insertAdjacentHTML('beforeend', `<aside hidden class="figure standoff"><h3 class="subtle">Preview</h3><p class="preview"></p></aside><h3 class="subtle">Information</h3><p class="info" aria-live="polite">${cndMsgs[celebrateCssNakedDay].replace('CND', '<a href="/about/css-naked-day/">CSS Naked Day</a> (CND)')}</p>`);
 
 	const map = {
 		'page-style': { data: 'data-style', storable: ['none', 'basic', 'elegant']},
@@ -83,6 +83,9 @@ const init = () => {
 			document.querySelector('.preview').setAttribute(map[event.target.id].data, document.getElementById(id).value);
 		}
 		document.querySelector('.info').innerText = msg;
+	});
+	form.addEventListener('reset', (event) => {
+		document.querySelector('.info').innerText = '';
 	});
 	form.addEventListener('submit', (event) => {
 		event.target.querySelectorAll('select').forEach((select) => {

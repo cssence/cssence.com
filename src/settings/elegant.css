@@ -1,0 +1,43 @@
+form {
+	position: relative;
+}
+form p:where(:not(.info)) {
+	display: grid;
+	gap: .375rem var(--p);
+}
+form .info {
+	min-height: 3lh;
+}
+form h3 {
+	display: grid;
+	grid-template-columns: calc(var(--p) - 1ex) max-content 1fr;
+	align-items: center;
+	gap: 1ex;
+}
+form h3::before,
+form h3::after {
+	content: "";
+	border-block-start: 1px dotted;
+}
+form h3:not(:first-child),
+	form p:where(.submit) {
+	--m: 1.75rlh;
+}
+form .subtle + p {
+	--m: .4375rlh;
+}
+form p:where(.submit) {
+	grid-template-columns: 1fr 1fr;
+}
+@media (width >= 37.5em) {
+	form > p {
+		grid-template-columns: 5fr 4fr 4fr;
+		align-items: baseline;
+	}
+	form .submit::before {
+		content: "";
+	}
+	select {
+		grid-column: 2 / -1;
+	}
+}
