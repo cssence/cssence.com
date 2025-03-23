@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" class="c-note">
+<head>
+<title>Alt text for pseudo-elements</title>
+<meta name="description" content="Cross-browser support came in mid of 2024.">
+<link rel="alternate" type="text/html" href="https://mas.to/@CSSence/114215956659733176" title="Thread on mas.to" data-syndication="2025-03-24T06:19:00Z">
+<link rel="alternate" type="text/html" href="https://bsky.app/profile/cssence.com/post/3ll44h3dbg223" title="Thread on bsky.app" data-syndication="2025-03-24T06:20:00Z">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Alt text for pseudo-elements</h1>
+<p><i>Note</i><br><time>2025-03-23T19:47:00Z</time></p>
+</header>
+<div>
+<h2 class="visually-hidden" id="comments">Message thread</h2>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/114215956659733176, https://bsky.app/profile/cssence.com/post/3ll44h3dbg223"><b>Matthias Zöchling</b> wrote on <time>2025-03-23T19:47:00Z</time></span></h3>
+<p>This one slipped under my radar: Providing <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/content">alt text for pseudo-elements</a> works in all browsers, eventually there’ll be no more need for a fallback:</p>
+<pre><code class="language-css">a::after {
+	/* content: "↗"; 👋 */
+	content: "↗" / " (opens in new tab)";
+}</code></pre>
+<p>Safari caught up in early 2024, and Firefox not long after.</p>
+<p><img src="/2025/pseudo-content-alt-text/caniuse-content-alt.webp" alt="In July 2024 we first saw green lights across the board on caniuse.com." style="--frame:#241f16"><small> — Screenshot from <a href="https://caniuse.com/mdn-css_properties_content_alt_text">caniuse.com</a></small></p>
+</article>
+</div>
+</article>
+</main>
+</body>
+</html>
