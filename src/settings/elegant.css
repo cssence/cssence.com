@@ -5,14 +5,12 @@ form p:where(:not(.info)) {
 	display: grid;
 	gap: .375rem var(--p);
 }
-form .info {
-	min-height: 3lh;
-}
 form h3 {
 	display: grid;
 	grid-template-columns: calc(var(--p) - 1ex) max-content 1fr;
 	align-items: center;
 	gap: 1ex;
+	margin-inline: var(---p);
 }
 form h3::before,
 form h3::after {

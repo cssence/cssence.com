@@ -87,7 +87,7 @@ img {
 		border: 0 solid var(--c, var(--color-bg-o));
 		border-block-width: .75rlh;
 		border-inline-width: var(--p);
-		border-image: linear-gradient(var(--_c), var(--_c)) fill var(--_q) 100vw;
+		border-image: linear-gradient(var(--_c), var(--_c)) fill var(--_q) 100vi;
 	}
 	&:where([style*="--frame: "]:not(:only-child)) {
 		border-block-end-width: 0; /* TODO reconsider? */
@@ -157,15 +157,11 @@ figcaption {
 	--m: 0;
 }
 .standoff:has(+ h2) {
-	--m: 2.1875rem;
+	--m: 2.125rem;
 }
-.standoff:has(+ section) {
-	--m: 2.8125rem;
-}
-.posts > p:last-child {
-	--m: 3.5rlh;
-}
-section h2,
+.posts h2,
+.posts > p:last-child,
+section:where(:not(.posts)) h2,
 #showcase,
 #comments ~ :is(article, section) {
 	margin-block-start: 2.625rlh;
@@ -195,9 +191,6 @@ img + small,
 [data-chain="continue"] small::before {
 	content: "↳ " / "";
 }
-.posts h2 {
-	margin-block-start: 3.5rlh;
-}
 header {
 	display: grid;
 	position: relative;
@@ -207,8 +200,7 @@ header {
 }
 h1,
 h1 + p:not(:last-child) {
-	max-inline-size: 37rem;
-	padding-inline-end: var(--p);
+	max-inline-size: 35rem;
 }
 h1 + p:not(:last-child) {
 	margin-block-start: .25rem;
@@ -311,13 +303,16 @@ em {
 	font-style: italic;
 }
 [id] {
-	scroll-margin-block-start: .75rem;
+	scroll-margin-block-start: .875rlh;
 }
 a:where([href]) {
-	color: inherit;
 	text-decoration: .0625rem solid underline var(--color-accent);
 	text-underline-offset: .1875rem;
 	word-break: break-word;
+
+	@media (forced-colors: none) {
+		color: inherit;
+	}
 }
 a[href$=".pdf"]::after {
 	content: " [PDF]";
@@ -326,11 +321,16 @@ a:hover {
 	text-decoration-style: double;
 }
 *:focus-visible {
-	outline: .125rem solid var(--color-focus);
+	outline-width: .125rem;
 	outline-offset: -.0625rem;
+
+	@media (forced-colors: none) {
+		outline-style: solid;
+		outline-color: var(--color-focus);
+	}
 }
 :is(a, button, select, summary):focus-visible {
-	outline: .1875rem solid var(--color-focus);
+	outline-width: .1875rem;
 	outline-offset: .0625rem;
 }
 summary {
@@ -393,18 +393,18 @@ button,
 select {
 	padding-block: .25rem;
 	padding-inline: .5rem;
-	background-color: var(--color-bg);
-	border: .0625rem solid #888;
 	border-radius: .25rem;
-	color: inherit;
-}
-button {
-	border-width: .125rem;
+
+	@media (forced-colors: none) {
+		background-color: var(--color-bg);
+		border: .125rem solid #888;
+		color: inherit;
+	}
 }
 form label:has(+ :disabled),
 form :disabled {
 	color: currentColor;
-	opacity: .5;
+	opacity: .4;
 }
 dd,
 li {
@@ -428,13 +428,11 @@ blockquote {
 .standoff blockquote {
 	padding-inline-start: calc(min(var(--p), 1.25rem) - .25rem);
 }
-.update,
-:not(pre) > code {
-	background-color: var(--color-bg-o);
-	outline: .0625rem solid var(--color-bg-o);
-
-	@media (forced-colors: active) {
-		outline: none;
+@media (forced-colors: none) {
+	.update,
+	:not(pre) > code {
+		background-color: var(--color-bg-o);
+		outline: .0625rem solid var(--color-bg-o);
 	}
 }
 :not(pre) > code {
@@ -587,7 +585,7 @@ aside[aria-labelledby="comments"]::before,
 		margin-block-start: .1875rem;
 		float: inline-start;
 		font-size: .75rem;
-		opacity: .75;
+		opacity: .7;
 	}
 }
 #navigation > p {
@@ -605,7 +603,7 @@ aside[aria-labelledby="comments"]::before,
 		gap: inherit;
 	}
 	a {
-		--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M0 8a8 8 0 1016 0A8 8 0 000 8zm14.5 0a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z'/%3E%3Cpath d='M11.043 10.457l1.414-1.414L8 4.586 3.543 9.043l1.414 1.414L8 7.414z'/%3E%3C/svg%3E");
+		--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -1 18 18'%3E%3Cpath d='M0 8a8 8 0 1016 0A8 8 0 000 8zm14.5 0a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z'/%3E%3Cpath d='M11.043 10.457l1.414-1.414L8 4.586 3.543 9.043l1.414 1.414L8 7.414z'/%3E%3C/svg%3E");
 		white-space: nowrap;
 
 		&::before,
@@ -616,25 +614,23 @@ aside[aria-labelledby="comments"]::before,
 			block-size: 1em;
 			margin-block-start: .25em;
 			background: linear-gradient(135deg, var(--_cut), var(--_cut) 35%, currentColor 35%, var(--color-accent)) no-repeat;
-			mask: var(--icon) center / 90% no-repeat;
-
-			@media (forced-colors: active) {
-				background: CanvasText;
-				forced-color-adjust: none;
-			}
+			mask: var(--icon) center / contain no-repeat;
 		}
 	}
-	a[href="/rss/"] { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.13 11.73a2.13 2.13 0 1 0 0 4.25 2.13 2.13 0 1 0 0-4.25zM0 5.43V8.5c2 0 3.88.78 5.29 2.2a7.45 7.45 0 0 1 2.2 5.3h3.07C10.56 10.18 5.82 5.44 0 5.44zM0 0v3.07c7.13 0 12.92 5.8 12.92 12.93H16C16 7.18 8.82 0 0 0z'/%3E%3C/svg%3E") }
-	a[href="/settings/"] { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M14 7h.25c.412 0 .75-.338.75-.75v-2.5a.752.752 0 00-.75-.75H14V0h-2v3h-.25a.752.752 0 00-.75.75v2.5c0 .412.338.75.75.75H12v9h2V7zm-2-3h2v2h-2V4zm-2.75 9c.412 0 .75-.338.75-.75v-2.5A.753.753 0 009.25 9H9V0H7v9h-.25a.753.753 0 00-.75.75v2.5c0 .412.338.75.75.75H7v3h2v-3h.25zM7 10h2v2H7v-2zM4.25 7c.412 0 .75-.338.75-.75v-2.5A.752.752 0 004.25 3H4V0H2v3h-.25a.752.752 0 00-.75.75v2.5c0 .412.337.75.75.75H2v9h2V7h.25zM2 4h2v2H2V4z'/%3E%3C/svg%3E") }
+	a[href="/rss/"] { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -1 18 18'%3E%3Cpath d='M2.13 11.73a2.13 2.13 0 1 0 0 4.25 2.13 2.13 0 1 0 0-4.25zM0 5.43V8.5c2 0 3.88.78 5.29 2.2a7.45 7.45 0 0 1 2.2 5.3h3.07C10.56 10.18 5.82 5.44 0 5.44zM0 0v3.07c7.13 0 12.92 5.8 12.92 12.93H16C16 7.18 8.82 0 0 0z'/%3E%3C/svg%3E") }
+	a[href="/settings/"] { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -1 18 18'%3E%3Cpath d='M14 7h.25c.412 0 .75-.338.75-.75v-2.5a.752.752 0 00-.75-.75H14V0h-2v3h-.25a.752.752 0 00-.75.75v2.5c0 .412.338.75.75.75H12v9h2V7zm-2-3h2v2h-2V4zm-2.75 9c.412 0 .75-.338.75-.75v-2.5A.753.753 0 009.25 9H9V0H7v9h-.25a.753.753 0 00-.75.75v2.5c0 .412.338.75.75.75H7v3h2v-3h.25zM7 10h2v2H7v-2zM4.25 7c.412 0 .75-.338.75-.75v-2.5A.752.752 0 004.25 3H4V0H2v3h-.25a.752.752 0 00-.75.75v2.5c0 .412.337.75.75.75H2v9h2V7h.25zM2 4h2v2H2V4z'/%3E%3C/svg%3E") }
 	a[href="/settings/"],
 	a[href="/rss/"],
 	a[href="#top"] {
 		justify-self: end;
-		padding-inline-end: 1.5rem;
 
-		&::after {
-			content: "";
-			margin-inline-start: .5em;
+		@media (forced-colors: none) {
+			padding-inline-end: 1.5rem;
+
+			&::after {
+				content: "";
+				margin-inline-start: .5em;
+			}
 		}
 	}
 	a[href="#navigation"] {
@@ -655,16 +651,18 @@ aside[aria-labelledby="comments"]::before,
 			justify-self: center;
 			margin-block-start: 1.25rlh;
 		}
-		a[href="/imprint/"],
-		a[href="/webrings/"],
-		a[href="/elsewhere/"] {
-			padding-inline-start: 1.5rem;
+		@media (forced-colors: none) {
+			a[href="/imprint/"],
+			a[href="/webrings/"],
+			a[href="/elsewhere/"] {
+				padding-inline-start: 1.5rem;
 
-			&::before {
-				--_cut: transparent;
-				content: "";
-				margin-inline-start: -1.5em;
-				transform: rotate(90deg);
+				&::before {
+					--_cut: transparent;
+					content: "";
+					margin-inline-start: -1.5em;
+					transform: rotate(90deg);
+				}
 			}
 		}
 	}
@@ -679,30 +677,34 @@ aside[aria-labelledby="comments"]::before,
 	inset-block-start: .875rlh;
 	block-size: 2rem;
 	inline-size: 2rem;
-	padding-block-start: .3125rem;
 	background-color: #000;
 	border-radius: 50%;
-	color: var(--color-text);
-	white-space: nowrap;
 
 	@media (forced-colors: active) {
-		color: CanvasText;
+		outline: .0625rem solid;
 		text-decoration-color: currentColor !important;
-		forced-color-adjust: none;
 	}
+}
+[data-hl="Home"] svg,
+[data-hl="Menu"]::after {
+	display: block;
+	position: absolute;
+	block-size: 1.75rem;
+	inline-size: 1.75rem;
+	inset-block-start: .125rem;
+	inset-inline-start: .125rem;
 }
 [data-hl="Home"] {
 	inset-inline-start: var(--ap);
+	line-height: 2rem;
 	text-transform: none;
+	white-space: nowrap;
 
-	svg {
-		overflow: visible;
-		display: block;
-		position: absolute;
-		block-size: 1.75rem;
-		inline-size: 1.75rem;
-		inset-block-start: .125rem;
-		inset-inline-start: .125rem;
+	@media (forced-colors: active) and (prefers-color-scheme: light) {
+		svg {
+			background-color: CanvasText;
+			border-radius: 50%;
+		}
 	}
 	path:last-child {
 		fill: var(--color-accent);
@@ -722,23 +724,21 @@ aside[aria-labelledby="comments"]::before,
 [data-hl="Menu"] {
 	--icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M7 2h9v2H0V2zm0 5h9v2H0V7zm0 5h9v2H0v-2zm0'/%3E%3C/svg%3E");
 	inset-inline-end: var(--ap);
-	overflow: hidden;
 	visibility: visible;
 
-	&::before {
-		content: "";
-	}
 	&::after {
 		content: "";
-		position: absolute;
-		aspect-ratio: 1;
-		block-size: 1em;
-		inset-block-start: 50%;
-		inset-inline-end: 50%;
-		margin-block-start: -.5em;
-		margin-inline-end: -.5em;
-		background-color: #fff;
-		mask: var(--icon) center / 1em no-repeat;
+
+		@media (forced-colors: none) {
+			background: #fff;
+			mask: var(--icon) center / 1em no-repeat;
+		}
+		@media (forced-colors: active) {
+			content: "MENU" / "";
+			font-size: .625rem;
+			line-height: 1.75rem;
+			text-align: center;
+		}
 	}
 }
 
