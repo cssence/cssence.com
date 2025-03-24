@@ -90,7 +90,7 @@ img {
 		border-image: linear-gradient(var(--_c), var(--_c)) fill var(--_q) 100vi;
 	}
 	&:where([style*="--frame: "]:not(:only-child)) {
-		border-block-end-width: 0; /* TODO reconsider? */
+		border-block-end-width: 0;
 	}
 	&:where(:not(:last-child)) {
 		margin-block-end: 0;
@@ -166,19 +166,6 @@ section:where(:not(.posts)) h2,
 #comments ~ :is(article, section) {
 	margin-block-start: 2.625rlh;
 }
-/*#comments ~ article:not([hidden]) ~ article {
-	h3 {
-		--m: 3.5rlh;
-	}
-	&::before {
-		content: "";
-		position: absolute;
-		inline-size: calc(2 * var(--p));
-		margin-block-start: -1.75rlh;
-		margin-inline-start: var(---p);
-		border-block-end: 1px dotted;
-	}
-}*/
 img + small,
 [data-chain] small {
 	font-size: .75rem !important;
@@ -322,7 +309,7 @@ a:hover {
 }
 *:focus-visible {
 	outline-width: .125rem;
-	outline-offset: -.0625rem;
+	outline-offset: 0;
 
 	@media (forced-colors: none) {
 		outline-style: solid;
@@ -336,12 +323,6 @@ a:hover {
 summary {
 	inline-size: fit-content;
 }
-/*li:has(> details:only-child) {
-	list-style-type: "";
-}
-li:has(> details:only-child) summary {
-	list-style-position: outside;
-}*/
 abbr[title] {
 	text-decoration: none;
 }
@@ -511,10 +492,6 @@ pre code {
 		transform: translateY(-.0625rem);
 	}
 }
-/*::marker,
-#showcase + p::before {
-	color: var(--color-accent);
-} */
 aside[aria-labelledby="comments"]::before,
 .metadata::before {
 	content: "";
@@ -813,8 +790,8 @@ header br,
 	overflow: hidden;
 	position: absolute;
 	z-index: 1;
-	width: 1px;
-	height: 1px;
+	aspect-ratio: 1;
+	block-size: 1px;
 	margin: -1px;
 	clip: rect(0,0,0,0);
 	border: 0;

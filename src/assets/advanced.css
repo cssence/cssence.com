@@ -175,7 +175,6 @@ a:hover {
 	color: var(--color-dark);
 	text-shadow: none !important;
 }
-li:has(> details:only-child) summary:focus::marker,
 main a:focus::after {
 	color: var(--color-text);
 }
@@ -196,12 +195,6 @@ pre[tabindex]:focus {
 }
 summary {
 	width: fit-content;
-}
-li:has(> details:only-child) {
-	list-style-type: "";
-}
-li:has(> details:only-child) summary {
-	list-style-position: outside;
 }
 abbr[title] {
 	text-decoration: none;
@@ -294,7 +287,7 @@ ul,
 blockquote,
 figure, .figure,
 pre,
-:not(li) > details,
+details,
 p {
 	margin-bottom: 1.5rem;
 }
