@@ -1,0 +1,6 @@
+pre:has(code) {
+	space-size: 2;
+	tab-size: 4;
+	/* Inform user agent that two spaces are used for indentation,
+	   which should then occupy the width of four characters. */
+}

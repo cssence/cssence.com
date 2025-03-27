@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="c-extra">
+<head>
+<title>CSS space-size</title>
+<meta name="description" content="The long-awaited companion for tab-size.">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>CSS space-size</h1>
+<p>The long-awaited companion for tab-size.</p>
+<p><i>Extra</i><br><time>2025-04-01T03:50:00Z</time><br><img src="/2025/space-size/index.webp" alt=""></p>
+</header>
+<div>
+<p>Ah, the size of space! No, not the <a href="https://neal.fun/size-of-space/">great visualisation by Neal Agarwal.</a></p>
+<p class="standout -left"><img src="/2025/space-size/hubble.jpg" alt="N44 is a complex nebula, one of its most distinctive features is the dark, starry gap called a “superbubble”."><small> — Hubble telescope image <a href="https://svs.gsfc.nasa.gov/14018">(Source: NASA)</a></small></p>
+<p>In an ever-growing universe, I guess it’s tough for scientists to calculate how big space is, but that’s beside the point, because this article is dedicated to the new CSS <code>space-size</code> property, which finally gives us a way to tweak indentation when space characters instead of tabs are in play. Contrary to <code>tab-size</code>, it comes with some (necessary) limitations, as it only affects <strong>leading spaces.</strong> So nothing changes for people who still think that a gap the size of <a href="https://www.grammarly.com/blog/punctuation-capitalization/spaces-after-period/">two spaces should come after the period</a> at the end of a sentence, but I digress.</p>
+<p>At the time of writing, no browser has support for <code>space-size</code>, but here’s how it will eventually work:</p>
+<pre><a href="/2025/space-size/code.syntax.css">View CSS example.</a></pre>
+<p>While it looks as if we are just reusing the <code>tab-size</code> syntax, the behavior is actually quite different: We specify a positive number to tell the browser how many spaces are used for indentation in the HTML. Put simply, the number states how many leading spaces represent a single tab character. That’s good news for two reasons:</p>
+<ol>
+<li>Without that number, the browser would need to perform some heuristic exercise to guess the intended indentation, which could lead to undesirable results.</li>
+<li>Setting a number in the first place means we opt in to “space-to-tab conversion”, whereas the default <code>none</code> implies we don’t.</li>
+</ol>
+<p>For the <em>actual indentation</em> we still rely on <code>tab-size</code>’s value, which comes with the bonus that indentation cannot get out of sync when both tabs and spaces are used to indent a line in the same HTML file.</p>
+<p>By the way, when not set, <code>tab-size</code> defaults to eight, so in most cases it’s probably best to declare these properties in tandem, like so:</p>
+<pre><a href="/2025/space-size/code.tandem.css">View CSS example.</a></pre>
+<p>That’s about it, now we’ll have to wait for <a href="https://youtu.be/dQw4w9WgXcQ">green lights on caniuse.com.</a></p>
+<hr>
+<p>On this day, one year ago, I wrote in my <a href="/2024/digital-gardens/">Digital gardens</a> editorial:</p>
+<blockquote cite="https://cssence.com/2024/digital-gardens/">
+<p>Related: I don’t give a damn about April Fools’ Day.</p>
+</blockquote>
+<p>Apparently I’ve changed my mind, because today I finally did pull a prank, as there is clearly no <code>space-size</code> on the horizon. Sorry for wasting everybody’s time, it won’t happen again.</p>
+<p>Make sure to use <a href="/series/tabs-over-spaces">tabs instead of spaces,</a> there’s a reason we have a dedicated Unicode character. TL;DR, tabs are superior.</p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/114260924272795886, https://bsky.app/profile/cssence.com/post/3llq3gxh3b22j"><b>Matthias Zöchling</b> wrote on <time>2025-04-01T03:50:00Z</time></span></h3>
+<p>Still early days for the new #CSS <code>space-size</code> property, as no browser maker has started implementing it, but here’s what you need to know:<br><a href="/2025/space-size/">cssence.com/2025/space-size/</a></p>
+<p>Begs the question, are you on Team Tabs or Team Spaces?</p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>
