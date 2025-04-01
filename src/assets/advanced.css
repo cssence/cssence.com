@@ -59,7 +59,7 @@ html {
 		.invert img:not([src$=".svg"]) {
 			filter: brightness(85%) grayscale(10%) invert(1);
 		}
-		[data-hl="Home"] path:first-child {
+		[data-hl="Home"] path:last-child {
 			fill: var(--color-text);
 		}
 	}
@@ -84,7 +84,7 @@ html:where(:has(meta[name="color-scheme"][content="dark"])) {
 	.invert img:not([src$=".svg"]) {
 		filter: brightness(85%) grayscale(10%) invert(1);
 	}
-	[data-hl="Home"] path:first-child {
+	[data-hl="Home"] path:last-child {
 		fill: var(--color-text);
 	}
 }
@@ -127,11 +127,14 @@ header p:last-child,
 [data-unavailable],
 .metadata,
 .standoff,
-img + small,
 p > small:only-child,
 [data-hl],
 .imprint > p {
 	font-size: .875rem;
+	line-height: 1.5;
+}
+img + small {
+	font-size: .75rem;
 	line-height: 1.5;
 }
 h1,
@@ -620,7 +623,7 @@ i,
 .imprint p {
 	display: grid;
 	grid-auto-flow: dense;
-	grid-template-columns: 1fr calc(var(--width-sidebar) - var(--reveal, 0rem));
+	grid-template-columns: 1fr calc(var(--width-sidebar) - var(--_reveal, 0rem));
 	gap: .75rem calc(var(--_pbs) - var(--width-sidebar));
 	margin-bottom: 0;
 }
@@ -695,7 +698,7 @@ i,
 	display: block;
 	position: absolute;
 	top: 1rem;
-	right: calc(var(--o) + var(--_pbs) - var(--padding-horizontal) - var(--reveal, calc(5.5rem + var(--padding-horizontal))));
+	right: calc(var(--o) + var(--_pbs) - var(--padding-horizontal) - var(--_reveal, calc(5.5rem + var(--padding-horizontal))));
 	margin-right: -.5rem;
 	padding: .5625rem 1.875rem .6875rem .5rem;
 	color: var(--color-text);
@@ -727,8 +730,6 @@ i,
 	left: .4375rem;
 	height: 2.5rem;
 	width: 2.5rem;
-	background-color: var(--color-dark);
-	border-radius: 50%;
 }
 [data-hl="Home"]::before {
 	content: "css";
@@ -737,7 +738,10 @@ i,
 [data-hl="Home"]::after {
 	content: "ence.com";
 }
-[data-hl="Home"] path:last-child {
+[data-hl="Home"] circle {
+	fill: var(--color-dark);
+}
+[data-hl="Home"] circle + path {
 	fill: var(--color-accent);
 }
 footer.metadata p:last-child a {
@@ -780,8 +784,8 @@ footer.metadata p:nth-child(5)::after {
 }
 @media (max-width: 39em) {
 	body {
-		--reveal: calc(var(--padding-horizontal) + .75rem);
-		width: calc(100% + var(--_pbs) - var(--padding-horizontal) - var(--reveal));
+		--_reveal: calc(var(--padding-horizontal) + .75rem);
+		width: calc(100% + var(--_pbs) - var(--padding-horizontal) - var(--_reveal));
 	}
 	[data-chain],
 	.standoff:not(figure):not(.figure) {
@@ -792,8 +796,11 @@ footer.metadata p:nth-child(5)::after {
 	pre {
 		margin-left: calc(-1 * var(--padding-horizontal));
 	}
+	.-left img + small {
+		margin-left: var(--padding-horizontal);
+	}
 	figure.standout figcaption {
-		max-width: calc(100% - var(--_pbs) + var(--padding-horizontal) + var(--reveal));
+		max-width: calc(100% - var(--_pbs) + var(--padding-horizontal) + var(--_reveal));
 	}
 	main,
 	[data-follow-up] {

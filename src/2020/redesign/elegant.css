@@ -2,8 +2,9 @@
 	--m: 0;
 	counter-reset: part;
 	list-style-type: disc;
-	margin-block: .75rlh;
-	padding-block: 0;
+	margin: .75rlh 0;
+	padding: 0;
+	background-color: transparent;
 }
 .standoff li {
 	margin-inline-start: .875rem;

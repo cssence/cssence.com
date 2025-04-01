@@ -63,6 +63,8 @@
 /about/matt.jpg  /about/matt/index.jpg
 /about/photo.jpg  /about/matt/photo.jpg
 /about/privacy/  /imprint/
+/about/color-d34b6c* /about/accent-colors:splat
+/about/color-badd55* /about/accent-colors:splat
 /help/  /imprint/
 /404/upload  /404/  404
 /*  /404/  404
