@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="c-extra">
+<head>
+<title>Pure CSS image reveal</title>
+<meta name="description" content="Actually, the HTML needs to help out here, a lot.">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Pure CSS image reveal</h1>
+<p>An excuse to talk about <code>@starting-style</code> and <code>transition-behavior: allow-discrete</code>.</p>
+<p><i>Extra</i><br><time>2025-04-07T13:31:00Z</time><br><img src="/2025/pure-css-image-reveal/index.webp" alt=""></p>
+</header>
+<div>
+<p>Inspired by <a href="https://bsky.app/profile/nerdy.dev/post/3lktluegruk2y">a few lines of CSS</a> from Adam Argyle, I forked <a href="https://codepen.io/argyleink/pen/NPWMNyX">his CodePen</a> where he randomly added a color and a delay in HTML, to be then applied in CSS.</p>
+<p>In my fork I only used the idea of the random delay, which I too apply to a transition. But while he made dots appear, I make squares (basically large pixels) disappear, to reveal what’s underneath. Check out <a href="#showcase">my CodePen</a> to see the effect.</p>
+<p><img src="/2025/pure-css-image-reveal/index.webp" alt="Large squares disappear at random, and by doing so they reveal an image that is placed underneath." style="--frame:#202225"></p>
+<p>And yes, maybe there’s even a better way of doing this with masks or whatever. But I’d like to talk about something else.</p>
+<p>Once the effect was finished, I did add <code>visibility</code> to the transition, because I want the “pixels” to be gone after they have disappeared visually. If I don’t do that, they obstruct the image and thus prevent right-clicking it. What’s weird is that this part doesn’t work in Firefox, which I wouldn’t have guessed by just skimming caniuse.com. Here’s what Firefox (version&nbsp;137 at time of writing) supports:</p>
+<ol>
+<li><span role="img" aria-label="Supported:">✔️</span> <code>transition-behavior: allow-discrete</code></li>
+<li><span role="img" aria-label="Supported:">✔️</span> <code>@starting-style</code></li>
+<li><span role="img" aria-label="Not supported:">❌</span> <a href="https://caniuse.com/?search=allow-discrete">transitioning display &amp; (content-)visibility</a></li>
+</ol>
+<p>Would be helpful if testing for support would work, but alas.</p>
+<pre><a href="/2025/pure-css-image-reveal/code.supports.css">View CSS example.</a></pre>
+<p>In my CodePen I was able to simply declare both transitions. Without <code>visibility: hidden</code> being applied at the end, the overall effect still works, only right-clicking the image does not. In other words, in my particular case I didn’t need aforementioned <code>@supports</code>, but someone may run into a case where this isn’t possible. We can only hope that Firefox catches up soon.</p>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://codepen.io/cssence/pen/jEORzqX">View “Pure CSS image reveal” on CodePen.</a></p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article>
+<h3><a href="https://bsky.app/profile/nerdy.dev/post/3lktluegruk2y"><b>Adam Argyle,</b> wrote on <time>2025-02-21T09:56:58Z</time></a></h3>
+<blockquote cite="https://bsky.app/profile/nerdy.dev/post/3lkbz7ftgqc2v">
+<p>amazing what a few lines of #CSS can do<br><a href="https://codepen.io/argyleink/pen/LEYOgxy">codepen.io/argyleink/pen/LEYOgxy</a></p>
+</blockquote>
+<p>just a few lines of #CSS<br><a href="https://codepen.io/argyleink/pen/NPWMNyX">codepen.io/argyleink/pen/NPWMNyX</a></p>
+</article>
+<article>
+<h3><a href="https://bsky.app/profile/nerdy.dev/post/3lktzxhxao225"><b>Adam Argyle,</b> wrote on <time>2025-02-21T09:56:58Z</time></a></h3>
+<p data-chain="continue"><small>Continued from previous comment.</small></p>
+<p>Someone really needs to fork this and add a coo hover somethin somethin</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/114296965382575987, https://bsky.app/profile/cssence.com/post/3lma3lbvxhc2h"><b>Matthias Zöchling</b> wrote on <time>2025-04-07T13:40:00Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@nerdy.dev</span>.</small></p>
+<p>Well, I did fork it, but it took a different turn.<br><a href="/2025/pure-css-image-reveal/">cssence.com/2025/pure-css-image-reveal/</a></p>
+<p>Thus, no cool hover effect.</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>

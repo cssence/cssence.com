@@ -1,0 +1,4 @@
+@supports (transition-behavior: allow-discrete) {
+	/* Even Firefox applies styles placed in here, but display
+	   and (content-)visibility are not transitionable yet. */
+}
