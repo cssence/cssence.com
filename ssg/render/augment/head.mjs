@@ -21,14 +21,12 @@ const modify = (content, meta) => {
 		'<link rel="alternate stylesheet" media="screen" href="/assets/elegant.css" title="Elegant Style">',
 		'<link rel="stylesheet" media="screen" href="/assets/advanced.css" title="Custom Style">',
 	];
-	const crap = [
+	const ogp = [
 		`<meta property="og:type" content="${meta.page.isIndex ? 'website' : 'article'}">`,
 		`<meta property="og:url" content="${meta.getPermalink(meta.page.path)}">`,
-		'<meta name="twitter:card" content="summary">',
-		'<meta name="twitter:creator" content="@cssence">',
-		`<meta name="twitter:title" property="og:title" content="${meta.page.title}">`,
-		`<meta name="twitter:description" property="og:description" content="${meta.page.description}">`,
-		`<meta name="twitter:image" property="og:image" content="${meta.getPermalink(meta.page.thumbnail)}">`,
+		`<meta property="og:title" content="${meta.page.title}">`,
+		`<meta property="og:description" content="${meta.page.description}">`,
+		`<meta property="og:image" content="${meta.getPermalink(meta.page.thumbnail)}">`,
 	];
 	const branding = [
 		'<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/apple-touch-icon.png">',
@@ -78,7 +76,7 @@ const modify = (content, meta) => {
 		...styles,
 		...branding,
 		...scripts,
-		...crap,
+		...ogp,
 		...other,
 	];
 	content.splice(swapAfter, swapBefore - swapAfter, head.join('\n'));

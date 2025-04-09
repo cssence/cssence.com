@@ -12,9 +12,9 @@
 	box-sizing: border-box;
 }
 html {
-	--color-text: #000;
+	--color-text: #050100;
 	--color-bg: #fff;
-	--color-bg-o: #faf7d4;
+	--color-bg-o: #f4f3ef;
 	--color-accent: #d34b6c;
 	--color-focus: #05c;
 	--filter: sepia(1);
@@ -59,6 +59,10 @@ body {
 	--_r: 0rem;
 	font-size: 1.125rem;
 	line-height: calc(20 / 15);
+
+	> aside:first-child {
+		display: none; /* CND */
+	}
 }
 main {
 	padding-block: 0 1.75rlh;

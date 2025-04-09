@@ -15,7 +15,7 @@
 <div>
 <p>Inspired by <a href="https://bsky.app/profile/nerdy.dev/post/3lktluegruk2y">a few lines of CSS</a> from Adam Argyle, I forked <a href="https://codepen.io/argyleink/pen/NPWMNyX">his CodePen</a> where he randomly added a color and a delay in HTML, to be then applied in CSS.</p>
 <p>In my fork I only used the idea of the random delay, which I too apply to a transition. But while he made dots appear, I make squares (basically large pixels) disappear, to reveal what’s underneath. Check out <a href="#showcase">my CodePen</a> to see the effect.</p>
-<p><img src="/2025/pure-css-image-reveal/index.webp" alt="Large squares disappear at random, and by doing so they reveal an image that is placed underneath." style="--frame:#202225"></p>
+<p><img src="/2025/pure-css-image-reveal/index.webp" alt="Large squares disappear at random, and by doing so they reveal an image that is placed underneath." style="--frame: "></p>
 <p>And yes, maybe there’s even a better way of doing this with masks or whatever. But I’d like to talk about something else.</p>
 <p>Once the effect was finished, I did add <code>visibility</code> to the transition, because I want the “pixels” to be gone after they have disappeared visually. If I don’t do that, they obstruct the image and thus prevent right-clicking it. What’s weird is that this part doesn’t work in Firefox, which I wouldn’t have guessed by just skimming caniuse.com. Here’s what Firefox (version&nbsp;137 at time of writing) supports:</p>
 <ol>
