@@ -66,6 +66,7 @@ const modify = (content, meta) => {
 	} else if (conversation.hook) {
 		const remoteUrl = conversation.hook.urls[0];
 		if (remoteUrl.startsWith('https://twitter.com/')) {
+			// TODO remove by the end of 2025, last problematic entries are in /2022/ folder
 			contributeSection[2] = `<p>Comments are closed, but feel free to ${shareLink}</p>`;
 		} else {
 			contributeSection[2] = `<p><a href="${remoteUrl}">Have your say on Mastodon,</a> or simply ${shareLink}</p>`;

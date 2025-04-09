@@ -97,6 +97,9 @@ body {
 	position: relative;
 	padding: var(--height-header) var(--padding-horizontal) 0;
 }
+body > aside:first-child {
+	display: none; /* CND */
+}
 button,
 input,
 textarea,
