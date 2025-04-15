@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="c-essay">
+<head>
+<title>Accessibility is personal</title>
+<meta name="description" content="Is A11Y work rewarding? Demanding? Exhausting? All of the above?">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Accessibility is personal</h1>
+<p><i>Essay</i><br><time>2025-12-19T20:42:00Z</time><br><img src="/2025/accessibility-is-personal/index.webp" alt=""></p>
+</header>
+<div>
+<p>It’s no coincidence that my online identity starts with CSS: I get paid to make HTML look nice. But for many years now, web accessibility—or A11Y, if you are into <a href="https://en.wikipedia.org/wiki/Numeronym">numeronyms</a>—plays an even bigger role.</p>
+<hr>
+<p>Is making the web more accessible rewarding? That too.</p>
+<p>But at the same time, it is demanding. And quite often exhausting.</p>
+<p>Over at work, I’ve been the web accessibility go-to guy for a long time. The company is rather small, but it is merely a subsidiary; if we look at the group company as a whole, thousands of people work there, so I find it interesting that to this day I’m still <em>The One.</em> Don’t get me wrong, I enjoy doing it, as I’m very passionate when it comes to A11Y, but it should be a side hustle: First and foremost, I get paid to work on our design system.</p>
+<p>Oh well. As the go-to guy, I get lots of questions. In the last year, these conversations became more frequent and more challenging. It’s almost as if there’s been some kind of <a href="https://en.wikipedia.org/wiki/European_Accessibility_Act">deadline in 2025.</a> 🇪🇺</p>
+<h2>Education</h2>
+<p>Web A11Y is always about education.</p>
+<p>Initially, I need to educate myself, as one is never done learning. While the fundamental principles do not change a lot, a best practice from 18&nbsp;months ago may not be the best practice today. And sometimes a problem can be so challenging, you end up learning something new.</p>
+<p>Then, I’m educating others. While certain issues can lead to interesting discussions, most of the time I need to explain something, and more often than not it’s about the basics, so I’m repeating myself over and over again. Not just because the audience changes, but also because of time. After all these years I’m still talking about the same stuff. Makes you wonder if there’s been any progress at all.</p>
+<figure>A11Y is important! <em>*squeak*</em><br>A11Y is important! <em>*squeak*</em><br>A11Y is important! <em>*squeak*</em><br>Polly wants a cracker!
+<figcaption>When writing this, for some reason I had the picture of a parrot that repeats itself in my head. 🦜<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup></figcaption>
+</figure>
+<p>Having worked in that field for so long, eventually I started to think that I’ve seen and heard it all. I couldn’t have been <a href="https://youtu.be/F_1zoX5Ax9U">more wrong.</a></p>
+<h2>Conflict</h2>
+<p><a href="https://heather-buchel.com/blog/2024/03/letters-to-an-accessibility-advocate/">Heather Buchel wrote, </a><q cite="https://heather-buchel.com/blog/2024/03/letters-to-an-accessibility-advocate/">blog posts and articles are great, but seek out the experience and opinions of disabled users.</q> We do that frequently. But the last time we conducted another A11Y testing session with a blind tester, something unexpected happened that rocked me to my core.</p>
+<p>Consider the following HTML.</p>
+<pre><a href="/2025/accessibility-is-personal/code.label.html">View HTML example.</a></pre>
+<p>We got the complaint that this is unnecessary verbose. In their particular browser and screen reader combination<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Footnote #2">[2]</a></sup>, the label is announced as “clickable”. That makes sense, because it is: Clicking the label moves the focus to the input field.</p>
+<p>To avoid that, to them the following markup would be an improvement.</p>
+<pre><a href="/2025/accessibility-is-personal/code.aria-label.html">View HTML example.</a></pre>
+<p>The <em>label &amp; form field pattern</em> is as old as HTML itself. The <em>aria-labelledby form field</em> on the other hand violates <a href="https://www.w3.org/TR/using-aria/#rule1">the first rule of ARIA.</a></p>
+<p>Don’t get me wrong, we get a ton of invaluable feedback out of those testing sessions. That feedback turns into bug reports, and we then move on to fix them. In this particular case however I had to draw the line, arguing we are not going to do that.</p>
+<p>But it got me thinking how we got here. Our tester has years of experience, did they over time encounter so many questionable websites that they eventually liked the subpar pattern more? Maybe, maybe not. Let’s not forget this may have been a preference, a feeling. Let’s not forget that our tester is not a web developer. They care about their user experience, not about the underlying HTML, CSS, JS and ARIA that it takes to create that experience.</p>
+<p>Accessibility is personal.</p>
+<h2>Fulfillment</h2>
+<p>As challenging as this line of work may be, at the end of the day it’s all worth it, because even if you don’t do everything right, you know that you are doing the right thing.</p>
+<p>Is making the web more accessible rewarding? That too.</p>
+<section aria-labelledby="fns">
+<h2 id="fns">Footnotes</h2>
+<ol>
+<li id="fn-1">Wouldn’t it be cool if we had proper <a href="https://tink.uk/why-we-need-css-speech/">CSS speech</a>? Even more so, I’d love to see <code>voice-family: parrot</code>, which should put a screen reader in parrot mode. 🦜 <a href="#ref-fn-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="fn-2">In this year’s HTMHell Advent Calendar, Geri Reid states that <q cite="https://htmhell.dev/adventcalendar/2025/17/">screen readers work best when paired with their preferred browser</q>. Fair warning, reading <a href="https://htmhell.dev/adventcalendar/2025/17/">her excellent article</a> will make you hungry. <a href="#ref-fn-2" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+</ol>
+</section>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/115748200689713668, https://bsky.app/profile/cssence.com/post/3maekvt4kw22u"><b>Matthias Zöchling</b> wrote on <time>2025-12-19T20:42:00Z</time></span></h3>
+<p>For my last blog post of 2025, let me end the year with something personal.<br><a href="/2025/accessibility-is-personal/">cssence.com/2025/accessibility-is-personal</a></p>
+</article>
+<article hidden>
+<h3><span data-href=""><b>Matthias Zöchling</b> wrote on <time>2025-12-22T09:30:00Z</time></span></h3>
+<p>I needed to get this off my chest.</p>
+<p>Are you doing web accessiblity work too? Can you relate? Did you blog about something similar? Let me know.</p>
+</article>
+<article hidden>
+<h3><span data-href=""><b>Matthias Zöchling</b> wrote on <time>2025-12-22T09:31:00Z</time></span></h3>
+<p>Related: Big thanks to @laura@mastodon.laurakalbag.com for writing <a href="https://accessibilityforeveryone.site/">“Accessibility for Everyone”.</a> Back in 2017 I was already dabbling around in #A11Y topics for a while, but it was reading her book that convinced me this is what I want to persue.</p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>
