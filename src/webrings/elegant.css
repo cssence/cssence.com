@@ -3,33 +3,51 @@ main nav h2:first-child
 	--m: 2.625rlh;
 }
 main nav ul {
+	--in: var(--color-bg-o);
+	--out: currentColor;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: .875rem var(--p);
+	gap: 2px;
+	padding: 2px;
+	border-block-start: 1px solid var(--in);
+	border-inline-end: 1px solid var(--out);
+	border-block-end: 1px solid var(--out);
+	border-inline-start: 1px solid var(--in);
 }
 main nav li {
 	list-style-type: "";
+	margin-block-start: 0;
 	margin-inline-start: 0;
 }
 main nav li a {
 	display: block;
 	position: relative;
 	block-size: 100%;
-	padding-block: 1.625rem .75rem;
-	padding-inline: .75rem;
-	border-block-end: 1px solid;
-	border-inline-start: 3px solid var(--color-accent);
-	border-radius: .625rem;
+	padding-block: 2.25rem .5rem;
+	padding-inline: .5rem;
+	border-block-start: 1px solid var(--out);
+	border-inline-end: 1px solid var(--in);
+	border-block-end: 1px solid var(--in);
+	border-inline-start: 1px solid var(--out);
 	text-align: center;
 }
-@media (width <= 27.5em) {
-	main nav li a {
-		font-size: .9375rem;
+@media (prefers-color-scheme: dark) {
+	html:where(:has(meta[name="color-scheme"][content^="dark"])) {
+		main nav ul {
+			--in: currentColor;
+			--out: var(--color-bg-o);
+		}
+	}
+}
+html:where(:has(meta[name="color-scheme"][content="dark"])) {
+	main nav ul {
+		--in: currentColor;
+		--out: var(--color-bg-o);
 	}
 }
 main nav li a::before {
 	position: absolute;
-	inset-block-start: .0625rem;
+	inset-block-start: .5rem;
 	inset-inline-start: 50%;
 	transform: translateX(-50%);
 }

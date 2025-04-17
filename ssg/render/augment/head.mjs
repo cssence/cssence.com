@@ -12,7 +12,7 @@ const modify = (content, meta) => {
 		meta.page.path === '/' ? content[TITLE] : `<title>${meta.page.title} - CSSence.com</title>`, // this also replaces all &nbsp;
 		content[DESC],
 		`<meta name="author" content="${meta.date.getAuthor(meta.page.published || meta.page.revised)}">`,
-		'<meta name="color-scheme" content="light dark">',
+		'<meta name="color-scheme" content="dark light">',
 		`<link rel="canonical" href="${meta.getPermalink(meta.page.path)}">`,
 	];
 	const styles = [

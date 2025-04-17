@@ -33,12 +33,12 @@ main > div > div {
 	hyphens: auto;
 }
 @media (prefers-color-scheme: dark) {
-	html:where(:has(meta[name="color-scheme"][content$="dark"])) {
-		--color-bg-overlay: #0006;
+	html:where(:has(meta[name="color-scheme"][content^="dark"])) {
+		--color-bg-overlay: #0000;
 	}
 }
 html:where(:has(meta[name="color-scheme"][content="dark"])) {
-	--color-bg-overlay: #0006;
+	--color-bg-overlay: #0000;
 }
 main > div > div section {
 	display: flex;
