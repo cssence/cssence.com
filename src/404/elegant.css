@@ -10,8 +10,9 @@ input[type="file"]::file-selector-button {
 	padding-block: .25rem;
 	padding-inline: .5rem;
 	border-radius: .25rem;
-	
-	@media (forced-colors: none) {
+}
+@media (forced-colors: none) {
+	input[type="file"]::file-selector-button {
 		background-color: var(--color-bg);
 		border: .125rem solid #888;
 		color: inherit;

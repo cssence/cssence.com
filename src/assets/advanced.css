@@ -118,10 +118,10 @@ sup,
 sub,
 code,
 blockquote footer,
-figcaption,
 a[href$=".pdf"]::after {
 	font-size: .875em;
 }
+figcaption,
 header p:last-child,
 .posts li p:last-child,
 #comments,
@@ -155,6 +155,9 @@ em {
 }
 [id] {
 	scroll-margin-top: .75rem;
+}
+[tabindex="-1"]:focus {
+	outline: none;
 }
 @media (forced-colors: none) {
 	a {
@@ -706,7 +709,9 @@ i,
 	color: var(--color-text);
 }
 [data-hl]:hover {
-	text-decoration: underline var(--color-accent) .125rem;
+	text-decoration-color: var(--color-accent);
+	text-decoration-line: underline;
+	text-decoration-thickness: .125rem;
 	text-underline-offset: .125rem;
 }
 [data-hl]::before {
