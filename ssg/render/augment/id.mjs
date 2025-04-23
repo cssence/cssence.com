@@ -35,6 +35,6 @@ const modify = (content, meta) => {
 	}
 };
 
-// ^1 https://brucelawson.co.uk/2024/drive-by-accessibility-tweaks/
+// ^1 https://brucelawson.co.uk/2024/drive-by-accessibility-tweaks/#comment-3881818
 
 export default modify;

@@ -27,7 +27,7 @@
 <li><strong>Stick with <code>orientation</code> only.</strong> If you need different layouts for portrait and landscape, e.g. you want to adjust the number of columns, fine. But remember, Safari will be tied to the <code>screen</code> orientation, which is usually landscape, so plan ahead to prevent an undesired result.</li>
 </ol>
 <p>There should have been a third strategy on how you may actually use breakpoints with caution, but thanks to a bug in Chrome (and Chromium Edge) there is no such thing. If you add <code>min-width</code> or <code>max-width</code> media queries, things work fine for <code>px</code> and other absolute units on your screen. But Chrome is unable to replicate this behavior in print. Initially I thought this is due to not including the margin of the page, but the problem occurs no matter what the margin is set to. It used to work in Edge, but as they switched to Chromium, they picked up the bug too.</p>
-<figure class="standout invert"><img src="/2020/breakpoints-for-print/comparison.png" alt="Firefox and old Edge get it right, whereas Chrome and new Edge have a bug.">
+<figure class="standout invert"><img loading="lazy" src="/2020/breakpoints-for-print/comparison.png" alt="Firefox and old Edge get it right, whereas Chrome and new Edge have a bug.">
 <figcaption>Comparing the print output of different browsers. Chrome’s shortcoming has been highlighted, where media queries should match, but they only do on screen, not on print.</figcaption>
 </figure>
 <h2>Additional observations</h2>

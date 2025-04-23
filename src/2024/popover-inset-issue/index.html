@@ -24,7 +24,7 @@
 <p>If I want to place the popover elsewhere, I can adjust top, right, bottom, and/or left—or even better, the logical property variants thereof.</p>
 <p>But if my popover immediately follows the button that opens it, wouldn’t it be nice if I could just do <code>inset: unset</code> and the popover is placed underneath visually (while still being part of the top layer)?</p>
 <p><strong>That is exactly what Firefox is doing.</strong> But the Chromiums place the popover in the top left corner (or top right when the <a href="https://rtlstyling.com/posts/rtl-styling">direction is right to left,</a> you get the idea).</p>
-<figure><img src="comparison.webp" alt="Browser screenshots for comparison." style="--frame: ">
+<figure><img loading="lazy" src="comparison.webp" alt="Browser screenshots for comparison." style="--frame: ">
 <figcaption>While Firefox (shown on the left) places the popover below the triggering button, it ends up in a corner in Chromium-based browsers.</figcaption>
 </figure>
 <p><abbr title="For what it’s worth">FWIW</abbr>, changing <code>margin</code> and <code>position</code> does not alter the behavior, as you’ll see if you examine the CodePen I made for the issue. While you take a look, I’ll be on the social networks, in hopes of finding out who does it right.</p>

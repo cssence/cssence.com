@@ -24,7 +24,7 @@
 <pre><a href="/2020/css-variables-in-style-attributes/code.before-after.html">View HTML example.</a></pre>
 <p>What difference does it make? Not a lot, but the latter gets us closer to having styles only in CSS. With this approach, removing all style sheets from the document leaves you with style attributes that do not style anything.</p>
 <p>If you view this page as raw HTML, with no style sheets applied, nowadays everything is fine because the background image is specified using custom properties. Before the change (shown on the left in the image below), the dark background of the image made it hard to read the link text.</p>
-<p class="figure standout"><img src="/2020/css-variables-in-style-attributes/before-after.png" alt="Deactivating style sheets in the old approach does not eliminate all the styling, because things that are set in style attributes are still applied." style="--frame: "></p>
+<p class="figure standout"><img loading="lazy" src="/2020/css-variables-in-style-attributes/before-after.png" alt="Deactivating style sheets in the old approach does not eliminate all the styling, because things that are set in style attributes are still applied." style="--frame: "></p>
 <p>Tempting to think we handed ourselves a neat little accessibility improvement, but usually style sheets <em>do</em> load, so this is really more for debugging purposes. In other words, going the extra mile on <strong>HTML for Content, CSS for Style</strong> is all we got from this? Not quite, bonus point #1 described below is a genuine advantage.</p>
 <h3>Bonus points</h3>
 <p>1. If we use custom properties, we are no longer limited to the HTML element with the style attribute itself. We can let the pseudo-generated content do the styling, e.g. <code>::before</code>.</p>
