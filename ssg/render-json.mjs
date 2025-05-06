@@ -12,11 +12,11 @@ const folderOut = './public';
 	try {
 		const meta = await getMetaData(folderIn);
 
-		// clean unneeded data in JSON before storing
+		// remove unneeded data in JSON before storing
 
 		const clean = (card, deletableCardProps = []) => {
 			if (card.className === 'c-default') deletableCardProps.push('className');
-			if (card.thumbnail === '/404/index.png') deletableCardProps.push('thumbnail');
+			if (card.thumbnail === '/404/index.webp') deletableCardProps.push('thumbnail');
 			if (card.alternateUrl) deletableCardProps.push('alternateUrl');
 			for (const key of deletableCardProps) {
 				delete card[key];

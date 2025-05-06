@@ -38,14 +38,6 @@ img {
 	header & {
 		--filter: grayscale(1);
 	}
-	&:where([src="/404/index.png"], [src="/2021/beyond-100vw/index.png"]) {
-		@media (forced-colors: active) {
-			--filter: invert(1);
-		}
-		header & {
-			--filter: invert(1) grayscale(1);
-		}
-	}
 }
 @media (prefers-color-scheme: light) {
 	html:where(:has(meta[name="color-scheme"][content$="light"])) {
@@ -55,9 +47,10 @@ img {
 			--color-text: #050100;
 			--depth: 0 6px 30px #0001;
 			color-scheme: light;
+			background-image: linear-gradient(to right, #feebee, var(--color-bg) 85%);
 		}
 		header img {
-			--filter: sepia(1);
+			--filter: sepia(1) hue-rotate(320deg);
 		}
 	}
 }
@@ -68,9 +61,10 @@ html:where(:has(meta[name="color-scheme"][content="light"])) {
 		--color-text: #050100;
 		--depth: 0 6px 30px #0001;
 		color-scheme: light;
+		background-image: linear-gradient(to right, #feebee, var(--color-bg) 85%);
 	}
 	header img {
-		--filter: sepia(1);
+		--filter: sepia(1) hue-rotate(320deg);
 	}
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -79,7 +73,6 @@ html:where(:has(meta[name="color-scheme"][content="light"])) {
 	}
 }
 body {
-	--b: 1px;
 	--bs: 0px;
 	--be: 0px;
 	--p: 1.25rem;
@@ -217,18 +210,17 @@ img + small,
 }
 header {
 	display: grid;
+	gap: .1875rem;
 	position: relative;
 	isolation: isolate;
-	block-size: 15rem;
+	block-size: 11rlh;
 	margin-block-end: 2.625rlh;
 	align-content: end;
 }
 h1,
 h1 + p:not(:last-child) {
+	margin-block: 0;
 	max-inline-size: 35rem;
-}
-h1 + p:not(:last-child) {
-	margin-block-start: .25rem;
 }
 header p:last-child {
 	margin-block-start: .875rlh;
@@ -240,7 +232,7 @@ header p:last-child {
 	block-size: .625rem;
 	margin-inline-end: .5rem;
 	background-color: var(--color-accent);
-	border: .25rem solid transparent;
+	border: .25rem solid #0000;
 	border-radius: 50%;
 }
 :is(header, .posts) time::before {
@@ -257,8 +249,8 @@ header img {
 	margin-block: 0;
 	margin-inline-end: var(---p);
 	border-end-end-radius: var(--_r);
-	mask: linear-gradient(to var(--dir), #0008, transparent);
-	mask: linear-gradient(to var(--dir) in oklch, #0008, transparent);
+	mask: linear-gradient(to var(--dir), #0008, #0000);
+	mask: linear-gradient(to var(--dir) in oklch, #0008, #0000);
 	object-fit: cover;
 
 	@media (width > 27.5em) {
@@ -282,48 +274,66 @@ header img {
 		display: flex;
 		flex-direction: column;
 		position: relative;
+		overflow: hidden;
 		isolation: isolate;
-		min-block-size: 7rlh;
+		block-size: 6.5rlh;
 		margin-block-start: 0;
 		margin-inline-start: 0;
-		padding-block: .75rlh .25rem;
-		padding-inline: var(--p) 9rlh;
+		padding-block: .75rlh 0;
+		padding-inline: var(--p);
 		background-color: var(--color-bg-o);
+		text-shadow: 0 0 2px var(--color-bg-o);
 
-		+ li {
+		& + & {
 			margin-block-start: 1px;
 		}
-		h3 {
-			--m: .4375rlh;
-		}
-		p:last-child {
-			--m: 0;
-			order: -1;
-		}
-		@media (width <= 30em) {
-			--dim: #0004;
-			padding-inline-end: var(--p);
-			text-shadow: 0 0 2px var(--color-bg-o);
-		}
+	}
+	h3,
+	h3 + p {
+		inline-size: min(100%, 30rem);
+	}
+	h3 {
+		--m: .4375rlh;
+	}
+	li p:last-child {
+		--m: 0;
+		order: -1;
 	}
 	img {
 		position: absolute;
 		z-index: -1;
 		inset-block-start: 0;
 		inset-inline-end: 0;
-		block-size: 7rlh;
+		block-size: 100%;
 		inline-size: auto;
 		margin: 0;
 		mask: linear-gradient(to left, var(--dim, #000b), #0000);
 	}
+	@media (width < 40em) {
+		li {
+			--dim: #0004;
+			block-size: 8.25rlh;
+		}
+		img {
+			aspect-ratio: 1;
+			object-fit: cover;
+		}
+	}
 }
-h1 {
+h1:has(+ .h1) {
+	font-size: inherit;
+	line-height: inherit;
+}
+h1:not(:has(+ .h1)), .h1 {
 	margin-inline-start: -.0625rem;
 	font-size: 2rem;
-	line-height: 1.125;
+	line-height: 1.0625;
 
 	@media (width > 27.5em) {
 		font-size: 2.5rem;
+	}
+	@media (width < 22.5em) {
+		font-size: calc(1.375rem * 1.125);
 	}
 }
 h2, .h2 {
@@ -466,7 +476,7 @@ blockquote {
 		font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
 	}
 	:is(pre, p:has(img)) {
-		--bs: var(--b);
+		--bs: 1px;
 		margin-inline-start: 0 !important;
 		border-start-start-radius: var(--r);
 		border-end-start-radius: var(--r);
@@ -485,6 +495,7 @@ blockquote {
 :not(pre) > code {
 	text-decoration: inherit;
 }
+.standout,
 .standoff,
 p:has(img):not(:has(i)),
 form,
@@ -494,7 +505,7 @@ pre {
 	padding-block: .75rlh;
 	padding-inline: calc(var(--p) - var(--bs)) calc(var(--p) - var(--be));
 	background-color: var(--color-bg-o);
-	border: var(--b) solid var(--color-bg-o);
+	border: 1px solid var(--color-bg-o);
 	border-inline-width: var(--bs) var(--be);
 	border-radius: var(--_r);
 	box-shadow: var(--depth, none);
@@ -502,7 +513,7 @@ pre {
 	clear: both;
 }
 .standoff {
-	--bs: var(--b);
+	--bs: 1px;
 	inline-size: min(calc(100% - var(--p)), 37.25rem);
 	margin-block-end: .875rlh;
 	margin-inline-start: auto;
@@ -572,12 +583,12 @@ aside[aria-labelledby="comments"]::before,
 	display: block;
 	margin-block: 1.75rlh;
 	margin-inline: var(---p);
-	border-block-end: var(--b) dotted;
+	border-block-end: 1px dotted;
 	clear: both;
 }
 #navigation {
 	padding-block: calc(1.75rlh - 3px) 1.75rlh;
-	border-block-start: 3px double transparent;
+	border-block-start: 3px double #0000;
 
 	nav,
 	> p {
@@ -709,7 +720,7 @@ aside[aria-labelledby="comments"]::before,
 				padding-inline-start: 1.5rem;
 
 				&::before {
-					--_cut: transparent;
+					--_cut: #0000;
 					content: "";
 					margin-inline-start: -1.5em;
 					transform: rotate(90deg);
@@ -744,6 +755,7 @@ aside[aria-labelledby="comments"]::before,
 		block-size: var(--size);
 		inline-size: var(--size);
 		overflow: visible;
+
 	}
 	@media (forced-colors: none) {
 		circle {
@@ -751,13 +763,16 @@ aside[aria-labelledby="comments"]::before,
 		}
 	}
 	@media (width >= 22.5em) {
+		@media (forced-colors: active) {
+			svg {
+				margin-inline-end: .25rem;
+			}
+		}
 		&::before {
 			content: "css";
-			padding-block-end: .0625rem;
 			font-weight: 700;
 		}
 		&::after {
-			padding-block-end: .0625rem;
 			content: "ence.com";
 		}
 	}
@@ -770,8 +785,8 @@ aside[aria-labelledby="comments"]::before,
 		&::after {
 			content: "";
 			background: var(--color-text);
-			block-size: var(--size);
 			aspect-ratio: 1;
+			block-size: var(--size);
 			mask: var(--icon) center / 1rem no-repeat;
 		}
 		&:hover::before {
@@ -816,17 +831,14 @@ aside[aria-labelledby="comments"]::before,
 			display: block;
 		}
 	}
-	h1 {
-		font-size: calc(1.375rem * 1.125);
-	}
 	ol li::marker {
 		font-size: .9375rem;
 	}
 }
 @media (width >= 48em) {
 	body {
-		--bs: var(--b);
-		--be: var(--b);
+		--bs: 1px;
+		--be: 1px;
 		--p: 1.75rem;
 		--_r: var(--r);
 	}

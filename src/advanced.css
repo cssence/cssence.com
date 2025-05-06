@@ -2,19 +2,8 @@ header {
 	min-height: 0;
 	margin-bottom: 1.5rem;
 }
-header {
-	min-height: 0;
-	margin-bottom: 1.5rem;
-}
-h1,
 header img {
 	opacity: .05;
-}
-h1 {
-	font-size: 1.5rem;
-}
-h1 + p {
-	font-size: 2.5rem;
 }
 h1 + p abbr {
 	color: var(--color-accent);

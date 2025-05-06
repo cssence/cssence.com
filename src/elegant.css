@@ -12,13 +12,13 @@ header + div section {
 
 	@media (width < 48em) {
 		&:not(:last-child) {
-			--be: var(--b);
+			--be: 1px;
 			margin-inline-end: var(--p);
 			border-start-end-radius: var(--r);
 			border-end-end-radius: var(--r);
 		}
 		&:last-child {
-			--bs: var(--b);
+			--bs: 1px;
 			margin-block-start: .875rlh;
 			margin-inline-start: var(--p);
 			border-start-start-radius: var(--r);
@@ -51,23 +51,8 @@ header + div section {
 	border-inline-start: .0625rem solid;
 	font-weight: 400;
 }
-h1 {
-	order: -1;
-	margin-inline-start: 0;
-	font-size: inherit;
-}
 h1 + p:not(:last-child) {
-	order: -2;
-	margin-inline-start: -.0625rem;
-	font-size: 2rem;
-	line-height: 1.125;
-
-	@media (width > 27.5em) {
-		font-size: 2.5rem;
-	}
-	@media (width < 22.5em) {
-		font-size: calc(22rem / (16 / 1.125));
-	}
+	order: -1;
 
 	abbr {
 		color: var(--color-accent);

@@ -7,7 +7,7 @@ const add = (content, meta) => {
 
 	const showAllPosts = meta.page.path === '/all/';
 	const showLatestPosts = meta.page.path === '/latest/';
-	const noThumbnail = showAllPosts ? '/404/index.png' : undefined;
+	const noThumbnail = showAllPosts ? '/404/index.webp' : undefined;
 
 	for (const section of meta.page.sections) {
 		const listItems = [];

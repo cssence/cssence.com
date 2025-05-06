@@ -36,7 +36,7 @@ const getPageData = (urlPath, content, meta) => {
 			published: dates[1],
 			revised: dates[0],
 			alternateUrl: alternateUrl,
-			thumbnail: thumbnailUrlPath || '/404/index.png',
+			thumbnail: thumbnailUrlPath || '/404/index.webp',
 			className: className
 		}
 	};

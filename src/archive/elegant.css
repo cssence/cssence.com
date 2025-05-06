@@ -1,8 +1,7 @@
 .standout:has(table) {
 	position: relative;
-	margin-block: 2.625rlh 1.75rlh;
-	margin-inline: var(---p);
-	padding-block-end: .875rlh;
+	margin-block: 2.625rlh;
+	padding: 0;
 	overflow: auto hidden;
 }
 table {
@@ -15,7 +14,7 @@ table * {
 	overflow-wrap: normal;
 }
 thead th {
-	block-size: 5rem;
+	block-size: 5.5rem;
 	vertical-align: bottom;
 }
 thead i span {
@@ -61,11 +60,11 @@ th:first-child {
 	text-align: start;
 }
 tr {
-	background-color: var(--color-bg);
+	background-color: var(--color-bg-o);
 
 	&:focus-within,
 	:not(thead) > &:hover {
-		background-color: var(--color-bg-o);
+		background-color: var(--color-bg);
 	}
 }
 tbody :is(th, td) {
@@ -78,5 +77,6 @@ tbody data[value="0"] {
 	opacity: .4;
 }
 tfoot :is(th, td) {
+	padding-block-end: 1.5rem;
 	border-block-start: 1px solid;
 }
