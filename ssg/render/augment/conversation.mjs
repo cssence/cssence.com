@@ -26,6 +26,16 @@ const modify = (content, meta) => {
 			};
 			if (content[i].includes('data-unavailable')) {
 				comment.unavailable = content[i].match(/data-unavailable="([^"]+)"/)[1];
+			} else if (!comment.own) {
+				let handle = content[i + 1].match(/<b>([^<]+)/)?.[1];
+				if (!handle.startsWith('@')) {
+					handle = handle.split(' ').map((part) => part[0]);
+					if (handle.length === 1) {
+						console.log(handle);
+					}
+					handle = `${handle[0]}${handle.pop()}`;
+				}
+				content[i + 1] = content[i + 1].replace('><b>', ` data-u="${handle}"><b>`);
 			}
 			if (content[i].includes('data-hook')) {
 				content[i] = content[i].replace(' data-hook', '');

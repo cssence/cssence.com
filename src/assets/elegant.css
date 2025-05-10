@@ -25,7 +25,7 @@ html {
 	background-position: calc(50% - 26px) -1px;
 	background-size: var(--_s) var(--_s), calc(var(--_s)/5) calc(var(--_s)/5);
 	color: var(--color-text);
-	font: 100%/1.5 system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", "Noto Sans", "DejaVu Sans", sans-serif;
+	font: 100%/1.5 Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 	overflow: hidden scroll;
 
 	@media (width >= 75em) {
@@ -208,6 +208,43 @@ img + small,
 [data-chain="continue"] small::before {
 	content: "↳ " / "";
 }
+#comments ~ article h3 > :is(a, span)::before {
+	content: attr(data-u) / "";
+	float: inline-end;
+	aspect-ratio: 1;
+	block-size: 2.375rem;
+	margin-block: -.5625rem .25rem;
+	margin-inline: var(--p) 2px;
+	border-radius: 50%;
+	outline: 1px solid var(--color-accent);
+	outline-offset: 1px;
+	line-height: 2.375rem;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+}
+@media (width < 48em) {
+	#comments ~ article h3 {
+		text-wrap: auto;
+
+		> :is(a, span)::before {
+			margin-block-start: 2px;
+		}
+		b::after {
+			content: "\0a";
+			white-space: pre;
+		}
+	}
+}
+#comments ~ article h3 > a:where([data-u^="@"])::before {
+	text-align: start;
+	font-size: .75rem;
+	font-weight: 400;
+	text-indent: -.5ex;
+}
+#comments ~ article h3 > span::before {
+	background: url("/about/matt/photo.jpg") center / cover no-repeat;
+}
 header {
 	display: grid;
 	gap: .1875rem;
@@ -274,7 +311,6 @@ header img {
 		display: flex;
 		flex-direction: column;
 		position: relative;
-		overflow: hidden;
 		isolation: isolate;
 		block-size: 6.5rlh;
 		margin-block-start: 0;
@@ -283,6 +319,7 @@ header img {
 		padding-inline: var(--p);
 		background-color: var(--color-bg-o);
 		text-shadow: 0 0 2px var(--color-bg-o);
+		overflow: hidden;
 
 		& + & {
 			margin-block-start: 1px;
@@ -889,7 +926,6 @@ header br,
 	display: none;
 }
 .visually-hidden {
-	overflow: hidden;
 	position: absolute;
 	z-index: 1;
 	aspect-ratio: 1;
@@ -898,4 +934,5 @@ header br,
 	clip: rect(0,0,0,0);
 	border: 0;
 	white-space: nowrap;
+	overflow: hidden;
 }
