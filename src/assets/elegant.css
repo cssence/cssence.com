@@ -223,6 +223,9 @@ img + small,
 	white-space: nowrap;
 	overflow: hidden;
 }
+#comments ~ article[data-unavailable] h3 > a::before {
+	outline-style: dashed;
+}
 @media (width < 48em) {
 	#comments ~ article h3 {
 		text-wrap: auto;
