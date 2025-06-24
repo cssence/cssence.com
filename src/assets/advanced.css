@@ -139,7 +139,8 @@ img + small {
 	font-size: .75rem;
 	line-height: 1.5;
 }
-h1,
+p:has(+ h1),
+h1, .h1,
 h2, .h2,
 h3,
 h1 + p:not(:last-child),
@@ -226,6 +227,10 @@ img + small,
 p > small:only-child {
 	display: block;
 }
+p:has(+ h1),
+h1 + p:not(.h1, :last-child) {
+	line-height: 1.375;
+}
 h1, .h1,
 h2, .h2,
 h3 {
@@ -237,6 +242,7 @@ h3 {
 h3 {
 	font-size: 1.25rem;
 }
+p:has(+ h1),
 h1,
 h1 + p:not(:last-child) {
 	margin-bottom: 0;
@@ -246,13 +252,13 @@ h1, .h1 {
 	margin-top: 0;
 	font-size: 2.5rem;
 }
-h1:has(+ .h1) {
+header > :first-child:has(+ :is(h1, .h1)) {
 	font-size: inherit;
 	line-height: 1.375;
 }
+p + h1,
 h1 + p:not(:last-child) {
 	margin-top: .25rem;
-	line-height: 1.375;
 }
 time {
 	white-space: nowrap;

@@ -360,8 +360,9 @@ header img {
 		}
 	}
 }
-h1:has(+ .h1) {
+header > :first-child:has(+ :is(h1, .h1)) {
 	font-size: inherit;
+	font-weight: 700;
 	line-height: inherit;
 }
 h1:not(:has(+ .h1)), .h1 {
