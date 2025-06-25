@@ -10,6 +10,7 @@ const add = (content, meta) => {
 	const noThumbnail = showAllPosts ? '/404/index.webp' : undefined;
 
 	for (const section of meta.page.sections) {
+		if (!section.offset) continue; // [home:rss]
 		const listItems = [];
 		for (const card of section.cards) {
 			const date = card.published || card.revised;

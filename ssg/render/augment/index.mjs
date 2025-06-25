@@ -17,11 +17,8 @@ const determine = (content, meta) => {
 			query.toc.split(',').forEach((key) => allEntries = allEntries.concat(meta.toc[key]));
 			return allEntries;
 		} else if (query.filter === '[home]') {
-			const newestByCategory = [];
-			['c-essay', 'c-editorial', 'c-extra', 'c-event', 'c-note', 'c-link'].forEach((className) => {
-				newestByCategory.push(meta.toc.posts.find((post) => post.className === className));
-			});
-			return newestByCategory;
+			const added = Object.fromEntries(['c-essay', 'c-editorial', 'c-extra', 'c-event', 'c-note', 'c-link'].map((key) => [key, 0]));
+			return meta.toc.posts.filter((post) => (added[post.className] += 1) <= 2);
 		} else if (query.filter === '[hidden]') {
 			return meta.toc.indexes.filter(unIndexed).concat(meta.toc.pages.filter(unEgged));
 		} else if (query.filter === '.c-article') {
@@ -87,13 +84,21 @@ const determine = (content, meta) => {
 			meta.page.revised = ts;
 			meta.toc.byPath[meta.page.path].revised = ts;
 		};
-		const query = meta.page.sections[0].query;
-		const cards = meta.page.sections[0].cards;
 		if (meta.page.path === '/') {
 			setRevised({ revised: meta.date.build });
+			meta.page.sections.push({ id: 'recent', query: '[home:rss]', cards: meta.page.sections[0].cards }); // non-existing section
+			const newestByCategoryInCuratedOrder = [];
+			['c-essay', 'c-editorial', 'c-extra', 'c-event', 'c-note', 'c-link'].forEach((className) => {
+				newestByCategoryInCuratedOrder.push(meta.page.sections[0].cards.find((post) => post.className === className));
+			});
+			meta.page.sections[0].cards = newestByCategoryInCuratedOrder;
+			meta.page.sections[0].total = newestByCategoryInCuratedOrder.length;
 		} else if (meta.page.path === '/about/about/') {
+			const cards = meta.page.sections[0].cards;
 			setRevised(cards.slice(2).sort((a, b) => (b.published || b.revised) < (a.published || a.revised) ? -1 : 1)[0]);
 		} else if (meta.page.sections.length === 1) {
+			const cards = meta.page.sections[0].cards;
+			const query = meta.page.sections[0].query;
 			const byRevisionDesc = (a, b) => b.revised < a.revised ? -1 : 1;
 			if (query.sort) cards.sort(byRevisionDesc);
 			if (query.latest === 'last') {
