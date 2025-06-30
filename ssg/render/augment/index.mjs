@@ -78,6 +78,16 @@ const determine = (content, meta) => {
 		}
 	}
 
+	if (meta.page.path === '/') {
+		meta.page.sections.push({ id: 'recent', query: '[home:rss]', cards: meta.page.sections[0].cards }); // non-existing section
+		const newestByCategoryInCuratedOrder = [];
+		['c-essay', 'c-editorial', 'c-extra', 'c-event', 'c-note', 'c-link'].forEach((className) => {
+			newestByCategoryInCuratedOrder.push(meta.page.sections[0].cards.find((post) => post.className === className));
+		});
+		meta.page.sections[0].cards = newestByCategoryInCuratedOrder;
+		meta.page.sections[0].total = newestByCategoryInCuratedOrder.length;
+	}
+
 	if (!meta.page.revised) {
 		const setRevised = (latest) => {
 			const ts = latest.published || latest.revised;
@@ -86,13 +96,6 @@ const determine = (content, meta) => {
 		};
 		if (meta.page.path === '/') {
 			setRevised({ revised: meta.date.build });
-			meta.page.sections.push({ id: 'recent', query: '[home:rss]', cards: meta.page.sections[0].cards }); // non-existing section
-			const newestByCategoryInCuratedOrder = [];
-			['c-essay', 'c-editorial', 'c-extra', 'c-event', 'c-note', 'c-link'].forEach((className) => {
-				newestByCategoryInCuratedOrder.push(meta.page.sections[0].cards.find((post) => post.className === className));
-			});
-			meta.page.sections[0].cards = newestByCategoryInCuratedOrder;
-			meta.page.sections[0].total = newestByCategoryInCuratedOrder.length;
 		} else if (meta.page.path === '/about/about/') {
 			const cards = meta.page.sections[0].cards;
 			setRevised(cards.slice(2).sort((a, b) => (b.published || b.revised) < (a.published || a.revised) ? -1 : 1)[0]);

@@ -28,3 +28,6 @@ main h2 + ul > li:is(:nth-child(4), :nth-child(9)) {
 main ul ul li {
 	margin-top: .75rem;
 }
+#all-warning {
+	font-style: italic;
+}

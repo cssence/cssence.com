@@ -4,15 +4,23 @@ const createFeed = (urlPath, meta) => {
 
 	const url = meta.getPermalink(urlPath);
 
-	const needsRootOverride = urlPath === '/';
+	const TITLE_PREFIX = 'CSSence';
 	const content = [];
 	content.push('<?xml version="1.0" encoding="utf-8"?>');
 	content.push('<?xml-stylesheet href="/assets/rss.xsl" type="text/xsl"?>');
 	content.push('<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">');
 	content.push('<channel>');
-	const rssTitle = urlPath === '/all/' ? 'CSSence' : `CSSence: ${needsRootOverride ? 'Recent' : meta.toc.byPath[urlPath].title.split(' ')[0]}`;
-	content.push(`<title>${rssTitle}</title>`);
-	content.push(`<description>${needsRootOverride ? 'Recent posts, but every blog post type represented.' : meta.toc.byPath[urlPath].description}</description>`);
+	if (urlPath === '/') {
+		content.push(`<title>${TITLE_PREFIX}: Recent</title>`);
+		content.push('<description>Recent posts, but every blog post type represented.</description>');
+	} else {
+		if (urlPath === '/all/') {
+			content.push(`<title>${TITLE_PREFIX}</title>`);
+		} else {
+			content.push(`<title>${TITLE_PREFIX}: ${meta.toc.byPath[urlPath].title.split(' ')[0]}</title>`);
+		}
+		content.push(`<description>${meta.toc.byPath[urlPath].description}</description>`);
+	}
 	content.push('<language>en</language>');
 	content.push(`<link>${url}${meta.RSS_FILE}</link>`);
 	content.push('<managingEditor>rss-feed@cssence.com (Matthias Zöchling)</managingEditor>');
