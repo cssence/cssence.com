@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" class="c-link">
+<head>
+<title>Full-width backgrounds</title>
+<meta name="description" content="The ancient border-image property has a trick up its sleeve.">
+<link rel="alternate" type="text/html" href="https://mas.to/@CSSence/114940855733262265" title="Thread on mas.to">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Full-width backgrounds</h1>
+<p><i>Link</i><br><time>2025-07-30T06:51:12Z</time></p>
+</header>
+<div>
+<h2 class="visually-hidden" id="comments">Message thread</h2>
+<article>
+<h3><a href="https://typetura.social/@scott/114937229485927445"><b>Scott Kellum</b> wrote on <time>2025-07-29T15:29:00Z</time></a></h3>
+<p>The cheap and easy way to get a full-bleed background on an element:</p>
+<pre><code>background-color: var(--background);
+box-shadow: 33vw 0 0 0 var(--background), -33vw 0 0 0 var(--background);</code></pre>
+</article>
+<article>
+<h3><a href="https://indieweb.social/@stairjoke/114937458292570864"><b>Wenzel Massag</b> wrote on <time>2025-07-29T16:27:11Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@scott@typetura.social</span>.</small></p>
+<p>or use border.</p>
+</article>
+<article>
+<h3><a href="https://typetura.social/@scott/114937515918796114"><b>Scott Kellum</b> wrote on <time>2025-07-29T16:41:50Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@stairjoke@indieweb.social</span>.</small></p>
+<p>Border affects layout where box-shadow does not, so if I don’t want to spend a ton of time wrangling a complex layout, I use box-shadow.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/114940855733262265"><b>Matthias Zöchling</b> wrote on <time>2025-07-30T06:51:12Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@scott@typetura.social</span>.</small></p>
+<p><code>border-image</code> will do the trick, as shown in this article from Temani Afif:<br><span aria-hidden="true">🔗 </span><a href="https://www.smashingmagazine.com/2024/01/css-border-image-property/#full-width-backgrounds">“The complex but awesome CSS border-image property”</a></p>
+<p>Sure, the syntax breaks my head every time I see it, but there are zero side effects, and decades of browser support.</p>
+</article>
+<article>
+<h3><a href="https://typetura.social/@scott/114943178136868913"><b>Scott Kellum</b> wrote on <time>2025-07-30T16:41:49Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@CSSence@mas.to</span>.</small></p>
+<p>Oh wow, this is wild! I always thought border-image was related to border in the box model, but I guess it’s totally unrelated? That’s so weird, but useful.</p>
+</article>
+</div>
+</article>
+</main>
+</body>
+</html>
