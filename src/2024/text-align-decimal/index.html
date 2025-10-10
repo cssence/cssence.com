@@ -21,7 +21,7 @@
 <p>This would align numbers by the decimal point. Alas, there’s not one browser that supports this syntax.</p>
 <p>But we can work around this! Eric Meyer came up with a really <a href="https://meyerweb.com/eric/thoughts/2022/08/15/table-column-alignment-with-variable-transforms/">advanced solution using CSS transforms.</a> If you’re looking for something simpler, albeit less versatile, I may have something in store for you.</p>
 <p>Sadly the HTML needs to do some heavy lifting. On the upside, it degrades perfectly if the CSS doesn’t load. 🙂</p>
-<p>Let’s work our way towards the solution.</p>
+<p>Let’s work our way toward the solution.</p>
 <h2>Adding padding</h2>
 <p>We pad our numbers with trailing zeros, and at the same time wrap the padded part inside a new element. This works for any number of digits in the fractional part, but here’s how it looks like if we want two digits after the decimal point:</p>
 <pre><a href="/2024/text-align-decimal/code.step-1.html">View HTML code.</a></pre>
