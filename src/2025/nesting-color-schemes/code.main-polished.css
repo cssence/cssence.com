@@ -1,0 +1,16 @@
+:root,
+main {
+	background-color: var(--color-bg);
+	color: var(--color-text);
+}
+/* Provide all colors, but enforce dark scheme … */
+:root {
+	--color-bg: light-dark(white, black);
+	--color-text: light-dark(black, white);
+	color-scheme: dark;
+}
+/* …, then adhere to preference. */
+main {
+	--color-bg: light-dark(white, #1a1a1a);
+	color-scheme: light dark;
+}

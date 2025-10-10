@@ -1,0 +1,24 @@
+:root,
+header, nav, footer {
+	background-color: var(--color-bg);
+	color: var(--color-text);
+}
+/* Provide colors for dark … */
+:root {
+	--color-bg: #1a1a1a;
+	--color-text: white;
+	color-scheme: light dark;
+}
+/* … and light color scheme. */
+@media (prefers-color-scheme: light) {
+	:root {
+		--color-bg: white;
+		--color-text: black;
+	}
+}
+/* Ignore preference on the site's chrome. */
+header, nav, footer {
+	--color-bg: black;
+	--color-text: white;
+	color-scheme: dark;
+}

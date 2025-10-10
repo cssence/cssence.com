@@ -1,0 +1,22 @@
+:root,
+main {
+	background-color: var(--color-bg);
+	color: var(--color-text);
+}
+/* Enfore dark color scheme on the top level … */
+:root {
+	--color-bg: black;
+	--color-text: white;
+	color-scheme: dark;
+}
+/* …, then open things up on the main area. */
+main {
+	--color-bg: #1a1a1a;
+}
+@media (prefers-color-scheme: light) {
+	main {
+		--color-bg: white;
+		--color-text: black;
+		color-scheme: light;
+	}
+}

@@ -1,0 +1,10 @@
+@media (prefers-color-scheme: dark) {
+	.example.comparison {
+		color-scheme: light;
+	}
+}
+@media (prefers-color-scheme: light) {
+	.example.comparison {
+		color-scheme: dark;
+	}
+}

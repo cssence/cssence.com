@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="c-essay">
+<head>
+<title>Nesting color schemes</title>
+<meta name="description" content="This is indeed about having dark and light mode on the same page.">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Nesting color schemes</h1>
+<p><i>Essay</i><br><time>2025-10-11T12:40:00Z</time><br><img src="/2025/nesting-color-schemes/index.webp" alt=""></p>
+</header>
+<div>
+<p>When I wrote about the <a href="/2024/six-levels-of-dark-mode/">six (eight) levels of dark mode</a>, I briefly mentioned that the CSS <code>color-scheme</code> declaration can be set anywhere, not just on the root element. But until now I’ve never explained how this can be put to good use. Well, here I go.</p>
+<p>Two ways come to mind, limiting a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme">color scheme</a> to a particular area, and proper nesting. But first things first, do you agree that setting <code>color-scheme</code> should always be done, even in the most mundane scenarios?</p>
+<h2>No nesting</h2>
+<p>If you are among those who say “so far I’ve never set <code>color-scheme</code>, though I did create a light and dark scheme on several occasions”, then let me tell you the difference may be subtle, as described in <a href="https://blog.jim-nielsen.com/2020/color-scheme-property/">“Don’t Forget the color-scheme Property”</a> by Jim Nielson. TL;DR, always set <code>color-scheme</code> or its <a href="https://web.dev/articles/color-scheme">corresponding HTML meta tag,</a> even if your project only supports a single color scheme; it’ll neaten up things like form elements and scrollbars.</p>
+<pre><a href="/2025/nesting-color-schemes/code.foundation.css">View CSS code.</a></pre>
+<blockquote cite="https://developer.apple.com/videos/play/wwdc2019/511/">
+<p>Specifying the values light and dark on the :root element lets the rendering engine know both modes are supported by the document. This changes the default text and background colors of the page to match the current system appearance. Standard form controls, scroll bars, and other named system colors also change their look automatically.</p>
+<footer>— <cite><a href="https://developer.apple.com/videos/play/wwdc2019/511/">“Supporting Dark Mode in Your Web Content”</a> (video)</cite></footer>
+</blockquote>
+<p>We’ve established a baseline. Let’s continue this thought: Whenever you <strong>invert your color scheme on a page,</strong> you should adjust <code>color-scheme</code> accordingly. But why would you even do that?</p>
+<h2>Simple nesting</h2>
+<p>We’ll proceed with the isolated case, the one where a specific area on a web page should be displayed in a specific color scheme, either always dark or light, or even the opposite of the user’s preference.</p>
+<p>By the end of last year I found myself going down a Forced Colors Mode rabbit hole, and so I created—among other things—a <a href="/2024/css-system-colors/">test page for CSS System Colors</a>, where I’m showcasing the system colors in both light and dark mode, side by side. To pull this off, the HTML contains the same color palette twice. If the overall page is shown in light mode, I’ll make sure that the palette used for comparison will be shown in dark mode, and vice versa.</p>
+<pre><a href="/2025/nesting-color-schemes/code.opposites-attract.css">View CSS code.</a></pre>
+<p>Obviously it’s going to be even more straightforward if we decide upfront where to show a specific scheme.</p>
+<pre><a href="/2025/nesting-color-schemes/code.opposites-enforced.css">View CSS code.</a></pre>
+<p>As interesting as this may be, it’s more on the niche side of things. Is there something more practical?</p>
+<h2>Advanced nesting</h2>
+<p>Let’s take a regular web page.</p>
+<pre><a href="/2025/nesting-color-schemes/code.base.html">View HTML code.</a></pre>
+<p>Now imagine you want the site’s chrome (header, navigation and footer) to be always shown in dark color scheme, but the actual content should adhere to the user’s preference, i.e. light or dark.</p>
+<p>There are several ways to achieve this.</p>
+<h3>Finicky</h3>
+<p>You could decide to control light and dark mode on the <code>:root</code> level, and override all areas that aren’t <code>&lt;main&gt;</code> with the dark scheme.</p>
+<pre><a href="/2025/nesting-color-schemes/code.main-finicky.css">View CSS code.</a></pre>
+<p>The reason why I’m not too fond of this approach has to do with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior"><code>overscroll-behavior</code>.</a> When overscrolling is possible and active, the “wrong” background color will become visible. In other words, in light mode you’ll see a light background in the overscroll area, which feels out of place atop a dark header and below a dark footer.<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup></p>
+<h3>Flipped</h3>
+<p>So let’s flip things around. We’ll start with a dark color scheme on <code>:root</code>, and then release the tension on <code>&lt;main&gt;</code>.</p>
+<pre><a href="/2025/nesting-color-schemes/code.main-flipped.css">View CSS code.</a></pre>
+<p>That works, but it’s kinda verbose. And we are micromanaging <code>color-scheme</code> instead of putting it in charge.</p>
+<p>This we can easily fix. Instead of doing a color scheme override inside the <code>prefers-color-scheme</code> media query, we can move the declaration to the initial <code>&lt;main&gt;</code> block, where we set both values, not just <code>light</code>.</p>
+<p>But why stop there, how about we do this completely without media queries?</p>
+<h3>Polished</h3>
+<p>We need to call in a favor and ask our friend <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark"><code>light-dark()</code></a> for help. This CSS color function became Baseline <em>Newly available</em> 18&nbsp;months ago.</p>
+<pre><a href="/2025/nesting-color-schemes/code.main-polished.css">View CSS code.</a></pre>
+<p>Looks neat, but there’s a catch: At the time of writing the <code>light-dark()</code> function can only handle colors, so the moment you do something more complex you end up with media queries anyway. Well, …</p>
+<p>… I guess I wanted to end this article with the most concise example. Here’s hoping that you gained some insight on how to nest color schemes yourself. Nothing is off the table, you can pick and choose from all the methods I’ve shown here.<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Footnote #2">[2]</a></sup></p>
+<p>Let me know what you came up with.</p>
+<aside class="standoff -large" aria-labelledby="spoiler" style="--offset:1.5rem">
+<h2 id="spoiler">Spoiler</h2>
+<p>I’m nesting color schemes in the new design for this blog that will go live soon. And sure enough, I have an article in the queue that covers all the nitty-gritty that went into it.</p>
+</aside>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://codepen.io/cssence/pen/zxrzVKN">View “Nesting color schemes” on CodePen.</a></p>
+<section>
+<h2 id="fns">Footnotes</h2>
+<ol>
+<li id="fn-1">Overscrolling is just one of several flaws this method has, but I wanted to add it regardless, because certain page layouts exist where it is actually the right tool for the job. <a href="#ref-fn-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="fn-2">Case in point, if you head over to the accompanying Codepen example in which I compare the three <a href="#advanced-nesting">advanced nesting</a> methods, you’ll notice that the scrollbar color in the finicky one differs from the other two. There is no right or wrong way, it depends on what you are trying to achieve. <a href="#ref-fn-2" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+</ol>
+</section>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/115359703036302829, https://bsky.app/profile/cssence.com/post/3m2xzzjrpys25"><b>Matthias Zöchling</b> wrote on <time>2025-10-11T12:40:00Z</time></span></h3>
+<p>I could’ve written a simple article about the <code>color-scheme</code> property. I could’ve written a simple article about the <code>light-dark()</code> function.</p>
+<p>But nooo.</p>
+<p>I had to nerd out and write about nesting color schemes. 🙄</p>
+<p><a href="/2025/nesting-color-schemes/">cssence.com/2025/nesting-color-schemes</a></p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>

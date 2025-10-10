@@ -1,0 +1,5 @@
+:root {
+	color-scheme: light dark;
+}
+/* Set both values if multiple color schemes are supported
+   (or just the one that matches the implemented scheme). */
