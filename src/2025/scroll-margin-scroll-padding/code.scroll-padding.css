@@ -1,0 +1,4 @@
+html {
+	--header-block-size: 5rem;
+	scroll-padding-block-start: var(--header-block-size);
+}

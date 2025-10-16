@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="c-extra">
+<head>
+<title>Instant snapport</title>
+<meta name="description" content="How to tweak the optimal viewing region of the scrollport.">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Instant snapport</h1>
+<p>Tidbits about <code>scroll-margin</code> and <code>scroll-padding</code>.</p>
+<p><i>Extra</i><br><time>2025-10-16T05:08:00Z</time><br><img src="/2025/scroll-margin-scroll-padding/index.webp" alt=""></p>
+</header>
+<div>
+<p>Sorry about the title, I guess it won’t create an instant rapport with you, dear reader. But I find it fascinating to peruse MDN and encounter words like <a href="https://developer.mozilla.org/en-US/docs/Glossary/Scroll_snap#snapport">“snapport”</a>, that surely make no sense to people outside of web development. But here we are, so I might as well add the definition:</p>
+<blockquote cite="https://developer.mozilla.org/en-US/docs/Glossary/Scroll_snap#snapport">
+<p>The <strong>snapport</strong> is the area of the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Scroll_container#scrollport">scrollport</a> that is used as the alignment container for the scroll snap areas when calculating snap positions. By default, it is the same as the scroll container’s visual viewport, but is the area of the scrollport defined by the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding"><code>scroll-padding</code></a> property. The <a href="https://developer.mozilla.org/en-US/docs/Glossary/Scroll_snap#snap_area">snap areas</a> are aligned to the scrollport.</p>
+</blockquote>
+<p>While I’ve used <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin"><code>scroll-margin</code></a> before, little did I know that <code>scroll-padding</code> is out there too. So let’s take a closer look.</p>
+<p>It is tempting to think that this article is about <a href="https://drafts.csswg.org/css-scroll-snap/">CSS Scroll Snapping</a>, but there is already a ton of great information out there, from this <a href="https://web.dev/articles/css-scroll-snap">introduction on web.dev</a> all the way to <a href="https://developer.chrome.com/blog/scroll-snap-events">Scroll Snap events.</a> Which is why I want to focus on <strong>the <code>:root</code> of all things</strong> instead.</p>
+<p>Both <code>scroll-margin</code> and <code>scroll-padding</code> are shorthand properties allowing you to set all physical directions, namely top, right, bottom and left. Their block and inline counterparts also exist, and I’ll be using the logical properties in the examples below. <a href="/2024/is-css-alive/">So should you.</a></p>
+<h2>Scroll margin</h2>
+<p>The following snippet gets tossed around every once in a while, and you may even have seen it infiltrating CSS resets.</p>
+<pre><a href="/2025/scroll-margin-scroll-padding/code.scroll-margin.css">View CSS code.</a></pre>
+<p>This adds breathing room before any element that has an <code>id</code> attribute, e.g. a heading or footnote, but also form inputs. So whenever something occurs that scrolls such an element into view—like clicking an anchor link—, the element won’t be glued to the top of the viewport, but instead will be offset by whatever value you’ve thrown at it. In such a case I tend to use <a href="/2024/relative-css-units/">(relative) line height as a unit.</a> I usually tweak it in a way to still show the bottom part of the last sentence of the previous paragraph.</p>
+<h2>Scroll padding</h2>
+<p>Unlike scroll margin, the scroll padding is something you want to apply to the scrollable container itself. A primary reason to apply this to the root element is to prevent anchor link targets being hidden underneath a sticky header.</p>
+<pre><a href="/2025/scroll-margin-scroll-padding/code.scroll-padding.css">View CSS code.</a></pre>
+<p>Let me quote MDN one more time:</p>
+<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding">
+<p>The <code>scroll-padding-*</code> properties define offsets for the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars), or to put more breathing room between a targeted element and the edges of the scrollport.</p>
+</blockquote>
+<hr>
+<p>Before I found out about <code>scroll-padding</code>, I’ve used <code>scroll-margin</code> to do both, i.e. increase the value when there is also a sticky header to be taken into account, but not only does it make sense to have separation of concerns, the scroll padding can be of great help when it comes to accessibility, specifically with <a href="https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html">WCAG Success Criterion 2.4.11: Focus Not Obscured (Minimum).</a></p>
+<p>I’ve added both to a mildly interactive CodePen, so you can experience how having and not having a scroll offset makes a difference every time you click an anchor link or navigate with the (<kbd>Shift</kbd>+)<kbd>Tab</kbd> key.</p>
+<p>That’s it from me. If you want to learn even more, I encourage you to read <a href="https://codersblock.com/blog/anchor-links-and-how-to-make-them-awesome/">“Anchor Links and How to Make Them Awesome”</a> by Will Boyd. I found out about this article while writing mine, and I like the closing paragraph:</p>
+<blockquote cite="ttps://codersblock.com/blog/anchor-links-and-how-to-make-them-awesome/">
+<p>Another note, when I was researching <code>scroll-margin</code> and <code>scroll-padding</code>, I saw a lot of sources that confusingly only talked about their relevance to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll_snap">scroll snapping</a>, to the point that I wondered if using them for page anchors was an unintentional hack. This is not the case, as I discovered that the CSS scroll snap spec itself was <a href="https://www.w3.org/TR/css-scroll-snap-1/#change-2019-clarify-nonsnapping">amended to address this confusion specifically.</a></p>
+</blockquote>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://codepen.io/cssence/pen/MYKObbV">View “Scroll margin &amp; scroll padding” on CodePen.</a></p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/115382949856140551, https://bsky.app/profile/cssence.com/post/3m3ceffu3fc2f"><b>Matthias Zöchling</b> wrote on <time>2025-10-16T05:08:00Z</time></span></h3>
+<p>#CSS quick tip: How to tweak the optimal viewing region of the scrollport…<br><a href="/2025/scroll-margin-scroll-padding/">“Instant snapport”</a>.</p>
+</article>
+<article>
+<h3><a href="https://mastodon.social/@boldewyn/115383864249726091"><b>Manuel Strehl</b> wrote on <time>2025-10-16T12:34:05Z</time></a></h3>
+<p>cool, thanks! I finally start to grasp the difference between scroll-margin and scroll-padding.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/115384030226335915"><b>Matthias Zöchling</b> wrote on <time>2025-10-16T13:16:18Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@boldewyn@mastodon.social</span>.</small></p>
+<p>Glad it helps. 🙌</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>
