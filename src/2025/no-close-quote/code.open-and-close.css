@@ -1,0 +1,6 @@
+blockquote::before {
+	content: open-quote;
+}
+blockquote::after {
+	content: no-close-quote;
+}

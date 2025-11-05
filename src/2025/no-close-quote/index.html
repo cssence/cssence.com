@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" class="c-extra">
+<head>
+<title>No close quote?</title>
+<meta name="description" content="There are multiple ways to do ornamental quotation marks.">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>No close quote?</h1>
+<p>CSS quotes &amp; the depth counter.</p>
+<p><i>Extra</i><br><time>2025-11-05T11:49:00Z</time><br><img src="/2025/no-close-quote/index.webp" alt=""></p>
+</header>
+<div>
+<p>I watched Kevin Powell go through <a href="https://youtu.be/o1HzOJfgugE">five super useful CSS properties that don’t get enough attention.</a> When he talked about isolation, I saw his use of <code>open-quote</code> and thought to myself: “This will cause problems down the line.” Seconds later <em>Editing Kevin Powell (with headphones)</em> chimed in to make an amendment on how to address the issue. In doing so he also made me aware that <code>no-close-quote</code> is a thing. Well done.</p>
+<p>At that point I had to revisit the whole topic on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/quotes">CSS quotes</a>, which in turn led to this post.</p>
+<h2>The problem</h2>
+<p>In the video, Kevin added a visually appealing (read: purely ornamental) curly quote to a <code>&lt;blockquote&gt;</code> element. Here’s the important bit:</p>
+<pre><a href="/2025/no-close-quote/code.open.css">View CSS code.</a></pre>
+<p>Doing the above will increase the <strong>depth counter</strong>. The counter’s value determines which pair of open/close quotation marks from the <code>quotes</code> declaration to render. This is meant to affect nested items, but a stray declaration that isn’t closed also affects subsequent items.</p>
+<h2>Prevent issues on subsequent items</h2>
+<p>Assuming our design doesn’t require an ornamental close quote, we could specify <code>close-quote</code> in the after pseudo element and hide it, keeping the designer and the depth counter happy.</p>
+<p>Luckily we don’t need to, this is where <code>no-close-quote</code> comes in. By adding it as the content of an after pseudo element, the depth counter that got increased by our use of <code>open-quote</code> goes down by one again, but nothing is shown on screen. Now subsequent elements that also make use of quotes will start at the proper depth level.</p>
+<pre><a href="/2025/no-close-quote/code.open-and-close.css">View CSS code.</a></pre>
+<p>But! If you happen to have an inline quotation <code>&lt;q&gt;</code> element nested inside your blockquote, the depth counter is still up by one. So you end up with different quotation marks on those, which may or may not be what you want.</p>
+<h2>Tackle nested items</h2>
+<p>In the past my approach to avoid tampering with the depth counter has been to simply specify the actual character instead of <code>open-quote</code> in the content declaration. However, doing so won’t give you language-aware quotation marks. If your ornamental quote should anyhow look the same everywhere, fine. But if not, manually adding styles via the <code>:lang()</code> pseudo class ain’t gonna be fun:</p>
+<pre><a href="/2025/no-close-quote/code.workaround.css">View CSS code.</a></pre>
+<p>While writing this piece I realized that the best of all worlds is to simply dump both values on the before pseudo element, which keeps the depth counter at bay:</p>
+<pre><a href="/2025/no-close-quote/code.open-close.css">View CSS code.</a></pre>
+<hr>
+<p>You can compare the methods and their impact by looking at my accompanying CodePen. Which method to choose depends on the result you try to achieve. At least now you know.</p>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://codepen.io/cssence/pen/vELMwJj">View “Ornamental quotes” on CodePen.</a></p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/115497059757490345, https://bsky.app/profile/cssence.com/post/3m4uzy3nge22k"><b>Matthias Zöchling</b> wrote on <time>2025-11-05T11:49:00Z</time></span></h3>
+<p>I watched @kevinpowell.co go through “five super useful CSS properties that don’t get enough attention”, and his use of <code>open-quote</code> led to this piece about #CSS quotation marks and the depth counter:<br><a href="/2025/no-close-quote/">cssence.com/2025/no-close-quote</a></p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>

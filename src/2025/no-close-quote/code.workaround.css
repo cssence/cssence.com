@@ -1,0 +1,7 @@
+blockquote::before {
+	content: "“";
+}
+blockquote:lang(de)::before {
+	content: "„";
+}
+/* etc. */
