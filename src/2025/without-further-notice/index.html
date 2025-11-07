@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="c-editorial">
+<head>
+<title>Redesigning in the open - Without further notice</title>
+<meta name="description" content="The quiet way: How to not (or how not to) announce a redesign.">
+</head>
+<body>
+<main>
+<article>
+<header>
+<p>Redesigning in the open</p>
+<h1>Without further notice</h1>
+<p><i>Editorial</i><br><time>2025-11-07T11:15:00Z</time><br><img src="/2024/redesigning-in-the-open/index.webp" alt=""></p>
+</header>
+<div>
+<p>New design coming soon?</p>
+<blockquote cite="https://cssence.com/2024/redesigning-in-the-open/">
+<p><strong>No, not on this site</strong> in <a href="/about/versions/">the foreseeable future.</a> I like my current way of doing incremental changes.</p>
+</blockquote>
+<p>… is <a href="/2024/redesigning-in-the-open/">what I wrote last year</a> about this site’s design, only to start working on another redesign a couple of months later.</p>
+<p>Well, guess what, after working incrementally on it from February to May, I think I’m done. But now it's November, and you still see the to-be-replaced design. What gives?</p>
+<p>Despite all those incremental changes, there never was a banner message indicating an ongoing redesign, stating “if things look wonky, that’s why”, because those changes remained hidden. In the unlikely event that someone headed over the my Settings page, they could have encountered the new design in the <em>page style</em> dropdown, which is where is was (and still is) buried for all those months. In other words, I’ve been <strong>redesigning in the open, hidden behind a flag.</strong></p>
+<p>This may not work for everybody, as not everyone has multiple styles on their site, let alone a Settings page that allows you to choose a style, but there are other ways to pull this off in open. Alas, they are not the scope of today’s article.</p>
+<p>Personally, my stategy has served me well, because the new design uses a lot new CSS features that are not yet classified as <em>widely available</em> in <a href="https://web.dev/baseline/">Baseline</a> terms, so it remains to be seen when I’m going to make the switch, i.e. when the new design will become the default. To make things worse, I still like my old design more. Obviously, it will eventually happen, because writing CSS in 2025 is different, especially when compared to the CSS I wrote four years ago, when my last major redesign took place. In other words, looks aside, I like the new CSS under the hood a lot.</p>
+<hr>
+<p>Whenever I do a major redesign, I jot down a couple of noteworthy facts, which is exactly what I’ll do for the remainder of this editorial.</p>
+<h2>Starting from scratch</h2>
+<p>A clean slate can be very liberating, but in my case I had to be backwards-compatible at the same time, because changing the HTML meant I had to retrofit such changes into the existing design(s). Luckily, the semantic markup I had in place was very capable of housing the new design too, only minor tweaks were necessary. Most importantly, no additional wrapper divs had to be introduced. 😌</p>
+<h2>Included features</h2>
+<p>Okay, no more stalling, let me run through the interesting bits.</p>
+<h3>Native CSS nesting</h3>
+<p>I started using native nesting for everything: Not just regular selectors, but also pseudo elements and media queries. When I wrote <a href="/2024/is-css-alive/">»Is CSS alive«</a>, my verdict on nesting has been <q cite="https://cssence.com/2024/is-css-alive/">Take it or leave it.</q> To my own surprise I grew very fond of it. Just make sure that your selectors do not get unnecessary complex, don’t let your nesting levels run too deep, and avoid <a href="https://dev.to/kilianvalkhof/the-gotchas-of-css-nesting-58m9">the gotchas that come with nesting.</a></p>
+<h3>Nested color scheme</h3>
+<p>Yeah, the new design features a dark color scheme on the top level, but the actual content adapts to user preference. Confused? I already blogged about this technique in depth in my <a href="/2025/nesting-color-schemes/">»Nesting color schemes«</a> essay.</p>
+<h3>Logical properties</h3>
+<p>I’m a big fan of logical properties, and by starting from scratch I was finally able to use them exclusively.</p>
+<h3>Media queries &amp; breakpoints</h3>
+<p>I was leaning towards <a href="https://youtu.be/AMPKmh98XLY">Intrinsic Web Design</a> to let my content roam free, in hopes of needing little to no breakpoints. But I didn’t achieve that in this redesign. It turned out to be almost the opposite, for the first time I even have additional tweaks for screen sizes below 360&nbsp;pixels, intended for smartwatches. In said smartwatch territory I even made sure that my site works on circular displays.</p>
+<figure id="figure-1"><img loading="lazy" src="smartwatch.webp" alt="How the top part of this article might look like when viewed on a circular smart watch display." style="--frame: ">
+<figcaption>The new design on a 240x240pixel circular screen.</figcaption>
+</figure>
+<h3>Layout …</h3>
+<p>Floats are back. Yes, you read that right, but obviously I’m using floats for their true purpose, not in the hacky way we did layout in the past. Floats are for minor things, the heavy lifting is done with Grid and Flexbox. And I even ended up with my first use of <code>display: contents</code>.</p>
+<h3>… and more</h3>
+<p>Speaking of using a property for the first time, in the new design I even made use of <code>border-image</code><sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup>. Just like floats that’s something from ye olden days. We used border images to <a href="/2011/sliding-door-no-more/">do weird things in the past</a><sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Footnote #2">[2]</a></sup>, but there are lots of <a href="https://www.smashingmagazine.com/2024/01/css-border-image-property/">clever ways you can use them today.</a></p>
+<p>That’s about it, but if you look closely you’ll find <code>text-wrap</code>’s pretty and balance options, the <code>clamp()</code> function, and more. Color is the only thing I haven’t fully embraced yet, I’m still predominantely using hex notation and the sRGB color space.</p>
+<p>One last thing: Like in previous redesigns, the site navigation (and footer) is a defining feature, and this time I had some fun with the number of columns.</p>
+<h2>Still hidden</h2>
+<p>I’ve named my new page style “Elegant”. As stated, at the time of writing this post, it hasn’t become the default yet, I’m still showing the old “Advanced” style. You can head over to <a href="/settings/">Settings</a> and flip the switch yourself.</p>
+<p>With all that being said, I have a strange feeling that the next redesign is right around the corner.</p>
+<section>
+<h2 id="fns">Footnotes</h2>
+<ol>
+<li id="fn-1">To be exact, I only have a single use case, I’m applying it to some images in my blog posts, namely those that should not touch the edge of their <code>&lt;figure&gt;</code> container. While photos usually go edge-to-edge, for certain graphics I use the border image to add a colored frame that matches their dominant background color. <a href="#figure-1">The screenshot above</a> even has a transparent frame. <a href="#ref-fn-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="fn-2">Case in point, that link goes to an old article of mine called »Sliding door, no more« from 2011. It starts with an introduction that is <em>floated</em> to the right in the new design—well, actually to the <code>inline-end</code>, you do remember I said logical properties? 😉 <a href="#ref-fn-2" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+</ol>
+</section>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/115510256498379995, https://bsky.app/profile/cssence.com/post/3m4zxlgkqis2t"><b>Matthias Zöchling</b> wrote on <time>2025-11-07T11:15:00Z</time></span></h3>
+<p>I have a philosophical thought experiment for you:<br>If a redesign happens in the open, and no one is around to see it, did it go live?</p>
+<p><a href="/2025/without-further-notice/">cssence.com/2025/without-further-notice</a></p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>
