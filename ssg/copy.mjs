@@ -8,7 +8,7 @@ import { cp } from 'fs/promises';
 			filter: (src, _target) => {
 				const fileOrDirectory = src.split('/').pop();
 				if (!fileOrDirectory.includes('.')) return true;
-				return !fileOrDirectory.startsWith('code.');
+				return !fileOrDirectory.startsWith('code.') && !fileOrDirectory.startsWith('og-image.');
 			},
 			recursive: true
 		});

@@ -26,7 +26,8 @@ const modify = (content, meta) => {
 		`<meta property="og:url" content="${meta.getPermalink(meta.page.path)}">`,
 		`<meta property="og:title" content="${meta.page.title}">`,
 		`<meta property="og:description" content="${meta.page.description}">`,
-		`<meta property="og:image" content="${meta.getPermalink(meta.page.thumbnail)}">`,
+		`<meta property="og:image" content="${meta.getPermalink('/assets/og.jpg')}">`,
+		'<meta property="fediverse:creator" name="fediverse:creator" content="CSSence@mas.to">',
 	];
 	const branding = [
 		'<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/apple-touch-icon.png">',
