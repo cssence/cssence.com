@@ -553,6 +553,12 @@ pre {
 	overflow: hidden;
 	clear: both;
 }
+html:has(link[rel="stylesheet"][href$="prism-a11y-dark.css"]) pre {
+	--color-bg-o: #202225;
+}
+html:has(link[rel="stylesheet"][href$="prism-a11y-light.css"]) pre {
+	--color-bg-o: #fff;
+}
 .standoff {
 	--bs: 1px;
 	inline-size: min(calc(100% - var(--p)), 37.25rem);
