@@ -69,7 +69,7 @@ try {
 			}
 		});
 	}
-	if (colorScheme && ['dark', 'light'].includes(pageStyle)) document.querySelector('meta[name="color-scheme"]').setAttribute('content', colorScheme);
+	if (colorScheme && ['dark', 'light'].includes(colorScheme)) document.querySelector('meta[name="color-scheme"]').setAttribute('content', colorScheme);
 	if (pageStyle !== 'none') onReady(highlight);
 
 	const shareLink = document.querySelector('#contribute + p a:last-child');
