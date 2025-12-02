@@ -1,1 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><path fill="var(--color-bg)" d="M0 0h64v64H0z"/><line x1="9" y1="9" x2="55" y2="55" stroke="var(--color-text)"/><line x1="9" y1="55" x2="55" y2="9" stroke="var(--color-text)"/></svg>

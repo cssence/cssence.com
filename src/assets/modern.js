@@ -18,7 +18,7 @@ try {
 	})();
 
 	const highlight = () => {
-		if (!document.querySelectorAll('code[class]').length) return;
+		if (!document.querySelectorAll('pre').length) return;
 		const addStyle = (href) => {
 			const s = document.createElement('link');
 			s.rel = 'stylesheet';
@@ -37,11 +37,14 @@ try {
 			}
 			return s;
 		};
-		let shTheme = 'prism.css';
 		const sh = localStorage.getItem('syntax-highlighting');
 		if (sh === 'none') return;
-		if (!sh && pageStyle === 'elegant') shTheme = 'prism-a11y.css';
-		if (sh && ['a11y-dark', 'a11y-light'].includes(sh)) shTheme = `prism-${sh}.css`;
+		let shTheme = 'prism-a11y.css';
+		if (!sh) { // auto light/dark
+			if (!pageStyle) shTheme = 'prism.css'; // but no auto in advanced page style
+		} else if (['a11y-dark', 'a11y-light'].includes(sh)) {
+			shTheme = `prism-${sh}.css`;
+		}
 		addStyle(`/assets/${shTheme}`);
 		loadJS('/assets/prism.js', () => {
 			Prism.highlightAll();

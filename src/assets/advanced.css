@@ -369,11 +369,14 @@ footer.metadata {
 pre {
 	overflow-x: auto;
 	overflow-y: hidden;
-	background-color: var(--prism-a11y-color-background, var(--color-dark));
+	background-color: var(--color-dark);
 	color: var(--color-light);
 	line-height: 1.5;
 	-moz-tab-size: 4;
 	tab-size: 4;
+}
+html:has(link[rel="stylesheet"][href$="prism-a11y-light.css"]) pre {
+	--color-bg-o: var(--color-bg-subtle);
 }
 pre code {
 	display: block;

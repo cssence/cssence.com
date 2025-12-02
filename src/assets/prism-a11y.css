@@ -13,6 +13,7 @@ pre {
 	--prism-a11y-color-text-purple: hsla(282, 100%, 41%, 1);
 	--prism-a11y-color-text-red: hsla(2, 80%, 47%, 1);
 	--prism-a11y-color-text-yellow: hsla(43, 74%, 30%, 1);
+	background-color: var(--color-bg-o, var(--prism-a11y-color-background));
 	color: var(--prism-a11y-color-text-no-token);
 }
 @media (prefers-color-scheme: dark) {

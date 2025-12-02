@@ -22,7 +22,7 @@ const init = () => {
 		if (allYear) return 'all-year';
 		return duration;
 	})();
-	document.querySelector('form').insertAdjacentHTML('beforeend', `<aside hidden class="figure standoff"><h3 class="subtle">Preview</h3><p class="preview"></p></aside><h3 class="subtle">Information</h3><p class="info" aria-live="polite">${cndMsgs[celebrateCssNakedDay].replace('CND', '<a href="/about/css-naked-day/">CSS Naked Day</a> (CND)')}</p>`);
+	document.querySelector('form').insertAdjacentHTML('beforeend', `<h3 class="subtle">Information</h3><p class="info" aria-live="polite">${cndMsgs[celebrateCssNakedDay].replace('CND', '<a href="/about/css-naked-day/">CSS Naked Day</a> (CND)')}</p>`);
 
 	const map = {
 		'page-style': { data: 'data-style', storable: ['none', 'basic', 'elegant']},
@@ -37,16 +37,6 @@ const init = () => {
 		} else {
 			localStorage.removeItem(id);
 		}
-	});
-	Object.keys(map).forEach((id) => {
-		document.querySelector('.preview').setAttribute(map[id].data, document.getElementById(id).value);
-	});
-	const previews = {};
-	const currentPreview = document.getElementById('page-style').value;
-	document.getElementById('page-style').querySelectorAll('option').forEach(async (option) => {
-		const response = await fetch(`preview.${option.value}.svg`);
-		previews[option.value] = await response.text();
-		if (option.value === currentPreview) document.querySelector('.preview').innerHTML = previews[currentPreview];
 	});
 
 	const styleChange = (hasStyle) => {
@@ -74,13 +64,9 @@ const init = () => {
 		let msg = 'Hit ‘Save’ to persist your changes.';
 		const id = event.target.id;
 		if (id === 'page-style') {
-			document.querySelector('.preview').innerHTML = previews[document.getElementById(id).value];
 			const hasStyle = event.target.value !== 'none';
 			styleChange(hasStyle);
 			if (!hasStyle) msg = 'Syntax highlighting is not available if you choose to go without a page style.';
-		}
-		if (Object.keys(map).includes(event.target.id)) {
-			document.querySelector('.preview').setAttribute(map[event.target.id].data, document.getElementById(id).value);
 		}
 		document.querySelector('.info').innerText = msg;
 	});
