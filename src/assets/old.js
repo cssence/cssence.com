@@ -5,8 +5,6 @@ try {
 		if (document.readyState !== 'loading') return cb();
 		document.addEventListener('DOMContentLoaded', cb);
 	};
-	var root = document.getElementsByTagName('html')[0];
-	root.className = root.className.replace('advanced', 'basic');
 	onReady(function () {
 		var s = document.querySelectorAll('link[rel="alternate stylesheet"], link[rel="stylesheet"][title="Custom Style"],');
 		for (var i = 0; i < s.length; ++i) s[i].parentNode.removeChild(s[i]);

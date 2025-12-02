@@ -41,7 +41,7 @@ try {
 		if (sh === 'none') return;
 		let shTheme = 'prism-a11y.css';
 		if (!sh) { // auto light/dark
-			if (!pageStyle) shTheme = 'prism.css'; // but no auto in advanced page style
+			if (pageStyle === 'advanced') shTheme = 'prism.css'; // but no auto in advanced page style
 		} else if (['a11y-dark', 'a11y-light'].includes(sh)) {
 			shTheme = `prism-${sh}.css`;
 		}
@@ -52,7 +52,7 @@ try {
 	};
 
 	let pageStyle = localStorage.getItem('page-style');
-	if (pageStyle && !['none', 'basic', 'elegant'].includes(pageStyle)) pageStyle = null;
+	if (pageStyle && !['none', 'basic', 'advanced'].includes(pageStyle)) pageStyle = null;
 	if (celebrateCssNakedDay) {
 		pageStyle = 'none';
 		onReady(() => {

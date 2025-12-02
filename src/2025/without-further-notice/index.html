@@ -10,7 +10,7 @@
 <header>
 <p>Redesigning in the open</p>
 <h1>Without further notice</h1>
-<p><i>Editorial</i><br><time>2025-11-07T11:15:00Z</time><br><img src="/2024/redesigning-in-the-open/index.webp" alt=""></p>
+<p><i>Editorial</i><br><time data-revised="2025-12-02T15:09:00Z">2025-11-07T11:15:00Z</time><br><img src="/2024/redesigning-in-the-open/index.webp" alt=""></p>
 </header>
 <div>
 <p>New design coming soon?</p>
@@ -18,7 +18,7 @@
 <p><strong>No, not on this site</strong> in <a href="/about/versions/">the foreseeable future.</a> I like my current way of doing incremental changes.</p>
 </blockquote>
 <p>… is <a href="/2024/redesigning-in-the-open/">what I wrote last year</a> about this site’s design, only to start working on another redesign a couple of months later.</p>
-<p>Well, guess what, after working incrementally on it from February to May, I think I’m done. But now it's November, and you still see the to-be-replaced design. What gives?</p>
+<p>Well, guess what, after working incrementally on it from February to May, I think I’m done. But now it’s November, and you still see the to-be-replaced design. What gives?</p>
 <p>Despite all those incremental changes, there never was a banner message indicating an ongoing redesign, stating “if things look wonky, that’s why”, because those changes remained hidden. In the unlikely event that someone headed over the my Settings page, they could have encountered the new design in the <em>page style</em> dropdown, which is where is was (and still is) buried for all those months. In other words, I’ve been <strong>redesigning in the open, hidden behind a flag.</strong></p>
 <p>This may not work for everybody, as not everyone has multiple styles on their site, let alone a Settings page that allows you to choose a style, but there are other ways to pull this off in open. Alas, they are not the scope of today’s article.</p>
 <p>Personally, my stategy has served me well, because the new design uses a lot new CSS features that are not yet classified as <em>widely available</em> in <a href="https://web.dev/baseline/">Baseline</a> terms, so it remains to be seen when I’m going to make the switch, i.e. when the new design will become the default. To make things worse, I still like my old design more. Obviously, it will eventually happen, because writing CSS in 2025 is different, especially when compared to the CSS I wrote four years ago, when my last major redesign took place. In other words, looks aside, I like the new CSS under the hood a lot.</p>
@@ -49,6 +49,10 @@
 <p>I’ve named my new page style “Elegant”. As stated, at the time of writing this post, it hasn’t become the default yet, I’m still showing the old “Advanced” style. You can head over to <a href="/settings/">Settings</a> and flip the switch yourself.</p>
 <p>With all that being said, I have a strange feeling that the next redesign is right around the corner.</p>
 <section>
+<h2 id="updates">Update</h2>
+<p id="update-1"><time class="update" datetime="2025-12-02">December 2, 2025:</time> I pulled the switch, the <em>Elegant page style</em> is now the default.</p>
+</section>
+<section>
 <h2 id="fns">Footnotes</h2>
 <ol>
 <li id="fn-1">To be exact, I only have a single use case, I’m applying it to some images in my blog posts, namely those that should not touch the edge of their <code>&lt;figure&gt;</code> container. While photos usually go edge-to-edge, for certain graphics I use the border image to add a colored frame that matches their dominant background color. <a href="#figure-1">The screenshot above</a> even has a transparent frame. <a href="#ref-fn-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
@@ -63,7 +67,10 @@
 <p>I have a philosophical thought experiment for you:<br>If a redesign happens in the open, and no one is around to see it, did it go live?</p>
 <p><a href="/2025/without-further-notice/">cssence.com/2025/without-further-notice</a></p>
 </article>
-<p>No comments have been added so far.</p>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/115650667380184994, https://bsky.app/profile/cssence.com/post/3m6zavcrhps2m"><b>Matthias Zöchling</b> wrote on <time>2025-12-02T15:09:00Z</time></span></h3>
+<p>“Baseline widely available” is a good thing to look out for when it comes to CSS features, but given that my blog’s core audience uses the latest browsers, I just went all in and made my new design the default.</p>
+</article>
 </aside>
 </article>
 </main>
