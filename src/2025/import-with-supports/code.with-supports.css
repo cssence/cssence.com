@@ -1,0 +1,3 @@
+/* ✅ Does work: */
+@import "legacy.css" supports(not (display: contents));
+@import "modern.css" supports(display: contents);

@@ -1,0 +1,7 @@
+/* ❌ Does NOT work: */
+@supports not (display: contents) {
+    @import "legacy.css";
+}
+@supports (display: contents) {
+    @import "modern.css";
+}

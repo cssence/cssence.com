@@ -1,0 +1,4 @@
+/* ❌ Does NOT work: */
+@media (prefers-color-scheme: dark) {
+    @import "dark.css";
+}

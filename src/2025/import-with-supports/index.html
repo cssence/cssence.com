@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="c-extra">
+<head>
+<title>@import ⚭ @supports</title>
+<meta name="description" content="How to load a stylesheet conditionally based on feature detection.">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>@import ⚭ @supports</h1>
+<p><i>Extra</i><br><time>2025-12-03T14:40:00Z</time><br><img src="/2025/import-with-supports/index.webp" alt=""></p>
+</header>
+<div>
+<p>You probably know that the <code>@charset</code> declaration can only be placed at the very beginning of a stylesheet. We have a similar situation with <code>@import</code>, here’s what the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@import">MDN article on the ability to import a stylesheet from within another stylesheet</a> has to say:</p>
+<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@import">
+<p>An <code>@import</code> rule <em>must</em> be defined at the top of the stylesheet, before any other at-rule (except <a href="/en-US/docs/Web/CSS/Reference/At-rules/@charset">@charset</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@layer">@layer</a>) and style declarations, or it will be ignored.</p>
+</blockquote>
+<p>The need to place it early on in the stylesheet comes at a cost, which is also mentioned in the same article:</p>
+<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@import">
+<p>The <code>@import</code> rule is not a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Syntax/Introduction#nested_statements">nested statement</a>. Therefore, it cannot be used inside <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Conditional_rules#at-rules_and_descriptors">conditional group at-rules</a>.</p>
+</blockquote>
+<p>Without nesting, we cannot put it inside a media query, so we cannot conditionally load a stylesheet based on screen size, color scheme, and the likes.</p>
+<pre><a href="/2025/import-with-supports/code.inside-media-query.css">View CSS example.</a></pre>
+<p>No big deal, because we have alternatives. Either we add media queries after the URL …</p>
+<pre><a href="/2025/import-with-supports/code.with-media-query.css">View CSS example.</a></pre>
+<p>… or we head over to the HTML and make use of the <code>&lt;link&gt;</code> element’s <code>media</code> attribute.</p>
+<pre><a href="/2025/import-with-supports/code.with-media-query.html">View HTML example.</a></pre>
+<p>Media queries aside, what about …</p>
+<h2>Feature detection?</h2>
+<p>Wouldn’t it be nice if we could load a stylesheet only for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@supports">browsers that support a CSS feature</a> we rely on, and another stylesheet for those that don’t? Sure, but as stated, no nesting.</p>
+<pre><a href="/2025/import-with-supports/code.inside-supports.css">View CSS example.</a></pre>
+<p>Luckily <code>@import</code> itself can take a <code>supports()</code> condition.</p>
+<pre><a href="/2025/import-with-supports/code.with-supports.css">View CSS example.</a></pre>
+<p>That’s all there is to it. For the record, <code>supports()</code> has <a href="https://caniuse.com/mdn-css_at-rules_import_supports">cross-browser support</a> since early 2024.</p>
+<p>Unlike media queries, when it comes to feature detection we don’t have an alternative in HTML. Simply adding a <code>supports</code> attribute to the <code>&lt;link&gt;</code> element could be tricky; spec authors would need to find a way to deal with this in browsers that do not yet support the attribute, otherwise they would always or never load these stylesheets. Well, maybe one day.</p>
+<p>For even more information, check out the <a href="https://css-tricks.com/almanac/rules/i/import/">CSS-Tricks almanac entry on @import.</a>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://codepen.io/cssence/pen/MYyPggg">View “@import with supports” on CodePen.</a></p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/115656214468516089, https://bsky.app/profile/cssence.com/post/3m73ppe5q7s2b"><b>Matthias Zöchling</b> wrote on <time>2025-12-03T14:40:00Z</time></span></h3>
+<p>#CSS quick tip: You can conditionally load a stylesheet based on feature detection.<br><a href="/2025/import-with-supports/">cssence.com/2025/import-with-supports</a></p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>
