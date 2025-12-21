@@ -30,10 +30,10 @@
 <p><a href="https://heather-buchel.com/blog/2024/03/letters-to-an-accessibility-advocate/">Heather Buchel wrote, </a><q cite="https://heather-buchel.com/blog/2024/03/letters-to-an-accessibility-advocate/">blog posts and articles are great, but seek out the experience and opinions of disabled users.</q> We do that frequently. But the last time we conducted another A11Y testing session with a blind tester, something unexpected happened that rocked me to my core.</p>
 <p>Consider the following HTML.</p>
 <pre><a href="/2025/accessibility-is-personal/code.label.html">View HTML example.</a></pre>
-<p>We got the complaint that this is unnecessary verbose. In their particular browser and screen reader combination<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Footnote #2">[2]</a></sup>, the label is announced as “clickable”. That makes sense, because it is: Clicking the label moves the focus to the input field.</p>
+<p>We got the complaint that this is unnecessarily verbose. In their particular browser and screen reader combination<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Footnote #2">[2]</a></sup>, the label is announced as “clickable”. That makes sense, because it is: Clicking the label moves the focus to the input field.</p>
 <p>To avoid that, to them the following markup would be an improvement.</p>
 <pre><a href="/2025/accessibility-is-personal/code.aria-label.html">View HTML example.</a></pre>
-<p>The <em>label &amp; form field pattern</em> is as old as HTML itself. The <em>aria-labelledby form field</em> on the other hand violates <a href="https://www.w3.org/TR/using-aria/#rule1">the first rule of ARIA.</a></p>
+<p>The <em>label &amp; form field</em> pattern is as old as HTML itself. The <em>aria-labelledby form field</em> on the other hand violates <a href="https://www.w3.org/TR/using-aria/#rule1">the first rule of ARIA.</a></p>
 <p>Don’t get me wrong, we get a ton of invaluable feedback out of those testing sessions. That feedback turns into bug reports, and we then move on to fix them. In this particular case however I had to draw the line, arguing we are not going to do that.</p>
 <p>But it got me thinking how we got here. Our tester has years of experience, did they over time encounter so many questionable websites that they eventually liked the subpar pattern more? Maybe, maybe not. Let’s not forget this may have been a preference, a feeling. Let’s not forget that our tester is not a web developer. They care about their user experience, not about the underlying HTML, CSS, JS and ARIA that it takes to create that experience.</p>
 <p>Accessibility is personal.</p>
@@ -54,16 +54,15 @@
 <h3><span data-href="https://mas.to/@CSSence/115748200689713668, https://bsky.app/profile/cssence.com/post/3maekvt4kw22u"><b>Matthias Zöchling</b> wrote on <time>2025-12-19T20:42:00Z</time></span></h3>
 <p>For my last blog post of 2025, let me end the year with something personal.<br><a href="/2025/accessibility-is-personal/">cssence.com/2025/accessibility-is-personal</a></p>
 </article>
-<article hidden>
-<h3><span data-href=""><b>Matthias Zöchling</b> wrote on <time>2025-12-22T09:30:00Z</time></span></h3>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/115762117434398050, https://bsky.app/profile/cssence.com/post/3makqof7ohk23"><b>Matthias Zöchling</b> wrote on <time>2025-12-22T07:48:00Z</time></span></h3>
 <p>I needed to get this off my chest.</p>
 <p>Are you doing web accessiblity work too? Can you relate? Did you blog about something similar? Let me know.</p>
 </article>
-<article hidden>
-<h3><span data-href=""><b>Matthias Zöchling</b> wrote on <time>2025-12-22T09:31:00Z</time></span></h3>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/115762123550633816"><b>Matthias Zöchling</b> wrote on <time>2025-12-22T07:50:00Z</time></span></h3>
 <p>Related: Big thanks to @laura@mastodon.laurakalbag.com for writing <a href="https://accessibilityforeveryone.site/">“Accessibility for Everyone”.</a> Back in 2017 I was already dabbling around in #A11Y topics for a while, but it was reading her book that convinced me this is what I want to persue.</p>
 </article>
-<p>No comments have been added so far.</p>
 </aside>
 </article>
 </main>
