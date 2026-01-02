@@ -660,7 +660,7 @@ aside[aria-labelledby="comments"]::before,
 			line-height: 0;
 		}
 		&:before,
-		a:nth-child(4) ~ a {
+		a:not([class]) {
 			order: 1;
 		}
 	}
