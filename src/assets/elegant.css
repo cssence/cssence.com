@@ -25,7 +25,7 @@ html {
 	background-position: calc(50% - 26px) -1px;
 	background-size: var(--_s) var(--_s), calc(var(--_s)/5) calc(var(--_s)/5);
 	color: var(--color-text);
-	font: 100%/1.5 Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+	font: 100%/1.5 system-ui, sans-serif;
 	overflow: hidden scroll;
 
 	@media (width >= 75em) {
