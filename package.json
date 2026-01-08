@@ -1,7 +1,7 @@
 {
   "name": "cssence.com",
   "homepage": "https://cssence.com/",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
@@ -23,6 +23,6 @@
     "version": "npm run version:minor"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=22"
   }
 }
