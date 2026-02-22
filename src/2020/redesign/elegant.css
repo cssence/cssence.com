@@ -2,9 +2,14 @@
 	--m: 0;
 	counter-reset: part;
 	list-style-type: disc;
-	margin: .75rlh 0;
+	margin-inline: 0;
 	padding: 0;
 	background-color: transparent;
+	box-shadow: none;
+}
+.standoff ol,
+.standoff ol + p {
+	--m: .75rlh;
 }
 .standoff li {
 	margin-inline-start: .875rem;

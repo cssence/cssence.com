@@ -504,9 +504,13 @@ form :disabled {
 	opacity: .4;
 }
 dd,
-li {
+li,
+#showcase ~ p {
 	margin-inline-start: max(1rem, var(--p));
 	padding-inline-start: 0;
+}
+#showcase ~ p {
+	display: list-item;
 }
 blockquote {
 	margin-inline-start: .0625rem;
@@ -605,25 +609,7 @@ pre code {
 	letter-spacing: .0625rem;
 	line-height: calc(20 / 15);
 	text-transform: uppercase;
-}
-#showcase ~ p {
-	padding-left: var(--p);
-	text-indent: var(---p);
-
-	&::before {
-		content: "</>" / "";
-		display: inline-block;
-		inline-size: var(--p);
-		letter-spacing: -.1em;
-		text-indent: 0;
-	}
-	@media (width < 48em) {
-		&::before {
-			font-size: .75rem;
-			transform: translateY(-.0625rem);
-		}
-	}
-}
+} 
 aside[aria-labelledby="comments"]::before,
 .metadata::before {
 	content: "";
