@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="c-essay">
+<head>
+<title>Breakpoints</title>
+<meta name="description" content="Screen resolutions and the 320/360 devide mishap.">
+<link rel="alternate stylesheet" media="screen" href="/2020/redesign/advanced.css" title="Advanced Style">
+<link rel="alternate stylesheet" media="screen" href="/2020/redesign/elegant.css" title="Elegant Style">
+</head>
+<body>
+<main>
+<article>
+<header>
+<p>Tales from the hospital</p>
+<h1>Breakpoints</h1>
+<p><i>Essay</i><br><time>2026-02-23T05:12:00Z</time><br><img src="/2026/tales-from-the-hospital/index.webp" alt=""></p>
+</header>
+<div>
+<aside class="standoff -large" aria-labelledby="miniseries">
+<p>This is the first blog post of my <a href="/2026/tales-from-the-hospital/"><strong id="miniseries">Tales from the hospital</strong></a> miniseries. I wrote about edge cases in web design that I encountered between surgeries.</p>
+<ol class="figure" aria-labelledby="miniseries">
+<li>Breakpoints</li>
+<li>Breaking points <em>(coming&nbsp;soon)</em></li>
+</ol>
+</aside>
+<p>The ambulance took me to the hospital. When it became clear that I wouldn’t be leaving anytime soon, I realized that I didn’t have my reading glasses with me. So to be able to read comfortably on my mobile phone, I went into Android’s accessibility settings and increased the font size. Android has two size options: Font size, to make text bigger or smaller; and display size, to make the whole UI bigger or smaller.</p>
+<figure><img src="/2026/breakpoints/android-font-size.webp" alt="Font size has seven values, display size has five. In both cases the default state is the one next to the left-most value." style="--frame:#eee">
+<figcaption>In Android&nbsp;16, you can adjust the font size under “Settings &gt; Accessibility &gt; Display size &amp;&nbsp;text”.</figcaption>
+</figure>
+<h2>Device pixels and CSS pixels</h2>
+<p>Back in the day, Peter-Paul Koch explained the <a href="https://www.quirksmode.org/mobile/viewports.html">difference between device pixels and CSS pixels,</a> something that is even more important on modern phones.</p>
+<p>Last year, when my trusty old OnePlus&nbsp;7 became unusable, I replaced it with a Pixel&nbsp;9. My new phone has a resolution of 1080×2424 at 422ppi, that is <em>very retina</em> in Apple speak. Using such a resolution in the web browser would render a tiny illegible desktop site. To avoid that, CSS pixels add a layer of abstraction. Initially the amount of actual pixels compared to CSS pixels was simply a 2x or 3x conversion<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup>, but these days fractional scaling is also common. With the abstraction in place, we end up with more manageable screen widths such as 360px, 375px, and 414px.</p>
+<p>In 2007, the first iPhone launched with a screen width of 320px. Back then CSS pixels would be the same as device pixels, so we had a 1x conversion.</p>
+<p>Several months ago, I tasked myself to find out if there are new phones for sale where you end up with a screen width of 320px in the mobile browser. My conclusion has been: No, 360px is the new minimum. While that result made my happy, in hindsight the whole exercise was completely unneccessary, as I’m about to explain.</p>
+<h2>Below 360px</h2>
+<p>The problem is, there is <a href="src/2019/no-agreed-upon-minimum-resolution">no agreed-upon minimum resolution.</a> Talking about 360px being some kind of “minimum” when it comes to CSS pixels means we only take the phone’s default accessibility settings into account.</p>
+<p>The moment we change those settings—like I did to make things more legible—, all assumptions go out the window. The Pixel&nbsp;9 gives me 414px in the browser, if and only if I have the default settings. When I got my new phone, I did increase the font size during initial setup. Dragging that font size slider to the right by just one notch meant I never got those 414px, and instead ended up with 360px. In hospital I moved the slider again, I’m now at the center position, and I only get a screen width of 324px, close to what the original iPhone had.</p>
+<p>Eventually I put this to the extreme, I bumped both font size and display size to their maximum values. I then ended up at 252px. Most websites will choke under such conditions. Obviously I did not keep the extreme. But now that I’m browsing the web with a screen width of 324px, I encounter lots of issues. Sometimes it’s merely about visual imperfection or imbalance, but quite often I run into the dreaded horizontal scrollbar.</p>
+<p>Let’s be very clear, there are countless phones out there with adjusted font or display size. Deteriorating eyesight is only one possible reason. People rely on these accessibility settings, without them their phones would be much harder—if not impossible—to use.</p>
+<p>To make matters worse, that added horizontal scrollbar fails <strong>WCAG’s Reflow (Level&nbsp;AA)</strong>, as <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">Success Criterion 1.4.10</a> explicitely mentions 320px:</p>
+<blockquote cite="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">
+<p>Content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for: Vertical scrolling content at a width equivalent to 320 CSS pixels.
+</p>
+</blockquote>
+<h2>Truncation is not a content strategy</h2>
+<p>More generally speaking, any design where the content cannot breathe should be avoided. But reality shows that there are many sites out there that break below 360px.<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Footnote #2">[2]</a></sup></p>
+<p>We can do better.</p>
+<p>If you moved on from Responsive Web Design and its (over)use of breakpoints, and embraced <a href="https://webdesignerdepot.com/a-simple-introduction-to-intrinsic-web-design/">Intrinsic Web Design,</a> you are probably halfway there. But I guess the one true way out of this mess is to have simpler designs to begin with.</p>
+<section>
+<h2 id="fns">Footnotes</h2>
+<ol>
+<li id="fn-1">Per axis, width and height, meaning one CSS pixel on a 2x screen is the equivalent of four (2×2) device pixels. <a href="#ref-fn-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="fn-2">When I worked on the <a href="/2025/without-further-notice/">latest design for this very site,</a> I too did include a breakpoint at 360px. I considered anything below that to be smartwatch territory and tweaked things accordingly. I even made sure to cater for circular displays. Classic overengineering. But with my current font size settings on Android, I always get the smartwatch version of my site. 🤦 <a href="#ref-fn-2" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+</ol>
+</section>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/116118317614565784, https://bsky.app/profile/cssence.com/post/3mfiwluovds2h"><b>Matthias Zöchling</b> wrote on <time>2026-02-23T05:12:00Z</time></span></h3>
+<p>Part One of my miniseries about edge cases in web design:</p>
+<p>What is the agreed-upon minimum resolution? 320px, 360px?</p>
+<p>It’s complicated.<br><a href="/2026/breakpoints/">cssence.com/2026/breakpoints</a></p>
+</article>
+<article>
+<h3><a href="https://social.tchncs.de/@mandrasch/116118453262301064"><b>Matthias Andrasch</b> wrote on <time>2026-02-23T06:09:44Z</time></a></h3>
+<p>Relevant question 👍🏻</p>
+<p>Regarding #a11y:<br>Isn’t <a href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html">WCAG 1.4.4 Resize Text</a> also relevant here for your article?</p>
+<p>And it should be noted that 1.4.10 applies to paragraphs of text, there are exceptions for tables and such where horizontal scrollbars are fine</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/116118734860132840"><b>Matthias Zöchling</b> wrote on <time>2026-02-23T07:21:00Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@mandrasch@social.tchncs.de</span>.</small></p>
+<p>Yes, good points, Matthias. Given that what you wrote now shows up as a comment underneath the article, that’s taken care of. 😉</p>
+</article>
+<article>
+<h3><a href="https://bsky.app/profile/grooovinger.bsky.social/post/3mfj3j62t6c2s"><b>Martin Grubinger</b> wrote on <time>2026-02-23T07:03:44Z</time></a></h3>
+<blockquote>
+<p>But I guess the one true way out of this mess is to have simpler designs to begin with.</p>
+</blockquote>
+<p>💯</p>
+</article>
+<article>
+<h3><a href="https://bsky.app/profile/vale.rocks/post/3mfj7emoqoc2z"><b>Declan Chidlow</b> wrote on <time>2026-02-23T08:12:00Z</time></a></h3>
+<p>Worth noting that KaiOS (third most popular mobile OS) phones have a standard screen size of 240×320, which is further eaten into by browser UI.</p>
+</article>
+<article>
+<h3><span data-href="https://bsky.app/profile/cssence.com/post/3mfj7od36ks2h"><b>Matthias Zöchling</b> wrote on <time>2026-02-23T08:18:00Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@vale.rocks</span>.</small></p>
+<p>Wow, that’s tiny. <a href="https://windowsreport.com/best-browser-for-kaios/">Thanks for the tip.</a></p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/116119268920799381, https://bsky.app/profile/cssence.com/post/3mfjejomrqs23"><b>Matthias Zöchling</b> wrote on <time>2026-02-23T09:37:00Z</time></span></h3>
+<p>I hate to admit it, but this article has been brought to you by the guy whose former site design intentionally featured two scrollbars on mobile.</p>
+<p><span aria-hidden="true">🔗 </span><a href="/2022/a-tale-of-two-scrollbars/">»A tale of two scrollbars«</a></p>
+<p>The so-called “Advanced” theme is no longer the default, but you can revisit it by heading over to the site’s <a href="/settings/">Settings</a> page.</p>
+</article>
+<article>
+<h3><a href="https://bsky.app/profile/mastrojs.bsky.social/post/3mfjwt6izp22k"><b>@mastrojs.bsky.social</b> wrote on <time>2026-02-23T15:12:00Z</time></a></h3>
+<p>It’s 640×480px like god intended.</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>
