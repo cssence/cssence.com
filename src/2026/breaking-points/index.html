@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="c-essay">
+<head>
+<title>Breaking points</title>
+<meta name="description" content="Will your site load under extreme conditions?">
+<link rel="alternate stylesheet" media="screen" href="/2020/redesign/advanced.css" title="Advanced Style">
+<link rel="alternate stylesheet" media="screen" href="/2020/redesign/elegant.css" title="Elegant Style">
+</head>
+<body>
+<main>
+<article>
+<header>
+<p>Tales from the hospital</p>
+<h1>Breaking points</h1>
+<p><i>Essay</i><br><time>2026-02-25T07:14:00Z</time><br><img src="/2026/tales-from-the-hospital/index.webp" alt=""></p>
+</header>
+<div>
+<aside class="standoff -large" aria-labelledby="miniseries">
+<p>This is the second blog post of my <a href="/2026/tales-from-the-hospital/"><strong id="miniseries">Tales from the hospital</strong></a> miniseries. I wrote about edge cases in web design that I encountered between surgeries.</p>
+<ol class="figure" aria-labelledby="miniseries">
+<li><a href="/2026/breakpoints/">Breakpoints</a></li>
+<li>Breaking points</li>
+<li>Untitled <small>(June&nbsp;2026)</small></li>
+</ol>
+</aside>
+<p>For the first couple of weeks I refused to join the hospital Wi-Fi, instead I relied on my phone’s data plan. The problem is, there are thousands of patients and personnel all connecting to the same set of cellular towers, which obviously puts a burden on the system.</p>
+<p>What I got in terms of connection speed I would rank somewhere slightly below 3G. Videos on YouTube would load sometimes, depending on the time of day. All other videos did not, I got network errors, most likely due to improperly handled timeouts.</p>
+<p>Videos aside, for the majority of websites to load in the first place, I had to be very patient. (Not a problem, I’ve been a patient after all. Get it? Sorry.)</p>
+<p>Here’s what I got trying to access a repository on GitHub. The HTML did load, but no stylesheets nor any JavaScript had been applied.</p>
+<figure><img src="/2026/breaking-points/github-without-css.webp" alt="My attempt to open the open-ui GitHub repository on a slow internet connection had essentially been a failure." style="--frame:#fff">
+</figure>
+<p>No stylesheets? Might as well use a <a href="/2026/text-based-web-browsers/">text-based web browser.</a></p>
+<h2>Client-side rendering</h2>
+<p>How well a site fares also depends on the underlying technology. If you are lucky, the server already returns your requested content in the retrieved HTML.</p>
+<p>On the other hand, if you have to wait for a large JavaScript file to get requested, downloaded, parsed, and executed, so that it then hopefully will fetch actual content, there’s a chance some step along the way won’t be successful, especially on a slow connection. As a result, you may be starring at a blank page indefinitely, usually without any information that something went wrong.</p>
+<p>Put simply, I have a feeling that the “HTML” you got looks like this, courtesy of <em>insert name of JavaScript framework:</em></p>
+<pre><a href="/2026/breaking-points/code.app.html">View HTML example.</a></pre>
+<p>Whenever that’s the case, <strong>someone did not do the <a href="/2021/the-day-the-website-stood-still/">progressive enhancement</a> homework.</strong></p>
+<h2>A call for lightweight websites</h2>
+<p>Don’t leave your site visitors empty-handed, do this instead:</p>
+<ul>
+<li>Prioritize content.</li>
+<li>Put emphasis on performance.</li>
+<li>Fail gracefully.</li>
+</ul>
+<p>I’ll keep this essay short, because I’m gonna hand over to Marijke Luttekes, who already wrote what needs to be said in her superb article <a href="https://marijkeluttekes.dev/blog/articles/2026/01/21/why-light-weight-websites-may-one-day-save-your-life/">»Why light-weight websites may one day save your life«.</a></p>
+<blockquote cite="https://marijkeluttekes.dev/blog/articles/2026/01/21/why-light-weight-websites-may-one-day-save-your-life/">
+<p>I do not see as much talk about website performance and size as I would. Usually, the people talking about it are the artisans who care, or those who have been told by tools like Lighthouse that their stats are wrong.</p>
+</blockquote>
+<p>On the upside, my own site performed well on said slow connection. Am I one of those artisans Marijke is talking about?</p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/116130032183771712, https://bsky.app/profile/cssence.com/post/3mfo52yq5sk2f"><b>Matthias Zöchling</b> wrote on <time>2026-02-25T07:14:00Z</time></span></h3>
+<p>Part Two of my miniseries about edge cases in web design:</p>
+<p>Will all the resources on your site finish loading?</p>
+<p>Only at the best of times.<br><a href="/2026/breaking-points/">cssence.com/2026/breaking-points</a></p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/116130038061363436"><b>Matthias Zöchling</b> wrote on <time>2026-02-25T07:15:00Z</time></span></h3>
+<p>Tl;dr, you can skip reading my article, instead head straight over to @mahryekuh@hachyderm.io’s site and read <a href="https://marijkeluttekes.dev/blog/articles/2026/01/21/why-light-weight-websites-may-one-day-save-your-life/">»Why light-weight websites may one day save your life«.</a></p>
+</article>
+<article>
+<h3><a href="https://hachyderm.io/@mahryekuh/116137871016892582"><b>Marijke Luttekes</b> wrote on <time>2026-02-26T16:27:56Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@CSSence@mas.to</span>.</small></p>
+<p>Thank you for mentioning me! Loved your article too.</p>
+<p>I hope you get well soon!</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/116138413487226674"><b>Matthias Zöchling</b> wrote on <time>2026-02-26T18:45:53Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@mahryekuh@hachyderm.io</span>.</small></p>
+<p>Aw, thanks for the kind words.</p>
+</article>
+<article>
+<h3><span data-href="https://bsky.app/profile/cssence.com/post/3mfo5xepdgk2f"><b>Matthias Zöchling</b> wrote on <time>2026-02-25T07:31:00Z</time></span></h3>
+<p>Seconds after I posted my latest article I ran into this gem from @dbushell.com, so I’m gonna link to it:<br><span aria-hidden="true">🔗 </span><a href="https://dbushell.com/2025/06/13/your-framework-is-showing-nextjs-error/">»Your Framework is Showing«</a></p>
+<p>Throwing such an error message towards your visitors violates my “Fail gracefully” bullet point.</p>
+</article>
+<article>
+<h3><a href="https://bsky.app/profile/dbushell.com/post/3mfo6dfxx2k2f"><b>David Bushell</b> wrote on <time>2026-02-25T07:37:00Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@cssence.com</span>.</small></p>
+<p>great article!</p>
+<p>yours i mean! and mine i guess 🙂</p>
+</article>
+<article>
+<h3><span data-href="https://bsky.app/profile/cssence.com/post/3mfo6ioqw4c2f"><b>Matthias Zöchling</b> wrote on <time>2026-02-25T07:40:00Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@dbushell.com</span>.</small></p>
+<p>Long Distance High Five! 🙂</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>
