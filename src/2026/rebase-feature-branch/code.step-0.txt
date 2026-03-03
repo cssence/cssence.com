@@ -1,0 +1,11 @@
+$ git checkout main
+Already on 'main'
+$ git log -n2 --pretty="format:%h %s"
+def0099c Modified latest commit on main
+def5544a Penultimate commit on main
+$ git checkout feat/xyz
+Switched to branch 'feat/xyz'
+$ git log -n3 --pretty="format:%h %s"
+abc1234d My cool new feature
+def8877b Outdated latest commit on main
+def6655a Penultimate commit on main

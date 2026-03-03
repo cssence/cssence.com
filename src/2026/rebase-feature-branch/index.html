@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="c-extra">
+<head>
+<title>Rebase feature branch</title>
+<meta name="description" content="Here’s what I do when my target branch got amended.">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Rebase feature branch</h1>
+<p><i>Extra</i><br><time>2026-03-04T09:55:00Z</time><br><img src="/2026/rebase-feature-branch/index.webp" alt=""></p>
+</header>
+<div>
+<p>When I write a blog post on this site, the workflow to get it live is quite simple: I commit the post on my main branch—aptly named “main”—and push it to GitHub. At this point <a href="https://www.netlify.com/">Netlify</a> takes over and publishes it. Then I let people on the social networks know that I wrote a thing. It’s quite likely that I get some comments this way, those then also become part of the blog post. To get the comments live, in most cases I modify the latest commit with <code>git commit --amend</code>, then I force-push the changes to make sure GitHub also has the modified commit. (I know, I know, but this is a pet project with just one maintainer.)</p>
+<p>When I work on a new feature or a blog post that takes a long time to write, I create feature branches, meaning on the main branch I’ll do a <code>git checkout -b feat/xyz</code>. However, if I created such a branch based on a commit that then got modified in the way described above, the branches will run out of sync.</p>
+<p>What follows is my take on getting out of this mess. To recap, the feature branch already contains a new commit, but the one before got amended on the main branch.</p>
+<pre><a href="/2026/rebase-feature-branch/code.step-0.txt">View command line output.</a></pre>
+<p>Getting it right again is a two-step process. On the feature branch, I remove the commit that is no longer found on the main branch. When there is only one feature commit, I’ll do an interactive rebase atop <code>HEAD~2</code>, where I then drop the outdated commit, but make sure to keep the new feature.</p>
+<pre><a href="/2026/rebase-feature-branch/code.step-1.txt">View command line output.</a></pre>
+<p>If I run into conflicts I need to address those, but in that particular kind of workflow there usually aren’t any.</p>
+<p>Getting the missing commit from the main branch back just takes another rebase, this time it’s not interactive.</p>
+<pre><a href="/2026/rebase-feature-branch/code.step-2.txt">View command line output.</a></pre>
+<p>In this state I could switch to the main branch and merge the feature branch.</p>
+<p>Is there a smoother way to do this? Let me know in the comments.</p>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://gist.github.com/cssence/b5070a735a52704472bc02d42371b8cd">View “git-rebase-feat.sh” on GitHub.</a></p>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/116170394986345154, https://bsky.app/profile/cssence.com/post/3mga2ntonic2d"><b>Matthias Zöchling</b> wrote on <time>2026-03-04T09:55:00Z</time></span></h3>
+<p>✍️ I usually write about HTML, CSS and JS. Doing a bit about git feels alien to me. Primarily I put it out there to attract crowd wisdom.<br><a href="/2026/rebase-feature-branch/">cssence.com/2026/rebase-feature-branch</a></p>
+</article>
+<p>No comments have been added so far.</p>
+</aside>
+</article>
+</main>
+</body>
+</html>

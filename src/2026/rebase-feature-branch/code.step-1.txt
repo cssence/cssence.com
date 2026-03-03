@@ -1,0 +1,7 @@
+$ git rebase -i HEAD~2
+# drop def8877b Outdated latest commit on main
+# pick abc1234d My cool new feature
+Successfully rebased and updated refs/heads/feat/xyz.
+$ git log -n2 --pretty="format:%h %s"
+abc1234d My cool new feature
+def6655a Penultimate commit on main
