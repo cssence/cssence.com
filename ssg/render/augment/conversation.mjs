@@ -79,7 +79,9 @@ const modify = (content, meta) => {
 			// TODO remove by the end of 2027, last problematic entry is /2024/css-has-power/
 			contributeSection[2] = `<p>Comments are closed, but feel free to ${shareLink}</p>`;
 		} else {
-			contributeSection[2] = `<p><a href="${remoteUrl}">Have your say on Mastodon,</a> or simply ${shareLink}</p>`;
+			const remoteDomain = remoteUrl.split('/')[2];
+			const remoteName = {'mas.to': 'Mastodon', 'bsky.app': 'Bluesky'}[remoteDomain] || remoteDomain;
+			contributeSection[2] = `<p><a href="${remoteUrl}">Have your say on ${remoteName},</a> or simply ${shareLink}</p>`;
 		}
 	}
 
