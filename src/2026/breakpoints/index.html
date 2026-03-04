@@ -12,7 +12,7 @@
 <header>
 <p>Tales from the hospital</p>
 <h1>Breakpoints</h1>
-<p><i>Essay</i><br><time>2026-02-23T05:12:00Z</time><br><img src="/2026/tales-from-the-hospital/index.webp" alt=""></p>
+<p><i>Essay</i><br><time data-revised="2026-03-05T19:45:00Z">2026-02-23T05:12:00Z</time><br><img src="/2026/tales-from-the-hospital/index.webp" alt=""></p>
 </header>
 <div>
 <aside class="standoff -large" aria-labelledby="miniseries">
@@ -33,7 +33,7 @@
 <p>In 2007, the first iPhone launched with a screen width of 320px. Back then CSS pixels would be the same as device pixels, so we had a 1x conversion.</p>
 <p>Several months ago, I tasked myself to find out if there are new phones for sale where you end up with a screen width of 320px in the mobile browser. My conclusion has been: No, 360px is the new minimum. While that result made my happy, in hindsight the whole exercise was completely unneccessary, as I’m about to explain.</p>
 <h2>Below 360px</h2>
-<p>The problem is, there is <a href="src/2019/no-agreed-upon-minimum-resolution">no agreed-upon minimum resolution.</a> Talking about 360px being some kind of “minimum” when it comes to CSS pixels means we only take the phone’s default accessibility settings into account.</p>
+<p>The problem is, there is <a href="/2019/no-agreed-upon-minimum-resolution">no agreed-upon minimum resolution.</a> Talking about 360px being some kind of “minimum” when it comes to CSS pixels means we only take the phone’s default accessibility settings into account.</p>
 <p>The moment we change those settings—like I did to make things more legible—, all assumptions go out the window. The Pixel&nbsp;9 gives me 414px in the browser, if and only if I have the default settings. When I got my new phone, I did increase the font size during initial setup. Dragging that font size slider to the right by just one notch meant I never got those 414px, and instead ended up with 360px. In hospital I moved the slider again, I’m now at the center position, and I only get a screen width of 324px, close to what the original iPhone had.</p>
 <p>Eventually I put this to the extreme, I bumped both font size and display size to their maximum values. I then ended up at 252px. Most websites will choke under such conditions. Obviously I did not keep the extreme. But now that I’m browsing the web with a screen width of 324px, I encounter lots of issues. Sometimes it’s merely about visual imperfection or imbalance, but quite often I run into the dreaded horizontal scrollbar.</p>
 <p>Let’s be very clear, there are countless phones out there with adjusted font or display size. Deteriorating eyesight is only one possible reason. People rely on these accessibility settings, without them their phones would be much harder—if not impossible—to use.</p>
@@ -46,6 +46,10 @@
 <p>More generally speaking, any design where the content cannot breathe should be avoided. But reality shows that there are many sites out there that break below 360px.<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Footnote #2">[2]</a></sup></p>
 <p>We can do better.</p>
 <p>If you moved on from Responsive Web Design and its (over)use of breakpoints, and embraced <a href="https://webdesignerdepot.com/a-simple-introduction-to-intrinsic-web-design/">Intrinsic Web Design,</a> you are probably halfway there. But I guess the one true way out of this mess is to have simpler designs to begin with.</p>
+<section>
+<h2 id="updates">Update</h2>
+<p id="update-1"><time class="update" datetime="2025-03-05">March 5, 2026:</time> Ignorance is bliss. I use Firefox as my main browser on desktop and mobile, and I wrote this article under the assumption that Safari and Chromium-based browsers would do similar things. Having just watched a <a href="https://youtu.be/XVIgKEOVfVg">video by Manuel Matuzović about <code>text-scale</code></a> (a new HTML meta tag) made me realize that’s not the case. That said, I think my article may become even more relevant once we start to see sites with the <code>text-scale</code> meta tag added, but I need to do some testing to make sure I fully understand what’s going on.</p>
+</section>
 <section>
 <h2 id="fns">Footnotes</h2>
 <ol>
@@ -98,6 +102,42 @@
 <article>
 <h3><a href="https://bsky.app/profile/mastrojs.bsky.social/post/3mfjwt6izp22k"><b>@mastrojs.bsky.social</b> wrote on <time>2026-02-23T15:12:00Z</time></a></h3>
 <p>It’s 640×480px like god intended.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/116178364610685061, https://bsky.app/profile/cssence.com/post/3mgdlvymlmk2q"><b>Matthias Zöchling</b> wrote on <time>2026-03-05T20:06:00Z</time></span></h3>
+<p>After watching <a href="https://youtu.be/XVIgKEOVfVg">@matuzo.at talk about the new HTML text-scale meta tag,</a> I had to revise my »Breakpoints« article from last week.</p>
+</article>
+<article>
+<h3><a href="https://mastodon.social/@benpate/116229599246259598"><b>Ben Pate</b> wrote on <time>2026-03-14T21:00:30Z</time></a></h3>
+<p>Thanks for sharing this article 🙂</p>
+<p>I constantly struggle with designs on mobile, so it’s good to get another viewpoint on how to do this well.</p>
+<p>I got excited about “intrinsic web design” as a potential solution for mobile layouts, but the linked article was absolutely buried in popup ads, and beyond unusable on my phone.</p>
+<p>Where would be a good starting point for learning about this technique?</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/116232062887454902"><b>Matthias Zöchling</b> wrote on <time>2026-03-15T07:42:09Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@benpate@mastodon.social</span>.</small></p>
+<p>Good question, I did struggle finding a proper article to link to. But if you are into video, <a href="https://youtu.be/AMPKmh98XLY">“Designing Intrinsic Layouts”</a> by @jensimmons@front-end.social is what I’d recommend to watch.</p>
+</article>
+<article>
+<h3><a href="https://fe.disroot.org/notice/B4H6iziA8InWnlRgSO"><b>@fasnix@fe.disroot.org</b> wrote on <time>2026-03-15T07:46:54Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@CSSence@mas.to</span>.</small></p><p></p>
+<p>Plus Jen's Lab Works at <a href="https://labs.jensimmons.com/">labs.jensimmons.com</a>.</p>
+<p>I’d love to do everything intrinsic, but it’s a challenge to develop complex layouts that way (for me, at least).</p>
+</article>
+<article>
+<h3><a href="https://ohai.social/@ChasMusic/116229666561677908"><b>@ChasMusic@ohai.social</b> wrote on <time>2026-03-14T21:32:44Z</time></a></h3>
+<p>¿Is there an authoritative site where below 360 pixels is presented as a standard, or is that just your take? We recently added below 350 pixels as a breakpoint - to accommodate WCAG 2.1 AA - but that was a judgement call on my part from playing with different zoom levels.</p>
+<p>Also, I think I read new Apple watches are in the 400-something pixel range, and I'm guessing this will increase in the future.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/116232222574253721"><b>Matthias Zöchling</b> wrote on <time>2026-03-15T08:22:46Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@ChasMusic@ohai.social</span>.</small></p>
+<p>Well, my only take is</p>
+<blockquote>
+<p>to have simpler designs to begin with.</p>
+</blockquote>
+<p>That anyhow means single column on mobile without any breakpoints in the 3xx-4xx range, and making sure that the browser’s default font size is adhered to. That way things should be legible on smartwatches and phones alike.</p>
 </article>
 </aside>
 </article>
