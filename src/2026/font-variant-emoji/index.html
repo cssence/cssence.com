@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" class="c-extra">
+<head>
+<title>Unicode Variation Selectors</title>
+<meta name="description" content="In case you haven’t heard of font-variant-emoji…">
+</head>
+<body>
+<main>
+<article>
+<header>
+<h1>Unicode Variation&nbsp;<wbr>Selectors</h1>
+<p>When did <code>font-variant-emoji</code> become a thing?</p>
+<p><i>Extra</i><br><time>2026-04-12T20:54:00Z</time><br><img src="/2026/font-variant-emoji/index.webp" alt=""></p>
+</header>
+<div>
+<p>While I knew that Unicode has <a href="https://en.wikipedia.org/wiki/Variation_Selectors_(Unicode_block)">Variation Selectors (VS),</a> I had no idea that CSS has a <code>font-variant-emoji</code> property. So it was time to connect the dots.</p>
+<blockquote>
+<p>A <strong>variation selector</strong> is a Unicode code point that, when placed immediately after another character, signals a specific presentation preference to the renderer. Variation selectors produce no visible output of their own — they are invisible modifiers.</p>
+<footer>— <cite><a href="https://symbolfyi.com/guides/variation-selectors-explained/">Variation Selectors: How Unicode Controls Text vs Emoji Display</a>, symbolfyi.com</cite></footer>
+</blockquote>
+<p>Of particular importance are the last two, VS15 and VS16, because they act as the emoji/text presentation toggle. It’s worth noting that not all emojis come in both forms, but if we <a href="https://www.unicode.org/emoji/charts/emoji-variants.html">look at those that do,</a> appending the variation selector can make a difference.</p>
+<blockquote>
+<p>When VS15 is appended to a symbol, it forces it to be displayed as text (black and white glyph). Contrarily, when VS16 is appended, it forces the color version to be displayed (emoji).</p>
+<footer>— <cite><a href="https://www.codejam.info/2021/11/emoji-variation-selector.html">Emoji displayed as monochrome symbol? 🤔 The Unicode variation selector</a>, codejam.info</cite></footer>
+</blockquote>
+<p>This leaves us with the default case, i.e. an emoji that is all by itself, without variation selector. How will it be displayed? While there should be a simple answer, in practice it’s a bit more complicated, as the article I just quoted explains.</p>
+<p>But what I actually wanted to talk about is what CSS adds to the mix with the <code>font-variant-emoji</code> property. Safari does not support the property (yet), in other browsers it only has an effect on emojis without a variation selector, which makes sense.</p>
+<p>Long story short, I created a test page<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup> to see how emojis are presented, and to see what the impact of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-variant-emoji">the different values</a> of <code>font-variant-emoji</code> is. While the values <code>text</code> and <code>emoji</code> live up to their purpose, the values <code>normal</code> and <code>unicode</code> always resulted in the text form, independent of operating system, web browser, and emoji used.<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Footnote #2">[2]</a></sup></p>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://codepen.io/cssence/pen/WbGYvXz">View “Unicode meets font-variant-emoji” on CodePen.</a></p>
+<section>
+<h2 id="fns">Footnotes</h2>
+<ol>
+<li id="fn-1">Fair warning, the test page ended up being unnecessarily complex, because initially I thought browsers have issues with monochromatic emojis in combination with <code>color-scheme</code> declarations that are not set on the <code>:root</code> level. But upon further investigation I realized that’s not the case. <a href="#ref-fn-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="fn-2">I’m not yet sure what to make of it. But as with most of <a href="/series/test-pages/">my test pages:</a> To be continued. <a href="#ref-fn-2" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+</ol>
+</section>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/116395556590205462, https://bsky.app/profile/cssence.com/post/3mje2f6rxos2u"><b>Matthias Zöchling</b> wrote on <time>2026-04-12T20:54:00Z</time></span></h3>
+<p>✍️ In case you haven’t heard of <code>font-variant-emoji</code>, neither have I.</p>
+<p><a href="https://cssence.com/2026/font-variant-emoji/">cssence.com/2026/font-variant-emoji</a></p>
+</article>
+<article>
+<h3><a href="https://bsky.app/profile/littlefair.ca/post/3mjerrbz2f22i"><b>Sam Littlefair</b> wrote on <time>2026-04-13T11:39:00Z</time></a></h3>
+<p>This is excellent! I hate it when I try to insert a Unicode pictogram and it renders as an emoji.</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>
