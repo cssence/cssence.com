@@ -48,6 +48,9 @@ hr {
 	border-top: 1px dashed;
 	color: inherit;
 }
+summary {
+	width: fit-content;
+}
 sub {
 	font-size: .5em;
 }
