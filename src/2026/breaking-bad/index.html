@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" class="c-essay">
+<head>
+<title>Breaking bad</title>
+<meta name="description" content="Will your site still be seen by anyone?">
+<link rel="alternate stylesheet" media="screen" href="/2020/redesign/advanced.css" title="Advanced Style">
+<link rel="alternate stylesheet" media="screen" href="/2020/redesign/elegant.css" title="Elegant Style">
+</head>
+<body>
+<main>
+<article>
+<header>
+<p>Tales from the hospital</p>
+<h1>Breaking bad</h1>
+<p><i>Essay</i><br><time>2026-06-04T09:29:00Z</time><br><img src="/2026/tales-from-the-hospital/index.webp" alt=""></p>
+</header>
+<div>
+<aside class="standoff -large" aria-labelledby="miniseries">
+<p>This is the third blog post of my <a href="/2026/tales-from-the-hospital/"><strong id="miniseries">Tales from the hospital</strong></a> miniseries. I wrote about edge cases in web design that I encountered between surgeries.</p>
+<ol class="figure" aria-labelledby="miniseries">
+<li><a href="/2026/breakpoints/">Breakpoints</a></li>
+<li><a href="/2026/breaking-points/">Breaking points</a></li>
+<li>Breaking bad</li>
+</ol>
+</aside>
+<p>Contrary to my earlier hospital encounters this year, my third visit was planned. As are most site designs <strong>not</strong> an accident, someone did put in the effort.</p>
+<p>Which makes one thing even more worrisome: There being so little emphasis on the actual content these days must have happened according to someone’s plan.</p>
+<p>I cannot find the source, but I saw a conference talk on the subject, and this was my takeaway: On desktop, only 30% of the initial viewport is filled with the content someone came for. On mobile, it’s 17%. Whether I remember these numbers correctly does not matter, because we can see for ourselves. Open any popular website in incognito mode, and try to spot the content. Here’s what I got when I went to FIFA.com.</p>
+<figure><img src="/2026/breaking-bad/fifa-com.webp" alt="On larger screens, a popover is centered atop the content, which itself is partly covered by a cookie consent banner. On smaller screens, no content to be found, even the cookie consent banner’s action buttons are out of view." style="--frame: ">
+</figure>
+<p>On mobile, I see a glimpse of the site’s primary navigation, but almost the entire screen is covered by letting me know that they care about my privacy, an information so long it requires scrolling. On desktop, two popovers compete for my attention. I didn’t calculate how much content I can still see. On desktop I’d anyhow have to look past the fact that the content is dimmed. On mobile it’s easy, as the answer is zero percent.</p>
+<p>Now, you could argue that some obstrusive banner is only presented on first visit and can be dismissed permanently. But usually it doesn’t stop there, because many sites also want you to look at advertisement, sign up for their newsletter, and download their app. And let’s not forget these popovers that open automatically if you haven’t interacted with the page for more than two seconds.</p>
+<h2>Past to present</h2>
+<p>While the <a href="https://geocities.restorativland.org/">early days of the web</a> may be compared to the Wild West, eventually sites became more polished, but along the way something must have happened that made us pivot to the current state of web design. We are quick to blame legislative directives like the <em>General Data Protection Regulation</em>. Sure, it did cause all those pesky cookie consent banners, but the European Union does not require you to inform your visitors that they should prefer your app instead, nor to come up with any of these other questionable UX patterns.</p>
+<p>There’s a chance I’m seeing the past through rose-tinted glasses. Maybe the situation was never really great, except for one point in time: The rise of the mobile web and in turn responsive design required us get rid of a lot of the crap that had been sitting next to our content, but after that brief period in the first half of the last decade, <a href="/2015/we-broke-the-internet/">site design started to deteriorate</a> again.</p>
+<p>Working on the web, I get to enjoy a lot of personal blogs that show me <a href="https://whimsical.club/">whimsical design</a> instead of said questionable patterns. But those are the exception. And while this miniseries was supposed to be about edge cases in web design, I’m afraid what I’m describing in this third blog post has become the norm.</p>
+<p>So how do we get out of this mess?</p>
+<h2>Present to future</h2>
+<p>Apparently it has to get worse before it gets better. And it sure does.</p>
+<p>Matthias Ott found out that <a href="https://matthiasott.com/notes/ad-infinitum">we no longer get people sent our way.</a></p>
+<blockquote cite="https://matthiasott.com/notes/ad-infinitum">
+<p>Generative UI doesn’t link to your article, necessarily. It absorbs your article, synthesizes it into a widget, and presents it as Google’s own answer. Information agents don’t send users to websites.</p>
+</blockquote>
+<p>Great, without visitors there’s no need to fix all these broken sites, right?<sup><a id="ref-fn-1" href="#fn-1" role="doc-noteref" aria-label="Footnote #1">[1]</a></sup></p>
+<p>My personal site shows no advertisement, I pay it out of my own pocket. So I don’t mind whether people come to my site or not. I happily provide other forms to consume my content, like <a href="/rss/">RSS.</a> Back in the day, when we were all still trying to figure out if XHTML is the way to go, I envisioned a future where the use of valid XML would give us an easy way for humans and machines to consume our content. But the latest turn of events, namely <a href="https://www.techpolicy.press/the-web-is-being-made-accessible-for-ai-not-people/">providing instructions for LLMs</a> so AI can easily consume the content, is quite something. Wait, what?</p>
+<p>Well, yes, we actually do “fix” broken sites, just <strong>not for people, but for AI.</strong> Amazing! After an eternity of being told that improving accessibility is hard, along comes AI, and now we have no problem spending the time and effort to make sites accessible for something that requires vast amounts of energy and water, as if there was no climate crisis to begin with.</p>
+<blockquote cite="https://www.techpolicy.press/the-web-is-being-made-accessible-for-ai-not-people/">
+<p>When a society is unmoved by decades of advocacy from disabled communities but springs into action when a tech company needs the same accommodation, it reveals whose claims on shared resources are treated as legitimate and whose are treated as optional.</p>
+</blockquote>
+<p>I don’t see a silver lining at the moment.<sup><a id="ref-fn-2" href="#fn-2" role="doc-noteref" aria-label="Footnote #2">[2]</a></sup></p>
+<section>
+<h2 id="fns">Footnotes</h2>
+<ol>
+<li id="fn-1">In case you can’t tell, I’m being sarcastic. <a href="#ref-fn-1" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+<li id="fn-2">I’ll revist this article in five years, on June&nbsp;4, 2031. Maybe, by then, the AI bubble has burst, and things have improved. <a href="https://adactio.com/journal/22540">One can dream.</a> <a href="#ref-fn-2" role="doc-backlink" aria-label="Back to article">↩︎</a></li>
+</ol>
+</section>
+</div>
+<aside>
+<h2 id="comments">Comments</h2>
+<article hidden>
+<h3><span data-href="https://mas.to/@CSSence/116691235241510552, https://bsky.app/profile/cssence.com/post/3mnheajfwcs2o"><b>Matthias Zöchling</b> wrote on <time>2026-06-04T09:29:00Z</time></span></h3>
+<p>Part Three of my miniseries about edge cases in web design:</p>
+<p>Will your site still be seen by anyone?</p>
+<p>Outlook not so good.<br><a href="/2026/breaking-bad/">cssence.com/2026/breaking-bad</a></p>
+</article>
+<article>
+<h3><span data-href="https://bsky.app/profile/cssence.com/post/3mnhihqdbyc2c"><b>Matthias Zöchling</b> wrote on <time>2026-06-04T10:44:00Z</time></span></h3>
+<p>As it happens, I just watched <a href="https://youtu.be/KSFsZmxM9sA">“The future of the web might lie in its past”</a> by @kevinpowell.co … he too wants to revisit the topic in five years. 🙃</p>
+</article>
+<article>
+<h3><a href="https://bsky.app/profile/sam-rivera.bsky.social/post/3mnhhvfbdsn2q"><b>Sam Rivera</b> wrote on <time>2026-06-04T11:01:00Z</time></a></h3>
+<p>That generative AI synthesizing content claim is wild. What’s the move for creators?</p>
+</article>
+<article>
+<h3><span data-href="https://bsky.app/profile/cssence.com/post/3mnhihqdbyc2c"><b>Matthias Zöchling</b> wrote on <time>2026-06-04T11:11:00Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@sam-rivera.bsky.social</span>.</small></p>
+<p>Dance like nobody’s watching?</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/116696162627688404"><b>Matthias Zöchling</b> wrote on <time>2026-06-05T06:48:49Z</time></span></h3>
+<p>Thanks @annaecook@mastodon.social for that Forbes article link, I too think we should fix the actual issues, not work around them just to make LLMs happy.</p>
+<blockquote cite="https://mastodon.social/@annaecook/116693022595575272">
+<p>I’ve used the “AI reads like people do” case to justify continued accessibility work <a href="https://www.forbes.com/councils/forbesagencycouncil/2025/11/13/how-accessibility-prepares-your-website-for-ai-search/">(link to Forbes on that).</a></p>
+<p>But there’s something really upsetting about having to do that when ultimately we’ve always had people who need accessibility.</p>
+<p>All people need accessibility.</p>
+</blockquote>
+<p>In addition, the second link in <a href="https://mastodon.social/@annaecook/116693022595575272">the thread</a> is the very article I’ve quoted when writing mine.</p>
+</article>
+</aside>
+</article>
+</main>
+</body>
+</html>
