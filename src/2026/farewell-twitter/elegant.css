@@ -1,0 +1,17 @@
+.standout {
+	--columns: 3;
+	display: flex;
+	flex-flow: column wrap;
+	block-size: 119rem;
+	gap: var(--p);
+
+	@media (width < 31em) {
+		--columns: 2;
+		block-size: 150rem;
+	}
+}
+.standout img {
+	inline-size: calc((100% - (var(--columns) - 1) * var(--p)) / var(--columns));
+	margin: 0;
+	border-radius: .5rem;
+}
