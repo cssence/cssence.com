@@ -23,6 +23,28 @@
 <p data-chain="reply"><small>In reply to: <span>@matuzo@front-end.social</span>.</small></p>
 <p>Please do. Looking forward to the <em>cutting the mustard</em> part.</p>
 </article>
+<article>
+<h3><a href="https://mastodon.social/@gray17/116681101133588991"><b>@gray17@mastodon.social</b> wrote on <time>2026-06-02T14:58:29Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@matuzo@front-end.social</span>.</small></p>
+<p>I omit the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> tags (reduces unnecessary indentation)</p>
+<p><code>og:title</code> is redundant with <code>&lt;title&gt;</code>, it seems silly to do both.<br><code>og:description</code> seems to me the only useful og: tag.<br>well, <code>og:image</code> and <code>og:image:alt</code> are useful too if there’s a meaningful image. (I strongly resist the idea of meaningless hero images.)</p>
+<p>add <code>&lt;meta name="color-scheme"&gt;</code><br>maybe also <code>&lt;meta name="text-scale"&gt;</code></p>
+</article>
+<article>
+<h3><a href="https://typo.social/@myfonj/116687467267303924"><b>@myfonj@typo.social</b> wrote on <time>2026-06-02T14:58:29Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@gray17@mastodon.social</span>.</small></p>
+<p>This 👆️. Although, personally, for <code>"light dark"</code> I’ve settled on using inline style on HTML, (like <code>&lt;html lang="…" style="color-scheme: light dark;"&gt;</code>) rather than meta tag inside the head, since it seems more straightforward and can be leveraged later in a user toggle: <code>html[style*="color-scheme: dark;"]</code>.</p>
+</article>
+<article>
+<h3><span data-href="https://mas.to/@CSSence/116833876218107974"><b>Matthias Zöchling</b> wrote on <time>2026-06-29T14:31:12Z</time></span></h3>
+<p data-chain="reply"><small>In reply to: <span>@myfonj@typo.social</span>.</small></p>
+<p>Thanks to <code>:has()</code> you can <a href="/2024/color-scheme-switcher/">have your cake and eat it.</a> 🙂</p>
+</article>
+<article>
+<h3><a href="https://typo.social/@myfonj/116838401534640264"><b>@myfonj@typo.social</b> wrote on <time>2026-06-30T09:42:03Z</time></a></h3>
+<p data-chain="reply"><small>In reply to: <span>@CSSence@mas.to</span>.</small></p>
+<p>Sure, just that <code>html[style*="…"]</code> feels a little bit more straightforward and possibly much more performant than <code>html:has(&gt;head&gt;meta[…])</code>. Either way, this hatch is basically just a very sad workaround for something we should not be forced to deal with to begin with: simply setting the palette through light-dark() function and setting color-scheme on element(s) should be all we need; no “prefers”, no classes, no attributes, nothing. It’s just the non-colour and non-images stuff, such as font weight, that we have to anchor this way, till CSS functions arrive…</p>
+</article>
 </div>
 </article>
 </main>
