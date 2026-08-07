@@ -1,0 +1,3 @@
+@supports at-rule(@supports) {
+	/* ✅ The browser supports `@supports at-rule(…)` */
+}
